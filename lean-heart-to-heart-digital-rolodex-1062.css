@@ -1,0 +1,672 @@
+/* Automated Hearts Round 1062 lean CSS: exact original cascade order. */
+
+/* SOURCE: round915-sandy-message-footer-borders.css */
+:root{--r915-message-face:url("./assets/message-button-suede-sandy-side-round915.svg?v=915r"); --r915-message-face-pressed:url("./assets/message-button-suede-sandy-side-pressed-round915.svg?v=915r"); --r915-footer-face:url("./assets/footer-button-message-like-sandy-side-round915.svg?v=915r"); --r915-footer-face-pressed:url("./assets/footer-button-message-like-sandy-side-pressed-round915.svg?v=915r"); --r915-footer-press-depth:4px;}html body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control, html body[data-page][class][class][class][class][class][class][class][class][class][class] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-image:var(--r915-message-face)!important;}html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched), html.ah-message-persist-open body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{background-image:var(--r915-message-face-pressed)!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]{position:relative!important; isolation:isolate!important; overflow:visible!important; background-color:transparent!important; background-image:var(--r915-footer-face)!important; background-position:center!important; background-size:100% 100%!important; background-repeat:no-repeat!important; border:0!important; outline:0!important; box-shadow:none!important; transform:none!important; filter:brightness(.58) saturate(.72) contrast(.97) drop-shadow(0 6px 7px rgba(0,0,0,.50))!important; transition:filter 180ms ease!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]::before, html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]::after{content:none!important;display:none!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav] > .send-control-copy.footer-control-copy{position:absolute!important; inset:0!important; z-index:3!important; display:grid!important; place-items:center!important; background:transparent!important; background-image:none!important; border:0!important; box-shadow:none!important; margin:0!important; padding:0 10px 3px!important; transform:none!important; transition:transform 90ms cubic-bezier(.2,.78,.24,1)!important;}html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-indicator.send-control-indicator{display:none!important;}html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] .footer-nav-label{font-family:"Orbitron",system-ui,sans-serif!important;}html body[data-page] footer#site-footer.site-footer--minimal:is(.is-footer-cluster-lit,.is-footer-button-cluster-hot) nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav], html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav:is(:hover,:focus-within) > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav], html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]:is(:hover,:focus-visible){filter:brightness(1.07) saturate(1.03) contrast(1.01) drop-shadow(0 6px 7px rgba(0,0,0,.50))!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]){background-image:var(--r915-footer-face-pressed)!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]) > .send-control-copy.footer-control-copy{transform:translate3d(0,var(--r915-footer-press-depth),0)!important;}
+
+/* SOURCE: round966-final-ui-rates.css */
+/* Round 966 — source-level finalization for footer sizing, Message icon, ticker glass/matte, smooth ticker, and Rates service columns. */
+
+/* Footer buttons: all same width, sized by JS from the longest 14.5pt Orbitron label. */
+@media (min-width:1101px){
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav{
+    left:24px!important; right:24px!important; width:auto!important; max-width:none!important;
+  }
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav > .primary-nav__group.primary-nav__group--centered{
+    display:flex!important; width:100%!important; max-width:none!important; align-items:center!important;
+    justify-content:space-between!important; gap:18px!important; margin:0!important; padding:0!important;
+  }
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav .footer-nav-label{
+    font-family:"Orbitron",system-ui,sans-serif!important; font-size:14.5pt!important; font-weight:700!important;
+    line-height:1!important; letter-spacing:0!important; white-space:nowrap!important;
+  }
+}
+
+/* Message: hide every legacy-positioned envelope and use one direct overlay centered on the actual anchor box. */
+html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+  position:fixed!important; overflow:hidden!important;
+}
+html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .send-control-copy{
+  opacity:0!important; visibility:hidden!important; pointer-events:none!important;
+}
+html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .r966-message-envelope-center{
+  position:absolute!important; inset:0!important; z-index:20!important; display:grid!important; place-items:center!important;
+  width:100%!important; height:100%!important; margin:0!important; padding:0!important; transform:none!important;
+  color:#ff2ea8!important; pointer-events:none!important;
+}
+html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .r966-message-envelope-center > svg{
+  display:block!important; width:46%!important; height:auto!important; margin:0!important; transform:none!important; overflow:visible!important;
+}
+html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .r966-message-envelope-center path{
+  fill:none!important; stroke:currentColor!important; stroke-width:1.55!important; stroke-linecap:round!important; stroke-linejoin:round!important;
+  vector-effect:non-scaling-stroke!important;
+}
+
+/* Ticker: true DOM glass lens over the words, plus a distinct matte film layer. */
+html body[data-page] > #home-ticker-wrap#home-ticker-wrap > #home-charity-ticker#home-charity-ticker{
+  position:absolute!important; inset:0!important; overflow:hidden!important; isolation:isolate!important;
+  border:2px solid rgba(205,226,234,.98)!important; border-radius:28px!important;
+  background:linear-gradient(180deg,#0b2637 0%,#061724 43%,#020a12 100%)!important;
+  box-shadow:inset 0 2px 1px rgba(255,255,255,.82), inset 0 -7px 12px rgba(0,0,0,.52), 0 2px 5px rgba(0,0,0,.45)!important;
+}
+html body[data-page] > #home-ticker-wrap#home-ticker-wrap .ticker-matte-film{display:none!important;}
+html body[data-page] > #home-ticker-wrap#home-ticker-wrap #home-charity-marquee{
+  position:relative!important; z-index:10!important; overflow:hidden!important;
+}
+html body[data-page] > #home-ticker-wrap#home-ticker-wrap .r966-ticker-bubble-lens{
+  position:absolute!important; inset:2px!important; z-index:30!important; display:block!important; pointer-events:none!important;
+  border-radius:25px!important; border:1px solid rgba(220,245,250,.26)!important;
+  background:
+    radial-gradient(150% 112% at 50% -34%,rgba(255,255,255,.48) 0%,rgba(232,252,255,.26) 13%,rgba(164,219,230,.10) 27%,rgba(255,255,255,0) 46%),
+    radial-gradient(120% 92% at 50% 125%,rgba(89,190,210,.16) 0%,rgba(19,61,79,.05) 44%,transparent 66%),
+    linear-gradient(180deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.025) 28%,rgba(0,0,0,.05) 66%,rgba(0,0,0,.14) 100%)!important;
+  box-shadow:
+    inset 0 5px 8px rgba(255,255,255,.20),
+    inset 0 -10px 15px rgba(0,0,0,.34),
+    inset 7px 0 11px rgba(174,234,242,.10),
+    inset -7px 0 11px rgba(174,234,242,.10),
+    inset 0 0 0 1px rgba(236,255,255,.10)!important;
+  -webkit-backdrop-filter:blur(.35px) saturate(.96)!important; backdrop-filter:blur(.35px) saturate(.96)!important;
+}
+html body[data-page] > #home-ticker-wrap#home-ticker-wrap .r966-ticker-matte-film{
+  position:absolute!important; inset:3px!important; z-index:32!important; display:block!important; pointer-events:none!important;
+  border-radius:24px!important;
+  background:
+    radial-gradient(130% 90% at 34% 10%,rgba(255,255,255,.11),transparent 52%),
+    radial-gradient(120% 88% at 72% 86%,rgba(255,255,255,.055),transparent 58%),
+    repeating-linear-gradient(180deg,rgba(222,245,248,.045) 0 1px,rgba(0,0,0,.014) 1px 3px,transparent 3px 5px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.014) 0 1px,transparent 1px 4px)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -1px 0 rgba(0,0,0,.18)!important;
+  opacity:.78!important; mix-blend-mode:screen!important;
+}
+html body[data-page] > #home-ticker-wrap#home-ticker-wrap .ticker-end-rim{z-index:40!important;}
+
+@keyframes r966-ticker-compositor{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-50%,0,0)}
+}
+html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__track.charity-marquee__track{
+  animation:r966-ticker-compositor 160s linear infinite!important;
+  animation-timing-function:linear!important; will-change:transform!important; transform-origin:0 50%!important;
+  backface-visibility:hidden!important; -webkit-backface-visibility:hidden!important; translate:none!important;
+}
+
+/* Rates & Services: two equal tall rectangles, Automation left / Web Development right. */
+html body.page-pricing[data-page="pricing"] .r864-rates__drawers{
+  display:grid!important; grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  grid-auto-flow:row!important; gap:28px!important; align-items:stretch!important;
+}
+html body.page-pricing[data-page="pricing"] #r864-ai.r966-service-column--automation{
+  grid-column:1!important; grid-row:1!important;
+}
+html body.page-pricing[data-page="pricing"] #r864-web.r966-service-column--web{
+  grid-column:2!important; grid-row:1!important;
+}
+html body.page-pricing[data-page="pricing"] #r864-care.r966-service-column--care{
+  grid-column:1 / -1!important; grid-row:2!important;
+}
+html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web).r966-service-column{
+  display:flex!important; flex-direction:column!important; height:100%!important; min-height:1120px!important;
+  margin:0!important;
+}
+html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web).r966-service-column > .r946-rates__tv-header{
+  flex:0 0 auto!important; min-height:170px!important;
+}
+html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web).r966-service-column > .r864-rates__drawer-body{
+  display:block!important; flex:1 1 auto!important; height:auto!important; min-height:0!important;
+}
+html body.page-pricing[data-page="pricing"] .r966-service-list{
+  display:flex!important; flex-direction:column!important; grid-template-columns:none!important; gap:14px!important;
+  width:100%!important; height:auto!important; margin:0!important; padding:0!important;
+}
+html body.page-pricing[data-page="pricing"] .r966-service-list > .r951-rates__card.r966-service-card,
+html body.page-pricing[data-page="pricing"] #r864-web .r966-service-list > .r951-rates__card{
+  display:grid!important; grid-template-columns:minmax(0,1fr) auto!important;
+  grid-template-areas:"title price" "desc price"!important; column-gap:20px!important; row-gap:6px!important;
+  align-items:center!important; width:100%!important; min-height:104px!important; box-sizing:border-box!important;
+  margin:0!important; padding:18px 20px!important;
+}
+html body.page-pricing[data-page="pricing"] .r966-service-list > .r951-rates__card h4{
+  grid-area:title!important; margin:0!important;
+}
+html body.page-pricing[data-page="pricing"] .r966-service-list > .r951-rates__card p{
+  grid-area:desc!important; margin:0!important;
+}
+html body.page-pricing[data-page="pricing"] .r966-service-list > .r951-rates__card .r951-rates__price{
+  grid-area:price!important; align-self:center!important; margin:0!important;
+}
+html body.page-pricing[data-page="pricing"] #r864-ai .r951-rates__price[data-currency="$" ]::before{content:"$";}
+@media (max-width:980px){
+  html body.page-pricing[data-page="pricing"] .r864-rates__drawers{grid-template-columns:1fr!important;}
+  html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web,#r864-care){grid-column:1!important;grid-row:auto!important;}
+  html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web).r966-service-column{min-height:0!important;}
+}
+
+
+/* SOURCE: round967-button-depth-refinement.css */
+/* Round 967 — outer-rim button mechanical depth refinement.
+   Adds a pink side/depth face, black clearance seams on the sides/bottom,
+   collapses the pink depth on press, and reduces hover halo. */
+
+:root{
+  --r967-pink-side:#f02b9d;
+  --r967-pink-side-hot:#ff42ad;
+  --r967-seam:#020304;
+  --r967-ridge-green:rgba(151,255,224,.82);
+  --r967-ridge-green-dim:rgba(91,167,162,.68);
+}
+
+/* Shared footer + message hardware. */
+html body[data-page]
+:is(
+  footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav],
+  a#header-send-message.header-send-message.mechanical-send-control
+){
+  position:relative!important;
+  box-sizing:border-box!important;
+  overflow:visible!important;
+  border-top:0!important;
+  border-left:1px solid var(--r967-seam)!important;
+  border-right:1px solid var(--r967-seam)!important;
+  border-bottom:1px solid var(--r967-seam)!important;
+  outline:0!important;
+  transform:translate3d(0,0,0)!important;
+  transition:transform .16s cubic-bezier(.2,.72,.28,1),filter .16s ease,box-shadow .16s ease!important;
+  box-shadow:
+    inset 0 0 0 2px rgba(3,12,20,.96),
+    inset 0 0 0 3px var(--r967-ridge-green),
+    inset 0 0 0 6px rgba(3,11,18,.96),
+    inset 0 0 0 7px var(--r967-ridge-green-dim),
+    -1px 0 0 var(--r967-seam),
+    1px 0 0 var(--r967-seam),
+    0 1px 0 var(--r967-seam),
+    3px 0 0 var(--r967-pink-side),
+    0 3px 0 var(--r967-pink-side),
+    3px 3px 0 var(--r967-pink-side),
+    4px 0 0 var(--r967-seam),
+    0 4px 0 var(--r967-seam),
+    4px 4px 0 var(--r967-seam),
+    0 5px 7px rgba(0,0,0,.42)!important;
+  filter:brightness(1.02) saturate(1.02) contrast(1.02)!important;
+}
+
+/* Footer bank hover: illuminate the face/ridges, not the outside with white. */
+html body[data-page]
+footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav:is(:hover,:focus-within)
+a.footer-structure-control.mechanical-send-control[data-nav],
+html body[data-page]
+footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav]:is(:hover,:focus-visible),
+html body[data-page]
+a#header-send-message.header-send-message.mechanical-send-control:is(:hover,:focus-visible){
+  filter:
+    brightness(1.12)
+    saturate(1.06)
+    contrast(1.03)
+    drop-shadow(0 4px 4px rgba(0,0,0,.34))
+    drop-shadow(0 0 2px rgba(143,255,215,.14))!important;
+  box-shadow:
+    inset 0 0 0 2px rgba(3,12,20,.98),
+    inset 0 0 0 3px rgba(185,255,233,.94),
+    inset 0 0 0 6px rgba(3,11,18,.98),
+    inset 0 0 0 7px rgba(107,190,181,.82),
+    -1px 0 0 var(--r967-seam),
+    1px 0 0 var(--r967-seam),
+    0 1px 0 var(--r967-seam),
+    3px 0 0 var(--r967-pink-side-hot),
+    0 3px 0 var(--r967-pink-side-hot),
+    3px 3px 0 var(--r967-pink-side-hot),
+    4px 0 0 var(--r967-seam),
+    0 4px 0 var(--r967-seam),
+    4px 4px 0 var(--r967-seam),
+    0 5px 6px rgba(0,0,0,.38)!important;
+}
+
+/* Remove the large white text halo while keeping a controlled pink illumination. */
+html body[data-page]
+footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav:is(:hover,:focus-within)
+.footer-nav-label,
+html body[data-page]
+footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav]:is(:hover,:focus-visible) .footer-nav-label{
+  color:#ff72c0!important;
+  -webkit-text-fill-color:#ff72c0!important;
+  text-shadow:
+    0 0 1px rgba(255,114,192,.64),
+    0 0 3px rgba(255,46,168,.30)!important;
+}
+
+/* Mechanical press: button moves into its black clearance slot and nearly all
+   of the pink side disappears beneath the surface. */
+html body[data-page]
+footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]),
+html body[data-page]
+a#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched),
+html.ah-message-persist-open body[data-page]
+a#header-send-message.header-send-message.mechanical-send-control{
+  transform:translate3d(2px,3px,0)!important;
+  filter:brightness(.94) saturate(1.02) contrast(1.03)!important;
+  box-shadow:
+    inset 0 0 0 2px rgba(3,12,20,.99),
+    inset 0 0 0 3px rgba(157,242,217,.70),
+    inset 0 0 0 6px rgba(3,11,18,.99),
+    inset 0 0 0 7px rgba(72,137,135,.58),
+    -1px 0 0 var(--r967-seam),
+    1px 0 0 var(--r967-seam),
+    0 1px 0 var(--r967-seam),
+    1px 0 0 var(--r967-pink-side),
+    0 1px 0 var(--r967-pink-side),
+    1px 1px 0 var(--r967-pink-side),
+    2px 0 0 var(--r967-seam),
+    0 2px 0 var(--r967-seam),
+    2px 2px 0 var(--r967-seam),
+    0 2px 3px rgba(0,0,0,.34)!important;
+}
+
+/* Prevent old white-halo rules from reappearing on Message hover. */
+html body[data-page] a#header-send-message.header-send-message.mechanical-send-control:is(:hover,:focus-visible)
+:is(.send-control-envelope,.send-control-envelope svg){
+  filter:none!important;
+  text-shadow:none!important;
+}
+
+@media (max-width:760px){
+  html body[data-page]
+  :is(
+    footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav],
+    a#header-send-message.header-send-message.mechanical-send-control
+  ){
+    box-shadow:
+      inset 0 0 0 1px rgba(3,12,20,.96),
+      inset 0 0 0 2px rgba(185,255,233,.76),
+      inset 0 0 0 4px rgba(3,11,18,.96),
+      inset 0 0 0 5px rgba(91,167,162,.62),
+      -1px 0 0 var(--r967-seam),
+      1px 0 0 var(--r967-seam),
+      0 1px 0 var(--r967-seam),
+      2px 0 0 var(--r967-pink-side),
+      0 2px 0 var(--r967-pink-side),
+      2px 2px 0 var(--r967-pink-side),
+      3px 0 0 var(--r967-seam),
+      0 3px 0 var(--r967-seam),
+      3px 3px 0 var(--r967-seam)!important;
+  }
+}
+
+
+/* SOURCE: round969-dom-pink-depth-rates-hard-open.css */
+/* Round 969 — DOM-backed pink button depth + hard-open Rates service columns. */
+
+/* Old pseudo-depth is disabled; Round 969 uses real child elements so legacy pseudo rules cannot suppress it. */
+html body[data-page] :is(
+  footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav],
+  a#header-send-message.header-send-message.mechanical-send-control
+)::before,
+html body[data-page] :is(
+  footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav],
+  a#header-send-message.header-send-message.mechanical-send-control
+)::after{content:none!important;display:none!important;}
+
+html body[data-page] :is(
+  footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav],
+  a#header-send-message.header-send-message.mechanical-send-control
+){overflow:visible!important;position:relative!important;isolation:isolate!important;}
+
+.r969-pink-depth-bottom,.r969-pink-depth-right{
+  position:absolute!important;
+  display:block!important;
+  pointer-events:none!important;
+  z-index:0!important;
+  opacity:1!important;
+  visibility:visible!important;
+  transition:width .13s ease,height .13s ease,right .13s ease,bottom .13s ease,filter .13s ease!important;
+}
+.r969-pink-depth-bottom{
+  left:4px!important;right:-7px!important;bottom:-7px!important;height:7px!important;
+  border-radius:0 0 9px 9px!important;
+  background:linear-gradient(180deg,#ff52b7 0%,#ff2ea8 34%,#d01783 72%,#7b0648 100%)!important;
+  box-shadow:0 1px 0 #020305,0 2px 2px rgba(0,0,0,.32)!important;
+}
+.r969-pink-depth-right{
+  top:4px!important;right:-7px!important;bottom:-4px!important;width:7px!important;
+  border-radius:0 9px 9px 0!important;
+  background:linear-gradient(90deg,#ff64c0 0%,#ff2ea8 38%,#c71378 72%,#720544 100%)!important;
+  box-shadow:1px 0 0 #020305,2px 0 2px rgba(0,0,0,.30)!important;
+}
+/* Keep label/icon face above the pink depth. */
+html body[data-page] :is(
+  footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav],
+  a#header-send-message.header-send-message.mechanical-send-control
+) > :not(.r969-pink-depth-bottom):not(.r969-pink-depth-right){position:relative;z-index:2;}
+
+/* Submerge the pink side when pressed. */
+html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]) .r969-pink-depth-bottom,
+html body[data-page] a#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched) .r969-pink-depth-bottom,
+html.ah-message-persist-open body[data-page] a#header-send-message.header-send-message.mechanical-send-control .r969-pink-depth-bottom{
+  right:-1px!important;bottom:-1px!important;height:1px!important;filter:brightness(.78)!important;
+}
+html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]) .r969-pink-depth-right,
+html body[data-page] a#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched) .r969-pink-depth-right,
+html.ah-message-persist-open body[data-page] a#header-send-message.header-send-message.mechanical-send-control .r969-pink-depth-right{
+  right:-1px!important;bottom:-1px!important;width:1px!important;filter:brightness(.78)!important;
+}
+
+/* Hard-present Rates pair: Automation on LEFT, Web Development on RIGHT. */
+html body.page-pricing[data-page="pricing"] .r864-rates__drawers{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  grid-template-rows:auto auto!important;
+  gap:28px!important;
+  align-items:stretch!important;
+  width:100%!important;
+}
+html body.page-pricing[data-page="pricing"] #r864-ai,
+html body.page-pricing[data-page="pricing"] #r864-web{
+  display:flex!important;
+  flex-direction:column!important;
+  visibility:visible!important;
+  opacity:1!important;
+  height:auto!important;
+  min-height:1120px!important;
+  max-height:none!important;
+  overflow:visible!important;
+  margin:0!important;
+}
+html body.page-pricing[data-page="pricing"] #r864-ai{grid-column:1!important;grid-row:1!important;}
+html body.page-pricing[data-page="pricing"] #r864-web{grid-column:2!important;grid-row:1!important;}
+html body.page-pricing[data-page="pricing"] #r864-care{grid-column:1 / -1!important;grid-row:2!important;}
+html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) > .r864-rates__drawer-body{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  overflow:visible!important;
+  flex:1 1 auto!important;
+}
+html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-list{
+  display:flex!important;
+  flex-direction:column!important;
+  grid-template-columns:none!important;
+  gap:14px!important;
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  overflow:visible!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-card{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  grid-template-areas:"title price" "desc price"!important;
+  column-gap:20px!important;
+  row-gap:6px!important;
+  align-items:center!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  min-height:104px!important;
+  height:auto!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:18px 20px!important;
+  opacity:1!important;
+  visibility:visible!important;
+  overflow:visible!important;
+}
+html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-card h4{grid-area:title!important;margin:0!important;}
+html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-card p{grid-area:desc!important;margin:0!important;}
+html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-card .r951-rates__price{grid-area:price!important;margin:0!important;}
+html body.page-pricing[data-page="pricing"] #r864-ai .r951-rates__price[data-currency="$"]::before{content:"$";}
+
+@media(max-width:980px){
+  html body.page-pricing[data-page="pricing"] .r864-rates__drawers{grid-template-columns:1fr!important;}
+  html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web,#r864-care){grid-column:1!important;grid-row:auto!important;min-height:0!important;}
+}
+
+
+/* SOURCE: round973-final-button-envelope-rates.css */
+/* Round 973 — authoritative footer label size, pink button edges, centered Message envelope, no Automation $ signs. */
+@media (min-width:1101px){
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav .footer-nav-label,
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav] .footer-nav-label{
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:12.5pt!important;
+    font-weight:700!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+  }
+}
+
+/* Pink side edging is a real border on the button face, not a pseudo-element. */
+html body[data-page] :is(
+  footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.r973-pink-edge.footer-structure-control.mechanical-send-control[data-nav],
+  a#header-send-message.r973-pink-edge.header-send-message.mechanical-send-control,
+  button.r972-mobile-nav-toggle.r973-pink-edge
+){
+  box-sizing:border-box!important;
+  border-top:0!important;
+  border-left:1px solid #020305!important;
+  border-right:7px solid #ff2ea8!important;
+  border-bottom:7px solid #ff2ea8!important;
+  outline:0!important;
+  box-shadow:
+    inset 0 0 0 2px rgba(3,12,20,.96),
+    inset 0 0 0 3px rgba(185,255,233,.82),
+    inset 0 0 0 6px rgba(3,11,18,.98),
+    inset 0 0 0 7px rgba(91,167,162,.72),
+    1px 1px 0 #020305,
+    0 5px 7px rgba(0,0,0,.38)!important;
+}
+
+/* Center one direct envelope overlay in the literal middle of the Message anchor. */
+html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .send-control-copy{
+  display:none!important;visibility:hidden!important;opacity:0!important;
+}
+html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .r966-message-envelope-center{
+  position:absolute!important;
+  inset:auto!important;
+  left:50%!important;
+  top:50%!important;
+  right:auto!important;
+  bottom:auto!important;
+  width:44%!important;
+  height:auto!important;
+  aspect-ratio:32/22!important;
+  margin:0!important;
+  padding:0!important;
+  display:block!important;
+  z-index:80!important;
+  transform:translate(-50%,-50%)!important;
+  transform-origin:center center!important;
+  color:#ff2ea8!important;
+  pointer-events:none!important;
+}
+html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .r966-message-envelope-center > svg{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;margin:0!important;display:block!important;transform:none!important;
+}
+
+/* Remove any generated currency symbol on the Automation side. */
+html body.page-pricing[data-page="pricing"] #r864-ai .r951-rates__price::before{
+  content:none!important;display:none!important;
+}
+
+
+/* SOURCE: round974-bottom-edge-solution-exhibit.css */
+/* Round 974 — bottom-only thin pink button edge + visible Solution exhibit. */
+
+/* The pink 3D edge is only on the BOTTOM and ~5x thinner than the previous 7px treatment. */
+html body[data-page] :is(
+  footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.r973-pink-edge.footer-structure-control.mechanical-send-control[data-nav],
+  a#header-send-message.r973-pink-edge.header-send-message.mechanical-send-control,
+  button.r972-mobile-nav-toggle.r973-pink-edge
+){
+  border-right:0!important;
+  border-bottom:1.4px solid #ff2ea8!important;
+}
+
+/* Disable the old right-side DOM depth entirely. */
+html body[data-page] .r969-pink-depth-right{
+  display:none!important;
+  visibility:hidden!important;
+  width:0!important;
+  right:0!important;
+}
+
+/* Keep only a very thin bottom depth strip. */
+html body[data-page] .r969-pink-depth-bottom{
+  left:4px!important;
+  right:0!important;
+  bottom:-1.4px!important;
+  height:1.4px!important;
+  border-radius:0 0 3px 3px!important;
+  background:linear-gradient(180deg,#ff4ab2 0%,#ff2ea8 48%,#a70d65 100%)!important;
+  box-shadow:0 1px 0 #020305!important;
+}
+html body[data-page] :is(
+  footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]),
+  a#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched),
+  button.r972-mobile-nav-toggle:is(:active,[aria-expanded="true"])
+) .r969-pink-depth-bottom,
+html.ah-message-persist-open body[data-page] a#header-send-message.header-send-message.mechanical-send-control .r969-pink-depth-bottom{
+  height:.3px!important;
+  bottom:-.3px!important;
+  opacity:.58!important;
+}
+
+/* Lowest Solution section: show the supplied gold-rimmed mechanical image, centered and unobstructed. */
+html body.page-solutions[data-page="solutions"] main#main-content > section#live-refreshing-websites.solution-engine-section{
+  display:grid!important;
+  place-items:center!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+html body.page-solutions[data-page="solutions"] #solution-bottom-gold-visual.solution-bottom-gold-visual{
+  display:grid!important;
+  place-items:center!important;
+  width:min(94vw,1536px)!important;
+  max-width:1536px!important;
+  height:auto!important;
+  min-height:0!important;
+  margin:0 auto!important;
+  padding:0!important;
+  background:transparent!important;
+  overflow:visible!important;
+  filter:none!important;
+}
+/* Remove the old cover that hid the center of the exhibit. */
+html body.page-solutions[data-page="solutions"] #solution-bottom-gold-visual.solution-bottom-gold-visual::after{
+  content:none!important;
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  background:none!important;
+}
+html body.page-solutions[data-page="solutions"] #solution-bottom-gold-visual.solution-bottom-gold-visual::before{
+  content:none!important;
+  display:none!important;
+}
+html body.page-solutions[data-page="solutions"] #solution-bottom-gold-visual.solution-bottom-gold-visual > img.r974-solution-mechanical-exhibit{
+  position:relative!important;
+  z-index:5!important;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  width:100%!important;
+  max-width:1536px!important;
+  height:auto!important;
+  max-height:calc(100svh - 100px)!important;
+  aspect-ratio:2 / 1!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:0 auto!important;
+  padding:0!important;
+  border:0!important;
+  outline:0!important;
+  background:transparent!important;
+  filter:drop-shadow(0 12px 16px rgba(0,0,0,.54))!important;
+}
+@media(max-width:760px){
+  html body.page-solutions[data-page="solutions"] #solution-bottom-gold-visual.solution-bottom-gold-visual{
+    width:min(96vw,1536px)!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-bottom-gold-visual.solution-bottom-gold-visual > img.r974-solution-mechanical-exhibit{
+    max-height:calc(100svh - 70px)!important;
+  }
+}
+
+
+/* SOURCE: round1018-footer-pink-submerge-fixed-surface.css */
+/* Round 1018 — footer hardware: one identical pink side, face submerges while the surface line stays fixed. */
+:root{
+  --r1018-footer-rest:url("./assets/footer-button-message-like-sandy-side-round915.svg?v=1018r");
+  --r1018-footer-pressed:url("./assets/footer-button-message-like-sandy-side-pressed-submerged-round1018.svg?v=1018r");
+  --r1018-footer-press-depth:4px;
+}
+
+/* The anchor is the stationary mounting/surface box. It never translates. */
+html body[data-page][class][class][class][class][class][class][class][class]
+> footer#site-footer#site-footer.site-footer.site-footer--minimal
+nav#primary-nav#primary-nav.footer-primary-nav
+> .primary-nav__group.primary-nav__group
+> a.footer-structure-control.mechanical-send-control[data-nav][data-nav]{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:visible!important;
+  box-sizing:border-box!important;
+  background-color:transparent!important;
+  background-image:var(--r1018-footer-rest)!important;
+  background-position:center!important;
+  background-size:100% 100%!important;
+  background-repeat:no-repeat!important;
+  border:0!important;
+  outline:0!important;
+  transform:none!important;
+  translate:none!important;
+  scale:none!important;
+  /* This is the fixed black surface/slot beneath the hardware. */
+  box-shadow:inset 0 -2px 0 #020305,0 1px 0 #020305,0 4px 6px rgba(0,0,0,.34)!important;
+  transition:filter 160ms ease!important;
+}
+
+/* No legacy DOM/pseudo pink side can double the single baked-in side. */
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav]::before,
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav]::after,
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav] > :is(.r969-pink-depth-bottom,.r969-pink-depth-right){
+  content:none!important;
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+}
+
+/* Pressing swaps to the same hardware with the pink siding fully submerged.
+   The outer anchor never moves, so the black surface line cannot move down. */
+html body[data-page][class][class][class][class][class][class][class][class]
+> footer#site-footer#site-footer.site-footer.site-footer--minimal
+nav#primary-nav#primary-nav.footer-primary-nav
+> .primary-nav__group.primary-nav__group
+> a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]){
+  background-image:var(--r1018-footer-pressed)!important;
+  transform:none!important;
+  translate:none!important;
+  scale:none!important;
+  box-shadow:inset 0 -2px 0 #020305,0 1px 0 #020305,0 2px 3px rgba(0,0,0,.26)!important;
+}
+
+/* The lettering follows the face downward, independently of the stationary surface box. */
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy{
+  transform:none!important;
+  transition:transform 78ms cubic-bezier(.2,.78,.24,1)!important;
+}
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"])
+ > .send-control-copy.footer-control-copy{
+  transform:translate3d(0,var(--r1018-footer-press-depth),0)!important;
+}
+

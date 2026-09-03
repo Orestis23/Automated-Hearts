@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" preserveAspectRatio="none">
+<defs>
+  <path id="face" d="M4 4H156V149H4Z"/>
+  <path id="inner" d="M8 8H152V145H8Z"/>
+  <clipPath id="clipFace"><use href="#face"/></clipPath>
+  <linearGradient id="faceBase" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#071523"/><stop offset=".55" stop-color="#06101d"/><stop offset="1" stop-color="#0a1f32"/>
+  </linearGradient>
+  <pattern id="grain" width="10" height="10" patternUnits="userSpaceOnUse">
+    <circle cx="1.5" cy="2" r=".55" fill="#b7ffe8" fill-opacity=".055"/>
+    <circle cx="7.4" cy="3.1" r=".45" fill="#ff70bd" fill-opacity=".04"/>
+    <circle cx="4.3" cy="8" r=".62" fill="#000" fill-opacity=".24"/>
+  </pattern>
+</defs>
+<use href="#face" fill="#000" stroke="#000" stroke-width="5"/>
+<g clip-path="url(#clipFace)">
+  <rect width="160" height="160" fill="url(#faceBase)"/>
+  <rect width="160" height="160" fill="url(#grain)"/>
+  <rect width="160" height="160" fill="#000" opacity=".07"/>
+  <rect x="10" y="10" width="140" height="133" fill="none" stroke="#132f47" stroke-width="2" stroke-opacity=".9"/>
+</g>
+<use href="#face" fill="none" stroke="#8fffd7" stroke-width="2.4"/>
+<use href="#inner" fill="none" stroke="#c1ffec" stroke-opacity=".72" stroke-width="1"/>
+</svg>

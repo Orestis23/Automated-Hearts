@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><script src="../round1096-model-frame-gate.js?v=1096r"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>AI 101 Object 1 - Decision Balance</title>
+<style>*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:radial-gradient(circle at 50% 38%,#17212b,#030507 68%);font-family:Arial;color:#fff}canvas{display:block;touch-action:none}.head{position:fixed;top:15px;left:50%;transform:translateX(-50%);z-index:4;text-align:center;width:94%;pointer-events:none}.head b{color:#FF2DAA;font-size:clamp(18px,3vw,34px);letter-spacing:.1em}.head span{display:block;color:#afbec7;font-size:12px;margin-top:6px}.hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:4;padding:9px 14px;background:#05090ddd;border:1px solid #3d4a54;border-radius:11px;color:#d9e5ea;font-size:11px}</style>
+<style id="round1083-ai101-parent-backdrop-authority">
+html,body{background:transparent!important;background-color:transparent!important;background-image:none!important;background-attachment:scroll!important;}
+body::before,body::after{content:none!important;display:none!important;background:none!important;background-image:none!important;}
+canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;}
+.head,.hint,.labels,.title,.status,#ui,#tip,[data-model-title],[class*="model-title"]{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;}
+</style>
+
+<style id="round1084-static-leather-model-host">
+html,body{margin:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background-color:#08172b!important;background-image:url("../assets/page-shield-embossed-strong-round1067.webp?v=1084r")!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;background-attachment:fixed!important;}
+body::before,body::after{content:none!important;display:none!important;background:none!important;background-image:none!important;}
+canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;}
+</style>
+</head><body><div class="head"><b>AI ASSISTS. PEOPLE DECIDE.</b><span>Object 1: Decision Balance Orbital · vertical counterweights and stainless rims</span></div><div class="hint">Drag to rotate • Click a panel to reveal its explanation</div><script src="../vendor/three-0.160.0/three.min.js"></script><script>
+(()=>{'use strict';if(!THREE)return;const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);camera.position.set(0,.15,8.4);const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setClearColor(0x000000,0);renderer.setClearAlpha(0);renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.25;document.body.prepend(renderer.domElement);scene.add(new THREE.HemisphereLight(0xeaf7ff,0x071018,2.6));const key=new THREE.DirectionalLight(0xffffff,4.5);key.position.set(6,8,10);scene.add(key);const redLight=new THREE.PointLight(0xff315f,18,10);redLight.position.set(-3,2,4);scene.add(redLight);
+const root=new THREE.Group();root.rotation.x=-.15;scene.add(root);const clickable=[];
+const steel=new THREE.MeshPhysicalMaterial({color:0xdde3e6,metalness:1,roughness:.16,clearcoat:.88,clearcoatRoughness:.045});const dark=new THREE.MeshPhysicalMaterial({color:0x090d11,metalness:.8,roughness:.27});const glass=new THREE.MeshPhysicalMaterial({color:0xf5fff9,transmission:.88,transparent:true,opacity:.72,roughness:.025,ior:1.5,thickness:1,clearcoat:1});
+const content=[['AI ASSISTS.','Artificial intelligence supports the work.'],['PEOPLE DECIDE.','Human judgment remains responsible.'],['SUPPORT','Use AI to organize, compare, and clarify.'],['JUDGMENT','People review consequences and context.'],['RESPONSIBILITY','The final decision stays human.']];
+function texture(i,open){const c=document.createElement('canvas');c.width=1024;c.height=720;const g=c.getContext('2d');const grad=g.createRadialGradient(512,310,20,512,360,620);grad.addColorStop(0,open?'#0D1B2A':'#0B0B0B');grad.addColorStop(.56,open?'#0B0B0B':'#0D1B2A');grad.addColorStop(1,'#06080B');g.fillStyle=grad;g.fillRect(0,0,c.width,c.height);for(let y=0;y<c.height;y+=4){g.fillStyle='rgba(255,255,255,.018)';g.fillRect(0,y,c.width,1)}const edge=open?'#39FF14':'#FF2DAA',fill='#F6F7F2';g.textAlign='center';g.textBaseline='middle';const raw=open?content[i][1]:content[i][0],words=raw.split(' ');let size=open?60:92,lines=[];while(size>30){g.font='800 '+size+'px monospace';lines=[];let line='';for(const w of words){const test=line?line+' '+w:w;if(g.measureText(test).width>800&&line){lines.push(line);line=w}else line=test}if(line)lines.push(line);if(lines.length<=4&&lines.length*size*1.16<450)break;size-=3}g.font='800 '+size+'px monospace';g.fillStyle=fill;g.strokeStyle=edge;g.lineWidth=1;g.shadowColor=edge;g.shadowBlur=7;const sp=size*1.16;lines.forEach((line,k)=>{const y=340+(k-(lines.length-1)/2)*sp;g.strokeText(line,512,y);g.fillText(line,512,y)});const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;return t}
+// One continuous five-sided orbital housing. All display edges share the same radius and seams.
+const N=5,R=2.15,H=1.72;const vertsT=[],vertsB=[];for(let i=0;i<N;i++){const a=i*2*Math.PI/N;vertsT.push(new THREE.Vector3(Math.sin(a)*R,H/2,Math.cos(a)*R));vertsB.push(new THREE.Vector3(Math.sin(a)*R,-H/2,Math.cos(a)*R))}
+function quad(a,b,c,d){const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute([...a.toArray(),...b.toArray(),...c.toArray(),...d.toArray()],3));g.setAttribute('uv',new THREE.Float32BufferAttribute([0,1,1,1,1,0,0,0],2));g.setIndex([0,1,2,0,2,3]);g.computeVertexNormals();return g}
+for(let i=0;i<N;i++){const j=(i+1)%N,m=new THREE.Mesh(quad(vertsT[i],vertsT[j],vertsB[j],vertsB[i]),new THREE.MeshBasicMaterial({map:texture(i,false),side:THREE.DoubleSide,toneMapped:false}));m.userData={i,open:false};root.add(m);clickable.push(m)}
+// Flush shared steel seams.
+function seam(a,b){const d=b.clone().sub(a),len=d.length(),bar=new THREE.Mesh(new THREE.CylinderGeometry(.065,.065,len,6),steel);bar.position.copy(a.clone().add(b).multiplyScalar(.5));bar.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());root.add(bar)}for(let i=0;i<N;i++){const j=(i+1)%N;seam(vertsT[i],vertsT[j]);seam(vertsB[i],vertsB[j]);seam(vertsT[i],vertsB[i])}
+// Vertical counterweight assembly, matching the approved left-side concept.
+// Pegs leave the open top and bottom of the display housing, never crossing a sign.
+const verticalPegMat=steel;
+const socketMat=new THREE.MeshPhysicalMaterial({color:0xcfd7dc,metalness:1,roughness:.13,clearcoat:.92,clearcoatRoughness:.035});
+function addSocket(y){
+ const socket=new THREE.Mesh(new THREE.CylinderGeometry(.24,.24,.24,24),socketMat);socket.position.y=y;root.add(socket);
+ const collar=new THREE.Mesh(new THREE.TorusGeometry(.25,.055,12,48),steel);collar.rotation.x=Math.PI/2;collar.position.y=y;root.add(collar);
+}
+addSocket(H/2+.13);addSocket(-H/2-.13);
+for(const side of [-1,1]){
+ const startY=side*(H/2+.23),stoneY=side*2.62;
+ const pegLength=Math.abs(stoneY-startY)-.58;
+ const peg=new THREE.Mesh(new THREE.CylinderGeometry(.105,.105,pegLength,20),verticalPegMat);
+ peg.position.y=(startY+stoneY-side*.58)/2;root.add(peg);
+ const stone=new THREE.Mesh(new THREE.DodecahedronGeometry(.82,0),dark);
+ stone.position.y=stoneY;stone.rotation.set(.16,side*.30,.10);root.add(stone);
+ // Raised stainless rim follows every stone edge.
+ const stoneEdges=new THREE.LineSegments(new THREE.EdgesGeometry(stone.geometry,18),new THREE.LineBasicMaterial({color:0xe7edf0}));
+ stoneEdges.scale.setScalar(1.015);stone.add(stoneEdges);
+}
+const core=new THREE.Mesh(new THREE.SphereGeometry(.48,36,24),glass);root.add(core);
+const coreGlow=new THREE.Mesh(new THREE.SphereGeometry(.24,24,18),new THREE.MeshBasicMaterial({color:0xff315f}));root.add(coreGlow);
+const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();let drag=false,moved=false,lx=0,ly=0;renderer.domElement.onpointerdown=e=>{drag=true;moved=false;lx=e.clientX;ly=e.clientY};renderer.domElement.onpointermove=e=>{if(!drag)return;let dx=e.clientX-lx,dy=e.clientY-ly;if(Math.abs(dx)+Math.abs(dy)>3)moved=true;root.rotation.y+=dx*.008;root.rotation.x=THREE.MathUtils.clamp(root.rotation.x+dy*.005,-1,1);lx=e.clientX;ly=e.clientY};renderer.domElement.onpointerup=e=>{drag=false;if(moved)return;const r=renderer.domElement.getBoundingClientRect();mouse.x=(e.clientX-r.left)/r.width*2-1;mouse.y=-(e.clientY-r.top)/r.height*2+1;ray.setFromCamera(mouse,camera);const h=ray.intersectObjects(clickable,false)[0];if(!h)return;const m=h.object;m.userData.open=!m.userData.open;if(m.material.map)m.material.map.dispose();m.material.map=texture(m.userData.i,m.userData.open);m.material.needsUpdate=true};renderer.domElement.onwheel=e=>{e.preventDefault();camera.position.z=THREE.MathUtils.clamp(camera.position.z+e.deltaY*.007,6.5,11)};
+function animate(t){requestAnimationFrame(animate);if(!drag)root.rotation.y+=.0017;root.position.y=Math.sin(t*.0012)*.1;coreGlow.scale.setScalar(.85+.18*Math.sin(t*.004));renderer.render(scene,camera)}requestAnimationFrame(animate);onresize=()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)};
+})();</script>
+<script id="round1083-ai101-first-frame-signal">
+(()=>{'use strict';let sent=false,raf=0;const send=()=>{if(sent)return;sent=true;try{parent.postMessage({type:'automated-hearts:model-first-frame'},'*')}catch(_){}};const check=()=>{if(document.querySelector('canvas')){requestAnimationFrame(()=>requestAnimationFrame(send));return}raf=requestAnimationFrame(check)};check();addEventListener('pagehide',()=>{if(raf)cancelAnimationFrame(raf)},{once:true});})();
+</script>
+</body></html>

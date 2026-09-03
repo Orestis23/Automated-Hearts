@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><script src="./round1096-interaction-stability.js?v=1097r"></script><script id="r1064-deployment-router-disable">window.__AH_DISABLE_PERSISTENT_ROUTER=true;</script><style id="r1064-deployment-shield-critical">@view-transition{navigation:none}html.page-shield-arrival body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel{transform:translate3d(0,0,0)!important;-webkit-transform:translate3d(0,0,0)!important;transition:none!important}html.ah-persistent-content-active body>main#main-content{visibility:visible!important;pointer-events:auto!important}#ah-persistent-page-frame,#ah-persistent-route-loading{display:none!important;visibility:hidden!important;pointer-events:none!important}</style><script id="r1037-embed-early">try{if(window.self!==window.top&&new URLSearchParams(location.search).has('ah_embed'))document.documentElement.classList.add('ah-embedded-page')}catch(e){}</script><script id="r913-message-state-early">try{document.documentElement.classList.toggle('ah-message-persist-open',sessionStorage.getItem('ah-message-open-v1')==='1')}catch(e){}</script><style id="r913-message-critical">html body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-color:transparent!important;background-image:url("./assets/message-button-square-footer-match-round1095.svg?v=1095r")!important;background-position:top right!important;background-size:100% 100%!important;background-repeat:no-repeat!important;border:0!important;box-shadow:none!important;filter:brightness(1.36) saturate(1.08) contrast(1.06) drop-shadow(0 5px 6px rgba(0,0,0,.48)) drop-shadow(0 0 8px rgba(143,255,215,.25))!important}html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-image:url("./assets/message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;transform:translate3d(0,4px,0)!important}</style><link as="image" fetchpriority="high" href="./assets/footer-button-message-border-match-round1095.svg?v=1095r" rel="preload"/><link as="image" fetchpriority="high" href="./assets/message-button-square-footer-match-round1095.svg?v=1095r" rel="preload"/><style id="r1034-hardware-critical">:root{--r1034-footer-rest:url("./assets/footer-button-message-border-match-round1095.svg?v=1095r");--r1034-footer-pressed:url("./assets/footer-button-message-border-match-pressed-round1095.svg?v=1095r");--r1034-message-rest:url("./assets/message-button-square-footer-match-round1095.svg?v=1095r");--r1034-message-pressed:url("./assets/message-button-square-footer-match-pressed-round1095.svg?v=1095r");--r1005-message-size:84px;--r1005-message-top:6px;--r1005-message-right:6px;--r1005-message-face:var(--r1034-message-rest)}html.ah-message-persist-open{--r1005-message-face:var(--r1034-message-pressed)}body[data-page]>.ah-persistent-outer-rim{position:fixed!important;inset:0!important;opacity:1!important;visibility:visible!important;transition:none!important;animation:none!important}body[data-page]>.ah-persistent-gold-rim{opacity:1!important;visibility:visible!important;transition:none!important;animation:none!important}body[data-page]>a#header-send-message{position:fixed!important;top:var(--r1005-message-top)!important;right:var(--r1005-message-right)!important;width:var(--r1005-message-size)!important;height:var(--r1005-message-size)!important;background-image:var(--r1005-message-face)!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;transition:none!important}body[data-page]>footer#site-footer{position:fixed!important;left:0!important;right:0!important;bottom:0!important;height:96px!important;transition:none!important}body[data-page]>footer#site-footer nav#primary-nav{position:absolute!important;left:24px!important;right:24px!important;top:50%!important;height:70px!important;transform:translateY(-50%)!important}body[data-page]>footer#site-footer nav#primary-nav>.primary-nav__group{display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important;height:70px!important;gap:18px!important}body[data-page]>footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]{flex:0 0 220px!important;width:220px!important;min-width:220px!important;max-width:220px!important;height:70px!important;min-height:70px!important;max-height:70px!important;background-image:var(--r1034-footer-rest)!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;transition:none!important}@media(max-width:1100px){body[data-page]>footer#site-footer{height:88px!important}}@media(max-width:760px){:root{--r1005-message-size:37.5px;--r1005-message-top:max(15.25px,calc(env(safe-area-inset-top,0px) + 15.25px));--r1005-message-right:max(14.25px,calc(env(safe-area-inset-right,0px) + 14.25px))}body[data-page]>footer#site-footer{height:78px!important}body[data-page]>footer#site-footer nav#primary-nav{left:3px!important;right:3px!important;height:52px!important}body[data-page]>footer#site-footer nav#primary-nav>.primary-nav__group{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;height:52px!important;gap:2px!important}body[data-page]>footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]{flex:none!important;width:100%!important;min-width:0!important;max-width:none!important;height:50px!important;min-height:50px!important;max-height:50px!important}}@media(max-width:360px){:root{--r1005-message-size:34.5px;--r1005-message-top:max(14.75px,calc(env(safe-area-inset-top,0px) + 14.75px));--r1005-message-right:max(13.75px,calc(env(safe-area-inset-right,0px) + 13.75px))}}</style>
+<script id="r916-message-face-prewarm">(function(){try{var u=["./assets/message-button-square-footer-match-round1095.svg?v=1095r"];window.__ahMessageFacePrewarm=u.map(function(src){var i=new Image();i.decoding="async";i.src=src;if(i.decode)i.decode().catch(function(){});return i;});}catch(e){}})();</script>
+<meta charset="utf-8"/>
+<script>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js", "page-ready");
+        var routedArrival = false;
+        try {
+          routedArrival = sessionStorage.getItem("ah-page-shield") === "1";
+          sessionStorage.removeItem("ah-page-shield");
+        } catch (error) {}
+        try {
+          var routedUrl = new URL(window.location.href);
+          if (routedUrl.searchParams.get("ah-route") === "1") routedArrival = true;
+          if (routedUrl.searchParams.has("ah-route")) {
+            routedUrl.searchParams.delete("ah-route");
+            history.replaceState(history.state, "", routedUrl.href);
+          }
+        } catch (error) {}
+        if (routedArrival) {
+          root.classList.add("page-shield-arrival", "routed-page-arrival");
+        }
+      })();
+    </script>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><style id="r1036-shell-persistence-critical">
+@view-transition{navigation:none}
+body[data-page]>.ah-persistent-outer-rim{view-transition-name:ah-outer-rim!important}body[data-page]>.ah-persistent-gold-rim{view-transition-name:ah-gold-rim!important}body[data-page]>.rim-heart-emblem{view-transition-name:ah-rim-heart!important}body[data-page]>.rim-page-name-screen{view-transition-name:ah-page-screen!important}body[data-page]>#header-send-message{view-transition-name:ah-message-button!important}body[data-page]>#home-ticker-wrap{view-transition-name:ah-ticker-hardware!important}body[data-page]>#site-footer{view-transition-name:ah-footer-hardware!important}
+</style>
+<style id="viewport-shell-critical">
+:root{--r919-rim-size:clamp(1280px,83.333vw,2560px);}
+html,body{background-color:#000!important;background-image:none!important;background-position:center center!important;background-size:var(--r919-rim-size) var(--r919-rim-size)!important;background-repeat:repeat!important;background-attachment:fixed!important;background-blend-mode:normal!important;}
+html:not(.ah-shell-dom-ready)::after{content:""!important;position:fixed!important;z-index:2147483250!important;top:var(--current-frame-top,96px)!important;right:var(--current-frame-side,88px)!important;bottom:var(--current-frame-bottom,96px)!important;left:var(--current-frame-side,88px)!important;box-sizing:border-box!important;display:block!important;border:2px solid rgba(214,178,87,.94)!important;border-radius:var(--current-frame-radius,32px)!important;background:transparent!important;box-shadow:0 0 0 2px rgba(31,19,3,.96),0 0 0 4px rgba(232,202,126,.30),0 0 10px rgba(216,176,76,.24),inset 0 0 0 1px rgba(255,239,194,.28),inset 0 0 0 4px rgba(2,5,8,.30)!important;pointer-events:none!important;}
+html.page-shield-arrival:not(.ah-shield-dom-ready)::before{content:""!important;position:fixed!important;z-index:2147483190!important;top:var(--current-frame-top,96px)!important;right:var(--current-frame-side,88px)!important;bottom:var(--current-frame-bottom,96px)!important;left:var(--current-frame-side,88px)!important;display:block!important;box-sizing:border-box!important;border:1px solid rgba(143,255,215,.24)!important;border-radius:calc(var(--current-frame-radius,32px) - 2px)!important;background:#08172b url("./assets/page-shield-embossed-strong-round1067.webp") center/cover no-repeat!important;box-shadow:inset 0 0 0 1px rgba(0,0,0,.62)!important;pointer-events:none!important;}
+
+html,body{min-height:100%;
+        margin:0;
+        background-color:#000;
+        background-image:none;
+        background-size:clamp(1280px,83.333vw,2560px) clamp(1280px,83.333vw,2560px);
+        background-position:center center;
+        background-repeat:repeat;
+        background-attachment:fixed;
+        background-blend-mode:normal;
+        color-scheme:dark;}
+body[data-page] > .rim-heart-emblem{position: fixed;
+        z-index: 10075;
+        top: calc((96px - 122px) / 2 + 3px);
+        left: calc((88px - 110px) / 2);
+        display: block;
+        width: 110px;
+        height: 122px;
+        background: url("./assets/rim-heart-embossed-round291.webp")
+          center/contain no-repeat;
+        opacity: 1;
+        visibility: visible;
+        filter: brightness(1.42) contrast(1.42) saturate(0.82);}
+body[data-page]::after{content: "";
+        position: fixed;
+        z-index: 1520;
+        top: 96px;
+        right: 88px;
+        bottom: 78px;
+        left: 88px;
+        box-sizing: border-box;
+        border: 2px solid rgba(214, 178, 87, 0.94);
+        border-radius: 28px;
+        pointer-events: none;
+        box-shadow:
+          0 0 0 2px rgba(31, 19, 3, 0.96),
+          0 0 0 4px rgba(232, 202, 126, 0.3),
+          0 0 10px rgba(216, 176, 76, 0.24),
+          inset 0 0 0 1px rgba(255, 239, 194, 0.28),
+          inset 0 0 0 4px rgba(2, 5, 8, 0.3);}
+@media (max-width: 1100px){body[data-page] > .rim-heart-emblem{top: calc((88px - 122px) / 2 + 2px);
+          left: calc((80px - 110px) / 2);}
+body[data-page]::after{top: 88px;
+          right: 80px;
+          bottom: 88px;
+          left: 80px;}}
+@media (max-width: 760px){html,body{background-size:cover;}}
+@media (max-width: 760px){body[data-page] > .rim-heart-emblem{top: calc((78px - 83px) / 2 + 1px);
+          left: calc((66px - 74px) / 2);
+          width: 74px;
+          height: 83px;}
+body[data-page]::after{top: 78px;
+          right: 66px;
+          bottom: 78px;
+          left: 66px;}}
+body[data-page] > footer#site-footer.site-footer--minimal{position: fixed !important;
+        z-index: 1510 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 96px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        overflow: hidden !important;}
+body[data-page] > footer#site-footer > .minimal-footer-row{position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: transparent !important;}
+@media (max-width: 1100px){body[data-page] > footer#site-footer.site-footer--minimal{height: 88px !important;}}
+@media (max-width: 760px){body[data-page] > footer#site-footer.site-footer--minimal{height: 78px !important;}}
+body[data-page] > header.site-header{z-index: 1510 !important;
+        pointer-events: none !important;}
+body[data-page] > .rim-page-name-screen{--page-sign-fill-color: #ff2ea8;
+        --page-sign-inverse-color: #ff2ea8;
+        position: fixed !important;
+        z-index: 2147483200 !important;
+        top: 48px !important;
+        left: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        width: 716px !important;
+        height: 58px !important;
+        margin: 0 !important;
+        padding: 6.25px 15px !important;
+        overflow: hidden !important;
+        border: 2.5px solid #8fffd7 !important;
+        border-radius: 17.5px !important;
+        background: linear-gradient(180deg, #0a2037, #020914) !important;
+        box-shadow:
+          0 0 0 2.5px rgba(3, 4, 5, 0.94),
+          0 0 8px rgba(143, 255, 215, 0.44),
+          inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translate(-50%, -50%) !important;
+        pointer-events: none !important;}
+body[data-page]
+        > .rim-page-name-screen
+        > :is(.footer-page-led, .header-page-led){display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 6px !important;
+        overflow: hidden !important;
+        font-family: "Share Tech Mono", "Courier New", monospace !important;
+        font-size: 20pt !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        letter-spacing: 0.001em !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        opacity: 1 !important;
+        visibility: visible !important;}
+@media (max-width: 1100px){body[data-page] > .rim-page-name-screen{top: 44px !important;}}
+@media (max-width: 760px){body[data-page] > .rim-page-name-screen{top: 39px !important;
+          width: min(560px, calc(100vw - 120px)) !important;
+          height: 48px !important;
+          padding: 5px 11.25px !important;}
+body[data-page]
+          > .rim-page-name-screen
+          > :is(.footer-page-led, .header-page-led){font-size: 18.75pt !important;
+          padding-inline: 3.75px !important;}}
+body[data-page] > .page-transition-shield{position: fixed !important;
+        z-index: 2147483000 !important;
+        top: var(--current-frame-top, 96px) !important;
+        right: var(--current-frame-side, 88px) !important;
+        bottom: var(--current-frame-bottom, 96px) !important;
+        left: var(--current-frame-side, 88px) !important;
+        display: block !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+        border: 0 solid transparent !important;
+        border-radius: calc(var(--current-frame-radius, 32px) - 2px) !important;
+        pointer-events: none !important;
+        background: transparent !important;
+        contain: strict !important;
+        isolation: isolate !important;
+        transform: translateZ(0) !important;
+        backface-visibility: hidden !important;}
+body[data-page] > .page-transition-shield::before{content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        display: block !important;
+        border-radius: inherit !important;
+        background-color: #08172b !important;
+        background-image:
+          radial-gradient(ellipse 48% 42% at 20% 22%, rgba(88,137,182,.16), transparent 72%),
+          radial-gradient(ellipse 45% 38% at 82% 76%, rgba(191,43,133,.10), transparent 74%),
+          linear-gradient(180deg, rgba(255,255,255,.035), rgba(0,0,0,.20)),
+          url("./assets/page-shield-embossed-strong-round1067.webp") !important;
+        background-position: center, center, center, center !important;
+        background-size: auto, auto, 100% 100%, cover !important;
+        background-repeat: no-repeat !important;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,.62) !important;
+        transform: translate3d(0,-100.6%,0) !important;
+        transform-origin: 50% 0 !important;
+        backface-visibility: hidden !important;
+        will-change: transform !important;
+        pointer-events: none !important;}
+html.page-shield-arrival body[data-page] > .page-transition-shield{pointer-events: auto !important;
+        background-color: #08172b !important;
+        background-image:
+          radial-gradient(ellipse 48% 42% at 20% 22%, rgba(88,137,182,.16), transparent 72%),
+          radial-gradient(ellipse 45% 38% at 82% 76%, rgba(191,43,133,.10), transparent 74%),
+          linear-gradient(180deg, rgba(255,255,255,.035), rgba(0,0,0,.20)),
+          url("./assets/page-shield-embossed-strong-round1067.webp") !important;
+        background-position: center, center, center, center !important;
+        background-size: auto, auto, 100% 100%, cover !important;
+        background-repeat: no-repeat !important;}
+html.page-shield-covering body[data-page] > .page-transition-shield{pointer-events: auto !important;}
+html.page-shield-arrival body[data-page] > .page-transition-shield::before,html.page-shield-covering body[data-page] > .page-transition-shield::before{transform: translate3d(0,0,0) !important;}
+html.page-shield-arrival body[data-page] > .page-transition-shield::before{transition: none !important;}
+@media (max-width: 760px){body[data-page] > .page-transition-shield{top: var(--current-frame-top, 78px) !important;
+          right: var(--current-frame-side, 66px) !important;
+          bottom: var(--current-frame-bottom, 78px) !important;
+          left: var(--current-frame-side, 66px) !important;}}
+
+/* Round 911 critical persistent shell: same pixels before external CSS arrives. */
+:root{--current-frame-side:88px;--current-frame-top:96px;--current-frame-bottom:96px;--current-frame-radius:32px;--r911-rim-size:clamp(1280px,83.333vw,2560px);}
+html,body{background-color:#000!important;background-image:none!important;background-position:center!important;background-size:var(--r911-rim-size) var(--r911-rim-size)!important;background-repeat:repeat!important;}
+body[data-page]::after{display:none!important;content:none!important;}
+body[data-page]>.ah-persistent-outer-rim{position:fixed;inset:0;z-index:2147483200;display:block;pointer-events:none;overflow:hidden;contain:strict;isolation:isolate;}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge{position:absolute;inset:0;display:block;background:#06101d url("./assets/solution-formula-current-brand-round823.webp") center/var(--r911-rim-size) var(--r911-rim-size) repeat;}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--top{clip-path:inset(0 0 calc(100% - var(--current-frame-top)) 0)}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--bottom{clip-path:inset(calc(100% - var(--current-frame-bottom)) 0 0 0)}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--left{clip-path:inset(0 calc(100% - var(--current-frame-side)) 0 0)}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--right{clip-path:inset(0 0 0 calc(100% - var(--current-frame-side)))}
+body[data-page]>.ah-persistent-gold-rim{position:fixed;z-index:2147483250;top:var(--current-frame-top);right:var(--current-frame-side);bottom:var(--current-frame-bottom);left:var(--current-frame-side);box-sizing:border-box;border:2px solid rgba(214,178,87,.94);border-radius:var(--current-frame-radius);pointer-events:none;box-shadow:0 0 0 2px rgba(31,19,3,.96),0 0 0 4px rgba(232,202,126,.30),0 0 10px rgba(216,176,76,.24),inset 0 0 0 1px rgba(255,239,194,.28),inset 0 0 0 4px rgba(2,5,8,.30);}
+body[data-page]>.viewport-carbon-backdrop,body[data-page]>.viewport-frame-edges{display:none!important;}
+/* Round 912 critical persistent hardware */
+body[data-page]>:is(.rim-heart-emblem,.rim-page-name-screen,#header-send-message,#site-footer){z-index:2147483300!important;}
+body[data-page]>footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]{border:0!important;outline:0!important;background-color:transparent!important;background-image:url("./assets/footer-button-message-border-match-round1095.svg?v=1095r")!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;box-shadow:none!important;}
+body[data-page]>footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]::before,body[data-page]>footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]::after{content:none!important;display:none!important;}
+@media(max-width:1100px){:root{--current-frame-side:80px;--current-frame-top:88px;--current-frame-bottom:88px;}}
+@media(max-width:760px){:root{--current-frame-side:66px;--current-frame-top:78px;--current-frame-bottom:78px;--r911-rim-size:800px;}}
+</style>
+<style id="r916-shield-message-critical">
+html body[data-page][class][class][class]>.page-transition-shield.page-transition-shield{background-color:#08172b!important;background-image:url("./assets/page-shield-embossed-strong-round1067.webp")!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;transform:translate3d(0,-102%,0)!important;transition:transform 2000ms cubic-bezier(.22,.66,.24,1)!important;will-change:transform!important;backface-visibility:hidden!important;clip-path:none!important}
+html body[data-page]>.page-transition-shield::before,html body[data-page]>.page-transition-shield::after{content:none!important;display:none!important;animation:none!important;transition:none!important}
+html.page-shield-arrival body[data-page]>.page-transition-shield,html.page-shield-covering body[data-page]>#page-transition-shield.page-transition-shield{transform:translate3d(0,0,0)!important}
+html.page-shield-revealing body[data-page]>#page-transition-shield.page-transition-shield{transform:translate3d(0,-102%,0)!important}
+html body[data-page][class][class][class][class][class][class][class][class] > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched),html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-image:url("./assets/message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;transform:translate3d(0,4px,0)!important}
+</style>
+<style id="r917-shield-home-critical">
+html body[data-page]>.page-transition-shield.page-transition-shield{position:fixed!important;z-index:2147483190!important;top:var(--current-frame-top,96px)!important;right:var(--current-frame-side,88px)!important;bottom:var(--current-frame-bottom,96px)!important;left:var(--current-frame-side,88px)!important;display:block!important;overflow:hidden!important;background:none!important;opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important;contain:paint!important;isolation:isolate!important;pointer-events:none!important}
+html body[data-page]>.page-transition-shield.page-transition-shield::before{content:""!important;position:absolute!important;inset:0!important;display:block!important;border-radius:inherit!important;background:#08172b url("./assets/page-shield-embossed-strong-round1067.webp") center/cover no-repeat!important;opacity:1!important;visibility:visible!important;transform:translate3d(0,-102%,0)!important;transition:transform 2000ms cubic-bezier(.22,.66,.24,1)!important;will-change:transform!important;backface-visibility:hidden!important}
+html body[data-page]>.page-transition-shield.page-transition-shield::after{content:none!important;display:none!important}
+html.page-shield-arrival body[data-page]>.page-transition-shield.page-transition-shield::before,html.page-shield-covering body[data-page]>.page-transition-shield.page-transition-shield::before{transform:translate3d(0,0,0)!important}
+html.page-shield-revealing body[data-page]>.page-transition-shield.page-transition-shield::before{transform:translate3d(0,-102%,0)!important}
+</style>
+<title>About Us &amp; Privacy | Automated Hearts</title>
+<meta content="Learn how Automated Hearts approaches human-centered automation, community giving, responsible AI adoption, privacy, security, and transparent technology for small businesses." name="description"/>
+<meta content="#06101d" name="theme-color"/>
+<link href="./about.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="About Us &amp; Privacy | Automated Hearts" property="og:title"/>
+<meta content="Learn how Automated Hearts approaches human-centered automation, community giving, responsible AI adoption, privacy, security, and transparent technology for small businesses." property="og:description"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="About Us &amp; Policies | Automated Hearts" name="twitter:title"/>
+<meta content="Meet Automated Hearts, a transparent small business AI consulting and automation partner focused on people, practical progress, and clear answers." name="twitter:description"/>
+<link href="./assets/favicon.ico" rel="icon" sizes="any"/>
+<link as="image" fetchpriority="high" href="./assets/rim-heart-embossed-round291.webp" rel="preload"/>
+<link as="image" href="./assets/button-leather-grain-visible-round794.webp" rel="preload"/>
+<link href="./assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&amp;family=Rajdhani:wght@400;500;600;700&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet"/>
+<noscript></noscript>
+<link as="image" href="./assets/page-shield-embossed-strong-round1067.webp" rel="preload"/>
+<script defer="" src="./ah-js-bundle-01.js?v=1096r"></script>
+<script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "About Us & Policies",
+        "description": "Meet Automated Hearts, a transparent small business AI consulting and automation partner focused on people, practical progress, and clear answers."
+      }
+    </script>
+<link href="./lean-about-1062.css?v=1097r" rel="stylesheet"/>
+<!-- Round 618: canonical Automated Hearts color and typography system applied to About Us & Policies only. -->
+<style id="r1035-shell-shield-critical">
+:root{--r1035-shield-duration:2000ms;--r1035-shield-ease:cubic-bezier(.20,.72,.22,1)}
+body[data-page]>.ah-persistent-outer-rim,body[data-page]>.ah-persistent-gold-rim,body[data-page]>.rim-heart-emblem,body[data-page]>.rim-page-name-screen,body[data-page]>#header-send-message,body[data-page]>#home-ticker-wrap,body[data-page]>#site-footer{visibility:visible!important;opacity:1!important}
+body[data-page]>#page-transition-shield.page-transition-shield{transform:none!important;transition:none!important;background:none!important;background-image:none!important;overflow:hidden!important}
+body[data-page]>#page-transition-shield.page-transition-shield::before,body[data-page]>#page-transition-shield.page-transition-shield::after{content:none!important;display:none!important;background:none!important;background-image:none!important}
+body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel{position:absolute!important;inset:0!important;display:block!important;background:#08172b url("./assets/page-shield-embossed-strong-round1067.webp") center/cover no-repeat!important;transform:translate3d(0,-100.5%,0)!important;transition:transform var(--r1035-shield-duration) var(--r1035-shield-ease)!important;will-change:transform!important;backface-visibility:hidden!important}
+html.page-shield-arrival body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel,html.page-shield-covering body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel,html[data-page-shield-state="covered"] body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel{transform:translate3d(0,0,0)!important}
+@media(max-width:760px){body[data-page]>a.rim-heart-emblem.rim-heart-home-link{position:fixed!important;top:0!important;left:-4px!important;width:74px!important;height:83px!important;margin:0!important}}
+@media(max-width:374px){body[data-page]>a.rim-heart-emblem.rim-heart-home-link{left:-3px!important;width:70px!important;height:78px!important}}
+</style>
+<link href="./round1063-shield-model-performance.css?v=1063r" rel="stylesheet"/><link href="./round1064-vercel-navigation-shield-fix.css?v=1064r" rel="stylesheet"/><link href="./round1068-about-format-mobile-scroll.css?v=1068r" rel="stylesheet"/><link href="./round1069-about-clean-scroll-authority.css?v=1069r" rel="stylesheet"/>
+<link href="./round1087-who-help-bottom-return-about-layout.css?v=1087r" rel="stylesheet"/><link href="./round1094-shield-rolodex-authority.css?v=1094r" rel="stylesheet"/><link href="./round1095-depth-matte-authority.css?v=1095r" rel="stylesheet"/><link href="./round1096-interaction-stability.css?v=1096r" rel="stylesheet"/></head>
+<body class="page-about" data-page="about">
+<div aria-hidden="true" class="ah-persistent-outer-rim"><span class="ah-shell-edge ah-shell-edge--top"></span><span class="ah-shell-edge ah-shell-edge--right"></span><span class="ah-shell-edge ah-shell-edge--bottom"></span><span class="ah-shell-edge ah-shell-edge--left"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--tl"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--tr"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--bl"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--br"></span></div><div aria-hidden="true" class="ah-persistent-gold-rim"></div><script id="r919-shell-dom-ready">document.documentElement.classList.add("ah-shell-dom-ready");</script>
+<div aria-hidden="true" class="page-transition-shield" id="page-transition-shield"><span aria-hidden="true" class="page-transition-shield__panel"></span></div><script id="r919-shield-dom-ready">document.documentElement.classList.add("ah-shield-dom-ready");</script>
+<a aria-label="Go to homepage" class="rim-heart-emblem rim-heart-home-link" href="./index.html" id="rim-heart-home"><span aria-hidden="true" class="rim-heart-home-link__glow"></span><span class="sr-only">Home</span></a><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="shell header-inner">
+<a aria-label="Automated Hearts home" class="brand" href="./index.html"><img alt="" class="brand-mark" decoding="async" height="64" src="./assets/heart-logo.webp" width="64"/><span class="brand-name"><strong>Automated</strong> Hearts</span></a>
+</div>
+</header>
+<div aria-label="Current page: About Us &amp; Policies" class="footer-page-screen rim-page-name-screen header-page-screen header-page-screen--top header-page-screen-round339 r383-reference-screen" role="status">
+<span aria-label="About Us &amp; Policies" class="footer-page-led header-page-led screen-text-canonical screen-text-canonical--green screen-text-size-page r383-reference-text" data-text="About Us &amp; Privacy">About Us &amp; Privacy</span>
+<span aria-hidden="true" class="r488-extra-matte-film"></span></div>
+<a aria-label="Send Message" class="r973-pink-edge header-send-message mechanical-send-control" data-contact-origin="header" data-contact-trigger="" data-nav="contact" href="#contact" id="header-send-message" style="position:fixed!important;z-index:2147483646!important;top:var(--r1005-message-top)!important;right:var(--r1005-message-right)!important;bottom:auto!important;left:auto!important;display:block!important;visibility:visible!important;opacity:1!important;width:var(--r1005-message-size)!important;min-width:var(--r1005-message-size)!important;max-width:var(--r1005-message-size)!important;height:var(--r1005-message-size)!important;min-height:var(--r1005-message-size)!important;max-height:var(--r1005-message-size)!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:visible!important;background-color:transparent!important;background-image:var(--r1005-message-face)!important;background-position:center!important;background-size:100% 100%!important;background-repeat:no-repeat!important;border:0!important;border-radius:0!important;outline:0!important;box-shadow:none!important;filter:none!important;clip-path:none!important;-webkit-clip-path:none!important;mask:none!important;-webkit-mask:none!important;transform:var(--r1005-message-transform)!important;translate:none!important;scale:none!important;rotate:none!important;-webkit-appearance:none!important;appearance:none!important;pointer-events:auto!important;"><span aria-hidden="true" class="r1005-message-envelope"><svg focusable="false" viewbox="0 0 32 22"><path d="M2.5 2.5h27v17h-27z"></path><path d="m3.5 4 12.5 9L28.5 4"></path><path d="m3.5 18 8.8-7.1M28.5 18l-8.8-7.1"></path></svg></span></a>
+<main class="r1061-about-main" id="main-content">
+<section aria-labelledby="r1061-about-title" class="r1061-about-philosophy">
+<div class="r1061-about-shell">
+<div class="r1061-about-intro">
+<h1 id="r1061-about-title">Built Around Four Principles</h1>
+</div>
+<div class="r1061-about-tablet-stack">
+<article class="r1061-about-tablet" data-theme="human">
+<div class="r1061-about-medallion-wrap">
+<div aria-hidden="true" class="r1061-about-medallion">
+<svg role="img" viewbox="0 0 120 120">
+<path d="M31 84c-10-5-16-15-16-27 0-17 13-31 30-31 10 0 19 5 24 12"></path>
+<path d="M26 84c7-11 17-16 29-16 12 0 22 5 29 16"></path>
+<circle cx="47" cy="49" r="12"></circle>
+<path class="r1061-svg-secondary" d="M82 29v11m0 40v11M59 60H48m45 0h11M66 44l-8-8m32 32 8 8M66 76l-8 8m32-32 8-8"></path>
+<circle class="r1061-svg-secondary" cx="82" cy="60" r="19"></circle>
+<circle class="r1061-svg-secondary" cx="82" cy="60" r="6"></circle>
+</svg>
+</div>
+</div>
+<div class="r1061-about-copy-well">
+<h2>Human + AI Partnership</h2>
+<ul class="r1061-point-grid r1087-four-box-grid">
+<li class="r1087-subhead-box">Automate repetition. Keep human judgment.</li>
+<li>AI organizes information and handles routine work.</li>
+<li>People retain decisions, creativity, empathy, expertise, and relationships.</li>
+<li>Human review stays in place where consequences matter.</li>
+</ul>
+</div>
+</article>
+<article class="r1061-about-tablet" data-theme="community">
+<div class="r1061-about-medallion-wrap">
+<div aria-hidden="true" class="r1061-about-medallion">
+<svg role="img" viewbox="0 0 120 120">
+<path d="M60 81S27 62 27 41c0-11 8-19 19-19 7 0 12 3 14 9 3-6 8-9 15-9 11 0 19 8 19 19 0 21-34 40-34 40Z"></path>
+<path class="r1061-svg-secondary" d="M18 91c9-12 20-18 34-18h16c14 0 25 6 34 18M32 91l12 9m44-9-12 9"></path>
+</svg>
+</div>
+</div>
+<div class="r1061-about-copy-well">
+<h2>Community Impact + Transition Support</h2>
+<ul class="r1061-point-grid r1087-four-box-grid">
+<li class="r1087-subhead-box">Move forward without leaving people behind.</li>
+<li>10% of project proceeds support charitable causes.</li>
+<li>Small businesses get access to useful technology without enterprise-scale complexity.</li>
+<li>Teams receive clear explanations, practical training, and ongoing support for confident adoption.</li>
+</ul>
+</div>
+</article>
+<article class="r1061-about-tablet" data-theme="strategy">
+<div class="r1061-about-medallion-wrap">
+<div aria-hidden="true" class="r1061-about-medallion">
+<svg role="img" viewbox="0 0 120 120">
+<path d="M23 25h30v28H23zM67 25h30v28H67zM23 67h30v28H23zM67 67h30v28H67z"></path>
+<path class="r1061-svg-secondary" d="M53 39h14M38 53v14M82 53v14M53 81h14"></path>
+<circle class="r1061-svg-secondary" cx="60" cy="60" r="10"></circle>
+</svg>
+</div>
+</div>
+<div class="r1061-about-copy-well">
+<h2>Practical, Minimal Strategy</h2>
+<div aria-label="Our practical process" class="r1061-process-grid">
+<div class="r1061-process-step">Understand</div>
+<div class="r1061-process-step">Simplify</div>
+<div class="r1061-process-step">Connect</div>
+<div class="r1061-process-step">Automate</div>
+<div class="r1061-process-step">Measure</div>
+</div>
+<p class="r1061-cost-line"><span class="r1087-strategy-lead">Use the simplest effective solution.</span> This reduces wasted time, duplicate work, unnecessary subscriptions, avoidable errors, and long-term maintenance costs.</p>
+</div>
+</article>
+<article class="r1061-about-tablet" data-theme="privacy">
+<div class="r1061-about-medallion-wrap">
+<div aria-hidden="true" class="r1061-about-medallion">
+<svg role="img" viewbox="0 0 120 120">
+<path d="M60 15 94 28v25c0 24-14 41-34 52-20-11-34-28-34-52V28Z"></path>
+<rect class="r1061-svg-secondary" height="27" rx="4" width="32" x="44" y="52"></rect>
+<path class="r1061-svg-secondary" d="M50 52v-8c0-7 4-12 10-12s10 5 10 12v8M60 63v7"></path>
+</svg>
+</div>
+</div>
+<div class="r1061-about-copy-well">
+<h2>Privacy by Design</h2>
+<div class="r1061-privacy-philosophy r1087-four-box-grid">
+<p class="r1087-subhead-box">Privacy is part of the architecture, not an afterthought.</p>
+<p>Trust should be designed into a system from the beginning.</p>
+<p>Data choices should be intentional, understandable, and proportionate to the business need.</p>
+<p>People should know where human approval remains in place.</p>
+</div>
+<details class="r1061-policy-console" id="policies">
+<summary>
+<span class="r1061-policy-title">Privacy Policy</span>
+<span class="r1061-policy-subtitle">How information is collected, used, shared, retained, and protected</span>
+<span aria-hidden="true" class="r1061-policy-toggle">+</span>
+</summary>
+<div class="r1061-policy-content">
+<section class="r1061-policy-wide"><h3>1. Scope</h3><p>This Privacy Policy explains how Automated Hearts collects, uses, discloses, retains, and protects personal information when you visit automatedhearts.com, contact us, request information, or work with us on a website, automation, AI, or related project. It applies to information handled by Automated Hearts; third-party websites, platforms, applications, and services have their own privacy practices.</p></section>
+<section><h3>2. Information You Provide</h3><p>When you contact Automated Hearts, we may receive your name, email address, business or organization name, business type, message, project requirements, files, workflow information, and other information you voluntarily provide.</p></section>
+<section><h3>3. Project Information</h3><p>During a client project, we may receive business records, workflow information, system information, files, credentials or access permissions, customer or operational information, and other data needed to perform the agreed work. Please do not provide highly sensitive personal information unless it is specifically necessary for an agreed project and appropriate safeguards have been discussed.</p></section>
+<section><h3>4. Technical Information</h3><p>Our website and hosting infrastructure may automatically process limited technical information such as IP address, browser type, device type, operating system, requested pages, timestamps, referral information, and technical logs necessary to operate, secure, troubleshoot, and maintain the website.</p></section>
+<section><h3>5. How We Use Information</h3><p>We use information to respond to inquiries, understand business needs, prepare proposals, provide requested services, design and support projects, communicate with clients, maintain and secure the website, troubleshoot technical issues, improve our services, maintain appropriate business records, and comply with applicable legal obligations.</p></section>
+<section class="r1061-policy-wide"><h3>6. AI &amp; Automation Projects</h3><p>Some projects may involve artificial intelligence, automation platforms, APIs, cloud services, or other third-party technology. Client information may be processed through those systems when reasonably necessary to design, test, operate, or support the agreed solution. Automated Hearts does not intentionally use client confidential information for unrelated purposes or to develop unrelated general-purpose AI systems. Third-party providers may also be governed by their own contractual terms, privacy policies, account configuration, and security practices.</p></section>
+<section><h3>7. Browser Storage, Cookies &amp; Analytics</h3><p>The website may use browser storage or similar technologies when necessary to maintain interface state, navigation behavior, performance settings, security functions, or other site functionality. If non-essential analytics, advertising technologies, or tracking practices are introduced, this policy and any legally required notice or choice mechanisms will be updated.</p></section>
+<section><h3>8. When Information May Be Shared</h3><p>Information may be disclosed when reasonably necessary to providers supporting hosting, infrastructure, email, form delivery, scheduling, payment processing, cloud storage, security, analytics, AI, automation, or other services used for the website or a client project. Information may also be disclosed at a client's direction, as part of a business transaction, to professional advisers when necessary, or when reasonably required by law, legal process, security concerns, or protection of legal rights.</p></section>
+<section><h3>9. Sale &amp; Targeted Advertising</h3><p>Automated Hearts does not sell personal information and does not use information submitted through this website for cross-site targeted advertising. If either practice changes, this policy and any legally required opt-out mechanisms will be updated before that practice is implemented.</p></section>
+<section><h3>10. Data Retention</h3><p>Information is retained for as long as reasonably necessary for the reason it was collected, to provide or support services, maintain appropriate business and project records, resolve disputes, meet contractual obligations, or satisfy applicable legal, accounting, or security requirements. When information is no longer reasonably necessary, it may be deleted, anonymized, or securely disposed of where practical.</p></section>
+<section><h3>11. Information Security</h3><p>Automated Hearts uses reasonable administrative, technical, and organizational safeguards appropriate to the type of information and system involved. No website, network, transmission method, cloud service, or storage system can guarantee absolute security.</p></section>
+<section class="r1061-policy-wide"><h3>12. Your Privacy Choices &amp; Rights</h3><p>Depending on where you live and which privacy laws apply, you may have rights to confirm whether your personal data is being processed, request access to or a copy of your information, correct inaccurate information, request deletion, receive certain information in a portable format, and opt out of qualifying targeted advertising, sale of personal information, or qualifying profiling. You may also have the right to exercise privacy rights without discriminatory treatment. To submit a privacy request, contact automatedhearts@gmail.com and identify the request as a “Privacy Request.” We may take reasonable steps to verify your identity before fulfilling a request.</p></section>
+<section><h3>13. Appeals</h3><p>If Automated Hearts denies a privacy request and applicable law provides a right to appeal, you may appeal by emailing automatedhearts@gmail.com with the subject “Privacy Appeal” and explaining why you believe the request should be reconsidered.</p></section>
+<section><h3>14. Children</h3><p>Automated Hearts is a business-services company. Our website and services are not directed toward children under 13, and we do not knowingly seek to collect personal information from children. If we learn that personal information from a child was collected inappropriately, we will take reasonable steps to delete it.</p></section>
+<section><h3>15. External Services &amp; Links</h3><p>The website or a client project may link to or interact with third-party websites and services. Automated Hearts does not control the independent privacy practices of those third parties.</p></section>
+<section><h3>16. Changes to This Policy</h3><p>This policy may be revised as our website, services, vendors, or legal obligations change. The current version will be posted here with an updated revision date. Material changes will be identified when appropriate.</p></section>
+<section class="r1061-policy-wide"><h3>17. Contact</h3><p>Questions about this Privacy Policy, personal information, or a privacy request can be sent to <a data-contact-origin="header" data-contact-trigger="" href="#contact">automatedhearts@gmail.com</a>.</p></section>
+<p class="r1061-policy-updated">Last updated September 2, 2026.</p>
+</div>
+</details>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<div class="home-hero-message-wrap reveal home-hero-message-wrap-round339" id="home-ticker-wrap">
+<p class="home-message-display home-message-display--charity" id="home-charity-ticker" style="position:absolute!important;inset:0!important;display:block!important;box-sizing:border-box!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;overflow:hidden!important;border:2px solid rgba(210,229,237,.96)!important;border-radius:28px!important;background:radial-gradient(165% 135% at 50% -29%,rgba(255,255,255,.48) 0%,rgba(226,248,253,.25) 11%,rgba(154,213,226,.08) 27%,rgba(255,255,255,0) 43%),radial-gradient(130% 90% at 50% 122%,rgba(66,151,174,.16) 0%,rgba(10,31,46,0) 58%),linear-gradient(180deg,rgba(20,52,69,.96) 0%,rgba(7,27,41,.985) 31%,rgba(3,15,26,.995) 64%,rgba(1,8,15,1) 100%)!important;filter:none!important;isolation:isolate!important;"><span aria-hidden="true" class="ticker-end-rim ticker-end-rim--left" style="position:absolute!important;left:1px!important;top:2px!important;bottom:2px!important;width:17px!important;z-index:20!important;display:block!important;pointer-events:none!important;border-radius:23px 0 0 23px!important;clip-path:polygon(0 0,100% 0,45% 18%,32% 50%,45% 82%,100% 100%,0 100%)!important;background:linear-gradient(180deg,rgba(248,252,253,.96) 0%,rgba(160,176,184,.96) 12%,rgba(62,82,94,.94) 38%,rgba(16,31,42,.96) 58%,rgba(112,133,144,.96) 82%,rgba(238,244,246,.96) 100%)!important;"></span><span aria-hidden="true" class="ticker-end-rim ticker-end-rim--right" style="position:absolute!important;right:1px!important;top:2px!important;bottom:2px!important;width:17px!important;z-index:20!important;display:block!important;pointer-events:none!important;border-radius:0 23px 23px 0!important;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,55% 82%,68% 50%,55% 18%)!important;background:linear-gradient(180deg,rgba(248,252,253,.96) 0%,rgba(160,176,184,.96) 12%,rgba(62,82,94,.94) 38%,rgba(16,31,42,.96) 58%,rgba(112,133,144,.96) 82%,rgba(238,244,246,.96) 100%)!important;"></span>
+<strong aria-label="10% Back to Local Charities. Prioritizing Job-Retention. Automation with a human touch. 10% Back to Local Charities. Elevating the human, not obsoleting them." class="charity-marquee" data-text="10% Back to Local Charities. Prioritizing Job-Retention. Automation with a human touch. 10% Back to Local Charities. Elevating the human, not obsoleting them." id="home-charity-marquee"><span aria-hidden="true" class="charity-marquee__track"></span></strong><span aria-hidden="true" class="r488-extra-matte-film ticker-matte-film" style="position:absolute!important;inset:2px!important;z-index:7!important;display:block!important;pointer-events:none!important;border-radius:26px!important;background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.075) 15%,rgba(255,255,255,.018) 34%,rgba(0,0,0,.035) 67%,rgba(255,255,255,.045) 100%),radial-gradient(150% 82% at 50% -4%,rgba(255,255,255,.20) 0%,rgba(255,255,255,.07) 24%,rgba(255,255,255,0) 53%),repeating-linear-gradient(180deg,rgba(211,244,249,.040) 0 1px,rgba(8,25,36,.012) 1px 3px,transparent 3px 5px),repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0 1px,transparent 1px 4px)!important;opacity:.82!important;mix-blend-mode:screen!important;-webkit-backdrop-filter:blur(.35px) saturate(.90)!important;backdrop-filter:blur(.35px) saturate(.90)!important;"></span>
+<span aria-hidden="true" class="r966-ticker-bubble-lens"></span><span aria-hidden="true" class="r966-ticker-matte-film"></span></p>
+</div>
+<script id="r935-policy-hash-open">(()=>{const openPolicy=()=>{if(location.hash==='#policies'){const d=document.getElementById('policies');if(d&&d.tagName==='DETAILS')d.open=true;}};openPolicy();addEventListener('hashchange',openPolicy,{passive:true});})();</script><footer class="site-footer site-footer--minimal" id="site-footer">
+<div class="shell minimal-footer-row">
+<nav aria-label="Primary navigation" class="footer-primary-nav" id="primary-nav">
+<div class="primary-nav__group primary-nav__group--centered">
+<a class="r973-pink-edge footer-structure-control mechanical-send-control" data-nav="home" href="./index.html" style="overflow:visible!important;overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy"><span class="footer-nav-label" style='font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;'>Hub</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-nav="solutions" href="./solutions.html" style="overflow:visible!important;overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy"><span class="footer-nav-label" style='font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;'>The Solution</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-nav="who-we-help" href="./who-we-help.html" style="overflow:visible!important;overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy"><span class="footer-nav-label" style='font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;'>Who We Help</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-nav="learning" href="./learning-center.html" style="overflow:visible!important;overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy"><span class="footer-nav-label" style='font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;'>Learning Center</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-nav="pricing" href="./pricing.html" style="overflow:visible!important;overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy"><span class="footer-nav-label" style='font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;'>Rates &amp; Services</span></span><span aria-hidden="true" class="send-control-indicator"></span></a>
+</div>
+</nav>
+</div>
+</footer>
+<script defer="" src="./lean-about-runtime-1-1062.js?v=1098r"></script><script defer src="./round1063-shield-model-performance.js?v=1096r"></script><script defer src="./round1068-about-mobile-scroll.js?v=1068r"></script><script defer src="./round1069-about-scroll-rescue.js?v=1069r"></script>
+<script defer src="./round1064-vercel-navigation-shield-fix.js?v=1064r"></script></body>
+</html>

@@ -1,0 +1,174 @@
+/* Automated Hearts Round 1092
+   Final model-stage floating control authority.
+   - Interaction instructions sit in the upper-left quarter and face inward.
+   - Instruction lines alternate mint/pink/mint/pink.
+   - Return controls are compact upper-right floating buttons on both model pages.
+   This file intentionally uses very high-specificity selectors to outrank legacy
+   stage-return rules still present in the consolidated lean stylesheets. */
+
+:root{
+  --r1092-control-top:22px;
+  --r1092-control-right:28px;
+  --r1092-instruction-left:26px;
+  --r1092-instruction-top:25%;
+}
+
+/* Compact return controls — same geometry on Learning Center and Who We Help. */
+html body.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning[data-page="learning"]
+main#main-content#main-content #learning-model-stage#learning-model-stage#learning-model-stage#learning-model-stage#learning-model-stage > button.learning-stage-return.learning-stage-return[data-learning-choose-another],
+html body.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help[data-page="who-we-help"]
+main#main-content#main-content #who-help-model-stage#who-help-model-stage#who-help-model-stage#who-help-model-stage#who-help-model-stage > button.learning-stage-return.learning-stage-return[data-who-help-back-to-top]{
+  position:absolute!important;
+  z-index:2147483600!important;
+  top:var(--r1092-control-top)!important;
+  right:var(--r1092-control-right)!important;
+  bottom:auto!important;
+  left:auto!important;
+  inset:auto var(--r1092-control-right) auto auto!important;
+  display:inline-flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  align-items:center!important;
+  justify-content:center!important;
+  align-self:auto!important;
+  justify-self:auto!important;
+  box-sizing:border-box!important;
+  width:max-content!important;
+  min-width:0!important;
+  max-width:min(46vw,360px)!important;
+  height:44px!important;
+  min-height:44px!important;
+  max-height:44px!important;
+  margin:0!important;
+  padding:8px 14px!important;
+  transform:none!important;
+  -webkit-transform:none!important;
+  translate:none!important;
+  flex:0 0 auto!important;
+  writing-mode:horizontal-tb!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  border:1px solid rgba(143,255,215,.78)!important;
+  border-radius:7px!important;
+  background:linear-gradient(180deg,rgba(6,20,35,.86),rgba(3,11,21,.76))!important;
+  box-shadow:0 0 0 1px rgba(255,45,170,.10) inset,0 0 16px rgba(143,255,215,.12)!important;
+  color:#ff4bb8!important;
+  -webkit-text-fill-color:#ff4bb8!important;
+  font-family:"Orbitron",system-ui,sans-serif!important;
+  font-size:clamp(13px,1.05vw,17px)!important;
+  font-weight:650!important;
+  line-height:1!important;
+  letter-spacing:.025em!important;
+  text-align:center!important;
+  text-orientation:mixed!important;
+  pointer-events:auto!important;
+  cursor:pointer!important;
+}
+
+/* Interaction legend: left side, upper quarter, right-aligned toward the model. */
+html body.page-learning.page-learning.page-learning.page-learning[data-page="learning"]
+main#main-content#main-content #learning-model-stage#learning-model-stage#learning-model-stage > .r1091-model-instructions,
+html body.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help[data-page="who-we-help"]
+main#main-content#main-content #who-help-model-stage#who-help-model-stage#who-help-model-stage > .r1091-model-instructions{
+  position:absolute!important;
+  z-index:2147483500!important;
+  top:var(--r1092-instruction-top)!important;
+  left:var(--r1092-instruction-left)!important;
+  right:auto!important;
+  bottom:auto!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-end!important;
+  justify-content:center!important;
+  gap:7px!important;
+  width:max-content!important;
+  min-width:0!important;
+  max-width:min(28vw,290px)!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:10px 13px 10px 10px!important;
+  transform:translateY(-50%)!important;
+  -webkit-transform:translateY(-50%)!important;
+  border:0!important;
+  border-right:1px solid rgba(143,255,215,.72)!important;
+  background:linear-gradient(270deg,rgba(3,12,22,.52),rgba(3,12,22,.12) 84%,transparent)!important;
+  font-family:"Orbitron",system-ui,sans-serif!important;
+  font-size:clamp(12px,.92vw,15px)!important;
+  font-weight:650!important;
+  line-height:1.2!important;
+  letter-spacing:.035em!important;
+  text-align:right!important;
+  pointer-events:none!important;
+  user-select:none!important;
+}
+
+html body:is(.page-learning,.page-who-we-help)[data-page]
+:is(#learning-model-stage,#who-help-model-stage) > .r1091-model-instructions > span{
+  display:block!important;
+  width:100%!important;
+  white-space:nowrap!important;
+  text-align:right!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+
+html body:is(.page-learning,.page-who-we-help)[data-page]
+:is(#learning-model-stage,#who-help-model-stage) > .r1091-model-instructions > span:nth-child(odd){
+  color:#8fffd7!important;
+  text-shadow:0 0 7px rgba(143,255,215,.34)!important;
+}
+html body:is(.page-learning,.page-who-we-help)[data-page]
+:is(#learning-model-stage,#who-help-model-stage) > .r1091-model-instructions > span:nth-child(even){
+  color:#ff2daa!important;
+  text-shadow:0 0 7px rgba(255,45,170,.34)!important;
+}
+
+@media(max-width:760px){
+  :root{
+    --r1092-control-top:12px;
+    --r1092-control-right:14px;
+    --r1092-instruction-left:12px;
+    --r1092-instruction-top:25%;
+  }
+
+  html body.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning[data-page="learning"]
+  main#main-content#main-content #learning-model-stage#learning-model-stage#learning-model-stage#learning-model-stage#learning-model-stage > button.learning-stage-return.learning-stage-return[data-learning-choose-another],
+  html body.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help[data-page="who-we-help"]
+  main#main-content#main-content #who-help-model-stage#who-help-model-stage#who-help-model-stage#who-help-model-stage#who-help-model-stage > button.learning-stage-return.learning-stage-return[data-who-help-back-to-top]{
+    top:12px!important;
+    right:14px!important;
+    bottom:auto!important;
+    left:auto!important;
+    inset:12px 14px auto auto!important;
+    width:max-content!important;
+    min-width:0!important;
+    max-width:68vw!important;
+    height:40px!important;
+    min-height:40px!important;
+    max-height:40px!important;
+    padding:7px 10px!important;
+    font-size:11px!important;
+    white-space:nowrap!important;
+  }
+
+  html body.page-learning.page-learning.page-learning.page-learning[data-page="learning"]
+  main#main-content#main-content #learning-model-stage#learning-model-stage#learning-model-stage > .r1091-model-instructions,
+  html body.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help[data-page="who-we-help"]
+  main#main-content#main-content #who-help-model-stage#who-help-model-stage#who-help-model-stage > .r1091-model-instructions{
+    top:25%!important;
+    left:12px!important;
+    right:auto!important;
+    max-width:48vw!important;
+    gap:5px!important;
+    padding:8px 9px 8px 6px!important;
+    transform:translateY(-50%)!important;
+    font-size:10px!important;
+    line-height:1.18!important;
+  }
+
+  html body:is(.page-learning,.page-who-we-help)[data-page]
+  :is(#learning-model-stage,#who-help-model-stage) > .r1091-model-instructions > span{
+    white-space:normal!important;
+  }
+}
