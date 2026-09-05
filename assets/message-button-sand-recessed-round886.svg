@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="155" viewBox="0 0 148 155">
+  <defs>
+    <path id="face-shape" d="M4 4H144V149H112C95.4 149 82 135.6 82 119V86C82 73.8 72.2 64 60 64H26C13.8 64 4 54.2 4 42Z"/>
+    <path id="inner-rim" d="M8 8H140V145H112C97.6 145 86 133.4 86 119V86C86 71.6 74.4 60 60 60H26C16 60 8 52 8 42Z"/>
+    <clipPath id="face-clip"><use href="#face-shape"/></clipPath>
+    <clipPath id="side-clip"><use href="#face-shape" transform="translate(0 4)"/></clipPath>
+    <linearGradient id="face-base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102b43"/><stop offset=".35" stop-color="#071a2d"/>
+      <stop offset=".72" stop-color="#03101e"/><stop offset="1" stop-color="#0c2840"/>
+    </linearGradient>
+    <linearGradient id="face-light" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#a6ffe5" stop-opacity=".10"/><stop offset=".28" stop-color="#3f7fa2" stop-opacity=".12"/>
+      <stop offset=".62" stop-color="#ff4fb2" stop-opacity=".07"/><stop offset="1" stop-color="#000" stop-opacity=".24"/>
+    </linearGradient>
+    <linearGradient id="pink-depth" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ff70bd"/><stop offset=".32" stop-color="#e2359a"/>
+      <stop offset=".72" stop-color="#a61768"/><stop offset="1" stop-color="#4d062e"/>
+    </linearGradient>
+    <pattern id="coarse-sand" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="1.9" cy="2.2" r="1.12" fill="#d7edf0" fill-opacity=".16"/>
+      <circle cx="9" cy="3.3" r=".86" fill="#000814" fill-opacity=".34"/>
+      <circle cx="5.1" cy="10.6" r="1.28" fill="#7ca2b7" fill-opacity=".17"/>
+      <circle cx="12.4" cy="11.5" r=".75" fill="#d8fff4" fill-opacity=".12"/>
+      <path d="M0 7.3h3.9M10.6 8.1H14" stroke="#020812" stroke-opacity=".22" stroke-width=".7"/>
+    </pattern>
+    <filter id="sand-wear" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".115" numOctaves="3" seed="848" result="sand"/>
+      <feColorMatrix in="sand" type="matrix" values=".30 0 0 0 .08  0 .34 0 0 .10  0 0 .42 0 .15  0 0 0 .34 0" result="grain"/>
+      <feBlend in="SourceGraphic" in2="grain" mode="soft-light"/>
+    </filter>
+  </defs>
+  <!-- One continuous black mounting well follows both the convex and concave curves. -->
+  <use href="#face-shape" transform="translate(0 4)" fill="#000" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+  <g clip-path="url(#side-clip)" filter="url(#sand-wear)">
+    <rect width="148" height="155" fill="url(#pink-depth)"/>
+    <rect width="148" height="155" fill="url(#coarse-sand)" opacity=".54"/>
+  </g>
+  <use href="#face-shape" fill="#000" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+  <g clip-path="url(#face-clip)" filter="url(#sand-wear)">
+    <rect width="148" height="155" fill="url(#face-base)"/>
+    <rect width="148" height="155" fill="url(#face-light)"/>
+    <rect width="148" height="155" fill="url(#coarse-sand)" opacity=".68"/>
+  </g>
+  <!-- Exactly the same two mint hardware lines used by the footer controls. -->
+  <use href="#face-shape" fill="none" stroke="#8fffd7" stroke-width="2.2" stroke-linejoin="round"/>
+  <use href="#inner-rim" fill="none" stroke="#b9ffe9" stroke-opacity=".78" stroke-width="1" stroke-linejoin="round"/>
+</svg>

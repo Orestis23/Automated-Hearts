@@ -1,0 +1,118 @@
+/* Round 1116 — Learning Center responsive centering authority.
+   Keep the three bonded medallion/button units centered as one group and
+   size them from BOTH viewport width and height so they cannot overlap. */
+@media (min-width:801px){
+  html body.page-learning[data-page="learning"] #learning-route-buttons{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    min-height:calc(100svh - var(--current-frame-bottom,108px))!important;
+    height:auto!important;
+    margin:0!important;
+    padding:clamp(10px,2vh,22px) 0!important;
+    overflow:hidden!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-route-buttons > .shell.compact-hero-grid{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:min(calc(100vw - var(--current-frame-side,88px) - var(--current-frame-side,88px) - 18px),2200px)!important;
+    max-width:calc(100vw - var(--current-frame-side,88px) - var(--current-frame-side,88px) - 18px)!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:auto!important;
+    padding:0!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-paths.learning-header-paths{
+    --r1116-medallion:min(29.25vw,calc(100svh - 220px),520px);
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-route-buttons .learning-header-grid.r987-learning-flat-grid{
+    box-sizing:border-box!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,var(--r1116-medallion))!important;
+    align-items:center!important;
+    justify-items:center!important;
+    justify-content:center!important;
+    align-content:center!important;
+    gap:clamp(8px,1.1vw,24px)!important;
+    width:max-content!important;
+    max-width:100%!important;
+    min-width:0!important;
+    margin:0 auto!important;
+    padding:0!important;
+    transform:none!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-route-buttons .r987-learning-flat-grid > article.r987-learning-flat-card{
+    box-sizing:border-box!important;
+    display:grid!important;
+    grid-template-rows:var(--r1116-medallion) clamp(40px,7.2vh,62px)!important;
+    justify-items:center!important;
+    align-items:center!important;
+    align-content:center!important;
+    gap:clamp(5px,.8vh,9px)!important;
+    width:var(--r1116-medallion)!important;
+    min-width:0!important;
+    max-width:var(--r1116-medallion)!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-route-buttons .r987-learning-flat-grid > article.r987-learning-flat-card > a.learning-medallion-button,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .r987-learning-flat-grid .learning-medallion-media.r987-learning-flat-media,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .r987-learning-flat-grid img.r1058-learning-composite{
+    box-sizing:border-box!important;
+    width:var(--r1116-medallion)!important;
+    min-width:0!important;
+    max-width:var(--r1116-medallion)!important;
+    height:var(--r1116-medallion)!important;
+    min-height:0!important;
+    max-height:var(--r1116-medallion)!important;
+    aspect-ratio:1/1!important;
+    margin:0!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-route-buttons .r987-learning-flat-grid > article.r987-learning-flat-card > .premium-route-card__title-sign.brand-route-screen{
+    box-sizing:border-box!important;
+    width:min(88%,460px)!important;
+    min-width:0!important;
+    max-width:460px!important;
+    height:clamp(40px,7.2vh,62px)!important;
+    min-height:40px!important;
+    max-height:62px!important;
+    margin:0 auto!important;
+    padding:4px clamp(6px,1vw,12px)!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-route-label-final{
+    font-size:clamp(15px,1.55vw,32px)!important;
+  }
+}
+
+/* Short desktop/laptop viewports: keep the complete row centered but shrink it
+   further rather than letting neighboring controls touch. */
+@media (min-width:801px) and (max-height:640px){
+  html body.page-learning[data-page="learning"] #learning-paths.learning-header-paths{
+    --r1116-medallion:min(28vw,calc(100svh - 190px),390px);
+  }
+  html body.page-learning[data-page="learning"] #learning-route-buttons .r987-learning-flat-grid > article.r987-learning-flat-card{
+    grid-template-rows:var(--r1116-medallion) 40px!important;
+    gap:4px!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-route-buttons .r987-learning-flat-grid > article.r987-learning-flat-card > .premium-route-card__title-sign.brand-route-screen{
+    height:40px!important;min-height:40px!important;max-height:40px!important;
+  }
+}

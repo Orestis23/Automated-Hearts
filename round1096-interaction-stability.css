@@ -1,0 +1,47 @@
+/* Automated Hearts Round 1096 — non-blocking decorative layers and resize relief. */
+html body[data-page] > #page-transition-shield.page-transition-shield,
+html.page-shield-arrival body[data-page] > #page-transition-shield.page-transition-shield,
+html.page-shield-covering body[data-page] > #page-transition-shield.page-transition-shield,
+html.page-shield-revealing body[data-page] > #page-transition-shield.page-transition-shield,
+html[data-page-shield-state="covered"] body[data-page] > #page-transition-shield.page-transition-shield,
+html[data-page-shield-state="covering"] body[data-page] > #page-transition-shield.page-transition-shield,
+html[data-page-shield-state="revealing"] body[data-page] > #page-transition-shield.page-transition-shield,
+html body[data-page] > #page-transition-shield.page-transition-shield > .page-transition-shield__panel{
+  pointer-events:none!important;
+}
+
+/* The model cover is visual. Model-switch re-entry is already guarded by the
+   controller, so this layer must never strand the arrows or return control. */
+html body:is(.page-learning,.page-who-we-help)[data-page]
+:is(#learning-model-stage,#who-help-model-stage) > [data-learning-stage-shield]{
+  pointer-events:none!important;
+}
+
+html body[data-page] > .ah-persistent-outer-rim,
+html body[data-page] > .ah-persistent-gold-rim,
+html body[data-page] > .rim-page-name-screen,
+html body[data-page] #home-ticker-wrap{
+  pointer-events:none!important;
+}
+
+html body[data-page] > #site-footer,
+html body[data-page] > #site-footer #primary-nav,
+html body[data-page] > #site-footer #primary-nav a,
+html body[data-page] > #header-send-message{
+  pointer-events:auto!important;
+}
+
+/* Docking DevTools can emit a large burst of viewport changes. Expensive CSS
+   animation is paused only during that short burst and resumes automatically. */
+html.ah-viewport-resizing .charity-marquee__track,
+html.ah-viewport-resizing .r828-star,
+html.ah-viewport-resizing .rim-heart-home-link__glow{
+  animation-play-state:paused!important;
+}
+
+html.ah-viewport-resizing body[data-page] > #page-transition-shield.page-transition-shield,
+html.ah-viewport-resizing body[data-page] > #page-transition-shield.page-transition-shield > .page-transition-shield__panel{
+  transition:none!important;
+  animation:none!important;
+  will-change:auto!important;
+}

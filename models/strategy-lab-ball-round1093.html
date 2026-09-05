@@ -1,0 +1,127 @@
+<!doctype html><html lang="en"><head><script id="ah-model-performance-v1063">(()=>{const hc=navigator.hardwareConcurrency||8,dm=navigator.deviceMemory||8,mobile=matchMedia('(max-width:760px)').matches;window.__AH_MODEL_DPR_CAP=(mobile||hc<=4||dm<=4)?1.4:99;})();</script><script id="ah-runtime-frame-gate-v942">(()=>{'use strict';if(window.__ahRuntimeFrameGate942)return;window.__ahRuntimeFrameGate942=1;const raf0=window.requestAnimationFrame.bind(window),caf0=window.cancelAnimationFrame.bind(window);let seq=1,hostActive=true,viewportActive=true,queued=new Map(),nativeHandles=new Map();const active=()=>hostActive&&viewportActive&&!document.hidden;const schedule=(id,cb)=>{const h=raf0(ts=>{nativeHandles.delete(id);if(!active()){queued.set(id,cb);return}cb(ts)});nativeHandles.set(id,h)};const flush=()=>{if(!active()||!queued.size)return;const q=[...queued];queued.clear();q.forEach(([id,cb])=>schedule(id,cb))};window.requestAnimationFrame=(cb)=>{const id=seq++;if(active())schedule(id,cb);else queued.set(id,cb);return id};window.cancelAnimationFrame=(id)=>{queued.delete(id);const h=nativeHandles.get(id);if(h!==undefined){caf0(h);nativeHandles.delete(id)}};addEventListener('message',e=>{const d=e.data||{};if(d.type==='engine-visibility')hostActive=!!d.visible;else if(d.type==='automated-hearts:learning-activity')hostActive=!!d.active;else if(d.type==='automated-hearts:viewport-activity')viewportActive=!!d.active;else return;flush()});document.addEventListener('visibilitychange',flush,{passive:true});window.__ahRuntimeFrameGate={isActive:active,resume:flush}})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>Strategy Lab | Strategy Framework</title><style>*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial;color:#fff;background:transparent}canvas{display:block;touch-action:none}.title{position:fixed;top:15px;left:50%;transform:translateX(-50%);z-index:3;text-align:center;width:94%;pointer-events:none}.title b{font-size:clamp(19px,3vw,34px);letter-spacing:.1em;color:#CDAA4D}.title span{display:block;color:#cfc6b7;font-size:13px;margin-top:6px}.hint{position:fixed;bottom:17px;left:50%;transform:translateX(-50%);z-index:3;padding:10px 15px;border:1px solid #635431;border-radius:12px;background:#08090ddd;color:#F6F7F2;font-size:12px;white-space:nowrap}.status{position:fixed;right:16px;top:18px;z-index:3;padding:9px 11px;border:1px solid #6b5429;border-radius:10px;background:#090a0ddd;color:#CDAA4D;font:700 11px Arial;letter-spacing:.08em}html,body{background:transparent}canvas{position:relative;z-index:1;background:transparent!important}.head,.title,.status,.hint,.labels{z-index:5}</style>
+<style id="round934-transparent-model-canvas">
+/* Round 934: the parent carousel owns the leather-heart backdrop. */
+html,body{background:transparent}
+canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;}
+</style>
+<style id="round954-transparent-model-host">
+html,body,canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;}
+body::before,body::after{content:none!important;display:none!important;background:none!important;background-image:none!important;}
+</style><style id="round956-fixed-shield-background">
+html,body{background-color:transparent!important;background-image:none!important;background-position:initial!important;background-size:auto!important;background-repeat:repeat!important;background-attachment:scroll!important;}
+body::before,body::after{content:none!important;display:none!important;background:none!important;background-image:none!important;}
+canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;position:relative;z-index:1;}
+#ui,.title,.head,.hint,.status,.labels,#tip{z-index:5!important;}
+</style><style id="round978-transparent-model-host">html,body{background:transparent!important;background-color:transparent!important;background-image:none!important;}body::before,body::after{content:none!important;display:none!important;background:none!important;background-image:none!important;}canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;}</style><style id="round984-transparent-model-host">
+html,body{margin:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:transparent!important;background-color:transparent!important;background-image:none!important;}
+body::before,body::after{content:none!important;display:none!important;background:none!important;background-image:none!important;}
+canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;}
+</style>
+<style id="r1013-model-ui-clean">
+.title,.head,.status,.hint,.labels,#ui,#tip{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;}
+</style>
+<style id="round1020-parent-owned-transparent-model-host">
+html,body{margin:0!important;width:100%!important;height:100%!important;background:transparent!important;background-color:transparent!important;background-image:none!important;background-attachment:scroll!important;}
+body::before,body::after{content:none!important;display:none!important;background:none!important;background-image:none!important;}
+canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;}
+</style><style id="round1036-model-transparent-clean">html,body,canvas{background:transparent!important;background-color:transparent!important;background-image:none!important}.title,.head,.hint,.status,.labels,#ui,#tip,[data-model-title],[class*="model-title"]{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}</style><style id="round1051-model-transparent-only">html,body,canvas{background:transparent!important;background-color:transparent!important;background-image:none!important}html,body{margin:0!important}canvas{display:block!important}</style><style id="round1076-static-leather-host">html,body{background-color:#08172b!important;background-image:url("../assets/page-shield-embossed-strong-round1067.webp?v=1076r")!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;background-attachment:scroll!important}canvas{background:transparent!important;background-color:transparent!important;background-image:none!important}</style>
+<style id="round1084-static-leather-model-host">
+html,body{margin:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background-color:#08172b!important;background-image:url("../assets/page-shield-embossed-strong-round1067.webp?v=1084r")!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;background-attachment:fixed!important;}
+body::before,body::after{content:none!important;display:none!important;background:none!important;background-image:none!important;}
+canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;}
+</style>
+</head><body><div class="title"><b>STRATEGY LAB • FRAMEWORK</b><span>Thirty connected faces organized around six areas of responsible AI strategy.</span></div><div class="status" id="status">CHALLENGE MODE</div><div class="hint">Drag to rotate • Scroll to zoom • Click any diamond</div><script src="../vendor/three-0.160.0/three.min.js"></script><script>(()=>{'use strict';if(!window.THREE){document.body.innerHTML='<div style="padding:30px">Three.js could not load. Internet access is required.</div>';return}
+const V=[[-2.33928972, -0.89352916, 0.0], [-2.33928972, 0.0, -1.44576056], [-2.33928972, 0.0, 1.44576056], [-2.33928972, 0.89352916, 0.0], [-1.44576056, -2.33928972, 0.0], [-1.44576056, -1.44576056, -1.44576056], [-1.44576056, -1.44576056, 1.44576056], [-1.44576056, -0.55223139, 0.0], [-1.44576056, 0.55223139, 0.0], [-1.44576056, 1.44576056, -1.44576056], [-1.44576056, 1.44576056, 1.44576056], [-1.44576056, 2.33928972, 0.0], [-0.89352916, -0.89352916, -0.89352916], [-0.89352916, -0.89352916, 0.89352916], [-0.89352916, 0.0, -2.33928972], [-0.89352916, 0.0, -0.55223139], [-0.89352916, 0.0, 0.55223139], [-0.89352916, 0.0, 2.33928972], [-0.89352916, 0.89352916, -0.89352916], [-0.89352916, 0.89352916, 0.89352916], [-0.55223139, -0.89352916, 0.0], [-0.55223139, 0.0, -1.44576056], [-0.55223139, 0.0, 1.44576056], [-0.55223139, 0.89352916, 0.0], [0.0, -2.33928972, -0.89352916], [0.0, -2.33928972, 0.89352916], [0.0, -1.44576056, -2.33928972], [0.0, -1.44576056, -0.55223139], [0.0, -1.44576056, 0.55223139], [0.0, -1.44576056, 2.33928972], [0.0, -0.55223139, -0.89352916], [0.0, -0.55223139, 0.89352916], [0.0, 0.55223139, -0.89352916], [0.0, 0.55223139, 0.89352916], [0.0, 1.44576056, -2.33928972], [0.0, 1.44576056, -0.55223139], [0.0, 1.44576056, 0.55223139], [0.0, 1.44576056, 2.33928972], [0.0, 2.33928972, -0.89352916], [0.0, 2.33928972, 0.89352916], [0.55223139, -0.89352916, 0.0], [0.55223139, 0.0, -1.44576056], [0.55223139, 0.0, 1.44576056], [0.55223139, 0.89352916, 0.0], [0.89352916, -0.89352916, -0.89352916], [0.89352916, -0.89352916, 0.89352916], [0.89352916, 0.0, -2.33928972], [0.89352916, 0.0, -0.55223139], [0.89352916, 0.0, 0.55223139], [0.89352916, 0.0, 2.33928972], [0.89352916, 0.89352916, -0.89352916], [0.89352916, 0.89352916, 0.89352916], [1.44576056, -2.33928972, 0.0], [1.44576056, -1.44576056, -1.44576056], [1.44576056, -1.44576056, 1.44576056], [1.44576056, -0.55223139, 0.0], [1.44576056, 0.55223139, 0.0], [1.44576056, 1.44576056, -1.44576056], [1.44576056, 1.44576056, 1.44576056], [1.44576056, 2.33928972, 0.0], [2.33928972, -0.89352916, 0.0], [2.33928972, 0.0, -1.44576056], [2.33928972, 0.0, 1.44576056], [2.33928972, 0.89352916, 0.0]],F=[[3, 11, 9, 1], [1, 0, 2, 3], [4, 0, 1, 5], [1, 9, 34, 14], [26, 24, 4, 5], [26, 5, 1, 14], [53, 52, 24, 26], [6, 29, 17, 2], [6, 2, 0, 4], [38, 11, 39, 59], [34, 9, 11, 38], [38, 59, 57, 34], [52, 53, 61, 60], [63, 61, 57, 59], [6, 4, 25, 29], [29, 25, 52, 54], [4, 24, 52, 25], [60, 62, 54, 52], [62, 60, 61, 63], [2, 10, 11, 3], [39, 11, 10, 37], [10, 2, 17, 37], [14, 34, 46, 26], [46, 34, 57, 61], [61, 53, 26, 46], [29, 49, 37, 17], [29, 54, 62, 49], [37, 58, 59, 39], [59, 58, 62, 63], [37, 49, 62, 58]];
+const strategy=[['FIND THE','REAL PROBLEM.','Start with a costly, repeated, or frustrating business problem rather than a fashionable tool.'],['OBSERVE THE','CURRENT WORK.','Understand how people complete the task today before proposing a new system.'],['IDENTIFY','REPETITION.','Look for recurring actions, repeated decisions, and information that is entered more than once.'],['MEASURE THE','FRICTION.','Estimate time, delays, errors, handoffs, and avoidable effort in the current process.'],['DEFINE','SUCCESS.','Describe the measurable outcome the strategy should create.'],['MAP THE','INPUTS.','Identify the information, requests, documents, and events that begin the workflow.'],['MAP THE','OUTPUTS.','Define what must be produced, communicated, recorded, or approved.'],['FIND THE','DECISIONS.','Mark where judgment, approval, prioritization, or escalation occurs.'],['LOCATE THE','BOTTLENECKS.','Find delays, queues, duplication, missing ownership, and unnecessary transitions.'],['SIMPLIFY','FIRST.','Remove needless complexity before asking technology to repeat the process.'],['CLEAN DATA','COMES FIRST.','Organized, accurate information creates more useful automation, reporting, search, and predictions.'],['KNOW THE','SOURCES.','Document where information originates and which systems are authoritative.'],['ASSIGN DATA','OWNERSHIP.','Make responsibility for quality, access, and maintenance explicit.'],['CONNECT THE','INFORMATION.','Reduce fragmentation so relevant information can be found and used together.'],['DESIGN FOR','QUALITY.','Include standards, validation, correction, and review in the data process.'],['AUTOMATE','STABLE WORK.','Automate a process only after the steps and expected outcomes are understood.'],['START WITH','LOW RISK.','Begin where mistakes are reversible and consequences are limited.'],['DESIGN THE','HANDOFFS.','Define how information and responsibility move between people and systems.'],['HANDLE THE','EXCEPTIONS.','Plan what happens when information is missing, unusual, sensitive, or uncertain.'],['KEEP HUMANS','IN CONTROL.','People should retain authority over consequential decisions and final accountability.'],['PROTECT','PRIVACY.','Limit sensitive information to approved tools, purposes, and access levels.'],['BUILD IN','SECURITY.','Protect identities, systems, data, and integrations throughout the workflow.'],['DOCUMENT THE','RULES.','Make permitted uses, review requirements, and escalation paths clear.'],['MONITOR THE','SYSTEM.','Watch for errors, drift, misuse, and unexpected outcomes after deployment.'],['REVIEW THE','CONSEQUENCES.','Examine effects on people, money, safety, trust, and operations.'],['PILOT','FIRST.','Test a small version with realistic work before expanding.'],['MEASURE THE','RESULTS.','Compare time, quality, consistency, cost, and error rates against the baseline.'],['REFINE THE','METHOD.','Improve instructions, data, handoffs, controls, and review steps.'],['SCALE PROVEN','SYSTEMS.','Expand only after a small system repeatedly creates measurable value.'],['KEEP','IMPROVING.','Review performance and adapt the strategy as work, risks, and technology change.']];
+const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);camera.position.set(0,.1,13.8);const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,premultipliedAlpha:false,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,((matchMedia('(max-width:760px)').matches||((navigator.hardwareConcurrency||8)<=4)||((navigator.deviceMemory||8)<=4))?1.25:1.75)));renderer.setSize(innerWidth,innerHeight);renderer.setClearColor(0x000000,0);renderer.setClearAlpha(0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.2;document.body.prepend(renderer.domElement);scene.add(new THREE.HemisphereLight(0xfff8e7,0x090b0e,2.7));const key=new THREE.DirectionalLight(0xffffff,4.7);key.position.set(6,8,10);scene.add(key);const warm=new THREE.PointLight(0xffb83d,24,13);warm.position.set(-4,2,5);scene.add(warm);const green=new THREE.PointLight(0x55ff9d,12,10);green.position.set(4,-2,-4);scene.add(green);
+const glassKey=new THREE.DirectionalLight(0xffffff,3.6);glassKey.position.set(7,8,11);scene.add(glassKey);const glassRim=new THREE.DirectionalLight(0xffe2b8,2.2);glassRim.position.set(-7,-2,6);scene.add(glassRim);
+const root=new THREE.Group();root.rotation.x=-.18;scene.add(root);const clickable=[],transitions=[];
+function texture(i,open){
+ const c=document.createElement('canvas');c.width=1400;c.height=1100;const g=c.getContext('2d');
+ const grad=g.createRadialGradient(700,500,30,700,550,900);grad.addColorStop(0,open?'#0D1B2A':'#0B0B0B');grad.addColorStop(.55,open?'#0B0B0B':'#0D1B2A');grad.addColorStop(1,'#06080B');g.fillStyle=grad;g.fillRect(0,0,c.width,c.height);
+ for(let y=0;y<c.height;y+=4){g.fillStyle='rgba(255,255,255,.016)';g.fillRect(0,y,c.width,1)}
+ g.save();g.beginPath();g.moveTo(700,55);g.lineTo(1340,550);g.lineTo(700,1045);g.lineTo(60,550);g.closePath();g.clip();
+ const edge=open?'#39FF14':(i%2?'#FF2DAA':'#39FF14'),fill='#F6F7F2';g.textAlign='center';g.textBaseline='middle';g.fillStyle=edge;g.shadowColor=edge;g.shadowBlur=8;
+ const raw=open?strategy[i][2]:strategy[i][0]+' '+strategy[i][1],words=raw.split(' ');
+ const widthAt=y=>Math.max(210,1160*(1-Math.abs(y-550)/495)-85);
+ function partitions(words,count){const out=[];function walk(at,arr){if(arr.length===count-1){out.push([...arr,words.slice(at).join(' ')]);return}for(let cut=at+1;cut<=words.length-(count-arr.length-1);cut++)walk(cut,[...arr,words.slice(at,cut).join(' ')])}walk(0,[]);return out}
+ let best=null;
+ for(let size=open?62:82;size>=24;size-=2){g.font='800 '+size+'px monospace';for(let n=1;n<=Math.min(open?6:4,words.length);n++){for(const lines of partitions(words,n)){const spacing=size*1.12;let valid=true,fillRatio=0;for(let k=0;k<lines.length;k++){const y=550+(k-(lines.length-1)/2)*spacing,w=g.measureText(lines[k]).width,avail=widthAt(y);if(y<205||y>895||w>avail){valid=false;break}fillRatio+=w/avail}if(valid){fillRatio/=lines.length;const score=size*12+fillRatio*35-Math.abs(lines.length-(open?4:3))*5;if(!best||score>best.score)best={size,lines,spacing,score}}}}if(best&&best.size===size)break}
+ if(!best)best={size:22,lines:[raw],spacing:25};
+ g.font='800 '+best.size+'px monospace';g.fillStyle=fill;g.strokeStyle=edge;g.lineWidth=.8;g.shadowBlur=4;best.lines.forEach((line,k)=>{const y=550+(k-(best.lines.length-1)/2)*best.spacing;g.strokeText(line,700,y);g.fillText(line,700,y)});
+ g.shadowBlur=0;g.restore();
+ const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=renderer.capabilities.getMaxAnisotropy();return t
+}
+function faceGeometry(ids){
+ const pts=ids.map(i=>new THREE.Vector3(...V[i]));
+ const center=pts.reduce((sum,p)=>sum.add(p),new THREE.Vector3()).multiplyScalar(.25);
+ let normal=pts[1].clone().sub(pts[0]).cross(pts[2].clone().sub(pts[0])).normalize();
+ if(normal.dot(center)<0){pts.reverse();normal.negate()}
+ // Project world-up into each face, keeping visible text naturally upright.
+ let up=new THREE.Vector3(0,1,0).addScaledVector(normal,-normal.y);
+ if(up.lengthSq()<.04)up=new THREE.Vector3(0,0,1).addScaledVector(normal,-normal.z);
+ up.normalize();
+ let right=new THREE.Vector3().crossVectors(up,normal).normalize();
+ if(new THREE.Vector3().crossVectors(right,up).dot(normal)<0)right.negate();
+ const local=pts.map(p=>{const q=p.clone().sub(center);return [q.dot(right),q.dot(up)]});
+ const maxX=Math.max(...local.map(q=>Math.abs(q[0]))),maxY=Math.max(...local.map(q=>Math.abs(q[1])));
+ const pos=[],uv=[];pts.forEach((p,j)=>{pos.push(...p.toArray());uv.push(.5+local[j][0]/(2*maxX),.5+local[j][1]/(2*maxY))});
+ const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));geo.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));geo.setIndex([0,1,2,0,2,3]);geo.computeVertexNormals();return geo
+}
+const glassBubbleMaterial=new THREE.MeshPhysicalMaterial({color:0xfff4dc,transmission:.96,transparent:true,opacity:.72,roughness:.025,metalness:0,ior:1.54,thickness:1.15,clearcoat:1,clearcoatRoughness:.015,side:THREE.DoubleSide,depthWrite:false});
+function rhombusBubbleGeometry(ids){
+ const pts=ids.map(i=>new THREE.Vector3(...V[i]));
+ const center=pts.reduce((sum,p)=>sum.add(p),new THREE.Vector3()).multiplyScalar(.25);
+ let normal=pts[1].clone().sub(pts[0]).cross(pts[2].clone().sub(pts[0])).normalize();
+ if(normal.dot(center)<0){pts.reverse();normal.negate()}
+ const positions=[],indices=[];let base=0,radial=9,edgeSteps=10;
+ for(let side=0;side<4;side++){
+  const va=pts[side],vb=pts[(side+1)%4];
+  for(let r=0;r<=radial;r++){
+   const s=r/radial;
+   for(let e=0;e<=edgeSteps;e++){
+    const f=e/edgeSteps;
+    const edge=va.clone().lerp(vb,f);
+    const point=center.clone().lerp(edge,s);
+    const dome=.035+.22*Math.pow(Math.max(0,1-s*s),.72);
+    point.addScaledVector(normal,dome);
+    positions.push(...point.toArray());
+   }
+  }
+  for(let r=0;r<radial;r++)for(let e=0;e<edgeSteps;e++){
+   const a=base+r*(edgeSteps+1)+e,b=a+1,c=a+(edgeSteps+1),d=c+1;
+   indices.push(a,c,b,b,c,d);
+  }
+  base+=(radial+1)*(edgeSteps+1);
+ }
+ const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));geo.setIndex(indices);geo.computeVertexNormals();return geo;
+}
+F.forEach((ids,i)=>{
+ const idx=i,m=new THREE.Mesh(faceGeometry(ids),new THREE.MeshBasicMaterial({map:texture(idx,false),side:THREE.DoubleSide,toneMapped:false,transparent:false,opacity:1,depthWrite:true}));
+ m.userData={index:idx,open:false};root.add(m);clickable.push(m);
+ const bubble=new THREE.Mesh(rhombusBubbleGeometry(ids),glassBubbleMaterial.clone());
+ bubble.renderOrder=5;bubble.userData={staticFaceBubble:true};root.add(bubble);
+});
+const steel=new THREE.MeshPhysicalMaterial({color:0xbfc6ca,metalness:1,roughness:.22,clearcoat:.72,clearcoatRoughness:.08});
+const edges=new Set(),edgePaths=[];
+F.forEach(ids=>ids.forEach((a,i)=>{
+ const b=ids[(i+1)%4],key=a<b?a+'-'+b:b+'-'+a;if(edges.has(key))return;edges.add(key);
+ const p=new THREE.Vector3(...V[a]),q=new THREE.Vector3(...V[b]),d=q.clone().sub(p),len=d.length(),mid=p.clone().add(q).multiplyScalar(.5);
+ const tube=new THREE.Mesh(new THREE.CylinderGeometry(.058,.058,Math.max(.01,len-.045),3,1,false),steel);
+ tube.position.copy(mid);
+ tube.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.clone().normalize());
+ root.add(tube);
+ edgePaths.push({a:p,b:q});
+}));
+const energyDots=[];
+const redDotMat=new THREE.MeshBasicMaterial({color:0xff243f,toneMapped:false});
+edgePaths.forEach((path,edgeIndex)=>{
+ for(let j=0;j<3;j++){
+  const dot=new THREE.Mesh(new THREE.SphereGeometry(.024,10,10),redDotMat);
+  dot.userData={path,offset:(j/3+edgeIndex*.061)%1,speed:.075+(edgeIndex%5)*.007};
+  root.add(dot);energyDots.push(dot);
+ }
+});
+const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();let drag=false,moved=false,lx=0,ly=0;renderer.domElement.addEventListener('pointerdown',e=>{drag=true;moved=false;lx=e.clientX;ly=e.clientY;renderer.domElement.setPointerCapture(e.pointerId)});renderer.domElement.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-lx,dy=e.clientY-ly;if(Math.abs(dx)+Math.abs(dy)>3)moved=true;root.rotation.y+=dx*.008;root.rotation.x=THREE.MathUtils.clamp(root.rotation.x+dy*.005,-1.2,1.2);lx=e.clientX;ly=e.clientY});renderer.domElement.addEventListener('pointerup',e=>{drag=false;if(moved)return;const r=renderer.domElement.getBoundingClientRect();mouse.x=(e.clientX-r.left)/r.width*2-1;mouse.y=-(e.clientY-r.top)/r.height*2+1;ray.setFromCamera(mouse,camera);const h=ray.intersectObjects(clickable,false)[0];if(!h)return;const m=h.object;if(m.userData.transitioning)return;m.userData.transitioning=true;transitions.push({m,phase:0,start:performance.now(),next:!m.userData.open})});renderer.domElement.addEventListener('wheel',e=>{e.preventDefault();camera.position.z=THREE.MathUtils.clamp(camera.position.z+e.deltaY*.007,6.8,18)},{passive:false});
+function update(t){for(let i=transitions.length-1;i>=0;i--){const q=transitions[i],u=Math.min(1,(t-q.start)/(q.phase?300:220)),e=u*u*(3-2*u);if(!q.phase){q.m.material.opacity=1-e;if(u>=1){if(q.m.material.map)q.m.material.map.dispose();q.m.userData.open=q.next;q.m.material.map=texture(q.m.userData.index,q.next);q.m.material.needsUpdate=true;q.phase=1;q.start=t}}else{q.m.material.opacity=e;if(u>=1){q.m.material.opacity=1;q.m.userData.transitioning=false;transitions.splice(i,1);const s=document.getElementById('status');s.textContent=q.m.userData.open?'RESOLUTION REVEALED':'CHALLENGE MODE';s.style.color=q.m.userData.open?'#39FF14':'#CDAA4D'}}}}
+function animate(t){requestAnimationFrame(animate);update(t);if(!drag)root.rotation.y+=.0017;root.position.y=Math.sin(t*.0012)*.1;energyDots.forEach(dot=>{const raw=(t*.001*dot.userData.speed+dot.userData.offset)%1;const u=.035+raw*.93;dot.position.lerpVectors(dot.userData.path.a,dot.userData.path.b,u);const pulse=.72+.34*Math.sin(t*.018+u*12);dot.scale.setScalar(pulse)});renderer.render(scene,camera)}requestAnimationFrame(animate);addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});})();</script><script id="ah-model-first-frame-v1063">(()=>{let sent=false;const notify=()=>{if(sent)return;sent=true;try{parent.postMessage({type:'automated-hearts:model-first-frame',href:location.href},'*')}catch(_){}};const begin=()=>{const c=document.querySelector('canvas');if(!c||c.width<2||c.height<2){setTimeout(begin,20);return}requestAnimationFrame(()=>requestAnimationFrame(notify))};if(document.readyState==='complete')begin();else addEventListener('load',begin,{once:true});})();</script></body></html>

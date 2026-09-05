@@ -1,0 +1,148 @@
+:root{--navy:#07182d;--navy2:#020a13;--green:#8fffd7;--pink:#ff2ea8;--gold:#d6b257;--frame:#c9d3d8;--safe-top:max(10px,env(safe-area-inset-top));--safe-bottom:max(0px,env(safe-area-inset-bottom));}
+*{box-sizing:border-box}html{background:#000;scroll-behavior:auto;-webkit-tap-highlight-color:transparent}body{margin:0;padding:76px 12px calc(122px + var(--safe-bottom));min-height:100vh;background:#000;color:#eaf7f7;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden;-webkit-text-size-adjust:100%;}
+a{color:inherit;text-decoration:none}button{font:inherit}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* lightweight fixed shell */
+.shell-edge{position:fixed;z-index:9000;pointer-events:none;background:linear-gradient(90deg,#02050a,#10213b 35%,#06111f 70%,#02050a);box-shadow:inset 0 0 0 1px rgba(255,46,168,.22)}
+.shell-edge.t{top:0;left:0;right:0;height:72px}.shell-edge.b{left:0;right:0;bottom:0;height:70px}.shell-edge.l{top:0;bottom:0;left:0;width:10px}.shell-edge.r{top:0;bottom:0;right:0;width:10px}
+body:before{content:"";position:fixed;z-index:8998;pointer-events:none;inset:72px 10px 70px;border:1.5px solid rgba(214,178,87,.9);border-radius:18px;box-shadow:0 0 0 2px rgba(24,12,2,.94),inset 0 0 0 1px rgba(255,238,186,.18)}
+.heart{position:fixed;z-index:9100;top:calc(var(--safe-top) + 2px);left:13px;width:48px;height:56px;background:url('./mobile-lite-heart.webp') center/contain no-repeat}
+.page-chip{position:fixed;z-index:9100;top:calc(var(--safe-top) + 8px);left:50%;transform:translateX(-50%);width:min(54vw,210px);height:39px;border:1.5px solid var(--green);border-radius:12px;background:linear-gradient(#0d2741,#03101e);display:flex;align-items:center;justify-content:center;color:var(--green);font:700 17px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.05em;box-shadow:0 0 7px rgba(143,255,215,.18)}
+.message{position:fixed;z-index:9101;top:calc(var(--safe-top) + 7px);right:14px;width:42px;height:42px;border:1.5px solid var(--green);border-radius:8px;background:linear-gradient(160deg,#25313c,#0d151d 55%,#02070b);box-shadow:0 3px 0 #a9006f,inset 0 0 0 1px rgba(255,255,255,.1);display:grid;place-items:center;color:#e9ffff}
+.message svg{width:22px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
+main{position:relative;z-index:1;max-width:560px;margin:0 auto}.section{padding:34px 5px;border-bottom:1px solid rgba(143,255,215,.22)}main>.section:not(:first-child){content-visibility:auto;contain-intrinsic-size:900px}
+/* title screens */
+.title-stack{display:grid;gap:8px;margin:10px 5px 20px}.lcd{min-height:40px;border:1.5px solid var(--green);border-radius:11px;background:linear-gradient(#0d2741,#020914);display:flex;align-items:center;justify-content:center;padding:8px 10px;font:700 17px/1.05 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.035em;text-align:center;box-shadow:0 0 6px rgba(143,255,215,.14)}.lcd.pink{border-color:#ff70bd;color:#ff70bd}.lcd.green{color:#b7ffe8}
+/* machine windows */
+.machine-stack{display:grid;gap:22px}.machine-frame{position:relative;width:100%;aspect-ratio:16/9;padding:8px;border-radius:18px;background:linear-gradient(135deg,#e8eef0 0%,#77858c 16%,#d9e1e4 31%,#4b5960 49%,#cdd7da 68%,#68767e 84%,#eef3f4 100%);box-shadow:0 8px 18px rgba(0,0,0,.55),inset 0 0 0 2px #12191d;overflow:hidden;touch-action:manipulation;contain:layout paint style}.machine-well{position:relative;width:100%;height:100%;overflow:hidden;border-radius:11px;background:#01050a;box-shadow:inset 0 0 0 2px rgba(0,0,0,.86),inset 0 0 18px rgba(0,0,0,.85)}
+.machine-poster,.machine-3d,.cards-video{position:absolute;inset:0;width:100%;height:100%;display:block;border:0}.machine-poster{z-index:3;object-fit:cover;pointer-events:none;transition:opacity .14s linear}.machine-3d,.cards-video{z-index:2;opacity:0;background:#01050a}.machine-3d{pointer-events:none}.cards-video{object-fit:cover;pointer-events:none}.machine-3d-frame.model-ready.open .machine-3d{opacity:1;pointer-events:auto}.machine-3d-frame.model-ready.open .machine-poster{opacity:0}.cards-frame.video-ready.open .cards-video{opacity:1}.cards-frame.video-ready.open .machine-poster{opacity:0}
+.window-shutter{position:absolute;z-index:5;inset:8px;border:0;border-radius:11px;margin:0;padding:0;cursor:pointer;background:repeating-linear-gradient(180deg,rgba(220,230,234,.18) 0 3px,rgba(18,31,42,.88) 3px 12px),linear-gradient(180deg,#253d50,#081521 65%,#02070c);box-shadow:inset 0 0 0 2px rgba(185,213,221,.45),inset 0 0 28px rgba(0,0,0,.58);transform:translate3d(0,0,0);transition:transform .68s cubic-bezier(.22,.7,.24,1)}.window-shutter:after{content:"";position:absolute;left:8%;right:8%;top:48%;height:4px;border-radius:99px;background:linear-gradient(90deg,transparent,#8fffd7 18%,#d8ffff 50%,#8fffd7 82%,transparent);opacity:.52;box-shadow:0 0 7px rgba(143,255,215,.3)}.machine-frame.open .window-shutter{transform:translate3d(0,-108%,0)}
+/* route cards */
+.route-grid{display:grid;gap:26px}.route-card{display:block}.route-media{display:block;border-radius:50%;overflow:hidden;border:1px solid rgba(214,178,87,.8);box-shadow:0 10px 22px rgba(0,0,0,.5),inset 0 0 18px rgba(0,0,0,.6)}.route-media img{display:block;width:100%;height:auto}.route-label{margin:9px auto 0;max-width:88%;height:39px;border:1.5px solid var(--green);border-radius:11px;background:linear-gradient(#0d2741,#020914);display:flex;align-items:center;justify-content:center;color:#fff;font:700 16px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.025em}
+/* solution cards */
+.section-title{margin:0 auto 22px;max-width:92%;padding:10px 12px;border:1.5px solid var(--green);border-radius:12px;background:linear-gradient(#0d2741,#020914);color:var(--green);text-align:center;font:700 19px/1.05 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.process-grid{display:grid;gap:12px}.process{border:1px solid rgba(143,255,215,.6);border-radius:12px;background:linear-gradient(180deg,#0b2338,#03101c);overflow:hidden}.process h3{margin:0;padding:12px;color:var(--pink);font:700 15px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;border-bottom:1px solid #000}.process ul{margin:0;padding:12px 22px 14px;display:grid;gap:6px;color:#e7f6f4;font-size:15px;line-height:1.25}.explore-key{display:block;margin-top:14px;padding:15px 10px;border:1px solid rgba(214,178,87,.9);border-radius:12px;background:linear-gradient(#382f18,#0d0a03);text-align:center;color:#fff}.explore-key strong{display:block;color:var(--pink);font:700 20px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.explore-key small{display:block;margin-top:5px;color:#cfeadd}
+/* lightweight swipe carousel + manual neon orb controls */
+.carousel{display:flex;gap:12px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;padding:2px 10px 10px;scrollbar-width:none}.carousel::-webkit-scrollbar{display:none}.carousel figure{flex:0 0 82%;margin:0;scroll-snap-align:center;border-radius:14px;overflow:hidden;background:#07111b;border:1px solid rgba(143,255,215,.28)}.carousel img{display:block;width:100%;height:auto}
+/* ticker/footer */
+.ticker{position:fixed;z-index:9050;left:10px;right:10px;bottom:70px;height:38px;border:1px solid rgba(210,229,237,.86);border-radius:15px;background:linear-gradient(#17384a,#03101c);display:flex;align-items:center;justify-content:center;padding:0 14px;color:#b7ffe8;font:700 11px/1.1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;text-align:center;overflow:hidden}.footer{position:fixed;z-index:12000;left:0;right:0;bottom:0;height:74px;padding:6px 3px calc(6px + var(--safe-bottom));display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;background:linear-gradient(#10213b,#02050a);pointer-events:auto;isolation:isolate}.footer a{position:relative;z-index:1;min-width:0;min-height:56px;border:1px solid var(--green);border-radius:7px;background:linear-gradient(#26333c,#091118);box-shadow:0 2px 0 #a9006f;display:flex;align-items:center;justify-content:center;padding:5px 2px;color:#fff;font:700 10px/1.05 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;text-align:center;word-break:normal;touch-action:manipulation;user-select:none;-webkit-user-select:none;pointer-events:auto}.footer a.is-pressed,.footer a:active{transform:translateY(2px);box-shadow:none;background:linear-gradient(#16222b,#050a0e)}
+
+/* Round 1105 first-visit loader: static leather + cheap typewriter only */
+.first-visit-intro{position:fixed;inset:0;z-index:50000;display:grid;place-items:center;overflow:hidden;background:#02070c url('./mobile-intro-heart-leather-round1105.webp') center/cover no-repeat;contain:strict}.first-visit-intro{display:none}html[data-ah-intro="1"] .first-visit-intro{display:grid}.first-visit-intro[hidden][hidden]{display:none!important}.first-visit-intro::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(2,9,16,.16) 42%,rgba(0,0,0,.42));pointer-events:none}.first-visit-intro{transform:translate3d(0,0,0);will-change:auto;transition:transform 3000ms cubic-bezier(.18,.68,.20,1)}.first-visit-intro.is-raising{will-change:transform;transform:translate3d(0,-105%,0)}.intro-copy{position:relative;z-index:1;width:min(88vw,520px);padding:24px 18px;color:#f2fbff;font:700 clamp(18px,4.8vw,26px)/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.015em;text-shadow:0 2px 3px #000}.intro-line{min-height:1.45em;margin:0 0 17px}.intro-line:last-child{margin-bottom:0}.intro-copy .pink{color:var(--pink);text-shadow:0 0 8px rgba(255,46,168,.22),0 2px 3px #000}.intro-copy .green{color:var(--green);text-shadow:0 0 8px rgba(143,255,215,.18),0 2px 3px #000}.intro-cursor{display:inline-block;width:.58em;height:1.05em;margin-left:.12em;vertical-align:-.14em;background:var(--green);animation:introCursor .78s steps(1,end) infinite}@keyframes introCursor{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.first-visit-intro{transition-property:transform!important;transition-duration:3000ms!important;transition-timing-function:cubic-bezier(.18,.68,.20,1)!important}.intro-cursor{animation:none}}
+
+@media(min-width:600px){body{padding-left:24px;padding-right:24px}.machine-stack{grid-template-columns:1fr 1fr}.route-grid{grid-template-columns:repeat(3,1fr)}.route-label{font-size:13px}.carousel figure{flex-basis:58%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.window-shutter{transition:none}}
+
+.footer a{pointer-events:auto!important;-webkit-user-drag:none;}
+/* Round 1109: one shared low-FPS decoder for both machine wells */
+.machine-stack{position:relative;isolation:isolate}
+.machine-frame{z-index:1;padding:0;border:8px solid #87979e;border-top-color:#e0e7e9;border-left-color:#c4ced2;border-right-color:#68777e;border-bottom-color:#4d5b62;background:transparent;box-shadow:0 8px 18px rgba(0,0,0,.55),inset 0 0 0 2px #12191d}
+.machine-well{background:transparent;box-shadow:inset 0 0 0 2px rgba(0,0,0,.86),inset 0 0 14px rgba(0,0,0,.7)}
+.window-shutter{inset:0}
+/* Only first three carousel images have full sources at initial parse. */
+.carousel img[data-src]{background:#040c16;min-height:180px;object-fit:cover}
+
+/* Round 1110: carousel remains still unless the visitor swipes or uses the side orbs. */
+.carousel-shell{position:relative;padding:0 34px}
+.carousel-orb{position:absolute;z-index:5;top:50%;width:44px;height:44px;border-radius:50%;transform:translateY(-50%);border:1.5px solid currentColor;background:radial-gradient(circle at 36% 30%,rgba(255,255,255,.34),rgba(255,255,255,.08) 18%,rgba(2,8,14,.96) 65%);display:grid;place-items:center;padding:0;touch-action:manipulation;cursor:pointer;box-shadow:0 0 9px currentColor,inset 0 0 10px rgba(255,255,255,.08)}
+.carousel-orb::before{content:"";width:10px;height:10px;border-top:3px solid currentColor;border-right:3px solid currentColor}
+.carousel-orb.prev{left:0;color:#ff2ea8}
+.carousel-orb.prev::before{transform:rotate(-135deg);margin-left:4px}
+.carousel-orb.next{right:0;color:#8fffd7}
+.carousel-orb.next::before{transform:rotate(45deg);margin-right:4px}
+.carousel-orb:active{transform:translateY(-50%) scale(.92);box-shadow:0 0 4px currentColor,inset 0 0 14px rgba(255,255,255,.12)}
+.carousel-orb[disabled]{opacity:.32;box-shadow:none;pointer-events:none}
+@media(max-width:380px){.carousel-shell{padding-inline:30px}.carousel-orb{width:40px;height:40px}}
+
+/* Round 1114: one live mobile media surface at a time. */
+.machine-3d-frame,.cards-frame{contain:layout paint style}
+.machine-3d-frame .machine-well,.cards-frame .machine-well{isolation:isolate}
+.machine-3d-frame:not(.open) .machine-3d{pointer-events:none}.cards-frame:not(.open) .cards-video{visibility:hidden}
+
+/* Round 1116: the branded intro shield always physically travels upward for the full 3 seconds. */
+.first-visit-intro{transition-property:transform!important;transition-duration:3000ms!important;transition-timing-function:cubic-bezier(.18,.68,.20,1)!important;}
+.first-visit-intro.is-raising{transform:translate3d(0,-105%,0)!important;}
+@media(prefers-reduced-motion:reduce){.first-visit-intro{transition-property:transform!important;transition-duration:3000ms!important;transition-timing-function:cubic-bezier(.18,.68,.20,1)!important;}}
+
+/* Round 1119 mobile-only alignment/contact/button authority */
+/* The first mobile Hub band begins directly beneath the fixed gold rim. The title
+   stack itself becomes the complete gap above the first machine window, so its
+   three LCD fields remain vertically centered regardless of phone height. */
+main>.section:first-child{padding-top:0!important}
+.title-stack{
+  height:clamp(176px,25vh,236px)!important;
+  min-height:176px;
+  margin:0 5px!important;
+  padding:0;
+  display:grid!important;
+  grid-template-rows:repeat(3,minmax(40px,auto));
+  align-content:center!important;
+  gap:8px!important;
+}
+.title-stack .lcd{width:100%;margin:0}
+
+/* Explore uses the same recessed mobile outer-rim button construction. */
+.explore-key{
+  display:block;
+  margin:16px 0 3px!important;
+  min-height:58px;
+  padding:10px 12px!important;
+  border:1px solid var(--green)!important;
+  border-radius:7px!important;
+  background:linear-gradient(#26333c,#091118)!important;
+  box-shadow:0 3px 0 #a9006f,inset 0 0 0 1px rgba(255,255,255,.08)!important;
+  color:#fff!important;
+  text-align:center;
+  touch-action:manipulation;
+}
+.explore-key:active{transform:translateY(2px);box-shadow:0 1px 0 #a9006f,inset 0 0 0 1px rgba(255,255,255,.08)!important}
+.explore-key strong{color:var(--pink)!important}
+.explore-key small{color:var(--green)!important}
+
+/* Shared mobile contact form */
+.ah-mobile-contact{position:fixed;inset:0;z-index:30000;display:none;align-items:center;justify-content:center;padding:82px 16px calc(88px + var(--safe-bottom));background:rgba(0,0,0,.72)}
+.ah-mobile-contact.is-open{display:flex}
+.ah-mobile-contact__panel{position:relative;width:min(100%,480px);max-height:100%;overflow:auto;padding:18px 14px 15px;border:1.5px solid var(--green);border-radius:14px;background:linear-gradient(180deg,#10263a,#030a11 72%);box-shadow:0 5px 0 #a9006f,0 18px 48px rgba(0,0,0,.72),inset 0 0 0 1px rgba(255,255,255,.06)}
+.ah-mobile-contact__title{margin:0 42px 15px;color:var(--pink);font:700 19px/1.12 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;text-align:center}
+.ah-mobile-contact__close{position:absolute;top:8px;right:9px;width:38px;height:38px;border:1px solid var(--green);border-radius:8px;background:#07131e;color:#fff;font:700 24px/1 Arial,sans-serif;touch-action:manipulation}
+.ah-mobile-contact form{display:grid;gap:9px}
+.ah-mobile-contact label{display:block}
+.ah-mobile-contact input,.ah-mobile-contact select,.ah-mobile-contact textarea{display:block;width:100%;min-height:46px;border:1px solid rgba(143,255,215,.58);border-radius:8px;background:#020911;color:#f3ffff;padding:10px 11px;font:16px/1.25 Arial,Helvetica,sans-serif;outline:none}
+.ah-mobile-contact textarea{min-height:108px;resize:vertical}
+.ah-mobile-contact input:focus,.ah-mobile-contact select:focus,.ah-mobile-contact textarea:focus{border-color:var(--pink);box-shadow:0 0 0 1px rgba(255,46,168,.25)}
+.ah-mobile-contact select option{background:#07111b;color:#fff}
+.ah-mobile-contact__submit{min-height:50px;border:1px solid var(--green);border-radius:7px;background:linear-gradient(#26333c,#091118);box-shadow:0 3px 0 #a9006f;color:#fff;font:700 14px/1.1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;touch-action:manipulation}
+.ah-mobile-contact__submit:active{transform:translateY(2px);box-shadow:0 1px 0 #a9006f}
+.ah-mobile-contact__status{min-height:1.3em;margin:2px 2px 0;color:var(--green);font-size:13px;line-height:1.3;text-align:center}
+body.ah-contact-open{overflow:hidden!important}
+
+
+/* Round 1120 — stable 16:9 carousel geometry and symmetric image clearance.
+   The title-to-image gap is 48px. At maximum scroll the image-to-ticker gap
+   is also 48px because the existing 122px body safe space and 34px section
+   bottom padding terminate at the ticker's top edge. */
+main>.section:last-of-type .section-title{margin-bottom:48px!important}
+main>.section:last-of-type .carousel{padding-top:0!important;padding-bottom:0!important}
+main>.section:last-of-type .carousel figure{aspect-ratio:16/9!important;height:auto!important;min-height:0!important;max-height:none!important}
+main>.section:last-of-type .carousel figure>img{display:block!important;width:100%!important;height:100%!important;aspect-ratio:16/9!important;object-fit:cover!important}
+
+
+/* Round 1121 — carousel frames use the exact weathered machine-window alloy rim. */
+main>.section:last-of-type .carousel figure{
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  border:8px solid #a9b3b6!important;
+  border-image-source:url("./machine-rim-variegated-bumpy-alloy-round845.svg")!important;
+  border-image-slice:128!important;
+  border-image-width:8px!important;
+  border-image-repeat:stretch!important;
+  border-radius:0!important;
+  background:#01040a!important;
+  box-shadow:inset 0 0 0 1px rgba(234,240,241,.68),inset 0 0 0 3px rgba(20,29,34,.62),inset 0 0 15px rgba(0,0,0,.72),0 7px 14px rgba(0,0,0,.46)!important;
+}
+main>.section:last-of-type .carousel figure>img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  aspect-ratio:16/9!important;
+  object-fit:cover!important;
+}

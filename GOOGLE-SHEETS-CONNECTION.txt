@@ -1,0 +1,19 @@
+Automated Hearts — Google Sheets Form Connection
+Round 1118
+
+Google Apps Script endpoint connected:
+https://script.google.com/macros/s/AKfycbzRT1Z-3GUQaRctYcN7_c-v2QEdVtzV4Yi4dFmiAt0-Ip_04p276QEGDDTPCHi8BVeMJQ/exec
+
+Website form fields sent:
+- name
+- email
+- business
+- business_type
+- message
+- page
+- page_url
+- contact_context
+- submitted_at_client
+- form_version (1118)
+
+The Apps Script receiver should append these values to the Website Form Entries tab and send the configured notification email.
