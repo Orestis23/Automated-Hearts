@@ -1,83 +1,473 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
+<head><script src="./round1096-interaction-stability.js?v=1097r"></script><script id="r1064-deployment-router-disable">window.__AH_DISABLE_PERSISTENT_ROUTER=true;</script><style id="r1064-deployment-shield-critical">@view-transition{navigation:none}html.page-shield-arrival body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel{transform:translate3d(0,0,0)!important;-webkit-transform:translate3d(0,0,0)!important;transition:none!important}html.ah-persistent-content-active body>main#main-content{visibility:visible!important;pointer-events:auto!important}#ah-persistent-page-frame,#ah-persistent-route-loading{display:none!important;visibility:hidden!important;pointer-events:none!important}</style><script id="r1037-embed-early">try{if(window.self!==window.top&&new URLSearchParams(location.search).has('ah_embed'))document.documentElement.classList.add('ah-embedded-page')}catch(e){}</script><script id="r913-message-state-early">try{document.documentElement.classList.toggle('ah-message-persist-open',sessionStorage.getItem('ah-message-open-v1')==='1')}catch(e){}</script><style id="r913-message-critical">html body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-color:transparent!important;background-image:url("./assets/message-button-square-footer-match-round1095.svg?v=1095r")!important;background-position:top right!important;background-size:100% 100%!important;background-repeat:no-repeat!important;border:0!important;box-shadow:none!important;filter:brightness(1.36) saturate(1.08) contrast(1.06) drop-shadow(0 5px 6px rgba(0,0,0,.48)) drop-shadow(0 0 8px rgba(143,255,215,.25))!important}html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-image:url("./assets/message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;transform:translate3d(0,4px,0)!important}</style><link as="image" fetchpriority="high" href="./assets/footer-button-message-border-match-round1095.svg?v=1095r" rel="preload"/><link as="image" fetchpriority="high" href="./assets/message-button-square-footer-match-round1095.svg?v=1095r" rel="preload"/><style id="r1034-hardware-critical">:root{--r1034-footer-rest:url("./assets/footer-button-message-border-match-round1095.svg?v=1095r");--r1034-footer-pressed:url("./assets/footer-button-message-border-match-pressed-round1095.svg?v=1095r");--r1034-message-rest:url("./assets/message-button-square-footer-match-round1095.svg?v=1095r");--r1034-message-pressed:url("./assets/message-button-square-footer-match-pressed-round1095.svg?v=1095r");--r1005-message-size:84px;--r1005-message-top:6px;--r1005-message-right:6px;--r1005-message-face:var(--r1034-message-rest)}html.ah-message-persist-open{--r1005-message-face:var(--r1034-message-pressed)}body[data-page]>.ah-persistent-outer-rim{position:fixed!important;inset:0!important;opacity:1!important;visibility:visible!important;transition:none!important;animation:none!important}body[data-page]>.ah-persistent-gold-rim{opacity:1!important;visibility:visible!important;transition:none!important;animation:none!important}body[data-page]>a#header-send-message{position:fixed!important;top:var(--r1005-message-top)!important;right:var(--r1005-message-right)!important;width:var(--r1005-message-size)!important;height:var(--r1005-message-size)!important;background-image:var(--r1005-message-face)!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;transition:none!important}body[data-page]>footer#site-footer{position:fixed!important;left:0!important;right:0!important;bottom:0!important;height:96px!important;transition:none!important}body[data-page]>footer#site-footer nav#primary-nav{position:absolute!important;left:24px!important;right:24px!important;top:50%!important;height:70px!important;transform:translateY(-50%)!important}body[data-page]>footer#site-footer nav#primary-nav>.primary-nav__group{display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important;height:70px!important;gap:18px!important}body[data-page]>footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]{flex:0 0 220px!important;width:220px!important;min-width:220px!important;max-width:220px!important;height:70px!important;min-height:70px!important;max-height:70px!important;background-image:var(--r1034-footer-rest)!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;transition:none!important}@media(max-width:1100px){body[data-page]>footer#site-footer{height:88px!important}}@media(max-width:760px){:root{--r1005-message-size:37.5px;--r1005-message-top:max(15.25px,calc(env(safe-area-inset-top,0px) + 15.25px));--r1005-message-right:max(14.25px,calc(env(safe-area-inset-right,0px) + 14.25px))}body[data-page]>footer#site-footer{height:78px!important}body[data-page]>footer#site-footer nav#primary-nav{left:3px!important;right:3px!important;height:52px!important}body[data-page]>footer#site-footer nav#primary-nav>.primary-nav__group{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;height:52px!important;gap:2px!important}body[data-page]>footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]{flex:none!important;width:100%!important;min-width:0!important;max-width:none!important;height:50px!important;min-height:50px!important;max-height:50px!important}}@media(max-width:360px){:root{--r1005-message-size:34.5px;--r1005-message-top:max(14.75px,calc(env(safe-area-inset-top,0px) + 14.75px));--r1005-message-right:max(13.75px,calc(env(safe-area-inset-right,0px) + 13.75px))}}</style>
+<script id="r916-message-face-prewarm">(function(){try{var u=["./assets/message-button-square-footer-match-round1095.svg?v=1095r"];window.__ahMessageFacePrewarm=u.map(function(src){var i=new Image();i.decoding="async";i.src=src;if(i.decode)i.decode().catch(function(){});return i;});}catch(e){}})();</script>
 <meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><script id="ah-desktop-router-v1109">(function(){try{var q=new URLSearchParams(location.search);if(q.get('mobile')==='1')return;if(matchMedia('(min-width:901px)').matches){var u=new URL('./desktop-home.html',location.href);u.searchParams.set('v','1124r');u.hash=location.hash;location.replace(u.href)}}catch(e){}})();</script>
-<meta content="dark" name="color-scheme"/>
-<script>try{var __ahQ=new URLSearchParams(location.search),__ahMobile=matchMedia('(max-width:900px)').matches,__ahForce=__ahQ.get('intro')==='1',__ahSeen=localStorage.getItem('ah-mobile-first-visit-intro-v1116')==='1';document.documentElement.setAttribute('data-ah-intro',(__ahMobile&&(__ahForce||!__ahSeen))?'1':'0')}catch(e){document.documentElement.setAttribute('data-ah-intro','0')}</script>
-<title>Automated Hearts</title>
-<meta content="Automated Hearts — practical web and automation architecture for local businesses." name="description"/>
-<link href="./index.html?v=1113r" rel="canonical"/>
-<link href="./assets/mobile-home-round1124.css?v=1125r" rel="stylesheet"/>
-<link rel="stylesheet" href="./assets/mobile-controls-round1129.css?v=1129r"></head>
-<body>
-<div aria-label="Automated Hearts introduction" aria-live="polite" class="first-visit-intro" id="first-visit-intro"><div class="intro-copy" id="intro-copy"><div class="intro-line" data-line="0"></div><div class="intro-line" data-line="1"></div><div class="intro-line" data-line="2"></div><div class="intro-line" data-line="3"></div><span aria-hidden="true" class="intro-cursor" id="intro-cursor"></span></div></div>
-<span class="shell-edge t"></span><span class="shell-edge b"></span><span class="shell-edge l"></span><span class="shell-edge r"></span>
-<a aria-label="Home" class="heart" href="./index.html?v=1113r"></a>
-<div class="page-chip">Hub</div>
-<a aria-label="Send Message" class="message" data-ah-contact="Mobile Messages button" data-contact-trigger="" href="#contact-form"><svg aria-hidden="true" viewbox="0 0 32 22"><path d="M2.5 2.5h27v17h-27z"></path><path d="m3.5 4 12.5 9L28.5 4"></path><path d="m3.5 18 8.8-7.1M28.5 18l-8.8-7.1"></path></svg></a>
+<script>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add("js", "page-ready");
+        var routedArrival = false;
+        try {
+          routedArrival = sessionStorage.getItem("ah-page-shield") === "1";
+          sessionStorage.removeItem("ah-page-shield");
+        } catch (error) {}
+        try {
+          var routedUrl = new URL(window.location.href);
+          if (routedUrl.searchParams.get("ah-route") === "1") routedArrival = true;
+          if (routedUrl.searchParams.has("ah-route")) {
+            routedUrl.searchParams.delete("ah-route");
+            history.replaceState(history.state, "", routedUrl.href);
+          }
+        } catch (error) {}
+        if (routedArrival) {
+          root.classList.add("page-shield-arrival", "routed-page-arrival");
+        }
+      })();
+    </script>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><style id="r1036-shell-persistence-critical">
+@view-transition{navigation:none}
+body[data-page]>.ah-persistent-outer-rim{view-transition-name:ah-outer-rim!important}body[data-page]>.ah-persistent-gold-rim{view-transition-name:ah-gold-rim!important}body[data-page]>.rim-heart-emblem{view-transition-name:ah-rim-heart!important}body[data-page]>.rim-page-name-screen{view-transition-name:ah-page-screen!important}body[data-page]>#header-send-message{view-transition-name:ah-message-button!important}body[data-page]>#home-ticker-wrap{view-transition-name:ah-ticker-hardware!important}body[data-page]>#site-footer{view-transition-name:ah-footer-hardware!important}
+</style>
+<link as="image" fetchpriority="high" href="./assets/solution-formula-current-brand-round823.webp" rel="preload" type="image/webp"/>
+<style id="viewport-shell-critical">
+:root{--r919-rim-size:clamp(1280px,83.333vw,2560px);}
+html,body{background-color:#000!important;background-image:none!important;background-position:center center!important;background-size:var(--r919-rim-size) var(--r919-rim-size)!important;background-repeat:repeat!important;background-attachment:fixed!important;background-blend-mode:normal!important;}
+html:not(.ah-shell-dom-ready)::after{content:""!important;position:fixed!important;z-index:2147483250!important;top:var(--current-frame-top,96px)!important;right:var(--current-frame-side,88px)!important;bottom:var(--current-frame-bottom,96px)!important;left:var(--current-frame-side,88px)!important;box-sizing:border-box!important;display:block!important;border:2px solid rgba(214,178,87,.94)!important;border-radius:var(--current-frame-radius,32px)!important;background:transparent!important;box-shadow:0 0 0 2px rgba(31,19,3,.96),0 0 0 4px rgba(232,202,126,.30),0 0 10px rgba(216,176,76,.24),inset 0 0 0 1px rgba(255,239,194,.28),inset 0 0 0 4px rgba(2,5,8,.30)!important;pointer-events:none!important;}
+html.page-shield-arrival:not(.ah-shield-dom-ready)::before{content:""!important;position:fixed!important;z-index:2147483190!important;top:var(--current-frame-top,96px)!important;right:var(--current-frame-side,88px)!important;bottom:var(--current-frame-bottom,96px)!important;left:var(--current-frame-side,88px)!important;display:block!important;box-sizing:border-box!important;border:1px solid rgba(143,255,215,.24)!important;border-radius:calc(var(--current-frame-radius,32px) - 2px)!important;background:#08172b url("./assets/page-shield-embossed-strong-round1067.webp") center/cover no-repeat!important;box-shadow:inset 0 0 0 1px rgba(0,0,0,.62)!important;pointer-events:none!important;}
+
+html,body{min-height:100%;
+        margin:0;
+        background-color:#000;
+        background-image:none;
+        background-size:clamp(1280px,83.333vw,2560px) clamp(1280px,83.333vw,2560px);
+        background-position:center center;
+        background-repeat:repeat;
+        background-attachment:fixed;
+        background-blend-mode:normal;
+        color-scheme:dark;}
+body[data-page] > .rim-heart-emblem{position: fixed;
+        z-index: 10075;
+        top: calc((96px - 122px) / 2 + 3px);
+        left: calc((88px - 110px) / 2);
+        display: block;
+        width: 110px;
+        height: 122px;
+        background: url("./assets/rim-heart-embossed-round291.webp")
+          center/contain no-repeat;
+        opacity: 1;
+        visibility: visible;
+        filter: brightness(1.42) contrast(1.42) saturate(0.82);}
+body[data-page]::after{content: "";
+        position: fixed;
+        z-index: 1520;
+        top: 96px;
+        right: 88px;
+        bottom: 78px;
+        left: 88px;
+        box-sizing: border-box;
+        border: 2px solid rgba(214, 178, 87, 0.94);
+        border-radius: 28px;
+        pointer-events: none;
+        box-shadow:
+          0 0 0 2px rgba(31, 19, 3, 0.96),
+          0 0 0 4px rgba(232, 202, 126, 0.3),
+          0 0 10px rgba(216, 176, 76, 0.24),
+          inset 0 0 0 1px rgba(255, 239, 194, 0.28),
+          inset 0 0 0 4px rgba(2, 5, 8, 0.3);}
+@media (max-width: 1100px){body[data-page] > .rim-heart-emblem{top: calc((88px - 122px) / 2 + 2px);
+          left: calc((80px - 110px) / 2);}
+body[data-page]::after{top: 88px;
+          right: 80px;
+          bottom: 88px;
+          left: 80px;}}
+@media (max-width: 760px){html,body{background-size:cover;}}
+@media (max-width: 760px){body[data-page] > .rim-heart-emblem{top: calc((78px - 83px) / 2 + 1px);
+          left: calc((66px - 74px) / 2);
+          width: 74px;
+          height: 83px;}
+body[data-page]::after{top: 78px;
+          right: 66px;
+          bottom: 78px;
+          left: 66px;}}
+body[data-page] > footer#site-footer.site-footer--minimal{position: fixed !important;
+        z-index: 1510 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 96px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        overflow: hidden !important;}
+body[data-page] > footer#site-footer > .minimal-footer-row{position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: transparent !important;}
+@media (max-width: 1100px){body[data-page] > footer#site-footer.site-footer--minimal{height: 88px !important;}}
+@media (max-width: 760px){body[data-page] > footer#site-footer.site-footer--minimal{height: 78px !important;}}
+body[data-page] > header.site-header{z-index: 1510 !important;
+        pointer-events: none !important;}
+body[data-page] > .rim-page-name-screen{--page-sign-fill-color: #ff2ea8;
+        --page-sign-inverse-color: #ff2ea8;
+        position: fixed !important;
+        z-index: 2147483200 !important;
+        top: 48px !important;
+        left: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        width: 716px !important;
+        height: 58px !important;
+        margin: 0 !important;
+        padding: 6.25px 15px !important;
+        overflow: hidden !important;
+        border: 2.5px solid #8fffd7 !important;
+        border-radius: 17.5px !important;
+        background: linear-gradient(180deg, #0a2037, #020914) !important;
+        box-shadow:
+          0 0 0 2.5px rgba(3, 4, 5, 0.94),
+          0 0 8px rgba(143, 255, 215, 0.44),
+          inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translate(-50%, -50%) !important;
+        pointer-events: none !important;}
+body[data-page]
+        > .rim-page-name-screen
+        > :is(.footer-page-led, .header-page-led){display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 6px !important;
+        overflow: hidden !important;
+        font-family: "Share Tech Mono", "Courier New", monospace !important;
+        font-size: 20pt !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        letter-spacing: 0.001em !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        opacity: 1 !important;
+        visibility: visible !important;}
+@media (max-width: 1100px){body[data-page] > .rim-page-name-screen{top: 44px !important;}}
+@media (max-width: 760px){body[data-page] > .rim-page-name-screen{top: 39px !important;
+          width: min(560px, calc(100vw - 120px)) !important;
+          height: 48px !important;
+          padding: 5px 11.25px !important;}
+body[data-page]
+          > .rim-page-name-screen
+          > :is(.footer-page-led, .header-page-led){font-size: 18.75pt !important;
+          padding-inline: 3.75px !important;}}
+body[data-page] > .page-transition-shield{position: fixed !important;
+        z-index: 2147483000 !important;
+        top: var(--current-frame-top, 96px) !important;
+        right: var(--current-frame-side, 88px) !important;
+        bottom: var(--current-frame-bottom, 96px) !important;
+        left: var(--current-frame-side, 88px) !important;
+        display: block !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+        border: 0 solid transparent !important;
+        border-radius: calc(var(--current-frame-radius, 32px) - 2px) !important;
+        pointer-events: none !important;
+        background: transparent !important;
+        contain: strict !important;
+        isolation: isolate !important;
+        transform: translateZ(0) !important;
+        backface-visibility: hidden !important;}
+body[data-page] > .page-transition-shield::before{content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        display: block !important;
+        border-radius: inherit !important;
+        background-color: #08172b !important;
+        background-image:
+          radial-gradient(ellipse 48% 42% at 20% 22%, rgba(88,137,182,.16), transparent 72%),
+          radial-gradient(ellipse 45% 38% at 82% 76%, rgba(191,43,133,.10), transparent 74%),
+          linear-gradient(180deg, rgba(255,255,255,.035), rgba(0,0,0,.20)),
+          url("./assets/page-shield-embossed-strong-round1067.webp") !important;
+        background-position: center, center, center, center !important;
+        background-size: auto, auto, 100% 100%, cover !important;
+        background-repeat: no-repeat !important;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,.62) !important;
+        transform: translate3d(0,-100.6%,0) !important;
+        transform-origin: 50% 0 !important;
+        backface-visibility: hidden !important;
+        will-change: transform !important;
+        pointer-events: none !important;}
+html.page-shield-arrival body[data-page] > .page-transition-shield{pointer-events: auto !important;
+        background-color: #08172b !important;
+        background-image:
+          radial-gradient(ellipse 48% 42% at 20% 22%, rgba(88,137,182,.16), transparent 72%),
+          radial-gradient(ellipse 45% 38% at 82% 76%, rgba(191,43,133,.10), transparent 74%),
+          linear-gradient(180deg, rgba(255,255,255,.035), rgba(0,0,0,.20)),
+          url("./assets/page-shield-embossed-strong-round1067.webp") !important;
+        background-position: center, center, center, center !important;
+        background-size: auto, auto, 100% 100%, cover !important;
+        background-repeat: no-repeat !important;}
+html.page-shield-covering body[data-page] > .page-transition-shield{pointer-events: auto !important;}
+html.page-shield-arrival body[data-page] > .page-transition-shield::before,html.page-shield-covering body[data-page] > .page-transition-shield::before{transform: translate3d(0,0,0) !important;}
+html.page-shield-arrival body[data-page] > .page-transition-shield::before{transition: none !important;}
+@media (max-width: 760px){body[data-page] > .page-transition-shield{top: var(--current-frame-top, 78px) !important;
+          right: var(--current-frame-side, 66px) !important;
+          bottom: var(--current-frame-bottom, 78px) !important;
+          left: var(--current-frame-side, 66px) !important;}}
+
+/* Round 911 critical persistent shell: same pixels before external CSS arrives. */
+:root{--current-frame-side:88px;--current-frame-top:96px;--current-frame-bottom:96px;--current-frame-radius:32px;--r911-rim-size:clamp(1280px,83.333vw,2560px);}
+html,body{background-color:#000!important;background-image:none!important;background-position:center!important;background-size:var(--r911-rim-size) var(--r911-rim-size)!important;background-repeat:repeat!important;}
+body[data-page]::after{display:none!important;content:none!important;}
+body[data-page]>.ah-persistent-outer-rim{position:fixed;inset:0;z-index:2147483200;display:block;pointer-events:none;overflow:hidden;contain:strict;isolation:isolate;}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge{position:absolute;inset:0;display:block;background:#06101d url("./assets/solution-formula-current-brand-round823.webp") center/var(--r911-rim-size) var(--r911-rim-size) repeat;}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--top{clip-path:inset(0 0 calc(100% - var(--current-frame-top)) 0)}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--bottom{clip-path:inset(calc(100% - var(--current-frame-bottom)) 0 0 0)}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--left{clip-path:inset(0 calc(100% - var(--current-frame-side)) 0 0)}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--right{clip-path:inset(0 0 0 calc(100% - var(--current-frame-side)))}
+body[data-page]>.ah-persistent-gold-rim{position:fixed;z-index:2147483250;top:var(--current-frame-top);right:var(--current-frame-side);bottom:var(--current-frame-bottom);left:var(--current-frame-side);box-sizing:border-box;border:2px solid rgba(214,178,87,.94);border-radius:var(--current-frame-radius);pointer-events:none;box-shadow:0 0 0 2px rgba(31,19,3,.96),0 0 0 4px rgba(232,202,126,.30),0 0 10px rgba(216,176,76,.24),inset 0 0 0 1px rgba(255,239,194,.28),inset 0 0 0 4px rgba(2,5,8,.30);}
+body[data-page]>.viewport-carbon-backdrop,body[data-page]>.viewport-frame-edges{display:none!important;}
+/* Round 912 critical persistent hardware */
+body[data-page]>:is(.rim-heart-emblem,.rim-page-name-screen,#header-send-message,#site-footer){z-index:2147483300!important;}
+body[data-page]>footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]{border:0!important;outline:0!important;background-color:transparent!important;background-image:url("./assets/footer-button-message-border-match-round1095.svg?v=1095r")!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;box-shadow:none!important;}
+body[data-page]>footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]::before,body[data-page]>footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]::after{content:none!important;display:none!important;}
+@media(max-width:1100px){:root{--current-frame-side:80px;--current-frame-top:88px;--current-frame-bottom:88px;}}
+@media(max-width:760px){:root{--current-frame-side:66px;--current-frame-top:78px;--current-frame-bottom:78px;--r911-rim-size:800px;}}
+</style>
+<style id="r916-shield-message-critical">
+html body[data-page][class][class][class]>.page-transition-shield.page-transition-shield{background-color:#08172b!important;background-image:url("./assets/page-shield-embossed-strong-round1067.webp")!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;transform:translate3d(0,-102%,0)!important;transition:transform 2000ms cubic-bezier(.22,.66,.24,1)!important;will-change:transform!important;backface-visibility:hidden!important;clip-path:none!important}
+html body[data-page]>.page-transition-shield::before,html body[data-page]>.page-transition-shield::after{content:none!important;display:none!important;animation:none!important;transition:none!important}
+html.page-shield-arrival body[data-page]>.page-transition-shield,html.page-shield-covering body[data-page]>#page-transition-shield.page-transition-shield{transform:translate3d(0,0,0)!important}
+html.page-shield-revealing body[data-page]>#page-transition-shield.page-transition-shield{transform:translate3d(0,-102%,0)!important}
+html body[data-page][class][class][class][class][class][class][class][class] > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched),html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-image:url("./assets/message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;transform:translate3d(0,4px,0)!important}
+</style>
+<style id="r917-shield-home-critical">
+html body[data-page]>.page-transition-shield.page-transition-shield{position:fixed!important;z-index:2147483190!important;top:var(--current-frame-top,96px)!important;right:var(--current-frame-side,88px)!important;bottom:var(--current-frame-bottom,96px)!important;left:var(--current-frame-side,88px)!important;display:block!important;overflow:hidden!important;background:none!important;opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important;contain:paint!important;isolation:isolate!important;pointer-events:none!important}
+html body[data-page]>.page-transition-shield.page-transition-shield::before{content:""!important;position:absolute!important;inset:0!important;display:block!important;border-radius:inherit!important;background:#08172b url("./assets/page-shield-embossed-strong-round1067.webp") center/cover no-repeat!important;opacity:1!important;visibility:visible!important;transform:translate3d(0,-102%,0)!important;transition:transform 2000ms cubic-bezier(.22,.66,.24,1)!important;will-change:transform!important;backface-visibility:hidden!important}
+html body[data-page]>.page-transition-shield.page-transition-shield::after{content:none!important;display:none!important}
+html.page-shield-arrival body[data-page]>.page-transition-shield.page-transition-shield::before,html.page-shield-covering body[data-page]>.page-transition-shield.page-transition-shield::before{transform:translate3d(0,0,0)!important}
+html.page-shield-revealing body[data-page]>.page-transition-shield.page-transition-shield::before{transform:translate3d(0,-102%,0)!important}
+</style>
+<style id="r919-home-surface-critical">html body.page-home[data-page="home"] main#main-content>section#home-opening-hero#home-opening-hero{background-color:#06101d!important;background-image:url("./assets/solution-formula-current-brand-round823.webp")!important;background-position:center center!important;background-size:var(--r919-rim-size,clamp(1280px,83.333vw,2560px)) var(--r919-rim-size,clamp(1280px,83.333vw,2560px))!important;background-repeat:repeat!important;background-attachment:fixed!important;background-blend-mode:normal!important}html body.page-home[data-page="home"] #home-opening-hero :is(#home-hero-shell,#home-hero-housing){background:transparent!important;background-image:none!important}html body.page-home[data-page="home"] #home-opening-hero::before,html body.page-home[data-page="home"] #home-opening-hero::after,html body.page-home[data-page="home"] #home-hero-shell::before,html body.page-home[data-page="home"] #home-hero-shell::after,html body.page-home[data-page="home"] #home-hero-housing::before,html body.page-home[data-page="home"] #home-hero-housing::after{content:none!important;display:none!important}</style>
+<title>
+      Small Business AI Consulting &amp; Automation | Automated Hearts
+    </title>
+<meta content="Human-centered AI consulting, workflow automation, process improvement, and practical AI training for small businesses and local teams." name="description"/>
+<meta content="#06101d" name="theme-color"/>
+<link href="./" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Small Business AI Consulting &amp; Automation | Automated Hearts" property="og:title"/>
+<meta content="Human-centered AI consulting, workflow automation, process improvement, and practical AI training for small businesses and local teams." property="og:description"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Small Business AI Consulting &amp; Automation | Automated Hearts" name="twitter:title"/>
+<meta content="Human-centered AI consulting, workflow automation, process improvement, and practical AI training for small businesses and local teams." name="twitter:description"/>
+<link href="./assets/favicon.ico" rel="icon" sizes="any"/>
+<link as="image" fetchpriority="high" href="./assets/rim-heart-embossed-round291.webp" rel="preload"/>
+<link as="image" href="./assets/button-leather-grain-visible-round794.webp" rel="preload"/>
+<link as="image" fetchpriority="high" href="./assets/home-carbon-weave-round737-seamless.webp" rel="preload"/>
+<link href="./assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&amp;family=Rajdhani:wght@400;500;600;700&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet"/>
+<noscript></noscript>
+<link as="image" href="./assets/page-shield-embossed-strong-round1067.webp" rel="preload"/>
+<script defer="" src="./ah-js-bundle-01.js?v=1096r"></script>
+<script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Small Business AI Consulting & Automation",
+        "description": "Human-centered AI consulting, workflow automation, process improvement, and practical AI training for small businesses and local teams."
+      }
+    </script>
+<link href="./lean-index-1062.css?v=1097r" rel="stylesheet"/>
+<!-- Round 614: canonical Automated Hearts color and typography system applied to Home page only. -->
+<style id="r1035-shell-shield-critical">
+:root{--r1035-shield-duration:2000ms;--r1035-shield-ease:cubic-bezier(.20,.72,.22,1)}
+body[data-page]>.ah-persistent-outer-rim,body[data-page]>.ah-persistent-gold-rim,body[data-page]>.rim-heart-emblem,body[data-page]>.rim-page-name-screen,body[data-page]>#header-send-message,body[data-page]>#home-ticker-wrap,body[data-page]>#site-footer{visibility:visible!important;opacity:1!important}
+body[data-page]>#page-transition-shield.page-transition-shield{transform:none!important;transition:none!important;background:none!important;background-image:none!important;overflow:hidden!important}
+body[data-page]>#page-transition-shield.page-transition-shield::before,body[data-page]>#page-transition-shield.page-transition-shield::after{content:none!important;display:none!important;background:none!important;background-image:none!important}
+body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel{position:absolute!important;inset:0!important;display:block!important;background:#08172b url("./assets/page-shield-embossed-strong-round1067.webp") center/cover no-repeat!important;transform:translate3d(0,-100.5%,0)!important;transition:transform var(--r1035-shield-duration) var(--r1035-shield-ease)!important;will-change:transform!important;backface-visibility:hidden!important}
+html.page-shield-arrival body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel,html.page-shield-covering body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel,html[data-page-shield-state="covered"] body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel{transform:translate3d(0,0,0)!important}
+@media(max-width:760px){body[data-page]>a.rim-heart-emblem.rim-heart-home-link{position:fixed!important;top:0!important;left:-4px!important;width:74px!important;height:83px!important;margin:0!important}}
+@media(max-width:374px){body[data-page]>a.rim-heart-emblem.rim-heart-home-link{left:-3px!important;width:70px!important;height:78px!important}}
+</style>
+<link href="./round1063-shield-model-performance.css?v=1063r" rel="stylesheet"/><link href="./round1064-vercel-navigation-shield-fix.css?v=1064r" rel="stylesheet"/>
+<link rel="preload" href="./vendor/three-0.160.0/three.min.js" as="script" fetchpriority="high"/>
+<link rel="preload" href="./assets/home-machine-asteroid-surface-round936.jpg" as="image" fetchpriority="high" media="(min-width:760.01px)"/>
+<link rel="preload" href="./assets/home-machine-asteroid-emissive-round936.jpg" as="image" fetchpriority="high" media="(min-width:760.01px)"/>
+<link rel="preload" href="./assets/home-machine-earth-cinematic-round936.webp" as="image" fetchpriority="high" media="(min-width:760.01px)"/>
+<link href="./round1065-machine-3d-restore.css?v=1066r" rel="stylesheet"/>
+<link href="./round1070-machine-model-stage-learning-rims.css?v=1070r" rel="stylesheet"/>
+<link href="./round1073-interaction-model-authority.css?v=1073r" rel="stylesheet"/><link href="./round1094-shield-rolodex-authority.css?v=1094r" rel="stylesheet"/><link href="./round1095-depth-matte-authority.css?v=1095r" rel="stylesheet"/><link href="./round1096-interaction-stability.css?v=1096r" rel="stylesheet"/><link href="./round1100-home-mobile-video.css?v=1100r" rel="stylesheet"/></head>
+<body class="page-home" data-page="home">
+<div aria-hidden="true" class="ah-persistent-outer-rim"><span class="ah-shell-edge ah-shell-edge--top"></span><span class="ah-shell-edge ah-shell-edge--right"></span><span class="ah-shell-edge ah-shell-edge--bottom"></span><span class="ah-shell-edge ah-shell-edge--left"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--tl"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--tr"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--bl"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--br"></span></div><div aria-hidden="true" class="ah-persistent-gold-rim"></div><script id="r919-shell-dom-ready">document.documentElement.classList.add("ah-shell-dom-ready");</script>
+<div aria-hidden="true" class="page-transition-shield" id="page-transition-shield"><span aria-hidden="true" class="page-transition-shield__panel"></span></div><script id="r919-shield-dom-ready">document.documentElement.classList.add("ah-shield-dom-ready");</script>
+<a aria-label="Go to homepage" class="rim-heart-emblem rim-heart-home-link" href="./index.html" id="rim-heart-home"><span aria-hidden="true" class="rim-heart-home-link__glow"></span><span class="sr-only">Home</span></a><a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<div class="shell header-inner">
+<a aria-label="Automated Hearts home" class="brand" href="./index.html"><img alt="" class="brand-mark" decoding="async" height="64" src="./assets/heart-logo.webp" width="64"/><span class="brand-name"><strong>Automated</strong> Hearts</span></a>
+</div>
+</header>
+<div aria-label="Current page: Hub" class="footer-page-screen rim-page-name-screen header-page-screen header-page-screen--top header-page-screen-round339 r383-reference-screen" role="status">
+<span aria-label="Hub" class="footer-page-led header-page-led screen-text-canonical screen-text-canonical--green screen-text-size-page r383-reference-text" data-text="Hub">Hub</span>
+<span aria-hidden="true" class="r488-extra-matte-film"></span></div>
+<a aria-label="Send Message" class="r973-pink-edge header-send-message mechanical-send-control" data-contact-origin="header" data-contact-trigger="" data-nav="contact" href="#contact" id="header-send-message" style="position:fixed!important;z-index:2147483646!important;top:var(--r1005-message-top)!important;right:var(--r1005-message-right)!important;bottom:auto!important;left:auto!important;display:block!important;visibility:visible!important;opacity:1!important;width:var(--r1005-message-size)!important;min-width:var(--r1005-message-size)!important;max-width:var(--r1005-message-size)!important;height:var(--r1005-message-size)!important;min-height:var(--r1005-message-size)!important;max-height:var(--r1005-message-size)!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:visible!important;background-color:transparent!important;background-image:var(--r1005-message-face)!important;background-position:center!important;background-size:100% 100%!important;background-repeat:no-repeat!important;border:0!important;border-radius:0!important;outline:0!important;box-shadow:none!important;filter:none!important;clip-path:none!important;-webkit-clip-path:none!important;mask:none!important;-webkit-mask:none!important;transform:var(--r1005-message-transform)!important;translate:none!important;scale:none!important;rotate:none!important;-webkit-appearance:none!important;appearance:none!important;pointer-events:auto!important;"><span aria-hidden="true" class="r1005-message-envelope"><svg focusable="false" viewbox="0 0 32 22"><path d="M2.5 2.5h27v17h-27z"></path><path d="m3.5 4 12.5 9L28.5 4"></path><path d="m3.5 18 8.8-7.1M28.5 18l-8.8-7.1"></path></svg></span></a>
 <main id="main-content">
-<section aria-label="Automated Hearts introduction" class="section">
-<div class="title-stack"><div class="lcd green">Automated Hearts</div><div class="lcd pink">Web &amp; Automation</div><div class="lcd green">Architecture</div></div>
-<div class="machine-stack" id="machine-stack">
-<div class="machine-frame machine-3d-frame">
-<div class="machine-well"><iframe aria-label="Interactive Automated Hearts machine" class="machine-3d" data-src="./mobile-home-machine-3d-round1115.html?v=1116r" loading="eager" referrerpolicy="same-origin" title="Interactive Automated Hearts machine"></iframe><img alt="Automated Hearts machine on an asteroid" class="machine-poster" decoding="async" height="270" loading="eager" src="./assets/home-machine-orbit-mobile-round1101-poster.webp" width="480"/></div>
-<button aria-expanded="false" aria-label="Raise machine window" class="window-shutter" type="button"></button>
+<section aria-label="Automated Hearts introduction" class="hero hero--home home-image-hero section--black" id="home-opening-hero">
+<div class="home-hero-engine-shell" id="home-hero-shell">
+<div class="home-hero-brushed-housing" id="home-hero-housing">
+<div aria-hidden="true" class="home-header-screen-row home-header-screen-row-round338 home-header-screen-row-round339 home-header-screen-row-round340 r1000-home-title-row" id="home-title-fields">
+<div class="home-header-screen home-header-screen--green home-header-screen-round338 home-header-screen-round339 home-header-screen-round340 r383-reference-screen r383-reference-screen--green r1000-home-title-screen">
+<span aria-hidden="true" class="home-header-screen-cracks"></span><span aria-label="Automated Hearts" class="r1000-home-title-text r1000-home-title-text--green r1005-home-title-copy" style='display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:.012em!important;white-space:nowrap!important;text-align:center!important;opacity:1!important;color:#b7ffe8!important;-webkit-text-fill-color:#b7ffe8!important;text-shadow:0 0 1px #b7ffe8,0 0 4px rgba(183,255,232,.38)!important;filter:none!important;-webkit-text-stroke:0!important;overflow:hidden!important;'>Automated Hearts</span>
 </div>
-<div class="machine-frame cards-frame">
-<div class="machine-well"><video aria-label="Automated Hearts digital cards" class="cards-video" data-src="./assets/home-rolodex-scroll-mobile-round1101.mp4" loop="" muted="" playsinline="" preload="none"></video><img alt="Automated Hearts digital cards" class="machine-poster" decoding="async" height="270" loading="eager" src="./assets/home-rolodex-scroll-mobile-round1101-poster.webp" width="480"/></div>
-<button aria-expanded="false" aria-label="Raise card window" class="window-shutter" type="button"></button>
+<div class="home-header-screen home-header-screen--red home-header-screen-round338 home-header-screen-round339 home-header-screen-round340 r383-reference-screen r383-reference-screen--red r1000-home-title-screen">
+<span aria-hidden="true" class="home-header-screen-cracks"></span><span aria-label="Web &amp; Automation" class="r1000-home-title-text r1000-home-title-text--pink r1005-home-title-copy" style='display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:.012em!important;white-space:nowrap!important;text-align:center!important;opacity:1!important;color:#ff70bd!important;-webkit-text-fill-color:#ff70bd!important;text-shadow:0 0 1px #ff70bd,0 0 4px rgba(255,112,189,.38)!important;filter:none!important;-webkit-text-stroke:0!important;overflow:hidden!important;'>Web &amp; Automation</span>
+</div>
+<div class="home-header-screen home-header-screen--green home-header-screen-round338 home-header-screen-round339 home-header-screen-round340 r383-reference-screen r383-reference-screen--green r1000-home-title-screen r1000-home-title-screen--architecture">
+<span aria-hidden="true" class="home-header-screen-cracks"></span><span aria-label="Architecture" class="r1000-home-title-text r1000-home-title-text--green r1005-home-title-copy" style='display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:.012em!important;white-space:nowrap!important;text-align:center!important;opacity:1!important;color:#b7ffe8!important;-webkit-text-fill-color:#b7ffe8!important;text-shadow:0 0 1px #b7ffe8,0 0 4px rgba(183,255,232,.38)!important;filter:none!important;-webkit-text-stroke:0!important;overflow:hidden!important;'>Architecture</span>
+</div>
+</div>
+<div class="home-hero-machine-grid" id="home-machine-grid">
+<div class="home-hero-engine-frame">
+<div aria-hidden="true" class="model-dedicated-backdrop"></div>
+<iframe class="home-hero-engine-embed" fetchpriority="high" id="home-machine-primary" loading="eager" scrolling="no" tabindex="0" title="Interactive auto-rotating Automated Hearts asteroid and Earth visualization; drag to orbit and scroll or pinch to zoom"></iframe>
+<video aria-hidden="true" autoplay class="home-mobile-machine-loop home-mobile-machine-loop--primary" id="home-machine-primary-video" loop muted playsinline poster="./assets/home-machine-orbit-mobile-round1100-poster.webp" preload="none"></video>
+<div aria-hidden="true" class="machine-three-ridge-overlay"></div>
+<button aria-controls="home-machine-primary" aria-expanded="false" aria-label="Reveal Automated Hearts machine visualization" class="home-machine-haze-screen" data-machine-haze="" type="button"><span class="sr-only">Reveal machine window</span></button>
+</div>
+<div class="home-hero-engine-frame home-hero-rolodex-frame">
+<iframe allow="fullscreen" class="home-hero-engine-embed home-hero-rolodex-embed" fetchpriority="low" id="home-machine-rolodex" loading="eager" title="Interactive digital Rolodex"></iframe>
+<video aria-hidden="true" autoplay class="home-mobile-machine-loop home-mobile-machine-loop--rolodex" id="home-machine-rolodex-video" loop muted playsinline poster="./assets/home-rolodex-scroll-mobile-round1100-poster.webp" preload="none"></video>
+<div aria-hidden="true" class="machine-three-ridge-overlay"></div>
+<button aria-controls="home-machine-rolodex" aria-expanded="false" aria-label="Reveal digital Rolodex" class="home-machine-haze-screen" data-machine-haze="" type="button"><span class="sr-only">Reveal machine window</span></button>
+</div>
+</div>
 </div>
 </div>
 </section>
-<section aria-label="Explore Automated Hearts" class="section">
-<div class="route-grid">
-<a class="route-card" href="./mobile-who-we-help.html?v=1129r"><span class="route-media"><img alt="Who We Help" decoding="async" height="454" loading="lazy" src="./assets/mobile-lite-who-we-help.webp" width="420"/></span><span class="route-label">Who We Help</span></a>
-<a class="route-card" href="./mobile-solutions.html?v=1129r"><span class="route-media"><img alt="The Solution" decoding="async" height="454" loading="lazy" src="./assets/mobile-lite-the-solution.webp" width="420"/></span><span class="route-label">The Solution</span></a>
-<a class="route-card" href="./mobile-learning-center.html?v=1120r"><span class="route-media"><img alt="Learning Center" decoding="async" height="454" loading="lazy" src="./assets/mobile-lite-learning-center.webp" width="420"/></span><span class="route-label">Learning Center</span></a>
+<section class="section section--divider home-explore-section home-explore-section--relocated" id="home-route-buttons">
+<div class="shell">
+<div class="explore-grid home-explore-grid premium-route-grid">
+<article class="premium-route-card premium-route-card--teal home-route-card" data-route-index="1">
+<a aria-label="Who We Help: See the industries, teams, and everyday business challenges where practical AI support can help." class="premium-route-card__link premium-route-card__image-button" data-route-index="1" href="./who-we-help.html"><span class="premium-route-card__media"><img alt="A man, a woman, and a robot planning a connected logistics system together" decoding="async" fetchpriority="low" height="908" loading="lazy" src="./assets/home-card-who-we-help-round455-frameless.webp" width="841"/></span></a>
+<div aria-hidden="true" class="premium-route-card__title-sign brand-route-screen">
+<span class="ah-route-label-final" style='position:relative!important;z-index:50!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;margin:0!important;padding:0 var(--ah-route-label-pad-x)!important;overflow:hidden!important;color:#fff!important;-webkit-text-fill-color:#fff!important;-webkit-text-stroke:0!important;background:none!important;background-image:none!important;font-family:"Orbitron",system-ui,sans-serif!important;font-size:var(--ah-route-label-size)!important;font-weight:700!important;font-style:normal!important;font-variant:normal!important;line-height:1!important;letter-spacing:.015em!important;word-spacing:var(--ah-route-label-word-space)!important;white-space:pre!important;text-align:center!important;text-transform:none!important;text-decoration:none!important;text-rendering:geometricPrecision!important;-webkit-font-smoothing:antialiased!important;font-kerning:none!important;opacity:1!important;visibility:visible!important;filter:none!important;transform:none!important;text-shadow:0 0 .5px #fff,0 0 1.4px rgba(255,255,255,.94),0 0 2.8px rgba(180,238,255,.42)!important;'>Who We Help</span>
+</div>
+</article>
+<article class="premium-route-card premium-route-card--pink home-route-card" data-route-index="2">
+<a aria-label="The Solution: Clean up the clutter, simplify the process, and create a stronger foundation without adding more software." class="premium-route-card__link premium-route-card__image-button" data-route-index="2" href="./solutions.html"><span class="premium-route-card__media"><img alt="A mechanical network illustrating the connected Automated Hearts solution" decoding="async" fetchpriority="low" height="908" loading="lazy" src="./assets/home-card-the-solution-round455-frameless.webp" width="841"/></span></a>
+<div aria-hidden="true" class="premium-route-card__title-sign brand-route-screen">
+<span class="ah-route-label-final" style='position:relative!important;z-index:50!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;margin:0!important;padding:0 var(--ah-route-label-pad-x)!important;overflow:hidden!important;color:#fff!important;-webkit-text-fill-color:#fff!important;-webkit-text-stroke:0!important;background:none!important;background-image:none!important;font-family:"Orbitron",system-ui,sans-serif!important;font-size:var(--ah-route-label-size)!important;font-weight:700!important;font-style:normal!important;font-variant:normal!important;line-height:1!important;letter-spacing:.015em!important;word-spacing:var(--ah-route-label-word-space)!important;white-space:pre!important;text-align:center!important;text-transform:none!important;text-decoration:none!important;text-rendering:geometricPrecision!important;-webkit-font-smoothing:antialiased!important;font-kerning:none!important;opacity:1!important;visibility:visible!important;filter:none!important;transform:none!important;text-shadow:0 0 .5px #fff,0 0 1.4px rgba(255,255,255,.94),0 0 2.8px rgba(180,238,255,.42)!important;'>The Solution</span>
+</div>
+</article>
+<article class="premium-route-card premium-route-card--gold home-route-card" data-route-index="3">
+<a aria-label="Learning Center: Build confidence with plain-English guidance, practical AI lessons, and useful ways to think more clearly." class="premium-route-card__link premium-route-card__image-button" data-route-index="3" href="./learning-center.html"><span class="premium-route-card__media"><img alt="A person and a robot learning through a connected set of practical concepts" decoding="async" fetchpriority="low" height="908" loading="lazy" src="./assets/home-card-learning-center-round455-frameless.webp" width="841"/></span></a>
+<div aria-hidden="true" class="premium-route-card__title-sign brand-route-screen">
+<span class="ah-route-label-final" style='position:relative!important;z-index:50!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;margin:0!important;padding:0 var(--ah-route-label-pad-x)!important;overflow:hidden!important;color:#fff!important;-webkit-text-fill-color:#fff!important;-webkit-text-stroke:0!important;background:none!important;background-image:none!important;font-family:"Orbitron",system-ui,sans-serif!important;font-size:var(--ah-route-label-size)!important;font-weight:700!important;font-style:normal!important;font-variant:normal!important;line-height:1!important;letter-spacing:.015em!important;word-spacing:var(--ah-route-label-word-space)!important;white-space:pre!important;text-align:center!important;text-transform:none!important;text-decoration:none!important;text-rendering:geometricPrecision!important;-webkit-font-smoothing:antialiased!important;font-kerning:none!important;opacity:1!important;visibility:visible!important;filter:none!important;transform:none!important;text-shadow:0 0 .5px #fff,0 0 1.4px rgba(255,255,255,.94),0 0 2.8px rgba(180,238,255,.42)!important;'>Learning Center</span>
+</div>
+</article>
+</div>
 </div>
 </section>
-<section aria-label="Zero-Software Solution" class="section">
-<h2 class="section-title">Zero-Software Solution</h2>
-<div class="process-grid">
-<article class="process"><h3>AH:\Consolidate.exe</h3><ul><li>Less software.</li><li>Fewer tools.</li><li>Lower costs.</li><li>Clean data.</li></ul></article>
-<article class="process"><h3>AH:\Streamline.exe</h3><ul><li>Fewer steps.</li><li>Less clicks.</li><li>Fewer errors.</li><li>Less duplication.</li></ul></article>
-<article class="process"><h3>AH:\Automate.exe</h3><ul><li>Monitor information.</li><li>Maintain full visibility.</li><li>Let it run.</li><li>Free your time.</li></ul></article>
-<article class="process"><h3>AH:\Optimize.exe</h3><ul><li>See what works.</li><li>Reveal patterns.</li><li>Adjust sooner.</li><li>Improve predictions.</li></ul></article>
+<section aria-labelledby="home-negative-software-title" class="section section--divider home-rock-framework-round336 home-rock-framework-round338 home-rock-framework-round339 negative-software-section-round344" data-r828-starfield="" id="home-solution-framework" style="background:#000000!important;background-color:#000000!important;background-image:var(--r830-stars)!important;background-position:center!important;background-size:100% 100%!important;background-repeat:no-repeat!important;">
+<span aria-hidden="true" class="r828-starfield"><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i><i class="r828-star"></i></span>
+<div class="shell">
+<div class="home-zero-system-console home-rock-console-round336 home-rock-console-round338 negative-software-console-round344">
+<div class="section-heading section-heading--center reveal home-zero-software-heading negative-software-heading-round344">
+<div aria-hidden="true" class="r902-mobile-zero-title-stack">
+<div class="brand-lcd-bar negative-software-title-round344 r383-reference-screen r902-mobile-zero-title"><span class="screen-text-canonical screen-text-canonical--green screen-text-size-wide r383-reference-text">Zero-Software</span><span aria-hidden="true" class="r488-extra-matte-film"></span></div>
+<div class="brand-lcd-bar negative-software-title-round344 r383-reference-screen r902-mobile-zero-title"><span class="screen-text-canonical screen-text-canonical--green screen-text-size-wide r383-reference-text">Solution</span><span aria-hidden="true" class="r488-extra-matte-film"></span></div>
 </div>
-<a class="explore-key" href="./learning-center.html?v=1108r#learning-model-stage"><strong>Explore</strong><small>“The only limitation is your imagination.” — TruthBot</small></a>
+<h2 class="brand-lcd-bar negative-software-title-round344 r383-reference-screen" id="home-negative-software-title">
+<span class="screen-text-canonical screen-text-canonical--green screen-text-size-wide r383-reference-text" data-text="Zero-Software Solution">Zero-Software Solution</span>
+<span aria-hidden="true" class="r488-extra-matte-film"></span></h2>
+</div>
+<div class="r504-process-surface" style="margin-top:var(--r1005-process-surface-margin)!important;padding-top:0!important;position:relative!important;z-index:10!important;">
+<div aria-label="The Automated Hearts negative-software process" class="home-process-lcd-row home-rock-process-panel-round336 home-rock-process-panel-round338 negative-software-grid-round344" role="list">
+<article class="home-process-stage negative-software-screen-round344" role="listitem" style="display:var(--r1005-process-display)!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;box-sizing:border-box!important;height:var(--r1005-process-height)!important;min-height:var(--r1005-process-min-height)!important;max-height:var(--r1005-process-max-height)!important;margin:0!important;padding:var(--r1005-process-padding)!important;overflow:hidden!important;">
+<h3 style='position:relative!important;z-index:8!important;display:var(--r1005-process-header-display)!important;align-items:center!important;justify-content:center!important;width:100%!important;max-width:100%!important;height:var(--r1005-process-header-height)!important;min-height:var(--r1005-process-header-min-height)!important;max-height:var(--r1005-process-header-max-height)!important;margin:var(--r1005-process-header-margin)!important;padding:var(--r1005-process-header-padding)!important;box-sizing:border-box!important;border:0!important;border-bottom:3px solid #050608!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;font-family:"Orbitron",system-ui,sans-serif!important;font-size:var(--r1005-process-header-font-size)!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;text-align:var(--r1005-process-header-text-align)!important;white-space:nowrap!important;overflow:hidden!important;transform:none!important;'>AH:\Consolidate.exe</h3>
+<ul class="home-process-stage__list" style="display:grid!important;grid-template-columns:1fr!important;grid-template-rows:var(--r1005-process-list-rows)!important;align-items:var(--r1005-process-list-align)!important;justify-content:stretch!important;width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;gap:var(--r1005-process-list-gap)!important;list-style:none!important;transform:none!important;flex:1 1 auto!important;">
+<li>Less software.</li>
+<li>Fewer tools.</li>
+<li>Lower costs.</li>
+<li>Clean data.</li>
+</ul>
+<span aria-hidden="true" class="r488-extra-matte-film"></span></article>
+<article class="home-process-stage negative-software-screen-round344" role="listitem" style="display:var(--r1005-process-display)!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;box-sizing:border-box!important;height:var(--r1005-process-height)!important;min-height:var(--r1005-process-min-height)!important;max-height:var(--r1005-process-max-height)!important;margin:0!important;padding:var(--r1005-process-padding)!important;overflow:hidden!important;">
+<h3 style='position:relative!important;z-index:8!important;display:var(--r1005-process-header-display)!important;align-items:center!important;justify-content:center!important;width:100%!important;max-width:100%!important;height:var(--r1005-process-header-height)!important;min-height:var(--r1005-process-header-min-height)!important;max-height:var(--r1005-process-header-max-height)!important;margin:var(--r1005-process-header-margin)!important;padding:var(--r1005-process-header-padding)!important;box-sizing:border-box!important;border:0!important;border-bottom:3px solid #050608!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;font-family:"Orbitron",system-ui,sans-serif!important;font-size:var(--r1005-process-header-font-size)!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;text-align:var(--r1005-process-header-text-align)!important;white-space:nowrap!important;overflow:hidden!important;transform:none!important;'>AH:\Streamline.exe</h3>
+<ul class="home-process-stage__list" style="display:grid!important;grid-template-columns:1fr!important;grid-template-rows:var(--r1005-process-list-rows)!important;align-items:var(--r1005-process-list-align)!important;justify-content:stretch!important;width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;gap:var(--r1005-process-list-gap)!important;list-style:none!important;transform:none!important;flex:1 1 auto!important;">
+<li>Fewer steps.</li>
+<li>Less clicks.</li>
+<li>Fewer errors.</li>
+<li>Less duplication.</li>
+</ul>
+<span aria-hidden="true" class="r488-extra-matte-film"></span></article>
+<article class="home-process-stage negative-software-screen-round344" role="listitem" style="display:var(--r1005-process-display)!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;box-sizing:border-box!important;height:var(--r1005-process-height)!important;min-height:var(--r1005-process-min-height)!important;max-height:var(--r1005-process-max-height)!important;margin:0!important;padding:var(--r1005-process-padding)!important;overflow:hidden!important;">
+<h3 style='position:relative!important;z-index:8!important;display:var(--r1005-process-header-display)!important;align-items:center!important;justify-content:center!important;width:100%!important;max-width:100%!important;height:var(--r1005-process-header-height)!important;min-height:var(--r1005-process-header-min-height)!important;max-height:var(--r1005-process-header-max-height)!important;margin:var(--r1005-process-header-margin)!important;padding:var(--r1005-process-header-padding)!important;box-sizing:border-box!important;border:0!important;border-bottom:3px solid #050608!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;font-family:"Orbitron",system-ui,sans-serif!important;font-size:var(--r1005-process-header-font-size)!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;text-align:var(--r1005-process-header-text-align)!important;white-space:nowrap!important;overflow:hidden!important;transform:none!important;'>AH:\Automate.exe</h3>
+<ul class="home-process-stage__list" style="display:grid!important;grid-template-columns:1fr!important;grid-template-rows:var(--r1005-process-list-rows)!important;align-items:var(--r1005-process-list-align)!important;justify-content:stretch!important;width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;gap:var(--r1005-process-list-gap)!important;list-style:none!important;transform:none!important;flex:1 1 auto!important;">
+<li>Monitor information.</li>
+<li>Maintain full visibility.</li>
+<li>Let it run.</li>
+<li>Free your time.</li>
+</ul>
+<span aria-hidden="true" class="r488-extra-matte-film"></span></article>
+<article class="home-process-stage negative-software-screen-round344" role="listitem" style="display:var(--r1005-process-display)!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;box-sizing:border-box!important;height:var(--r1005-process-height)!important;min-height:var(--r1005-process-min-height)!important;max-height:var(--r1005-process-max-height)!important;margin:0!important;padding:var(--r1005-process-padding)!important;overflow:hidden!important;">
+<h3 style='position:relative!important;z-index:8!important;display:var(--r1005-process-header-display)!important;align-items:center!important;justify-content:center!important;width:100%!important;max-width:100%!important;height:var(--r1005-process-header-height)!important;min-height:var(--r1005-process-header-min-height)!important;max-height:var(--r1005-process-header-max-height)!important;margin:var(--r1005-process-header-margin)!important;padding:var(--r1005-process-header-padding)!important;box-sizing:border-box!important;border:0!important;border-bottom:3px solid #050608!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;font-family:"Orbitron",system-ui,sans-serif!important;font-size:var(--r1005-process-header-font-size)!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;text-align:var(--r1005-process-header-text-align)!important;white-space:nowrap!important;overflow:hidden!important;transform:none!important;'>AH:\Optimize.exe</h3>
+<ul class="home-process-stage__list" style="display:grid!important;grid-template-columns:1fr!important;grid-template-rows:var(--r1005-process-list-rows)!important;align-items:var(--r1005-process-list-align)!important;justify-content:stretch!important;width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;gap:var(--r1005-process-list-gap)!important;list-style:none!important;transform:none!important;flex:1 1 auto!important;">
+<li>See what works.</li>
+<li>Reveal patterns.</li>
+<li>Adjust sooner.</li>
+<li>Improve predictions.</li>
+</ul>
+<span aria-hidden="true" class="r488-extra-matte-film"></span></article>
+<article aria-label="Explore" class="home-process-stage home-process-stage--key negative-software-explore-round344" role="listitem">
+<a aria-pressed="false" class="home-process-key-button negative-software-explore-button-round344" data-explore-lock="" href="./learning-center.html#learning-model-stage" id="negative-software-explore"><span aria-hidden="true" class="negative-software-explore-light-round344"></span>
+<h3>Explore</h3>
+<p class="r930-explore-quote">“The only limitation is your imagination.”</p>
+<p class="r930-explore-attribution">- TruthBot</p>
+</a>
+</article>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section aria-label="Humans and AI working together" class="section">
-<h2 class="section-title">Human + AI</h2>
-<div class="carousel-shell">
-<button aria-label="Previous carousel image" class="carousel-orb prev" type="button"></button>
-<div class="carousel">
-<figure><img alt="Humans and AI sharing pizza" decoding="async" height="360" loading="lazy" src="./assets/mobile-lite-carousel-pizza-round1105.webp" width="640"/></figure>
-<figure><img alt="Human and AI working together" decoding="async" height="360" loading="lazy" src="./assets/mobile-lite-carousel-guidance-round1105.webp" width="640"/></figure>
-<figure><img alt="Humans and AI at a barbecue" decoding="async" height="360" loading="lazy" src="./assets/mobile-lite-carousel-bbq-round1105.webp" width="640"/></figure>
-<figure><img alt="Human explaining a concept to AI" data-src="./assets/mobile-lite-carousel-concept-round1105.webp" decoding="async" height="360" loading="lazy" src="./assets/mobile-carousel-placeholder-round1109.webp" width="640"/></figure>
-<figure><img alt="Humans and AI relaxing together" data-src="./assets/mobile-lite-carousel-living-round1105.webp" decoding="async" height="360" loading="lazy" src="./assets/mobile-carousel-placeholder-round1109.webp" width="640"/></figure>
-<figure><img alt="Human and AI simplifying work" data-src="./assets/mobile-lite-carousel-simplify-round1105.webp" decoding="async" height="360" loading="lazy" src="./assets/mobile-carousel-placeholder-round1109.webp" width="640"/></figure>
+<section aria-label="Human and AI transition carousel" class="section home-overview-display-section home-overview-carousel-section" style="box-sizing:border-box!important;display:block!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:64px 0!important;overflow:hidden!important;">
+<div class="shell" style="box-sizing:border-box!important;display:block!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0 auto!important;padding:0!important;overflow:hidden!important;">
+<div aria-label="Moments of humans and AI working and learning together" class="home-transition-carousel reveal home-transition-carousel-round340" style="box-sizing:border-box!important;display:block!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding-top:0!important;padding-bottom:0!important;">
+<button aria-label="Scroll the carousel continuously to the right while pressed." class="home-transition-orb home-transition-orb--left" data-carousel-direction="right" type="button">
+<span aria-hidden="true" class="home-transition-orb__core"></span>
+</button>
+<div class="home-transition-track home-transition-track-round340" data-home-transition-track="" style="box-sizing:border-box!important;height:auto!important;min-height:0!important;max-height:none!important;margin-top:0!important;margin-bottom:0!important;padding-top:0!important;padding-bottom:0!important;align-items:center!important;">
+<figure class="home-transition-slide"><img alt="Humans and a transparent anatomically heart-lit robot sharing pizza and laughing together at a casual pizza party" decoding="async" fetchpriority="low" height="941" loading="lazy" src="./assets/home-carousel-pizza-party-anatomical-sharp-round502.webp" width="1672"/></figure><figure class="home-transition-slide"><img alt="Human and AI moving toward a practical future together" decoding="async" fetchpriority="low" height="1080" loading="lazy" src="./assets/home-carousel-work-guidance-round494.webp" width="1920"/></figure><figure class="home-transition-slide"><img alt="Humans and an anatomically heart-lit robot enjoying a relaxed backyard barbecue together" decoding="async" fetchpriority="low" height="941" loading="lazy" src="./assets/home-carousel-bbq-anatomical-sharp-round502.webp" width="1672"/></figure><figure class="home-transition-slide"><img alt="Human explaining one practical concept to an AI collaborator" decoding="async" fetchpriority="low" height="1080" loading="lazy" src="./assets/home-carousel-work-concept-round494.webp" width="1920"/></figure><figure class="home-transition-slide"><img alt="Friends and an anatomically heart-lit robot relaxing together in a living room" decoding="async" fetchpriority="low" height="941" loading="lazy" src="./assets/home-carousel-living-room-anatomical-sharp-round502.webp" width="1672"/></figure><figure class="home-transition-slide"><img alt="Human and AI simplifying a working system together" decoding="async" fetchpriority="low" height="1080" loading="lazy" src="./assets/home-carousel-work-simplify-round494.webp" width="1920"/></figure><figure class="home-transition-slide"><img alt="A friendly anatomically heart-lit robot talking with a smiling man while their friends watch football" decoding="async" fetchpriority="low" height="941" loading="lazy" src="./assets/home-carousel-football-friendly-conversation-round503.webp" width="1672"/></figure><figure class="home-transition-slide"><img alt="Human and AI planning practical next steps together" decoding="async" fetchpriority="low" height="1080" loading="lazy" src="./assets/home-carousel-work-planning-round494.webp" width="1920"/></figure><figure class="home-transition-slide"><img alt="A woman and an anatomically heart-lit robot having fun together during an arcade night" decoding="async" fetchpriority="low" height="941" loading="lazy" src="./assets/home-carousel-arcade-anatomical-sharp-round502.webp" width="1672"/></figure></div>
+<button aria-label="Scroll the carousel continuously to the left while pressed." class="home-transition-orb home-transition-orb--right" data-carousel-direction="left" type="button">
+<span aria-hidden="true" class="home-transition-orb__core"></span>
+</button>
 </div>
-<button aria-label="Next carousel image" class="carousel-orb next" type="button"></button>
 </div>
 </section>
 </main>
-<div class="ticker">10% Back to Local Charities · Automation with a human touch</div>
-<nav aria-label="Primary navigation" class="footer"><a href="./mobile-solutions.html?v=1129r">Solution</a><a href="./mobile-who-we-help.html?v=1129r">Industries</a><a href="./mobile-learning-center.html?v=1120r">Learning</a><a href="./mobile-about.html?v=1114r">About Us</a><a href="./mobile-pricing.html?v=1126r">Services</a></nav>
-<script defer="" src="./assets/mobile-home-round1116.js"></script>
-<script defer="" src="./assets/google-sheet-config-round1118.js?v=1118r"></script><script defer="" src="./assets/google-sheet-forms-round1118.js?v=1125r"></script><script defer="" src="./assets/mobile-contact-round1128.js?v=1128r"></script>
-<script id="ah-mobile-carousel-center-r1125">
-(()=>{
-  'use strict'; let raf=0;
-  function run(){raf=0;const sec=document.querySelector('.carousel-shell')?.closest('section');const shell=sec?.querySelector('.carousel-shell');const title=sec?.querySelector('.section-title');const ticker=document.querySelector('.ticker');if(!sec||!shell||!ticker)return;
-    shell.style.setProperty('transform','none','important');shell.style.setProperty('position','relative','important');shell.style.setProperty('top','0px','important');
-    const sh=shell.getBoundingClientRect(), top=(title?.getBoundingClientRect().bottom ?? sec.getBoundingClientRect().top), bottom=ticker.getBoundingClientRect().top;
-    if(sh.height<20||bottom<=top)return;const a=sh.top-top,b=bottom-sh.bottom,d=(b-a)/2;if(Number.isFinite(d))shell.style.setProperty('top',`${d.toFixed(2)}px`,'important');}
-  function s(){cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>requestAnimationFrame(run));}
-  addEventListener('load',s,{once:true});addEventListener('resize',s,{passive:true});addEventListener('scroll',s,{passive:true});setTimeout(s,400);
-})();
-</script>
-</body>
+<div class="home-hero-message-wrap reveal home-hero-message-wrap-round339" id="home-ticker-wrap">
+<p class="home-message-display home-message-display--charity" id="home-charity-ticker" style="position:absolute!important;inset:0!important;display:block!important;box-sizing:border-box!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;overflow:hidden!important;border:2px solid rgba(210,229,237,.96)!important;border-radius:28px!important;background:radial-gradient(165% 135% at 50% -29%,rgba(255,255,255,.48) 0%,rgba(226,248,253,.25) 11%,rgba(154,213,226,.08) 27%,rgba(255,255,255,0) 43%),radial-gradient(130% 90% at 50% 122%,rgba(66,151,174,.16) 0%,rgba(10,31,46,0) 58%),linear-gradient(180deg,rgba(20,52,69,.96) 0%,rgba(7,27,41,.985) 31%,rgba(3,15,26,.995) 64%,rgba(1,8,15,1) 100%)!important;filter:none!important;isolation:isolate!important;"><span aria-hidden="true" class="ticker-end-rim ticker-end-rim--left" style="position:absolute!important;left:1px!important;top:2px!important;bottom:2px!important;width:17px!important;z-index:20!important;display:block!important;pointer-events:none!important;border-radius:23px 0 0 23px!important;clip-path:polygon(0 0,100% 0,45% 18%,32% 50%,45% 82%,100% 100%,0 100%)!important;background:linear-gradient(180deg,rgba(248,252,253,.96) 0%,rgba(160,176,184,.96) 12%,rgba(62,82,94,.94) 38%,rgba(16,31,42,.96) 58%,rgba(112,133,144,.96) 82%,rgba(238,244,246,.96) 100%)!important;"></span><span aria-hidden="true" class="ticker-end-rim ticker-end-rim--right" style="position:absolute!important;right:1px!important;top:2px!important;bottom:2px!important;width:17px!important;z-index:20!important;display:block!important;pointer-events:none!important;border-radius:0 23px 23px 0!important;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,55% 82%,68% 50%,55% 18%)!important;background:linear-gradient(180deg,rgba(248,252,253,.96) 0%,rgba(160,176,184,.96) 12%,rgba(62,82,94,.94) 38%,rgba(16,31,42,.96) 58%,rgba(112,133,144,.96) 82%,rgba(238,244,246,.96) 100%)!important;"></span>
+<strong aria-label="10% Back to Local Charities. Prioritizing Job-Retention. Automation with a human touch. 10% Back to Local Charities. Elevating the human, not obsoleting them." class="charity-marquee" data-text="10% Back to Local Charities. Prioritizing Job-Retention. Automation with a human touch. 10% Back to Local Charities. Elevating the human, not obsoleting them." id="home-charity-marquee"><span aria-hidden="true" class="charity-marquee__track"></span></strong><span aria-hidden="true" class="r488-extra-matte-film ticker-matte-film" style="position:absolute!important;inset:2px!important;z-index:7!important;display:block!important;pointer-events:none!important;border-radius:26px!important;background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.075) 15%,rgba(255,255,255,.018) 34%,rgba(0,0,0,.035) 67%,rgba(255,255,255,.045) 100%),radial-gradient(150% 82% at 50% -4%,rgba(255,255,255,.20) 0%,rgba(255,255,255,.07) 24%,rgba(255,255,255,0) 53%),repeating-linear-gradient(180deg,rgba(211,244,249,.040) 0 1px,rgba(8,25,36,.012) 1px 3px,transparent 3px 5px),repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0 1px,transparent 1px 4px)!important;opacity:.82!important;mix-blend-mode:screen!important;-webkit-backdrop-filter:blur(.35px) saturate(.90)!important;backdrop-filter:blur(.35px) saturate(.90)!important;"></span>
+<span aria-hidden="true" class="r966-ticker-bubble-lens"></span><span aria-hidden="true" class="r966-ticker-matte-film"></span></p>
+</div>
+<footer class="site-footer site-footer--minimal" id="site-footer">
+<div class="shell minimal-footer-row">
+<nav aria-label="Primary navigation" class="footer-primary-nav" id="primary-nav">
+<div class="primary-nav__group primary-nav__group--centered">
+<a class="r973-pink-edge footer-structure-control mechanical-send-control" data-nav="solutions" href="./solutions.html" style="overflow:visible!important;overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy"><span class="footer-nav-label" style='font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;'>The Solution</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-nav="who-we-help" href="./who-we-help.html" style="overflow:visible!important;overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy"><span class="footer-nav-label" style='font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;'>Who We Help</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-nav="learning" href="./learning-center.html" style="overflow:visible!important;overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy"><span class="footer-nav-label" style='font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;'>Learning Center</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-nav="about" href="./about.html" style="overflow:visible!important;overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy"><span class="footer-nav-label" style='font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;'>About Us</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-nav="pricing" href="./pricing.html" style="overflow:visible!important;overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy"><span class="footer-nav-label" style='font-family:"Orbitron",system-ui,sans-serif!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;'>Rates &amp; Services</span></span><span aria-hidden="true" class="send-control-indicator"></span></a>
+</div>
+</nav>
+</div>
+</footer>
+<script defer src="./round1100-home-mobile-video-switch.js?v=1100r"></script><script defer="" src="./lean-index-runtime-1-1062.js?v=1100r"></script><script defer src="./round1063-shield-model-performance.js?v=1096r"></script>
+<script defer src="./round1064-vercel-navigation-shield-fix.js?v=1064r"></script><script defer src="./round1070-machine-model-stage-recovery.js?v=1070r"></script></body>
 </html>

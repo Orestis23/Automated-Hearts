@@ -1017,9 +1017,6 @@
     let activePointer = null;
     let selectedControl = null;
     let selectedDirection = null;
-    const mobileCarousel = window.matchMedia("(max-width:760px)").matches;
-    let carouselVisible = !mobileCarousel;
-    let carouselFrame = 0;
 
     const readGap = () => {
       const styles = window.getComputedStyle(homeTransitionTrack);
@@ -1100,17 +1097,10 @@
       });
     });
 
-    const queueCarouselFrame = () => {
-      if (carouselFrame || (mobileCarousel && !carouselVisible) || document.hidden) return;
-      carouselFrame = requestAnimationFrame(animateCarousel);
-    };
-
     const animateCarousel = (time) => {
-      carouselFrame = 0;
-      if (mobileCarousel && !carouselVisible) { previousTime = time; return; }
       if (window.__AH_VIEWPORT_RESIZING === true) {
         previousTime = time;
-        queueCarouselFrame();
+        requestAnimationFrame(animateCarousel);
         return;
       }
       const elapsedSeconds = Math.min(0.05, Math.max(0, (time - previousTime) / 1000));
@@ -1119,7 +1109,7 @@
       currentSpeed += (targetSpeed - currentSpeed) * acceleration;
       position = normalizePosition(position + currentSpeed * elapsedSeconds);
       homeTransitionTrack.style.transform = `translate3d(${position}px, 0, 0)`;
-      queueCarouselFrame();
+      requestAnimationFrame(animateCarousel);
     };
 
     measureCarousel();
@@ -1136,24 +1126,9 @@
           ? automaticSpeed
           : selectedDirection * directionalSpeed;
         targetSpeed = currentSpeed;
-        if (carouselFrame) { cancelAnimationFrame(carouselFrame); carouselFrame = 0; }
-      } else {
-        queueCarouselFrame();
       }
     });
-
-    if (mobileCarousel && carousel && "IntersectionObserver" in window) {
-      const carouselObserver = new IntersectionObserver(([entry]) => {
-        carouselVisible = !!entry?.isIntersecting;
-        previousTime = performance.now();
-        if (carouselVisible) queueCarouselFrame();
-        else if (carouselFrame) { cancelAnimationFrame(carouselFrame); carouselFrame = 0; }
-      }, {rootMargin:"120px 0px", threshold:0});
-      carouselObserver.observe(carousel);
-    } else {
-      carouselVisible = true;
-    }
-    queueCarouselFrame();
+    requestAnimationFrame(animateCarousel);
   }
 
   const prefersReducedMotion = window.matchMedia(

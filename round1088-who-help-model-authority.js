@@ -111,9 +111,9 @@
   };
   const sourceFor=(frame)=>{
     if(!frame)return'';
-    if(state.page==='who-we-help'&&frame.closest('[data-shared-slide="helix"]'))return `./models/who-we-help-industry-helix-round1093.html?industry=${state.industry}&v=1125r`;
+    if(state.page==='who-we-help'&&frame.closest('[data-shared-slide="helix"]'))return `./models/who-we-help-industry-helix-round1093.html?industry=${state.industry}&v=1098r`;
     const raw=frame.dataset.src||frame.getAttribute('src')||'';if(!raw)return'';
-    try{const u=new URL(raw,location.href);u.searchParams.set('v','1125r');return u.href}catch(_){return raw}
+    try{const u=new URL(raw,location.href);u.searchParams.set('v','1098r');return u.href}catch(_){return raw}
   };
   const groupSlides=()=>state.page==='learning'?state.slides.filter(s=>s.dataset.learningSlide===state.group):state.slides;
   const activate=(n,{scroll=false,force=false}={})=>{

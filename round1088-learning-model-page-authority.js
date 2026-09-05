@@ -116,15 +116,15 @@
   };
   const sourceFor=(frame)=>{
     if(!frame)return'';
-    if(state.page==='who-we-help'&&frame.closest('[data-shared-slide="helix"]'))return `./models/who-we-help-industry-helix-round1093.html?industry=${state.industry}&v=1125r`;
+    if(state.page==='who-we-help'&&frame.closest('[data-shared-slide="helix"]'))return `./models/who-we-help-industry-helix-round1093.html?industry=${state.industry}&v=1098r`;
     const raw=frame.dataset.src||frame.getAttribute('src')||'';if(!raw)return'';
-    try{const u=new URL(raw,location.href);u.searchParams.set('v','1125r');return u.href}catch(_){return raw}
+    try{const u=new URL(raw,location.href);u.searchParams.set('v','1098r');return u.href}catch(_){return raw}
   };
   const groupSlides=()=>state.page==='learning'?state.slides.filter(s=>s.dataset.learningSlide===state.group):state.slides;
   const prefetchAI101=()=>{
     if(state.page!=='learning'||state.group!=='ai101')return;
     const list=state.slides.filter(s=>s.dataset.learningSlide==='ai101');
-    const warm=()=>list.forEach(slide=>{const frame=slide.querySelector('iframe');const raw=frame?.dataset?.src;if(!raw)return;try{const u=new URL(raw,location.href);u.searchParams.set('v','1125r');fetch(u.href,{cache:'force-cache',credentials:'same-origin'}).catch(()=>{});}catch(_){}});
+    const warm=()=>list.forEach(slide=>{const frame=slide.querySelector('iframe');const raw=frame?.dataset?.src;if(!raw)return;try{const u=new URL(raw,location.href);u.searchParams.set('v','1098r');fetch(u.href,{cache:'force-cache',credentials:'same-origin'}).catch(()=>{});}catch(_){}});
     if('requestIdleCallback'in window)requestIdleCallback(warm,{timeout:900});else setTimeout(warm,220);
   };
   const syncOrbs=(list)=>{

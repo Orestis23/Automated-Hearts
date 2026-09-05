@@ -120,7 +120,7 @@
      Register during the first idle slot instead of waiting for every image and
      model, so later model requests can reuse cache sooner. */
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-    const register = () => navigator.serviceWorker.register('./ah-sw.js?v=1107', { scope: './', updateViaCache: 'none' }).catch(() => {});
+    const register = () => navigator.serviceWorker.register('./ah-sw.js?v=1098', { scope: './' }).catch(() => {});
     if ('requestIdleCallback' in window) requestIdleCallback(register, { timeout: 1800 });
     else window.setTimeout(register, 500);
   }

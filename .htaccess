@@ -1,7 +1,6 @@
 # Automated Hearts Round 1062 — optional Apache delivery optimizations.
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
-  ExpiresByType video/mp4 "access plus 1 year"
 </IfModule>
 <IfModule mod_expires.c>
   ExpiresActive On
@@ -16,7 +15,7 @@
   ExpiresByType text/javascript "access plus 30 days"
 </IfModule>
 <IfModule mod_headers.c>
-  <FilesMatch "\.(?:webp|jpe?g|png|gif|svg|ico|woff2?|mp4)$">
+  <FilesMatch "\.(?:webp|jpe?g|png|gif|svg|ico|woff2?)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   <FilesMatch "\.(?:css|js)$">
