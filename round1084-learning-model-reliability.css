@@ -1,0 +1,23 @@
+/* Automated Hearts Round 1084 — Learning Center model reliability.
+   One identical embossed leather surface is present at the parent stage, viewport, iframe element,
+   and embedded model host. This eliminates white frames without changing the visible background. */
+html body.page-learning[data-page="learning"] #learning-model-stage,
+html body.page-learning[data-page="learning"] #learning-model-stage > .learning-lesson-viewport,
+html body.page-learning[data-page="learning"] #learning-model-stage > .learning-lesson-viewport > .r1060-static-model-heart,
+html body.page-learning[data-page="learning"] #learning-model-stage .learning-lesson-slide iframe{
+  background-color:#08172b!important;
+  background-image:url("./assets/page-shield-embossed-strong-round1067.webp?v=1084r")!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+}
+html body.page-learning[data-page="learning"] #learning-model-stage > .learning-lesson-viewport > .r1060-static-model-heart{
+  display:block!important;visibility:visible!important;opacity:1!important;
+  transform:none!important;transition:none!important;animation:none!important;filter:none!important;will-change:auto!important;
+}
+html body.page-learning[data-page="learning"] #learning-model-stage :is(.learning-lesson-track,.learning-lesson-slide){
+  background:transparent!important;background-color:transparent!important;background-image:none!important;
+}
+html body.page-learning[data-page="learning"] #learning-model-stage .learning-lesson-slide iframe{
+  isolation:isolate!important;
+}

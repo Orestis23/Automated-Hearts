@@ -1,0 +1,24 @@
+/* Automated Hearts Round 1076 — final LC/WWH interaction + static model background authority. */
+:root{--r1076-model-bg:url("./assets/page-shield-embossed-strong-round1067.webp?v=1076r")}
+
+/* Route controls always sit above decoration and remain actual hit targets. */
+html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card,
+html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card{position:relative!important;z-index:500!important;pointer-events:auto!important}
+html body.page-learning[data-page="learning"] #learning-route-buttons a.learning-medallion-button,
+html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions a.premium-route-card__image-button{position:relative!important;z-index:700!important;pointer-events:auto!important;cursor:pointer!important;touch-action:manipulation!important}
+html body.page-learning[data-page="learning"] #learning-route-buttons a.learning-medallion-button>*,
+html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions a.premium-route-card__image-button>*{pointer-events:none!important}
+html body.page-learning[data-page="learning"] #learning-route-buttons .premium-route-card__title-sign,
+html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .premium-route-card__title-sign{pointer-events:none!important}
+
+/* Each Learning Center medallion is a single image; there is no CSS-painted rim. */
+html body.page-learning[data-page="learning"] #learning-route-buttons :is(a.learning-medallion-button,.learning-medallion-media)::before,
+html body.page-learning[data-page="learning"] #learning-route-buttons :is(a.learning-medallion-button,.learning-medallion-media)::after{content:none!important;display:none!important;border:0!important;background:none!important;box-shadow:none!important}
+html body.page-learning[data-page="learning"] #learning-route-buttons img.r1076-learning-bonded-rim{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:contain!important;object-position:center!important;margin:0!important;padding:0!important;border:0!important;outline:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;filter:drop-shadow(0 13px 18px rgba(0,0,0,.42))!important;transform:none!important;clip-path:none!important;pointer-events:none!important}
+
+/* The lower model area always has the embossed leather heart as a real static surface. */
+html body:is(.page-learning,.page-who-we-help).r1076-model-open[data-page] :is(#learning-model-stage,#who-help-model-stage){display:block!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;background-color:#08172b!important;background-image:var(--r1076-model-bg)!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}
+html body:is(.page-learning,.page-who-we-help).r1076-model-open[data-page] :is(#learning-model-stage,#who-help-model-stage)>.learning-lesson-viewport{background-color:#08172b!important;background-image:var(--r1076-model-bg)!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}
+html body:is(.page-learning,.page-who-we-help).r1076-model-open[data-page] :is(#learning-model-stage,#who-help-model-stage) .r1060-static-model-heart{display:block!important;visibility:visible!important;opacity:1!important;background-color:#08172b!important;background-image:var(--r1076-model-bg)!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;transform:none!important;transition:none!important;animation:none!important}
+html body:is(.page-learning,.page-who-we-help).r1076-model-open[data-page] :is(#learning-model-stage,#who-help-model-stage) :is(.learning-lesson-track,.learning-lesson-slide,.learning-lesson-slide iframe){background:transparent!important;background-color:transparent!important;background-image:none!important}
+html body:is(.page-learning,.page-who-we-help)[data-page] :is(#learning-model-stage,#who-help-model-stage)>[data-learning-stage-shield]{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}

@@ -1,0 +1,138 @@
+/* Round 1127 — mobile tactile controls + brighter brand heart.
+   Transform/shadow only: no animated filters or layout properties. */
+
+/* Top-left heart: keep the original anatomical detail, then paint static
+   brand-color illumination through the silhouette. */
+.heart{
+  isolation:isolate;
+  overflow:visible;
+  background-image:url('./mobile-lite-heart.webp')!important;
+  background-position:center!important;
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+  filter:brightness(1.32) contrast(1.12);
+}
+.heart::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 35% 28%,rgba(255,46,168,.98) 0 18%,rgba(255,46,168,.46) 34%,transparent 55%),
+    radial-gradient(circle at 68% 62%,rgba(143,255,215,.98) 0 20%,rgba(143,255,215,.50) 38%,transparent 62%),
+    linear-gradient(145deg,rgba(255,46,168,.72),rgba(143,255,215,.76));
+  -webkit-mask:url('./mobile-lite-heart.webp') center/contain no-repeat;
+  mask:url('./mobile-lite-heart.webp') center/contain no-repeat;
+  opacity:.92;
+  mix-blend-mode:screen;
+}
+.heart::after{
+  content:"";
+  position:absolute;
+  inset:5px 4px 4px;
+  pointer-events:none;
+  border-radius:50%;
+  box-shadow:-5px -1px 12px rgba(255,46,168,.58),6px 4px 13px rgba(143,255,215,.56);
+  opacity:.78;
+  z-index:-1;
+}
+
+/* Messages: clearly visible mechanical depression before the form overlays it. */
+.message{
+  transform:translate3d(0,0,0);
+  transition:transform 190ms cubic-bezier(.22,.72,.24,1),box-shadow 190ms ease,background 190ms ease!important;
+  will-change:auto;
+}
+.message:active,.message.is-pressed{
+  transform:translate3d(0,5px,0)!important;
+  box-shadow:0 0 0 #a9006f,inset 0 2px 6px rgba(0,0,0,.72),inset 0 0 0 1px rgba(255,255,255,.06)!important;
+  background:linear-gradient(160deg,#141d24,#071016 58%,#010406)!important;
+}
+
+/* Footer: twice the previous perceived transition time, still native links.
+   No JS navigation interception. */
+.footer a{
+  transform:translate3d(0,0,0);
+  transition:transform 240ms cubic-bezier(.22,.72,.24,1),box-shadow 240ms ease,background 240ms ease!important;
+}
+.footer a:active,.footer a.is-pressed{
+  transform:translate3d(0,4px,0)!important;
+  box-shadow:0 0 0 #a9006f,inset 0 2px 5px rgba(0,0,0,.58)!important;
+  background:linear-gradient(#16222b,#050a0e)!important;
+}
+
+/* These tactile brand motions are intentional even when general decorative
+   motion is reduced; they are short direct manipulation feedback. */
+@media(prefers-reduced-motion:reduce){
+  .message{transition-duration:190ms!important}
+  .footer a{transition-duration:240ms!important}
+}
+
+/* Round 1129 — Messages-matched footer press + true continuous lower shell closure. */
+.footer a{
+  transform:translate3d(0,0,0);
+  transition:transform 190ms cubic-bezier(.22,.72,.24,1),box-shadow 190ms ease,background 190ms ease!important;
+}
+.footer a:active,.footer a.is-pressed{
+  transform:translate3d(0,5px,0)!important;
+  box-shadow:0 0 0 #a9006f,inset 0 2px 6px rgba(0,0,0,.72),inset 0 0 0 1px rgba(255,255,255,.06)!important;
+  background:linear-gradient(160deg,#141d24,#071016 58%,#010406)!important;
+}
+
+/* Use the original full viewport rim as the authority. Its lower boundary now
+   meets the top edge of the fixed footer, so the left/right rails and lower
+   curve are one continuous shape rather than a second floating border. */
+body::before{
+  z-index:11988!important;
+  inset:72px 10px calc(74px + var(--safe-bottom)) 10px!important;
+  border:1.5px solid rgba(214,178,87,.92)!important;
+  border-radius:18px!important;
+  box-shadow:
+    0 0 0 2px rgba(24,12,2,.96),
+    inset 0 0 0 1px rgba(255,238,186,.20),
+    inset 0 -3px 7px rgba(0,0,0,.28)!important;
+}
+
+/* Remove the old duplicate floating lower border. */
+body::after{content:none!important;display:none!important}
+
+/* Opaque quarter-circle masks occupy only the area OUTSIDE the rounded inner
+   viewport. They stop scrolling content from showing through the lower curves
+   while leaving the actual interior untouched. */
+.shell-edge.l::after,.shell-edge.r::after{
+  content:""!important;
+  position:absolute!important;
+  z-index:11987!important;
+  bottom:calc(74px + var(--safe-bottom))!important;
+  width:19px!important;
+  height:19px!important;
+  pointer-events:none!important;
+  box-shadow:none!important;
+}
+.shell-edge.l::after{
+  left:100%!important;
+  background:radial-gradient(circle at 100% 0,transparent 0 16.4px,#071323 17.2px 100%)!important;
+  border-radius:0!important;
+}
+.shell-edge.r::after{
+  right:100%!important;
+  background:radial-gradient(circle at 0 0,transparent 0 16.4px,#071323 17.2px 100%)!important;
+  border-radius:0!important;
+}
+
+/* A subtle metal highlight exactly across the closing edge makes the lower
+   rim read as a complete physical frame without adding another box. */
+.shell-edge.b::before{
+  content:"";
+  position:absolute;
+  left:28px;
+  right:28px;
+  top:-1px;
+  height:2px;
+  pointer-events:none;
+  background:linear-gradient(90deg,rgba(214,178,87,0),rgba(214,178,87,.72) 10%,rgba(255,238,186,.45) 50%,rgba(214,178,87,.72) 90%,rgba(214,178,87,0));
+  opacity:.88;
+}
+@media(prefers-reduced-motion:reduce){
+  .footer a{transition-duration:190ms!important}
+}

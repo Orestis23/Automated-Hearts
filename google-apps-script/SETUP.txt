@@ -1,0 +1,23 @@
+AUTOMATED HEARTS — GOOGLE SHEETS FORM SETUP
+
+1. Create or open the Google Sheet that should receive website inquiries.
+2. In that Sheet choose Extensions > Apps Script.
+3. Delete the starter code and paste the contents of Code.gs.
+4. Save.
+5. Run the setup function once from the Apps Script editor and approve Google's permission prompts.
+6. Choose Deploy > New deployment > Web app.
+7. Set:
+   Execute as: Me
+   Who has access: Anyone
+8. Deploy and copy the Web App URL ending in /exec.
+9. Open assets/google-sheet-config-round1118.js in the website files and paste that /exec URL between the quotes:
+   window.AH_GOOGLE_SHEETS_WEB_APP_URL = 'YOUR_URL_HERE';
+10. Upload the website files.
+
+The Sheet will automatically create a tab named:
+Website Form Entries
+
+Columns:
+Received At | Name | Email | Business / Organization | Business Type | Message | Page | Page URL | Contact Context | Client Submitted At | Form Version
+
+The script also sends a notification copy to automatedhearts@gmail.com.

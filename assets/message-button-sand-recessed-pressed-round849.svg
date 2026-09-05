@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="155" viewBox="0 0 148 155">
+  <defs>
+    <path id="face-shape" d="M4 4H144V149H112C95.4 149 82 135.6 82 119V86C82 73.8 72.2 64 60 64H26C13.8 64 4 54.2 4 42Z"/>
+    <path id="inner-rim" d="M8 8H140V145H112C97.6 145 86 133.4 86 119V86C86 71.6 74.4 60 60 60H26C16 60 8 52 8 42Z"/>
+    <clipPath id="face-clip"><use href="#face-shape"/></clipPath>
+    <linearGradient id="face-base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b2136"/><stop offset=".38" stop-color="#041426"/>
+      <stop offset=".74" stop-color="#020b16"/><stop offset="1" stop-color="#081d31"/>
+    </linearGradient>
+    <linearGradient id="pressed-light" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#8fffd7" stop-opacity=".08"/><stop offset=".56" stop-color="#091523" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#ff4fb2" stop-opacity=".07"/>
+    </linearGradient>
+    <pattern id="coarse-sand" width="9" height="9" patternUnits="userSpaceOnUse">
+      <circle cx="1.2" cy="1.4" r=".72" fill="#d7edf0" fill-opacity=".14"/>
+      <circle cx="5.8" cy="2.1" r=".55" fill="#000814" fill-opacity=".36"/>
+      <circle cx="3.3" cy="6.8" r=".82" fill="#7ca2b7" fill-opacity=".15"/>
+      <circle cx="8" cy="7.4" r=".48" fill="#d8fff4" fill-opacity=".10"/>
+      <path d="M0 4.7h2.5M6.8 5.2H9" stroke="#020812" stroke-opacity=".24" stroke-width=".45"/>
+    </pattern>
+    <filter id="sand-wear" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency=".18" numOctaves="3" seed="848" result="sand"/>
+      <feColorMatrix in="sand" type="matrix" values=".28 0 0 0 .06  0 .32 0 0 .08  0 0 .40 0 .13  0 0 0 .32 0" result="grain"/>
+      <feBlend in="SourceGraphic" in2="grain" mode="soft-light"/>
+    </filter>
+  </defs>
+  <use href="#face-shape" fill="#000" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+  <g clip-path="url(#face-clip)" filter="url(#sand-wear)">
+    <rect width="148" height="155" fill="url(#face-base)"/>
+    <rect width="148" height="155" fill="url(#pressed-light)"/>
+    <rect width="148" height="155" fill="url(#coarse-sand)" opacity=".66"/>
+  </g>
+  <use href="#face-shape" fill="none" stroke="#8fffd7" stroke-width="2.2" stroke-linejoin="round"/>
+  <use href="#inner-rim" fill="none" stroke="#b9ffe9" stroke-opacity=".70" stroke-width="1" stroke-linejoin="round"/>
+</svg>

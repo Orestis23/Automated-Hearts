@@ -1,0 +1,191 @@
+/* Automated Hearts Round 1101 — iOS/mobile Home machine-window stability + first-paint fast path.
+   Desktop visuals/interactive scenes are unchanged. */
+.home-mobile-machine-poster,
+.home-mobile-machine-loop{display:none;}
+
+@media (max-width:760px){
+  :root{
+    /* Same carbon-weave source, optimized to the actual mobile display size. */
+    --r737-carbon-texture:url("./assets/home-carbon-weave-round1101-mobile.webp")!important;
+  }
+
+  /* The first hero's dimensions are fixed before media decoding starts. This prevents
+     the machine windows from being re-laid-out when iOS promotes <video> to a media layer. */
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid.home-hero-machine-grid{
+    position:relative!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-auto-flow:row!important;
+    align-items:start!important;
+    justify-items:stretch!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    gap:8px!important;
+    overflow:visible!important;
+    contain:layout style!important;
+    transform:none!important;
+  }
+
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame{
+    position:relative!important;
+    inset:auto!important;
+    display:block!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+    overflow:clip!important;
+    isolation:isolate!important;
+    contain:layout paint!important;
+    clip-path:inset(0)!important;
+    -webkit-clip-path:inset(0)!important;
+    border-radius:0!important;
+    background:#01040a!important;
+    transform:translateZ(0)!important;
+    -webkit-transform:translateZ(0)!important;
+    backface-visibility:hidden!important;
+    -webkit-backface-visibility:hidden!important;
+  }
+
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame:not(.home-hero-rolodex-frame){
+    aspect-ratio:16 / 9!important;
+  }
+
+  /* Round 1101's Rolodex clip is encoded at the same 16:9 geometry as its physical
+     machine well. This defeats the legacy 350–430px mobile height rules and prevents
+     Safari from compositing/cropping a differently-shaped video surface. */
+  html body.page-home.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid#home-machine-grid#home-machine-grid
+  > .home-hero-engine-frame.home-hero-rolodex-frame.home-hero-rolodex-frame{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:16 / 9!important;
+  }
+
+  /* No hidden browsing contexts on phones. The desktop iframe is mounted from a
+     template only when the desktop media query matches. */
+  html body.page-home[data-page="home"] #home-machine-grid iframe.home-hero-engine-embed{
+    display:none!important;
+    visibility:hidden!important;
+  }
+
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame > :is(.home-mobile-machine-poster,.home-mobile-machine-loop){
+    position:absolute!important;
+    inset:0!important;
+    box-sizing:border-box!important;
+    display:block!important;
+    width:100%!important;
+    min-width:100%!important;
+    max-width:100%!important;
+    height:100%!important;
+    min-height:100%!important;
+    max-height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    object-fit:cover!important;
+    object-position:50% 50%!important;
+    background:#01040a!important;
+    clip-path:inset(0)!important;
+    -webkit-clip-path:inset(0)!important;
+    pointer-events:none!important;
+    user-select:none!important;
+    -webkit-user-select:none!important;
+    backface-visibility:hidden!important;
+    -webkit-backface-visibility:hidden!important;
+  }
+
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid .home-mobile-machine-poster{
+    z-index:2!important;
+    opacity:1!important;
+  }
+
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid video.home-mobile-machine-loop{
+    z-index:3!important;
+    visibility:visible!important;
+    opacity:0!important;
+    transform:none!important;
+    -webkit-transform:none!important;
+    -webkit-mask-image:linear-gradient(#fff,#fff)!important;
+    mask-image:linear-gradient(#fff,#fff)!important;
+  }
+
+  /* Switch from the already-painted poster to video only after the decoder produces
+     a real frame. No transition = no translucent/composited flash on Safari. */
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid video.home-mobile-machine-loop.is-video-ready{
+    opacity:1!important;
+  }
+
+  html body.page-home[data-page="home"] #home-machine-grid video::-webkit-media-controls,
+  html body.page-home[data-page="home"] #home-machine-grid video::-webkit-media-controls-panel,
+  html body.page-home[data-page="home"] #home-machine-grid video::-webkit-media-controls-start-playback-button{
+    display:none!important;
+    -webkit-appearance:none!important;
+  }
+
+  /* The desktop glass shutter is not part of the mobile video presentation. */
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame > .home-machine-haze-screen{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    pointer-events:none!important;
+    animation:none!important;
+    transition:none!important;
+    transform:none!important;
+  }
+
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame > .model-dedicated-backdrop{
+    z-index:1!important;
+    pointer-events:none!important;
+  }
+
+  /* Keep the physical metal rim, but remove its extra GPU drop-shadow filter on phones.
+     The rim image itself is unchanged. */
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame > .machine-three-ridge-overlay.machine-three-ridge-overlay{
+    z-index:8!important;
+    pointer-events:none!important;
+    transform:none!important;
+    -webkit-transform:none!important;
+    filter:none!important;
+    will-change:auto!important;
+  }
+
+  /* Explicitly point the visible Home surface at the mobile-size copy, even where an
+     older rule used the full-size URL directly rather than the CSS variable. */
+  html body.page-home.page-home.page-home[data-page="home"] main#main-content
+  > section#home-opening-hero.home-image-hero{
+    background-image:url("./assets/home-carbon-weave-round1101-mobile.webp")!important;
+    background-size:400px 400px!important;
+    background-attachment:scroll!important;
+  }
+}
+
+@media (min-width:760.01px){
+  html body.page-home[data-page="home"] .home-mobile-machine-poster,
+  html body.page-home[data-page="home"] .home-mobile-machine-loop{
+    display:none!important;
+  }
+}

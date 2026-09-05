@@ -1,0 +1,70 @@
+/* Round 1018 — footer hardware: one identical pink side, face submerges while the surface line stays fixed. */
+:root{
+  --r1018-footer-rest:url("./assets/footer-button-message-like-sandy-side-round915.svg?v=1018r");
+  --r1018-footer-pressed:url("./assets/footer-button-message-like-sandy-side-pressed-submerged-round1018.svg?v=1018r");
+  --r1018-footer-press-depth:4px;
+}
+
+/* The anchor is the stationary mounting/surface box. It never translates. */
+html body[data-page][class][class][class][class][class][class][class][class]
+> footer#site-footer#site-footer.site-footer.site-footer--minimal
+nav#primary-nav#primary-nav.footer-primary-nav
+> .primary-nav__group.primary-nav__group
+> a.footer-structure-control.mechanical-send-control[data-nav][data-nav]{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:visible!important;
+  box-sizing:border-box!important;
+  background-color:transparent!important;
+  background-image:var(--r1018-footer-rest)!important;
+  background-position:center!important;
+  background-size:100% 100%!important;
+  background-repeat:no-repeat!important;
+  border:0!important;
+  outline:0!important;
+  transform:none!important;
+  translate:none!important;
+  scale:none!important;
+  /* This is the fixed black surface/slot beneath the hardware. */
+  box-shadow:inset 0 -2px 0 #020305,0 1px 0 #020305,0 4px 6px rgba(0,0,0,.34)!important;
+  transition:filter 160ms ease!important;
+}
+
+/* No legacy DOM/pseudo pink side can double the single baked-in side. */
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav]::before,
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav]::after,
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav] > :is(.r969-pink-depth-bottom,.r969-pink-depth-right){
+  content:none!important;
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+}
+
+/* Pressing swaps to the same hardware with the pink siding fully submerged.
+   The outer anchor never moves, so the black surface line cannot move down. */
+html body[data-page][class][class][class][class][class][class][class][class]
+> footer#site-footer#site-footer.site-footer.site-footer--minimal
+nav#primary-nav#primary-nav.footer-primary-nav
+> .primary-nav__group.primary-nav__group
+> a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]){
+  background-image:var(--r1018-footer-pressed)!important;
+  transform:none!important;
+  translate:none!important;
+  scale:none!important;
+  box-shadow:inset 0 -2px 0 #020305,0 1px 0 #020305,0 2px 3px rgba(0,0,0,.26)!important;
+}
+
+/* The lettering follows the face downward, independently of the stationary surface box. */
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy{
+  transform:none!important;
+  transition:transform 78ms cubic-bezier(.2,.78,.24,1)!important;
+}
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+ a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"])
+ > .send-control-copy.footer-control-copy{
+  transform:translate3d(0,var(--r1018-footer-press-depth),0)!important;
+}

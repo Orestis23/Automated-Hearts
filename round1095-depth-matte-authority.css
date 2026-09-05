@@ -1,0 +1,121 @@
+/* Automated Hearts Round 1095 — recessed gold rim, closer hardware surface detail, under-glass ticker matte.
+   Visual-only authority: no geometry, padding, hit-area, or layout changes. */
+:root{
+  --r1095-footer-rest:url("./assets/footer-button-message-border-match-round1095.svg?v=1095r");
+  --r1095-footer-pressed:url("./assets/footer-button-message-border-match-pressed-round1095.svg?v=1095r");
+  --r1095-message-rest:url("./assets/message-button-square-footer-match-round1095.svg?v=1095r");
+  --r1095-message-pressed:url("./assets/message-button-square-footer-match-pressed-round1095.svg?v=1095r");
+  --r1034-footer-rest:var(--r1095-footer-rest);
+  --r1034-footer-pressed:var(--r1095-footer-pressed);
+  --r1034-message-rest:var(--r1095-message-rest);
+  --r1034-message-pressed:var(--r1095-message-pressed);
+}
+
+/* The gold frame remains exactly where it was. These inset shadows create ~19px / 1/5-inch
+   perceived recess without moving or resizing any content. */
+html body[data-page] > .ah-persistent-gold-rim{
+  box-shadow:
+    0 0 0 2px rgba(31,19,3,.96),
+    0 0 0 4px rgba(232,202,126,.30),
+    0 0 10px rgba(216,176,76,.24),
+    inset 0 0 0 1px rgba(255,239,194,.34),
+    inset 0 0 0 4px rgba(2,5,8,.42),
+    inset 0 0 6px 5px rgba(0,0,0,.72),
+    inset 0 0 15px 9px rgba(0,0,0,.48),
+    inset 0 0 24px 15px rgba(0,0,0,.27),
+    inset 0 2px 2px rgba(255,233,174,.15)!important;
+}
+
+/* Footer and message hardware keep their original silhouette/rims. Only the embedded face texture
+   is magnified 1.75x in the Round 1095 SVGs so the material reads as 75% closer. */
+html body[data-page][class][class][class][class][class][class][class][class][class][class]
+> footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav
+> .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]{
+  background-image:var(--r1095-footer-rest)!important;
+  background-size:100% 100%!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
+html body[data-page][class][class][class][class][class][class][class][class][class][class]
+> footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav
+> .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed){
+  background-image:var(--r1095-footer-pressed)!important;
+}
+html body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+  background-image:var(--r1095-message-rest)!important;
+  background-size:100% 100%!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
+html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control,
+html body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched){
+  background-image:var(--r1095-message-pressed)!important;
+}
+
+/* Ticker stack: display -> text -> matte diffusion -> glass highlight. The existing matte element
+   is retained, but is now explicitly under a separate convex glass layer rather than being the topmost layer. */
+html body[data-page] #home-charity-ticker#home-charity-ticker{
+  isolation:isolate!important;
+}
+html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee{
+  z-index:5!important;
+}
+html body[data-page] #home-charity-ticker#home-charity-ticker .ticker-matte-film,
+html body[data-page] #home-charity-ticker#home-charity-ticker > .r488-extra-matte-film{
+  z-index:7!important;
+  inset:2px!important;
+  border-radius:12px!important;
+  background:
+    linear-gradient(180deg,rgba(239,250,249,.13) 0%,rgba(220,241,241,.07) 18%,rgba(185,214,216,.025) 39%,rgba(7,17,23,.055) 68%,rgba(0,0,0,.15) 100%),
+    repeating-linear-gradient(180deg,rgba(205,236,236,.035) 0 1px,rgba(8,18,24,.016) 1px 3px,transparent 3px 5px)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(178,236,229,.055),
+    inset 0 0 8px rgba(190,225,224,.035)!important;
+  opacity:.96!important;
+}
+html body.page-home.page-home.page-home[data-page="home"] #home-charity-ticker#home-charity-ticker#home-charity-ticker::after{
+  content:""!important;
+  position:absolute!important;
+  z-index:9!important;
+  inset:1px!important;
+  display:block!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  opacity:1!important;
+  visibility:visible!important;
+  filter:none!important;
+  -webkit-mask:none!important;
+  mask:none!important;
+  clip-path:none!important;
+  pointer-events:none!important;
+  border:0!important;
+  outline:0!important;
+  border-radius:12px!important;
+  background:
+    radial-gradient(150% 94% at 50% -12%,rgba(255,255,255,.22) 0%,rgba(231,252,253,.10) 20%,rgba(255,255,255,0) 48%),
+    linear-gradient(180deg,rgba(255,255,255,.075) 0%,rgba(255,255,255,.018) 31%,rgba(255,255,255,0) 52%,rgba(0,0,0,.06) 100%)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(245,255,255,.24),
+    inset 0 -1px 0 rgba(0,0,0,.42),
+    inset 0 0 0 1px rgba(166,239,231,.06)!important;
+}
+
+@media(max-width:760px){
+  html body[data-page] > .ah-persistent-gold-rim{
+    box-shadow:
+      0 0 0 2px rgba(31,19,3,.96),
+      0 0 0 3px rgba(232,202,126,.26),
+      0 0 8px rgba(216,176,76,.20),
+      inset 0 0 0 1px rgba(255,239,194,.32),
+      inset 0 0 0 3px rgba(2,5,8,.42),
+      inset 0 0 5px 4px rgba(0,0,0,.70),
+      inset 0 0 12px 7px rgba(0,0,0,.44),
+      inset 0 0 18px 11px rgba(0,0,0,.24)!important;
+  }
+}

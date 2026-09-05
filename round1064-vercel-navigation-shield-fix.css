@@ -1,0 +1,100 @@
+/* Automated Hearts Round 1064 — deployment-safe navigation + one-shield authority.
+   Vercel/full HTTP navigation uses one outgoing 2s cover and one incoming 2s reveal.
+   The prior iframe-based persistent-page router is intentionally disabled. */
+@view-transition{navigation:none}
+:root{
+  --ah1064-shield-ms:2000ms;
+  --ah1064-shield-ease:cubic-bezier(.22,.66,.24,1);
+}
+
+/* Never allow the retired persistent iframe/loading surface to replace live content. */
+#ah-persistent-page-frame,
+#ah-persistent-route-loading{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+html.ah-persistent-content-active body > main#main-content{
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+}
+
+/* Only the real child panel moves. The frame itself is fixed and transparent. */
+html body[data-page] > #page-transition-shield.page-transition-shield{
+  transform:none!important;
+  transition:none!important;
+  background:transparent!important;
+  background-image:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+  overflow:hidden!important;
+  contain:paint!important;
+  isolation:isolate!important;
+}
+html body[data-page] > #page-transition-shield.page-transition-shield::before,
+html body[data-page] > #page-transition-shield.page-transition-shield::after{
+  content:none!important;
+  display:none!important;
+}
+html body[data-page] > #page-transition-shield.page-transition-shield > .page-transition-shield__panel{
+  display:block!important;
+  opacity:1!important;
+  visibility:visible!important;
+  background-color:#08172b!important;
+  background-image:url("./assets/page-shield-embossed-strong-round1067.webp")!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  transform:translate3d(0,-101.25%,0)!important;
+  -webkit-transform:translate3d(0,-101.25%,0)!important;
+  transition-property:transform!important;
+  transition-duration:var(--ah1064-shield-ms)!important;
+  transition-timing-function:var(--ah1064-shield-ease)!important;
+  transition-delay:0ms!important;
+  will-change:transform!important;
+  backface-visibility:hidden!important;
+  -webkit-backface-visibility:hidden!important;
+  filter:none!important;
+}
+
+/* Destination pages are born CLOSED. There is no second down animation after a
+   document swap. The initial closed state has no transition at all. */
+html.page-shield-arrival body[data-page] > #page-transition-shield.page-transition-shield > .page-transition-shield__panel{
+  transform:translate3d(0,0,0)!important;
+  -webkit-transform:translate3d(0,0,0)!important;
+  transition:none!important;
+}
+
+/* Outgoing cover: open -> closed, exactly two seconds. */
+html.page-shield-covering body[data-page] > #page-transition-shield.page-transition-shield > .page-transition-shield__panel{
+  transform:translate3d(0,0,0)!important;
+  -webkit-transform:translate3d(0,0,0)!important;
+  transition:transform var(--ah1064-shield-ms) var(--ah1064-shield-ease)!important;
+}
+
+/* Incoming reveal: closed -> fully above the viewport, exactly two seconds. */
+html.page-shield-revealing body[data-page] > #page-transition-shield.page-transition-shield > .page-transition-shield__panel,
+html[data-page-shield-state="open"] body[data-page] > #page-transition-shield.page-transition-shield > .page-transition-shield__panel{
+  transform:translate3d(0,-101.25%,0)!important;
+  -webkit-transform:translate3d(0,-101.25%,0)!important;
+  transition:transform var(--ah1064-shield-ms) var(--ah1064-shield-ease)!important;
+}
+html[data-page-shield-state="covered"] body[data-page] > #page-transition-shield.page-transition-shield > .page-transition-shield__panel{
+  transform:translate3d(0,0,0)!important;
+  -webkit-transform:translate3d(0,0,0)!important;
+}
+
+/* Keep the requested full travel even when OS reduced-motion is enabled. */
+@media (prefers-reduced-motion:reduce){
+  :root{--ah1064-shield-ms:2000ms}
+}
+
+/* BFCache/history restoration may need to re-establish the closed state. That
+   positioning is instantaneous; only the subsequent upward reveal animates. */
+html[data-page-shield-snap="1"] body[data-page] > #page-transition-shield.page-transition-shield > .page-transition-shield__panel{
+  transform:translate3d(0,0,0)!important;
+  -webkit-transform:translate3d(0,0,0)!important;
+  transition:none!important;
+}
