@@ -9,7 +9,7 @@
   /* Mark older authorities as superseded before their deferred runtimes can attach competing handlers. */
   window.__AH1081ModelAuthority=1; window.__AH1076ModelAuthority=1; window.__AH1079ModelAuthority=1;
   const BG='./assets/page-shield-embossed-strong-round1067.webp?v=1088r';
-  const DURATION=1150;
+  const DURATION=1850;
   const RETURN_SHIELD_MS=2000;
   const RETURN_SCROLL_MS=1750;
   const RETURN_EASE='cubic-bezier(.22,.66,.24,1)';

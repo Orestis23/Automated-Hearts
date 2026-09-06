@@ -1,0 +1,45 @@
+/* Round 1139 — approved Solution sign copy. The old generic process title is
+   replaced by the six machine concepts, presented as prominent pink lettering. */
+#solution-process-heading.solution-process-terms,
+.solution-process-title.solution-process-terms{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px clamp(12px,1.7vw,24px)!important;
+  color:#ff4fa8!important;
+  -webkit-text-fill-color:#ff4fa8!important;
+  font-family:Orbitron,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;
+  font-size:clamp(16px,1.45vw,22px)!important;
+  font-weight:800!important;
+  line-height:1.28!important;
+  letter-spacing:.055em!important;
+  text-transform:uppercase!important;
+  text-shadow:0 0 5px rgba(255,46,168,.52),0 0 12px rgba(255,46,168,.22)!important;
+}
+#solution-process-heading.solution-process-terms > span,
+.solution-process-title.solution-process-terms > span{
+  display:inline-block!important;
+  white-space:nowrap!important;
+}
+#solution-process-heading.solution-process-terms > span:not(:last-child)::after,
+.solution-process-title.solution-process-terms > span:not(:last-child)::after{
+  content:"•";
+  display:inline-block;
+  margin-left:clamp(12px,1.7vw,24px);
+  color:#8fffd7;
+  -webkit-text-fill-color:#8fffd7;
+  text-shadow:0 0 5px rgba(143,255,215,.42);
+}
+@media(max-width:800px){
+  .solution-process-title.solution-process-terms{
+    gap:7px 9px!important;
+    padding:14px 10px!important;
+    font-size:clamp(13px,4vw,16px)!important;
+    line-height:1.32!important;
+    letter-spacing:.035em!important;
+  }
+  .solution-process-title.solution-process-terms > span:not(:last-child)::after{
+    margin-left:9px;
+  }
+}

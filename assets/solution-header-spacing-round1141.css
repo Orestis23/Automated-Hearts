@@ -1,0 +1,115 @@
+/* Automated Hearts Round 1141
+   Solution header spacing authority.
+   Desktop brand clearance: 2/3 CSS inch = 64px from each horizontal section edge.
+   Mobile brand clearance: 1/2 CSS inch = 48px.
+   The desktop process sign now participates in layout instead of hanging outside
+   the centered machine anchor, preventing its lettering from being clipped. */
+
+/* ---------- Desktop Solution header ---------- */
+@media (min-width:801px){
+  #solution-process-header{
+    box-sizing:border-box!important;
+    min-height:0!important;
+    height:auto!important;
+    padding:64px 24px!important;
+    align-items:flex-start!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+  }
+
+  #solution-process-header .solution-process-exhibit{
+    position:relative!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    box-sizing:border-box!important;
+    width:min(1080px,calc(100% - 54px))!important;
+    max-width:1080px!important;
+    margin:0 auto!important;
+    padding:0 0 27px!important; /* absorbs the widest lower rim so 64px remains below it */
+    gap:43px!important;          /* 27px outer rim depth + 16px visual gap below the sign */
+  }
+
+  #solution-process-heading{
+    position:relative!important;
+    inset:auto!important;
+    left:auto!important;
+    right:auto!important;
+    top:auto!important;
+    bottom:auto!important;
+    z-index:8!important;
+    display:flex!important;
+    flex-wrap:wrap!important;
+    flex:0 0 auto!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-height:64px!important;
+    height:auto!important;
+    margin:0!important;
+    padding:18px 24px!important;
+    overflow:visible!important;
+    clip:auto!important;
+    clip-path:none!important;
+  }
+
+  #solution-process-header .solution-process-window-anchor{
+    position:relative!important;
+    flex:0 0 auto!important;
+    display:block!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:16/7!important;
+    margin:0!important;
+    overflow:visible!important;
+  }
+}
+
+/* ---------- Mobile Solution header ---------- */
+@media (max-width:800px){
+  main > .lite-section.solution-mobile-header-section{
+    box-sizing:border-box!important;
+    padding-top:48px!important;
+    padding-bottom:48px!important;
+  }
+
+  .solution-process-title.solution-mobile-process-name{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:3px!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-height:0!important;
+    margin:0 auto 24px!important;
+    padding:15px 10px!important;
+    color:#ff4fa8!important;
+    -webkit-text-fill-color:#ff4fa8!important;
+    font-family:Orbitron,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;
+    font-size:clamp(17px,5.1vw,21px)!important;
+    font-weight:800!important;
+    line-height:1.22!important;
+    letter-spacing:.025em!important;
+    text-align:center!important;
+    text-transform:none!important;
+    text-shadow:0 0 5px rgba(255,46,168,.52),0 0 12px rgba(255,46,168,.22)!important;
+    overflow:visible!important;
+  }
+
+  .solution-process-title.solution-mobile-process-name > span{
+    display:block!important;
+    width:100%!important;
+    white-space:nowrap!important;
+  }
+
+  /* The removed gold hero graphic no longer consumes space; keep one clean
+     24px internal gap from the title sign to the machine hardware. */
+  .solution-mobile-header-section > #lite-model-stage{
+    margin-top:0!important;
+  }
+}

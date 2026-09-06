@@ -1,0 +1,18 @@
+/* Round 1162 — mobile Learning Center return control above the 3D stage. */
+#lite-model-stage .stage-choose-row{
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin:0 0 12px;
+}
+#lite-model-stage .learning-choose-another{
+  width:min(92%,300px);
+  min-height:48px;
+  border:2px solid #8FFFD7;
+  color:#FF2EA8;
+  background:linear-gradient(180deg,#0d2741,#020914);
+  box-shadow:0 0 9px rgba(143,255,215,.20), inset 0 0 0 1px rgba(255,46,168,.12);
+  letter-spacing:.025em;
+}
+#lite-model-stage .learning-choose-another:active{transform:translateY(2px)}
+#lite-model-stage .model-shell{margin-top:0!important}

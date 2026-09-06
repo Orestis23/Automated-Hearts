@@ -1,0 +1,40 @@
+/* Round 1161 — iPhone bottom safe-area closure.
+   The footer's declared height previously excluded env(safe-area-inset-bottom)
+   while the lower rim was offset by it. On iPhones that created an exposed
+   strip between the rounded rim and the fixed footer. */
+@media (max-width:900px){
+  :root{
+    --ah-mobile-footer-base:74px;
+  }
+
+  html body > nav.footer,
+  html body > .footer{
+    height:calc(var(--ah-mobile-footer-base) + var(--safe-bottom))!important;
+    min-height:calc(var(--ah-mobile-footer-base) + var(--safe-bottom))!important;
+    padding:6px 3px calc(6px + var(--safe-bottom))!important;
+    bottom:0!important;
+    background:linear-gradient(#10213b,#02050a)!important;
+    overflow:hidden!important;
+  }
+
+  /* Keep the physical shell closure exactly aligned with the footer top. */
+  html body::before{
+    bottom:calc(var(--ah-mobile-footer-base) + var(--safe-bottom))!important;
+  }
+  html body > .shell-edge.l,
+  html body > .shell-edge.r{
+    bottom:calc(var(--ah-mobile-footer-base) + var(--safe-bottom))!important;
+  }
+
+  /* Make the lower shell hardware itself cover the device safe area too. */
+  html body > .shell-edge.b{
+    height:calc(70px + var(--safe-bottom))!important;
+    bottom:0!important;
+  }
+
+  /* Reserve enough scroll room that the final content can clear the taller
+     iPhone footer instead of ending underneath it. */
+  html body{
+    padding-bottom:calc(90px + var(--safe-bottom))!important;
+  }
+}

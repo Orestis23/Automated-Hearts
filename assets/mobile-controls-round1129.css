@@ -6,7 +6,7 @@
 .heart{
   isolation:isolate;
   overflow:visible;
-  background-image:url('./mobile-lite-heart.webp')!important;
+  background-image:url('./mobile-lite-heart-transparent-round1139.webp')!important;
   background-position:center!important;
   background-size:contain!important;
   background-repeat:no-repeat!important;
@@ -21,21 +21,12 @@
     radial-gradient(circle at 35% 28%,rgba(255,46,168,.98) 0 18%,rgba(255,46,168,.46) 34%,transparent 55%),
     radial-gradient(circle at 68% 62%,rgba(143,255,215,.98) 0 20%,rgba(143,255,215,.50) 38%,transparent 62%),
     linear-gradient(145deg,rgba(255,46,168,.72),rgba(143,255,215,.76));
-  -webkit-mask:url('./mobile-lite-heart.webp') center/contain no-repeat;
-  mask:url('./mobile-lite-heart.webp') center/contain no-repeat;
+  -webkit-mask:url('./mobile-lite-heart-transparent-round1139.webp') center/contain no-repeat;
+  mask:url('./mobile-lite-heart-transparent-round1139.webp') center/contain no-repeat;
   opacity:.92;
   mix-blend-mode:screen;
 }
-.heart::after{
-  content:"";
-  position:absolute;
-  inset:5px 4px 4px;
-  pointer-events:none;
-  border-radius:50%;
-  box-shadow:-5px -1px 12px rgba(255,46,168,.58),6px 4px 13px rgba(143,255,215,.56);
-  opacity:.78;
-  z-index:-1;
-}
+.heart::after{content:none!important;display:none!important;}
 
 /* Messages: clearly visible mechanical depression before the form overlays it. */
 .message{

@@ -1,0 +1,29 @@
+/* Round 1149: shared mobile page-title scroll progress for every mobile page. */
+@media (max-width:900px){
+  html,
+  body{
+    scrollbar-width:none!important;
+    -ms-overflow-style:none!important;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar{
+    width:0!important;
+    height:0!important;
+    display:none!important;
+  }
+
+  body > .page-chip{
+    --ah-page-scroll-percent:0%;
+    color:#ff2ea8!important;
+    text-shadow:0 0 7px rgba(255,46,168,.58)!important;
+    background:
+      linear-gradient(90deg,
+        #8fffd7 0%,
+        #8fffd7 var(--ah-page-scroll-percent),
+        #0d2741 var(--ah-page-scroll-percent),
+        #03101e 100%)!important;
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,.03),
+      0 0 7px rgba(143,255,215,.20)!important;
+  }
+}

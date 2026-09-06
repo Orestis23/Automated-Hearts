@@ -5,14 +5,43 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="dark" name="color-scheme"/>
-<script>try{var __ahQ=new URLSearchParams(location.search),__ahForce=__ahQ.get('intro')==='1',__ahSeen=localStorage.getItem('ah-mobile-first-visit-intro-v1116')==='1';document.documentElement.setAttribute('data-ah-intro',(__ahForce||!__ahSeen)?'1':'0')}catch(e){document.documentElement.setAttribute('data-ah-intro','1')}</script>
+<script>try{var __ahQ=new URLSearchParams(location.search),__ahForce=__ahQ.get('intro')==='1',__ahSeen=localStorage.getItem('ah-mobile-first-visit-intro-v1166')==='1';document.documentElement.setAttribute('data-ah-intro',(__ahForce||!__ahSeen)?'1':'0')}catch(e){document.documentElement.setAttribute('data-ah-intro','1')}</script><style id="ah-first-visit-intro-critical-r1157">
+html[data-ah-intro="1"] #first-visit-intro{display:grid!important;place-items:center!important;position:fixed!important;inset:0!important;z-index:50000!important;overflow:hidden!important;background-color:#02070c!important;background-image:url("./assets/page-shield-smoked-heart.webp")!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;color:#f2fbff!important;transform:translate3d(0,0,0);transition:transform 3000ms cubic-bezier(.18,.68,.20,1)!important}
+html[data-ah-intro="1"] #first-visit-intro.is-raising{transform:translate3d(0,-105%,0)!important}
+html[data-ah-intro="1"] body[data-page] > #page-transition-shield{display:none!important;visibility:hidden!important}
+#first-visit-intro .intro-copy{position:relative;z-index:1;width:min(88vw,520px);padding:24px 18px;color:#f2fbff;font:700 clamp(18px,4.8vw,26px)/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.015em;text-shadow:0 2px 3px #000}
+#first-visit-intro .intro-line{min-height:1.45em;margin:0 0 17px}
+#first-visit-intro .pink{color:#ff2ea8}#first-visit-intro .green{color:#8fffd7}
+#first-visit-intro .intro-cursor{display:inline-block;width:.58em;height:1.05em;margin-left:.12em;vertical-align:-.14em;background:#8fffd7;animation:ahEarlyCursor1157 .78s steps(1,end) infinite}
+#first-visit-intro .intro-signature-heart{display:block;width:clamp(54px,15vw,82px);height:auto;margin:4px auto 0;opacity:0;visibility:hidden;clip-path:circle(0% at 50% 52%);transform:scale(.78);transform-origin:50% 52%;filter:grayscale(1) brightness(3.65) contrast(1.62) drop-shadow(0 0 4px rgba(255,255,255,.35));pointer-events:none}#first-visit-intro .intro-signature-heart[hidden]{display:none!important}#first-visit-intro .intro-signature-heart.is-signing{visibility:visible;animation:ahSignatureHeartInsideOut1165 1450ms cubic-bezier(.16,.72,.18,1) forwards} @keyframes ahSignatureHeartInsideOut1165{0%{opacity:0;clip-path:circle(0% at 50% 52%);transform:scale(.78);filter:grayscale(1) brightness(5) contrast(1.8) drop-shadow(0 0 2px rgba(255,255,255,.12))}18%{opacity:.72;clip-path:circle(12% at 50% 52%);filter:grayscale(1) brightness(4.35) contrast(1.72) drop-shadow(0 0 9px rgba(255,255,255,.85))}52%{opacity:.93;clip-path:circle(39% at 50% 52%);transform:scale(.91);filter:grayscale(1) brightness(3.95) contrast(1.67) drop-shadow(0 0 12px rgba(255,255,255,.88))}78%{opacity:.98;clip-path:circle(61% at 50% 52%);filter:grayscale(1) brightness(3.72) contrast(1.62) drop-shadow(0 0 9px rgba(255,255,255,.72))}100%{opacity:.96;clip-path:circle(78% at 50% 52%);transform:scale(1);filter:grayscale(1) brightness(3.55) contrast(1.58) drop-shadow(0 0 7px rgba(255,255,255,.58))}}
+@keyframes ahEarlyCursor1157{50%{opacity:0}}
+</style><script id="ah-first-visit-intro-early-runtime-r1157">
+(()=>{'use strict';
+const root=document.documentElement;if(root.getAttribute('data-ah-intro')!=='1')return;window.__AH_EARLY_MOBILE_INTRO_STARTED__=true;
+const KEY='ah-mobile-first-visit-intro-v1166',sleep=ms=>new Promise(r=>setTimeout(r,ms)),esc=v=>v.replace(/[&<>']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;'}[c]));
+function boot(){const intro=document.getElementById('first-visit-intro'),lines=[...document.querySelectorAll('.intro-line')],cursor=document.getElementById('intro-cursor'),signature=document.getElementById('intro-signature-heart');if(!intro||lines.length<5||!cursor)return false;if(window.__AH_EARLY_MOBILE_INTRO_BOOTED__)return true;window.__AH_EARLY_MOBILE_INTRO_BOOTED__=true;if(signature){signature.classList.remove('is-visible','is-signing');signature.hidden=true;}
+const colorize=v=>{let x=esc(v);return x.replace(/AI/g,'<span class="pink">AI</span>').replace(/Human/g,'<span class="green">Human</span>').replace(/10%/g,'<span class="pink">10%</span>').replace(/local charities/g,'<span class="green">local charities</span>').replace(/maximum efficiency/g,'<span class="green">maximum efficiency</span>').replace(/Nothing you don&#39;t need\./g,'<span class="pink">Nothing</span> you <span class="green">don&#39;t need.</span>').replace(/Just what you do\./g,'<span class="pink">Just</span> <span class="green">what you do.</span>')};
+const state=['','','','',''];function render(i){lines[i].innerHTML=colorize(state[i]);lines[i].appendChild(cursor)}async function type(i,text){for(const ch of text){state[i]+=ch;render(i);let d=34+Math.random()*48;if(/[.,%]/.test(ch))d+=65;await sleep(d)}}async function back(i,n){for(let k=0;k<n;k++){state[i]=state[i].slice(0,-1);render(i);await sleep(78+Math.random()*42)}}
+async function story(){await type(0,'AI should elevtae');await sleep(330);await back(0,3);await sleep(160);await type(0,'ate the Human.');await sleep(620);await type(1,'10% to local charites');await sleep(290);await back(1,3);await sleep(150);await type(1,'ties.');await sleep(650);await type(2,'Fully customized minimalistic systems in both design & foundation for maximum efficency');await sleep(340);await back(2,5);await sleep(160);await type(2,'ciency.');await sleep(610);await type(3,'Nothing you dont');await sleep(310);await back(3,4);await sleep(150);await type(3,"don't need.");await sleep(520);await type(4,'Just what you do.');await sleep(520)}
+intro.hidden=false;story().then(async()=>{try{localStorage.setItem(KEY,'1')}catch(_){};cursor.style.opacity='0';await sleep(180);if(signature){signature.classList.remove('is-visible','is-signing');signature.hidden=false;void signature.offsetWidth;signature.classList.add('is-signing');await sleep(1650)}else{await sleep(420)};intro.classList.add('is-raising');await Promise.race([new Promise(r=>intro.addEventListener('transitionend',r,{once:true})),sleep(3300)]);intro.hidden=true;root.setAttribute('data-ah-intro','0');window.dispatchEvent(new CustomEvent('ah:first-intro-finished'))}).catch(()=>{});return true}
+if(!boot()){const mo=new MutationObserver(()=>{if(boot())mo.disconnect()});mo.observe(root,{childList:true,subtree:true})}
+})();
+</script>
+<link as="image" fetchpriority="high" href="./assets/page-shield-smoked-heart.webp" rel="preload" type="image/webp"/>
 <title>Automated Hearts</title>
 <meta content="Automated Hearts — practical web and automation architecture for local businesses." name="description"/>
 <link href="./index.html?v=1114r" rel="canonical"/>
 <link href="./assets/mobile-home-round1124.css?v=1125r" rel="stylesheet"/>
-<link rel="stylesheet" href="./assets/mobile-controls-round1129.css?v=1129r"></head>
+<link rel="stylesheet" href="./assets/mobile-controls-round1129.css?v=1139r"><link rel="stylesheet" href="./assets/window-shields-round1138.css?v=1138r"/>
+<link rel="stylesheet" href="./assets/window-shields-carbon-bottom-heart-round1140.css?v=1140r"/>
+<link rel="stylesheet" href="./assets/persistent-shell-round1142.css?v=1142r"/>
+<link rel="stylesheet" href="./assets/mobile-home-round1146.css?v=1146r"/>
+<link rel="stylesheet" href="./assets/mobile-page-title-progress-round1149.css?v=1149r"/>
+<link rel="stylesheet" href="./assets/mobile-shell-rounded-bottom-round1150.css?v=1150r"/>
+<link rel="stylesheet" href="./assets/mobile-home-brand-border-round1154.css?v=1154r"/><link rel="stylesheet" href="./assets/persistent-shell-router-round1156.css?v=1156r"/><script defer src="./assets/persistent-shell-router-round1185.js?v=1185r"></script><link rel="stylesheet" href="./assets/mobile-safe-area-footer-round1161.css?v=1161r"><link href="./assets/home-explore-texture-heading-round1169.css?v=1169r" rel="stylesheet"/><link rel="stylesheet" href="./assets/footer-navigation-load-hold-round1169.css?v=1169r"/><link rel="stylesheet" href="./assets/window-open-lip-round1171.css?v=1171r"><link rel="stylesheet" href="./round1179-control-edge-explore-message.css?v=1179r" />
+<link rel="stylesheet" href="./assets/mobile-home-ahi-round1185.css?v=1185r"/><link rel="stylesheet" href="./assets/mobile-page-static-message-round1185.css?v=1185r"/></head>
 <body>
-<div aria-label="Automated Hearts introduction" aria-live="polite" class="first-visit-intro" id="first-visit-intro"><div class="intro-copy" id="intro-copy"><div class="intro-line" data-line="0"></div><div class="intro-line" data-line="1"></div><div class="intro-line" data-line="2"></div><div class="intro-line" data-line="3"></div><span aria-hidden="true" class="intro-cursor" id="intro-cursor"></span></div></div>
+<div aria-label="Automated Hearts introduction" aria-live="polite" class="first-visit-intro" id="first-visit-intro"><div class="intro-copy" id="intro-copy"><div class="intro-line" data-line="0"></div><div class="intro-line" data-line="1"></div><div class="intro-line" data-line="2"></div><div class="intro-line" data-line="3"></div><div class="intro-line" data-line="4"></div><span aria-hidden="true" class="intro-cursor" id="intro-cursor"></span><img aria-hidden="true" alt="" class="intro-signature-heart" hidden id="intro-signature-heart" src="./assets/rim-heart-embossed-round291.webp"/></div></div>
 <span class="shell-edge t"></span><span class="shell-edge b"></span><span class="shell-edge l"></span><span class="shell-edge r"></span>
 <a aria-label="Home" class="heart" href="./index.html?v=1114r"></a>
 <div class="page-chip">Hub</div>
@@ -22,11 +51,11 @@
 <div class="title-stack"><div class="lcd green">Automated Hearts</div><div class="lcd pink">Web &amp; Automation</div><div class="lcd green">Architecture</div></div>
 <div class="machine-stack" id="machine-stack">
 <div class="machine-frame machine-3d-frame">
-<div class="machine-well"><iframe aria-label="Interactive Automated Hearts machine" class="machine-3d" data-src="./mobile-home-machine-3d-round1115.html?v=1116r" loading="eager" referrerpolicy="same-origin" title="Interactive Automated Hearts machine"></iframe><img alt="Automated Hearts machine on an asteroid" class="machine-poster" decoding="async" height="270" loading="eager" src="./assets/home-machine-orbit-mobile-round1101-poster.webp" width="480"/></div>
+<div class="machine-well"><iframe aria-label="Interactive Automated Hearts Solution machine" class="machine-3d" data-src="./solution-machine-pipeline-round1185.html?v=1185r&links=0&quality=high" loading="eager" referrerpolicy="same-origin" title="Interactive Automated Hearts Solution machine"></iframe><img alt="Automated Hearts Solution machine preview" class="machine-poster" decoding="async" height="270" loading="eager" src="./assets/home-machine-orbit-mobile-round1101-poster.webp" width="480"/></div>
 <button aria-expanded="false" aria-label="Raise machine window" class="window-shutter" type="button"></button>
 </div>
 <div class="machine-frame cards-frame">
-<div class="machine-well"><video aria-label="Automated Hearts digital cards" class="cards-video" data-src="./assets/home-rolodex-scroll-mobile-round1101.mp4" loop="" muted="" playsinline="" preload="none"></video><img alt="Automated Hearts digital cards" class="machine-poster" decoding="async" height="270" loading="eager" src="./assets/home-rolodex-scroll-mobile-round1101-poster.webp" width="480"/></div>
+<div class="machine-well"><video aria-label="Automated Hearts digital cards" class="cards-video" data-src="./assets/home-rolodex-scroll-mobile-round1147-smooth.mp4" loop="" muted="" playsinline="" preload="none"></video><img alt="Automated Hearts digital cards" class="machine-poster" decoding="async" height="270" loading="eager" src="./assets/home-rolodex-scroll-mobile-round1101-poster.webp" width="480"/></div>
 <button aria-expanded="false" aria-label="Raise card window" class="window-shutter" type="button"></button>
 </div>
 </div>
@@ -38,18 +67,19 @@
 <a class="route-card" href="./mobile-learning-center.html?v=1120r"><span class="route-media"><img alt="Learning Center" decoding="async" height="454" loading="lazy" src="./assets/mobile-lite-learning-center.webp" width="420"/></span><span class="route-label">Learning Center</span></a>
 </div>
 </section>
-<section aria-label="Zero-Software Solution" class="section">
-<h2 class="section-title">Zero-Software Solution</h2>
+<section aria-label="Negative Software Solution" class="section">
+<h2 class="section-title" style="color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;">Negative Software Solution</h2>
 <div class="process-grid">
-<article class="process"><h3>AH:\Consolidate.exe</h3><ul><li>Less software.</li><li>Fewer tools.</li><li>Lower costs.</li><li>Clean data.</li></ul></article>
-<article class="process"><h3>AH:\Streamline.exe</h3><ul><li>Fewer steps.</li><li>Less clicks.</li><li>Fewer errors.</li><li>Less duplication.</li></ul></article>
-<article class="process"><h3>AH:\Automate.exe</h3><ul><li>Monitor information.</li><li>Maintain full visibility.</li><li>Let it run.</li><li>Free your time.</li></ul></article>
-<article class="process"><h3>AH:\Optimize.exe</h3><ul><li>See what works.</li><li>Reveal patterns.</li><li>Adjust sooner.</li><li>Improve predictions.</li></ul></article>
+<article class="process"><h3>AH:\Consolidate.txt</h3><ul><li>Less software.</li><li>Fewer tools.</li><li>Lower costs.</li><li>Clean data.</li></ul></article>
+<article class="process"><h3>AH:\Streamline.txt</h3><ul><li>Fewer steps.</li><li>Less clicks.</li><li>Fewer errors.</li><li>Less duplication.</li></ul></article>
+<article class="process"><h3>AH:\Automate.txt</h3><ul><li>Monitor information.</li><li>Maintain full visibility.</li><li>Let it run.</li><li>Free your time.</li></ul></article>
+<article class="process"><h3>AH:\Optimize.txt</h3><ul><li>See what works.</li><li>Reveal patterns.</li><li>Adjust sooner.</li><li>Improve predictions.</li></ul></article>
 </div>
 <a class="explore-key" href="./learning-center.html?v=1108r#learning-model-stage"><strong>Explore</strong><small>“The only limitation is your imagination.” — TruthBot</small></a>
 </section>
 <section aria-label="Humans and AI working together" class="section">
 <h2 class="section-title">Human + AI</h2>
+<div class="ahi-sign" aria-label="A.H.I. Artificial Human Intelligence"><strong class="ahi-acronym">A.H.I.</strong><strong class="ahi-name">Artificial Human Intelligence</strong><span>(The seamless collaboration of the two.)</span></div>
 <div class="carousel-shell">
 <button aria-label="Previous carousel image" class="carousel-orb prev" type="button"></button>
 <div class="carousel">
@@ -64,20 +94,20 @@
 </div>
 </section>
 </main>
-<div class="ticker">10% Back to Local Charities · Automation with a human touch</div>
+<div class="ticker">10% to local charities.</div>
 <nav aria-label="Primary navigation" class="footer"><a href="./mobile-solutions.html?v=1129r">Solution</a><a href="./mobile-who-we-help.html?v=1129r">Industries</a><a href="./mobile-learning-center.html?v=1120r">Learning</a><a href="./mobile-about.html?v=1114r">About Us</a><a href="./mobile-pricing.html?v=1126r">Services</a></nav>
-<script defer="" src="./assets/mobile-home-round1116.js"></script>
+<script defer="" src="./assets/mobile-home-round1164.js?v=1164r"></script>
 <script defer="" src="./assets/google-sheet-config-round1118.js?v=1118r"></script><script defer="" src="./assets/google-sheet-forms-round1118.js?v=1125r"></script><script defer="" src="./assets/mobile-contact-round1128.js?v=1128r"></script>
 <script id="ah-mobile-carousel-center-r1125">
 (()=>{
   'use strict'; let raf=0;
   function run(){raf=0;const sec=document.querySelector('.carousel-shell')?.closest('section');const shell=sec?.querySelector('.carousel-shell');const title=sec?.querySelector('.section-title');const ticker=document.querySelector('.ticker');if(!sec||!shell||!ticker)return;
     shell.style.setProperty('transform','none','important');shell.style.setProperty('position','relative','important');shell.style.setProperty('top','0px','important');
-    const sh=shell.getBoundingClientRect(), top=(title?.getBoundingClientRect().bottom ?? sec.getBoundingClientRect().top), bottom=ticker.getBoundingClientRect().top;
+    const anchor=sec?.querySelector('.ahi-sign')||title; const sh=shell.getBoundingClientRect(), top=(anchor?.getBoundingClientRect().bottom ?? sec.getBoundingClientRect().top), bottom=ticker.getBoundingClientRect().top;
     if(sh.height<20||bottom<=top)return;const a=sh.top-top,b=bottom-sh.bottom,d=(b-a)/2;if(Number.isFinite(d))shell.style.setProperty('top',`${d.toFixed(2)}px`,'important');}
   function s(){cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>requestAnimationFrame(run));}
   addEventListener('load',s,{once:true});addEventListener('resize',s,{passive:true});addEventListener('scroll',s,{passive:true});setTimeout(s,400);
 })();
 </script>
-</body>
+<script defer src="./assets/mobile-page-title-progress-round1149.js?v=1149r"></script><script defer src="./assets/footer-navigation-load-hold-round1169.js?v=1169r"></script></body>
 </html>

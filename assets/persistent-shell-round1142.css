@@ -1,0 +1,74 @@
+/* Automated Hearts Round 1142 — persistent shell snapshots + intro shield depth authority.
+   Keeps the shell visually continuous during same-origin full-document navigation
+   without restoring the retired iframe router. */
+@view-transition { navigation: auto; }
+
+/* Desktop shell elements receive stable cross-document identities. */
+html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim{
+  view-transition-name:ah-r1142-outer-rim!important;
+}
+html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
+  view-transition-name:ah-r1142-gold-rim!important;
+}
+html body[data-page] > .rim-heart-emblem.rim-heart-emblem{
+  view-transition-name:ah-r1142-heart!important;
+}
+html body[data-page] > #header-send-message#header-send-message{
+  view-transition-name:ah-r1142-message!important;
+}
+html body[data-page] > #site-footer#site-footer{
+  view-transition-name:ah-r1142-footer!important;
+}
+
+/* Mobile-lite shell pieces use their own stable identities. */
+html body > .shell-edge.t{view-transition-name:ah-r1142-mobile-top!important}
+html body > .shell-edge.b{view-transition-name:ah-r1142-mobile-bottom!important}
+html body > .shell-edge.l{view-transition-name:ah-r1142-mobile-left!important}
+html body > .shell-edge.r{view-transition-name:ah-r1142-mobile-right!important}
+html body > .heart{view-transition-name:ah-r1142-mobile-heart!important}
+html body > .message{view-transition-name:ah-r1142-mobile-message!important}
+html body > .footer{view-transition-name:ah-r1142-mobile-footer!important}
+
+/* No fade/morph on shell hardware: old pixels remain until the new document is ready,
+   then the identical new hardware replaces them without a visible flash. */
+::view-transition-group(ah-r1142-outer-rim),
+::view-transition-group(ah-r1142-gold-rim),
+::view-transition-group(ah-r1142-heart),
+::view-transition-group(ah-r1142-message),
+::view-transition-group(ah-r1142-footer),
+::view-transition-group(ah-r1142-mobile-top),
+::view-transition-group(ah-r1142-mobile-bottom),
+::view-transition-group(ah-r1142-mobile-left),
+::view-transition-group(ah-r1142-mobile-right),
+::view-transition-group(ah-r1142-mobile-heart),
+::view-transition-group(ah-r1142-mobile-message),
+::view-transition-group(ah-r1142-mobile-footer){animation:none!important}
+
+::view-transition-old(ah-r1142-outer-rim),::view-transition-new(ah-r1142-outer-rim),
+::view-transition-old(ah-r1142-gold-rim),::view-transition-new(ah-r1142-gold-rim),
+::view-transition-old(ah-r1142-heart),::view-transition-new(ah-r1142-heart),
+::view-transition-old(ah-r1142-message),::view-transition-new(ah-r1142-message),
+::view-transition-old(ah-r1142-footer),::view-transition-new(ah-r1142-footer),
+::view-transition-old(ah-r1142-mobile-top),::view-transition-new(ah-r1142-mobile-top),
+::view-transition-old(ah-r1142-mobile-bottom),::view-transition-new(ah-r1142-mobile-bottom),
+::view-transition-old(ah-r1142-mobile-left),::view-transition-new(ah-r1142-mobile-left),
+::view-transition-old(ah-r1142-mobile-right),::view-transition-new(ah-r1142-mobile-right),
+::view-transition-old(ah-r1142-mobile-heart),::view-transition-new(ah-r1142-mobile-heart),
+::view-transition-old(ah-r1142-mobile-message),::view-transition-new(ah-r1142-mobile-message),
+::view-transition-old(ah-r1142-mobile-footer),::view-transition-new(ah-r1142-mobile-footer){
+  animation:none!important;opacity:1!important;mix-blend-mode:normal!important;
+}
+
+/* Prevent the browser's default root cross-fade from creating a black/white flash. */
+::view-transition-group(root),::view-transition-old(root),::view-transition-new(root){
+  animation:none!important;mix-blend-mode:normal!important;
+}
+
+/* First-visit typing shield: shell/rim hardware is physically above the moving panel.
+   As the shield rises, it disappears underneath the upper rim rather than painting over it. */
+html body.page-home[data-page="home"] > .desktop-first-visit-intro.desktop-first-visit-intro{
+  z-index:2147483180!important;
+}
+html body > .first-visit-intro.first-visit-intro{
+  z-index:8997!important;
+}

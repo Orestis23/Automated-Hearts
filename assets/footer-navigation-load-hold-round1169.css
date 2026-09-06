@@ -1,0 +1,26 @@
+/* Round 1169 — footer navigation hardware remains physically depressed for the
+   entire route load, then releases only when the persistent destination is ready. */
+html.ah-footer-navigation-loading body[data-page] > footer#site-footer
+nav#primary-nav a.footer-structure-control.mechanical-send-control[data-ah-footer-loading="1"]{
+  background-image:var(--r1034-footer-pressed,var(--r1027-footer-pressed,var(--r1018-footer-pressed)))!important;
+  transform:translate3d(0,4px,0)!important;
+}
+html.ah-footer-navigation-loading body[data-page] > footer#site-footer
+nav#primary-nav a.footer-structure-control.mechanical-send-control[data-ah-footer-loading="1"] > .send-control-copy.footer-control-copy{
+  transform:translate3d(0,4px,0)!important;
+}
+html.ah-footer-navigation-loading body[data-page] > footer#site-footer
+nav#primary-nav a.footer-structure-control.mechanical-send-control[data-ah-footer-loading="1"] > .send-control-indicator{
+  height:0!important;
+  opacity:0!important;
+  box-shadow:none!important;
+}
+
+/* Dedicated mobile shell uses the same load-held tactile state. This rule is
+   attribute-driven so older 190/250ms release timers cannot raise the button
+   before the destination frame has actually loaded. */
+html.ah-footer-navigation-loading body > nav.footer a[data-ah-footer-loading="1"]{
+  transform:translate3d(0,5px,0)!important;
+  box-shadow:0 0 0 #a9006f,inset 0 2px 6px rgba(0,0,0,.72),inset 0 0 0 1px rgba(255,255,255,.06)!important;
+  background:linear-gradient(160deg,#141d24,#071016 58%,#010406)!important;
+}

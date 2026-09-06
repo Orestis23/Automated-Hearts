@@ -1,6 +1,10 @@
 /* Automated Hearts Round 1064 — Vercel-safe full-document navigation guard. */
 (() => {
   'use strict';
+  /* Round 1182 persistent-shell compatibility: the old Vercel guard used to
+     overwrite __ahPersistentNavigate with a false-returning stub, forcing a
+     full-document navigation and causing the outer rim to flash black. */
+  if (window.__AH_PERSISTENT_SHELL_1182 === true) return;
   window.__AH_DISABLE_PERSISTENT_ROUTER = true;
 
   const root = document.documentElement;

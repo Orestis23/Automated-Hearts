@@ -1,0 +1,14 @@
+/* The process title uses the site's standard recessed blue screen surface. */
+#formula-title.solution-process-title, .solution-process-title {
+  position:relative!important;display:block!important;box-sizing:border-box!important;
+  width:min(100%,1080px)!important;max-width:100%!important;height:auto!important;
+  min-height:64px!important;margin:0 auto 32px!important;padding:18px 24px!important;
+  color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;
+  font-family:Orbitron,Arial,sans-serif!important;font-size:clamp(18px,2vw,28px)!important;
+  font-weight:600!important;line-height:1.45!important;text-align:center!important;
+  white-space:normal!important;clip:auto!important;clip-path:none!important;
+  background:repeating-linear-gradient(0deg,rgba(210,244,255,.026) 0 1px,transparent 1px 4px),linear-gradient(180deg,#0a2237,#041523 52%,#01070d)!important;
+  border:1px solid #164665!important;border-radius:7px!important;
+  box-shadow:inset 0 1px 0 #e0faff2e,inset 0 -8px 15px #0008,inset 0 0 0 2px #134665ad,0 4px 8px #0007!important;
+}
+@media(max-width:800px){.solution-process-title{padding:16px!important;margin-bottom:24px!important;font-size:18px!important}}

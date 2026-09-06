@@ -1,0 +1,55 @@
+/* Round 1181 — desktop-only visible control siding + exact Explore surface.
+   Mobile behavior is intentionally unchanged. */
+@media (min-width:801px){
+  /* Disable the older injected lip children; the desktop siding is now part of the actual rest artwork. */
+  .r1180-desktop-pink-lip{display:none!important;visibility:hidden!important;}
+
+  /* Footer buttons: guaranteed visible pink lower inner siding in the rest artwork. */
+  html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]{
+    background-image:url("./assets/footer-button-message-border-match-pinklip-round1181.svg")!important;
+    background-size:100% 100%!important;
+    background-position:center!important;
+    background-repeat:no-repeat!important;
+  }
+  html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,.is-pressed,[aria-pressed="true"]){
+    background-image:url("./assets/footer-button-message-border-match-pressed-round1095.svg")!important;
+  }
+
+  /* Messages: same physical lower siding; pressed state uses the submerged/pinkless face. */
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
+    background-image:url("./assets/message-button-square-footer-match-pinklip-round1181.svg")!important;
+    background-size:100% 100%!important;
+    background-position:center!important;
+    background-repeat:no-repeat!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched),
+  html.ah-message-persist-open body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
+    background-image:url("./assets/message-button-square-footer-match-pressed-round1095.svg")!important;
+  }
+}
+
+@media (min-width:901px){
+  /* Explore uses the exact 512x512 suede source extracted from the footer/message face.
+     One image, one layer, no tiling or repeated pattern. */
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore{
+    position:relative!important;
+    background-color:#08172b!important;
+    background-image:url("./assets/footer-message-suede-source-round1177.webp")!important;
+    background-position:center center!important;
+    background-size:cover!important;
+    background-repeat:no-repeat!important;
+    background-blend-mode:normal!important;
+    image-rendering:auto!important;
+    box-shadow:
+      inset 0 -4px 0 rgba(255,46,168,.90),
+      inset 0 -7px 7px rgba(255,46,168,.08)!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore::before,
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore::after{
+    content:none!important;display:none!important;background:none!important;background-image:none!important;box-shadow:none!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore:is(:active,[aria-pressed="true"]){
+    box-shadow:inset 0 -1px 0 rgba(255,46,168,.08)!important;
+    transform:translateY(3px)!important;
+  }
+}

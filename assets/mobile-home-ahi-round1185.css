@@ -1,0 +1,9 @@
+/* Round 1185 — A.H.I. sign hierarchy. */
+@media (max-width:900px){
+  .ahi-sign{gap:4px!important;padding:10px 12px 11px!important;}
+  .ahi-sign .ahi-acronym,
+  .ahi-sign .ahi-name{display:block!important;width:100%!important;margin:0!important;text-align:center!important;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;color:var(--green,#8fffd7)!important;-webkit-text-fill-color:var(--green,#8fffd7)!important;font-weight:900!important;letter-spacing:.025em!important;}
+  .ahi-sign .ahi-acronym{font-size:clamp(16px,4.7vw,20px)!important;line-height:1.05!important;}
+  .ahi-sign .ahi-name{font-size:clamp(13px,3.65vw,16px)!important;line-height:1.12!important;white-space:normal!important;}
+  .ahi-sign>span{display:block!important;margin-top:3px!important;color:#f3fbff!important;-webkit-text-fill-color:#f3fbff!important;font-size:clamp(10px,3vw,13px)!important;line-height:1.2!important;}
+}

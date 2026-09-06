@@ -1,0 +1,12 @@
+/* Automated Hearts Round 1154 — mobile Home brand-border authority.
+   Strengthen only the Zero-Software process-card rims using the canonical
+   Automated Hearts mint (#8FFFD7), while preserving the existing navy face. */
+@media (max-width:900px){
+  html body main > .section[aria-label="Zero-Software Solution"] .process{
+    border:2px solid #8FFFD7 !important;
+    box-shadow:
+      0 0 0 1px rgba(143,255,215,.18),
+      0 0 9px rgba(143,255,215,.34),
+      inset 0 0 0 1px rgba(143,255,215,.08) !important;
+  }
+}

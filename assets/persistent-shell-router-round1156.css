@@ -1,0 +1,65 @@
+/* Round 1156 — persistent-shell support. The content frame is intentionally
+   below all existing outer-rim hardware; only page content is replaceable. */
+.ah-shell-content-frame{
+  position:fixed!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:#000!important;
+  z-index:1000!important;
+}
+
+/* Mobile embedded pages render content only. The top document owns every
+   visible piece of rim hardware and the five physical navigation buttons. */
+html.ah-shell-embedded body > :is(
+  .first-visit-intro,
+  .desktop-first-visit-intro,
+  .shell-edge,
+  .heart,
+  .page-chip,
+  .message,
+  .ticker,
+  nav.footer
+){
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+html.ah-shell-embedded body::before,
+html.ah-shell-embedded body::after{
+  content:none!important;
+  display:none!important;
+}
+html.ah-shell-embedded,
+html.ah-shell-embedded body{
+  background:#000!important;
+}
+html.ah-shell-embedded body{
+  overflow-x:hidden!important;
+}
+
+/* Desktop already has older ah-embedded-page rules. These are a defensive
+   authority layer so no duplicate shell element can leak through an iframe. */
+html.ah-shell-embedded body[data-page] > :is(
+  .desktop-first-visit-intro,
+  .ah-persistent-outer-rim,
+  .ah-persistent-gold-rim,
+  .page-transition-shield,
+  .rim-heart-emblem,
+  .skip-link,
+  .site-header,
+  .rim-page-name-screen,
+  #header-send-message,
+  #home-ticker-wrap,
+  #site-footer,
+  .nav-contact-drawer
+){
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}

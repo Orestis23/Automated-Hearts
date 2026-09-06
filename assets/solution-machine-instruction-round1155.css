@@ -1,0 +1,84 @@
+/* Automated Hearts Round 1155
+   Large instructional sign below the Solution machine.
+   Mirrors the 3D machine sign language: black face, neon-pink hardware edge,
+   neon-green Orbitron copy. */
+.solution-machine-instruction{
+  position:relative;
+  isolation:isolate;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:min(760px,82%);
+  min-height:84px;
+  margin:0 auto;
+  padding:4px;
+  background:#ff2ea8;
+  clip-path:polygon(6% 0,94% 0,100% 18%,100% 82%,94% 100%,6% 100%,0 82%,0 18%);
+  filter:drop-shadow(0 0 7px rgba(255,46,168,.58)) drop-shadow(0 10px 18px rgba(0,0,0,.55));
+  pointer-events:none;
+}
+.solution-machine-instruction::before{
+  content:"";
+  position:absolute;
+  inset:4px;
+  z-index:-1;
+  clip-path:inherit;
+  background:
+    linear-gradient(180deg,rgba(10,25,38,.98),rgba(1,5,9,.99) 52%,rgba(8,17,27,.99)),
+    repeating-linear-gradient(0deg,rgba(143,255,215,.025) 0 1px,transparent 1px 4px);
+  box-shadow:inset 0 0 0 1px rgba(143,255,215,.2),inset 0 10px 20px rgba(255,255,255,.025);
+}
+.solution-machine-instruction > span{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  padding:19px 30px 18px;
+  color:#8fffd7;
+  -webkit-text-fill-color:#8fffd7;
+  font-family:Orbitron,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:clamp(20px,2vw,30px);
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:.055em;
+  text-align:center;
+  text-transform:none;
+  text-shadow:0 0 5px rgba(143,255,215,.75),0 0 14px rgba(143,255,215,.38);
+}
+
+@media (min-width:801px){
+  #solution-process-header .solution-process-exhibit{
+    gap:0!important;
+    padding-bottom:0!important;
+  }
+  #solution-process-heading{
+    margin-bottom:43px!important;
+  }
+  #solution-process-header .solution-process-window-anchor{
+    margin-bottom:34px!important;
+  }
+  #solution-process-header .solution-machine-instruction{
+    flex:0 0 auto;
+  }
+}
+
+@media (max-width:800px){
+  .solution-mobile-header-section .solution-machine-instruction{
+    width:min(92%,520px);
+    min-height:64px;
+    margin:24px auto 0;
+    padding:3px;
+    clip-path:polygon(7% 0,93% 0,100% 19%,100% 81%,93% 100%,7% 100%,0 81%,0 19%);
+    filter:drop-shadow(0 0 5px rgba(255,46,168,.52)) drop-shadow(0 8px 14px rgba(0,0,0,.45));
+  }
+  .solution-mobile-header-section .solution-machine-instruction::before{
+    inset:3px;
+  }
+  .solution-mobile-header-section .solution-machine-instruction > span{
+    padding:15px 19px 14px;
+    font-size:clamp(15px,4.3vw,20px);
+    line-height:1.18;
+    letter-spacing:.035em;
+  }
+}

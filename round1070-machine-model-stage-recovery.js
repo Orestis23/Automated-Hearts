@@ -49,7 +49,7 @@
 
   const resetMachines=()=>{
     homeGrid?.querySelectorAll(':scope > .home-hero-engine-frame').forEach(frame=>machineOpen(frame,false));
-    machineOpen(solutionFrame,false);
+    if(solutionShutter) machineOpen(solutionFrame,false);
   };
 
   /* Close immediately when this final deferred script executes, then again on

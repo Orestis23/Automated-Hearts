@@ -51,6 +51,6 @@
   }));
   $('#industry-helix')?.addEventListener('click',(e)=>{ const i=e.currentTarget.dataset.industryIndex||'0'; loadUrl(`./models/who-we-help-industry-helix-round1093.html?industry=${encodeURIComponent(i)}&v=1125r`); });
   $('#industry-readiness')?.addEventListener('click',()=>loadUrl('./models/who-we-help-readiness-signals-round1093.html?v=1125r'));
-  $('#load-solution-model')?.addEventListener('click',()=>loadUrl('./home-machine-five-stage-engine-round1115.html?v=1109r'));
+  $('#load-solution-model')?.addEventListener('click',()=>loadUrl('./solution-machine-pipeline-round1130.html?v=1134r'));
   document.addEventListener('visibilitychange',()=>{ if(document.hidden) unloadModel(); });
 })();

@@ -1,0 +1,43 @@
+/* Round 1150 — authoritative rounded lower outer-shell corners on mobile.
+   Stop the side rails at the fixed footer boundary so they cannot visually
+   continue as square bars behind the footer.  The inner gold frame already
+   closes here; these rules make the outer shell follow the same curve. */
+@media (max-width: 900px){
+  html body > .shell-edge.l,
+  html body > .shell-edge.r{
+    bottom:calc(74px + var(--safe-bottom))!important;
+    overflow:visible!important;
+  }
+
+  html body > .shell-edge.l{
+    border-bottom-left-radius:20px!important;
+    border-bottom-right-radius:8px!important;
+  }
+  html body > .shell-edge.r{
+    border-bottom-right-radius:20px!important;
+    border-bottom-left-radius:8px!important;
+  }
+
+  /* Make the visible lower rim itself close as one rounded physical frame. */
+  html body::before{
+    bottom:calc(74px + var(--safe-bottom))!important;
+    border-bottom-left-radius:20px!important;
+    border-bottom-right-radius:20px!important;
+    overflow:hidden!important;
+  }
+
+  /* Opaque corner infill follows the same 20px curve and prevents page
+     content from showing through the outside of the rounded corners. */
+  html body > .shell-edge.l::after,
+  html body > .shell-edge.r::after{
+    bottom:-1px!important;
+    width:21px!important;
+    height:21px!important;
+  }
+  html body > .shell-edge.l::after{
+    background:radial-gradient(circle at 100% 0,transparent 0 18px,#071323 18.8px 100%)!important;
+  }
+  html body > .shell-edge.r::after{
+    background:radial-gradient(circle at 0 0,transparent 0 18px,#071323 18.8px 100%)!important;
+  }
+}

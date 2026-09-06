@@ -1,0 +1,173 @@
+/* Round 1137 — three-depth Solution machine rim + Home-window shield behavior. */
+#solution-process-header .solution-process-window-anchor{
+  isolation:isolate!important;
+  overflow:visible!important;
+}
+
+/* The current silver rim is layer 1. These two frames sit physically behind it
+   and step outward so the machine window reads as three pieces of hardware. */
+#solution-process-header .solution-process-window-anchor::before,
+#solution-process-header .solution-process-window-anchor::after{
+  content:""!important;
+  position:absolute!important;
+  display:block!important;
+  box-sizing:border-box!important;
+  pointer-events:none!important;
+  background:#020508!important;
+  border-style:solid!important;
+  border-color:#a9b3b6!important;
+  border-image-source:url('./machine-rim-variegated-bumpy-alloy-round845.svg')!important;
+  border-image-slice:128!important;
+  border-image-repeat:stretch!important;
+  border-radius:0!important;
+}
+#solution-process-header .solution-process-window-anchor::before{
+  z-index:1!important;
+  inset:-13px!important;
+  border-width:10px!important;
+  border-image-width:10px!important;
+  filter:brightness(.90) contrast(1.10) saturate(.88)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(236,247,249,.34),
+    inset 0 0 0 3px rgba(4,10,15,.80),
+    0 4px 7px rgba(0,0,0,.52),
+    0 13px 21px rgba(0,0,0,.34)!important;
+}
+#solution-process-header .solution-process-window-anchor::after{
+  z-index:0!important;
+  inset:-27px!important;
+  border-width:11px!important;
+  border-image-width:11px!important;
+  filter:brightness(.76) contrast(1.14) saturate(.82)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(221,235,238,.26),
+    inset 0 0 0 4px rgba(2,7,11,.86),
+    0 5px 10px rgba(0,0,0,.60),
+    0 19px 34px rgba(0,0,0,.46)!important;
+}
+#solution-process-header .solution-process-window{
+  z-index:2!important;
+  box-shadow:
+    0 0 0 2px #759d94,
+    inset 0 0 0 1px rgba(238,247,248,.38),
+    0 7px 13px rgba(0,0,0,.54),
+    0 15px 28px rgba(0,0,0,.34)!important;
+}
+#solution-process-heading{z-index:8!important;}
+
+/* Match the Home machine-window shield: translucent/frosted surface, subtle
+   glass depth, one pulsing heart handle, and the small metal lower rail. */
+#solution-process-header .solution-process-cover{
+  position:absolute!important;
+  z-index:30!important;
+  inset:0!important;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  outline:0!important;
+  cursor:pointer!important;
+  background:
+    radial-gradient(ellipse 118% 78% at 50% 18%,rgba(242,255,255,.11) 0%,rgba(208,236,240,.055) 30%,transparent 62%),
+    radial-gradient(ellipse 142% 126% at 50% 46%,rgba(172,208,217,.085) 0%,rgba(102,137,148,.060) 55%,rgba(10,23,30,.105) 82%,rgba(0,4,8,.17) 100%),
+    linear-gradient(180deg,rgba(128,157,166,.050) 0%,rgba(69,94,103,.040) 54%,rgba(24,43,51,.065) 100%)!important;
+  -webkit-backdrop-filter:blur(1.8px) saturate(.94) brightness(.94)!important;
+  backdrop-filter:blur(1.8px) saturate(.94) brightness(.94)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(231,249,252,.24),
+    inset 0 12px 26px rgba(235,252,255,.055),
+    inset 0 -24px 42px rgba(0,0,0,.18),
+    inset 22px 0 34px rgba(0,0,0,.055),
+    inset -22px 0 34px rgba(0,0,0,.055),
+    inset 0 0 0 1px rgba(197,226,233,.13),
+    0 1px 0 rgba(255,255,255,.025)!important;
+  transform:translate3d(0,0,0)!important;
+  -webkit-transform:translate3d(0,0,0)!important;
+  transition:transform 1000ms cubic-bezier(.42,0,.20,1),filter 220ms ease!important;
+  will-change:transform!important;
+  backface-visibility:hidden!important;
+  -webkit-backface-visibility:hidden!important;
+  touch-action:manipulation!important;
+  pointer-events:auto!important;
+}
+#solution-process-header .solution-process-cover::before{
+  content:""!important;
+  position:absolute!important;
+  z-index:2!important;
+  left:50%!important;
+  bottom:22px!important;
+  width:30px!important;
+  aspect-ratio:330 / 488!important;
+  transform:translateX(-50%) scale(.96)!important;
+  transform-origin:50% 60%!important;
+  pointer-events:none!important;
+  background:url('./rim-heart-embossed-round291.webp') center/contain no-repeat!important;
+  opacity:.92!important;
+  filter:brightness(1.72) contrast(1.16) saturate(1.12)
+    drop-shadow(0 0 5px rgba(143,255,215,.78))
+    drop-shadow(0 0 12px rgba(143,255,215,.48))
+    drop-shadow(0 0 8px rgba(255,46,168,.56))
+    drop-shadow(0 0 17px rgba(255,46,168,.30))!important;
+  animation:r1137-solution-machine-heart-breathe 3.8s cubic-bezier(.45,0,.55,1) infinite!important;
+}
+#solution-process-header .solution-process-cover::after{
+  content:""!important;
+  position:absolute!important;
+  z-index:3!important;
+  right:0!important;
+  bottom:0!important;
+  left:0!important;
+  height:9px!important;
+  pointer-events:none!important;
+  border-top:1px solid rgba(221,239,244,.40)!important;
+  border-bottom:1px solid rgba(0,0,0,.86)!important;
+  background:linear-gradient(180deg,#86959b 0%,#394449 24%,#11191d 58%,#535e63 82%,#151b1f 100%)!important;
+  box-shadow:0 4px 10px rgba(0,0,0,.34)!important;
+}
+#solution-process-header .solution-process-cover .solution-cover-hearts{display:none!important;}
+#solution-process-header .solution-process-cover:is(:hover,:focus-visible){filter:brightness(1.05)!important;}
+
+/* Same Home-window interaction: raise the cover but leave a 104px handle strip
+   visible. That exposed strip remains clickable and lowers the shield again. */
+#solution-process-header .solution-process-cover.is-open{
+  transform:translate3d(0,calc(-100% + 104px),0)!important;
+  -webkit-transform:translate3d(0,calc(-100% + 104px),0)!important;
+  pointer-events:auto!important;
+}
+#solution-cover-close{display:none!important;}
+
+@keyframes r1137-solution-machine-heart-breathe{
+  0%,100%{
+    opacity:.84;
+    transform:translateX(-50%) scale(.94);
+    filter:brightness(1.56) contrast(1.14) saturate(1.08)
+      drop-shadow(0 0 4px rgba(143,255,215,.62))
+      drop-shadow(0 0 10px rgba(143,255,215,.38))
+      drop-shadow(0 0 7px rgba(255,46,168,.44))
+      drop-shadow(0 0 14px rgba(255,46,168,.24));
+  }
+  50%{
+    opacity:1;
+    transform:translateX(-50%) scale(1.07);
+    filter:brightness(1.94) contrast(1.18) saturate(1.16)
+      drop-shadow(0 0 7px rgba(183,255,232,.98))
+      drop-shadow(0 0 16px rgba(125,255,214,.66))
+      drop-shadow(0 0 11px rgba(255,46,168,.76))
+      drop-shadow(0 0 23px rgba(255,46,168,.40));
+  }
+}
+
+@media(max-width:1180px){
+  #solution-process-header .solution-process-window-anchor::before{inset:-10px!important;border-width:8px!important;border-image-width:8px!important;}
+  #solution-process-header .solution-process-window-anchor::after{inset:-20px!important;border-width:9px!important;border-image-width:9px!important;}
+}
+@media(prefers-reduced-motion:reduce){
+  #solution-process-header .solution-process-cover{transition-duration:1000ms!important;}
+  #solution-process-header .solution-process-cover::before{animation:none!important;}
+}

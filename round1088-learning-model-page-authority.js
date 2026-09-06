@@ -11,7 +11,7 @@
   window.__AH1081ModelAuthority=1;
   window.__AH1076ModelAuthority=1; window.__AH1079ModelAuthority=1;
   const BG='./assets/page-shield-embossed-strong-round1067.webp?v=1088r';
-  const DURATION=1150;
+  const DURATION=1850;
   const RETURN_SHIELD_MS=2000;
   const RETURN_SCROLL_MS=1750;
   const RETURN_EASE='cubic-bezier(.22,.66,.24,1)';
@@ -258,7 +258,7 @@
     if(!control||(!state.page&&!init()))return false;
     if(state.page==='learning'){
       const route=control.closest('[data-learning-model]')||control.querySelector?.('[data-learning-model]');
-      if(route){state.group=route.dataset.learningModel||'ai101';state.index=0;activate(0,{scroll:true});prefetchAI101();return true;}
+      if(route){state.group=route.dataset.learningModel||'ai101';state.index=0;activate(0,{scroll:true});return true;}
       if(control.matches('[data-learning-carousel-direction="previous"]')){activate(state.index-1,{direction:'previous'});return true;}
       if(control.matches('[data-learning-carousel-direction="next"]')){activate(state.index+1,{direction:'next'});return true;}
     }else{
