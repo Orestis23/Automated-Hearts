@@ -10,7 +10,7 @@
   const esc = (v) => v.replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
   if ('serviceWorker' in navigator) navigator.serviceWorker.getRegistrations().then((regs)=>regs.forEach((r)=>r.unregister())).catch(()=>{});
 
-  function colorize(v){let x=esc(v);x=x.replace(/AI/g,'<span class="pink">AI</span>').replace(/Human/g,'<span class="green">Human</span>').replace(/10%/g,'<span class="pink">10%</span>').replace(/local charities/g,'<span class="green">local charities</span>').replace(/maximum efficiency/g,'<span class="green">maximum efficiency</span>').replace(/Nothing you don&#39;t need\./g,'<span class="pink">Nothing</span> you <span class="green">don&#39;t need.</span>').replace(/Just what you do\./g,'<span class="pink">Just</span> <span class="green">what you do.</span>');return x}
+  function colorize(v){let x=esc(v);x=x.replace(/AI/g,'<span class="pink">AI</span>').replace(/Human/g,'<span class="green">Human</span>').replace(/maximum efficiency/g,'<span class="green">maximum efficiency</span>').replace(/Nothing you don&#39;t need\./g,'<span class="pink">Nothing</span> you <span class="green">don&#39;t need.</span>').replace(/Just what you do\./g,'<span class="pink">Just</span> <span class="green">what you do.</span>');return x}
   const state=['','','','',''];
   function render(i){lineEls[i].innerHTML=colorize(state[i]);lineEls[i].appendChild(cursor)}
   async function type(i,text){for(const ch of text){state[i]+=ch;render(i);let d=34+Math.random()*48;if(/[.,%]/.test(ch))d+=65;await sleep(d)}}

@@ -1315,20 +1315,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!marquee) return;
   const messages = [
     [
-      { text: "10%", tone: "green" },
-      { text: "Back to Local Charities", tone: "pink" }
-    ],
-    [
       { text: "Prioritizing", tone: "pink" },
       { text: "Job-Retention", tone: "green" }
     ],
     [
       { text: "Automation with a", tone: "green" },
       { text: "human touch.", tone: "pink" }
-    ],
-    [
-      { text: "10%", tone: "green" },
-      { text: "Back to Local Charities", tone: "pink" }
     ],
     [
       { text: "Elevating the human,", tone: "green" },

@@ -1,7 +1,7 @@
 /* Round 1169 — Hub-specific footer/ticker message. */
 (() => {
   'use strict';
-  const label = '10% to local charities.';
+  const label = 'Automation with a human touch.';
   const render = () => {
     const marquee = document.getElementById('home-charity-marquee');
     if (!marquee) return;
@@ -18,13 +18,10 @@
       loop.className = 'charity-marquee__loop';
       const copy = document.createElement('span');
       copy.className = 'charity-marquee__copy';
-      const amount = document.createElement('span');
-      amount.className = 'charity-marquee__segment charity-marquee__segment--green';
-      amount.textContent = '10%';
-      const cause = document.createElement('span');
-      cause.className = 'charity-marquee__segment charity-marquee__segment--pink charity-marquee__segment--spaced';
-      cause.textContent = 'to local charities.';
-      copy.append(amount,cause);
+      const message = document.createElement('span');
+      message.className = 'charity-marquee__segment charity-marquee__segment--green';
+      message.textContent = label;
+      copy.append(message);
       const separator = document.createElement('span');
       separator.className = 'charity-marquee__separator';
       separator.setAttribute('aria-hidden','true');

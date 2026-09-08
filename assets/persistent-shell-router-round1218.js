@@ -11,6 +11,7 @@
   window.__AH_DISABLE_PERSISTENT_ROUTER = true;
   window.__AH_PERSISTENT_SHELL_1182 = true;
   window.__AH_PERSISTENT_SHELL_1184 = true;
+  window.__AH_PERSISTENT_SHELL_1218 = true;
 
   const qs = new URLSearchParams(location.search);
   const embedded = qs.get('ah_embed') === '1' && window.self !== window.top;
@@ -112,26 +113,45 @@
       parent.postMessage({type:'ah:shell-route', href:url.href}, '*');
     }, true);
 
+    /* Round 1218: embedded desktop pages scroll main#main-content rather than
+       the iframe document. Measure BOTH surfaces and report the one that is
+       actually moving so the fixed colored page-progress field never freezes
+       after a persistent-shell route. */
     let progressRaf = 0;
+    const contentScroller = document.querySelector('main#main-content');
+    const progressFor = (surface, documentSurface = false) => {
+      if (!surface) return 0;
+      const client = Number(surface.clientHeight || 0);
+      const maximum = Math.max(0, Number(surface.scrollHeight || 0) - client);
+      if (maximum <= 0) return 0;
+      const top = documentSurface
+        ? Math.max(Number(scrollY || 0), Number(surface.scrollTop || 0), Number(document.body?.scrollTop || 0))
+        : Number(surface.scrollTop || 0);
+      return Math.max(0, Math.min(1, top / maximum));
+    };
     const sendProgress = () => {
       progressRaf = 0;
       const root = document.scrollingElement || document.documentElement;
-      const view = innerHeight || root.clientHeight || 0;
-      const max = Math.max(0, (root.scrollHeight || 0) - view);
-      const y = Math.max(0, scrollY || root.scrollTop || 0);
-      const value = max > 0 ? Math.min(1, y / max) : 0;
+      const value = Math.max(
+        progressFor(contentScroller, false),
+        progressFor(root, true)
+      );
       parent.postMessage({type:'ah:shell-progress', value}, '*');
     };
     const queueProgress = () => {
       if (!progressRaf) progressRaf = requestAnimationFrame(sendProgress);
     };
+    contentScroller?.addEventListener('scroll', queueProgress, {passive:true});
     addEventListener('scroll', queueProgress, {passive:true});
+    document.addEventListener('scroll', queueProgress, {passive:true, capture:true});
     addEventListener('resize', queueProgress, {passive:true});
     addEventListener('load', queueProgress, {once:true});
+    addEventListener('pageshow', queueProgress, {passive:true});
     if ('ResizeObserver' in window) {
       const ro = new ResizeObserver(queueProgress);
       ro.observe(document.documentElement);
       if (document.body) ro.observe(document.body);
+      if (contentScroller) ro.observe(contentScroller);
     }
     queueProgress();
     return;

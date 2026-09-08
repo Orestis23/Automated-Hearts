@@ -576,7 +576,6 @@
 
   const messages = [
     [{text:'With the right information, you can predict the future.',tone:'green'}],
-    [{text:'10%',tone:'green'},{text:'Back to Local Charities',tone:'pink'}],
     [{text:'Prioritizing',tone:'pink'},{text:'Job-Retention',tone:'green'}],
     [{text:'Automation with a',tone:'green'},{text:'human touch.',tone:'pink'}],
     [{text:'Elevating the human',tone:'green'},{text:', not obsoleting them.',tone:'pink',joined:true}]

@@ -33,7 +33,7 @@
   const pages = {
     home: {
       title:'Hub', desktop:'desktop-home.html', mobile:'index.html',
-      desktopFooter:'Hub', mobileFooter:'Hub', mobileMessage:'10% to local charities.'
+      desktopFooter:'Hub', mobileFooter:'Hub', mobileMessage:'Automation with a human touch.'
     },
     solutions: {
       title:'The Solution', desktop:'solutions.html', mobile:'mobile-solutions.html',
