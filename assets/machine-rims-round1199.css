@@ -1,0 +1,14 @@
+/* Soft recessed shading replaces the flat black space between alloy layers. */
+#solution-process-header .solution-process-window-anchor::before,
+#solution-process-header .solution-process-window-anchor::after{
+  background:linear-gradient(135deg,#71818b 0%,#354650 28%,#111e28 65%,#060d15 100%)!important;
+  box-shadow:inset 4px 4px 8px #c9e0e733,inset -6px -6px 12px #000b,0 8px 15px #0007!important;
+}
+/* Three matching alloy steps fit within the existing Home window footprint. */
+@media(min-width:801px){
+  html body.page-home.page-home[data-page="home"] #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame{
+    border:28px solid #a9b3b6!important;
+    border-image:url('./machine-rim-triple-round1199.svg') 128 stretch!important;
+    box-shadow:inset 4px 4px 8px #c9e0e733,inset -6px -6px 12px #000b,0 8px 15px #0007!important;
+  }
+}

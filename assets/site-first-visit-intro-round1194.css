@@ -1,0 +1,127 @@
+/* Automated Hearts Round 1194 — site-wide first-visit typing shield.
+   One shared intro for every direct desktop/mobile entry page. */
+html[data-ah-site-intro="1"]{overflow:hidden!important;}
+html[data-ah-site-intro="1"] body > #page-transition-shield{display:none!important;visibility:hidden!important;pointer-events:none!important;}
+
+#site-first-visit-intro{
+  display:none;
+  position:fixed;
+  z-index:2147483190;
+  top:var(--current-frame-top,96px);
+  right:var(--current-frame-side,88px);
+  bottom:var(--current-frame-bottom,96px);
+  left:var(--current-frame-side,88px);
+  overflow:hidden;
+  box-sizing:border-box;
+  place-items:center;
+  border-radius:var(--current-frame-radius,32px);
+  background-color:#08172b;
+  background-image:url("./page-shield-smoked-heart.webp");
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  color:#f5fbff;
+  box-shadow:inset 0 0 0 1px rgba(143,255,215,.22),inset 0 0 70px rgba(0,0,0,.42);
+  contain:paint;
+  isolation:isolate;
+  transform:translate3d(0,0,0);
+  -webkit-transform:translate3d(0,0,0);
+  transition:transform 3000ms cubic-bezier(.18,.68,.20,1);
+  -webkit-transition:-webkit-transform 3000ms cubic-bezier(.18,.68,.20,1);
+  will-change:transform;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  pointer-events:auto;
+}
+html[data-ah-site-intro="1"] #site-first-visit-intro{display:grid!important;}
+#site-first-visit-intro[hidden]{display:none!important;}
+#site-first-visit-intro::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.24),rgba(3,13,24,.10) 42%,rgba(0,0,0,.38));
+  pointer-events:none;
+}
+#site-first-visit-intro.is-raising{
+  transform:translate3d(0,-105%,0)!important;
+  -webkit-transform:translate3d(0,-105%,0)!important;
+}
+#site-first-visit-intro .site-intro-copy{
+  position:relative;
+  z-index:1;
+  width:min(72vw,920px);
+  padding:34px 42px;
+  color:#f5fbff;
+  font:700 clamp(22px,2.05vw,36px)/1.48 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  letter-spacing:.012em;
+  text-shadow:0 2px 4px rgba(0,0,0,.94);
+}
+#site-first-visit-intro .site-intro-line{min-height:1.48em;margin:0 0 24px;}
+#site-first-visit-intro .pink{color:#ff2ea8;}
+#site-first-visit-intro .green{color:#8fffd7;}
+#site-first-visit-intro .site-intro-cursor{
+  display:inline-block;
+  width:.55em;
+  height:1.04em;
+  margin-left:.13em;
+  vertical-align:-.13em;
+  background:#8fffd7;
+  animation:ahSiteIntroCursor1194 .78s steps(1,end) infinite;
+}
+#site-first-visit-intro .site-intro-signature-heart{
+  display:block;
+  width:clamp(64px,5.2vw,94px);
+  height:auto;
+  margin:4px auto 0;
+  opacity:0;
+  visibility:hidden;
+  clip-path:circle(0% at 50% 52%);
+  transform:scale(.78);
+  transform-origin:50% 52%;
+  filter:grayscale(1) brightness(3.65) contrast(1.62) drop-shadow(0 0 5px rgba(255,255,255,.36));
+  pointer-events:none;
+}
+#site-first-visit-intro .site-intro-signature-heart[hidden]{display:none!important;}
+#site-first-visit-intro .site-intro-signature-heart.is-signing{
+  visibility:visible;
+  animation:ahSiteSignatureHeart1194 1450ms cubic-bezier(.16,.72,.18,1) forwards;
+}
+@keyframes ahSiteIntroCursor1194{50%{opacity:0;}}
+@keyframes ahSiteSignatureHeart1194{
+  0%{opacity:0;clip-path:circle(0% at 50% 52%);transform:scale(.78);filter:grayscale(1) brightness(5) contrast(1.8) drop-shadow(0 0 2px rgba(255,255,255,.12));}
+  18%{opacity:.72;clip-path:circle(12% at 50% 52%);filter:grayscale(1) brightness(4.35) contrast(1.72) drop-shadow(0 0 10px rgba(255,255,255,.88));}
+  52%{opacity:.93;clip-path:circle(39% at 50% 52%);transform:scale(.91);filter:grayscale(1) brightness(3.95) contrast(1.67) drop-shadow(0 0 14px rgba(255,255,255,.9));}
+  78%{opacity:.98;clip-path:circle(61% at 50% 52%);filter:grayscale(1) brightness(3.72) contrast(1.62) drop-shadow(0 0 11px rgba(255,255,255,.75));}
+  100%{opacity:.96;clip-path:circle(78% at 50% 52%);transform:scale(1);filter:grayscale(1) brightness(3.55) contrast(1.58) drop-shadow(0 0 8px rgba(255,255,255,.6));}
+}
+
+/* While the new shared intro is active, suppress the older Home-only intro layers. */
+html[data-ah-site-intro="1"] #desktop-first-visit-intro,
+html[data-ah-site-intro="1"] #first-visit-intro{display:none!important;visibility:hidden!important;pointer-events:none!important;}
+
+@media(max-width:900px){
+  #site-first-visit-intro{
+    inset:0;
+    border-radius:0;
+    background-color:#02070c;
+    box-shadow:none;
+  }
+  #site-first-visit-intro .site-intro-copy{
+    width:min(88vw,520px);
+    padding:24px 18px;
+    font-size:clamp(18px,4.8vw,26px);
+    line-height:1.45;
+    letter-spacing:.015em;
+    text-shadow:0 2px 3px #000;
+  }
+  #site-first-visit-intro .site-intro-line{min-height:1.45em;margin-bottom:17px;}
+  #site-first-visit-intro .site-intro-signature-heart{width:clamp(54px,15vw,82px);}
+}
+
+@media(prefers-reduced-motion:reduce){
+  #site-first-visit-intro{
+    transition-duration:3000ms!important;
+    transition-timing-function:cubic-bezier(.18,.68,.20,1)!important;
+  }
+  #site-first-visit-intro .site-intro-cursor{animation:none!important;}
+}

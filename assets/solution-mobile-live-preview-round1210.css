@@ -1,0 +1,34 @@
+/* Round 1210 — show the actual current live Solution machine behind the mobile carbon shutter. */
+#lite-model-stage #lite-model-shell.solution-mobile-model-shell{
+  background:#07121c!important;
+}
+#lite-model-stage #lite-model-shell.solution-mobile-model-shell::before{
+  content:""!important;
+}
+#lite-model-stage #lite-model-shell.solution-mobile-model-shell > iframe{
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:none!important;
+}
+#lite-model-stage #lite-model-shell.solution-mobile-model-shell > button#solution-mobile-cover.solution-mobile-window-cover{
+  background-color:rgba(4,10,16,.12)!important;
+  background-image:
+    radial-gradient(ellipse 118% 78% at 50% 14%,rgba(229,251,255,.085) 0%,rgba(170,208,216,.026) 38%,transparent 67%),
+    linear-gradient(180deg,rgba(44,67,78,.16),rgba(8,22,31,.22) 62%,rgba(1,7,11,.30)),
+    url('./machine-haze-carbon-clear-round1140.webp')!important;
+  background-position:center,center,0 0!important;
+  background-size:auto,auto,245px auto!important;
+  background-repeat:no-repeat,no-repeat,repeat!important;
+  box-shadow:
+    inset 0 1px 0 rgba(231,249,252,.22),
+    inset 0 -22px 38px rgba(0,0,0,.16),
+    inset 0 0 0 1px rgba(197,226,233,.14)!important;
+}
+#lite-model-stage #lite-model-shell.solution-mobile-model-shell > button#solution-mobile-cover.solution-mobile-window-cover.is-open + iframe,
+#lite-model-stage #lite-model-shell.solution-mobile-model-shell > iframe{
+  pointer-events:auto!important;
+}
+/* While the cover is closed it remains the hit target, so iframe pointer events cannot steal the reveal tap. */
+#lite-model-stage #lite-model-shell.solution-mobile-model-shell > button#solution-mobile-cover.solution-mobile-window-cover:not(.is-open) ~ iframe{
+  pointer-events:none!important;
+}

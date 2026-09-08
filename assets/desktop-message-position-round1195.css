@@ -1,0 +1,7 @@
+/* Round 1195 — desktop-only corner centering for Messages. */
+@media (min-width:801px){
+  html:root{
+    --r1005-message-top:12px!important;
+    --r1005-message-right:18px!important;
+  }
+}

@@ -1,0 +1,157 @@
+/* Automated Hearts Round 1195 — Learning Center desktop 1/3 layout authority.
+   Each lesson control owns exactly one third of the usable interior and the
+   complete medallion + label unit is centered both vertically and horizontally.
+   Width AND viewport height constrain the medallions so smaller laptops cannot
+   make neighboring controls collide. Mobile is intentionally untouched. */
+@media (min-width:801px){
+  html body.page-learning[data-page="learning"]
+  main#main-content > section#learning-route-buttons{
+    --r1195-side:var(--current-frame-side,88px);
+    --r1195-top:var(--current-frame-top,96px);
+    --r1195-bottom:var(--current-frame-bottom,108px);
+    --r1195-gap:clamp(10px,1.35vw,24px);
+    --r1195-label-h:clamp(42px,6.2svh,60px);
+    --r1195-card-gap:clamp(5px,.8svh,9px);
+    --r1195-inner-w:calc(100vw - (2 * var(--r1195-side)) - 32px);
+    --r1195-third-w:calc((var(--r1195-inner-w) - (2 * var(--r1195-gap))) / 3);
+    --r1195-inner-h:calc(100svh - var(--r1195-top) - var(--r1195-bottom) - 22px);
+    --r1195-medallion:min(510px,calc(var(--r1195-third-w) - 20px),calc(var(--r1195-inner-h) - var(--r1195-label-h) - var(--r1195-card-gap)));
+
+    position:relative!important;
+    box-sizing:border-box!important;
+    display:grid!important;
+    place-items:center!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:100svh!important;
+    min-height:100svh!important;
+    max-height:100svh!important;
+    margin:0!important;
+    padding:var(--r1195-top) calc(var(--r1195-side) + 16px) var(--r1195-bottom)!important;
+    overflow:hidden!important;
+  }
+
+  html body.page-learning[data-page="learning"]
+  #learning-route-buttons > .shell.compact-hero-grid,
+  html body.page-learning[data-page="learning"]
+  #learning-route-buttons #learning-paths.learning-header-paths{
+    box-sizing:border-box!important;
+    display:grid!important;
+    place-items:center!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    max-height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+  }
+
+  html body.page-learning[data-page="learning"]
+  #learning-route-buttons .learning-header-grid.r987-learning-flat-grid{
+    box-sizing:border-box!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    grid-template-rows:minmax(0,1fr)!important;
+    align-items:stretch!important;
+    justify-items:stretch!important;
+    align-content:stretch!important;
+    justify-content:stretch!important;
+    column-gap:var(--r1195-gap)!important;
+    row-gap:0!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    max-height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+  }
+
+  html body.page-learning[data-page="learning"]
+  #learning-route-buttons .learning-header-grid.r987-learning-flat-grid
+  > article.r987-learning-flat-card{
+    box-sizing:border-box!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-template-rows:var(--r1195-medallion) var(--r1195-label-h)!important;
+    align-items:center!important;
+    justify-items:center!important;
+    align-content:center!important;
+    justify-content:center!important;
+    gap:var(--r1195-card-gap)!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    max-height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+    transform:none!important;
+  }
+
+  html body.page-learning[data-page="learning"]
+  #learning-route-buttons .r987-learning-flat-grid
+  > article.r987-learning-flat-card > a.learning-medallion-button,
+  html body.page-learning[data-page="learning"]
+  #learning-route-buttons .r987-learning-flat-grid .learning-medallion-media.r987-learning-flat-media,
+  html body.page-learning[data-page="learning"]
+  #learning-route-buttons .r987-learning-flat-grid img.r1058-learning-composite{
+    box-sizing:border-box!important;
+    display:block!important;
+    width:var(--r1195-medallion)!important;
+    min-width:0!important;
+    max-width:100%!important;
+    height:var(--r1195-medallion)!important;
+    min-height:0!important;
+    max-height:100%!important;
+    aspect-ratio:1/1!important;
+    margin:0!important;
+    object-fit:contain!important;
+  }
+
+  html body.page-learning[data-page="learning"]
+  #learning-route-buttons .r987-learning-flat-grid
+  > article.r987-learning-flat-card > .premium-route-card__title-sign.brand-route-screen{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:min(92%,460px)!important;
+    min-width:0!important;
+    max-width:460px!important;
+    height:var(--r1195-label-h)!important;
+    min-height:var(--r1195-label-h)!important;
+    max-height:var(--r1195-label-h)!important;
+    margin:0 auto!important;
+    padding:4px clamp(7px,.75vw,12px)!important;
+    overflow:hidden!important;
+  }
+
+  html body.page-learning[data-page="learning"]
+  #learning-route-buttons .premium-route-card__title-sign.brand-route-screen > .ah-route-label-final{
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:100%!important;
+    font-size:clamp(14px,1.35vw,26px)!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:clip!important;
+  }
+}
+
+@media (min-width:801px) and (max-height:650px){
+  html body.page-learning[data-page="learning"] main#main-content > section#learning-route-buttons{
+    --r1195-label-h:38px;
+    --r1195-card-gap:4px;
+    --r1195-inner-h:calc(100svh - var(--r1195-top) - var(--r1195-bottom) - 14px);
+  }
+}

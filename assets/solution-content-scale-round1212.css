@@ -1,0 +1,12 @@
+/* Round 1212 — The Solution explanatory cards: machine-part visuals at 50% of prior mobile size; copy at 200%. */
+body #main-content .outcome-grid .lite-card > img{
+  width:50%!important;
+  max-width:50%!important;
+  height:auto!important;
+  margin:0 auto!important;
+  object-fit:contain!important;
+}
+body #main-content .outcome-grid .lite-card .lite-card-body p{
+  font-size:30px!important;
+  line-height:1.42!important;
+}

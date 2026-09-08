@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const INTRO_KEY = 'ah-mobile-first-visit-intro-v1164';
+  const INTRO_KEY = 'ah-site-first-visit-intro-v1194';
   const forceIntro = new URLSearchParams(location.search).get('intro') === '1';
   const intro = document.getElementById('first-visit-intro');
   const lineEls = [...document.querySelectorAll('.intro-line')];
@@ -61,7 +61,7 @@
   const cardsUrl='./assets/home-rolodex-scroll-mobile-round1147-smooth.mp4';
   async function prepareCards(){return fetchVideo(cardsUrl)}
   async function prepareCriticalAssets(){
-    const images=['./assets/home-machine-orbit-mobile-round1101-poster.webp','./assets/home-rolodex-scroll-mobile-round1101-poster.webp','./assets/mobile-lite-heart.webp'];
+    const images=['./assets/home-machine-solution-round1194-poster.webp','./assets/home-rolodex-scroll-mobile-round1101-poster.webp','./assets/mobile-lite-heart.webp'];
     startModelLoad();
     const core=Promise.all([Promise.all(images.map(loadImage)),modelReadyPromise]);
     // Only after the 3D request is underway do we quietly cache the small cards clip.

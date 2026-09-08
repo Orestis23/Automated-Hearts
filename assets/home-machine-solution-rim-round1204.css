@@ -1,0 +1,33 @@
+/* Automated Hearts Round 1204 — Home Solution-machine window matches the Solution-page hardware. */
+/* Mobile Home: apply the triple worn-alloy rim to the left machine only. */
+#machine-stack .machine-frame.machine-3d-frame{
+  border:clamp(14px,4.2vw,22px) solid #a9b3b6!important;
+  border-image:url('./machine-rim-triple-round1199.svg') 128 stretch!important;
+  border-radius:0!important;
+  background:linear-gradient(135deg,#71818b 0%,#354650 28%,#111e28 65%,#060d15 100%)!important;
+  box-shadow:
+    inset 4px 4px 8px rgba(201,224,231,.20),
+    inset -6px -6px 12px rgba(0,0,0,.72),
+    0 0 0 2px #09131b,
+    0 8px 15px rgba(0,0,0,.62)!important;
+}
+#machine-stack .machine-frame.machine-3d-frame .machine-well{
+  border-radius:0!important;
+  box-shadow:
+    inset 4px 4px 9px rgba(198,224,231,.18),
+    inset -7px -7px 14px rgba(0,0,0,.82),
+    inset 0 0 0 2px rgba(5,12,18,.96)!important;
+}
+#machine-stack .machine-frame.machine-3d-frame .window-shutter{border-radius:0!important;}
+
+/* Desktop Home already uses the triple-rim asset; make the left machine use the
+   same recessed depth/shading values as the Solution-page window. */
+@media(min-width:801px){
+  html body.page-home.page-home[data-page="home"] #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame:first-child{
+    border:28px solid #a9b3b6!important;
+    border-image:url('./machine-rim-triple-round1199.svg') 128 stretch!important;
+    border-radius:0!important;
+    background:linear-gradient(135deg,#71818b 0%,#354650 28%,#111e28 65%,#060d15 100%)!important;
+    box-shadow:inset 4px 4px 8px rgba(201,224,231,.20),inset -6px -6px 12px rgba(0,0,0,.72),0 8px 15px rgba(0,0,0,.62)!important;
+  }
+}

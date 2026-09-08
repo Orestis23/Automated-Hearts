@@ -8,24 +8,28 @@
   const stage = $('#lite-model-stage');
   const modelShell = $('#lite-model-shell');
   let frame = null;
+  let scrollToken = 0;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function smoothToElement(el,duration=1850){
+    const token=++scrollToken;
     if(!el) return Promise.resolve();
     const scroller=document.scrollingElement||document.documentElement;
     const start=scroller.scrollTop;
-    const fixedHeader=document.querySelector('.page-chip,.mobile-page-title,.lite-page-title');
-    const headerOffset=fixedHeader ? Math.max(0,fixedHeader.getBoundingClientRect().height+18) : 18;
-    const target=Math.max(0,start+el.getBoundingClientRect().top-headerOffset);
+    const rect=el.getBoundingClientRect();
+    const target=el===modelShell
+      ? Math.max(0,Math.min(scroller.scrollHeight-innerHeight,start+rect.top+rect.height/2-innerHeight/2))
+      : 0;
     const delta=target-start;
     if(reducedMotion||Math.abs(delta)<2){scroller.scrollTop=target;return Promise.resolve();}
     return new Promise(resolve=>{
       const t0=performance.now();
       const ease=t=>t<.5?16*t*t*t*t*t:1-Math.pow(-2*t+2,5)/2;
       const step=now=>{
+        if(token!==scrollToken){resolve(false);return;}
         const u=Math.min(1,(now-t0)/duration);
         scroller.scrollTop=start+delta*ease(u);
-        if(u<1)requestAnimationFrame(step);else{scroller.scrollTop=target;resolve();}
+        if(u<1)requestAnimationFrame(step);else{scroller.scrollTop=target;resolve(true);}
       };
       requestAnimationFrame(step);
     });
@@ -57,8 +61,27 @@
     e.preventDefault();
     const index=el.dataset.industry || '0';
     if(stage) stage.hidden=false;
-    smoothToElement(stage,1850).then(()=>loadIndustry(index));
+    stage.closest('.lite-section').style.contentVisibility='visible';
+    modelShell.hidden=false;
+    smoothToElement(modelShell,1850).then((finished)=>{if(finished!==false)loadIndustry(index);});
   }));
+
+  if(stage){
+    const back=document.createElement('button');
+    back.type='button';
+    back.className='lite-return-control';
+    back.textContent='Choose another industry';
+    stage.appendChild(back);
+    back.addEventListener('click',async()=>{
+      back.disabled=true;
+      try{
+        frame?.contentWindow?.postMessage({type:'automated-hearts:learning-activity',active:false},'*');
+        await smoothToElement(document.querySelector('.route-grid'),1900);
+        unloadModel();
+        stage.hidden=true;
+      }finally{back.disabled=false;}
+    });
+  }
 
   document.addEventListener('visibilitychange',()=>{ if(document.hidden) unloadModel(); });
 })();

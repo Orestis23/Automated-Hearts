@@ -1,0 +1,185 @@
+/* Round 1205 — Home Explore quote alignment, subtle carbon surface, and dimensional route controls. */
+
+/* Mobile Home Explore: subtle carbon-fiber navy face with a true mechanical depth. */
+html body .explore-key{
+  position:relative!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  overflow:hidden!important;
+  min-height:300px!important;
+  border:1.5px solid #8fffd7!important;
+  background-color:#07182b!important;
+  background-image:
+    linear-gradient(180deg,rgba(17,43,68,.80),rgba(3,11,21,.90)),
+    repeating-linear-gradient(45deg,rgba(185,225,238,.035) 0 3px,rgba(0,0,0,.028) 3px 6px),
+    repeating-linear-gradient(-45deg,rgba(151,199,217,.028) 0 3px,rgba(0,0,0,.024) 3px 6px)!important;
+  background-size:auto,12px 12px,12px 12px!important;
+  background-position:center!important;
+  background-repeat:repeat!important;
+  background-blend-mode:normal,soft-light,soft-light!important;
+  box-shadow:
+    0 5px 0 #9e0c67,
+    0 9px 16px rgba(0,0,0,.46),
+    inset 0 1px 0 rgba(226,255,247,.22),
+    inset 0 -7px 12px rgba(0,0,0,.31),
+    inset 0 0 0 1px rgba(255,255,255,.055)!important;
+  transform:translateY(0)!important;
+}
+html body .explore-key > strong{
+  flex:0 0 auto!important;
+  text-shadow:
+    0 1px 0 #ff9bd3,
+    0 2px 0 #e33198,
+    0 3px 0 #9b0d62,
+    0 5px 7px rgba(0,0,0,.58),
+    0 0 7px rgba(255,46,168,.30)!important;
+}
+html body .explore-key > small{
+  position:relative!important;
+  display:flex!important;
+  flex:1 1 auto!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  min-height:170px!important;
+  margin:0!important;
+  padding:18px 18px 42px!important;
+  box-sizing:border-box!important;
+  color:#8fffd7!important;
+  font-style:normal!important;
+  text-align:center!important;
+}
+html body .explore-key .explore-quote-text{
+  display:block!important;
+  width:min(100%,25ch)!important;
+  margin:auto!important;
+  color:#8fffd7!important;
+  -webkit-text-fill-color:#8fffd7!important;
+  font-family:"Share Tech Mono","Orbitron",ui-monospace,monospace!important;
+  font-size:clamp(20px,6.3vw,29px)!important;
+  font-weight:700!important;
+  line-height:1.28!important;
+  letter-spacing:.015em!important;
+  text-align:center!important;
+  text-shadow:0 0 5px rgba(143,255,215,.18)!important;
+}
+html body .explore-key .explore-truthbot{
+  position:absolute!important;
+  right:12px!important;
+  bottom:10px!important;
+  display:block!important;
+  margin:0!important;
+  color:#ff2ea8!important;
+  -webkit-text-fill-color:#ff2ea8!important;
+  font-family:"Share Tech Mono","Orbitron",ui-monospace,monospace!important;
+  font-size:clamp(15px,4.3vw,20px)!important;
+  font-weight:700!important;
+  line-height:1!important;
+  text-align:right!important;
+  text-shadow:0 0 5px rgba(255,46,168,.28)!important;
+}
+html body .explore-key:active{
+  transform:translateY(4px)!important;
+  box-shadow:
+    0 1px 0 #9e0c67,
+    0 4px 8px rgba(0,0,0,.38),
+    inset 0 1px 0 rgba(226,255,247,.16),
+    inset 0 -4px 10px rgba(0,0,0,.28)!important;
+}
+
+/* Mobile Home route title buttons: shallow 3-D face like Explore, same footprint. */
+html body .route-card .route-label{
+  position:relative!important;
+  border-color:#8fffd7!important;
+  background:
+    linear-gradient(180deg,rgba(26,58,79,.96),rgba(4,15,27,.98))!important;
+  box-shadow:
+    0 4px 0 #8d0c5d,
+    0 7px 11px rgba(0,0,0,.34),
+    inset 0 1px 0 rgba(228,255,248,.18),
+    inset 0 -5px 8px rgba(0,0,0,.26)!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.36),
+    0 2px 0 rgba(61,115,132,.60),
+    0 3px 4px rgba(0,0,0,.68)!important;
+  transform:translateY(0)!important;
+}
+html body .route-card:active .route-label{
+  transform:translateY(3px)!important;
+  box-shadow:
+    0 1px 0 #8d0c5d,
+    0 3px 6px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(228,255,248,.13),
+    inset 0 -3px 6px rgba(0,0,0,.24)!important;
+}
+
+/* Desktop Home Explore: same restrained carbon face; center quote and put attribution at quote lower-right. */
+@media (min-width:901px){
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore{
+    position:relative!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    overflow:hidden!important;
+    background-color:#07182b!important;
+    background-image:
+      linear-gradient(180deg,rgba(17,43,68,.80),rgba(3,11,21,.90)),
+      repeating-linear-gradient(45deg,rgba(185,225,238,.035) 0 3px,rgba(0,0,0,.028) 3px 6px),
+      repeating-linear-gradient(-45deg,rgba(151,199,217,.028) 0 3px,rgba(0,0,0,.024) 3px 6px)!important;
+    background-size:auto,12px 12px,12px 12px!important;
+    background-repeat:repeat!important;
+    background-blend-mode:normal,soft-light,soft-light!important;
+    border:1.5px solid #8fffd7!important;
+    box-shadow:
+      0 5px 0 #9e0c67,
+      0 9px 16px rgba(0,0,0,.42),
+      inset 0 1px 0 rgba(226,255,247,.20),
+      inset 0 -7px 12px rgba(0,0,0,.29)!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore .explore-title-1175{
+    flex:0 0 auto!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore .r930-explore-quote{
+    display:flex!important;
+    flex:1 1 auto!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:calc(100% - 36px)!important;
+    margin:0 18px!important;
+    color:#8fffd7!important;
+    -webkit-text-fill-color:#8fffd7!important;
+    text-align:center!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore .r930-explore-attribution{
+    align-self:stretch!important;
+    margin:0 16px 14px!important;
+    color:#ff2ea8!important;
+    -webkit-text-fill-color:#ff2ea8!important;
+    text-align:right!important;
+    text-shadow:0 0 5px rgba(255,46,168,.28)!important;
+  }
+
+  /* Desktop route-button title faces receive the same dimensional cue as Explore. */
+  html body.page-home[data-page="home"] #home-route-buttons .premium-route-card__title-sign{
+    border:1px solid #8fffd7!important;
+    border-radius:9px!important;
+    background:linear-gradient(180deg,rgba(26,58,79,.96),rgba(4,15,27,.98))!important;
+    box-shadow:
+      0 4px 0 #8d0c5d,
+      0 7px 11px rgba(0,0,0,.34),
+      inset 0 1px 0 rgba(228,255,248,.18),
+      inset 0 -5px 8px rgba(0,0,0,.26)!important;
+  }
+  html body.page-home[data-page="home"] #home-route-buttons .premium-route-card__title-sign .ah-route-label-final{
+    text-shadow:
+      0 1px 0 rgba(255,255,255,.36),
+      0 2px 0 rgba(61,115,132,.60),
+      0 3px 4px rgba(0,0,0,.68)!important;
+  }
+}

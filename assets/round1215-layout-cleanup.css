@@ -1,0 +1,30 @@
+/* Round 1215 — requested layout cleanup.
+   1) Rates desktop: preserve a full 2/3 CSS inch of visible clearance between
+      the bottom consultation control and the fixed lower rim/ticker hardware.
+   2) Mobile Home: remove the lower ticker/text strip and reclaim its reserve.
+*/
+@media (min-width:761px){
+  html body.page-pricing[data-page="pricing"] main#main-content .r864-rates__final{
+    /* The fixed ticker occupies roughly 44px at the lower edge. Add that reserve
+       on top of the 64px brand-standard visible clearance. */
+    padding-bottom:calc(64px + var(--r944-ticker-height,44px))!important;
+  }
+}
+
+@media (max-width:760px){
+  html body .ticker{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    pointer-events:none!important;
+    height:0!important;
+    min-height:0!important;
+    max-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+  }
+  html body{
+    padding-bottom:calc(84px + var(--safe-bottom,0px))!important;
+  }
+}

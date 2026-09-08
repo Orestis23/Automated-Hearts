@@ -34,6 +34,7 @@ function doPost(e) {
 
     const name = clean_(p.name, 200);
     const email = clean_(p.email, 320);
+    const phone = clean_(p.phone, 100);
     const business = clean_(p.business, 300);
     const businessType = clean_(p.business_type, 200);
     const message = clean_(p.message, 5000);
@@ -43,7 +44,7 @@ function doPost(e) {
     const clientTime = clean_(p.submitted_at_client, 100);
     const formVersion = clean_(p.form_version, 50);
 
-    if (!name || !email || !message) {
+    if (!name || !email || !phone || !message) {
       return json_({ok:false, error:'Missing required fields'});
     }
 
@@ -58,7 +59,8 @@ function doPost(e) {
       pageUrl,
       contactContext,
       clientTime,
-      formVersion
+      formVersion,
+      phone
     ]);
 
     if (AH_NOTIFICATION_EMAIL) {
@@ -68,6 +70,7 @@ function doPost(e) {
         '',
         'Name: ' + name,
         'Email: ' + email,
+        'Phone: ' + phone,
         'Business: ' + business,
         'Business type: ' + businessType,
         'Page: ' + page,
@@ -107,13 +110,18 @@ function ensureSheet_(ss) {
     'Page URL',
     'Contact Context',
     'Client Submitted At',
-    'Form Version'
+    'Form Version',
+    'Phone'
   ];
 
   if (sheet.getLastRow() === 0) {
     sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
     sheet.setFrozenRows(1);
     sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold');
+  }
+  // Append the new column without shifting any existing inquiry data.
+  if (!sheet.getRange(1, 12).getValue()) {
+    sheet.getRange(1, 12).setValue('Phone').setFontWeight('bold');
   }
   return sheet;
 }

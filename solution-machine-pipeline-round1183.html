@@ -1,4 +1,4 @@
-<!doctype html><html><head><script id="ah-runtime-frame-gate-v942">(()=>{'use strict';if(window.__ahRuntimeFrameGate942)return;window.__ahRuntimeFrameGate942=1;const raf0=window.requestAnimationFrame.bind(window),caf0=window.cancelAnimationFrame.bind(window);let seq=1,hostActive=true,viewportActive=true,queued=new Map(),nativeHandles=new Map();const active=()=>hostActive&&viewportActive&&!document.hidden;const schedule=(id,cb)=>{const h=raf0(ts=>{nativeHandles.delete(id);if(!active()){queued.set(id,cb);return}cb(ts)});nativeHandles.set(id,h)};const flush=()=>{if(!active()||!queued.size)return;const q=[...queued];queued.clear();q.forEach(([id,cb])=>schedule(id,cb))};window.requestAnimationFrame=(cb)=>{const id=seq++;if(active())schedule(id,cb);else queued.set(id,cb);return id};window.cancelAnimationFrame=(id)=>{queued.delete(id);const h=nativeHandles.get(id);if(h!==undefined){caf0(h);nativeHandles.delete(id)}};addEventListener('message',e=>{const d=e.data||{};if(d.type==='engine-visibility')hostActive=!!d.visible;else if(d.type==='automated-hearts:learning-activity')hostActive=!!d.active;else if(d.type==='automated-hearts:viewport-activity')viewportActive=!!d.active;else return;flush()});document.addEventListener('visibilitychange',flush,{passive:true});window.__ahRuntimeFrameGate={isActive:active,resume:flush}})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Automated Hearts Five-Stage Engine</title><style>*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:radial-gradient(circle at 58% 44%,#071624 0,#020812 48%,#000 100%);font-family:system-ui;color:#fff}canvas{display:block;background:transparent!important;touch-action:none}</style></head><body><script src="./vendor/three-0.160.0/three.min.js"></script><script src="./vendor/three-0.160.0/OrbitControls-classic.js"></script><script>
+<!doctype html><html><head><script id="ah-runtime-frame-gate-v942">(()=>{'use strict';if(window.__ahRuntimeFrameGate942)return;window.__ahRuntimeFrameGate942=1;const raf0=window.requestAnimationFrame.bind(window),caf0=window.cancelAnimationFrame.bind(window);let seq=1,hostActive=true,viewportActive=true,shutterMoving=false,queued=new Map(),nativeHandles=new Map();const active=()=>hostActive&&viewportActive&&!shutterMoving&&!document.hidden;const schedule=(id,cb)=>{const h=raf0(ts=>{nativeHandles.delete(id);if(!active()){queued.set(id,cb);return}cb(ts)});nativeHandles.set(id,h)};const flush=()=>{if(!active()||!queued.size)return;const q=[...queued];queued.clear();q.forEach(([id,cb])=>schedule(id,cb))};window.requestAnimationFrame=(cb)=>{const id=seq++;if(active())schedule(id,cb);else queued.set(id,cb);return id};window.cancelAnimationFrame=(id)=>{queued.delete(id);const h=nativeHandles.get(id);if(h!==undefined){caf0(h);nativeHandles.delete(id)}};addEventListener('message',e=>{const d=e.data||{};if(d.type==='ah:home-shutter-motion'){shutterMoving=!!d.moving;flush();return}if(d.type==='engine-visibility')hostActive=!!d.visible;else if(d.type==='automated-hearts:learning-activity')hostActive=!!d.active;else if(d.type==='automated-hearts:viewport-activity')viewportActive=!!d.active;else return;flush()});document.addEventListener('visibilitychange',flush,{passive:true});window.__ahRuntimeFrameGate={isActive:active,resume:flush}})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Automated Hearts Five-Stage Engine</title><style>*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:radial-gradient(circle at 58% 44%,#071624 0,#020812 48%,#000 100%);font-family:system-ui;color:#fff}canvas{display:block;background:transparent!important;touch-action:none}</style></head><body><script src="./vendor/three-0.160.0/three.min.js?v=1196r"></script><script src="./vendor/three-0.160.0/OrbitControls-classic.js?v=1196r"></script><script>
 
 const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,innerWidth/innerHeight,.1,100),renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setClearColor(0x000000,0);renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.45;document.body.appendChild(renderer.domElement);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.enablePan=false;controls.minDistance=9;controls.maxDistance=38;
 const M={dark:new THREE.MeshStandardMaterial({color:0x172637,metalness:.88,roughness:.22}),steel:new THREE.MeshStandardMaterial({color:0x70839a,metalness:.82,roughness:.18}),pinkMetal:new THREE.MeshStandardMaterial({color:0xd8569c,metalness:.95,roughness:.14}),greenMetal:new THREE.MeshStandardMaterial({color:0x69cf95,metalness:.95,roughness:.14}),pink:new THREE.MeshBasicMaterial({color:0xff2f92,toneMapped:false}),green:new THREE.MeshBasicMaterial({color:0x39ff9d,toneMapped:false}),blue:new THREE.MeshBasicMaterial({color:0x35a8ff,toneMapped:false}),glass:new THREE.MeshPhysicalMaterial({color:0x8de8d0,transparent:true,opacity:.08,roughness:.03,transmission:.55,depthWrite:false,side:THREE.DoubleSide})};
@@ -49,6 +49,7 @@ function drawElectricalSign(s,time){
 // the back and side walls are blank dark metal. Depth .17 is approximately a two-inch sign at this model scale.
 const SIGN_DEPTH=.17;
 function floatingSign(text,{position,width=2.4,height=.55,bend=0,rotationZ=0,rotationY=0,parent=null,z=.72,depth=SIGN_DEPTH}={}){
+ width*=2;height*=2;bend*=2;
  const seg=64,geo=new THREE.BoxGeometry(width,height,depth,seg,1,1),a=geo.attributes.position;
  for(let i=0;i<a.count;i++){
    const lx=a.getX(i),ly=a.getY(i),n=(lx/(width*.5));
@@ -93,7 +94,7 @@ function makeSignLink(mesh,key){
  // Give each sign a slightly larger invisible tap/click surface so the label works reliably on desktop and touch screens.
  const hit=mesh.clone();
  hit.material=signHitMaterial;
- hit.scale.set(1.14,1.42,1);
+ hit.scale.set(1.20,1.65,1);
  hit.userData.linkKey=key;
  hit.userData.anchorHash=SIGN_LINKS[key];
  hit.renderOrder=mesh.renderOrder+1;
@@ -145,20 +146,22 @@ for(let i=0;i<5;i++){
 }
 
 // Floating process signs positioned to match the approved front-view layout.
+const HOME_DISPLAY=new URLSearchParams(location.search).get('home')==='1';
+if(!HOME_DISPLAY){
 // Consolidate and Explore wrap gently over their wheel arcs.
-const consolidateSign=makeSignLink(floatingSign('CONSOLIDATE',{position:new THREE.Vector3(-5.20,1.88,.72),width:2.72,height:.56,bend:.26}),'consolidate');
-const streamlineSign=makeSignLink(floatingSign('STREAMLINE',{position:new THREE.Vector3(-2.68,1.13,.72),width:2.45,height:.52,bend:0}),'streamline');
+const consolidateSign=makeSignLink(floatingSign('CONSOLIDATE',{position:new THREE.Vector3(-5.20,2.4,.72),width:2.72,height:.56,bend:.26}),'consolidate');
+const streamlineSign=makeSignLink(floatingSign('STREAMLINE',{position:new THREE.Vector3(-2.68,.35,1.1),width:2.45,height:.52,bend:0}),'streamline');
 // AUTOMATE: free-floating beneath the automation routes so the relationship is immediately clear.
 // Keep the same down-to-the-right angle and curved plate, but give the machine a clean air gap above the sign.
-const automateSign=makeSignLink(floatingSign('AUTOMATE',{position:new THREE.Vector3(-.12,-1.48,.84),width:2.45,height:.53,bend:.31,rotationZ:-.34}),'automate');
+const automateSign=makeSignLink(floatingSign('AUTOMATE',{position:new THREE.Vector3(-.12,-2.3,1.1),width:2.45,height:.53,bend:.31,rotationZ:-.34}),'automate');
 // OPTIMIZE: straight 45-degree sign, tucked closely beneath the optimize ribbon without touching or obscuring it.
 const optimizeSign=makeSignLink(floatingSign('OPTIMIZE',{position:new THREE.Vector3(2.58,-.50,.79),width:1.95,height:.44,bend:0,rotationZ:Math.PI/4}),'optimize');
-const exploreSign=makeSignLink(floatingSign('EXPLORE',{position:new THREE.Vector3(5.20,1.88,.72),width:2.50,height:.56,bend:.25}),'explore');
+const exploreSign=makeSignLink(floatingSign('EXPLORE',{position:new THREE.Vector3(5.20,2.4,.72),width:2.50,height:.56,bend:.25}),'explore');
 // Live-data sign is independent from the rotating rear wheel so it stays readable while the wheel moves.
 const realDataSign=makeSignLink(floatingSign('Real-time, real-world data.',{position:new THREE.Vector3(.80,4.14,-3.48),width:4.75,height:.82,bend:.38}),'realData');
 // Central identity plate: visible in both the Solution page and the display-only Home copy.
-const solutionIdentitySign=floatingSign('THE SOLUTION',{position:new THREE.Vector3(0,.58,1.34),width:3.35,height:.66,bend:.10,depth:.19});
-if(SIGN_LINKS_ENABLED) floatingInstruction3D('Click the signs to learn more');
+}
+
 
 // Anatomical-style heart modules on both ends, with pipe manifolds connected to the engine.
 function createHeartModule(side){
@@ -677,15 +680,53 @@ earthGreenSpark.intensity=1.4+fusionPulse*1.8+Math.random()*.7;automateFlow.forE
 
 // Activate a sign only for a tap/click, never a drag or pinch.
 const signRaycaster=new THREE.Raycaster(),signPointer=new THREE.Vector2();let signPointerDown=null;
-function signHit(ev){const r=renderer.domElement.getBoundingClientRect();signPointer.x=((ev.clientX-r.left)/r.width)*2-1;signPointer.y=-((ev.clientY-r.top)/r.height)*2+1;signRaycaster.setFromCamera(signPointer,camera);const hits=signRaycaster.intersectObjects(clickableSigns,false);return hits.length?hits[0].object:null}
-renderer.domElement.addEventListener('pointermove',ev=>{if(signPointerDown&&Math.hypot(ev.clientX-signPointerDown.x,ev.clientY-signPointerDown.y)>7)signPointerDown.dragged=true;renderer.domElement.style.cursor=signHit(ev)?'pointer':''});
-renderer.domElement.addEventListener('pointerdown',ev=>{if(!ev.isPrimary){signPointerDown=null;return}signPointerDown={id:ev.pointerId,x:ev.clientX,y:ev.clientY,hit:signHit(ev),dragged:false}});
-renderer.domElement.addEventListener('pointercancel',()=>{signPointerDown=null});
+function signHit(ev){
+ const r=renderer.domElement.getBoundingClientRect();
+ signPointer.set(((ev.clientX-r.left)/r.width)*2-1,-((ev.clientY-r.top)/r.height)*2+1);
+ signRaycaster.setFromCamera(signPointer,camera);
+ const hits=signRaycaster.intersectObjects(clickableSigns,false);
+ if(hits.length)return hits[0].object;
+ if(ev.pointerType!=='touch'&&!matchMedia('(pointer:coarse)').matches)return null;
+ let best=null,score=Infinity;
+ for(const mesh of clickableSigns){
+  if(mesh.material===signHitMaterial)continue;
+  mesh.geometry.computeBoundingBox();mesh.updateWorldMatrix(true,false);
+  const b=mesh.geometry.boundingBox;let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
+  for(const x of [b.min.x,b.max.x])for(const y of [b.min.y,b.max.y]){
+   const p=mesh.localToWorld(new THREE.Vector3(x,y,b.max.z)).project(camera);
+   if(p.z<-1||p.z>1)continue;
+   const px=r.left+(p.x+1)*r.width/2,py=r.top+(1-p.y)*r.height/2;
+   minX=Math.min(minX,px);maxX=Math.max(maxX,px);minY=Math.min(minY,py);maxY=Math.max(maxY,py);
+  }
+  if(!Number.isFinite(minX))continue;
+  const cx=(minX+maxX)/2,cy=(minY+maxY)/2,w=Math.max(48,maxX-minX+16),h=Math.max(48,maxY-minY+16);
+  const dx=Math.abs(ev.clientX-cx),dy=Math.abs(ev.clientY-cy),d=dx*dx+dy*dy;
+  if(dx<=w/2&&dy<=h/2&&d<score){best=mesh;score=d;}
+ }
+ return best;
+}
+renderer.domElement.addEventListener('pointermove',ev=>{
+ if(signPointerDown&&Math.hypot(ev.clientX-signPointerDown.x,ev.clientY-signPointerDown.y)>14){signPointerDown.dragged=true;controls.enabled=true;}
+ renderer.domElement.style.cursor=signHit(ev)?'pointer':'';
+});
+renderer.domElement.addEventListener('pointerdown',ev=>{
+ if(!ev.isPrimary){signPointerDown=null;controls.enabled=true;return;}
+ const hit=signHit(ev);signPointerDown={id:ev.pointerId,x:ev.clientX,y:ev.clientY,hit,dragged:false};
+ if(hit)controls.enabled=false;
+},true);
+renderer.domElement.addEventListener('pointercancel',()=>{signPointerDown=null;controls.enabled=true;});
+window.addEventListener('pointerup',()=>{signPointerDown=null;controls.enabled=true;});
+window.addEventListener('blur',()=>{signPointerDown=null;controls.enabled=true;});
+renderer.domElement.addEventListener('pointerup',ev=>{
+ const down=signPointerDown;signPointerDown=null;controls.enabled=true;
+ if(!down||down.id!==ev.pointerId||down.dragged||Math.hypot(ev.clientX-down.x,ev.clientY-down.y)>14)return;
+ const hit=down.hit||signHit(ev);
+ if(hit)activateSolutionSign(hit.userData.anchorHash||SIGN_LINKS[hit.userData.linkKey]);
+});
 function activateSolutionSign(hash){
  if(window.parent===window){location.href='./solutions.html'+hash;return}
- try{if(typeof window.parent.ahSolutionNavigate==='function'){window.parent.ahSolutionNavigate(hash);return}}catch(_){}
+ try{if(typeof window.parent.ahSolutionNavigate==='function'&&window.parent.ahSolutionNavigate(hash)===true)return}catch(_){}
  window.parent.postMessage({type:'ah:solution-anchor',hash},'*');
 }
-renderer.domElement.addEventListener('click',ev=>{const down=signPointerDown;signPointerDown=null;if(down&&(down.dragged||Math.hypot(ev.clientX-down.x,ev.clientY-down.y)>7))return;const hit=signHit(ev);if(hit)activateSolutionSign(hit.userData.anchorHash||SIGN_LINKS[hit.userData.linkKey]);});
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)})
 </script></body></html>

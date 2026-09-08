@@ -1,79 +1,56 @@
-/* Round 1169 — keep the clicked footer control down until the destination is ready. */
+/* Round 1201 — mobile/desktop navigation press reliability.
+   Physical button feedback is intentionally brief and is never tied to page
+   loading. The persistent shell router is the sole navigation authority. */
 (() => {
   'use strict';
-  const root = document.documentElement;
   let held = null;
-  let confirmed = false;
-  let failsafe = 0;
+  let timer = 0;
 
-  const isFooterLink = (node) => {
-    const el = node && typeof node.closest === 'function'
-      ? node.closest('footer#site-footer a[data-nav], body > nav.footer a[href]')
-      : null;
-    if (!el) return null;
-    const href = el.getAttribute('href') || '';
-    if (!href || href.startsWith('#')) return null;
-    return el;
+  const footerLink = (node) => node && typeof node.closest === 'function'
+    ? node.closest('footer#site-footer a[data-nav], body > nav.footer a[href]')
+    : null;
+
+  const clear = () => {
+    clearTimeout(timer);
+    document.documentElement.classList.remove('ah-footer-navigation-loading');
+    document.querySelectorAll('footer#site-footer a[data-nav], body > nav.footer a[href]').forEach((link) => {
+      link.removeAttribute('data-ah-footer-loading');
+      link.removeAttribute('data-ah-control-pressed');
+      link.classList.remove('is-nav-pressed','is-pressed','is-route-pressed');
+      link.setAttribute('aria-pressed','false');
+    });
+    held = null;
   };
 
-  const apply = (link) => {
+  const press = (link) => {
+    clear();
     if (!link) return;
-    if (held && held !== link) held.removeAttribute('data-ah-footer-loading');
+    const href = (link.getAttribute('href') || '').trim();
+    if (!href || href.startsWith('#')) return;
     held = link;
-    confirmed = false;
     link.setAttribute('data-ah-footer-loading','1');
+    link.setAttribute('data-ah-control-pressed','1');
     link.classList.add('is-nav-pressed','is-pressed');
     link.setAttribute('aria-pressed','true');
-    root.classList.add('ah-footer-navigation-loading');
-    clearTimeout(failsafe);
-    /* If navigation is cancelled by the browser or an extension, never leave
-       the current control latched forever. Real navigation normally completes
-       far sooner and is released by ah:persistent-route-complete/page load. */
-    failsafe = setTimeout(release, 20000);
+    document.documentElement.classList.add('ah-footer-navigation-loading');
+    timer = setTimeout(clear, 360);
   };
-
-  function release(){
-    clearTimeout(failsafe);
-    document.querySelectorAll('[data-ah-footer-loading="1"]').forEach((link) => {
-      link.removeAttribute('data-ah-footer-loading');
-      link.classList.remove('is-nav-pressed','is-pressed');
-      link.setAttribute('aria-pressed','false');
-      try { if (document.activeElement === link) link.blur(); } catch (_) {}
-    });
-    root.classList.remove('ah-footer-navigation-loading');
-    held = null;
-    confirmed = false;
-  }
 
   document.addEventListener('pointerdown', (event) => {
     if (event.button !== 0) return;
-    const link = isFooterLink(event.target);
-    if (!link) return;
-    apply(link);
+    const link = footerLink(event.target);
+    if (link) press(link);
   }, true);
 
-  document.addEventListener('click', (event) => {
-    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    const link = isFooterLink(event.target);
-    if (!link) return;
-    if (held !== link) apply(link);
-    confirmed = true;
-  }, true);
+  document.addEventListener('pointerup', () => setTimeout(clear, 90), true);
+  document.addEventListener('pointercancel', clear, true);
+  document.addEventListener('scroll', clear, {passive:true, capture:true});
+  window.addEventListener('blur', clear, {passive:true});
+  window.addEventListener('pagehide', clear, {passive:true});
+  document.addEventListener('visibilitychange', () => { if (document.hidden) clear(); }, {passive:true});
+  addEventListener('ah:persistent-route-complete', clear);
+  addEventListener('pageshow', clear);
 
-  document.addEventListener('pointercancel', () => {
-    if (!confirmed) release();
-  }, true);
-
-  /* Persistent shell route completion is the exact moment requested for the
-     hardware to rise again. Full-document navigation naturally destroys the
-     old pressed DOM and the new page starts released. */
-  addEventListener('ah:persistent-route-complete', release);
-  addEventListener('pageshow', (event) => { if (event.persisted) release(); });
-
-  /* Direct loads should always begin with neutral controls. */
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', release, {once:true});
-  } else {
-    release();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', clear, {once:true});
+  else clear();
 })();

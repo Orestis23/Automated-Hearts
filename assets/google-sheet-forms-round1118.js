@@ -44,11 +44,15 @@
 
     const status = statusNode(form);
     const data = new FormData(form);
+    // Keep phone visible with the already-deployed receiver, which may not yet
+    // have the new dedicated Phone column from the bundled Apps Script.
+    const phone = String(data.get('phone') || '').trim();
+    if (phone) data.set('message', String(data.get('message') || '') + '\n\nPhone number: ' + phone);
     data.set('page', document.body?.dataset?.page || document.title || '');
     data.set('page_url', location.href);
     data.set('contact_context', contactContext(form));
     data.set('submitted_at_client', new Date().toISOString());
-    data.set('form_version', '1125');
+    data.set('form_version', '1198');
 
     // Simple honeypot support if one is added later.
     if (data.get('website')) return;

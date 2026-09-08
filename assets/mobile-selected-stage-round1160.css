@@ -1,5 +1,23 @@
 /* Round 1160 — mobile selected-model clean stage */
 @media (max-width: 900px){
+  .lite-section:has(#lite-model-stage:not([hidden])){
+    content-visibility:visible;
+    padding-bottom:50svh;
+  }
+  #lite-model-shell{
+    max-height:max(120px,calc(100svh - 260px));
+  }
+  .lite-return-control{
+    display:block;
+    margin:18px auto 0;
+    padding:12px 18px;
+    border:1px solid var(--green);
+    border-radius:9px;
+    background:#071827;
+    color:#fff;
+    font:inherit;
+    touch-action:manipulation;
+  }
   #lite-model-stage > #lite-model-shell:first-child{margin-top:0!important;}
   #solution-consolidate .lite-card-body{height:auto!important;max-height:none!important;overflow:visible!important;}
   #solution-consolidate .lite-card-body p{display:block!important;visibility:visible!important;height:auto!important;max-height:none!important;overflow:visible!important;}

@@ -1,0 +1,37 @@
+/* Round 1209 — Solution machine instruction copy. */
+#solution-process-heading.solution-process-instruction-copy,
+.solution-process-title.solution-process-instruction-copy{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:min(100%,1120px)!important;
+  margin-inline:auto!important;
+  padding-inline:18px!important;
+  color:#ff4fa8!important;
+  -webkit-text-fill-color:#ff4fa8!important;
+  font-family:Orbitron,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;
+  font-size:clamp(18px,1.7vw,26px)!important;
+  font-weight:800!important;
+  line-height:1.25!important;
+  letter-spacing:.035em!important;
+  text-align:center!important;
+  text-transform:none!important;
+  text-shadow:0 0 5px rgba(255,46,168,.55),0 0 12px rgba(255,46,168,.22)!important;
+}
+#solution-process-heading.solution-process-instruction-copy>span,
+.solution-process-title.solution-process-instruction-copy>span{
+  display:block!important;
+  width:100%!important;
+  white-space:normal!important;
+  text-align:center!important;
+}
+#solution-process-heading.solution-process-instruction-copy>span::after,
+.solution-process-title.solution-process-instruction-copy>span::after{content:none!important;display:none!important;}
+@media(max-width:800px){
+  .solution-process-title.solution-process-instruction-copy{
+    padding:13px 14px!important;
+    font-size:clamp(15px,4.4vw,20px)!important;
+    line-height:1.28!important;
+    letter-spacing:.02em!important;
+  }
+}

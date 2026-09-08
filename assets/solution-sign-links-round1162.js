@@ -23,30 +23,53 @@
 
   let scrollFrame = 0;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let restoreScrollStyle = () => {};
+
+  function scrollHost(section) {
+    for (let node=section.parentElement; node && node!==document.body; node=node.parentElement) {
+      if (/(auto|scroll)/.test(getComputedStyle(node).overflowY) && node.scrollHeight>node.clientHeight+1) return node;
+    }
+    return document.scrollingElement || document.documentElement;
+  }
 
   function smoothScrollTo(section, duration=1850) {
     if (!section) return false;
     if (scrollFrame) cancelAnimationFrame(scrollFrame);
+    restoreScrollStyle();
     scrollFrame = 0;
-    const scroller = document.scrollingElement || document.documentElement;
-    const start = Math.max(window.scrollY || 0, scroller.scrollTop || 0);
+    const scroller = scrollHost(section);
+    const isDocument=scroller===(document.scrollingElement||document.documentElement);
+    const start = scroller.scrollTop || 0;
     const fixedTitle = document.querySelector('.page-chip,.rim-page-name-screen,.mobile-page-title,.lite-page-title');
     const headerOffset = fixedTitle ? Math.max(80, fixedTitle.getBoundingClientRect().bottom + 16) : 80;
-    const target = Math.max(0, start + section.getBoundingClientRect().top - headerOffset);
+    const hostTop=isDocument?0:scroller.getBoundingClientRect().top+scroller.clientTop;
+    const offset=Math.max(hostTop+16,headerOffset);
+    const target = Math.max(0, Math.min(scroller.scrollHeight-scroller.clientHeight,start + section.getBoundingClientRect().top - offset));
+    const oldBehavior=scroller.style.getPropertyValue('scroll-behavior');
+    const oldPriority=scroller.style.getPropertyPriority('scroll-behavior');
+    scroller.style.setProperty('scroll-behavior','auto','important');
+    restoreScrollStyle=()=>{
+      if(oldBehavior)scroller.style.setProperty('scroll-behavior',oldBehavior,oldPriority);
+      else scroller.style.removeProperty('scroll-behavior');
+      restoreScrollStyle=()=>{};
+    };
+    const move=position=>{scroller.scrollTop=position;};
     const distance = target - start;
     if (reducedMotion || Math.abs(distance) < 2) {
-      window.scrollTo(0, target);
+      move(target);
+      restoreScrollStyle();
       return true;
     }
     const t0 = performance.now();
     const ease = t => t < .5 ? 16*t*t*t*t*t : 1 - Math.pow(-2*t + 2, 5) / 2;
     const step = now => {
       const p = Math.min(1, (now - t0) / duration);
-      window.scrollTo(0, start + distance * ease(p));
+      move(start + distance * ease(p));
       if (p < 1) scrollFrame = requestAnimationFrame(step);
       else {
-        window.scrollTo(0, target);
+        move(target);
         scrollFrame = 0;
+        restoreScrollStyle();
       }
     };
     scrollFrame = requestAnimationFrame(step);

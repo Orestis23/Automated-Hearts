@@ -145,6 +145,38 @@
   let pendingFrame = null;
   let routeToken = 0;
   let initialMainRetired = false;
+  let shieldPanel = null;
+  let shieldMotion = null;
+  let navigationTimeout = 0;
+  const shieldStyle=document.createElement('style');
+  shieldStyle.textContent=`
+    #ah-route-shield{position:fixed;z-index:2147483200;inset:var(--current-frame-top,96px) var(--current-frame-side,88px) var(--current-frame-bottom,96px);overflow:hidden;border-radius:28px;pointer-events:none}
+    #ah-route-shield[hidden]{display:none}
+    #ah-route-shield-panel{height:100%;width:100%;background:#08172b url('./assets/page-shield-smoked-heart.webp') center/cover no-repeat;transform:translateY(-101%);will-change:transform}
+    @media(max-width:900px){#ah-route-shield{inset:72px 10px calc(74px + env(safe-area-inset-bottom,0px));border-radius:18px}}
+  `;
+  document.head.appendChild(shieldStyle);
+  const moveShield=async(covered)=>{
+    if(!shieldPanel){
+      const shield=document.createElement('div');
+      shield.id='ah-route-shield';
+      shield.setAttribute('aria-hidden','true');
+      shieldPanel=document.createElement('div');
+      shieldPanel.id='ah-route-shield-panel';
+      shield.appendChild(shieldPanel);
+      document.body.appendChild(shield);
+    }
+    const from=getComputedStyle(shieldPanel).transform;
+    shieldMotion?.cancel();
+    shieldPanel.parentElement.hidden=false;
+    const to=covered?'translateY(0)':'translateY(-101%)';
+    shieldPanel.style.transform=to;
+    shieldMotion=shieldPanel.animate([{transform:from},{transform:to}],{
+      duration:matchMedia('(prefers-reduced-motion:reduce)').matches?0:2000,
+      easing:'cubic-bezier(.45,0,.55,1)'
+    });
+    try{await shieldMotion.finished;}catch(_){}
+  };
 
   const contentFrameStyle = (frame) => {
     frame.className = 'ah-shell-content-frame';
@@ -329,6 +361,8 @@
     if (!normalized) return false;
     const {key:nextKey, target, historyUrl} = normalized;
     const token = ++routeToken;
+    clearTimeout(navigationTimeout);
+    const covered=moveShield(true);
 
     if (pendingFrame) {
       pendingFrame.remove();
@@ -341,9 +375,11 @@
     document.body.appendChild(frame);
 
     let completed = false;
-    const finish = () => {
+    const finish = async () => {
+      await covered;
       if (completed || token !== routeToken || pendingFrame !== frame) return;
       completed = true;
+      clearTimeout(navigationTimeout);
       const previousKey = currentKey;
       updateShell(nextKey, previousKey);
       try { window.scrollTo(0,0); } catch (_) {}
@@ -368,6 +404,9 @@
           history.pushState({ahShell:true,key:nextKey}, '', clean.href);
         } catch (_) {}
       }
+      await moveShield(false);
+      if(token!==routeToken)return;
+      shieldPanel.parentElement.hidden=true;
       window.dispatchEvent(new CustomEvent('ah:persistent-route-complete', {detail:{page:nextKey}}));
     };
 
@@ -381,17 +420,82 @@
       requestAnimationFrame(() => requestAnimationFrame(finish));
     });
     frame.src = target.href;
+    navigationTimeout=setTimeout(async()=>{
+      if(token!==routeToken||completed)return;
+      completed=true;
+      frame.remove();
+      pendingFrame=null;
+      await moveShield(false);
+      if(token!==routeToken)return;
+      shieldPanel.parentElement.hidden=true;
+      window.dispatchEvent(new CustomEvent('ah:persistent-route-complete'));
+    },15000);
     return true;
   };
 
   window.__ahShellNavigate = (href) => navigate(href, {push:true});
   window.__ahPersistentNavigate = window.__ahShellNavigate;
 
+  // Round 1201: on the dedicated mobile shell, complete footer navigation from
+  // a clean pointerup instead of depending exclusively on the synthesized click.
+  // This avoids dropped taps after repeated touch interactions while still
+  // rejecting scroll gestures and preserving click/keyboard fallback behavior.
+  let mobileTap = null;
+  let suppressClickUntil = 0;
+  let suppressClickHref = '';
+  if (isMobile) {
+    document.addEventListener('pointerdown', (event) => {
+      if (event.button !== 0) return;
+      const node = event.target;
+      const link = node && typeof node.closest === 'function' ? node.closest('body > nav.footer a[href]') : null;
+      if (!link) { mobileTap = null; return; }
+      mobileTap = {
+        id:event.pointerId,
+        link,
+        x:event.clientX,
+        y:event.clientY,
+        t:performance.now()
+      };
+    }, true);
+
+    document.addEventListener('pointerup', (event) => {
+      const tap = mobileTap;
+      mobileTap = null;
+      if (!tap || event.pointerId !== tap.id) return;
+      const dx = event.clientX - tap.x;
+      const dy = event.clientY - tap.y;
+      if ((dx * dx + dy * dy) > 196 || (performance.now() - tap.t) > 900) return;
+      const node = document.elementFromPoint(event.clientX, event.clientY);
+      const releaseLink = node && typeof node.closest === 'function' ? node.closest('body > nav.footer a[href]') : null;
+      if (releaseLink !== tap.link) return;
+      const key = keyFromHref(tap.link.href);
+      if (!key || !pages[key]) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      suppressClickHref = tap.link.href;
+      suppressClickUntil = performance.now() + 800;
+      tap.link.classList.remove('is-pressed','is-nav-pressed','is-route-pressed');
+      tap.link.removeAttribute('data-ah-control-pressed');
+      tap.link.removeAttribute('data-ah-footer-loading');
+      tap.link.setAttribute('aria-pressed','false');
+      document.documentElement.classList.remove('ah-footer-navigation-loading');
+      navigate(tap.link.href, {push:true});
+    }, true);
+
+    document.addEventListener('pointercancel', () => { mobileTap = null; }, true);
+    document.addEventListener('scroll', () => { mobileTap = null; }, {passive:true, capture:true});
+  }
+
   document.addEventListener('click', (event) => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const node = event.target;
     const link = node && typeof node.closest === 'function' ? node.closest('a[href]') : null;
     if (!link || link.hasAttribute('download') || link.hasAttribute('data-contact-trigger') || link.hasAttribute('data-ah-contact')) return;
+    if (isMobile && performance.now() < suppressClickUntil && link.href === suppressClickHref) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      return;
+    }
     const key = keyFromHref(link.href);
     if (!key) return;
     let url;

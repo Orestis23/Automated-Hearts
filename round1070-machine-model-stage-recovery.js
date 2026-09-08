@@ -25,6 +25,28 @@
 
   const machineOpen=(frame,open)=>{
     if(!frame) return;
+    const home=homeGrid?.contains(frame)&&matchMedia('(min-width:801px)').matches;
+    const left=home&&!!frame.querySelector('#home-machine-primary');
+    const model=frame.querySelector('iframe');
+    if(home){
+      const screen=frame.querySelector('[data-machine-haze]');
+      if(screen){
+        const heart=getComputedStyle(screen,'::before');
+        const height=parseFloat(heart.height)||parseFloat(heart.width)*488/330;
+        const lip=(parseFloat(heart.bottom)||7)+height/2;
+        frame.style.setProperty('--r1171-window-open-lip',`${lip}px`,'important');
+        frame.style.setProperty('--r688-haze-handle-visible',`${lip}px`,'important');
+      }
+    }
+    if(left){
+      clearTimeout(frame.__ahShutterTimer);
+      frame.classList.add('ah-shutter-motion');
+      model.contentWindow?.postMessage({type:'ah:home-shutter-motion',moving:true},'*');
+      frame.__ahShutterTimer=setTimeout(()=>{
+        frame.classList.remove('ah-shutter-motion');
+        model.contentWindow?.postMessage({type:'ah:home-shutter-motion',moving:false},'*');
+      },MACHINE_MS+80);
+    }
     frame.classList.toggle('is-haze-open',!!open);
     const shutter=frame.querySelector('[data-machine-haze],[data-solution-machine-haze]');
     if(shutter){
@@ -42,7 +64,6 @@
       shutter.style.setProperty('transform',open?raised:'translate3d(0,0,0)','important');
       shutter.style.setProperty('-webkit-transform',open?raised:'translate3d(0,0,0)','important');
     }
-    const model=frame.querySelector('iframe');
     if(open){ hydrate(model); frameActivity(model,true); }
     else window.setTimeout(()=>{ if(!frame.classList.contains('is-haze-open')) frameActivity(model,false); },MACHINE_MS+80);
   };

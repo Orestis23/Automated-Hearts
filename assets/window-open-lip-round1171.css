@@ -11,6 +11,15 @@
   --r1138-mobile-solution-lip:20px!important;
 }
 
+/* Home's animated shield samples a static surface during movement. */
+@media(min-width:801px){
+  html body.page-home[data-page="home"] #home-machine-grid
+  > .home-hero-engine-frame.ah-shutter-motion > button.home-machine-haze-screen{
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+  }
+}
+
 /* Desktop Home — both machine windows. High specificity intentionally defeats legacy 104px/48px handle rules. */
 html body.page-home.page-home.page-home.page-home[data-page="home"]
 #home-machine-grid#home-machine-grid#home-machine-grid

@@ -1,5 +1,8 @@
 (() => {
   'use strict';
+  // Round 1201: embedded pages defer contact/navigation to the persistent parent shell.
+  // This prevents duplicate hidden contact overlays and competing tap handlers.
+  if (window.self !== window.top && new URLSearchParams(location.search).get('ah_embed') === '1') return;
   const triggers = [...document.querySelectorAll('.message')];
   if (!triggers.length) return;
 
@@ -19,11 +22,12 @@
       <button class="ah-mobile-contact__close" type="button" aria-label="Close contact form">×</button>
       <h2 class="ah-mobile-contact__title" id="ah-mobile-contact-title">Send Message</h2>
       <form method="post" data-google-sheet-form>
-        <label><span class="sr-only">Name</span><input autocomplete="name" name="name" placeholder="Name" required type="text"></label>
-        <label><span class="sr-only">Email</span><input autocomplete="email" name="email" placeholder="Email" required type="email"></label>
-        <label><span class="sr-only">Business or organization</span><input autocomplete="organization" name="business" placeholder="Business or organization" type="text"></label>
-        <label><span class="sr-only">Business type</span><select aria-label="Business type" name="business_type"><option value="">Business type</option><option>Professional services</option><option>Construction or trades</option><option>Local business operations</option><option>Entrepreneur or small team</option><option>Nonprofit or community organization</option><option>Other</option></select></label>
-        <label><span class="sr-only">What feels harder than it should?</span><textarea name="message" placeholder="What feels harder than it should?" required rows="4"></textarea></label>
+        <label><span class="sr-only">Name</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" autocomplete="name" name="name" placeholder="Name (required)" required type="text"></label>
+        <label><span class="sr-only">Email</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" autocomplete="email" name="email" placeholder="Email (required)" required type="email"></label>
+<label class="nav-contact-field nav-contact-field--full ah-phone-field"><span class="sr-only">Phone number (required)</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" autocomplete="tel" inputmode="tel" name="phone" placeholder="Phone number (required)" required type="tel"></label>
+        <label><span class="sr-only">Business or organization</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" autocomplete="organization" name="business" placeholder="Business or organization" type="text"></label>
+        <label><span class="sr-only">Business type</span><select class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" aria-label="Business type" name="business_type"><option value="">Business type</option><option>Professional services</option><option>Construction or trades</option><option>Local business operations</option><option>Entrepreneur or small team</option><option>Nonprofit or community organization</option><option>Other</option></select></label>
+        <label><span class="sr-only">What feels harder than it should?</span><textarea class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" name="message" placeholder="What feels harder than it should?" required rows="4"></textarea></label>
         <button class="ah-mobile-contact__submit" type="submit">Send Message</button>
         <p class="ah-mobile-contact__status" data-form-status aria-live="polite"></p>
       </form>
@@ -50,52 +54,41 @@
     lastTrigger?.focus({preventScroll:true});
   }
 
-  // Round 1127: preserve a visible mechanical press before the overlay covers
-  // the Messages control. This affects only the contact trigger, not footer navigation.
+  // Round 1201: one short, self-clearing press state for Messages. Never let a
+  // missing pointerup, canceled touch, route transition, or focus change leave
+  // the physical button latched down. Footer navigation is intentionally NOT
+  // handled here; the persistent shell router is its single navigation owner.
+  let messagePressTimer = 0;
+  const clearMessagePress = () => {
+    clearTimeout(messagePressTimer);
+    triggers.forEach((trigger) => {
+      trigger.classList.remove('is-pressed');
+      trigger.removeAttribute('data-ah-control-pressed');
+    });
+  };
+  const pressMessage = (trigger) => {
+    clearMessagePress();
+    trigger.classList.add('is-pressed');
+    trigger.setAttribute('data-ah-control-pressed','1');
+    messagePressTimer = setTimeout(clearMessagePress, 320);
+  };
+
   triggers.forEach((trigger) => {
-    let pressTimer = 0;
-    const press = () => {
-      clearTimeout(pressTimer);
-      trigger.classList.add('is-pressed');
-    };
-    const releaseLater = (delay = 230) => {
-      clearTimeout(pressTimer);
-      pressTimer = setTimeout(() => trigger.classList.remove('is-pressed'), delay);
-    };
-    trigger.addEventListener('pointerdown', press, {passive:true});
-    trigger.addEventListener('pointercancel', () => releaseLater(0), {passive:true});
+    trigger.addEventListener('pointerdown', () => pressMessage(trigger), {passive:true});
+    trigger.addEventListener('pointerup', () => setTimeout(clearMessagePress, 90), {passive:true});
+    trigger.addEventListener('pointercancel', clearMessagePress, {passive:true});
+    trigger.addEventListener('pointerleave', clearMessagePress, {passive:true});
     trigger.addEventListener('click', (event) => {
       event.preventDefault();
-      press();
-      // Keep the button visible long enough to reach its 5px depressed state.
-      setTimeout(() => openContact(trigger), 190);
-      releaseLater(250);
+      clearMessagePress();
+      openContact(trigger);
     });
   });
-  // Round 1128: footer navigation uses the exact same visible mechanical
-  // depression as Messages. Navigation waits for the 190ms press to be seen.
-  [...document.querySelectorAll('.footer a')].forEach((link) => {
-    let footerTimer = 0;
-    const press = () => {
-      clearTimeout(footerTimer);
-      link.classList.add('is-pressed');
-    };
-    const release = (delay = 230) => {
-      clearTimeout(footerTimer);
-      footerTimer = setTimeout(() => link.classList.remove('is-pressed'), delay);
-    };
-    link.addEventListener('pointerdown', press, {passive:true});
-    link.addEventListener('pointercancel', () => release(0), {passive:true});
-    link.addEventListener('click', (event) => {
-      if (event.defaultPrevented || event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      const href = link.getAttribute('href');
-      if (!href || href.startsWith('#')) return;
-      event.preventDefault();
-      press();
-      release(250);
-      setTimeout(() => { window.location.href = href; }, 190);
-    });
-  });
+
+  window.addEventListener('blur', clearMessagePress, {passive:true});
+  window.addEventListener('pagehide', clearMessagePress, {passive:true});
+  document.addEventListener('visibilitychange', () => { if (document.hidden) clearMessagePress(); }, {passive:true});
+  document.addEventListener('scroll', clearMessagePress, {passive:true});
 
   close.addEventListener('click', closeContact);
   overlay.addEventListener('click', (event) => { if (event.target === overlay) closeContact(); });

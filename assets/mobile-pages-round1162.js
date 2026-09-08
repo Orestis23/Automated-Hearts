@@ -10,25 +10,29 @@
   let frame = null;
   let selected = null;
   let modelIndex = 0;
+  let scrollToken = 0;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function smoothToElement(el, duration=1850){
+    const token=++scrollToken;
     if(!el) return Promise.resolve();
     const scroller=document.scrollingElement||document.documentElement;
     const start=scroller.scrollTop;
-    const fixedHeader=document.querySelector('.page-chip,.page-title,.mobile-page-title,.lite-page-title');
-    const headerOffset=fixedHeader ? Math.max(0, fixedHeader.getBoundingClientRect().height + 18) : 18;
-    const target=Math.max(0,start+el.getBoundingClientRect().top-headerOffset);
+    const rect=el.getBoundingClientRect();
+    const target=el===modelShell
+      ? Math.max(0,Math.min(scroller.scrollHeight-innerHeight,start+rect.top+rect.height/2-innerHeight/2))
+      : 0;
     const delta=target-start;
     if(reducedMotion || Math.abs(delta)<2){ scroller.scrollTop=target; return Promise.resolve(); }
     return new Promise(resolve=>{
       const t0=performance.now();
       const ease=t=>t<.5?16*t*t*t*t*t:1-Math.pow(-2*t+2,5)/2;
       const step=now=>{
+        if(token!==scrollToken){resolve(false);return;}
         const t=Math.min(1,(now-t0)/duration);
         scroller.scrollTop=start+delta*ease(t);
         if(t<1) requestAnimationFrame(step);
-        else { scroller.scrollTop=target; resolve(); }
+        else { scroller.scrollTop=target; resolve(true); }
       };
       requestAnimationFrame(step);
     });
@@ -73,11 +77,14 @@
     modelIndex=0;
     unloadModel();
     if(stage) stage.hidden=false;
+    stage.closest('.lite-section').style.contentVisibility='visible';
+    modelShell.hidden=false;
     const models=learningModels[selected] || [];
     const ctrls=$('#model-controls');
     if(ctrls) ctrls.hidden=models.length<2;
     const scrollDuration=1850;
-    smoothToElement(stage, scrollDuration).then(()=>{
+    smoothToElement(modelShell, scrollDuration).then((finished)=>{
+      if(finished===false)return;
       if(selected && learningModels[selected]) loadUrl(learningModels[selected][0]);
     });
   }));
