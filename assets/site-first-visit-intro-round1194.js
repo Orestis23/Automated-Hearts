@@ -7,7 +7,7 @@
   if (window.__AH_SITE_FIRST_VISIT_INTRO_1194) return;
   window.__AH_SITE_FIRST_VISIT_INTRO_1194 = true;
 
-  const KEY = 'ah-site-first-visit-intro-v1194';
+  const KEY = 'ah-site-first-visit-intro-v1219';
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const esc = (value) => value.replace(/[&<>']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;'}[char]));
 

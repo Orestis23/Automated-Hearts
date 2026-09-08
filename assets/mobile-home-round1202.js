@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const INTRO_KEY = 'ah-site-first-visit-intro-v1194';
+  const INTRO_KEY = 'ah-site-first-visit-intro-v1219';
   const forceIntro = new URLSearchParams(location.search).get('intro') === '1';
   const intro = document.getElementById('first-visit-intro');
   const lineEls = [...document.querySelectorAll('.intro-line')];

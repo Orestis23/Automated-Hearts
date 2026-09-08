@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><script id="ah-desktop-router-v1109">(function(){try{var q=new URLSearchParams(location.search);if(q.get('mobile')==='1')return;if(matchMedia('(min-width:901px)').matches){var u=new URL('./desktop-home.html',location.href);u.searchParams.set('v','1151r');u.hash=location.hash;location.replace(u.href)}}catch(e){}})();</script>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><script id="ah-desktop-router-v1109">(function(){try{var q=new URLSearchParams(location.search);if(q.get('mobile')==='1')return;if(matchMedia('(min-width:901px)').matches){var u=new URL('./desktop-home.html',location.href);u.searchParams.set('v','1219r');u.hash=location.hash;location.replace(u.href)}}catch(e){}})();</script>
 <meta content="dark" name="color-scheme"/>
-<script>try{var __ahQ=new URLSearchParams(location.search),__ahMobile=matchMedia('(max-width:900px)').matches,__ahForce=__ahQ.get('intro')==='1',__ahSeen=localStorage.getItem('ah-site-first-visit-intro-v1194')==='1'||localStorage.getItem('ah-mobile-first-visit-intro-v1166')==='1'||localStorage.getItem('ah-desktop-first-visit-intro-v1166')==='1';document.documentElement.setAttribute('data-ah-intro',(__ahMobile&&(__ahForce||!__ahSeen))?'1':'0')}catch(e){document.documentElement.setAttribute('data-ah-intro','0')}</script><style id="ah-first-visit-intro-critical-r1157">
+<script>try{var __ahQ=new URLSearchParams(location.search),__ahMobile=matchMedia('(max-width:900px)').matches,__ahForce=__ahQ.get('intro')==='1',__ahSeen=localStorage.getItem('ah-site-first-visit-intro-v1219')==='1';document.documentElement.setAttribute('data-ah-intro',(__ahMobile&&(__ahForce||!__ahSeen))?'1':'0')}catch(e){document.documentElement.setAttribute('data-ah-intro','0')}</script><style id="ah-first-visit-intro-critical-r1157">
 html[data-ah-intro="1"] #first-visit-intro{display:grid!important;place-items:center!important;position:fixed!important;inset:0!important;z-index:50000!important;overflow:hidden!important;background-color:#02070c!important;background-image:url("./assets/page-shield-smoked-heart.webp")!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;color:#f2fbff!important;transform:translate3d(0,0,0);transition:transform 3000ms cubic-bezier(.18,.68,.20,1)!important}
 html[data-ah-intro="1"] #first-visit-intro.is-raising{transform:translate3d(0,-105%,0)!important}
 html[data-ah-intro="1"] body[data-page] > #page-transition-shield{display:none!important;visibility:hidden!important}
@@ -18,7 +18,7 @@ html[data-ah-intro="1"] body[data-page] > #page-transition-shield{display:none!i
 </style><script id="ah-first-visit-intro-early-runtime-r1157">
 (()=>{'use strict';
 const root=document.documentElement;if(root.getAttribute('data-ah-intro')!=='1')return;window.__AH_EARLY_MOBILE_INTRO_STARTED__=true;
-const KEY='ah-site-first-visit-intro-v1194',sleep=ms=>new Promise(r=>setTimeout(r,ms)),esc=v=>v.replace(/[&<>']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;'}[c]));
+const KEY='ah-site-first-visit-intro-v1219',sleep=ms=>new Promise(r=>setTimeout(r,ms)),esc=v=>v.replace(/[&<>']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;'}[c]));
 function boot(){const intro=document.getElementById('first-visit-intro'),lines=[...document.querySelectorAll('.intro-line')],cursor=document.getElementById('intro-cursor'),signature=document.getElementById('intro-signature-heart');if(!intro||lines.length<5||!cursor)return false;if(window.__AH_EARLY_MOBILE_INTRO_BOOTED__)return true;window.__AH_EARLY_MOBILE_INTRO_BOOTED__=true;if(signature){signature.classList.remove('is-visible','is-signing');signature.hidden=true;}
 const colorize=v=>{let x=esc(v);return x.replace(/AI/g,'<span class="pink">AI</span>').replace(/Human/g,'<span class="green">Human</span>').replace(/maximum efficiency/g,'<span class="green">maximum efficiency</span>').replace(/Nothing you don&#39;t need\./g,'<span class="pink">Nothing</span> you <span class="green">don&#39;t need.</span>').replace(/Just what you do\./g,'<span class="pink">Just</span> <span class="green">what you do.</span>')};
 const state=['','','','',''];function render(i){lines[i].innerHTML=colorize(state[i]);lines[i].appendChild(cursor)}async function type(i,text){for(const ch of text){state[i]+=ch;render(i);let d=34+Math.random()*48;if(/[.,%]/.test(ch))d+=65;await sleep(d)}}async function back(i,n){for(let k=0;k<n;k++){state[i]=state[i].slice(0,-1);render(i);await sleep(78+Math.random()*42)}}
@@ -96,7 +96,7 @@ if(!boot()){const mo=new MutationObserver(()=>{if(boot())mo.disconnect()});mo.ob
 </main>
 <div class="ticker">Automation with a human touch.</div>
 <nav aria-label="Primary navigation" class="footer"><a href="./mobile-solutions.html?v=1129r">Solution</a><a href="./mobile-who-we-help.html?v=1129r">Industries</a><a href="./mobile-learning-center.html?v=1120r">Learning</a><a href="./mobile-about.html?v=1114r">About Us</a><a href="./mobile-pricing.html?v=1126r">Services</a></nav>
-<script defer="" src="./assets/mobile-home-round1216.js?v=1216r"></script>
+<script defer="" src="./assets/mobile-home-round1216.js?v=1219r"></script>
 <script defer="" src="./assets/google-sheet-config-round1118.js?v=1196r"></script><script defer="" src="./assets/google-sheet-forms-round1118.js?v=1198r"></script><script defer="" src="./assets/mobile-contact-round1128.js?v=1214r"></script>
 <script id="ah-mobile-carousel-center-r1125">
 (()=>{

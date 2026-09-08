@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><script id="ah-desktop-first-visit-flag-v1115">try{var __ahDQ=new URLSearchParams(location.search),__ahDesktop=matchMedia('(min-width:901px)').matches,__ahDForce=__ahDQ.get('intro')==='1',__ahDSeen=localStorage.getItem('ah-site-first-visit-intro-v1194')==='1'||localStorage.getItem('ah-desktop-first-visit-intro-v1166')==='1'||localStorage.getItem('ah-mobile-first-visit-intro-v1166')==='1';document.documentElement.setAttribute('data-ah-desktop-intro',(__ahDesktop&&(__ahDForce||!__ahDSeen))?'1':'0')}catch(e){document.documentElement.setAttribute('data-ah-desktop-intro','0')}</script><style id="ah-desktop-first-visit-critical-r1157">
+<head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><script id="ah-desktop-first-visit-flag-v1115">try{var __ahDQ=new URLSearchParams(location.search),__ahDesktop=matchMedia('(min-width:901px)').matches,__ahDForce=__ahDQ.get('intro')==='1',__ahDSeen=localStorage.getItem('ah-site-first-visit-intro-v1219')==='1';document.documentElement.setAttribute('data-ah-desktop-intro',(__ahDesktop&&(__ahDForce||!__ahDSeen))?'1':'0')}catch(e){document.documentElement.setAttribute('data-ah-desktop-intro','0')}</script><style id="ah-desktop-first-visit-critical-r1157">
 html[data-ah-desktop-intro="1"] #desktop-first-visit-intro{display:grid!important;place-items:center!important;position:fixed!important;z-index:2147483190!important;top:var(--current-frame-top,96px)!important;right:var(--current-frame-side,88px)!important;bottom:var(--current-frame-bottom,96px)!important;left:var(--current-frame-side,88px)!important;overflow:hidden!important;box-sizing:border-box!important;border-radius:var(--current-frame-radius,32px)!important;background-color:#08172b!important;background-image:url("./assets/page-shield-smoked-heart.webp")!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;color:#f5fbff!important;transform:translate3d(0,0,0);transition:transform 3000ms cubic-bezier(.18,.68,.20,1)!important}
 html[data-ah-desktop-intro="1"]{overflow:hidden!important}
 html[data-ah-desktop-intro="1"] #desktop-first-visit-intro.is-raising{transform:translate3d(0,-105%,0)!important}
@@ -24,7 +24,7 @@ body[data-page] > .ah-persistent-gold-rim{z-index:2147483250!important;}
 </style>
 <script id="ah-desktop-first-visit-early-runtime-r1157">
 (()=>{'use strict';const root=document.documentElement;if(root.getAttribute('data-ah-desktop-intro')!=='1')return;window.__AH_EARLY_DESKTOP_INTRO_STARTED__=true;
-const KEY='ah-site-first-visit-intro-v1194',sleep=ms=>new Promise(r=>setTimeout(r,ms)),esc=v=>v.replace(/[&<>']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;'}[c]));
+const KEY='ah-site-first-visit-intro-v1219',sleep=ms=>new Promise(r=>setTimeout(r,ms)),esc=v=>v.replace(/[&<>']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;'}[c]));
 function boot(){const intro=document.getElementById('desktop-first-visit-intro'),lines=[...document.querySelectorAll('[data-desktop-line]')],cursor=document.getElementById('desktop-intro-cursor'),signature=document.getElementById('desktop-intro-signature-heart');if(!intro||lines.length<5||!cursor)return false;if(window.__AH_EARLY_DESKTOP_INTRO_BOOTED__)return true;window.__AH_EARLY_DESKTOP_INTRO_BOOTED__=true;if(signature){signature.classList.remove('is-visible','is-signing');signature.hidden=true;}
 const colorize=v=>{let x=esc(v);return x.replace(/AI/g,'<span class="pink">AI</span>').replace(/Human/g,'<span class="green">Human</span>').replace(/maximum efficiency/g,'<span class="green">maximum efficiency</span>').replace(/Nothing you don&#39;t need\./g,'<span class="pink">Nothing</span> you <span class="green">don&#39;t need.</span>').replace(/Just what you do\./g,'<span class="pink">Just</span> <span class="green">what you do.</span>')};
 const state=['','','','',''];function render(i){lines[i].innerHTML=colorize(state[i]);lines[i].appendChild(cursor)}async function type(i,text){for(const ch of text){state[i]+=ch;render(i);let d=34+Math.random()*48;if(/[.,%]/.test(ch))d+=65;await sleep(d)}}async function back(i,n){for(let k=0;k<n;k++){state[i]=state[i].slice(0,-1);render(i);await sleep(78+Math.random()*42)}}
@@ -408,8 +408,58 @@ html[data-ah-desktop-intro="1"]{overflow:hidden}
   html body.page-home[data-page="home"] main#main-content>section.home-overview-carousel-section{padding:48px 0!important;}
 }
 </style><script defer src="./round1180-desktop-control-fix.js?v=1196r"></script>
-<link rel="stylesheet" href="./assets/desktop-message-position-round1195.css?v=1196r"/><link rel="stylesheet" href="./assets/contact-red-screens-round1198.css?v=1214r"><link rel="stylesheet" href="./assets/machine-rims-round1199.css?v=1199r"><link rel="stylesheet" href="./assets/home-machine-solution-rim-round1204.css?v=1204r"><link rel="stylesheet" href="./assets/home-explore-carbon-3d-round1205.css?v=1205r"></head>
-<body class="page-home" data-page="home"><div aria-label="Automated Hearts introduction" aria-live="polite" class="desktop-first-visit-intro" id="desktop-first-visit-intro"><div class="desktop-intro-copy" id="desktop-intro-copy"><div class="desktop-intro-line" data-desktop-line="0"></div><div class="desktop-intro-line" data-desktop-line="1"></div><div class="desktop-intro-line" data-desktop-line="2"></div><div class="desktop-intro-line" data-desktop-line="3"></div><div class="desktop-intro-line" data-desktop-line="4"></div><span aria-hidden="true" class="desktop-intro-cursor" id="desktop-intro-cursor"></span><img alt="" aria-hidden="true" class="desktop-intro-signature-heart" hidden="" id="desktop-intro-signature-heart" src="./assets/rim-heart-embossed-round291.webp"/></div></div>
+<link rel="stylesheet" href="./assets/desktop-message-position-round1195.css?v=1196r"/><link rel="stylesheet" href="./assets/contact-red-screens-round1198.css?v=1214r"><link rel="stylesheet" href="./assets/machine-rims-round1199.css?v=1199r"><link rel="stylesheet" href="./assets/home-machine-solution-rim-round1204.css?v=1204r"><link rel="stylesheet" href="./assets/home-explore-carbon-3d-round1205.css?v=1205r"><style id="ah-intro-shield-restore-round1219">
+/* Round 1219: restore the opening shield for this version. On desktop the
+   shield itself moves inside a stationary clipped viewport so its upward
+   travel disappears beneath the upper gold rim instead of crossing over it. */
+html[data-ah-desktop-intro="1"] body[data-page] > #desktop-first-visit-intro.desktop-first-visit-intro{
+  display:block!important;
+  position:fixed!important;
+  top:var(--current-frame-top,96px)!important;
+  right:var(--current-frame-side,88px)!important;
+  bottom:var(--current-frame-bottom,96px)!important;
+  left:var(--current-frame-side,88px)!important;
+  z-index:2147483190!important;
+  overflow:hidden!important;
+  border-radius:var(--current-frame-radius,32px)!important;
+  background:transparent!important;
+  background-image:none!important;
+  transform:none!important;
+  transition:none!important;
+  contain:paint!important;
+  isolation:isolate!important;
+}
+html[data-ah-desktop-intro="1"] body[data-page] > #desktop-first-visit-intro.desktop-first-visit-intro.is-raising{
+  transform:none!important;
+}
+html[data-ah-desktop-intro="1"] #desktop-first-visit-intro > .desktop-first-visit-panel{
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+  border-radius:inherit!important;
+  background-color:#08172b!important;
+  background-image:url("./assets/page-shield-smoked-heart.webp")!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  box-shadow:inset 0 0 0 1px rgba(143,255,215,.22),inset 0 0 70px rgba(0,0,0,.42)!important;
+  transform:translate3d(0,0,0)!important;
+  transition:transform 3000ms cubic-bezier(.18,.68,.20,1)!important;
+  will-change:transform!important;
+  backface-visibility:hidden!important;
+}
+html[data-ah-desktop-intro="1"] #desktop-first-visit-intro.is-raising > .desktop-first-visit-panel{
+  transform:translate3d(0,-105%,0)!important;
+}
+/* The persistent outer and gold rims stay above the clipped shield. */
+body[data-page] > .ah-persistent-outer-rim{z-index:2147483200!important;}
+body[data-page] > .ah-persistent-gold-rim{z-index:2147483250!important;}
+</style></head>
+<body class="page-home" data-page="home"><div aria-label="Automated Hearts introduction" aria-live="polite" class="desktop-first-visit-intro" id="desktop-first-visit-intro"><div aria-hidden="true" class="desktop-first-visit-panel"><div class="desktop-intro-copy" id="desktop-intro-copy"><div class="desktop-intro-line" data-desktop-line="0"></div><div class="desktop-intro-line" data-desktop-line="1"></div><div class="desktop-intro-line" data-desktop-line="2"></div><div class="desktop-intro-line" data-desktop-line="3"></div><div class="desktop-intro-line" data-desktop-line="4"></div><span aria-hidden="true" class="desktop-intro-cursor" id="desktop-intro-cursor"></span><img alt="" aria-hidden="true" class="desktop-intro-signature-heart" hidden="" id="desktop-intro-signature-heart" src="./assets/rim-heart-embossed-round291.webp"/></div></div></div>
 <div aria-hidden="true" class="ah-persistent-outer-rim" data-m1103="0"><span class="ah-shell-edge ah-shell-edge--top" data-m1103="1"></span><span class="ah-shell-edge ah-shell-edge--right" data-m1103="2"></span><span class="ah-shell-edge ah-shell-edge--bottom" data-m1103="3"></span><span class="ah-shell-edge ah-shell-edge--left" data-m1103="4"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--tl" data-m1103="5"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--tr" data-m1103="6"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--bl" data-m1103="7"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--br" data-m1103="8"></span></div><div aria-hidden="true" class="ah-persistent-gold-rim" data-m1103="9"></div><script data-m1103="10" id="r919-shell-dom-ready">document.documentElement.classList.add("ah-shell-dom-ready");</script>
 <div aria-hidden="true" class="page-transition-shield" data-m1103="11" id="page-transition-shield"><span aria-hidden="true" class="page-transition-shield__panel" data-m1103="12"></span></div><script data-m1103="13" id="r919-shield-dom-ready">document.documentElement.classList.add("ah-shield-dom-ready");</script>
 <a aria-label="Go to homepage" class="rim-heart-emblem rim-heart-home-link" data-m1103="14" href="./index.html?v=1108r" id="rim-heart-home"><span aria-hidden="true" class="rim-heart-home-link__glow" data-m1103="15"></span><span class="sr-only" data-m1103="16">Home</span></a><a class="skip-link" data-m1103="17" href="#main-content">Skip to content</a>
@@ -588,7 +638,7 @@ html[data-ah-desktop-intro="1"]{overflow:hidden}
 </style>
 <script id="ah-desktop-first-visit-intro-runtime-v1115">
 (()=>{'use strict';if(window.__AH_EARLY_DESKTOP_INTRO_STARTED__)return;
-const KEY='ah-site-first-visit-intro-v1194';
+const KEY='ah-site-first-visit-intro-v1219';
 const force=new URLSearchParams(location.search).get('intro')==='1';
 const intro=document.getElementById('desktop-first-visit-intro');
 if(!intro)return;
