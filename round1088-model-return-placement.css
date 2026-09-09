@@ -1,8 +1,4 @@
-/* Automated Hearts Round 1088
-   Shared 3D-stage return-control standard.
-   Learning Center and Who We Help use the same bottom-edge control position shown in
-   the approved Learning Center reference. The model viewport reserves that space so
-   the button never covers the interactive 3D scene. */
+/**/
 :root{
   --r1088-return-h:54px;
   --r1088-return-gap:8px;
@@ -40,13 +36,13 @@ html body:is(.page-learning,.page-who-we-help).r1073-model-open[data-page]
   transform:translate3d(-50%,3px,0)!important;
 }
 
-/* Reserve a true lower control bay. The 3D scene ends above the return button. */
+/**/
 html body:is(.page-learning,.page-who-we-help).r1073-model-open[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport.r984-static-model-viewport{
   bottom:calc(var(--r1088-return-h) + var(--r1088-return-gap))!important;
 }
 
-/* Keep side orbs centered in the actual 3D viewing region rather than the control bay. */
+/**/
 html body:is(.page-learning,.page-who-we-help).r1073-model-open[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-orb{
   top:calc(var(--r1073-toolbar-h,78px) + (100% - var(--r1073-toolbar-h,78px) - var(--r1088-return-h) - var(--r1088-return-gap))/2)!important;
@@ -70,8 +66,7 @@ html body:is(.page-learning,.page-who-we-help).r1073-model-open[data-page]
   }
 }
 
-/* Final page-specific authority. These selectors intentionally outrank all earlier
-   top-toolbar and viewport-anchored return rules. */
+/**/
 html body.page-learning.page-learning.r1073-model-open[data-page="learning"]
 #learning-model-stage#learning-model-stage#learning-model-stage > button.learning-stage-return[data-learning-choose-another],
 html body.page-who-we-help.page-who-we-help.r1073-model-open[data-page="who-we-help"]

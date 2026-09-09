@@ -60,7 +60,8 @@
     }
   });
 
-  async function fetchVideo(url,timeout=5000){
+  const pendingVideos = new Map();
+  async function fetchVideoBytes(url,timeout=5000){
     if(mediaCache[url])return true;
     try{
       const response=await fetch(url,{cache:'force-cache'}); if(!response.ok)throw new Error('video');
@@ -69,6 +70,13 @@
       await Promise.race([new Promise((resolve)=>{probe.addEventListener('loadeddata',resolve,{once:true});probe.load()}),sleep(timeout)]);
       probe.pause(); probe.removeAttribute('src'); probe.load(); return true;
     }catch(_){return false}
+  }
+  function fetchVideo(url, timeout=5000){
+    if (mediaCache[url]) return Promise.resolve(true);
+    if (pendingVideos.has(url)) return pendingVideos.get(url);
+    const pending = fetchVideoBytes(url, timeout).finally(() => pendingVideos.delete(url));
+    pendingVideos.set(url, pending);
+    return pending;
   }
   const cardsUrl='./assets/home-rolodex-scroll-mobile-round1147-smooth.mp4';
   async function prepareCards(){return fetchVideo(cardsUrl)}

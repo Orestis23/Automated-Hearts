@@ -1,7 +1,4 @@
-/* Automated Hearts Round 1102 — iPhone first-screen performance authority.
-   Mobile keeps the visual machine hardware, but videos remain dormant until the
-   user actually opens a shutter. Expensive live backdrop/compositing effects are
-   replaced with static equivalents on phones. */
+/**/
 @media (max-width:760px){
   :root{
     --r1102-mobile-shutter-ms:720ms;
@@ -15,7 +12,7 @@
     contain:layout paint style!important;
   }
 
-  /* Restore the actual clickable shutters on iPhone. Round 1101 hid these entirely. */
+  /**/
   html body.page-home.page-home.page-home.page-home[data-page="home"]
   #home-machine-grid#home-machine-grid#home-machine-grid
   > .home-hero-engine-frame.home-hero-engine-frame
@@ -36,7 +33,7 @@
     cursor:pointer!important;
     pointer-events:auto!important;
     touch-action:manipulation!important;
-    /* Static approximation of the existing smoked glass. No live backdrop blur. */
+    /**/
     background:
       radial-gradient(ellipse 118% 78% at 50% 18%,rgba(242,255,255,.105) 0%,rgba(208,236,240,.052) 30%,transparent 62%),
       radial-gradient(ellipse 142% 126% at 50% 46%,rgba(172,208,217,.082) 0%,rgba(102,137,148,.058) 55%,rgba(10,23,30,.10) 82%,rgba(0,4,8,.19) 100%),
@@ -73,8 +70,7 @@
     pointer-events:auto!important;
   }
 
-  /* Keep the familiar heart handle, but make it static instead of running a
-     continuous filter/drop-shadow pulse on the iPhone GPU. */
+  /**/
   html body.page-home.page-home[data-page="home"]
   #home-machine-grid > .home-hero-engine-frame > button.home-machine-haze-screen::before{
     animation:none!important;
@@ -84,8 +80,7 @@
       drop-shadow(0 0 8px rgba(112,255,213,.58))!important;
   }
 
-  /* Posters are the zero-cost idle state. Videos do not become a visible
-     compositor layer until the shutter is open and a decoded frame exists. */
+  /**/
   html body.page-home.page-home[data-page="home"]
   #home-machine-grid .home-mobile-machine-poster{
     opacity:1!important;
@@ -108,8 +103,7 @@
     visibility:visible!important;
   }
 
-  /* The fixed ticker was continuously blurring everything behind it. Preserve its
-     matte gradients but remove the live backdrop readback on mobile Safari. */
+  /**/
   html body.page-home.page-home[data-page="home"]
   #home-ticker-wrap #home-charity-ticker > .ticker-matte-film,
   html body.page-home.page-home[data-page="home"]
@@ -122,8 +116,7 @@
     filter:none!important;
   }
 
-  /* Do not layout/paint the rest of the long Home page until it approaches the
-     viewport. This preserves the sections while dramatically reducing first paint. */
+  /**/
   @supports (content-visibility:auto){
     html body.page-home[data-page="home"] main#main-content > section:not(#home-opening-hero){
       content-visibility:auto!important;

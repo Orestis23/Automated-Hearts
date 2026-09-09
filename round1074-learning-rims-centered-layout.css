@@ -1,6 +1,4 @@
-/* Automated Hearts Round 1074 — Learning Center rim parity + centered upper controls.
-   Focused change only: normalize the first two bonded medallion rims to Strategy Lab
-   and vertically center the three medallions + title fields after removal of the old rail. */
+/**/
 
 html body.page-learning[data-page="learning"] #learning-route-buttons
 img.r1073-learning-bonded-rim{
@@ -12,7 +10,7 @@ img.r1073-learning-bonded-rim{
   -webkit-clip-path:none!important;
 }
 
-/* Do not let any historical CSS paint a second ring around the bonded image. */
+/**/
 html body.page-learning[data-page="learning"] #learning-route-buttons
 :is(a.learning-medallion-button,.learning-medallion-media)::before,
 html body.page-learning[data-page="learning"] #learning-route-buttons
@@ -25,8 +23,7 @@ html body.page-learning[data-page="learning"] #learning-route-buttons
   box-shadow:none!important;
 }
 
-/* With the obsolete lower rail gone, use the entire upper Learning Center section
-   and center the complete medallion + label group vertically in that space. */
+/**/
 @media (min-width:761px){
   html body.page-learning[data-page="learning"] #learning-route-buttons{
     box-sizing:border-box!important;
@@ -75,7 +72,7 @@ html body.page-learning[data-page="learning"] #learning-route-buttons
   }
 }
 
-/* Mobile remains naturally scrollable; only give the group balanced clearances. */
+/**/
 @media (max-width:760px){
   html body.page-learning[data-page="learning"] #learning-route-buttons{
     height:auto!important;

@@ -1,5 +1,5 @@
-/* Automated Hearts Round 1204 — Home Solution-machine window matches the Solution-page hardware. */
-/* Mobile Home: apply the triple worn-alloy rim to the left machine only. */
+/**/
+/**/
 #machine-stack .machine-frame.machine-3d-frame{
   border:clamp(14px,4.2vw,22px) solid #a9b3b6!important;
   border-image:url('./machine-rim-triple-round1199.svg') 128 stretch!important;
@@ -20,8 +20,7 @@
 }
 #machine-stack .machine-frame.machine-3d-frame .window-shutter{border-radius:0!important;}
 
-/* Desktop Home already uses the triple-rim asset; make the left machine use the
-   same recessed depth/shading values as the Solution-page window. */
+/**/
 @media(min-width:801px){
   html body.page-home.page-home[data-page="home"] #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame:first-child{
     border:28px solid #a9b3b6!important;

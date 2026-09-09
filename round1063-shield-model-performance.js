@@ -9,7 +9,8 @@
   const EASE = 'cubic-bezier(.22,.66,.24,1)';
   const readyFrames = new WeakSet();
   const waiters = new WeakMap();
-  const warmed = new Set();
+  const warmed = new Map();
+  let lastModelIntent = 0;
   let bypassOrb = null;
 
   const stageFor = (frame) => frame?.closest?.('#learning-model-stage,#who-help-model-stage') || null;
@@ -22,25 +23,45 @@
     let url;
     try { url = new URL(raw, location.href); } catch (_) { return; }
     if (location.protocol !== 'file:' && url.origin !== location.origin) return;
-    if (warmed.has(url.href)) return;
-    warmed.add(url.href);
+    if (warmed.has(url.href)) return warmed.get(url.href);
     if (location.protocol === 'file:') {
       const link = document.createElement('link');
       link.rel = 'prefetch';
       link.href = url.href;
       document.head.appendChild(link);
+      warmed.set(url.href, Promise.resolve());
       return;
     }
-    const options = { cache:'force-cache', credentials:'same-origin' };
+    const options = { cache:'force-cache', credentials:'same-origin', priority:high?'high':'low' };
     if (high) options.priority = 'high';
-    fetch(url.href, options).catch(() => {});
+    const controller = new AbortController();
+    options.signal = controller.signal;
+    const timeout = setTimeout(() => controller.abort(), 10000);
+    const request = fetch(url.href, options)
+      .then(response => { if (!response.ok) throw new Error('Model warm-up unavailable'); return response.arrayBuffer(); })
+      .catch(() => { warmed.delete(url.href); })
+      .finally(() => clearTimeout(timeout));
+    warmed.set(url.href, request);
+    return request;
   };
 
-  const warmAllModels = () => {
+  // Background warming stays serial and yields to page loading and interaction.
+  const idle = () => new Promise(resolve => {
+    if ('requestIdleCallback' in window) requestIdleCallback(resolve, {timeout:2500});
+    else setTimeout(resolve, 700);
+  });
+  const warmAllModels = async () => {
     if (!isModelPage) return;
-    document.querySelectorAll('#learning-model-stage iframe[data-src],#who-help-model-stage iframe[data-src]')
-      .forEach((frame) => warm(frame.dataset.src));
-    warm('./vendor/three-0.160.0/three.min.js');
+    const urls = ['./vendor/three-0.160.0/three.min.js',
+      ...Array.from(document.querySelectorAll('#learning-model-stage iframe[data-src],#who-help-model-stage iframe[data-src]'), frame => frame.dataset.src)];
+    for (const url of new Set(urls)) {
+      await idle();
+      while (document.hidden || performance.now() - lastModelIntent < 2500 ||
+        document.querySelector('[data-model-preparing="1"], #ah-route-shield:not([hidden])')) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
+      await warm(url);
+    }
   };
 
   const hydrate = (frame) => {
@@ -289,6 +310,7 @@
     const warmIntent = (target, high=false) => {
       const control = target?.closest?.(intentSelector);
       if (!control) return;
+      lastModelIntent = performance.now();
       let frame = null;
       if (page === 'learning') {
         frame = document.querySelector(`#learning-model-stage [data-learning-slide="${control.dataset.learningModel}"] iframe`);
@@ -340,13 +362,13 @@
     },true));
     }
 
-    /* Once the first visible page content settles, fetch every tiny model document
-       and the two shared Three runtimes into HTTP/SW cache. No hidden renderer is
-       created, so this improves later selections without consuming extra WebGL contexts. */
+    // Do not compete with initial CSS/images or limited connections. Intent
+    // warming above still starts the chosen model immediately on every device.
     const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    if (!connection?.saveData) {
-      if ('requestIdleCallback' in window) requestIdleCallback(warmAllModels,{timeout:1800});
-      else setTimeout(warmAllModels,700);
+    if (!connection?.saveData && !/^(slow-)?2g$/.test(connection?.effectiveType || '')) {
+      const startWarming = () => setTimeout(() => { warmAllModels().catch(() => {}); }, 2500);
+      if (document.readyState === 'complete') startWarming();
+      else window.addEventListener('load', startWarming, {once:true});
     }
   }
 

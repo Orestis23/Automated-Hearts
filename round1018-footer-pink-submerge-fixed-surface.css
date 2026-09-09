@@ -1,11 +1,11 @@
-/* Round 1018 — footer hardware: one identical pink side, face submerges while the surface line stays fixed. */
+/**/
 :root{
   --r1018-footer-rest:url("./assets/footer-button-message-like-sandy-side-round915.svg?v=1018r");
   --r1018-footer-pressed:url("./assets/footer-button-message-like-sandy-side-pressed-submerged-round1018.svg?v=1018r");
   --r1018-footer-press-depth:4px;
 }
 
-/* The anchor is the stationary mounting/surface box. It never translates. */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer.site-footer.site-footer--minimal
 nav#primary-nav#primary-nav.footer-primary-nav
@@ -25,12 +25,12 @@ nav#primary-nav#primary-nav.footer-primary-nav
   transform:none!important;
   translate:none!important;
   scale:none!important;
-  /* This is the fixed black surface/slot beneath the hardware. */
+  /**/
   box-shadow:inset 0 -2px 0 #020305,0 1px 0 #020305,0 4px 6px rgba(0,0,0,.34)!important;
   transition:filter 160ms ease!important;
 }
 
-/* No legacy DOM/pseudo pink side can double the single baked-in side. */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
  a.footer-structure-control.mechanical-send-control[data-nav]::before,
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
@@ -43,8 +43,7 @@ html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.f
   opacity:0!important;
 }
 
-/* Pressing swaps to the same hardware with the pink siding fully submerged.
-   The outer anchor never moves, so the black surface line cannot move down. */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer.site-footer.site-footer--minimal
 nav#primary-nav#primary-nav.footer-primary-nav
@@ -57,7 +56,7 @@ nav#primary-nav#primary-nav.footer-primary-nav
   box-shadow:inset 0 -2px 0 #020305,0 1px 0 #020305,0 2px 3px rgba(0,0,0,.26)!important;
 }
 
-/* The lettering follows the face downward, independently of the stationary surface box. */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
  a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy{
   transform:none!important;

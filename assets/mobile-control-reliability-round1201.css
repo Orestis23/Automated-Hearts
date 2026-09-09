@@ -1,6 +1,4 @@
-/* Round 1201 — authoritative mobile tap state.
-   Only data-ah-control-pressed may depress persistent shell controls. Older
-   :active/.is-pressed rules are neutralized so canceled touches cannot latch. */
+/**/
 @media (max-width:900px){
   html body > nav.footer a[href],
   html body > nav.footer a[href]:active,
@@ -21,12 +19,20 @@
   html body > a.message:active,
   html body > a.message.is-pressed{
     transform:translate3d(0,0,0)!important;
-    box-shadow:0 3px 0 #a9006f,inset 0 0 0 1px rgba(255,255,255,.1)!important;
-    background:linear-gradient(160deg,#25313c,#0d151d 55%,#02070b)!important;
+    box-shadow:0 3px 0 #a9006f,inset 0 0 0 1px rgba(255,255,255,.10),inset 0 0 12px rgba(57,145,188,.16)!important;
+    background-color:#0b2135!important;
+    background-image:linear-gradient(160deg,rgba(40,92,122,.30),rgba(6,28,46,.42) 58%,rgba(1,9,17,.52)),url("./footer-message-suede-source-round1177.webp")!important;
+    background-position:center center,center center!important;
+    background-size:cover,cover!important;
+    background-repeat:no-repeat,no-repeat!important;
   }
   html body > a.message[data-ah-control-pressed="1"]{
     transform:translate3d(0,5px,0)!important;
-    box-shadow:0 0 0 #a9006f,inset 0 2px 6px rgba(0,0,0,.72),inset 0 0 0 1px rgba(255,255,255,.06)!important;
-    background:linear-gradient(160deg,#141d24,#071016 58%,#010406)!important;
+    box-shadow:0 0 0 #a9006f,inset 0 2px 6px rgba(0,0,0,.60),inset 0 0 0 1px rgba(255,255,255,.06)!important;
+    background-color:#071827!important;
+    background-image:linear-gradient(160deg,rgba(4,23,38,.48),rgba(1,10,18,.64)),url("./footer-message-suede-source-round1177.webp")!important;
+    background-position:center center,center center!important;
+    background-size:cover,cover!important;
+    background-repeat:no-repeat,no-repeat!important;
   }
 }

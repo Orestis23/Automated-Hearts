@@ -1,10 +1,4 @@
-/* Automated Hearts Round 1140
-   Shared machine-window shield treatment:
-   - translucent carbon-fiber/glass overlay on Home and Solution windows
-   - large pulsing heart anchored at the bottom edge while closed
-   - shield raises almost completely; only a shallow lower lip remains
-   - the heart never swaps to a smaller icon; the exposed lip naturally shows
-     only the bottom of the same heart and remains clickable to lower the shield. */
+/**/
 
 @keyframes r1140-bottom-heart-pulse{
   0%,100%{
@@ -17,7 +11,7 @@
   }
 }
 
-/* ---------- Desktop Home: both machine windows ---------- */
+/**/
 html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame{
   --r1138-open-lip:28px!important;
   overflow:hidden!important;
@@ -68,7 +62,7 @@ html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-fra
   pointer-events:auto!important;
 }
 
-/* ---------- Mobile Home: both windows ---------- */
+/**/
 #machine-stack .machine-frame{
   --r1138-mobile-open-lip:22px!important;
   overflow:hidden!important;
@@ -121,7 +115,7 @@ html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-fra
   height:6px!important;
 }
 
-/* ---------- Desktop Solution machine ---------- */
+/**/
 #solution-process-header .solution-process-window{
   --r1138-solution-open-lip:28px!important;
   overflow:hidden!important;
@@ -175,7 +169,7 @@ html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-fra
   height:7px!important;
 }
 
-/* ---------- Mobile Solution machine ---------- */
+/**/
 #lite-model-stage .solution-mobile-window-cover{
   --r1138-mobile-solution-lip:22px!important;
   background-color:rgba(5,12,18,.28)!important;
@@ -225,7 +219,7 @@ html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-fra
   height:6px!important;
 }
 
-/* Keep the pulse inexpensive on phones: transform + opacity only. */
+/**/
 @media(max-width:760px){
   #machine-stack .window-shutter::before,
   #machine-stack .machine-frame.open .window-shutter::before,

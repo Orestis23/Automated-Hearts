@@ -1,6 +1,6 @@
-/* Round 1205 — Home Explore quote alignment, subtle carbon surface, and dimensional route controls. */
+/**/
 
-/* Mobile Home Explore: subtle carbon-fiber navy face with a true mechanical depth. */
+/**/
 html body .explore-key{
   position:relative!important;
   display:flex!important;
@@ -90,7 +90,7 @@ html body .explore-key:active{
     inset 0 -4px 10px rgba(0,0,0,.28)!important;
 }
 
-/* Mobile Home route title buttons: shallow 3-D face like Explore, same footprint. */
+/**/
 html body .route-card .route-label{
   position:relative!important;
   border-color:#8fffd7!important;
@@ -118,7 +118,7 @@ html body .route-card:active .route-label{
     inset 0 -3px 6px rgba(0,0,0,.24)!important;
 }
 
-/* Desktop Home Explore: same restrained carbon face; center quote and put attribution at quote lower-right. */
+/**/
 @media (min-width:901px){
   html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore{
     position:relative!important;
@@ -165,7 +165,7 @@ html body .route-card:active .route-label{
     text-shadow:0 0 5px rgba(255,46,168,.28)!important;
   }
 
-  /* Desktop route-button title faces receive the same dimensional cue as Explore. */
+  /**/
   html body.page-home[data-page="home"] #home-route-buttons .premium-route-card__title-sign{
     border:1px solid #8fffd7!important;
     border-radius:9px!important;

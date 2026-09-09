@@ -1,14 +1,14 @@
-/* Automated Hearts Round 1062 lean CSS: exact original cascade order. */
+/**/
 
-/* SOURCE: round909-rim-footer-message-depth.css */
+/**/
 :root{--r909-rim:url("./assets/solution-formula-current-brand-round823.webp"); --r909-rim-size:clamp(1280px,83.333vw,2560px); --r909-suede:url("./assets/button-leather-grain-visible-round794.webp"); --r909-message-face:url("./assets/message-button-suede-closer-round909.webp?v=909r"); --r909-mint:#8fffd7; --r909-mint-hi:#b7ffe8; --r909-pink-side:linear-gradient(180deg,#ff78c4 0%,#ec3ca3 30%,#bd247b 62%,#751044 84%,#3c061f 100%); --r909-message-depth:3px;}html:has(> body[data-page][class][class][class][class][class][class]), html:has(> body[data-page][class][class][class][class][class][class]) > body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class]{background-color:#06101d!important; background-image:var(--r909-rim)!important; background-position:center center!important; background-size:var(--r909-rim-size) var(--r909-rim-size)!important; background-repeat:repeat!important; background-attachment:fixed!important; background-blend-mode:normal!important; image-rendering:auto!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class] > .viewport-carbon-backdrop, html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class] > .viewport-frame-edges, html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class] > .viewport-frame-edges > .viewport-frame-edge{display:none!important; background:none!important; background-image:none!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class] > header.site-header, html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class] > footer#site-footer.site-footer--minimal, html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class] > footer#site-footer.site-footer--minimal > .minimal-footer-row{background:transparent!important; background-image:none!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-color:transparent!important; background-image:var(--r909-message-face)!important; background-position:top right!important; background-size:100% 100%!important; background-repeat:no-repeat!important; background-blend-mode:normal!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class] footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:not(#r909f1):not(#r909f2):not(#r909f3):not(#r909f4):not(#r909f5):not(#r909f6):not(#r909f7):not(#r909f8){position:relative!important; isolation:isolate!important; overflow:visible!important; box-sizing:border-box!important; background-color:#08172b!important; background-image:var(--r909-suede)!important; background-size:810px 810px!important; background-position:center!important; background-repeat:repeat!important; background-blend-mode:normal!important; border:2px solid var(--r909-mint)!important; outline:0!important; border-radius:0!important; box-shadow: inset 0 0 0 2px #071824, inset 0 0 0 3px var(--r909-mint-hi), inset 0 0 0 5px #071824, inset 0 -2px 0 var(--r909-mint-hi), inset 0 1px 0 rgba(255,255,255,.12), 0 1px 0 rgba(143,255,215,.72)!important; transform:none!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class] footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:not(#r909f1):not(#r909f2):not(#r909f3):not(#r909f4):not(#r909f5):not(#r909f6):not(#r909f7):not(#r909f8)::before{content:none!important; display:none!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class] footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:not(#r909f1):not(#r909f2):not(#r909f3):not(#r909f4):not(#r909f5):not(#r909f6):not(#r909f7):not(#r909f8)::after{content:""!important; display:block!important; position:absolute!important; z-index:0!important; left:2px!important; right:2px!important; top:auto!important; bottom:calc(-1 * var(--r909-message-depth))!important; height:var(--r909-message-depth)!important; border:0!important; border-radius:0!important; background:var(--r909-pink-side)!important; box-shadow:0 3px 5px rgba(0,0,0,.50)!important; opacity:1!important; transform:none!important; pointer-events:none!important; transition:height 70ms linear,bottom 70ms linear,opacity 50ms linear!important;}html body[data-page] footer#site-footer.site-footer nav#primary-nav a.footer-structure-control > .send-control-copy.footer-control-copy{position:relative!important; z-index:3!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class] footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:not(#r909f1):not(#r909f2):not(#r909f3):not(#r909f4):not(#r909f5):not(#r909f6):not(#r909f7):not(#r909f8):is(:active,.is-nav-pressed,[aria-pressed="true"]){background-image:var(--r909-suede)!important; background-size:810px 810px!important; transform:translateY(var(--r909-message-depth))!important; box-shadow: inset 0 0 0 2px #071824, inset 0 0 0 3px var(--r909-mint-hi), inset 0 0 0 5px #071824, inset 0 -2px 0 var(--r909-mint-hi), inset 0 4px 8px rgba(0,0,0,.28), 0 1px 0 rgba(143,255,215,.72)!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class] footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer#site-footer nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:not(#r909f1):not(#r909f2):not(#r909f3):not(#r909f4):not(#r909f5):not(#r909f6):not(#r909f7):not(#r909f8):is(:active,.is-nav-pressed,[aria-pressed="true"])::after{height:0!important; bottom:0!important; opacity:0!important; box-shadow:none!important;}html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[data-page="home"] #negative-software-explore#negative-software-explore#negative-software-explore#negative-software-explore{background-image:var(--r909-suede)!important; background-size:945px 945px!important; background-position:center!important; background-repeat:repeat!important;}@media (max-width:760px){:root{--r909-rim-size:800px;} html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]{ background-size:720px 720px!important; } html body.page-home[data-page="home"] #negative-software-explore#negative-software-explore{ background-size:810px 810px!important; }}
 
-/* SOURCE: round915-sandy-message-footer-borders.css */
+/**/
 :root{--r915-message-face:url("./assets/message-button-suede-sandy-side-round915.svg?v=915r"); --r915-message-face-pressed:url("./assets/message-button-suede-sandy-side-pressed-round915.svg?v=915r"); --r915-footer-face:url("./assets/footer-button-message-like-sandy-side-round915.svg?v=915r"); --r915-footer-face-pressed:url("./assets/footer-button-message-like-sandy-side-pressed-round915.svg?v=915r"); --r915-footer-press-depth:4px;}html body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control, html body[data-page][class][class][class][class][class][class][class][class][class][class] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-image:var(--r915-message-face)!important;}html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched), html.ah-message-persist-open body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{background-image:var(--r915-message-face-pressed)!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]{position:relative!important; isolation:isolate!important; overflow:visible!important; background-color:transparent!important; background-image:var(--r915-footer-face)!important; background-position:center!important; background-size:100% 100%!important; background-repeat:no-repeat!important; border:0!important; outline:0!important; box-shadow:none!important; transform:none!important; filter:brightness(.58) saturate(.72) contrast(.97) drop-shadow(0 6px 7px rgba(0,0,0,.50))!important; transition:filter 180ms ease!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]::before, html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]::after{content:none!important;display:none!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav] > .send-control-copy.footer-control-copy{position:absolute!important; inset:0!important; z-index:3!important; display:grid!important; place-items:center!important; background:transparent!important; background-image:none!important; border:0!important; box-shadow:none!important; margin:0!important; padding:0 10px 3px!important; transform:none!important; transition:transform 90ms cubic-bezier(.2,.78,.24,1)!important;}html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-indicator.send-control-indicator{display:none!important;}html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] .footer-nav-label{font-family:"Orbitron",system-ui,sans-serif!important;}html body[data-page] footer#site-footer.site-footer--minimal:is(.is-footer-cluster-lit,.is-footer-button-cluster-hot) nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav], html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav:is(:hover,:focus-within) > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav], html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]:is(:hover,:focus-visible){filter:brightness(1.07) saturate(1.03) contrast(1.01) drop-shadow(0 6px 7px rgba(0,0,0,.50))!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]){background-image:var(--r915-footer-face-pressed)!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]) > .send-control-copy.footer-control-copy{transform:translate3d(0,var(--r915-footer-press-depth),0)!important;}
 
-/* SOURCE: round941-direct-process-buttons-explore.css */
+/**/
 @layer ah-r929-final {
-/* Round 941 — direct corrections after visual verification. */
+/**/
 :root{
   --r941-message-rest:url("./assets/message-button-square-sandy-side-round941.svg");
   --r941-message-pressed:url("./assets/message-button-square-sandy-side-pressed-round941.svg");
@@ -16,7 +16,7 @@
   --r941-footer-pressed:url("./assets/footer-button-message-like-sandy-side-pressed-round915.svg");
 }
 
-/* Top Messages: true square, same suede/sand hardware recipe as footer. */
+/**/
 html body[data-page][class][class][class][class] > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
   width:72px!important;min-width:72px!important;max-width:72px!important;
   height:72px!important;min-height:72px!important;max-height:72px!important;
@@ -43,7 +43,7 @@ html body[data-page] > a#header-send-message#header-send-message .send-control-c
   display:grid!important;place-items:center!important;margin:0!important;padding:0!important;transform:none!important;
 }
 
-/* Footer: true horizontal rectangles using the rectangular version of the exact same hardware recipe. */
+/**/
 html body[data-page][class][class][class][class] > footer#site-footer#site-footer.site-footer--minimal nav#primary-nav#primary-nav > .primary-nav__group
 > a.footer-structure-control.mechanical-send-control[data-nav]{
   flex:0 1 164px!important;width:min(164px,16vw)!important;min-width:112px!important;max-width:164px!important;
@@ -85,7 +85,7 @@ html body[data-page] > footer#site-footer#site-footer nav#primary-nav#primary-na
   filter:brightness(1.32) drop-shadow(0 0 3px rgba(255,79,178,.86)) drop-shadow(0 0 9px rgba(255,79,178,.38))!important;
 }
 
-/* Process screens: the requested AH drive path is the actual pink header. */
+/**/
 html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[class][data-page="home"]
 main#main-content#main-content#main-content #home-solution-framework#home-solution-framework
 .negative-software-grid-round344 > article.home-process-stage.negative-software-screen-round344:not(.home-process-stage--key) > h3{
@@ -103,7 +103,7 @@ html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.
   border:0!important;box-shadow:0 0 4px rgba(255,46,168,.44)!important;
 }
 
-/* Explore: give the quote the majority of the display and left-align it. */
+/**/
 html body.page-home.page-home.page-home.page-home.page-home.page-home[class][data-page="home"]
 #home-solution-framework#home-solution-framework .negative-software-grid-round344 > article.home-process-stage--key
 > a#negative-software-explore#negative-software-explore{
@@ -158,10 +158,9 @@ html body.page-home.page-home.page-home.page-home.page-home.page-home[class][dat
 }
 
 
-/* SOURCE: round942-performance-screen-controls.css */
+/**/
 @layer ah-r929-final {
-/* Round 942 — terminal realism, machine-rim process frames, larger footer/message hardware,
-   quote typography, and paint/compositor containment. */
+/**/
 :root{
   --r942-process-rim-width:calc(var(--r870-machine-rim-width,15px) * .5);
   --r942-process-rim:url("./assets/machine-rim-worn-alloy-round886.svg?v=886r");
@@ -169,8 +168,7 @@ html body.page-home.page-home.page-home.page-home.page-home.page-home[class][dat
   --r942-footer-gap:clamp(4px,.55vw,9px);
 }
 
-/* Process terminals: no decorative pink bar. Keep the real AH:\\*.exe header and use
-   subdued period-appropriate CRT raster/retrace lines instead of modern accent bars. */
+/**/
 html body.page-home.page-home.page-home.page-home.page-home[class][data-page="home"]
 #home-solution-framework#home-solution-framework .negative-software-grid-round344
 > article.home-process-stage.negative-software-screen-round344:not(.home-process-stage--key){
@@ -227,7 +225,7 @@ html body.page-home.page-home.page-home.page-home.page-home[class][data-page="ho
   position:relative!important;z-index:6!important;
 }
 
-/* Explore receives the same half-thickness machine-window alloy frame. */
+/**/
 html body.page-home.page-home.page-home.page-home.page-home[class][data-page="home"]
 #home-solution-framework#home-solution-framework article.home-process-stage--key
 > a#negative-software-explore#negative-software-explore{
@@ -243,7 +241,7 @@ html body.page-home.page-home.page-home.page-home.page-home[class][data-page="ho
   padding:clamp(15px,1.1vw,20px) clamp(13px,1vw,18px)!important;
   contain:layout paint!important;
 }
-/* Remove legacy Explore decorative pseudo-hardware that competes with the alloy rim. */
+/**/
 html body.page-home.page-home.page-home.page-home.page-home[class][data-page="home"]
 #negative-software-explore#negative-software-explore::before,
 html body.page-home.page-home.page-home.page-home.page-home[class][data-page="home"]
@@ -276,8 +274,7 @@ html body.page-home.page-home.page-home.page-home.page-home[class][data-page="ho
   letter-spacing:.025em!important;text-align:right!important;opacity:.92!important;
 }
 
-/* Messages: keep the existing hardware recipe, enlarge into the bottom-left direction,
-   and mathematically center the square in the top-right rim corner. */
+/**/
 html body[data-page][class][class][class][class][class] > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
   top:calc((var(--current-frame-top,96px) - var(--r942-message-size)) / 2)!important;
   right:calc((var(--current-frame-side,88px) - var(--r942-message-size)) / 2)!important;
@@ -294,7 +291,7 @@ html body[data-page] > a#header-send-message#header-send-message .send-control-e
   width:38%!important;max-width:38%!important;height:auto!important;max-height:none!important;margin:0!important;
 }
 
-/* Footer: maximize the five rectangular controls across the entire usable footer width. */
+/**/
 html body[data-page][class][class][class][class][class] > footer#site-footer#site-footer.site-footer--minimal > .minimal-footer-row{
   overflow:visible!important;
 }
@@ -318,12 +315,12 @@ html body[data-page][class][class][class][class][class] > footer#site-footer#sit
   flex:none!important;width:100%!important;min-width:0!important;max-width:none!important;
   height:100%!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important;
   margin:0!important;padding:0!important;
-  /* fully dimmed at rest; only the hovered/focused control lights */
+  /**/
   opacity:1!important;
   filter:brightness(.30) saturate(.58) contrast(.92) drop-shadow(0 5px 6px rgba(0,0,0,.48))!important;
   transition:filter 165ms ease,transform 100ms cubic-bezier(.2,.78,.24,1)!important;
 }
-/* Defeat every legacy group-wide illumination path. */
+/**/
 html body[data-page] footer#site-footer.site-footer--minimal:is(.is-footer-cluster-lit,.is-footer-button-cluster-hot)
 nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav],
 html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav:is(:hover,:focus-within)
@@ -349,7 +346,7 @@ html body[data-page] > footer#site-footer#site-footer nav#primary-nav#primary-na
   font-size:clamp(8px,.8vw,12px)!important;line-height:1.04!important;opacity:1!important;
 }
 
-/* Keep expensive independent render surfaces isolated from unrelated page paint. */
+/**/
 iframe.home-hero-engine-embed,iframe.solutions-engine-model-embed,
 .learning-lesson-slide > iframe,.shared-model-carousel-stage iframe{
   contain:layout paint!important;
@@ -376,14 +373,9 @@ iframe.home-hero-engine-embed,iframe.solutions-engine-model-embed,
 }
 
 
-/* SOURCE: round943-final-batch.css */
+/**/
 @layer ah-r929-final {
-/* Round 943 — final requested batch:
-   - restore Solution leather cabinets; keep high-detail coarse grain only in recessed copy wells
-   - terminal CRT details + half-thickness machine-window rims
-   - formal Explore quotation typography
-   - uniform portrait footer controls, 14px desktop labels, full-width distribution, cluster illumination
-   - top-right Messages control shifted down/left with a larger centered envelope */
+/**/
 
 :root{
   --r943-solution-leather:url("./assets/deep-space-navy-leather-far-depth-round754.webp");
@@ -397,10 +389,7 @@ iframe.home-hero-engine-embed,iframe.solutions-engine-model-embed,
   --r943-footer-gap:clamp(8px,1.15vw,24px);
 }
 
-/* ================================================================
-   THE SOLUTION — leather stays on the cabinet; only the sunken copy
-   well receives the coarse, high-resolution granular surface.
-   ================================================================ */
+/**/
 html body.page-solutions.page-solutions.page-solutions.page-solutions.page-solutions[data-page="solutions"]
 main#main-content#main-content#main-content #solution-copper-tablets#solution-copper-tablets
 .solution-copper-tablet,
@@ -476,10 +465,7 @@ main#main-content#main-content#main-content #solution-copper-tablets#solution-co
   text-shadow:0 1px 1px rgba(0,3,8,.98),0 0 4px rgba(0,0,0,.68)!important;
 }
 
-/* ================================================================
-   PROCESS TERMINALS — actual AH:\*.exe headers, no pink bar, subtle
-   CRT raster/retrace details, and the exact machine-window rim at 1/2.
-   ================================================================ */
+/**/
 html body.page-home.page-home.page-home.page-home.page-home.page-home[class][data-page="home"]
 #home-solution-framework#home-solution-framework .negative-software-grid-round344
 > article.home-process-stage.negative-software-screen-round344:not(.home-process-stage--key),
@@ -531,7 +517,7 @@ html body.page-home.page-home.page-home.page-home.page-home.page-home[class][dat
   background:none!important;border:0!important;box-shadow:none!important;
 }
 
-/* Explore — typographically legitimate quotation, lighter weight and balanced center. */
+/**/
 html body.page-home.page-home.page-home.page-home.page-home.page-home[class][data-page="home"]
 #home-solution-framework#home-solution-framework article.home-process-stage--key
 > a#negative-software-explore#negative-software-explore{
@@ -562,10 +548,7 @@ html body.page-home.page-home.page-home.page-home.page-home.page-home[class][dat
   letter-spacing:.02em!important;text-align:right!important;opacity:.9!important;
 }
 
-/* ================================================================
-   MESSAGES — retain the square hardware, move it down/left into the
-   visual center of the upper-right corner and enlarge the envelope.
-   ================================================================ */
+/**/
 html body[data-page][class][class][class][class][class][class]
 > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
   top:12px!important;right:12px!important;bottom:auto!important;left:auto!important;
@@ -580,12 +563,7 @@ html body[data-page] > a#header-send-message#header-send-message .send-control-e
   margin:0!important;transform:none!important;transform-origin:center!important;
 }
 
-/* ================================================================
-   FOOTER — identical suede/sand hardware recipe, now portrait-oriented.
-   Equal width is based on the longest wrapped label, 14px desktop type,
-   and fixed controls are distributed across the full footer span.
-   Hover/focus anywhere in the five-button group lights all five together.
-   ================================================================ */
+/**/
 html body[data-page][class][class][class][class][class][class]
 > footer#site-footer#site-footer.site-footer--minimal nav#primary-nav#primary-nav.footer-primary-nav{
   position:absolute!important;
@@ -616,7 +594,7 @@ html body[data-page][class][class][class][class][class][class]
   filter:brightness(.40) saturate(.72) contrast(.94) drop-shadow(0 5px 6px rgba(0,0,0,.48))!important;
   transition:filter 170ms ease,transform 100ms cubic-bezier(.2,.78,.24,1)!important;
 }
-/* One hovered/focused button energizes the complete bank: .40 -> 1.0 = exactly 2.5x brightness. */
+/**/
 html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav:is(:hover,:focus-within)
 > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav],
 html body[data-page] footer#site-footer.site-footer--minimal:is(.is-footer-cluster-lit,.is-footer-button-cluster-hot)
@@ -688,8 +666,7 @@ nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-se
 }
 
 @layer ah-r929-final {
-/* Round 943 hard authority for legacy process pseudo-elements: earlier rounds used deliberately
-   extreme specificity, so these selectors explicitly retire those obsolete bars/readouts. */
+/**/
 html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[class][data-page="home"]
 main#main-content#main-content#main-content#main-content #home-solution-framework#home-solution-framework#home-solution-framework#home-solution-framework
 .negative-software-grid-round344 > article.home-process-stage.negative-software-screen-round344:not(.home-process-stage--key) > h3::before,
@@ -716,10 +693,9 @@ main#main-content#main-content#main-content#main-content #home-solution-framewor
 }
 
 
-/* SOURCE: round944-balanced-emblem-glass-ticker-footer-message.css */
+/**/
 @layer ah-r929-final {
-/* Round 944 — balanced Solution exhibit, one-line footer controls, centered message envelope,
-   and convex futuristic glass ticker. Visual-quality preserving overrides only. */
+/**/
 :root{
   --r944-emblem-gap:clamp(46px,5.2vw,78px);
   --r944-emblem-width:min(90%,1080px);
@@ -733,11 +709,7 @@ main#main-content#main-content#main-content#main-content #home-solution-framewor
   --r944-glass:#061421;
 }
 
-/* ================================================================
-   THE SOLUTION — equal breathing room above and below the gold exhibit.
-   The section immediately precedes the ticker, so equal block padding gives
-   an exact top-gap = bottom-gap relationship at every breakpoint.
-   ================================================================ */
+/**/
 html body.page-solutions.page-solutions.page-solutions.page-solutions.page-solutions[data-page="solutions"]
 main#main-content#main-content#main-content > section#live-refreshing-websites#live-refreshing-websites.solution-engine-section{
   box-sizing:border-box!important;
@@ -785,10 +757,7 @@ html body.page-solutions.page-solutions.page-solutions.page-solutions.page-solut
   object-position:center!important;
 }
 
-/* ================================================================
-   FOOTER — 14px one-line labels, one common width sized to the longest
-   label, full-span distribution, and true vertical centering in the rim.
-   ================================================================ */
+/**/
 html body[data-page][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer.site-footer--minimal nav#primary-nav#primary-nav.footer-primary-nav{
   position:absolute!important;
@@ -856,7 +825,7 @@ html body[data-page] > footer#site-footer#site-footer nav#primary-nav#primary-na
   word-break:keep-all!important;
   text-align:center!important;
 }
-/* Preserve the existing bank behavior: any hovered/focused control energizes all five. */
+/**/
 html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav:is(:hover,:focus-within)
 > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav],
 html body[data-page] footer#site-footer.site-footer--minimal:is(.is-footer-cluster-lit,.is-footer-button-cluster-hot)
@@ -865,10 +834,7 @@ nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-se
     drop-shadow(0 5px 6px rgba(0,0,0,.52)) drop-shadow(0 0 8px rgba(143,255,215,.18))!important;
 }
 
-/* ================================================================
-   MESSAGES — keep the approved square/placement; make the envelope fill
-   its center and give the pressed/latched hardware a realistic luminous core.
-   ================================================================ */
+/**/
 html body[data-page] > a#header-send-message#header-send-message .send-control-copy{
   display:grid!important;
   place-items:center!important;
@@ -913,10 +879,7 @@ html.ah-message-persist-open body[data-page] > a#header-send-message#header-send
     0 0 15px rgba(255,46,168,.14)!important;
 }
 
-/* ================================================================
-   TICKER — rounded silver machine bezel + convex digital glass.
-   The glass is static; only the existing transform-based marquee moves.
-   ================================================================ */
+/**/
 html body[data-page][class][class][class][class][class][class][class]
 > #home-ticker-wrap#home-ticker-wrap#home-ticker-wrap#home-ticker-wrap#home-ticker-wrap{
   box-sizing:border-box!important;
@@ -1043,8 +1006,7 @@ html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__
 }
 
 @layer ah-r929-final {
-/* Hard authority: the project intentionally contains legacy high-specificity rounds.
-   These rules make Round 944's requested geometry unambiguous without modifying older baselines. */
+/**/
 html body.page-solutions.page-solutions.page-solutions.page-solutions.page-solutions.page-solutions.page-solutions.page-solutions.page-solutions.page-solutions.page-solutions.page-solutions[data-page="solutions"]
 main#main-content#main-content#main-content#main-content
 > section#live-refreshing-websites#live-refreshing-websites#live-refreshing-websites#live-refreshing-websites.solution-engine-section{
@@ -1167,13 +1129,11 @@ html.ah-message-persist-open body[data-page][class][class][class][class][class]
 }
 
 
-/* SOURCE: round945-layout-footer-about-refinement.css */
+/**/
 @layer ah-r929-final {
-/* Round 945 — Who We Help vertical balance, wider mobile Solution wells,
-   brighter/full-span footer bank, mobile message centering, and simplified About hero. */
+/**/
 
-/* WHO WE HELP: lift the complete four-card bank just enough to balance the
-   air above and below while retaining a deliberate gap above the ticker. */
+/**/
 html body.page-who-we-help.page-who-we-help.page-who-we-help[data-page="who-we-help"]
 main#main-content#main-content > section#who-we-help-solutions#who-we-help-solutions.who-help-audience-hero > .shell{
   box-sizing:border-box!important;
@@ -1188,8 +1148,7 @@ html body.page-who-we-help.page-who-we-help.page-who-we-help[data-page="who-we-h
   margin-bottom:0!important;
 }
 
-/* SOLUTION MOBILE: let the recessed text wells use more of the tablet width
-   without touching the surrounding leather frame. */
+/**/
 @media(max-width:760px){
   html body.page-solutions.page-solutions.page-solutions[data-page="solutions"]
   main#main-content#main-content #solution-copper-tablets#solution-copper-tablets .solution-copper-tablet{
@@ -1219,9 +1178,7 @@ html body.page-who-we-help.page-who-we-help.page-who-we-help[data-page="who-we-h
   }
 }
 
-/* FOOTER: latest requested resting level is twice the old .40 brightness.
-   The five controls remain one-line, 20% wider than Round 944 where room
-   permits, vertically centered, and distributed across the full rim width. */
+/**/
 :root{
   --r945-footer-width:min(212px,calc((100vw - (var(--current-frame-side,88px) * 2) - 56px) / 5));
   --r945-footer-rest-brightness:.80;
@@ -1278,9 +1235,7 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
   word-break:keep-all!important;
 }
 
-/* MESSAGES: retain the approved square, but in mobile center it in the actual
-   upper-right rim bay. The envelope is 20% smaller than Round 944 and uses a
-   heavier stroke so it reads as bold hardware rather than a thin icon. */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class][class][class]
 > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control
 .send-control-envelope{
@@ -1345,8 +1300,7 @@ html body[data-page] > a#header-send-message#header-send-message .send-control-e
   }
 }
 
-/* ABOUT: the hero now contains only the AI-transition statement, presented as
-   a recessed blue matte-film screen. */
+/**/
 html body.page-about.page-about.page-about[data-page="about"] .r935-about-hero{
   min-height:clamp(160px,18vw,245px)!important;
   padding:clamp(48px,6vw,78px) max(22px,4vw)!important;
@@ -1400,23 +1354,18 @@ html body.page-about.page-about.page-about[data-page="about"] .r935-about-hero__
 }
 
 
-/* SOURCE: round946-final-batch.css */
+/**/
 @layer ah-r929-final {
-/* Round 946 — final batch: corner controls, ticker clarity, Learning Center scale,
-   and Rates & Services TV-card conversion. */
+/**/
 
-/* ---------------------------------------------------------------
-   TOP-LEFT HEART — tiny down/left correction only.
-   --------------------------------------------------------------- */
+/**/
 html body[data-page][class][class][class][class][class][class]
 > a#rim-heart-home#rim-heart-home.rim-heart-emblem.rim-heart-home-link{
   margin-left:-4px!important;
   margin-top:4px!important;
 }
 
-/* ---------------------------------------------------------------
-   MESSAGES — permanently bright hardware; precisely centered, bolder envelope.
-   --------------------------------------------------------------- */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class]
 > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
   filter:brightness(1.36) saturate(1.08) contrast(1.06)
@@ -1483,10 +1432,7 @@ html.ah-message-persist-open body[data-page][class][class]
     drop-shadow(0 0 17px rgba(255,46,168,.34))!important;
 }
 
-/* ---------------------------------------------------------------
-   FOOTER — keep the existing rest level, but make the unified hover bank
-   exactly 2x the Round-945 hot brightness (1.48 -> 2.96).
-   --------------------------------------------------------------- */
+/**/
 html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav:is(:hover,:focus-within)
 > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav],
 html body[data-page] footer#site-footer.site-footer--minimal:is(.is-footer-cluster-lit,.is-footer-button-cluster-hot)
@@ -1498,10 +1444,7 @@ nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-se
     drop-shadow(0 0 13px rgba(255,46,168,.38))!important;
 }
 
-/* ---------------------------------------------------------------
-   TICKER — no dark end caps. Text can travel to the true inner glass edge
-   and is clipped only by the rounded physical display boundary.
-   --------------------------------------------------------------- */
+/**/
 html body[data-page][class][class][class][class]
 #home-charity-ticker#home-charity-ticker{
   overflow:hidden!important;
@@ -1538,7 +1481,7 @@ html body[data-page][class][class][class][class]
 #home-charity-ticker#home-charity-ticker > strong.charity-marquee::before,
 html body[data-page][class][class][class][class]
 #home-charity-ticker#home-charity-ticker > strong.charity-marquee::after{content:none!important;display:none!important;width:0!important;height:0!important;min-width:0!important;max-width:0!important;min-height:0!important;max-height:0!important;margin:0!important;padding:0!important;border:0!important;outline:0!important;background:none!important;background-image:none!important;box-shadow:none!important;opacity:0!important;visibility:hidden!important;filter:none!important;-webkit-mask:none!important;mask:none!important;clip-path:none!important;pointer-events:none!important;}
-/* Sharper bulb face: bright pin-point cores, crisp colored bulb rings, less haze. */
+/**/
 html body[data-page][class][class][class][class]
 #home-charity-ticker#home-charity-ticker .charity-marquee__segment{
   background-image:radial-gradient(circle at 1.08px 1.08px,
@@ -1559,10 +1502,7 @@ html body[data-page][class][class][class][class]
   text-shadow:none!important;
 }
 
-/* ---------------------------------------------------------------
-   LEARNING CENTER — desktop/tablet occupy three true thirds with larger
-   medallions; mobile retains the existing vertical reflow.
-   --------------------------------------------------------------- */
+/**/
 @media(min-width:761px){
   html body.page-learning.page-learning[data-page="learning"]{
     --r946-learning-gap:clamp(18px,2.1vw,38px);
@@ -1604,7 +1544,7 @@ html body[data-page][class][class][class][class]
     padding:8px 16px!important;
   }
 }
-/* More legible digital/bulb sign lettering on every breakpoint. */
+/**/
 html body.page-learning.page-learning[data-page="learning"]
 #learning-route-buttons#learning-route-buttons .learning-choice-label{
   font-size:clamp(22px,1.65vw,31px)!important;
@@ -1629,10 +1569,7 @@ html body.page-learning.page-learning[data-page="learning"]
   }
 }
 
-/* ---------------------------------------------------------------
-   RATES & SERVICES — replace accordion behavior visually with permanent
-   machine-TV cards. The service lists scroll inside their own glass screens.
-   --------------------------------------------------------------- */
+/**/
 html body.page-pricing.page-pricing[data-page="pricing"] .r864-rates__drawers{
   display:grid!important;
   grid-template-columns:repeat(2,minmax(0,1fr))!important;
@@ -1841,8 +1778,7 @@ html body.page-pricing.page-pricing[data-page="pricing"] .r864-rates__table-wrap
 }
 
 @layer ah-r929-final {
-/* Round 946 specificity locks: these are intentionally last because the site
-   contains historical high-specificity control rules from earlier rounds. */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
 > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
   filter:brightness(1.36) saturate(1.08) contrast(1.06) drop-shadow(0 5px 5px rgba(0,0,0,.58)) drop-shadow(0 10px 12px rgba(0,0,0,.38)) drop-shadow(0 0 8px rgba(143,255,215,.25))!important;
@@ -1909,15 +1845,11 @@ html body.page-learning.page-learning.page-learning.page-learning.page-learning[
 }
 
 
-/* SOURCE: round947-rates-footer-message-fixes.css */
+/**/
 @layer ah-r929-final {
-/* Round 947 — Rates TV hardware + reliable footer bank glow + exact message-envelope centering. */
+/**/
 
-/* ================================================================
-   RATES & SERVICES — use the exact polished-metal frame language from
-   the scrolling Home-page digital rolodex cards. Each unit is now:
-   pink TV header -> steel separator -> mint-on-navy service screen.
-   ================================================================ */
+/**/
 html body.page-pricing.page-pricing.page-pricing.page-pricing[data-page="pricing"]
 .r864-rates__drawers{
   gap:clamp(24px,2.5vw,38px)!important;
@@ -2101,12 +2033,7 @@ html body.page-pricing.page-pricing.page-pricing.page-pricing[data-page="pricing
   }
 }
 
-/* ================================================================
-   FOOTER — Round 946's visual glow was losing the cascade to a much more
-   specific resting rule. Lock the whole bank to a visibly luminous state
-   whenever any footer control is hovered/focused. JS adds the same state as
-   a fallback for browsers/pointer paths that do not hold nav:hover reliably.
-   ================================================================ */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer#site-footer#site-footer.site-footer--minimal.r947-footer-hot
 nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group.primary-nav__group
@@ -2136,10 +2063,7 @@ html body[data-page][class][class][class][class][class][class][class][class]
   text-shadow:0 0 3px rgba(255,79,178,.72),0 0 8px rgba(255,46,168,.38)!important;
 }
 
-/* ================================================================
-   MESSAGES — force the actual SVG envelope to the mathematical center of
-   the square control, independent of every historical grid/inset rule.
-   ================================================================ */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
 > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control
 > .send-control-copy.send-control-copy{
@@ -2201,14 +2125,11 @@ html body[data-page][class][class][class][class][class][class][class][class][cla
 }
 
 
-/* SOURCE: round949-final-fixes.css */
+/**/
 @layer ah-r929-final {
-/* Round 949 — restore Solution emblem, re-open Solution 3D interaction,
-   merge Rates Web + SEO into full-width TV cards, and tame footer hover glow. */
+/**/
 
-/* SOLUTION 3D: the model is interactive by default. Keep the decorative shield
-   retracted and non-intercepting so OrbitControls and the electric anchor signs
-   receive pointer events across the entire machine window. */
+/**/
 html body.page-solutions.page-solutions.page-solutions.page-solutions[data-page="solutions"]
 #solution-formula-machine-window#solution-formula-machine-window .solutions-engine-model-frame{
   pointer-events:auto!important;
@@ -2230,8 +2151,7 @@ html body.page-solutions.page-solutions.page-solutions.page-solutions.page-solut
   pointer-events:none!important;
 }
 
-/* SOLUTION bottom emblem: explicitly opt it out of the old content-visibility
-   optimization, because this final exhibit should always render when reached. */
+/**/
 html body.page-solutions.page-solutions.page-solutions.page-solutions.page-solutions[data-page="solutions"]
 main#main-content#main-content > section#live-refreshing-websites#live-refreshing-websites.r949-restored-solution-emblem-section{
   display:grid!important;
@@ -2256,7 +2176,7 @@ html body.page-solutions.page-solutions.page-solutions.page-solutions.page-solut
   height:auto!important;
 }
 
-/* RATES & SERVICES: one full-width hardware card per major service family. */
+/**/
 html body.page-pricing.page-pricing.page-pricing.page-pricing[data-page="pricing"] .r864-rates__drawers{
   display:grid!important;
   grid-template-columns:minmax(0,1fr)!important;
@@ -2300,8 +2220,7 @@ html body.page-pricing[data-page="pricing"] .r949-rates__anchor-alias{
   scroll-margin-top:130px!important;
 }
 
-/* FOOTER: keep the bank-wide hover behavior but reduce the Round947 hot effect
-   to roughly one quarter of its visual glow strength. */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer#site-footer#site-footer.site-footer--minimal.r947-footer-hot
 nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group.primary-nav__group
@@ -2342,10 +2261,10 @@ html body[data-page][class][class][class][class][class][class][class][class]
 }
 
 
-/* SOURCE: round966-final-ui-rates.css */
-/* Round 966 — source-level finalization for footer sizing, Message icon, ticker glass/matte, smooth ticker, and Rates service columns. */
+/**/
+/**/
 
-/* Footer buttons: all same width, sized by JS from the longest 14.5pt Orbitron label. */
+/**/
 @media (min-width:1101px){
   html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav{
     left:24px!important; right:24px!important; width:auto!important; max-width:none!important;
@@ -2360,7 +2279,7 @@ html body[data-page][class][class][class][class][class][class][class][class]
   }
 }
 
-/* Message: hide every legacy-positioned envelope and use one direct overlay centered on the actual anchor box. */
+/**/
 html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
   position:fixed!important; overflow:hidden!important;
 }
@@ -2380,7 +2299,7 @@ html body[data-page] > a#header-send-message#header-send-message.header-send-mes
   vector-effect:non-scaling-stroke!important;
 }
 
-/* Ticker: true DOM glass lens over the words, plus a distinct matte film layer. */
+/**/
 html body[data-page] > #home-ticker-wrap#home-ticker-wrap > #home-charity-ticker#home-charity-ticker{
   position:absolute!important; inset:0!important; overflow:hidden!important; isolation:isolate!important;
   border:2px solid rgba(205,226,234,.98)!important; border-radius:28px!important;
@@ -2429,7 +2348,7 @@ html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__
   backface-visibility:hidden!important; -webkit-backface-visibility:hidden!important; translate:none!important;
 }
 
-/* Rates & Services: two equal tall rectangles, Automation left / Web Development right. */
+/**/
 html body.page-pricing[data-page="pricing"] .r864-rates__drawers{
   display:grid!important; grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
   grid-auto-flow:row!important; gap:28px!important; align-items:stretch!important;
@@ -2481,10 +2400,10 @@ html body.page-pricing[data-page="pricing"] #r864-ai .r951-rates__price[data-cur
 }
 
 
-/* SOURCE: round971-rates-card-match-message-center.css */
-/* Round 971 — exact Rates card match + Message envelope face centering */
+/**/
+/**/
 
-/* Automation and Web Development: identical service-card presentation. */
+/**/
 html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r951-rates__drawer-body{
   padding-top:18px!important;
 }
@@ -2584,7 +2503,7 @@ html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r951-rates_
   text-shadow:0 0 10px rgba(143,255,215,.18)!important;
 }
 
-/* One envelope only; centered on the measured visual centroid of the L-shaped face. */
+/**/
 html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .send-control-copy{
   display:none!important;
   visibility:hidden!important;
@@ -2632,10 +2551,10 @@ html body[data-page] > a#header-send-message#header-send-message.header-send-mes
 }
 
 
-/* SOURCE: round972-rates-title-consultation-mobile-nav.css */
-/* Round 972 — Rates title/consultation refinements + mobile-only collapsible footer navigation. */
+/**/
+/**/
 
-/* Rates: make Total Transparency use the same visible hardware treatment as the outer-rim page-name field. */
+/**/
 html body.page-pricing[data-page="pricing"] .r864-rates__hero-screen.r383-reference-screen{
   position:relative!important;
   display:flex!important;
@@ -2687,7 +2606,7 @@ html body.page-pricing[data-page="pricing"] .r864-rates__hero-screen.r383-refere
   border-radius:14px!important;
 }
 
-/* Top courtesy consultation: half-size title and a proportionally smaller panel. */
+/**/
 html body.page-pricing[data-page="pricing"] .r865-rates__consultation{
   box-sizing:border-box!important;
   grid-template-columns:minmax(0,1fr) 78px!important;
@@ -2723,7 +2642,7 @@ html body.page-pricing[data-page="pricing"] .r865-rates__consultation-action > a
   max-height:68px!important;
 }
 
-/* Bottom consultation: reuse the exact same compact consultation panel below the requested line. */
+/**/
 html body.page-pricing[data-page="pricing"] .r864-rates__final{
   display:flex!important;
   flex-direction:column!important;
@@ -2740,7 +2659,7 @@ html body.page-pricing[data-page="pricing"] .r864-rates__final > p{
   margin-top:0!important;
 }
 
-/* Desktop: navigation is permanently visible; no Navigation toggle exists visually or behaviorally. */
+/**/
 .r972-mobile-nav-toggle{display:none!important;}
 @media (min-width:761px){
   html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav{
@@ -2751,7 +2670,7 @@ html body.page-pricing[data-page="pricing"] .r864-rates__final > p{
   }
 }
 
-/* Mobile: one centered Navigation button; menu slides upward from the footer. */
+/**/
 @media (max-width:760px){
   html body[data-page] > footer#site-footer.site-footer--minimal{
     overflow:visible!important;
@@ -2899,8 +2818,8 @@ html body.page-pricing[data-page="pricing"] .r864-rates__final > p{
 }
 
 
-/* SOURCE: round976-batch-final.css */
-/* Round 976 — authoritative batch: footer/message rim parity, visible pink depth, Solution static exhibits, stacked Rates, mobile nav preservation. */
+/**/
+/**/
 :root{--r976-pink:#ff2ea8;--r976-pink-hi:#ff68c0;--r976-pink-deep:#8c0b58;--r976-mint:#8fffd7;--r976-mint-hi:#b9ffe9;--r976-navy:#08172b;}
 
 
@@ -2909,7 +2828,7 @@ html body[data-page] > footer#site-footer.site-footer--minimal .minimal-footer-r
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav,
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav > .primary-nav__group{overflow:visible!important;}
 
-/* Footer button faces use the exact same physical rim recipe as the Messages control: black seating, mint outer rim, pale inner ridge, suede face. */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav]{
   position:relative!important;overflow:visible!important;box-sizing:border-box!important;
   border:0!important;outline:0!important;
@@ -2918,11 +2837,11 @@ html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.f
   background-position:center!important;background-size:100% 100%!important;background-repeat:no-repeat!important;
   box-shadow:none!important;filter:brightness(1.03) saturate(1.02)!important;
 }
-/* Same two visible rim ridges as Message hardware. */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy{
   position:relative!important;z-index:3!important;
 }
-/* Real, unmistakable pink bottom depth: connected, full button width, no right-side edge. */
+/**/
 html body[data-page] .r969-pink-depth-right{display:none!important;visibility:hidden!important;width:0!important;height:0!important;opacity:0!important;}
 html body[data-page] :is(
  footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav],
@@ -2943,16 +2862,16 @@ html body[data-page] :is(
 html.ah-message-persist-open body[data-page] a#header-send-message.header-send-message.mechanical-send-control > .r969-pink-depth-bottom{
   height:.7px!important;bottom:-.7px!important;opacity:.72!important;
 }
-/* Do not let historical pseudo-elements create competing side depth. */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav]::before,
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav]::after{content:none!important;display:none!important;}
-/* Controlled hover: no large white bloom. */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:is(:hover,:focus-visible){
   filter:brightness(1.12) saturate(1.06) contrast(1.02) drop-shadow(0 0 2px rgba(143,255,215,.14))!important;
   box-shadow:none!important;
 }
 
-/* Keep the one visible Message envelope centered and prevent legacy copies. */
+/**/
 html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .send-control-copy{display:none!important;visibility:hidden!important;opacity:0!important;}
 html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .r966-message-envelope-center{
   position:absolute!important;left:50%!important;top:50%!important;right:auto!important;bottom:auto!important;inset:auto!important;
@@ -2961,10 +2880,10 @@ html body[data-page] > a#header-send-message.header-send-message.mechanical-send
 }
 html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .r966-message-envelope-center svg{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;}
 
-/* Home primary model gets an immediate local visual fallback while WebGL initializes. */
+/**/
 html body.page-home[data-page="home"] #home-machine-primary{background:#01040a url("./assets/home-machine-earth-cinematic-round936.webp") center/cover no-repeat!important;}
 
-/* Solution top: static replacement for old heavy 3D/sliding window. */
+/**/
 html body.page-solutions[data-page="solutions"] .r976-solution-top-static-wrap{
   display:grid!important;place-items:center!important;width:min(100%,1460px)!important;margin:0 auto!important;padding:0!important;
   overflow:hidden!important;border:2px solid rgba(143,255,215,.64)!important;background:#000!important;
@@ -2972,7 +2891,7 @@ html body.page-solutions[data-page="solutions"] .r976-solution-top-static-wrap{
 }
 html body.page-solutions[data-page="solutions"] .r976-solution-top-static{display:block!important;width:100%!important;height:auto!important;max-height:72svh!important;object-fit:cover!important;object-position:center!important;}
 
-/* Solution bottom: simple DOM section with no historical overlay classes to hide it. */
+/**/
 html body.page-solutions[data-page="solutions"] #live-refreshing-websites.r976-solution-bottom-section{
   position:relative!important;z-index:4!important;display:flex!important;align-items:center!important;justify-content:center!important;
   width:100%!important;min-height:min(76svh,850px)!important;margin:0!important;padding:48px max(24px,4vw) 120px!important;
@@ -2985,7 +2904,7 @@ html body.page-solutions[data-page="solutions"] #live-refreshing-websites > .r97
   filter:drop-shadow(0 12px 18px rgba(0,0,0,.56))!important;
 }
 
-/* Rates & Services: Automation stacked on top, Web Development directly beneath. */
+/**/
 html body.page-pricing[data-page="pricing"] .r864-rates__drawers{
   display:flex!important;flex-direction:column!important;gap:28px!important;width:100%!important;align-items:stretch!important;
 }
@@ -2996,9 +2915,9 @@ html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web,#r864-care){
 html body.page-pricing[data-page="pricing"] #r864-ai{order:1!important;}
 html body.page-pricing[data-page="pricing"] #r864-web{order:2!important;}
 html body.page-pricing[data-page="pricing"] #r864-care{order:3!important;}
-/* Remove loose steel separator bars. */
+/**/
 html body.page-pricing[data-page="pricing"] .r947-rates__steel-divider{display:none!important;visibility:hidden!important;height:0!important;margin:0!important;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;}
-/* Match Automation cards to Web cards. */
+/**/
 html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-list{display:flex!important;flex-direction:column!important;gap:14px!important;width:100%!important;}
 html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-card{
   display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"title price" "desc price"!important;
@@ -3012,7 +2931,7 @@ html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-servic
 html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-card .r951-rates__price{grid-area:price!important;margin:0!important;}
 html body.page-pricing[data-page="pricing"] #r864-ai .r951-rates__price::before{content:none!important;display:none!important;}
 
-/* Preserve mobile footer Navigation behavior: menu rises from the centered Navigation control. */
+/**/
 @media(max-width:760px){
   html body[data-page] > footer#site-footer.site-footer--minimal,
   html body[data-page] > footer#site-footer.site-footer--minimal > .minimal-footer-row{overflow:visible!important;}
@@ -3029,11 +2948,11 @@ html body.page-pricing[data-page="pricing"] #r864-ai .r951-rates__price::before{
 }
 
 
-/* SOURCE: round977-integrated-depth-message-about.css */
-/* Round 977 — integrated button depth, restored top-right Messages control, consolidated About Us theme. */
+/**/
+/**/
 :root{--r977-pink:#ff2ea8;--r977-pink-hi:#ff73c3;--r977-mint:#8fffd7;--r977-mint-hi:#c3ffec;--r977-black:#000;--r977-navy:#07182a;}
 
-/* -------- Footer: native 3D depth is INSIDE the SVG now. -------- */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav]{
   position:relative!important;box-sizing:border-box!important;overflow:visible!important;
   background-color:transparent!important;background-image:url("./assets/footer-button-message-rim-round977.svg?v=977r")!important;
@@ -3048,7 +2967,7 @@ html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.f
   transform:translate3d(0,3px,0)!important;filter:brightness(.94) saturate(1.02)!important;
 }
 
-/* -------- Messages: restore the actual top-right corner placement. -------- */
+/**/
 html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
   position:fixed!important;top:max(5px,env(safe-area-inset-top,0px))!important;right:max(12px,calc(env(safe-area-inset-right,0px) + 8px))!important;
   left:auto!important;bottom:auto!important;width:58px!important;min-width:58px!important;max-width:58px!important;height:58px!important;min-height:58px!important;max-height:58px!important;
@@ -3072,7 +2991,7 @@ html body[data-page] > a#header-send-message#header-send-message.header-send-mes
  html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{top:max(7px,env(safe-area-inset-top,0px))!important;right:max(10px,calc(env(safe-area-inset-right,0px) + 8px))!important;width:56px!important;min-width:56px!important;max-width:56px!important;height:56px!important;min-height:56px!important;max-height:56px!important;}
 }
 
-/* -------- About Us & Privacy — consolidated latest direction. -------- */
+/**/
 html body.page-about[data-page="about"] main#main-content.r977-about-main{position:relative!important;z-index:2!important;padding:0 0 108px!important;background:#000!important;overflow:visible!important;}
 html body.page-about[data-page="about"] .r977-about-section{position:relative!important;isolation:isolate!important;width:100%!important;margin:0!important;padding:clamp(88px,8vw,136px) max(24px,5vw)!important;overflow:hidden!important;}
 html body.page-about[data-page="about"] .r977-about-section--human{
@@ -3132,14 +3051,10 @@ html body.page-about[data-page="about"] .r977-policy-updated{grid-column:1/-1!im
 }
 
 
-/* SOURCE: round979-embossed-model-message-corner.css */
-/* Round 979 — persistent embossed leather model stage + restored large Messages corner control. */
+/**/
+/**/
 
-/* ------------------------------------------------------------------
-   MODEL STAGES — one persistent embossed leather background.
-   The viewport owns the background. Iframes/canvases remain transparent,
-   so model rotation never replaces or reloads this surface.
-   ------------------------------------------------------------------ */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage){
   position:relative!important;
@@ -3148,7 +3063,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   background-image:none!important;
 }
 
-/* Retire the incorrect Round 978 image element. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > img.r978-persistent-model-backdrop{
   display:none!important;
@@ -3156,7 +3071,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   opacity:0!important;
 }
 
-/* This is the ONE persistent embossed background behind every model. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport{
   position:relative!important;
@@ -3190,10 +3105,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   background-image:none!important;
 }
 
-/* ------------------------------------------------------------------
-   MESSAGES — restore the large square centered in the top-right rim area.
-   Desktop rim is 88px wide x 96px tall, so 84px centers at 2px / 6px.
-   ------------------------------------------------------------------ */
+/**/
 html body[data-page] > a#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
   position:fixed!important;
   top:6px!important;
@@ -3274,10 +3186,10 @@ html body[data-page] > a#header-send-message#header-send-message#header-send-mes
 }
 
 
-/* SOURCE: round980-persistent-embossed-viewport-message-center.css */
-/* Round 980 — real persistent embossed leather image in each visible 3D viewport + Messages true corner centering. */
+/**/
+/**/
 
-/* The viewport itself is the stable coordinate system. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport{
   position:relative!important;
@@ -3287,7 +3199,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   background-image:none!important;
 }
 
-/* Actual persistent DOM image, not a CSS background on a changing model/slide. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport > img.r980-persistent-embossed-backdrop{
   position:absolute!important;
@@ -3321,7 +3233,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   backface-visibility:hidden!important;
 }
 
-/* Models and their carousel mechanics remain above the one fixed image and transparent. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport > .learning-lesson-track{
   position:relative!important;
@@ -3339,7 +3251,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   background-image:none!important;
 }
 
-/* Retire every prior stage/backdrop layer so there is exactly one visible embossed image. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > :is(.model-dedicated-backdrop,img.r978-persistent-model-backdrop){
   display:none!important;
@@ -3349,7 +3261,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   background-image:none!important;
 }
 
-/* True center of the 96 x 96 top-right corner visual area: 84px control => 6px inset. */
+/**/
 html body[data-page] > a#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
   top:6px!important;
   right:6px!important;
@@ -3371,10 +3283,10 @@ html body[data-page] > a#header-send-message#header-send-message#header-send-mes
 }
 
 
-/* SOURCE: round984-rates-static-model-solution-gallery.css */
-/* Round 984 — authoritative rates towers, one static 3D background, Solution gallery viewport. */
+/**/
+/**/
 
-/* ===== RATES & SERVICES — TWO ACTUAL TOWERS ===== */
+/**/
 html body.page-pricing[data-page="pricing"] .r864-rates__drawers.r984-rates-towers{
   display:grid!important;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
@@ -3417,7 +3329,7 @@ html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web).r984-rates-t
   overflow-y:auto!important;
   overflow-x:hidden!important;
 }
-/* Both towers use the exact same proposal-card geometry. */
+/**/
 html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web).r984-rates-tower .r966-service-list > article.r951-rates__card.r966-service-card{
   display:grid!important;
   grid-template-columns:minmax(0,1fr) auto!important;
@@ -3438,7 +3350,7 @@ html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web).r984-rates-t
 html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-card h4{grid-area:title!important;}
 html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-card p{grid-area:desc!important;}
 html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-card .r951-rates__price{grid-area:price!important;}
-/* Retainer block stays visibly docked to bottom of each tower. */
+/**/
 html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web).r984-rates-tower > .r983-retainer-panel{
   display:block!important;
   visibility:visible!important;
@@ -3465,7 +3377,7 @@ html body.page-pricing[data-page="pricing"] #r864-care{display:none!important;}
   html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web).r984-rates-tower .r966-service-list{overflow:visible!important;}
 }
 
-/* ===== 3D MODEL STAGE — EXACTLY ONE NONMOVING BACKGROUND IMAGE ===== */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page] .r984-static-model-viewport{
   position:relative!important;
   isolation:isolate!important;
@@ -3507,13 +3419,13 @@ html body:is(.page-learning,.page-who-we-help)[data-page] .r984-static-model-vie
   background-color:transparent!important;
   background-image:none!important;
 }
-/* Neutralize Round 983's duplicate parent background image. The IMG above is the single background. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page] :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport{
   background:#030507!important;
   background-image:none!important;
 }
 
-/* ===== THE SOLUTION — FINAL VIEWPORT GALLERY ===== */
+/**/
 html body.page-solutions[data-page="solutions"] #live-refreshing-websites.r984-solution-gallery{
   position:relative!important;
   z-index:4!important;
@@ -3571,13 +3483,10 @@ html body.page-solutions[data-page="solutions"] #live-refreshing-websites.r984-s
 }
 
 
-/* SOURCE: round985-solution-gallery-mobile-corners.css */
-/* Round 985 — final Solution exhibit sizing + mobile corner centering. */
+/**/
+/**/
 
-/* ------------------------------------------------------------------
-   THE SOLUTION — final gallery uses the exact deep-blue leather surface
-   and separate desktop/mobile presentation geometry.
-   ------------------------------------------------------------------ */
+/**/
 html body.page-solutions.page-solutions[data-page="solutions"]
 main#main-content#main-content > section#live-refreshing-websites#live-refreshing-websites.r984-solution-gallery{
   position:relative!important;
@@ -3609,8 +3518,7 @@ main#main-content#main-content > section#live-refreshing-websites#live-refreshin
   opacity:0!important;
 }
 
-/* Desktop gets a deliberately smaller presentation box so the full gold rim
-   has comfortable leather visible on all four sides. */
+/**/
 html body.page-solutions.page-solutions[data-page="solutions"]
 main#main-content#main-content > section#live-refreshing-websites#live-refreshing-websites.r984-solution-gallery
 > img.r984-solution-gallery-image.r984-solution-gallery-image{
@@ -3635,11 +3543,7 @@ main#main-content#main-content > section#live-refreshing-websites#live-refreshin
   filter:drop-shadow(0 10px 12px rgba(0,0,0,.48)) drop-shadow(0 20px 28px rgba(0,0,0,.30))!important;
 }
 
-/* ------------------------------------------------------------------
-   MOBILE TOP CORNERS — heart and Messages share matching corner zones.
-   Messages keeps its exact SVG face/pressed asset/function; only geometry
-   changes on phones.
-   ------------------------------------------------------------------ */
+/**/
 @media (max-width:760px){
   html body[data-page][class][class][class][class]
   > a#rim-heart-home#rim-heart-home.rim-heart-emblem.rim-heart-home-link{
@@ -3708,8 +3612,7 @@ main#main-content#main-content > section#live-refreshing-websites#live-refreshin
     transform:translate(-50%,-50%)!important;
   }
 
-  /* Phone exhibit is content-height, not viewport-height. This removes the
-     oversized blank bands above/below the 2:1 artwork. */
+  /**/
   html body.page-solutions.page-solutions[data-page="solutions"]
   main#main-content#main-content > section#live-refreshing-websites#live-refreshing-websites.r984-solution-gallery{
     display:grid!important;
@@ -3764,12 +3667,10 @@ main#main-content#main-content > section#live-refreshing-websites#live-refreshin
 }
 
 
-/* SOURCE: round986-solution-center-mobile-nav.css */
-/* Round 986 — center Solution exhibit; compact reversible mobile footer navigation. */
+/**/
+/**/
 
-/* ================================================================
-   THE SOLUTION — bottom exhibit centered inside its presentation area.
-   ================================================================ */
+/**/
 html body.page-solutions.page-solutions[data-page="solutions"]
 main#main-content#main-content > section#live-refreshing-websites#live-refreshing-websites.r984-solution-gallery{
   position:relative!important;
@@ -3808,7 +3709,7 @@ main#main-content#main-content > section#live-refreshing-websites#live-refreshin
   filter:drop-shadow(0 10px 12px rgba(0,0,0,.48)) drop-shadow(0 20px 28px rgba(0,0,0,.30))!important;
 }
 
-/* Preserve the current desktop footer arrangement after removing legacy inline geometry. */
+/**/
 @media (min-width:761px){
   html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav{
     position:absolute!important;
@@ -3851,11 +3752,7 @@ main#main-content#main-content > section#live-refreshing-websites#live-refreshin
   }
 }
 
-/* ================================================================
-   MOBILE — compact Navigation button centered in footer; menu rises from it
-   and reverses back down on the second press.
-   210x54 -> 157.5x40.5 = exactly 75% of the prior Navigation control.
-   ================================================================ */
+/**/
 @media (max-width:760px){
   html body[data-page] > footer#site-footer.site-footer--minimal,
   html body[data-page] > footer#site-footer.site-footer--minimal > .minimal-footer-row{
@@ -3976,8 +3873,7 @@ main#main-content#main-content > section#live-refreshing-websites#live-refreshin
   html body[data-page] > footer#site-footer.site-footer--minimal.r972-mobile-nav-open nav#primary-nav.footer-primary-nav > .primary-nav__group > a:nth-child(4){transition-delay:.11s!important;}
   html body[data-page] > footer#site-footer.site-footer--minimal.r972-mobile-nav-open nav#primary-nav.footer-primary-nav > .primary-nav__group > a:nth-child(5){transition-delay:.14s!important;}
 
-  /* Phone Solution exhibit: compact section, but equal leather breathing room
-     above and below the artwork instead of the former one-sided gap. */
+  /**/
   html body.page-solutions.page-solutions[data-page="solutions"]
   main#main-content#main-content > section#live-refreshing-websites#live-refreshing-websites.r984-solution-gallery{
     display:flex!important;
@@ -4013,10 +3909,10 @@ main#main-content#main-content > section#live-refreshing-websites#live-refreshin
 }
 
 
-/* SOURCE: round989-learning-free-floating-footer-message.css */
-/* Round 989 — free-floating Learning medallions, compact mobile stack, no footer bloom, larger mobile Message control. */
+/**/
+/**/
 
-/* ---------------- Learning Center: free-floating finished medallions ---------------- */
+/**/
 html body.page-learning.page-learning.page-learning[data-page="learning"]
 #learning-route-buttons#learning-route-buttons#learning-route-buttons{
   overflow:hidden!important;
@@ -4101,7 +3997,7 @@ html body.page-learning.page-learning.page-learning[data-page="learning"]
   }
 }
 
-/* Phone: all three buttons fit as a centered vertical group in the available stage. */
+/**/
 @media (max-width:760px){
   html body.page-learning.page-learning.page-learning[data-page="learning"]
   #learning-route-buttons#learning-route-buttons#learning-route-buttons{
@@ -4176,7 +4072,7 @@ html body.page-learning.page-learning.page-learning[data-page="learning"]
   }
 }
 
-/* The images themselves have transparent outer pixels: no rectangular card edge or CSS glass layer. */
+/**/
 html body.page-learning[data-page="learning"] #learning-route-buttons a.learning-medallion-button::before,
 html body.page-learning[data-page="learning"] #learning-route-buttons a.learning-medallion-button::after,
 html body.page-learning[data-page="learning"] #learning-route-buttons .r987-learning-flat-media::before,
@@ -4199,7 +4095,7 @@ html body.page-learning[data-page="learning"] #learning-route-buttons a.learning
   filter:brightness(.96)!important;
 }
 
-/* ---------------- Footer hover: illuminate face only, never cast a white outward bloom ---------------- */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer#site-footer#site-footer.site-footer--minimal
 nav#primary-nav#primary-nav#primary-nav#primary-nav
@@ -4216,7 +4112,7 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav
   text-shadow:none!important;
 }
 
-/* ---------------- Mobile Messages: same hardware/function, larger and visually comparable to heart ---------------- */
+/**/
 @media (max-width:760px){
   html body[data-page][class][class][class][class][class]
   > a#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
@@ -4261,14 +4157,10 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav
 }
 
 
-/* SOURCE: round990-batch-final.css */
-/* Round 990 — pending-batch authority: Home process/readability + image centering,
-   Learning Center labels/layout, mobile page-name fit, footer-hover cleanup. */
+/**/
+/**/
 
-/* ================================================================
-   GLOBAL MOBILE TOP PAGE-NAME FIELD — wider and always single-line fit.
-   Desktop intentionally untouched.
-   ================================================================ */
+/**/
 @media (max-width:760px){
   html body[data-page] > .footer-page-screen.rim-page-name-screen.header-page-screen--top,
   html body[data-page] > .rim-page-name-screen.header-page-screen--top{
@@ -4306,10 +4198,7 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav
   }
 }
 
-/* ================================================================
-   HOME — mobile route buttons and their digital page-name fields.
-   Desktop geometry stays independent.
-   ================================================================ */
+/**/
 @media (max-width:760px){
   html body.page-home[data-page="home"] #home-route-buttons.home-explore-section > .shell{
     width:100%!important;
@@ -4352,17 +4241,13 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav
   }
 }
 
-/* ================================================================
-   HOME — Zero-Software Solution title + process screens.
-   Same content in desktop/mobile; only dimensions differ.
-   ================================================================ */
+/**/
 html body.page-home[data-page="home"] #home-negative-software-title .r383-reference-text{
   color:#a8ffe4!important;
   -webkit-text-fill-color:#a8ffe4!important;
 }
 
-/* Four mint process terminals: larger pink drive path, black full-width rule,
-   body copy raised closer to the rule, bottom waste removed. */
+/**/
 html body.page-home.page-home[data-page="home"] #home-solution-framework#home-solution-framework
 .negative-software-grid-round344 > article.home-process-stage.negative-software-screen-round344:not(.home-process-stage--key){
   box-sizing:border-box!important;
@@ -4420,7 +4305,7 @@ html body.page-home[data-page="home"] #home-solution-framework .negative-softwar
   line-height:1.16!important;
 }
 
-/* Explore terminal: 50% larger heading and compacted vertical composition. */
+/**/
 html body.page-home.page-home[data-page="home"] #home-solution-framework#home-solution-framework
 article.home-process-stage--key > a#negative-software-explore#negative-software-explore{
   display:grid!important;
@@ -4467,7 +4352,7 @@ html body.page-home.page-home[data-page="home"] #home-solution-framework#home-so
 }
 
 @media (max-width:760px){
-  /* Mobile Zero-Software heading: centered, clearer, wider; process bank follows immediately. */
+  /**/
   html body.page-home[data-page="home"] #home-solution-framework .home-zero-software-heading{
     display:grid!important;
     place-items:center!important;
@@ -4546,10 +4431,7 @@ html body.page-home.page-home[data-page="home"] #home-solution-framework#home-so
   }
 }
 
-/* ================================================================
-   HOME — transition image carousel vertically centered between its top pink
-   section line and the fixed ticker. Desktop and mobile independent.
-   ================================================================ */
+/**/
 @media (min-width:761px){
   html body.page-home[data-page="home"] main#main-content > section.home-overview-display-section.home-overview-carousel-section{
     box-sizing:border-box!important;
@@ -4588,10 +4470,7 @@ html body.page-home.page-home[data-page="home"] #home-solution-framework#home-so
   }
 }
 
-/* ================================================================
-   LEARNING CENTER — restore original digital blue label screens beneath
-   the free-floating medallions. Independent desktop/mobile geometry.
-   ================================================================ */
+/**/
 html body.page-learning[data-page="learning"] #learning-route-buttons
 .r987-learning-flat-grid > article.r987-learning-flat-card > .premium-route-card__title-sign.brand-route-screen{
   position:relative!important;
@@ -4754,9 +4633,7 @@ html body.page-learning[data-page="learning"] #learning-route-buttons
   }
 }
 
-/* ================================================================
-   FOOTER HOVER — no outward white bloom under any legacy hover state.
-   ================================================================ */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
  a.footer-structure-control.mechanical-send-control[data-nav]:is(:hover,:focus-visible),
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav:is(:hover,:focus-within)
@@ -4767,7 +4644,7 @@ html body[data-page] > footer#site-footer.site-footer--minimal.r947-footer-hot n
   box-shadow:none!important;
 }
 
-/* Mobile Messages remains clear and comparable in size to the heart. */
+/**/
 @media (max-width:760px){
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
     width:68px!important;
@@ -4787,10 +4664,7 @@ html body[data-page] > footer#site-footer.site-footer--minimal.r947-footer-hot n
   }
 }
 
-/* =====================================================================
-   ROUND 990 CASCADE LOCK — intentionally high specificity because this
-   project contains historical !important selectors with repeated IDs.
-   ===================================================================== */
+/**/
 @media (max-width:760px){
   html body[data-page][class][class][class][class][class][class]
   > .footer-page-screen.footer-page-screen.rim-page-name-screen.rim-page-name-screen.header-page-screen.header-page-screen--top{
@@ -4846,7 +4720,7 @@ html body[data-page] > footer#site-footer.site-footer--minimal.r947-footer-hot n
   }
 }
 
-/* Process terminal lock, all breakpoints. */
+/**/
 html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[data-page="home"]
 main#main-content#main-content#main-content#main-content #home-solution-framework#home-solution-framework#home-solution-framework
 .negative-software-grid-round344.negative-software-grid-round344 > article.home-process-stage.negative-software-screen-round344:not(.home-process-stage--key) > h3{
@@ -4894,7 +4768,7 @@ main#main-content#main-content#main-content#main-content #home-solution-framewor
   align-self:end!important;margin:0!important;padding:0 0 2px!important;line-height:1!important;transform:translateY(-8px)!important;
 }
 
-/* Learning lock beats historical hidden/size rules. */
+/**/
 html body.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning[data-page="learning"]
 main#main-content#main-content#main-content #learning-route-buttons#learning-route-buttons#learning-route-buttons#learning-route-buttons
 .r987-learning-flat-grid.r987-learning-flat-grid > article.r987-learning-flat-card.r987-learning-flat-card > .premium-route-card__title-sign.brand-route-screen{
@@ -4965,7 +4839,7 @@ main#main-content#main-content#main-content #learning-route-buttons#learning-rou
   }
 }
 
-/* Absolute footer glow lock against the older high-specificity cluster rule. */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer#site-footer#site-footer.site-footer--minimal.r947-footer-hot
 nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group.primary-nav__group
@@ -4979,10 +4853,10 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
 }
 
 
-/* SOURCE: round991-header-only.css */
-/* Round 991 — mobile header only: page-name sign, page-name text, Messages size. */
+/**/
+/**/
 @media (max-width:760px){
-  /* Keep the page-name sign completely inside the upper outer-rim band. */
+  /**/
   html body[data-page][class][class][class][class][class][class][class][class]
   > .footer-page-screen.footer-page-screen.rim-page-name-screen.rim-page-name-screen.header-page-screen.header-page-screen--top{
     position:fixed!important;
@@ -5003,7 +4877,7 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
     overflow:hidden!important;
   }
 
-  /* Larger mobile page-name text. JS only reduces it when a long page name truly needs it. */
+  /**/
   html body[data-page][class][class][class][class][class][class]
   > .rim-page-name-screen.header-page-screen--top :is(.footer-page-led,.header-page-led){
     display:flex!important;
@@ -5023,7 +4897,7 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
     text-align:center!important;
   }
 
-  /* Enlarge Messages but retain the exact existing artwork/function. */
+  /**/
   html body[data-page][class][class][class][class][class][class]
   > a#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
     position:fixed!important;
@@ -5074,12 +4948,11 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
 }
 
 
-/* SOURCE: round992-mobile-header-persistent-footer.css */
-/* Round 992 — mobile header names, fitted Messages corner control, persistent footer buttons. */
+/**/
+/**/
 
 @media (max-width:760px){
-  /* Messages: preserve the existing face/pressed artwork and center the whole control
-     inside the 66px x 78px mobile top-right outer-rim corner zone. */
+  /**/
   html body[data-page][class][class][class][class][class][class][class][class]
   > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
     position:fixed!important;
@@ -5120,8 +4993,7 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
     transform:translate(-50%,-50%)!important;
   }
 
-  /* Keep the page-name screen fully on the upper rim and make the short mobile
-     page names prominent. The JS only shrinks longer unchanged names if needed. */
+  /**/
   html body[data-page][class][class][class][class][class][class]
   > .footer-page-screen.footer-page-screen.rim-page-name-screen.header-page-screen.header-page-screen--top{
     top:7px!important;
@@ -5133,14 +5005,14 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
     letter-spacing:.018em!important;
   }
 
-  /* Retire the mobile Navigation toggle completely. */
+  /**/
   html body[data-page] > footer#site-footer.site-footer--minimal .r972-mobile-nav-toggle{
     display:none!important;
     visibility:hidden!important;
     pointer-events:none!important;
   }
 
-  /* Mobile footer buttons remain permanently visible. */
+  /**/
   html body[data-page][class][class][class][class]
   > footer#site-footer#site-footer.site-footer--minimal{
     overflow:hidden!important;
@@ -5251,8 +5123,8 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
 }
 
 
-/* SOURCE: round993-mobile-footer-label-fit.css */
-/* Round 993 — persistent mobile footer row with maximum legible label sizing. */
+/**/
+/**/
 @media (max-width:760px){
   html body[data-page][class][class][class][class]
   > footer#site-footer#site-footer.site-footer--minimal nav#primary-nav#primary-nav.footer-primary-nav{
@@ -5339,11 +5211,11 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
 }
 
 
-/* SOURCE: round994-mobile-footer-rates-stack.css */
-/* Round 994 — one consistent mobile footer label size + mobile Rates tower stack. */
+/**/
+/**/
 
 @media (max-width:760px){
-  /* All five persistent footer labels use one fixed, shared mobile size. */
+  /**/
   html body[data-page][class][class][class][class]
   > footer#site-footer#site-footer.site-footer--minimal nav#primary-nav#primary-nav.footer-primary-nav
   .footer-nav-label,
@@ -5375,7 +5247,7 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
     white-space:nowrap!important;
   }
 
-  /* Rates & Services: mobile-only vertical stack, Automation first. */
+  /**/
   html body.page-pricing[data-page="pricing"] .r864-rates__drawers.r984-rates-towers{
     display:grid!important;
     grid-template-columns:minmax(0,1fr)!important;
@@ -5412,10 +5284,10 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
 }
 
 
-/* SOURCE: round995-mobile-corners-only.css */
-/* Round 995 — mobile top-corner controls only. */
+/**/
+/**/
 @media (max-width:760px){
-  /* Restore the heart to the natural corner-zone size and center it vertically. */
+  /**/
   html body[data-page][class][class][class][class][class][class][class]
   > a#rim-heart-home#rim-heart-home.rim-heart-emblem.rim-heart-home-link{
     position:fixed!important;
@@ -5439,7 +5311,7 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
     translate:none!important;
   }
 
-  /* Fill and center the Messages face in the matching top-right corner zone. */
+  /**/
   html body[data-page][class][class][class][class][class][class][class]
   > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
     position:fixed!important;
@@ -5518,10 +5390,10 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
 }
 
 
-/* SOURCE: round996-mobile-corners-authoritative.css */
-/* Round 996 — authoritative mobile top-corner controls only. */
+/**/
+/**/
 @media (max-width:760px){
-  /* Heart: preserve existing artwork, but place its visible face higher in the top-left corner. */
+  /**/
   html body[data-page] > a#rim-heart-home.rim-heart-emblem.rim-heart-home-link{
     z-index:2147483640!important;
     background-image:url("./assets/rim-heart-embossed-round291.webp")!important;
@@ -5532,7 +5404,7 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
     visibility:visible!important;
   }
 
-  /* Messages: the SVG face itself is now a real IMG so old background-image rules cannot hide it. */
+  /**/
   html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
     z-index:2147483641!important;
     border:0!important;
@@ -5562,7 +5434,7 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
   html.ah-message-persist-open body[data-page] > a#header-send-message .r996-message-face--pressed,
   html body[data-page] > a#header-send-message:is(:active,[aria-expanded="true"],.is-contact-latched) .r996-message-face--pressed{display:block!important;}
 
-  /* The old DOM depth strips were the tiny pink mark visible in the screenshot. */
+  /**/
   html body[data-page] > a#header-send-message > :is(.r969-pink-depth-bottom,.r969-pink-depth-right){
     display:none!important;
     visibility:hidden!important;
@@ -5583,14 +5455,11 @@ nav#primary-nav#primary-nav#primary-nav#primary-nav:is(:hover,:focus-within) > .
 }
 
 
-/* SOURCE: round1000-home-spacing-titles-square-message.css */
-/* Round 1000 — Home section rhythm + three Orbitron title signs + square Messages control. */
+/**/
+/**/
 :root{--r1000-section-gap:64px;}
 
-/* ------------------------------------------------------------------
-   MESSAGES — use the same square hardware asset on desktop and mobile.
-   The retired L-shaped/legacy face is not used by this final layer.
-   ------------------------------------------------------------------ */
+/**/
 html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
   position:fixed!important;
   z-index:2147483642!important;
@@ -5648,7 +5517,7 @@ html body[data-page] > a#header-send-message > :is(.r996-message-face,.r969-pink
   }
 }
 @media (max-width:760px){
-  /* Small square counterpart to the heart: centered in the top-right corner zone. */
+  /**/
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
     top:max(7px,env(safe-area-inset-top,0px))!important;
     right:max(7px,calc(env(safe-area-inset-right,0px) + 7px))!important;
@@ -5667,9 +5536,7 @@ html body[data-page] > a#header-send-message > :is(.r996-message-face,.r969-pink
   }
 }
 
-/* ------------------------------------------------------------------
-   HOME — three separate title signs, plain Orbitron for maximum clarity.
-   ------------------------------------------------------------------ */
+/**/
 html body.page-home[data-page="home"] #home-title-fields#home-title-fields.r1000-home-title-row{
   display:grid!important;
   align-items:stretch!important;
@@ -5770,10 +5637,7 @@ html body.page-home[data-page="home"] #home-title-fields .r1000-home-title-text-
   }
 }
 
-/* ------------------------------------------------------------------
-   HOME SECTION RHYTHM — 2/3 CSS inch = 64px from shared divider lines.
-   The ticker's top edge is treated as the carousel section's bottom edge.
-   ------------------------------------------------------------------ */
+/**/
 html body.page-home[data-page="home"] main#main-content > section#home-route-buttons.section--divider,
 html body.page-home[data-page="home"] main#main-content > section#home-solution-framework.section--divider{
   box-sizing:border-box!important;
@@ -5791,11 +5655,8 @@ html body.page-home[data-page="home"] .home-overview-carousel-section > .shell{
 }
 
 
-/* SOURCE: round1005-verified-authoritative.css */
-/* Round 1005 — verified authoritative corrections.
-   This is intentionally the final stylesheet in every primary page.
-   It owns: the single Messages control, Home company-title fields,
-   and the Home mobile Zero-Software/process-screen spacing. */
+/**/
+/**/
 
 :root{
   --r1005-message-size:84px;
@@ -5814,8 +5675,7 @@ html body[data-page] > a#header-send-message:is(:active,[aria-expanded="true"],.
   --r1005-message-transform:translate3d(0,3px,0);
 }
 
-/* The button itself is protected by inline !important geometry in HTML.
-   These rules own its child visuals and retire every historical layer. */
+/**/
 html body[data-page] > a#header-send-message::before,
 html body[data-page] > a#header-send-message::after{
   content:none!important;
@@ -5883,11 +5743,7 @@ html body[data-page] > a#header-send-message > .r1005-message-envelope path{
   }
 }
 
-/* ------------------------------------------------------------------
-   HOME COMPANY TITLE FIELDS
-   Preserve the desktop machine-screen hardware. Use the actual three
-   labels, clean Orbitron text, and no legacy pseudo-label duplication.
-   ------------------------------------------------------------------ */
+/**/
 html body.page-home[data-page="home"] #home-title-fields .r1005-home-title-copy{
   position:relative!important;
   z-index:20!important;
@@ -5938,7 +5794,7 @@ html body.page-home[data-page="home"] #home-title-fields .r1000-home-title-text-
 }
 
 @media (max-width:760px){
-  /* Deliberately over-specific: this beats the old two-field mobile rounds. */
+  /**/
   html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[data-page="home"]
   main#main-content#main-content#main-content
   #home-hero-housing#home-hero-housing > #home-title-fields#home-title-fields.r1000-home-title-row{
@@ -5989,11 +5845,7 @@ html body.page-home[data-page="home"] #home-title-fields .r1000-home-title-text-
   }
 }
 
-/* ------------------------------------------------------------------
-   HOME MOBILE ZERO-SOFTWARE + PROCESS SCREENS
-   Remove the historic -140px pull-up and give each title its own clear
-   vertical space before the green process terminals begin.
-   ------------------------------------------------------------------ */
+/**/
 @media (max-width:760px){
   html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[data-page="home"]
   main#main-content#main-content#main-content#main-content#main-content
@@ -6020,7 +5872,7 @@ html body.page-home[data-page="home"] #home-title-fields .r1000-home-title-text-
     overflow:visible!important;
   }
 
-  /* Keep the semantic H2 but remove it from visible mobile geometry. */
+  /**/
   html body.page-home[data-page="home"] #home-solution-framework #home-negative-software-title{
     position:absolute!important;
     width:1px!important;
@@ -6204,8 +6056,7 @@ html body.page-home[data-page="home"] #home-title-fields .r1000-home-title-text-
   }
 }
 
-/* Highest-priority historical layer uses !important for the process terminals.
-   Re-enter that same layer at the end so these verified mobile terminal rules win. */
+/**/
 @layer ah-r929-final{
   @media (max-width:760px){
     html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[data-page="home"]
@@ -6290,8 +6141,7 @@ html body.page-home[data-page="home"] #home-title-fields .r1000-home-title-text-
   }
 }
 
-/* Inline-protected process geometry variables. These are referenced by inline
-   !important declarations in Home, so historical layered CSS cannot override them. */
+/**/
 :root{
   --r1005-process-surface-margin:4px;
   --r1005-process-display:grid;
@@ -6334,10 +6184,10 @@ html body.page-home[data-page="home"] #home-title-fields .r1000-home-title-text-
 }
 
 
-/* SOURCE: round1007-message-size-envelope-home-title-spacing.css */
-/* Round 1007 — final requested mobile Messages sizing/centering + Home title spacing. */
+/**/
+/**/
 
-/* Keep the envelope geometrically centered inside the square on every viewport. */
+/**/
 html body[data-page] > a#header-send-message > .r1005-message-envelope{
   left:50%!important;
   top:50%!important;
@@ -6356,8 +6206,7 @@ html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
   padding:0!important;
 }
 
-/* Mobile Messages = exactly 75% of the current Round 1005 mobile size.
-   Preserve the same visual center in the top-right corner while shrinking it. */
+/**/
 @media (max-width:760px){
   :root{
     --r1005-message-size:37.5px;
@@ -6366,8 +6215,7 @@ html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
     --r1005-envelope-width:48%;
   }
 
-  /* Raise the three Home company-name screens without moving the image bank below.
-     The first screen now sits approximately one-half CSS inch below the inner top rim. */
+  /**/
   html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[data-page="home"]
   main#main-content#main-content#main-content
   #home-hero-housing#home-hero-housing > #home-title-fields#home-title-fields.r1000-home-title-row{
@@ -6385,10 +6233,10 @@ html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
 }
 
 
-/* SOURCE: round1008-mobile-process-spacing-envelope-center.css */
-/* Round 1008 — authoritative mobile process spacing/legibility + exact Messages envelope centering. */
+/**/
+/**/
 
-/* MESSAGES: center the actual SVG inside the full square face on desktop and mobile. */
+/**/
 html body[data-page] > a#header-send-message > .r1005-message-envelope{
   position:absolute!important;
   z-index:20!important;
@@ -6425,7 +6273,7 @@ html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
 }
 
 @media (max-width:760px){
-  /* Put the two section-title screens exactly about 2/3 CSS inch below the section break. */
+  /**/
   html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[data-page="home"]
   main#main-content#main-content#main-content
   section#home-solution-framework#home-solution-framework#home-solution-framework{
@@ -6443,7 +6291,7 @@ html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
     overflow:visible!important;
   }
 
-  /* Reserve the full height of BOTH Zero-Software / Solution title fields. */
+  /**/
   html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[data-page="home"]
   main#main-content#main-content#main-content
   section#home-solution-framework#home-solution-framework#home-solution-framework
@@ -6496,7 +6344,7 @@ html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
     overflow:hidden!important;
   }
 
-  /* Force the process bank to begin AFTER both title fields, with a visible air gap. */
+  /**/
   :root{
     --r1005-process-surface-margin:34px!important;
     --r1005-process-height:410px!important;
@@ -6524,7 +6372,7 @@ html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
     clear:both!important;
   }
 
-  /* Larger mobile terminal header copy. */
+  /**/
   html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[data-page="home"]
   main#main-content#main-content#main-content#main-content
   #home-solution-framework#home-solution-framework#home-solution-framework
@@ -6539,7 +6387,7 @@ html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
     overflow:hidden!important;
   }
 
-  /* Larger body copy while preserving comfortable line height and room for wrapping. */
+  /**/
   html body.page-home.page-home.page-home.page-home.page-home.page-home.page-home.page-home[data-page="home"]
   #home-solution-framework#home-solution-framework
   .negative-software-grid-round344 > article.home-process-stage.negative-software-screen-round344:not(.home-process-stage--key) > ul.home-process-stage__list > li{
@@ -6565,15 +6413,15 @@ html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
 }
 
 
-/* SOURCE: round1018-footer-pink-submerge-fixed-surface.css */
-/* Round 1018 — footer hardware: one identical pink side, face submerges while the surface line stays fixed. */
+/**/
+/**/
 :root{
   --r1018-footer-rest:url("./assets/footer-button-message-like-sandy-side-round915.svg?v=1018r");
   --r1018-footer-pressed:url("./assets/footer-button-message-like-sandy-side-pressed-submerged-round1018.svg?v=1018r");
   --r1018-footer-press-depth:4px;
 }
 
-/* The anchor is the stationary mounting/surface box. It never translates. */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer.site-footer.site-footer--minimal
 nav#primary-nav#primary-nav.footer-primary-nav
@@ -6593,12 +6441,12 @@ nav#primary-nav#primary-nav.footer-primary-nav
   transform:none!important;
   translate:none!important;
   scale:none!important;
-  /* This is the fixed black surface/slot beneath the hardware. */
+  /**/
   box-shadow:inset 0 -2px 0 #020305,0 1px 0 #020305,0 4px 6px rgba(0,0,0,.34)!important;
   transition:filter 160ms ease!important;
 }
 
-/* No legacy DOM/pseudo pink side can double the single baked-in side. */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
  a.footer-structure-control.mechanical-send-control[data-nav]::before,
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
@@ -6611,8 +6459,7 @@ html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.f
   opacity:0!important;
 }
 
-/* Pressing swaps to the same hardware with the pink siding fully submerged.
-   The outer anchor never moves, so the black surface line cannot move down. */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer.site-footer.site-footer--minimal
 nav#primary-nav#primary-nav.footer-primary-nav
@@ -6625,7 +6472,7 @@ nav#primary-nav#primary-nav.footer-primary-nav
   box-shadow:inset 0 -2px 0 #020305,0 1px 0 #020305,0 2px 3px rgba(0,0,0,.26)!important;
 }
 
-/* The lettering follows the face downward, independently of the stationary surface box. */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
  a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy{
   transform:none!important;
@@ -6638,11 +6485,8 @@ html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.f
 }
 
 
-/* SOURCE: round1022-carousel-spacing-uniform-pink-lines.css */
-/* Round 1022 — Home carousel vertical rhythm + uniform pink rule weight.
-   The carousel section now sizes to its content instead of forcing a viewport-height
-   cavity.  This gives the image carousel deliberate, equal clearance from the section
-   edges on desktop and mobile.  Major pink divider rules share one stroke weight. */
+/**/
+/**/
 
 :root{
   --r1022-pink-rule:2px;
@@ -6650,8 +6494,7 @@ html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.f
   --r1022-carousel-gap-mobile:36px;
 }
 
-/* HOME CAROUSEL — exactly equal breathing room above and below the carousel.
-   Override the older 100svh/min-height rules that created the large empty bands. */
+/**/
 @media (min-width:761px){
   html body.page-home.page-home[data-page="home"] main#main-content#main-content
   > section.home-overview-display-section.home-overview-carousel-section{
@@ -6725,8 +6568,7 @@ html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.f
   }
 }
 
-/* UNIFORM PINK RULES — section/divider strokes only.  Mechanical button pink
-   siding is intentionally excluded because it is physical depth, not a line. */
+/**/
 html body.page-solutions[data-page="solutions"] main#main-content > section + section,
 html body.page-learning[data-page="learning"] main#main-content > section + section,
 html body.page-pricing[data-page="pricing"] main#main-content > section + section,
@@ -6738,27 +6580,22 @@ html body.page-pricing[data-page="pricing"] main#main-content > section.section-
   border-top-color:var(--brand-pink,#ff2ea8)!important;
 }
 
-/* Existing pink information rules on the Home process screens use the same weight. */
+/**/
 html body.page-home[data-page="home"] #home-solution-framework
 .home-process-stage.negative-software-screen-round344:not(.home-process-stage--key) > h3::after{
   border-top-width:var(--r1022-pink-rule)!important;
 }
 
 
-/* SOURCE: round1023-brand-section-clearance.css */
-/* Round 1023 — 2/3-inch section-clearance brand standard.
-   One CSS inch is 96px, therefore 2/3 inch = 64px.
-   This layer changes only the vertical breathing room at major horizontal
-   section boundaries; widths, card geometry, model controls and internal
-   component spacing are intentionally left alone. */
+/**/
+/**/
 
 :root{
   --ah-brand-section-clearance:64px;
   --ah-brand-divider-weight:2px;
 }
 
-/* Major content sections: one exact brand-standard clearance above and below
-   the section's content on desktop AND mobile. */
+/**/
 html body.page-home[data-page="home"] main#main-content > section:not(#home-opening-hero),
 html body.page-solutions[data-page="solutions"] main#main-content > section,
 html body.page-who-we-help[data-page="who-we-help"] main#main-content > section#who-we-help-solutions,
@@ -6769,9 +6606,7 @@ html body.page-about[data-page="about"] main#main-content > section.r977-about-s
   padding-bottom:var(--ah-brand-section-clearance)!important;
 }
 
-/* HOME OPENING SECTION
-   Preserve the current title sizes, machine-window sizes and horizontal layout.
-   Only replace the elastic outer air with the 64px brand-standard edge space. */
+/**/
 @media (min-width:761px){
   html body.page-home.page-home[data-page="home"]
   main#main-content#main-content > section#home-opening-hero#home-opening-hero{
@@ -6794,8 +6629,7 @@ html body.page-about[data-page="about"] main#main-content > section.r977-about-s
 }
 
 @media (max-width:760px){
-  /* Mobile Home already uses normal vertical flow. Give the first title field
-     exactly 64px of clear space from the section edge without changing cards. */
+  /**/
   html body.page-home.page-home.page-home[data-page="home"]
   main#main-content#main-content > section#home-opening-hero#home-opening-hero
   #home-hero-housing#home-hero-housing.home-hero-brushed-housing{
@@ -6811,9 +6645,7 @@ html body.page-about[data-page="about"] main#main-content > section.r977-about-s
   }
 }
 
-/* HOME CAROUSEL
-   Round 1022 used a smaller mobile value. The brand standard is now 64px at
-   every viewport width, so the carousel has identical edge clearance. */
+/**/
 html body.page-home.page-home[data-page="home"]
 main#main-content#main-content > section.home-overview-display-section.home-overview-carousel-section{
   box-sizing:border-box!important;
@@ -6824,11 +6656,7 @@ main#main-content#main-content > section.home-overview-display-section.home-over
   padding-bottom:var(--ah-brand-section-clearance)!important;
 }
 
-/* SOLUTION BOTTOM EXHIBIT
-   Its padding is controlled by inline variables from Round 1012, so standardize
-   those variables rather than changing the image's size or position. The fixed
-   ticker/rim reserve is retained and the visible image-to-ticker clearance is
-   exactly the same 64px brand gap. */
+/**/
 html body.page-solutions[data-page="solutions"] #live-refreshing-websites#live-refreshing-websites{
   --r1012-top-gap:var(--ah-brand-section-clearance)!important;
   --r1012-bottom-reserve:calc(
@@ -6848,9 +6676,7 @@ html body.page-solutions[data-page="solutions"] #live-refreshing-websites#live-r
   }
 }
 
-/* RATES & SERVICES
-   Keep the fully-open Automation/Web menus from Round 1016 untouched internally.
-   Standardize only the major page bands around them. */
+/**/
 html body.page-pricing[data-page="pricing"]
 main#main-content > .r864-rates > header.r864-rates__hero,
 html body.page-pricing[data-page="pricing"]
@@ -6860,8 +6686,7 @@ main#main-content > .r864-rates > section.r864-rates__final{
   padding-bottom:var(--ah-brand-section-clearance)!important;
 }
 
-/* If a visible major section uses an explicit horizontal divider, keep the
-   divider itself at the existing brand-standard 2px strength. */
+/**/
 html body.page-home[data-page="home"] main#main-content > section.section--divider,
 html body.page-solutions[data-page="solutions"] main#main-content > section + section,
 html body.page-pricing[data-page="pricing"] main#main-content .r864-rates__final,
@@ -6870,10 +6695,8 @@ html body.page-about[data-page="about"] main#main-content > section + section{
 }
 
 
-/* SOURCE: round1026-universal-64-label-carousel-authority.css */
-/* Round 1026 — authoritative 2/3-inch rhythm + route-label readability.
-   1 CSS inch = 96px, therefore 2/3 inch = 64px.
-   This file is loaded last on every page. */
+/**/
+/**/
 
 :root{
   --ah-brand-section-clearance:64px;
@@ -6883,12 +6706,7 @@ html body.page-about[data-page="about"] main#main-content > section + section{
   --r1026-route-label-height:54px;
 }
 
-/* ================================================================
-   UNIVERSAL MAJOR-SECTION CLEARANCE
-   Every normal horizontal content band uses exactly 64px from its
-   horizontal section edge to the nearest content above/below.
-   Full-screen 3D stages retain their dedicated stage/ticker geometry.
-   ================================================================ */
+/**/
 html body.page-home.page-home[data-page="home"] main#main-content#main-content
 > section#home-route-buttons#home-route-buttons,
 html body.page-home.page-home[data-page="home"] main#main-content#main-content
@@ -6908,8 +6726,7 @@ html body.page-about.page-about[data-page="about"] main#main-content#main-conten
   padding-bottom:var(--ah-brand-section-clearance)!important;
 }
 
-/* Home opening title/machine housing follows the same brand clearance without
-   changing its grid, widths, title sizes, or machine-window geometry. */
+/**/
 html body.page-home.page-home[data-page="home"]
 #home-opening-hero#home-opening-hero #home-hero-housing#home-hero-housing{
   box-sizing:border-box!important;
@@ -6917,8 +6734,7 @@ html body.page-home.page-home[data-page="home"]
   padding-bottom:var(--ah-brand-section-clearance)!important;
 }
 
-/* Rates & Services contains its major bands inside one wrapper. Keep the
-   current tower/card structure and only standardize the band-edge clearance. */
+/**/
 html body.page-pricing.page-pricing[data-page="pricing"]
 main#main-content#main-content .r864-rates > .r864-rates__hero,
 html body.page-pricing.page-pricing[data-page="pricing"]
@@ -6930,8 +6746,7 @@ main#main-content#main-content .r864-rates > .r864-rates__final{
   padding-bottom:var(--ah-brand-section-clearance)!important;
 }
 
-/* Solution bottom exhibit has a fixed ticker below it. Preserve that reserve,
-   but keep the visible exhibit-to-section/ticker clearance at exactly 64px. */
+/**/
 html body.page-solutions.page-solutions[data-page="solutions"]
 #live-refreshing-websites#live-refreshing-websites{
   --r1012-top-gap:var(--ah-brand-section-clearance)!important;
@@ -6952,8 +6767,7 @@ html body.page-solutions.page-solutions[data-page="solutions"]
   }
 }
 
-/* HOME CAROUSEL — exact content-height stage. The old Round 999 JS has also
-   been corrected so it can no longer restore a viewport-height cavity later. */
+/**/
 html body.page-home.page-home.page-home[data-page="home"]
 main#main-content#main-content#main-content
 > section.home-overview-display-section.home-overview-carousel-section{
@@ -7001,12 +6815,7 @@ html body.page-home.page-home.page-home[data-page="home"]
   margin-bottom:0!important;
 }
 
-/* ================================================================
-   WHO WE HELP + LEARNING CENTER ROUTE LABELS
-   Both pages now use plain text rather than the legacy per-character lamp
-   renderer. That removes the desktop missing-space bug and the weak mobile
-   rendering while keeping the same digital-screen appearance.
-   ================================================================ */
+/**/
 html body.page-who-we-help.page-who-we-help.page-who-we-help[data-page="who-we-help"]
 #who-we-help-solutions#who-we-help-solutions .who-help-route-card
 > .premium-route-card__title-sign.brand-route-screen,
@@ -7085,7 +6894,7 @@ html body:is(.page-who-we-help,.page-learning)[data-page]
   display:none!important;
 }
 
-/* All major horizontal section separators use the same neon-pink rule. */
+/**/
 html body.page-home[data-page="home"] main#main-content > section + section,
 html body.page-solutions[data-page="solutions"] main#main-content > section + section,
 html body.page-who-we-help[data-page="who-we-help"] main#main-content > section + section,
@@ -7095,10 +6904,7 @@ html body.page-pricing[data-page="pricing"] .r864-rates > :is(.r864-rates__drawe
   border-top:var(--ah-brand-section-line-weight) solid var(--ah-brand-section-line)!important;
 }
 
-/* ================================================================
-   RATES & SERVICES — reinforce the fully-visible two-tower layout requested
-   in Round 1025. No nested service area may own a scroll bar or clipped height.
-   ================================================================ */
+/**/
 @media (min-width:761px){
   html body.page-pricing.page-pricing.page-pricing[data-page="pricing"]
   main#main-content#main-content .r864-rates > .r864-rates__drawers.r984-rates-towers{
@@ -7158,9 +6964,8 @@ main#main-content#main-content :is(#r864-ai,#r864-web).r984-rates-tower article{
 }
 
 
-/* SOURCE: round1057-footer-bar-height-no-seam.css */
-/* Round 1057 — slightly taller bottom outer-rim/footer band and no black seam.
-   The footer remains mechanically unchanged; only its mounting band gains height. */
+/**/
+/**/
 :root{--current-frame-bottom:108px!important;--r1057-footer-band-height:108px;}
 html body[data-page] > footer#site-footer#site-footer.site-footer.site-footer--minimal{
   height:var(--r1057-footer-band-height)!important;
@@ -7180,7 +6985,7 @@ html body[data-page] > footer#site-footer#site-footer.site-footer.site-footer--m
   box-shadow:none!important;
   background:transparent!important;
 }
-/* Remove any legacy horizontal separator sitting on the top edge of the footer band. */
+/**/
 html body[data-page] > footer#site-footer#site-footer.site-footer.site-footer--minimal::before,
 html body[data-page] > footer#site-footer#site-footer.site-footer.site-footer--minimal::after,
 html body[data-page] > footer#site-footer#site-footer.site-footer.site-footer--minimal > .minimal-footer-row::before,

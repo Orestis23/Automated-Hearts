@@ -1,0 +1,133 @@
+/* Round 1233 — transition shield rim/seam authority.
+   Match the moving route shield to the site's persistent inner gold rim and
+   use the exact frame radius so the lower corners meet the shell seamlessly. */
+
+/* Persistent-router shield: the wrapper is the clipping aperture; the panel is
+   the part that physically travels, so the gold rim travels with the shield. */
+#ah-route-shield{
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  border-radius:var(--current-frame-radius,32px)!important;
+}
+#ah-route-shield-panel{
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  border:2px solid rgba(214,178,87,.94)!important;
+  border-radius:var(--current-frame-radius,32px)!important;
+  background-clip:padding-box!important;
+  box-shadow:
+    inset 0 0 0 2px rgba(31,19,3,.96),
+    inset 0 0 0 4px rgba(232,202,126,.30),
+    inset 0 0 10px rgba(216,176,76,.24),
+    inset 0 0 0 5px rgba(255,239,194,.16)!important;
+}
+
+/* Direct/non-router transition shield fallback. */
+html body[data-page] > #page-transition-shield.page-transition-shield,
+html body[data-page] > .page-transition-shield.page-transition-shield{
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  border:2px solid rgba(214,178,87,.94)!important;
+  border-radius:var(--current-frame-radius,32px)!important;
+  background-clip:padding-box!important;
+  box-shadow:
+    inset 0 0 0 2px rgba(31,19,3,.96),
+    inset 0 0 0 4px rgba(232,202,126,.30),
+    inset 0 0 10px rgba(216,176,76,.24),
+    inset 0 0 0 5px rgba(255,239,194,.16)!important;
+}
+html.page-shield-arrival:not(.ah-shield-dom-ready)::before{
+  box-sizing:border-box!important;
+  border:2px solid rgba(214,178,87,.94)!important;
+  border-radius:var(--current-frame-radius,32px)!important;
+  box-shadow:
+    inset 0 0 0 2px rgba(31,19,3,.96),
+    inset 0 0 0 4px rgba(232,202,126,.30),
+    inset 0 0 10px rgba(216,176,76,.24),
+    inset 0 0 0 5px rgba(255,239,194,.16)!important;
+}
+
+/* Mobile shell's inner rim uses an 18px corner and a slightly finer gold line.
+   Mirror those exact proportions on the moving shield. */
+@media (max-width:900px){
+  #ah-route-shield{
+    border-radius:18px!important;
+  }
+  #ah-route-shield-panel{
+    border:1.5px solid rgba(214,178,87,.90)!important;
+    border-radius:18px!important;
+    box-shadow:
+      inset 0 0 0 2px rgba(24,12,2,.94),
+      inset 0 0 0 3px rgba(255,238,186,.18),
+      inset 0 0 8px rgba(214,178,87,.18)!important;
+  }
+  html body[data-page] > #page-transition-shield.page-transition-shield,
+  html body[data-page] > .page-transition-shield.page-transition-shield{
+    border:1.5px solid rgba(214,178,87,.90)!important;
+    border-radius:18px!important;
+    box-shadow:
+      inset 0 0 0 2px rgba(24,12,2,.94),
+      inset 0 0 0 3px rgba(255,238,186,.18),
+      inset 0 0 8px rgba(214,178,87,.18)!important;
+  }
+  html.page-shield-arrival:not(.ah-shield-dom-ready)::before{
+    border:1.5px solid rgba(214,178,87,.90)!important;
+    border-radius:18px!important;
+    box-shadow:
+      inset 0 0 0 2px rgba(24,12,2,.94),
+      inset 0 0 0 3px rgba(255,238,186,.18),
+      inset 0 0 8px rgba(214,178,87,.18)!important;
+  }
+}
+
+/* Round 1235 — page quote placement and embossed-white treatment.
+   Keep one quote-style authority: lower field between the heart and shield edge. */
+html body > #page-transition-shield .page-transition-shield__panel,
+html body > .page-transition-shield .page-transition-shield__panel{
+  position:absolute!important;
+}
+#ah-route-shield #ah-route-shield-quote,
+html body > #page-transition-shield .page-transition-shield__quote,
+html body > .page-transition-shield .page-transition-shield__quote{
+  position:absolute!important;
+  z-index:2!important;
+  left:50%!important;
+  top:auto!important;
+  bottom:clamp(48px,8.5%,110px)!important;
+  transform:translateX(-50%)!important;
+  width:min(80%,1040px)!important;
+  margin:0!important;
+  padding:0!important;
+  color:rgba(246,246,240,.93)!important;
+  text-align:center!important;
+  font-family:Orbitron,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;
+  font-size:clamp(18px,1.55vw,31px)!important;
+  font-weight:600!important;
+  line-height:1.34!important;
+  letter-spacing:.035em!important;
+  text-wrap:balance!important;
+  text-shadow:
+    -1px -1px 0 rgba(255,255,255,.58),
+     1px  1px 0 rgba(0,0,0,.94),
+     0  2px 2px rgba(0,0,0,.62)!important;
+  -webkit-text-stroke:.28px rgba(255,255,255,.38)!important;
+  filter:none!important;
+  pointer-events:none!important;
+}
+#ah-route-shield #ah-route-shield-quote[hidden]{display:none!important}
+@media(max-width:900px){
+  #ah-route-shield #ah-route-shield-quote,
+  html body > #page-transition-shield .page-transition-shield__quote,
+  html body > .page-transition-shield .page-transition-shield__quote{
+    bottom:clamp(28px,7.5%,64px)!important;
+    width:min(86%,620px)!important;
+    font-size:clamp(13px,3.9vw,20px)!important;
+    line-height:1.38!important;
+    letter-spacing:.018em!important;
+    text-shadow:
+      -.75px -.75px 0 rgba(255,255,255,.58),
+       .75px  .75px 0 rgba(0,0,0,.94),
+       0 1.5px 1.5px rgba(0,0,0,.64)!important;
+    -webkit-text-stroke:.2px rgba(255,255,255,.34)!important;
+  }
+}

@@ -1,11 +1,6 @@
-/* Automated Hearts Round 1141
-   Solution header spacing authority.
-   Desktop brand clearance: 2/3 CSS inch = 64px from each horizontal section edge.
-   Mobile brand clearance: 1/2 CSS inch = 48px.
-   The desktop process sign now participates in layout instead of hanging outside
-   the centered machine anchor, preventing its lettering from being clipped. */
+/**/
 
-/* ---------- Desktop Solution header ---------- */
+/**/
 @media (min-width:801px){
   #solution-process-header{
     box-sizing:border-box!important;
@@ -27,8 +22,8 @@
     width:min(1080px,calc(100% - 54px))!important;
     max-width:1080px!important;
     margin:0 auto!important;
-    padding:0 0 27px!important; /* absorbs the widest lower rim so 64px remains below it */
-    gap:43px!important;          /* 27px outer rim depth + 16px visual gap below the sign */
+    padding:0 0 27px!important; /**/
+    gap:43px!important;          /**/
   }
 
   #solution-process-heading{
@@ -69,7 +64,7 @@
   }
 }
 
-/* ---------- Mobile Solution header ---------- */
+/**/
 @media (max-width:800px){
   main > .lite-section.solution-mobile-header-section{
     box-sizing:border-box!important;
@@ -107,8 +102,7 @@
     white-space:nowrap!important;
   }
 
-  /* The removed gold hero graphic no longer consumes space; keep one clean
-     24px internal gap from the title sign to the machine hardware. */
+  /**/
   .solution-mobile-header-section > #lite-model-stage{
     margin-top:0!important;
   }

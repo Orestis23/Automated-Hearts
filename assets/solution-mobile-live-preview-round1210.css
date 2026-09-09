@@ -1,4 +1,4 @@
-/* Round 1210 — show the actual current live Solution machine behind the mobile carbon shutter. */
+/**/
 #lite-model-stage #lite-model-shell.solution-mobile-model-shell{
   background:#07121c!important;
 }
@@ -28,7 +28,7 @@
 #lite-model-stage #lite-model-shell.solution-mobile-model-shell > iframe{
   pointer-events:auto!important;
 }
-/* While the cover is closed it remains the hit target, so iframe pointer events cannot steal the reveal tap. */
+/**/
 #lite-model-stage #lite-model-shell.solution-mobile-model-shell > button#solution-mobile-cover.solution-mobile-window-cover:not(.is-open) ~ iframe{
   pointer-events:none!important;
 }

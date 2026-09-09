@@ -1,13 +1,11 @@
-/* Round 1138 — consistent machine-window shields.
-   Closed: large centered pulsing heart makes the full screen obviously clickable.
-   Open: only a shallow lower lip remains; a small static heart marks the close control. */
+/**/
 
 @keyframes r1138-cover-heart-pulse{
   0%,100%{opacity:.82;transform:translate(-50%,-50%) scale(.90)}
   50%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}
 }
 
-/* ---------- Desktop Home: both machine windows ---------- */
+/**/
 html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame{
   --r1138-open-lip:38px;
   overflow:hidden!important;
@@ -55,7 +53,7 @@ html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-fra
     drop-shadow(0 0 7px rgba(255,46,168,.42))!important;
 }
 
-/* ---------- Mobile Home: both lightweight windows ---------- */
+/**/
 #machine-stack .machine-frame{--r1138-mobile-open-lip:30px;overflow:hidden!important;}
 #machine-stack .window-shutter{
   overflow:hidden!important;
@@ -117,7 +115,7 @@ html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-fra
     drop-shadow(0 0 5px rgba(255,46,168,.38))!important;
 }
 
-/* ---------- Desktop Solution machine ---------- */
+/**/
 #solution-process-header .solution-process-window{--r1138-solution-open-lip:38px;overflow:hidden!important;}
 #solution-process-header .solution-process-cover{
   pointer-events:auto!important;
@@ -153,7 +151,7 @@ html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-fra
     drop-shadow(0 0 7px rgba(255,46,168,.42))!important;
 }
 
-/* ---------- Mobile Solution interactive window ---------- */
+/**/
 #lite-model-stage .solution-mobile-model-shell{
   position:relative!important;
   display:block!important;

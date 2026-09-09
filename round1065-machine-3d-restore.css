@@ -1,5 +1,5 @@
-/* Automated Hearts Round 1065 — restore the interactive machine 3D to Home left window and Solution top window. */
-/* Home: the left machine window contains the live model and opens by default. */
+/**/
+/**/
 html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame:first-child{
   isolation:isolate!important;
 }
@@ -22,12 +22,12 @@ html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-fra
   z-index:1!important;
   pointer-events:none!important;
 }
-/* Keep the original mechanical shutter/heart handle, but start it retracted so the 3D is actually visible. */
+/**/
 html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame:first-child > .home-machine-haze-screen{
   transform:translate3d(0,calc(-100% + var(--r688-haze-handle-visible,14px)),0)!important;
 }
 
-/* Solution: restore the live machine into the existing top exhibit area. */
+/**/
 html body.page-solutions[data-page="solutions"] #solution-formula-machine-window.r1065-solution-machine-window{
   position:relative!important;
   inset:auto!important;
@@ -100,7 +100,7 @@ html body.page-solutions[data-page="solutions"] #solution-formula-machine-window
   pointer-events:auto!important;
   touch-action:none!important;
 }
-/* The top Solution model is immediately available for Click / Drag / Zoom; no opaque shutter sits over it. */
+/**/
 html body.page-solutions[data-page="solutions"] #solution-formula-machine-window .solution-machine-haze-screen{
   display:none!important;
   visibility:hidden!important;

@@ -1,4 +1,4 @@
-/* Round 1160 — mobile selected-model clean stage */
+/**/
 @media (max-width: 900px){
   .lite-section:has(#lite-model-stage:not([hidden])){
     content-visibility:visible;

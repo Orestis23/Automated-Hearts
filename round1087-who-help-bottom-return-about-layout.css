@@ -1,8 +1,6 @@
-/* Automated Hearts Round 1087
-   - Who We Help return control moved to the lower model-stage position requested.
-   - About Us cleanup/reflow based on annotated reference. */
+/**/
 
-/* WHO WE HELP: stage-local return button centered just above the ticker, not at the top. */
+/**/
 html body.page-who-we-help.r1073-model-open[data-page="who-we-help"]
 #who-help-model-stage#who-help-model-stage > button.learning-stage-return[data-who-help-back-to-top]{
   position:absolute!important;
@@ -26,7 +24,7 @@ html body.page-who-we-help.r1073-model-open[data-page="who-we-help"]
   transform:translate3d(-50%,3px,0)!important;
 }
 
-/* ABOUT: remove the crossed-out intro copy, left accent rail, and number tags. */
+/**/
 html body.page-about[data-page="about"] .r1061-about-kicker,
 html body.page-about[data-page="about"] .r1061-about-intro > p:not(.r1061-about-kicker),
 html body.page-about[data-page="about"] .r1061-about-index{
@@ -41,14 +39,13 @@ html body.page-about[data-page="about"] .r1061-about-tablet::before{
   content:none!important;
 }
 
-/* Keep the medallion, but reclaim the space formerly reserved for the number marker. */
+/**/
 html body.page-about[data-page="about"] .r1061-about-medallion-wrap{
   padding-left:18px!important;
   padding-right:18px!important;
 }
 
-/* First, second and fourth principles now have four equal information boxes.
-   The former yellow subhead becomes the new left-most box. */
+/**/
 html body.page-about[data-page="about"] .r1061-point-grid.r1087-four-box-grid,
 html body.page-about[data-page="about"] .r1061-privacy-philosophy.r1087-four-box-grid{
   grid-template-columns:repeat(4,minmax(0,1fr))!important;
@@ -78,7 +75,7 @@ html body.page-about[data-page="about"] .r1061-privacy-philosophy > p.r1087-subh
   border-color:rgba(197,165,95,.40)!important;
 }
 
-/* Third principle: yellow line is now sentence one of the copy below the five process boxes. */
+/**/
 html body.page-about[data-page="about"] .r1061-cost-line .r1087-strategy-lead{
   color:#f4e7b5!important;
   -webkit-text-fill-color:#f4e7b5!important;

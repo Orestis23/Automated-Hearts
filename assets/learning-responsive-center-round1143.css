@@ -1,9 +1,4 @@
-/* Automated Hearts Round 1143 — Learning Center true viewport centering authority.
-   The three complete lesson controls (medallion + title screen) are centered
-   inside the visible interior between the fixed upper and lower shell rims.
-   Both width and height constrain the controls, so the three columns cannot
-   collide at narrower/shorter desktop resolutions. This file intentionally
-   uses higher specificity than historical duplicated-ID rules. */
+/**/
 
 @media (min-width:761px){
   html body.page-learning.page-learning.page-learning[data-page="learning"]
@@ -177,9 +172,7 @@
   }
 }
 
-/* Extremely short desktop windows still retain a three-column layout. The
-   height formula above shrinks the circular controls rather than allowing the
-   labels or neighboring cards to collide. */
+/**/
 @media (min-width:761px) and (max-height:520px){
   html body.page-learning.page-learning.page-learning[data-page="learning"]
   main#main-content#main-content#main-content
@@ -194,9 +187,7 @@
   }
 }
 
-/* The dedicated mobile Learning Center is a single-column scroll layout.
-   Explicitly lock it to one centered column so unusual mobile/tablet widths
-   cannot cause route cards to overlap. */
+/**/
 @media (max-width:760px){
   html body .lite-section > .route-grid{
     box-sizing:border-box!important;

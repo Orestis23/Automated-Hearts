@@ -1,5 +1,4 @@
-/* Automated Hearts Round 1194 — site-wide first-visit typing shield.
-   One shared intro for every direct desktop/mobile entry page. */
+/**/
 html[data-ah-site-intro="1"]{overflow:hidden!important;}
 html[data-ah-site-intro="1"] body > #page-transition-shield{display:none!important;visibility:hidden!important;pointer-events:none!important;}
 
@@ -95,7 +94,7 @@ html[data-ah-site-intro="1"] #site-first-visit-intro{display:grid!important;}
   100%{opacity:.96;clip-path:circle(78% at 50% 52%);transform:scale(1);filter:grayscale(1) brightness(3.55) contrast(1.58) drop-shadow(0 0 8px rgba(255,255,255,.6));}
 }
 
-/* While the new shared intro is active, suppress the older Home-only intro layers. */
+/**/
 html[data-ah-site-intro="1"] #desktop-first-visit-intro,
 html[data-ah-site-intro="1"] #first-visit-intro{display:none!important;visibility:hidden!important;pointer-events:none!important;}
 

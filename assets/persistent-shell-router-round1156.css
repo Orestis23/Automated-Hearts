@@ -1,5 +1,4 @@
-/* Round 1156 — persistent-shell support. The content frame is intentionally
-   below all existing outer-rim hardware; only page content is replaceable. */
+/**/
 .ah-shell-content-frame{
   position:fixed!important;
   inset:0!important;
@@ -12,8 +11,7 @@
   z-index:1000!important;
 }
 
-/* Mobile embedded pages render content only. The top document owns every
-   visible piece of rim hardware and the five physical navigation buttons. */
+/**/
 html.ah-shell-embedded body > :is(
   .first-visit-intro,
   .desktop-first-visit-intro,
@@ -42,8 +40,7 @@ html.ah-shell-embedded body{
   overflow-x:hidden!important;
 }
 
-/* Desktop already has older ah-embedded-page rules. These are a defensive
-   authority layer so no duplicate shell element can leak through an iframe. */
+/**/
 html.ah-shell-embedded body[data-page] > :is(
   .desktop-first-visit-intro,
   .ah-persistent-outer-rim,

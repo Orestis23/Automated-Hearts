@@ -1,0 +1,215 @@
+/* Round 1232 — Home page breathing-room pass only.
+   Increase separation between ideas without changing component order or art. */
+
+/* DESKTOP */
+@media (min-width:901px){
+  html body.page-home[data-page="home"] #home-opening-hero #home-title-fields{
+    gap:clamp(28px,2.6vw,48px) !important;
+    margin-bottom:clamp(44px,5.5vh,76px) !important;
+  }
+  html body.page-home[data-page="home"] #home-opening-hero #home-machine-grid{
+    gap:clamp(44px,4vw,72px) !important;
+  }
+
+  html body.page-home[data-page="home"] #home-route-buttons{
+    padding-top:clamp(96px,8vw,128px) !important;
+    padding-bottom:clamp(96px,8vw,128px) !important;
+  }
+  html body.page-home[data-page="home"] #home-route-buttons > .shell{
+    padding-top:0 !important;
+  }
+  html body.page-home[data-page="home"] #home-route-buttons .home-explore-grid{
+    column-gap:clamp(44px,4vw,72px) !important;
+    row-gap:clamp(52px,5vw,80px) !important;
+  }
+  html body.page-home[data-page="home"] #home-route-buttons .home-route-card{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:clamp(22px,2vw,34px) !important;
+  }
+  html body.page-home[data-page="home"] #home-route-buttons .premium-route-card__title-sign{
+    margin-top:0 !important;
+  }
+
+  html body.page-home[data-page="home"] #home-solution-framework{
+    padding-top:clamp(104px,8vw,136px) !important;
+    padding-bottom:clamp(112px,9vw,152px) !important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework > .shell{
+    padding-top:0 !important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-heading-round344{
+    margin-bottom:clamp(44px,4vw,64px) !important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework .r504-process-surface{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:clamp(46px,4vw,68px) !important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-grid-round344{
+    gap:clamp(34px,3vw,52px) !important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework
+  .negative-software-grid-round344 > article.home-process-stage:not(.home-process-stage--key){
+    padding:clamp(22px,1.8vw,30px) !important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework
+  .negative-software-grid-round344 > article.home-process-stage:not(.home-process-stage--key) h3{
+    margin-bottom:clamp(22px,1.8vw,30px) !important;
+    min-height:0 !important;
+    height:auto !important;
+    padding-bottom:clamp(14px,1.2vw,20px) !important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework
+  .negative-software-grid-round344 > article.home-process-stage:not(.home-process-stage--key) .home-process-stage__list{
+    gap:18px !important;
+    padding-top:8px !important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework
+  .negative-software-grid-round344 > article.home-process-stage:not(.home-process-stage--key) .home-process-stage__list > li{
+    line-height:1.42 !important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore{
+    margin-top:clamp(52px,4vw,72px) !important;
+  }
+  html body.page-home[data-page="home"] #negative-software-explore .explore-title-1175::after{
+    content:none !important;
+    display:none !important;
+  }
+  html body.page-home[data-page="home"] #negative-software-explore .r930-explore-quote{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:8px !important;
+    margin:clamp(24px,2vw,34px) auto 0 !important;
+    max-width:24ch !important;
+    text-align:center !important;
+  }
+  html body.page-home[data-page="home"] #negative-software-explore .r930-explore-attribution{
+    margin:clamp(22px,1.8vw,30px) 7% 0 auto !important;
+    font-size:clamp(18px,1.3vw,22px) !important;
+    text-align:right !important;
+  }
+
+  html body.page-home[data-page="home"] main#main-content > .home-overview-display-section{
+    padding-top:clamp(104px,8vw,136px) !important;
+    padding-bottom:clamp(112px,9vw,152px) !important;
+  }
+  html body.page-home[data-page="home"] main#main-content > .home-overview-display-section > .shell{
+    padding-top:0 !important;
+  }
+}
+
+/* MOBILE / TABLET HOME */
+@media (max-width:900px){
+  html body main#main-content > .section{
+    padding-top:64px !important;
+    padding-bottom:64px !important;
+  }
+  html body main#main-content > .section:first-child{
+    padding-top:20px !important;
+  }
+  html body .title-stack{
+    gap:16px !important;
+    margin-bottom:40px !important;
+  }
+  html body #machine-stack.machine-stack{
+    gap:44px !important;
+  }
+
+  html body main#main-content > .section:nth-of-type(2) .route-grid{
+    gap:52px !important;
+  }
+  html body main#main-content > .section:nth-of-type(2) .route-label{
+    margin-top:18px !important;
+  }
+
+  html body main#main-content > .section[aria-label="Negative Software Solution"] .section-title{
+    margin-bottom:40px !important;
+  }
+  html body main#main-content > .section[aria-label="Negative Software Solution"] .process-grid{
+    gap:24px !important;
+  }
+  html body main#main-content > .section[aria-label="Negative Software Solution"] .process h3{
+    padding:18px 14px !important;
+    line-height:1.18 !important;
+  }
+  html body main#main-content > .section[aria-label="Negative Software Solution"] .process ul{
+    padding:22px 24px 26px !important;
+    gap:12px !important;
+    line-height:1.50 !important;
+  }
+
+  /* Explore: remove the underline, make the heading roughly 2x the earlier
+     mobile scale, clean up the quote, and increase the attribution. */
+  html body .explore-key{
+    min-height:0 !important;
+    margin-top:40px !important;
+    padding:26px 18px 30px !important;
+    gap:0 !important;
+  }
+  html body .explore-key > strong{
+    min-height:0 !important;
+    padding:8px 0 12px !important;
+    font-size:clamp(52px,16vw,72px) !important;
+    line-height:.98 !important;
+  }
+  html body .explore-key > strong::after{
+    content:none !important;
+    display:none !important;
+  }
+  html body .explore-key > small{
+    position:relative !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-height:0 !important;
+    margin:18px 0 0 !important;
+    padding:18px 8px 4px !important;
+    gap:22px !important;
+  }
+  html body .explore-key .explore-quote-text{
+    width:min(100%,24ch) !important;
+    margin:0 auto !important;
+    font-size:clamp(18px,5.7vw,24px) !important;
+    line-height:1.46 !important;
+    letter-spacing:.012em !important;
+    text-wrap:balance !important;
+  }
+  html body .explore-key .explore-truthbot{
+    position:static !important;
+    align-self:stretch !important;
+    width:100% !important;
+    margin:0 !important;
+    padding-right:8px !important;
+    font-size:clamp(18px,5.2vw,22px) !important;
+    line-height:1.15 !important;
+    text-align:right !important;
+  }
+
+  html body main#main-content > .section[aria-label="Humans and AI working together"] .section-title{
+    margin-bottom:24px !important;
+  }
+  html body main#main-content > .section[aria-label="Humans and AI working together"] .ahi-sign{
+    margin-bottom:72px !important;
+    padding-block:18px !important;
+    gap:12px !important;
+  }
+  html body main#main-content > .section[aria-label="Humans and AI working together"] .ahi-sign strong{
+    line-height:1.28 !important;
+  }
+  html body main#main-content > .section[aria-label="Humans and AI working together"] .ahi-sign span{
+    margin-top:4px !important;
+    line-height:1.42 !important;
+  }
+}
+
+@media (max-width:380px){
+  html body main#main-content > .section{
+    padding-top:56px !important;
+    padding-bottom:56px !important;
+  }
+  html body .explore-key > strong{
+    font-size:clamp(48px,15.5vw,60px) !important;
+  }
+}

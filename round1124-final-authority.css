@@ -1,12 +1,6 @@
-/* Automated Hearts Round 1124 — consolidated final authority.
-   Replaces the conflicting Round 1122/1123 carousel and pricing overrides. */
+/**/
 
-/* =============================
-   HOME CAROUSEL — exact equal vertical clearances
-   Pink section divider -> image = image -> ticker top.
-   The section is content-height with equal padding on both sides, so this is
-   box-model exact and does not depend on viewport measurements or JS offsets.
-   ============================= */
+/**/
 @media (min-width:801px){
   html body.page-home[data-page="home"] main#main-content > section.home-overview-carousel-section{
     position:relative!important;
@@ -93,10 +87,7 @@
   html body.page-home[data-page="home"] main#main-content > section.home-overview-carousel-section{padding-top:48px!important;padding-bottom:48px!important;}
 }
 
-/* =============================
-   RATES & SERVICES — retro eggshell calculator panels
-   Service option cards only; retainer cards intentionally excluded.
-   ============================= */
+/**/
 :root{
   --ah1124-eggshell:#e8e0c7;
   --ah1124-eggshell-hi:#f4eedb;

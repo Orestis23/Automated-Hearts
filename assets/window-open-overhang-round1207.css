@@ -1,4 +1,4 @@
-/* Automated Hearts Round 1207 — guaranteed clickable overhang for every retractable machine window. */
+/**/
 :root{--r1207-machine-window-overhang:30px;}
 html body.page-home.page-home.page-home.page-home[data-page="home"] #home-machine-grid#home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame.is-haze-open > button.home-machine-haze-screen.home-machine-haze-screen,
 html body #machine-stack#machine-stack#machine-stack > .machine-frame.machine-frame.open > .window-shutter.window-shutter,
@@ -8,7 +8,7 @@ html body #lite-model-stage#lite-model-stage #lite-model-shell#lite-model-shell.
  -webkit-transform:translate3d(0,calc(-100% + var(--r1207-machine-window-overhang)),0)!important;
  pointer-events:auto!important;cursor:pointer!important;
 }
-/* Keep the exposed lower lip visually readable as a hardware handle without changing the closed shield. */
+/**/
 html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame.is-haze-open > button.home-machine-haze-screen::after,
 html body #machine-stack > .machine-frame.open > .window-shutter::after,
 html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window > button#solution-process-cover.is-open::after,

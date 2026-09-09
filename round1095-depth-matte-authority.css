@@ -1,5 +1,4 @@
-/* Automated Hearts Round 1095 — recessed gold rim, closer hardware surface detail, under-glass ticker matte.
-   Visual-only authority: no geometry, padding, hit-area, or layout changes. */
+/**/
 :root{
   --r1095-footer-rest:url("./assets/footer-button-message-border-match-round1095.svg?v=1095r");
   --r1095-footer-pressed:url("./assets/footer-button-message-border-match-pressed-round1095.svg?v=1095r");
@@ -11,8 +10,7 @@
   --r1034-message-pressed:var(--r1095-message-pressed);
 }
 
-/* The gold frame remains exactly where it was. These inset shadows create ~19px / 1/5-inch
-   perceived recess without moving or resizing any content. */
+/**/
 html body[data-page] > .ah-persistent-gold-rim{
   box-shadow:
     0 0 0 2px rgba(31,19,3,.96),
@@ -26,8 +24,7 @@ html body[data-page] > .ah-persistent-gold-rim{
     inset 0 2px 2px rgba(255,233,174,.15)!important;
 }
 
-/* Footer and message hardware keep their original silhouette/rims. Only the embedded face texture
-   is magnified 1.75x in the Round 1095 SVGs so the material reads as 75% closer. */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav
 > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]{
@@ -52,8 +49,7 @@ html body[data-page] > a#header-send-message#header-send-message#header-send-mes
   background-image:var(--r1095-message-pressed)!important;
 }
 
-/* Ticker stack: display -> text -> matte diffusion -> glass highlight. The existing matte element
-   is retained, but is now explicitly under a separate convex glass layer rather than being the topmost layer. */
+/**/
 html body[data-page] #home-charity-ticker#home-charity-ticker{
   isolation:isolate!important;
 }

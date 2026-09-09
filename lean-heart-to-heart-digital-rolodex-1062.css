@@ -1,12 +1,12 @@
-/* Automated Hearts Round 1062 lean CSS: exact original cascade order. */
+/**/
 
-/* SOURCE: round915-sandy-message-footer-borders.css */
+/**/
 :root{--r915-message-face:url("./assets/message-button-suede-sandy-side-round915.svg?v=915r"); --r915-message-face-pressed:url("./assets/message-button-suede-sandy-side-pressed-round915.svg?v=915r"); --r915-footer-face:url("./assets/footer-button-message-like-sandy-side-round915.svg?v=915r"); --r915-footer-face-pressed:url("./assets/footer-button-message-like-sandy-side-pressed-round915.svg?v=915r"); --r915-footer-press-depth:4px;}html body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control, html body[data-page][class][class][class][class][class][class][class][class][class][class] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-image:var(--r915-message-face)!important;}html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched), html.ah-message-persist-open body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{background-image:var(--r915-message-face-pressed)!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]{position:relative!important; isolation:isolate!important; overflow:visible!important; background-color:transparent!important; background-image:var(--r915-footer-face)!important; background-position:center!important; background-size:100% 100%!important; background-repeat:no-repeat!important; border:0!important; outline:0!important; box-shadow:none!important; transform:none!important; filter:brightness(.58) saturate(.72) contrast(.97) drop-shadow(0 6px 7px rgba(0,0,0,.50))!important; transition:filter 180ms ease!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]::before, html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]::after{content:none!important;display:none!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav] > .send-control-copy.footer-control-copy{position:absolute!important; inset:0!important; z-index:3!important; display:grid!important; place-items:center!important; background:transparent!important; background-image:none!important; border:0!important; box-shadow:none!important; margin:0!important; padding:0 10px 3px!important; transform:none!important; transition:transform 90ms cubic-bezier(.2,.78,.24,1)!important;}html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-indicator.send-control-indicator{display:none!important;}html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] .footer-nav-label{font-family:"Orbitron",system-ui,sans-serif!important;}html body[data-page] footer#site-footer.site-footer--minimal:is(.is-footer-cluster-lit,.is-footer-button-cluster-hot) nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav], html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav:is(:hover,:focus-within) > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav], html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]:is(:hover,:focus-visible){filter:brightness(1.07) saturate(1.03) contrast(1.01) drop-shadow(0 6px 7px rgba(0,0,0,.50))!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]){background-image:var(--r915-footer-face-pressed)!important;}html body[data-page][class][class][class][class][class][class][class][class][class][class] > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]) > .send-control-copy.footer-control-copy{transform:translate3d(0,var(--r915-footer-press-depth),0)!important;}
 
-/* SOURCE: round966-final-ui-rates.css */
-/* Round 966 — source-level finalization for footer sizing, Message icon, ticker glass/matte, smooth ticker, and Rates service columns. */
+/**/
+/**/
 
-/* Footer buttons: all same width, sized by JS from the longest 14.5pt Orbitron label. */
+/**/
 @media (min-width:1101px){
   html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav{
     left:24px!important; right:24px!important; width:auto!important; max-width:none!important;
@@ -21,7 +21,7 @@
   }
 }
 
-/* Message: hide every legacy-positioned envelope and use one direct overlay centered on the actual anchor box. */
+/**/
 html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
   position:fixed!important; overflow:hidden!important;
 }
@@ -41,7 +41,7 @@ html body[data-page] > a#header-send-message#header-send-message.header-send-mes
   vector-effect:non-scaling-stroke!important;
 }
 
-/* Ticker: true DOM glass lens over the words, plus a distinct matte film layer. */
+/**/
 html body[data-page] > #home-ticker-wrap#home-ticker-wrap > #home-charity-ticker#home-charity-ticker{
   position:absolute!important; inset:0!important; overflow:hidden!important; isolation:isolate!important;
   border:2px solid rgba(205,226,234,.98)!important; border-radius:28px!important;
@@ -90,7 +90,7 @@ html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__
   backface-visibility:hidden!important; -webkit-backface-visibility:hidden!important; translate:none!important;
 }
 
-/* Rates & Services: two equal tall rectangles, Automation left / Web Development right. */
+/**/
 html body.page-pricing[data-page="pricing"] .r864-rates__drawers{
   display:grid!important; grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
   grid-auto-flow:row!important; gap:28px!important; align-items:stretch!important;
@@ -142,10 +142,8 @@ html body.page-pricing[data-page="pricing"] #r864-ai .r951-rates__price[data-cur
 }
 
 
-/* SOURCE: round967-button-depth-refinement.css */
-/* Round 967 — outer-rim button mechanical depth refinement.
-   Adds a pink side/depth face, black clearance seams on the sides/bottom,
-   collapses the pink depth on press, and reduces hover halo. */
+/**/
+/**/
 
 :root{
   --r967-pink-side:#f02b9d;
@@ -155,7 +153,7 @@ html body.page-pricing[data-page="pricing"] #r864-ai .r951-rates__price[data-cur
   --r967-ridge-green-dim:rgba(91,167,162,.68);
 }
 
-/* Shared footer + message hardware. */
+/**/
 html body[data-page]
 :is(
   footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav],
@@ -189,7 +187,7 @@ html body[data-page]
   filter:brightness(1.02) saturate(1.02) contrast(1.02)!important;
 }
 
-/* Footer bank hover: illuminate the face/ridges, not the outside with white. */
+/**/
 html body[data-page]
 footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav:is(:hover,:focus-within)
 a.footer-structure-control.mechanical-send-control[data-nav],
@@ -221,7 +219,7 @@ a#header-send-message.header-send-message.mechanical-send-control:is(:hover,:foc
     0 5px 6px rgba(0,0,0,.38)!important;
 }
 
-/* Remove the large white text halo while keeping a controlled pink illumination. */
+/**/
 html body[data-page]
 footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav:is(:hover,:focus-within)
 .footer-nav-label,
@@ -235,8 +233,7 @@ footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
     0 0 3px rgba(255,46,168,.30)!important;
 }
 
-/* Mechanical press: button moves into its black clearance slot and nearly all
-   of the pink side disappears beneath the surface. */
+/**/
 html body[data-page]
 footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
  a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]),
@@ -263,7 +260,7 @@ a#header-send-message.header-send-message.mechanical-send-control{
     0 2px 3px rgba(0,0,0,.34)!important;
 }
 
-/* Prevent old white-halo rules from reappearing on Message hover. */
+/**/
 html body[data-page] a#header-send-message.header-send-message.mechanical-send-control:is(:hover,:focus-visible)
 :is(.send-control-envelope,.send-control-envelope svg){
   filter:none!important;
@@ -294,10 +291,10 @@ html body[data-page] a#header-send-message.header-send-message.mechanical-send-c
 }
 
 
-/* SOURCE: round969-dom-pink-depth-rates-hard-open.css */
-/* Round 969 — DOM-backed pink button depth + hard-open Rates service columns. */
+/**/
+/**/
 
-/* Old pseudo-depth is disabled; Round 969 uses real child elements so legacy pseudo rules cannot suppress it. */
+/**/
 html body[data-page] :is(
   footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav],
   a#header-send-message.header-send-message.mechanical-send-control
@@ -333,13 +330,13 @@ html body[data-page] :is(
   background:linear-gradient(90deg,#ff64c0 0%,#ff2ea8 38%,#c71378 72%,#720544 100%)!important;
   box-shadow:1px 0 0 #020305,2px 0 2px rgba(0,0,0,.30)!important;
 }
-/* Keep label/icon face above the pink depth. */
+/**/
 html body[data-page] :is(
   footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav],
   a#header-send-message.header-send-message.mechanical-send-control
 ) > :not(.r969-pink-depth-bottom):not(.r969-pink-depth-right){position:relative;z-index:2;}
 
-/* Submerge the pink side when pressed. */
+/**/
 html body[data-page] footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,[aria-pressed="true"]) .r969-pink-depth-bottom,
 html body[data-page] a#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched) .r969-pink-depth-bottom,
 html.ah-message-persist-open body[data-page] a#header-send-message.header-send-message.mechanical-send-control .r969-pink-depth-bottom{
@@ -351,7 +348,7 @@ html.ah-message-persist-open body[data-page] a#header-send-message.header-send-m
   right:-1px!important;bottom:-1px!important;width:1px!important;filter:brightness(.78)!important;
 }
 
-/* Hard-present Rates pair: Automation on LEFT, Web Development on RIGHT. */
+/**/
 html body.page-pricing[data-page="pricing"] .r864-rates__drawers{
   display:grid!important;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
@@ -426,8 +423,8 @@ html body.page-pricing[data-page="pricing"] #r864-ai .r951-rates__price[data-cur
 }
 
 
-/* SOURCE: round973-final-button-envelope-rates.css */
-/* Round 973 — authoritative footer label size, pink button edges, centered Message envelope, no Automation $ signs. */
+/**/
+/**/
 @media (min-width:1101px){
   html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav .footer-nav-label,
   html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.footer-structure-control.mechanical-send-control[data-nav] .footer-nav-label{
@@ -440,7 +437,7 @@ html body.page-pricing[data-page="pricing"] #r864-ai .r951-rates__price[data-cur
   }
 }
 
-/* Pink side edging is a real border on the button face, not a pseudo-element. */
+/**/
 html body[data-page] :is(
   footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.r973-pink-edge.footer-structure-control.mechanical-send-control[data-nav],
   a#header-send-message.r973-pink-edge.header-send-message.mechanical-send-control,
@@ -461,7 +458,7 @@ html body[data-page] :is(
     0 5px 7px rgba(0,0,0,.38)!important;
 }
 
-/* Center one direct envelope overlay in the literal middle of the Message anchor. */
+/**/
 html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .send-control-copy{
   display:none!important;visibility:hidden!important;opacity:0!important;
 }
@@ -488,16 +485,16 @@ html body[data-page] > a#header-send-message#header-send-message.header-send-mes
   position:absolute!important;inset:0!important;width:100%!important;height:100%!important;margin:0!important;display:block!important;transform:none!important;
 }
 
-/* Remove any generated currency symbol on the Automation side. */
+/**/
 html body.page-pricing[data-page="pricing"] #r864-ai .r951-rates__price::before{
   content:none!important;display:none!important;
 }
 
 
-/* SOURCE: round974-bottom-edge-solution-exhibit.css */
-/* Round 974 — bottom-only thin pink button edge + visible Solution exhibit. */
+/**/
+/**/
 
-/* The pink 3D edge is only on the BOTTOM and ~5x thinner than the previous 7px treatment. */
+/**/
 html body[data-page] :is(
   footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav a.r973-pink-edge.footer-structure-control.mechanical-send-control[data-nav],
   a#header-send-message.r973-pink-edge.header-send-message.mechanical-send-control,
@@ -507,7 +504,7 @@ html body[data-page] :is(
   border-bottom:1.4px solid #ff2ea8!important;
 }
 
-/* Disable the old right-side DOM depth entirely. */
+/**/
 html body[data-page] .r969-pink-depth-right{
   display:none!important;
   visibility:hidden!important;
@@ -515,7 +512,7 @@ html body[data-page] .r969-pink-depth-right{
   right:0!important;
 }
 
-/* Keep only a very thin bottom depth strip. */
+/**/
 html body[data-page] .r969-pink-depth-bottom{
   left:4px!important;
   right:0!important;
@@ -536,7 +533,7 @@ html.ah-message-persist-open body[data-page] a#header-send-message.header-send-m
   opacity:.58!important;
 }
 
-/* Lowest Solution section: show the supplied gold-rimmed mechanical image, centered and unobstructed. */
+/**/
 html body.page-solutions[data-page="solutions"] main#main-content > section#live-refreshing-websites.solution-engine-section{
   display:grid!important;
   place-items:center!important;
@@ -556,7 +553,7 @@ html body.page-solutions[data-page="solutions"] #solution-bottom-gold-visual.sol
   overflow:visible!important;
   filter:none!important;
 }
-/* Remove the old cover that hid the center of the exhibit. */
+/**/
 html body.page-solutions[data-page="solutions"] #solution-bottom-gold-visual.solution-bottom-gold-visual::after{
   content:none!important;
   display:none!important;
@@ -598,15 +595,15 @@ html body.page-solutions[data-page="solutions"] #solution-bottom-gold-visual.sol
 }
 
 
-/* SOURCE: round1018-footer-pink-submerge-fixed-surface.css */
-/* Round 1018 — footer hardware: one identical pink side, face submerges while the surface line stays fixed. */
+/**/
+/**/
 :root{
   --r1018-footer-rest:url("./assets/footer-button-message-like-sandy-side-round915.svg?v=1018r");
   --r1018-footer-pressed:url("./assets/footer-button-message-like-sandy-side-pressed-submerged-round1018.svg?v=1018r");
   --r1018-footer-press-depth:4px;
 }
 
-/* The anchor is the stationary mounting/surface box. It never translates. */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer.site-footer.site-footer--minimal
 nav#primary-nav#primary-nav.footer-primary-nav
@@ -626,12 +623,12 @@ nav#primary-nav#primary-nav.footer-primary-nav
   transform:none!important;
   translate:none!important;
   scale:none!important;
-  /* This is the fixed black surface/slot beneath the hardware. */
+  /**/
   box-shadow:inset 0 -2px 0 #020305,0 1px 0 #020305,0 4px 6px rgba(0,0,0,.34)!important;
   transition:filter 160ms ease!important;
 }
 
-/* No legacy DOM/pseudo pink side can double the single baked-in side. */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
  a.footer-structure-control.mechanical-send-control[data-nav]::before,
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
@@ -644,8 +641,7 @@ html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.f
   opacity:0!important;
 }
 
-/* Pressing swaps to the same hardware with the pink siding fully submerged.
-   The outer anchor never moves, so the black surface line cannot move down. */
+/**/
 html body[data-page][class][class][class][class][class][class][class][class]
 > footer#site-footer#site-footer.site-footer.site-footer--minimal
 nav#primary-nav#primary-nav.footer-primary-nav
@@ -658,7 +654,7 @@ nav#primary-nav#primary-nav.footer-primary-nav
   box-shadow:inset 0 -2px 0 #020305,0 1px 0 #020305,0 2px 3px rgba(0,0,0,.26)!important;
 }
 
-/* The lettering follows the face downward, independently of the stationary surface box. */
+/**/
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
  a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy{
   transform:none!important;

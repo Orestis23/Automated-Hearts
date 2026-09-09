@@ -1,0 +1,13 @@
+/* Round 1232 — twice the breathing room on BOTH sides of each human separator.
+   The prior desktop authority used 1in per side; this is exactly 2in per side. */
+@media (min-width:901px){
+  html body[data-page][class][class][class][class][class][class]
+  > #home-ticker-wrap#home-ticker-wrap#home-ticker-wrap
+  #home-charity-ticker#home-charity-ticker .charity-marquee__separator,
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer
+  #home-charity-ticker#home-charity-ticker .charity-marquee__separator{
+    min-width:calc(4in + 18px) !important;
+    padding-inline:2in !important;
+  }
+}

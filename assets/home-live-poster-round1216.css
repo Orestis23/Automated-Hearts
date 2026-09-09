@@ -1,4 +1,4 @@
-/* Round 1216 — Home left machine closed-state preview comes from the live Three.js machine itself. */
+/**/
 .machine-3d-frame .machine-live-poster{
   opacity:0;
   object-fit:cover;
@@ -11,8 +11,7 @@
 .machine-3d-frame.open .machine-live-poster{
   opacity:0!important;
 }
-/* The current live iframe is also held on its rendered frame beneath the snapshot while closed.
-   This guarantees visual identity with the opened machine; interaction remains disabled until open. */
+/**/
 .machine-3d-frame.model-ready:not(.open) .machine-3d{
   opacity:1;
   visibility:visible;

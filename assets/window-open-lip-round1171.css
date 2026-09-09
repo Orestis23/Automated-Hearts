@@ -1,6 +1,4 @@
-/* Automated Hearts Round 1171
-   Final authority for every retractable local machine/window shield.
-   Open state leaves only a shallow 20px lip beneath the upper rim. */
+/**/
 :root{
   --r1171-window-open-lip:20px;
   --r688-haze-handle-visible:20px!important;
@@ -11,7 +9,7 @@
   --r1138-mobile-solution-lip:20px!important;
 }
 
-/* Home's animated shield samples a static surface during movement. */
+/**/
 @media(min-width:801px){
   html body.page-home[data-page="home"] #home-machine-grid
   > .home-hero-engine-frame.ah-shutter-motion > button.home-machine-haze-screen{
@@ -20,7 +18,7 @@
   }
 }
 
-/* Desktop Home — both machine windows. High specificity intentionally defeats legacy 104px/48px handle rules. */
+/**/
 html body.page-home.page-home.page-home.page-home[data-page="home"]
 #home-machine-grid#home-machine-grid#home-machine-grid
 > .home-hero-engine-frame.home-hero-engine-frame.is-haze-open
@@ -30,7 +28,7 @@ html body.page-home.page-home.page-home.page-home[data-page="home"]
   pointer-events:auto!important;
 }
 
-/* Mobile Home — both machine windows. */
+/**/
 html body #machine-stack#machine-stack#machine-stack
 > .machine-frame.machine-frame.open
 > .window-shutter.window-shutter{
@@ -39,7 +37,7 @@ html body #machine-stack#machine-stack#machine-stack
   pointer-events:auto!important;
 }
 
-/* Desktop Solution machine window. */
+/**/
 html body.page-solutions.page-solutions.page-solutions[data-page="solutions"]
 #solution-process-header#solution-process-header
 .solution-process-window.solution-process-window
@@ -49,7 +47,7 @@ html body.page-solutions.page-solutions.page-solutions[data-page="solutions"]
   pointer-events:auto!important;
 }
 
-/* Mobile Solution machine window. */
+/**/
 html body #lite-model-stage#lite-model-stage
 #lite-model-shell#lite-model-shell.solution-mobile-model-shell
 > button#solution-mobile-cover.solution-mobile-window-cover.is-open{

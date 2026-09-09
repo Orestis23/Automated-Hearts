@@ -1,7 +1,4 @@
-/* Round 1150 — authoritative rounded lower outer-shell corners on mobile.
-   Stop the side rails at the fixed footer boundary so they cannot visually
-   continue as square bars behind the footer.  The inner gold frame already
-   closes here; these rules make the outer shell follow the same curve. */
+/**/
 @media (max-width: 900px){
   html body > .shell-edge.l,
   html body > .shell-edge.r{
@@ -18,7 +15,7 @@
     border-bottom-left-radius:8px!important;
   }
 
-  /* Make the visible lower rim itself close as one rounded physical frame. */
+  /**/
   html body::before{
     bottom:calc(74px + var(--safe-bottom))!important;
     border-bottom-left-radius:20px!important;
@@ -26,8 +23,7 @@
     overflow:hidden!important;
   }
 
-  /* Opaque corner infill follows the same 20px curve and prevents page
-     content from showing through the outside of the rounded corners. */
+  /**/
   html body > .shell-edge.l::after,
   html body > .shell-edge.r::after{
     bottom:-1px!important;

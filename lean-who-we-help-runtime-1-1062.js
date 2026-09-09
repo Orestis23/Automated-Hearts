@@ -1855,6 +1855,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const marquee = document.querySelector(".charity-marquee");
   if (!marquee) return;
   const messages = [
+    [{ text: "Open 24/7", tone: "green" }],
+    [{ text: "Get rid of software costs.", tone: "pink" }],
     [
       { text: "Prioritizing", tone: "pink" },
       { text: "Job-Retention", tone: "green" }
@@ -1868,6 +1870,10 @@ document.addEventListener("DOMContentLoaded", () => {
       { text: "not obsoleting them.", tone: "pink", joined: true }
     ]
   ];
+
+  const tickerText = messages.map(parts => parts.map(part => part.text).join(' ')).join(' ');
+  marquee.setAttribute('aria-label', tickerText);
+  marquee.dataset.text = tickerText;
 
   const makeMessage = (parts) => {
     const copy = document.createElement("span");

@@ -1,0 +1,99 @@
+/* Round 1232 — desktop controls from the Round 1225/1231 baseline.
+   Use one consistent mobile-style edge on all four sides, no pink/depth strip.
+   The Messages control keeps its full square hardware instead of a floating envelope. */
+@media (min-width:901px){
+  :root{
+    /* Inline desktop markup consumes this variable with !important, so the
+       complete visible face is supplied here: dark physical face + leather. */
+    --r1005-message-face:
+      linear-gradient(160deg,rgba(42,57,69,.98) 0%,rgba(14,23,31,.985) 55%,rgba(2,8,13,.995) 100%),
+      url('./footer-message-suede-source-round1177.webp') !important;
+    --r1005-message-transform:translate3d(0,0,0) !important;
+  }
+  html.ah-message-persist-open{
+    --r1005-message-face:
+      linear-gradient(160deg,rgba(31,43,52,.98) 0%,rgba(9,16,23,.99) 55%,rgba(1,5,9,.998) 100%),
+      url('./footer-message-suede-source-round1177.webp') !important;
+  }
+
+  /* Remove every old separate siding/depth/indicator layer. */
+  html body[data-page] > footer#site-footer .ah-bottom-siding,
+  html body[data-page] > footer#site-footer .send-control-indicator,
+  html body[data-page] > #header-send-message .ah-bottom-siding,
+  html body[data-page] > #header-send-message .send-control-indicator{
+    display:none !important;
+    content:none !important;
+  }
+  html body[data-page] > footer#site-footer a.footer-structure-control[data-nav]::before,
+  html body[data-page] > footer#site-footer a.footer-structure-control[data-nav]::after,
+  html body[data-page] > #header-send-message::before,
+  html body[data-page] > #header-send-message::after{
+    content:none !important;
+    display:none !important;
+    background:none !important;
+    box-shadow:none !important;
+  }
+
+  /* Footer: one edge treatment on top/right/bottom/left.  No extra green
+     side rails and no pink line beneath the control. */
+  html body[data-page][class] > footer#site-footer#site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav]{
+    background-image:
+      linear-gradient(160deg,rgba(42,57,69,.38),rgba(7,16,23,.40) 58%,rgba(0,5,9,.56)),
+      url('./footer-message-suede-source-round1177.webp') !important;
+    background-position:center,center !important;
+    background-size:100% 100%,cover !important;
+    background-repeat:no-repeat,no-repeat !important;
+    border-radius:7px !important;
+    overflow:hidden !important;
+    --ah-control-shadow:
+      inset 0 0 0 1.5px #8fffd7,
+      inset 0 0 0 2.5px rgba(230,255,248,.08),
+      0 3px 7px rgba(0,0,0,.44) !important;
+    box-shadow:var(--ah-control-shadow) !important;
+    transform:translate3d(0,0,0) !important;
+    transition:transform 150ms cubic-bezier(.22,.72,.24,1),box-shadow 150ms ease,filter 150ms ease !important;
+    filter:none !important;
+  }
+  html body[data-page][class] > footer#site-footer#site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav]:is(
+    :active,.is-nav-pressed,.is-pressed,.is-route-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ){
+    transform:translate3d(0,2px,0) !important;
+    --ah-control-shadow:
+      inset 0 0 0 1.5px #8fffd7,
+      inset 0 0 0 2.5px rgba(230,255,248,.065),
+      inset 0 3px 7px rgba(0,0,0,.68) !important;
+    box-shadow:var(--ah-control-shadow) !important;
+    filter:brightness(.84) !important;
+  }
+
+  /* Messages: same all-around edge and same 2px mobile-style press travel.
+     The envelope remains centered inside a fully visible square face. */
+  html body[data-page][class] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    --r1005-message-transform:translate3d(0,0,0) !important;
+    --ah-control-shadow:
+      inset 0 0 0 1.5px #8fffd7,
+      inset 0 0 0 2.5px rgba(230,255,248,.08),
+      0 3px 7px rgba(0,0,0,.46) !important;
+    box-shadow:var(--ah-control-shadow) !important;
+  }
+  html body[data-page][class] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(
+    :active,.is-pressed,.is-contact-latched,[aria-expanded="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]
+  ),
+  html.ah-message-persist-open body[data-page][class] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    --r1005-message-transform:translate3d(0,2px,0) !important;
+    --ah-control-shadow:
+      inset 0 0 0 1.5px #8fffd7,
+      inset 0 0 0 2.5px rgba(230,255,248,.065),
+      inset 0 3px 7px rgba(0,0,0,.68) !important;
+    box-shadow:var(--ah-control-shadow) !important;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html body[data-page] > footer#site-footer a.footer-structure-control[data-nav],
+    html body[data-page] > #header-send-message{transition-duration:0ms !important;}
+  }
+}

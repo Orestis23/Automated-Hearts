@@ -1,6 +1,6 @@
-/* Round 1177 — responsive terminal text fit + seamless Explore control surface. */
+/**/
 @media (min-width:901px){
-  /* The JS starts from these maximums and only reduces when a label or line would clip. */
+  /**/
   html body.page-home[data-page="home"] #home-solution-framework .r1176-process-heading-label{
     font-size:22px!important;
     font-weight:900!important;
@@ -19,7 +19,7 @@
     text-overflow:clip!important;
   }
 
-  /* One continuous copy of the exact suede source used by the footer/message hardware. */
+  /**/
   html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore{
     background-color:#08172b!important;
     background-image:url("./footer-message-suede-source-round1177.webp")!important;

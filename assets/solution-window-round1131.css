@@ -1,4 +1,4 @@
-/* The process title uses the site's standard recessed blue screen surface. */
+/**/
 #formula-title.solution-process-title, .solution-process-title {
   position:relative!important;display:block!important;box-sizing:border-box!important;
   width:min(100%,1080px)!important;max-width:100%!important;height:auto!important;

@@ -575,11 +575,14 @@
   if (!track) return;
 
   const messages = [
+    [{text:'Open 24/7',tone:'green'}],
+    [{text:'Get rid of software costs.',tone:'pink'}],
     [{text:'With the right information, you can predict the future.',tone:'green'}],
     [{text:'Prioritizing',tone:'pink'},{text:'Job-Retention',tone:'green'}],
     [{text:'Automation with a',tone:'green'},{text:'human touch.',tone:'pink'}],
     [{text:'Elevating the human',tone:'green'},{text:', not obsoleting them.',tone:'pink',joined:true}]
   ];
+  track.parentElement.setAttribute('aria-label', messages.map(parts => parts.map(part => part.text).join(' ')).join(' '));
   const makeCopy = (parts) => {
     const copy = document.createElement('span');
     copy.className = 'learning-marquee__copy';

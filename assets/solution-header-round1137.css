@@ -1,11 +1,10 @@
-/* Round 1137 — three-depth Solution machine rim + Home-window shield behavior. */
+/**/
 #solution-process-header .solution-process-window-anchor{
   isolation:isolate!important;
   overflow:visible!important;
 }
 
-/* The current silver rim is layer 1. These two frames sit physically behind it
-   and step outward so the machine window reads as three pieces of hardware. */
+/**/
 #solution-process-header .solution-process-window-anchor::before,
 #solution-process-header .solution-process-window-anchor::after{
   content:""!important;
@@ -55,8 +54,7 @@
 }
 #solution-process-heading{z-index:8!important;}
 
-/* Match the Home machine-window shield: translucent/frosted surface, subtle
-   glass depth, one pulsing heart handle, and the small metal lower rail. */
+/**/
 #solution-process-header .solution-process-cover{
   position:absolute!important;
   z-index:30!important;
@@ -133,8 +131,7 @@
 #solution-process-header .solution-process-cover .solution-cover-hearts{display:none!important;}
 #solution-process-header .solution-process-cover:is(:hover,:focus-visible){filter:brightness(1.05)!important;}
 
-/* Same Home-window interaction: raise the cover but leave a 104px handle strip
-   visible. That exposed strip remains clickable and lowers the shield again. */
+/**/
 #solution-process-header .solution-process-cover.is-open{
   transform:translate3d(0,calc(-100% + 104px),0)!important;
   -webkit-transform:translate3d(0,calc(-100% + 104px),0)!important;

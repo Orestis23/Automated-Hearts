@@ -1,15 +1,11 @@
-/* Automated Hearts Round 1073 — interaction + Learning Center/Who We Help final authority.
-   This file is intentionally loaded last. It fixes click targets, removes the obsolete
-   Learning Center bevel rail, pairs the bonded medallion rims, and keeps every selected
-   WebGL model above one non-moving embossed leather-heart background. */
+/**/
 :root{
   --r1073-stage-bg:url("./assets/page-shield-embossed-strong-round1067.webp?v=1073r");
   --r1073-toolbar-h:76px;
   --r1073-stage-side:64px;
 }
 
-/* LARGE ROUTE BUTTONS — Home / Learning Center / Who We Help.
-   The anchor/button owns the pointer; decorative children cannot steal it. */
+/**/
 html body.page-home[data-page="home"] #home-route-buttons a.premium-route-card__image-button,
 html body.page-learning[data-page="learning"] #learning-route-buttons a.learning-medallion-button,
 html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions a.premium-route-card__image-button{
@@ -36,7 +32,7 @@ html body:is(.page-home,.page-learning,.page-who-we-help)[data-page]
   pointer-events:none!important;
 }
 
-/* Machine shutters remain real click controls. */
+/**/
 html body.page-home[data-page="home"] [data-machine-haze],
 html body.page-solutions[data-page="solutions"] [data-solution-machine-haze]{
   pointer-events:auto!important;
@@ -44,14 +40,13 @@ html body.page-solutions[data-page="solutions"] [data-solution-machine-haze]{
   touch-action:manipulation!important;
 }
 
-/* Never let the off-screen global transition shield intercept the page. */
+/**/
 html:not(.page-shield-arrival):not(.page-shield-covering)
 body[data-page] > #page-transition-shield.page-transition-shield{
   pointer-events:none!important;
 }
 
-/* LEARNING CENTER — remove the actual beveled rail. The visible strip was the
-   historical .compact-hero-grid::after element, not the ticker markup. */
+/**/
 html body.page-learning[data-page="learning"] #learning-route-buttons > .shell.compact-hero-grid::before,
 html body.page-learning[data-page="learning"] #learning-route-buttons > .shell.compact-hero-grid::after,
 html body.page-learning[data-page="learning"] #learning-route-buttons .compact-hero-grid::before,
@@ -84,8 +79,7 @@ html body.page-learning[data-page="learning"] .learning-header-grid{
   box-shadow:none!important;
 }
 
-/* LEARNING CENTER — each circular control is one bonded image. No CSS-drawn
-   perimeter, clipping ring, halo, or secondary border may sit outside it. */
+/**/
 html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card > a.learning-medallion-button{
   position:relative!important;
   width:100%!important;
@@ -155,7 +149,7 @@ html body.page-learning[data-page="learning"] #learning-route-buttons
   box-shadow:none!important;
 }
 
-/* LOWER 3D SECTION — hidden only until a choice is made. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 main#main-content > :is(#learning-model-stage,#who-help-model-stage){
   display:none!important;
@@ -195,7 +189,7 @@ main#main-content > :is(#learning-model-stage,#who-help-model-stage){
   scroll-margin-top:var(--current-frame-top,96px)!important;
 }
 
-/* The backdrop is one fixed layer and does not participate in model transforms. */
+/**/
 html body:is(.page-learning,.page-who-we-help).r1073-model-open[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport.r984-static-model-viewport{
   position:absolute!important;
@@ -316,9 +310,7 @@ html body:is(.page-learning,.page-who-we-help).r1073-model-open[data-page]
   pointer-events:auto!important;
 }
 
-/* The obsolete local cover is disabled. The permanent embossed backdrop is always
-   visible while the selected iframe initializes, so a failed cover transition can
-   never hide every model again. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > .learning-stage-shield[data-learning-stage-shield]{
   display:none!important;
@@ -329,7 +321,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   transition:none!important;
 }
 
-/* Return control is part of the lower section and starts at its top edge. */
+/**/
 html body:is(.page-learning,.page-who-we-help).r1073-model-open[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > button.learning-stage-return{
   position:absolute!important;

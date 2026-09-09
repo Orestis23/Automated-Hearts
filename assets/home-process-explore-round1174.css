@@ -1,8 +1,6 @@
-/* Round 1174 — requested Home terminal typography/spacing from the Round 1171 baseline.
-   Desktop only: fill the four green process screens vertically, standardize the AH:\\...exe
-   headers, and enlarge the textured Explore heading without an underline. */
+/**/
 @media (min-width:901px){
-  /* Override the legacy inline var-driven screen values without changing panel geometry. */
+  /**/
   html body.page-home[data-page="home"] #home-solution-framework#home-solution-framework
   .negative-software-grid-round344{
     --r1005-process-header-display:flex!important;
@@ -16,7 +14,7 @@
     --r1005-process-list-gap:0px!important;
   }
 
-  /* One authoritative header treatment for all four green terminal screens. */
+  /**/
   html body.page-home[data-page="home"] #home-solution-framework#home-solution-framework
   .negative-software-grid-round344 > article.home-process-stage.negative-software-screen-round344:not(.home-process-stage--key) > h3{
     position:relative!important;
@@ -44,7 +42,7 @@
     text-shadow:0 0 4px rgba(255,46,168,.16)!important;
   }
 
-  /* Keep the black separator directly under the header. */
+  /**/
   html body.page-home[data-page="home"] #home-solution-framework#home-solution-framework
   .negative-software-grid-round344 > article.home-process-stage.negative-software-screen-round344:not(.home-process-stage--key) > h3::after{
     content:""!important;
@@ -59,7 +57,7 @@
     box-shadow:none!important;
   }
 
-  /* Use the entire remaining green display for the four statements. */
+  /**/
   html body.page-home[data-page="home"] #home-solution-framework#home-solution-framework
   .negative-software-grid-round344 > article.home-process-stage.negative-software-screen-round344:not(.home-process-stage--key) > ul.home-process-stage__list{
     display:grid!important;
@@ -88,7 +86,7 @@
     line-height:1.18!important;
   }
 
-  /* Explore keeps its existing footer-button leather texture from Round 1169. */
+  /**/
   html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore{
     display:grid!important;
     grid-template-rows:minmax(118px,35%) minmax(0,1fr) auto!important;
@@ -103,7 +101,7 @@
     background-blend-mode:normal,soft-light!important;
   }
 
-  /* Large, embossed/bumpy 3D Explore word; no underline. */
+  /**/
   html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore > h3{
     position:relative!important;
     display:flex!important;

@@ -1,6 +1,4 @@
-/* Automated Hearts Round 1085
-   1) Strategy Lab is a single-model lesson: the framework/ball only.
-   2) Who We Help return control uses the exact same stage-relative placement as Learning Center. */
+/**/
 html body.page-learning[data-page="learning"] #learning-model-stage[data-learning-group="strategy"] > .learning-lesson-orb{
   display:none!important;
   visibility:hidden!important;
@@ -8,8 +6,7 @@ html body.page-learning[data-page="learning"] #learning-model-stage[data-learnin
   pointer-events:none!important;
 }
 
-/* Exact parity: both controls are centered at the same distance from the top edge
-   of their respective 3D sections, with identical desktop/mobile dimensions. */
+/**/
 html body.page-learning.r1073-model-open[data-page="learning"]
 #learning-model-stage > button.learning-stage-return,
 html body.page-who-we-help.r1073-model-open[data-page="who-we-help"]

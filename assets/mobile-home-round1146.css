@@ -1,14 +1,6 @@
-/* Automated Hearts Round 1144 — mobile Home authority only.
-   Approved changes:
-   - machine-window heart controls reduced to roughly one-third prior size
-   - pink + green pulse/glow retained as a clear interaction cue
-   - cards clip runs at 0.25x in mobile-home-round1144.js
-   - pink divider separates the machine band from the route buttons
-   - Zero-Software blue cards have doubled inter-card spacing, airier bullets,
-     and larger pink executable headings
-   - A.H.I. explanatory sign added directly below Human + AI. */
+/**/
 
-/* Both mobile Home machine-window heart controls: ~1/3 Round 1140 size. */
+/**/
 html body #machine-stack .window-shutter::before,
 html body #machine-stack .machine-frame.open .window-shutter::before{
   width:clamp(28px,8vw,35px)!important;
@@ -23,13 +15,13 @@ html body #machine-stack .machine-frame.open .window-shutter::before{
   animation:r1140-bottom-heart-pulse 2.15s cubic-bezier(.42,0,.34,1) infinite!important;
 }
 
-/* Distinct pink boundary between the machine/cards band and the route buttons. */
+/**/
 main>.section:first-child{
   border-bottom:2px solid rgba(255,46,168,.96)!important;
   box-shadow:0 1px 0 rgba(255,46,168,.18)!important;
 }
 
-/* Zero-Software cards: twice the former 12px space; more breathing room per bullet. */
+/**/
 main>.section[aria-label="Zero-Software Solution"] .process-grid{
   gap:24px!important;
 }
@@ -45,7 +37,7 @@ main>.section[aria-label="Zero-Software Solution"] .process ul{
   line-height:1.34!important;
 }
 
-/* A.H.I. sign directly below Human + AI. */
+/**/
 main>.section:last-of-type .section-title{
   margin-bottom:12px!important;
 }
@@ -90,9 +82,7 @@ main>.section:last-of-type .section-title{
   }
 }
 
-/* Round 1146 — complete the mobile Home section-divider system.
-   Match the existing pink divider after the machine band at the two additional
-   requested transitions: route buttons -> Zero-Software and Zero-Software -> Human + AI. */
+/**/
 html body main > .section:nth-of-type(2),
 html body main > .section:nth-of-type(3){
   border-bottom:2px solid rgba(255,46,168,.96)!important;

@@ -1,6 +1,6 @@
-/* Automated Hearts Round 1075 — focused Learning Center authority. */
+/**/
 
-/* The three route controls must remain real hit targets above every decorative layer. */
+/**/
 html body.page-learning[data-page="learning"] #learning-route-buttons{
   position:relative!important;
   z-index:10!important;
@@ -35,8 +35,7 @@ html body.page-learning[data-page="learning"] #learning-route-buttons *::after{
   pointer-events:none!important;
 }
 
-/* AI 101 and Practical AI now literally use Strategy Lab's outer annulus.
-   No CSS halo/ring is permitted outside any bonded image. */
+/**/
 html body.page-learning[data-page="learning"] #learning-route-buttons img.r1075-learning-bonded-rim{
   position:absolute!important;
   inset:0!important;
@@ -66,7 +65,7 @@ html body.page-learning[data-page="learning"] #learning-route-buttons
   content:none!important;display:none!important;border:0!important;outline:0!important;background:none!important;box-shadow:none!important;
 }
 
-/* After removal of the old rail, push the complete three-control group into the visual center. */
+/**/
 @media (min-width:761px){
   html body.page-learning[data-page="learning"] #learning-paths.learning-header-paths{
     transform:translate3d(0,clamp(48px,7vh,78px),0)!important;
@@ -76,7 +75,7 @@ html body.page-learning[data-page="learning"] #learning-route-buttons
   html body.page-learning[data-page="learning"] #learning-paths.learning-header-paths{transform:none!important}
 }
 
-/* Explicit model-stage visibility + static leather heart, independent of older carousel CSS. */
+/**/
 html body.page-learning.r1075-model-open[data-page="learning"] #learning-model-stage{
   display:block!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;
   background:#08172b url("./assets/page-shield-embossed-strong-round1067.webp?v=1075r") center/cover no-repeat!important;

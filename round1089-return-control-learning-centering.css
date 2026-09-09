@@ -1,16 +1,11 @@
-/* Automated Hearts Round 1089
-   Final authority for two focused layout corrections:
-   1) every active 3D stage keeps its return control in the lower control bay,
-      centered just above the bottom boundary/ticker;
-   2) the three Learning Center route controls are vertically centered in the
-      upper route section on desktop, with balanced mobile clearance. */
+/**/
 :root{
   --r1089-return-h:54px;
   --r1089-return-bottom:8px;
   --r1089-return-bay:70px;
 }
 
-/* Shared lower 3D-stage geometry. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 main#main-content > :is(#learning-model-stage,#who-help-model-stage){
   position:relative!important;
@@ -55,8 +50,7 @@ html body:is(.page-learning,.page-who-we-help).r1073-model-open[data-page]
   transform:translate3d(-50%,3px,0)!important;
 }
 
-/* Explicit Who We Help authority. This intentionally outranks every historical
-   top-toolbar/return-lock rule and keeps the button physically inside the stage. */
+/**/
 html body.page-who-we-help.page-who-we-help.r1073-model-open[data-page="who-we-help"]
 #who-help-model-stage#who-help-model-stage#who-help-model-stage > button.learning-stage-return[data-who-help-back-to-top]{
   position:absolute!important;
@@ -79,9 +73,7 @@ html body.page-who-we-help.page-who-we-help.r1073-model-open[data-page="who-we-h
   pointer-events:auto!important;
 }
 
-/* Learning Center upper route section: use the entire available section height
-   and center the complete medallion + title-field group, with no historical
-   downward translation. */
+/**/
 @media (min-width:761px){
   html body.page-learning[data-page="learning"] #learning-route-buttons#learning-route-buttons{
     box-sizing:border-box!important;

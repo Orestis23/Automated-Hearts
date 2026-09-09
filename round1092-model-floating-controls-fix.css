@@ -1,10 +1,4 @@
-/* Automated Hearts Round 1092
-   Final model-stage floating control authority.
-   - Interaction instructions sit in the upper-left quarter and face inward.
-   - Instruction lines alternate mint/pink/mint/pink.
-   - Return controls are compact upper-right floating buttons on both model pages.
-   This file intentionally uses very high-specificity selectors to outrank legacy
-   stage-return rules still present in the consolidated lean stylesheets. */
+/**/
 
 :root{
   --r1092-control-top:22px;
@@ -13,7 +7,7 @@
   --r1092-instruction-top:25%;
 }
 
-/* Compact return controls — same geometry on Learning Center and Who We Help. */
+/**/
 html body.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning.page-learning[data-page="learning"]
 main#main-content#main-content #learning-model-stage#learning-model-stage#learning-model-stage#learning-model-stage#learning-model-stage > button.learning-stage-return.learning-stage-return[data-learning-choose-another],
 html body.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help[data-page="who-we-help"]
@@ -65,7 +59,7 @@ main#main-content#main-content #who-help-model-stage#who-help-model-stage#who-he
   cursor:pointer!important;
 }
 
-/* Interaction legend: left side, upper quarter, right-aligned toward the model. */
+/**/
 html body.page-learning.page-learning.page-learning.page-learning[data-page="learning"]
 main#main-content#main-content #learning-model-stage#learning-model-stage#learning-model-stage > .r1091-model-instructions,
 html body.page-who-we-help.page-who-we-help.page-who-we-help.page-who-we-help[data-page="who-we-help"]

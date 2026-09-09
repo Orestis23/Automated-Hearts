@@ -1,8 +1,4 @@
-/* Automated Hearts Round 1091
-   Shared floating model controls for Learning Center + Who We Help.
-   Return control floats at the upper-right of the live 3D viewport.
-   Interaction instructions float at the left without taking layout space.
-   The model viewport uses the full stage again; no bottom return-control bay. */
+/**/
 
 :root{
   --r1091-stage-edge:22px;
@@ -16,7 +12,7 @@ main#main-content > :is(#learning-model-stage,#who-help-model-stage){
   isolation:isolate!important;
 }
 
-/* Full-height model area. Historical toolbar/bottom-bay reservations are retired. */
+/**/
 html body.page-learning.page-learning.r1073-model-open[data-page="learning"]
 #learning-model-stage#learning-model-stage#learning-model-stage > .learning-lesson-viewport.r984-static-model-viewport,
 html body.page-who-we-help.page-who-we-help.r1073-model-open[data-page="who-we-help"]
@@ -31,7 +27,7 @@ html body.page-who-we-help.page-who-we-help.r1076-model-open[data-page="who-we-h
   left:var(--r1091-stage-edge)!important;
 }
 
-/* Small floating return control, visually separate from the model but not a toolbar. */
+/**/
 html body.page-learning.page-learning[data-page="learning"]
 #learning-model-stage#learning-model-stage#learning-model-stage#learning-model-stage > button.learning-stage-return[data-learning-choose-another],
 html body.page-who-we-help.page-who-we-help[data-page="who-we-help"]
@@ -94,7 +90,7 @@ html body.page-who-we-help[data-page="who-we-help"] #who-help-model-stage > butt
   transform:translateY(1px)!important;
 }
 
-/* Left-side interaction legend. Each sentence is intentionally its own line. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > .r1091-model-instructions{
   position:absolute!important;
@@ -131,7 +127,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   white-space:nowrap!important;
 }
 
-/* Center the side orbs in the newly expanded 3D viewport. */
+/**/
 html body.page-learning.page-learning[data-page="learning"]
 #learning-model-stage#learning-model-stage#learning-model-stage#learning-model-stage > .learning-lesson-orb,
 html body.page-who-we-help.page-who-we-help[data-page="who-we-help"]

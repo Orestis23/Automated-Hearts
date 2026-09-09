@@ -1,10 +1,9 @@
-/* Round 1181 — desktop-only visible control siding + exact Explore surface.
-   Mobile behavior is intentionally unchanged. */
+/**/
 @media (min-width:801px){
-  /* Disable the older injected lip children; the desktop siding is now part of the actual rest artwork. */
+  /**/
   .r1180-desktop-pink-lip{display:none!important;visibility:hidden!important;}
 
-  /* Footer buttons: guaranteed visible pink lower inner siding in the rest artwork. */
+  /**/
   html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]{
     background-image:url("./assets/footer-button-message-border-match-pinklip-round1181.svg")!important;
     background-size:100% 100%!important;
@@ -15,7 +14,7 @@
     background-image:url("./assets/footer-button-message-border-match-pressed-round1095.svg")!important;
   }
 
-  /* Messages: same physical lower siding; pressed state uses the submerged/pinkless face. */
+  /**/
   html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
     background-image:url("./assets/message-button-square-footer-match-pinklip-round1181.svg")!important;
     background-size:100% 100%!important;
@@ -29,8 +28,7 @@
 }
 
 @media (min-width:901px){
-  /* Explore uses the exact 512x512 suede source extracted from the footer/message face.
-     One image, one layer, no tiling or repeated pattern. */
+  /**/
   html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore{
     position:relative!important;
     background-color:#08172b!important;

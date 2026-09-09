@@ -1,13 +1,10 @@
-/* Automated Hearts Round 1063 — authoritative compositor shield + model readiness gate.
-   Both the viewport shield and local 3D-stage shield use one GPU-composited transform only.
-   Travel time is always exactly 2000ms; no opacity/filter/clip-path animation participates. */
+/**/
 :root{
   --ah1063-shield-ms:2000ms;
   --ah1063-shield-ease:cubic-bezier(.22,.66,.24,1);
 }
 
-/* VIEWPORT SHIELD: the real child panel is the only moving layer. This matches the
-   JS transitionend target directly and removes competing pseudo-element transforms. */
+/**/
 html body[data-page] > #page-transition-shield.page-transition-shield{
   overflow:hidden!important;
   background:transparent!important;
@@ -68,14 +65,12 @@ html:not(.page-shield-arrival):not(.page-shield-covering):not(.page-shield-revea
   transform:translate3d(0,-101.25%,0)!important;
   -webkit-transform:translate3d(0,-101.25%,0)!important;
 }
-/* Deliberately override all historical snap/reduced-motion exceptions: the user
-   requested a full two-second shield trip every time. */
+/**/
 html[data-page-shield-snap] body[data-page] > #page-transition-shield.page-transition-shield > .page-transition-shield__panel{
   transition-duration:var(--ah1063-shield-ms)!important;
 }
 
-/* LOCAL 3D SHIELD: visible moving leather cover in front of the WebGL viewport.
-   The separate r1060 static heart remains underneath the models and never moves. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage){
   isolation:isolate!important;
@@ -122,7 +117,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   content:none!important;
   display:none!important;
 }
-/* A model is never uncovered until that iframe has reported a completed first frame. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage).is-learning-shield-open.ah-model-frame-ready
 > .learning-stage-shield[data-learning-stage-shield]{
@@ -140,7 +135,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   -webkit-transform:translate3d(0,0,0)!important;
   pointer-events:auto!important;
 }
-/* Keep model viewport and static embossed heart below the moving cover. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport{
   position:relative!important;
@@ -153,7 +148,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   animation:none!important;
   will-change:auto!important;
 }
-/* While a protected model switch is running, side controls cannot start a second switch. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage)[data-ah1063-switching="1"] [data-learning-carousel-direction],
 html body:is(.page-learning,.page-who-we-help)[data-page]

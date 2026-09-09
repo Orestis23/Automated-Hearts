@@ -1,9 +1,6 @@
-/* Round 1168 — corrected Explore treatment from the Round 1166 baseline.
-   Do not alter shared footer/Message artwork or texture resolution.
-   Reuse the existing suede/leather surface only on Explore, preserve all copy,
-   and enlarge/center the Explore heading + underline above the quote. */
+/**/
 
-/* Desktop / full Home terminal */
+/**/
 html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore{
   background-color:#08172b!important;
   background-image:
@@ -45,7 +42,7 @@ html body.page-home[data-page="home"] #home-solution-framework #negative-softwar
   box-shadow:0 0 5px rgba(255,46,168,.50)!important;
 }
 
-/* Dedicated mobile Home Explore control. Keep the existing quote/attribution. */
+/**/
 @media (max-width:900px){
   html body .explore-key{
     background-color:#08172b!important;

@@ -1,14 +1,11 @@
-/* Automated Hearts Round 1070 — machine shutters, model-stage recovery, top return controls,
-   and Learning Center composite-rim alignment authority. */
+/**/
 :root{
   --r1070-machine-shutter-ms:1000ms;
   --r1070-machine-shutter-ease:cubic-bezier(.42,0,.20,1);
   --r1070-model-toolbar-h:78px;
 }
 
-/* HOME MACHINE WINDOWS ----------------------------------------------------
-   Both windows begin fully closed. The retained heart handle remains attached
-   to the moving carbon/glass shutter and the whole panel moves as one GPU layer. */
+/**/
 html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame{
   isolation:isolate!important;
 }
@@ -30,7 +27,7 @@ html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-fra
   -webkit-transform:translate3d(0,calc(-100% + var(--r688-haze-handle-visible,104px)),0)!important;
 }
 
-/* SOLUTION TOP MACHINE WINDOW ------------------------------------------- */
+/**/
 html body.page-solutions[data-page="solutions"] #solution-formula-machine-window .solutions-engine-model-frame{
   isolation:isolate!important;
 }
@@ -84,10 +81,7 @@ html body.page-solutions[data-page="solutions"] #solution-formula-machine-window
   z-index:20!important;
 }
 
-/* LEARNING / WHO WE HELP 3D STAGES --------------------------------------
-   One static original leather-heart image sits below every iframe. It never
-   translates, animates or changes as a model changes. The moving local shield
-   remains a separate layer above it. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage){
   position:relative!important;
@@ -169,7 +163,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   pointer-events:auto!important;
 }
 
-/* Return controls now belong to the TOP of the 3D section. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > button.learning-stage-return{
   position:absolute!important;
@@ -195,14 +189,13 @@ html body:is(.page-learning,.page-who-we-help)[data-page]
   pointer-events:auto!important;
 }
 
-/* Keep the side model controls centered within the usable model area. */
+/**/
 html body:is(.page-learning,.page-who-we-help)[data-page]
 :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-orb{
   top:calc(var(--r1070-model-toolbar-h) + (100% - var(--r1070-model-toolbar-h))/2)!important;
 }
 
-/* The first two corrected Learning Center composites have their baked glass
-   perimeter moved flush against the medallion edge. No CSS ring is added. */
+/**/
 html body.page-learning[data-page="learning"] #learning-route-buttons img.r1070-learning-flush-composite{
   position:absolute!important;
   inset:0!important;
@@ -250,8 +243,7 @@ html body.page-learning[data-page="learning"] #learning-route-buttons
   }
 }
 
-/* Round 1070 hard authority. These selectors deliberately outrank accumulated
-   pre-1070 machine/model rules so the requested state is correct before JS runs. */
+/**/
 html body.page-home.page-home[data-page="home"] #home-machine-grid#home-machine-grid > .home-hero-engine-frame:first-child > .home-machine-haze-screen.home-machine-haze-screen,
 html body.page-home.page-home[data-page="home"] #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-rolodex-frame > .home-machine-haze-screen.home-machine-haze-screen{
   display:block!important;
@@ -281,7 +273,7 @@ html body.page-solutions.page-solutions[data-page="solutions"] #solution-formula
   pointer-events:auto!important;
 }
 
-/* Top toolbar authority after old bottom-return rules. */
+/**/
 html body.page-learning.page-learning[data-page="learning"] #learning-model-stage#learning-model-stage > button.learning-stage-return.learning-stage-return,
 html body.page-who-we-help.page-who-we-help[data-page="who-we-help"] #who-help-model-stage#who-help-model-stage > button.learning-stage-return.learning-stage-return{
   top:12px!important;
