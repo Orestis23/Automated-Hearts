@@ -58,7 +58,7 @@ html body .explore-key .explore-quote-text{
   margin:auto!important;
   color:#8fffd7!important;
   -webkit-text-fill-color:#8fffd7!important;
-  font-family:"Share Tech Mono","Orbitron",ui-monospace,monospace!important;
+  font-family:"Orbitron",system-ui,sans-serif;
   font-size:clamp(20px,6.3vw,29px)!important;
   font-weight:700!important;
   line-height:1.28!important;
@@ -74,7 +74,7 @@ html body .explore-key .explore-truthbot{
   margin:0!important;
   color:#ff2ea8!important;
   -webkit-text-fill-color:#ff2ea8!important;
-  font-family:"Share Tech Mono","Orbitron",ui-monospace,monospace!important;
+  font-family:"Orbitron",system-ui,sans-serif;
   font-size:clamp(15px,4.3vw,20px)!important;
   font-weight:700!important;
   line-height:1!important;

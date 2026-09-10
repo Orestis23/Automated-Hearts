@@ -1,4 +1,9 @@
-<!doctype html><html><head><script id="ah-runtime-frame-gate-v942">(()=>{'use strict';if(window.__ahRuntimeFrameGate942)return;window.__ahRuntimeFrameGate942=1;const raf0=window.requestAnimationFrame.bind(window),caf0=window.cancelAnimationFrame.bind(window);let seq=1,hostActive=true,viewportActive=true,queued=new Map(),nativeHandles=new Map();const active=()=>hostActive&&viewportActive&&!document.hidden;const schedule=(id,cb)=>{const h=raf0(ts=>{nativeHandles.delete(id);if(!active()){queued.set(id,cb);return}cb(ts)});nativeHandles.set(id,h)};const flush=()=>{if(!active()||!queued.size)return;const q=[...queued];queued.clear();q.forEach(([id,cb])=>schedule(id,cb))};window.requestAnimationFrame=(cb)=>{const id=seq++;if(active())schedule(id,cb);else queued.set(id,cb);return id};window.cancelAnimationFrame=(id)=>{queued.delete(id);const h=nativeHandles.get(id);if(h!==undefined){caf0(h);nativeHandles.delete(id)}};addEventListener('message',e=>{const d=e.data||{};if(d.type==='engine-visibility')hostActive=!!d.visible;else if(d.type==='automated-hearts:learning-activity')hostActive=!!d.active;else if(d.type==='automated-hearts:viewport-activity')viewportActive=!!d.active;else return;flush()});document.addEventListener('visibilitychange',flush,{passive:true});window.__ahRuntimeFrameGate={isActive:active,resume:flush}})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Automated Hearts Five-Stage Engine</title><style>*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:radial-gradient(circle at 58% 44%,#071624 0,#020812 48%,#000 100%);font-family:system-ui;color:#fff}canvas{display:block;background:transparent!important;touch-action:none}</style></head><body><script src="./vendor/three-0.160.0/three.min.js?v=1196r"></script><script src="./vendor/three-0.160.0/OrbitControls-classic.js?v=1196r"></script><script>
+<!doctype html><html><head><script id="ah-runtime-frame-gate-v942">(()=>{'use strict';if(window.__ahRuntimeFrameGate942)return;window.__ahRuntimeFrameGate942=1;const raf0=window.requestAnimationFrame.bind(window),caf0=window.cancelAnimationFrame.bind(window);let seq=1,hostActive=true,viewportActive=true,queued=new Map(),nativeHandles=new Map();const active=()=>hostActive&&viewportActive&&!document.hidden;const schedule=(id,cb)=>{const h=raf0(ts=>{nativeHandles.delete(id);if(!active()){queued.set(id,cb);return}cb(ts)});nativeHandles.set(id,h)};const flush=()=>{if(!active()||!queued.size)return;const q=[...queued];queued.clear();q.forEach(([id,cb])=>schedule(id,cb))};window.requestAnimationFrame=(cb)=>{const id=seq++;if(active())schedule(id,cb);else queued.set(id,cb);return id};window.cancelAnimationFrame=(id)=>{queued.delete(id);const h=nativeHandles.get(id);if(h!==undefined){caf0(h);nativeHandles.delete(id)}};addEventListener('message',e=>{const d=e.data||{};if(d.type==='engine-visibility')hostActive=!!d.visible;else if(d.type==='automated-hearts:learning-activity')hostActive=!!d.active;else if(d.type==='automated-hearts:viewport-activity')viewportActive=!!d.active;else return;flush()});document.addEventListener('visibilitychange',flush,{passive:true});window.__ahRuntimeFrameGate={isActive:active,resume:flush}})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Automated Hearts Five-Stage Engine</title><style>*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:radial-gradient(circle at 58% 44%,#071624 0,#020812 48%,#000 100%);font-family:Orbitron,system-ui,sans-serif;color:#fff}canvas{display:block;background:transparent!important;touch-action:none}
+#ah-home-mobile-interaction-hint{position:fixed;z-index:40;left:50%;bottom:7px;transform:translateX(-50%);display:none;align-items:center;justify-content:center;gap:12px;width:max-content;max-width:92%;padding:5px 12px 4px;border-top:1px solid rgba(143,255,215,.48);background:linear-gradient(90deg,transparent,rgba(2,9,18,.70) 18%,rgba(2,9,18,.78) 82%,transparent);font:700 clamp(9px,2.9vw,12px)/1.1 "Orbitron",system-ui,sans-serif;letter-spacing:.045em;white-space:nowrap;text-align:center;pointer-events:none;user-select:none;-webkit-user-select:none}
+#ah-home-mobile-interaction-hint span:nth-child(odd){color:#8fffd7;text-shadow:0 0 7px rgba(143,255,215,.38)}
+#ah-home-mobile-interaction-hint span:nth-child(even){color:#ff2daa;text-shadow:0 0 7px rgba(255,45,170,.38)}
+html.ah-home-signfree #ah-home-mobile-interaction-hint{display:flex}
+</style><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./assets/global-orbitron-carbon-round1246.css?v=1246r"></head><body><div aria-hidden="true" id="ah-home-mobile-interaction-hint"><span>Click.</span><span>Drag.</span><span>Zoom.</span></div><script src="./vendor/three-0.160.0/three.min.js?v=1196r"></script><script src="./vendor/three-0.160.0/OrbitControls-classic.js?v=1196r"></script><script>
 
 const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,innerWidth/innerHeight,.1,100),renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setClearColor(0x000000,0);renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.45;document.body.appendChild(renderer.domElement);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.enablePan=false;controls.minDistance=9;controls.maxDistance=38;
 const M={dark:new THREE.MeshStandardMaterial({color:0x172637,metalness:.88,roughness:.22}),steel:new THREE.MeshStandardMaterial({color:0x70839a,metalness:.82,roughness:.18}),pinkMetal:new THREE.MeshStandardMaterial({color:0xd8569c,metalness:.95,roughness:.14}),greenMetal:new THREE.MeshStandardMaterial({color:0x69cf95,metalness:.95,roughness:.14}),pink:new THREE.MeshBasicMaterial({color:0xff2f92,toneMapped:false}),green:new THREE.MeshBasicMaterial({color:0x39ff9d,toneMapped:false}),blue:new THREE.MeshBasicMaterial({color:0x35a8ff,toneMapped:false}),glass:new THREE.MeshPhysicalMaterial({color:0x8de8d0,transparent:true,opacity:.08,roughness:.03,transmission:.55,depthWrite:false,side:THREE.DoubleSide})};
@@ -40,7 +45,7 @@ function drawElectricalSign(s,time){
  x.restore();
  // Light-green sign lettering, sized to fit long copy.
  const maxFont=s.text.length>22?72:(s.text.length>12?86:108);
- x.save();x.textAlign='center';x.textBaseline='middle';x.font=`700 ${maxFont}px Arial`;x.fillStyle=`rgba(110,255,157,${s.intensity})`;x.shadowColor='#39ff9d';x.shadowBlur=24*s.intensity;x.fillText(s.text,w/2,h/2+4,w-145);x.restore();
+ x.save();x.textAlign='center';x.textBaseline='middle';x.font=`700 ${maxFont}px Orbitron`;x.fillStyle=`rgba(110,255,157,${s.intensity})`;x.shadowColor='#39ff9d';x.shadowBlur=24*s.intensity;x.fillText(s.text,w/2,h/2+4,w-145);x.restore();
  const streak=(time*.20+s.phase*.03)%1;x.fillStyle=`rgba(255,190,220,${.18*s.intensity})`;x.fillRect(56+streak*(w-210),42,95,4);
  s.texture.needsUpdate=true;s.lastDraw=time
 }
@@ -71,6 +76,7 @@ const signLights=[];const engine=new THREE.Group();engine.scale.setScalar(.73);s
 
 // Matching sections on The Solution page.
 const SIGN_LINKS_ENABLED=new URLSearchParams(location.search).get('links')!=='0';
+if(!SIGN_LINKS_ENABLED)document.documentElement.classList.add('ah-home-signfree');
 const SIGN_LINKS={
   consolidate:'#solution-consolidate',
   streamline:'#solution-streamline',
@@ -170,23 +176,19 @@ for(let i=0;i<5;i++){
 
 }
 
-// Floating process signs positioned to match the approved front-view layout.
-// Consolidate and Explore wrap gently over their wheel arcs.
-const consolidateSign=makeSignLink(floatingSign('CONSOLIDATE',{position:new THREE.Vector3(-5.20,1.88,.72),width:2.72,height:.56,bend:.26}),'consolidate');
-const streamlineSign=makeSignLink(floatingSign('STREAMLINE',{position:new THREE.Vector3(-2.68,1.13,.72),width:2.45,height:.52,bend:0}),'streamline');
-// AUTOMATE: free-floating beneath the automation routes so the relationship is immediately clear.
-// Keep the same down-to-the-right angle and curved plate, but give the machine a clean air gap above the sign.
-const automateSign=makeSignLink(floatingSign('AUTOMATE',{position:new THREE.Vector3(-.12,-1.48,.84),width:2.45,height:.53,bend:.31,rotationZ:-.34}),'automate');
-// OPTIMIZE: straight 45-degree sign, tucked closely beneath the optimize ribbon without touching or obscuring it.
-const optimizeSign=makeSignLink(floatingSign('OPTIMIZE',{position:new THREE.Vector3(2.58,-.50,.79),width:1.95,height:.44,bend:0,rotationZ:Math.PI/4}),'optimize');
-const exploreSign=makeSignLink(floatingSign('EXPLORE',{position:new THREE.Vector3(5.20,1.88,.72),width:2.50,height:.56,bend:.25}),'explore');
-// Live-data sign is independent from the rotating rear wheel so it stays readable while the wheel moves.
-const realDataSign=makeSignLink(floatingSign('Real-time, real-world data.',{position:new THREE.Vector3(.80,4.14,-3.48),width:4.75,height:.82,bend:.38}),'realData');
-// Large home identity sign: same electrical plate language as the Solution-page instruction sign.
-// It stays centered over the machine and billboards toward the camera so the wording remains readable while maneuvering.
+// Floating process signs are only created on the interactive Solution-page version.
+// The mobile Home loads this model with links=0, so it now receives the same clean, sign-free machine view as desktop Home.
+if(SIGN_LINKS_ENABLED){
+  makeSignLink(floatingSign('CONSOLIDATE',{position:new THREE.Vector3(-5.20,1.88,.72),width:2.72,height:.56,bend:.26}),'consolidate');
+  makeSignLink(floatingSign('STREAMLINE',{position:new THREE.Vector3(-2.68,1.13,.72),width:2.45,height:.52,bend:0}),'streamline');
+  makeSignLink(floatingSign('AUTOMATE',{position:new THREE.Vector3(-.12,-1.48,.84),width:2.45,height:.53,bend:.31,rotationZ:-.34}),'automate');
+  makeSignLink(floatingSign('OPTIMIZE',{position:new THREE.Vector3(2.58,-.50,.79),width:1.95,height:.44,bend:0,rotationZ:Math.PI/4}),'optimize');
+  makeSignLink(floatingSign('EXPLORE',{position:new THREE.Vector3(5.20,1.88,.72),width:2.50,height:.56,bend:.25}),'explore');
+  makeSignLink(floatingSign('Real-time, real-world data.',{position:new THREE.Vector3(.80,4.14,-3.48),width:4.75,height:.82,bend:.38}),'realData');
+  floatingInstruction3D('Click the signs to learn more');
+}
 // Round 1206: central 'The Solution' identity plate removed from the Home machine.
 const solutionIdentitySign=null;
-if(SIGN_LINKS_ENABLED) floatingInstruction3D('Click the signs to learn more');
 
 // Anatomical-style heart modules on both ends, with pipe manifolds connected to the engine.
 function createHeartModule(side){
@@ -527,7 +529,7 @@ function createLiveDataRing(radius,type,speed){
 createLiveDataRing(1.48,'STOCKS',.18);
 createLiveDataRing(1.16,'WEATHER',-.14);
 
-function drawCurvedTextTrack(ctx,text,radius,startAngle,{font='800 43px Arial',fill='#000',shadow=null,shadowBlur=0,spacing=7,clockwise=true}={}){
+function drawCurvedTextTrack(ctx,text,radius,startAngle,{font='800 43px Orbitron',fill='#000',shadow=null,shadowBlur=0,spacing=7,clockwise=true}={}){
  ctx.save();ctx.font=font;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=fill;
  if(shadow){ctx.shadowColor=shadow;ctx.shadowBlur=shadowBlur}
  let a=startAngle;
@@ -558,14 +560,14 @@ function drawLiveDataRing(d,time){
    ctx.strokeStyle='#ff7a85';ctx.lineWidth=5;ctx.shadowColor='#ff2538';ctx.shadowBlur=24;ctx.beginPath();ctx.arc(0,0,r+68,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.arc(0,0,r-68,0,Math.PI*2);ctx.stroke();ctx.shadowBlur=0;
    const tape=`  AAPL ${(209+(tick%19)*.11).toFixed(2)} ▲   NVDA ${(177+(tick%23)*.14).toFixed(2)} ▲   MSFT ${(514+(tick%17)*.09).toFixed(2)} ▼   SPX ${(6380+(tick%31)*.8).toFixed(1)} ▲   DOW ${(45120+(tick%27)*3.4).toFixed(0)} ▼   +${(1.2+(tick%9)*.13).toFixed(2)}%   `;
    const repeated=(tape+tape+tape+tape);
-   drawCurvedTextTrack(ctx,repeated,r,-Math.PI/2+time*d.speed+d.phase,{font:'900 42px Arial',fill:'#070708',spacing:8,clockwise:true});
+   drawCurvedTextTrack(ctx,repeated,r,-Math.PI/2+time*d.speed+d.phase,{font:'900 42px Orbitron',fill:'#070708',spacing:8,clockwise:true});
  }else{
    // Inner weather band; each character follows the same circular geometry as the physical inner wheel.
    ctx.beginPath();ctx.arc(0,0,r+58,0,Math.PI*2);ctx.arc(0,0,r-58,0,Math.PI*2,true);ctx.closePath();ctx.fillStyle='rgba(0,19,31,.94)';ctx.fill();
    ctx.strokeStyle='#49eaff';ctx.lineWidth=5;ctx.shadowColor='#29dfff';ctx.shadowBlur=22;ctx.beginPath();ctx.arc(0,0,r+58,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.arc(0,0,r-58,0,Math.PI*2);ctx.stroke();ctx.shadowBlur=0;
    const tape=`  ☀ 72°F   WIND ${8+tick%7} MPH   HUMIDITY ${52+tick%13}%   ☁ 68°F   RAIN ${tick%12}%   FEELS 70°F   `;
    const repeated=(tape+tape+tape+tape);
-   drawCurvedTextTrack(ctx,repeated,r,-Math.PI/2+time*d.speed+d.phase,{font:'900 40px Arial',fill:'#75f3ff',shadow:'#2fe8ff',shadowBlur:12,spacing:7,clockwise:false});
+   drawCurvedTextTrack(ctx,repeated,r,-Math.PI/2+time*d.speed+d.phase,{font:'900 40px Orbitron',fill:'#75f3ff',shadow:'#2fe8ff',shadowBlur:12,spacing:7,clockwise:false});
  }
  ctx.restore();d.texture.needsUpdate=true;
 }

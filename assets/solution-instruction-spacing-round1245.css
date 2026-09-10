@@ -1,0 +1,38 @@
+/* Round 1245 — Solution instruction hierarchy + mobile Home-standard spacing. */
+#solution-process-heading.solution-process-instruction-copy,
+.solution-process-title.solution-process-instruction-copy{
+  flex-direction:column!important;
+  gap:4px!important;
+}
+#solution-process-heading.solution-process-instruction-copy > .solution-instruction-line,
+.solution-process-title.solution-process-instruction-copy > .solution-instruction-line{
+  display:block!important;
+  width:100%!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+}
+#solution-process-heading.solution-process-instruction-copy > .solution-instruction-line--open,
+.solution-process-title.solution-process-instruction-copy > .solution-instruction-line--open{
+  color:#8fffd7!important;
+  -webkit-text-fill-color:#8fffd7!important;
+  text-shadow:0 0 5px rgba(143,255,215,.72),0 0 13px rgba(143,255,215,.30)!important;
+}
+#solution-process-heading.solution-process-instruction-copy > .solution-instruction-line--choose,
+.solution-process-title.solution-process-instruction-copy > .solution-instruction-line--choose{
+  color:#ff4fa8!important;
+  -webkit-text-fill-color:#ff4fa8!important;
+  text-shadow:0 0 5px rgba(255,46,168,.55),0 0 12px rgba(255,46,168,.22)!important;
+}
+@media (max-width:800px){
+  /* Match the Home opening section's tighter top clearance while increasing
+     the idea-to-machine breathing room below the instruction screen. */
+  html body main#main-content > .lite-section.solution-mobile-header-section{
+    padding-top:20px!important;
+  }
+  html body .solution-process-title.solution-mobile-process-name{
+    margin:0 auto 60px!important;
+  }
+  html body .solution-process-title.solution-mobile-process-name > .solution-instruction-line{
+    white-space:nowrap!important;
+  }
+}

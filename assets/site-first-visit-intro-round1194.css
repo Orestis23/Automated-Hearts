@@ -51,7 +51,7 @@ html[data-ah-site-intro="1"] #site-first-visit-intro{display:grid!important;}
   width:min(72vw,920px);
   padding:34px 42px;
   color:#f5fbff;
-  font:700 clamp(22px,2.05vw,36px)/1.48 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font:700 clamp(22px,2.05vw,36px)/1.48 "Orbitron",system-ui,sans-serif;
   letter-spacing:.012em;
   text-shadow:0 2px 4px rgba(0,0,0,.94);
 }

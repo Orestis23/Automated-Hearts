@@ -31,7 +31,7 @@
     box-sizing:border-box!important;
     color:#ff2ea8!important;
     -webkit-text-fill-color:#ff2ea8!important;
-    font-family:"Share Tech Mono",ui-monospace,"Courier New",monospace!important;
+    font-family:"Orbitron",system-ui,sans-serif;
     font-size:clamp(18px,1.18vw,22px)!important;
     font-weight:900!important;
     line-height:1!important;
@@ -112,7 +112,7 @@
     margin:0!important;
     padding:6px 8px 2px!important;
     box-sizing:border-box!important;
-    font-family:"Orbitron",Arial,sans-serif!important;
+    font-family:"Orbitron",system-ui,sans-serif;
     font-size:clamp(38px,3.25vw,52px)!important;
     font-weight:900!important;
     line-height:.96!important;

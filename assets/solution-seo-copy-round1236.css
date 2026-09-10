@@ -1,7 +1,7 @@
 /* Round 1236 — Solution copy hierarchy / SEO readability authority */
 #solution-consolidate > h3,
 body:not(.page-solutions) #solution-consolidate .lite-card-body > h3{
-  font-family:"Orbitron",system-ui,sans-serif!important;
+  font-family:"Orbitron",system-ui,sans-serif;
   font-weight:800!important;
   letter-spacing:.02em!important;
   text-transform:none!important;
@@ -23,7 +23,7 @@ body.page-solutions #solution-consolidate > h3{
   white-space:normal!important;
 }
 body.page-solutions .solution-seo-bullets{
-  font-family:"Oxanium","Orbitron",system-ui,sans-serif!important;
+  font-family:"Orbitron",system-ui,sans-serif;
   font-size:clamp(25px,1.85vw,32px)!important;
   line-height:1.42!important;
 }

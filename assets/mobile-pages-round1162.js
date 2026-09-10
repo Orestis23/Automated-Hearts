@@ -40,13 +40,13 @@
 
   const learningModels = {
     ai101: [
-      './models/ai-101-1-round1093.html?v=1125r',
-      './models/ai-101-2-round1093.html?v=1125r',
-      './models/ai-101-3-round1093.html?v=1125r',
-      './models/ai-101-4-round1093.html?v=1125r'
+      './models/ai-101-1-round1093.html?v=1246r',
+      './models/ai-101-2-round1093.html?v=1246r',
+      './models/ai-101-3-round1093.html?v=1246r',
+      './models/ai-101-4-round1093.html?v=1246r'
     ],
-    practical: ['./models/practical-ai-skills-helix-round1093.html?v=1125r'],
-    strategy: ['./models/strategy-lab-ball-round1093.html?v=1162r']
+    practical: ['./models/practical-ai-skills-helix-round1093.html?v=1246r'],
+    strategy: ['./models/strategy-lab-ball-round1093.html?v=1246r']
   };
 
   function unloadModel(){

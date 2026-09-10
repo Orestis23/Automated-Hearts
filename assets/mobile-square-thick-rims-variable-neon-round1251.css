@@ -1,0 +1,194 @@
+/* Automated Hearts Round 1251 — mobile-only square carbon fields, thicker rims, restrained variable neon. */
+@media (max-width:900px){
+  /* Square every remaining blue/carbon text field. Circular image wells/orbs are intentionally excluded. */
+  html body :is(
+    .page-chip,
+    .lcd,
+    .hero-title,
+    .section-title,
+    .ahi-sign,
+    .route-label,
+    .action,
+    .consult,
+    .back-top,
+    .principle,
+    .lite-card,
+    .stage,
+    .process,
+    .rate-card:not(.ah-casio-lcd-card),
+    .solution-process-title,
+    .solution-process-terms,
+    .solution-mobile-window-cover,
+    .home-process-stage,
+    .home-process-key-button,
+    .explore-key,
+    .ah-rates__button,
+    .r864-rates__drawer-toggle,
+    .r865-rates__consultation-action,
+    a.button,
+    button.button,
+    .button--small,
+    .button--compact
+  ){
+    border-radius:0!important;
+  }
+
+  /* Double the visual rim weight on blue/carbon fields without changing their existing rim color. */
+  html body :is(
+    .page-chip,
+    .lcd,
+    .hero-title,
+    .section-title,
+    .ahi-sign,
+    .route-label,
+    .action,
+    .consult,
+    .back-top,
+    .principle,
+    .lite-card,
+    .stage,
+    .process,
+    .rate-card:not(.ah-casio-lcd-card),
+    .solution-process-title,
+    .solution-process-terms,
+    .solution-mobile-window-cover,
+    .home-process-stage,
+    .home-process-key-button,
+    .explore-key,
+    .ah-rates__button,
+    .r864-rates__drawer-toggle,
+    .r865-rates__consultation-action,
+    a.button,
+    button.button,
+    .button--small,
+    .button--compact
+  ){
+    border-style:solid!important;
+    border-width:3px!important;
+  }
+
+  /* Picture-button image wells keep their intended shape, but their gold rim is doubled. */
+  html body .route-card .route-media{
+    border-width:2px!important;
+    border-style:solid!important;
+  }
+
+  /* Footer hardware: twice-thick face rim. The top face rim is deliberately more prominent
+     than the opposite-color ribbed siding beneath it. */
+  html body > nav.footer a[href]{
+    border-style:solid!important;
+    border-width:3px 2px 4px!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.10)!important;
+  }
+  html body > nav.footer a[href]:nth-child(odd){
+    border-color:#a8dfcf!important;
+    border-top-color:#caffef!important;
+    border-bottom-color:#a8dfcf!important;
+  }
+  html body > nav.footer a[href]:nth-child(even){
+    border-color:#dda0bf!important;
+    border-top-color:#ffd0e7!important;
+    border-bottom-color:#dda0bf!important;
+  }
+  html body > nav.footer a[href]::after{
+    left:-2px!important;
+    right:-2px!important;
+    bottom:-6px!important;
+    height:6px!important;
+    opacity:.72!important;
+    background-size:3px 100%,100% 100%!important;
+  }
+
+  /* Neon is no longer permanently at its maximum. Keep a crisp illuminated core with a small halo. */
+  html body .title-stack > .lcd,
+  html body .route-card .route-label,
+  html body :is(.hero-title,.section-title,.ahi-sign,.page-chip){
+    text-shadow:
+      0 0 .35px rgba(255,255,255,.88),
+      0 0 1.2px currentColor,
+      0 0 3px color-mix(in srgb,currentColor 42%,transparent),
+      0 0 6px color-mix(in srgb,currentColor 16%,transparent)!important;
+  }
+
+  /* Static, zero-network-cost variation: neighboring fields carry slightly different lamp strength. */
+  html body .title-stack > .lcd:nth-child(1),
+  html body .route-grid > .route-card:nth-child(4n+1) .route-label{
+    text-shadow:
+      0 0 .25px rgba(255,255,255,.76),
+      0 0 .9px currentColor,
+      0 0 2.2px color-mix(in srgb,currentColor 30%,transparent)!important;
+  }
+  html body .title-stack > .lcd:nth-child(2),
+  html body .route-grid > .route-card:nth-child(4n+2) .route-label{
+    text-shadow:
+      0 0 .4px rgba(255,255,255,.92),
+      0 0 1.4px currentColor,
+      0 0 3.6px color-mix(in srgb,currentColor 50%,transparent),
+      0 0 7px color-mix(in srgb,currentColor 18%,transparent)!important;
+  }
+  html body .title-stack > .lcd:nth-child(3),
+  html body .route-grid > .route-card:nth-child(4n+3) .route-label{
+    text-shadow:
+      0 0 .3px rgba(255,255,255,.82),
+      0 0 1.05px currentColor,
+      0 0 2.7px color-mix(in srgb,currentColor 37%,transparent),
+      0 0 5px color-mix(in srgb,currentColor 12%,transparent)!important;
+  }
+  html body .route-grid > .route-card:nth-child(4n) .route-label{
+    text-shadow:
+      0 0 .45px rgba(255,255,255,.92),
+      0 0 1.5px currentColor,
+      0 0 4px color-mix(in srgb,currentColor 52%,transparent),
+      0 0 7px color-mix(in srgb,currentColor 20%,transparent)!important;
+  }
+
+  /* The prior Round 1250 look is retained as the extreme only while a control is physically pressed. */
+  html body :is(
+    .title-stack > .lcd:active,
+    .route-card:active .route-label,
+    .action:active,
+    .consult:active,
+    .back-top:active,
+    .home-process-key-button:active,
+    a.button:active,
+    button.button:active
+  ){
+    text-shadow:
+      0 0 .7px #fff,
+      0 0 1.8px currentColor,
+      0 0 4px currentColor,
+      0 0 8px color-mix(in srgb,currentColor 62%,transparent),
+      0 0 13px color-mix(in srgb,currentColor 30%,transparent)!important;
+  }
+}
+
+/* Round 1251 final mobile authority: beat any older page-specific !important radii/rims without touching desktop. */
+@media (max-width:900px){
+  html body > .page-chip,
+  html body main#main-content :is(
+    .lcd,.hero-title,.section-title,.ahi-sign,.route-label,.action,.consult,.back-top,
+    .principle,.lite-card,.stage,.process,.rate-card:not(.ah-casio-lcd-card),
+    .solution-process-title,.solution-process-terms,.solution-mobile-window-cover,
+    .home-process-stage,.home-process-key-button,.explore-key,.ah-rates__button,
+    .r864-rates__drawer-toggle,.r865-rates__consultation-action,a.button,button.button,
+    .button--small,.button--compact
+  ){
+    border-radius:0!important;
+    border-width:3px!important;
+    border-style:solid!important;
+  }
+
+  /* Four restrained lamp levels for non-route blue fields; no animation or extra asset requests. */
+  html body > .page-chip{
+    text-shadow:0 0 .25px rgba(255,255,255,.76),0 0 .8px currentColor,0 0 2px color-mix(in srgb,currentColor 28%,transparent)!important;
+  }
+  html body main#main-content .hero-title{
+    text-shadow:0 0 .35px rgba(255,255,255,.84),0 0 1px currentColor,0 0 2.6px color-mix(in srgb,currentColor 34%,transparent),0 0 5px color-mix(in srgb,currentColor 10%,transparent)!important;
+  }
+  html body main#main-content .section-title{
+    text-shadow:0 0 .4px rgba(255,255,255,.88),0 0 1.25px currentColor,0 0 3.2px color-mix(in srgb,currentColor 42%,transparent),0 0 6px color-mix(in srgb,currentColor 14%,transparent)!important;
+  }
+  html body main#main-content .ahi-sign{
+    text-shadow:0 0 .3px rgba(255,255,255,.80),0 0 .95px currentColor,0 0 2.4px color-mix(in srgb,currentColor 31%,transparent)!important;
+  }
+}

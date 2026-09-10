@@ -11,13 +11,13 @@
   let modelIndex = 0;
   const learningModels = {
     ai101: [
-      './models/ai-101-1-round1093.html?v=1125r',
-      './models/ai-101-2-round1093.html?v=1125r',
-      './models/ai-101-3-round1093.html?v=1125r',
-      './models/ai-101-4-round1093.html?v=1125r'
+      './models/ai-101-1-round1093.html?v=1246r',
+      './models/ai-101-2-round1093.html?v=1246r',
+      './models/ai-101-3-round1093.html?v=1246r',
+      './models/ai-101-4-round1093.html?v=1246r'
     ],
-    practical: ['./models/practical-ai-skills-helix-round1093.html?v=1125r'],
-    strategy: ['./models/strategy-lab-ball-round1093.html?v=1125r']
+    practical: ['./models/practical-ai-skills-helix-round1093.html?v=1246r'],
+    strategy: ['./models/strategy-lab-ball-round1093.html?v=1246r']
   };
   function unloadModel(){ if(frame){ frame.src='about:blank'; frame.remove(); frame=null; } if(modelShell && !document.getElementById('solution-mobile-cover')) modelShell.hidden=true; }
   function loadUrl(url){
@@ -50,9 +50,9 @@
     e.preventDefault(); unloadModel(); selected=el.dataset.industry; if(stage){stage.hidden=false; $('#stage-title').textContent=el.dataset.title;} $('#industry-helix')?.setAttribute('data-industry-index',selected); stage?.scrollIntoView({block:'start'});
   }));
   $('#industry-helix')?.addEventListener('click',(e)=>{ const i=e.currentTarget.dataset.industryIndex||'0'; loadUrl(`./models/who-we-help-industry-helix-round1093.html?industry=${encodeURIComponent(i)}&v=1125r`); });
-  $('#industry-readiness')?.addEventListener('click',()=>loadUrl('./models/who-we-help-readiness-signals-round1093.html?v=1125r'));
+  $('#industry-readiness')?.addEventListener('click',()=>loadUrl('./models/who-we-help-readiness-signals-round1093.html?v=1246r'));
   const solutionCover = $('#solution-mobile-cover');
-  const solutionUrl = './solution-machine-pipeline-round1237.html?preview=1&v=1237r';
+  const solutionUrl = './solution-machine-pipeline-round1237.html?preview=1&v=1246r';
   function setSolutionCover(open){
     if(!solutionCover) return;
     solutionCover.classList.toggle('is-open',!!open);

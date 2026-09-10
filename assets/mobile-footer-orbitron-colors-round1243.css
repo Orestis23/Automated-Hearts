@@ -1,0 +1,16 @@
+/* Automated Hearts Round 1243 — mobile footer typography + restrained alternating brand text. */
+html body > nav.footer a[href]{
+  font-family:"Orbitron",system-ui,sans-serif;
+  font-weight:600!important;
+  letter-spacing:0!important;
+}
+html body > nav.footer a[href]:nth-child(odd){
+  color:#a8dfcf!important;
+  -webkit-text-fill-color:#a8dfcf!important;
+  text-shadow:0 0 2px rgba(143,255,215,.14)!important;
+}
+html body > nav.footer a[href]:nth-child(even){
+  color:#dda0bf!important;
+  -webkit-text-fill-color:#dda0bf!important;
+  text-shadow:0 0 2px rgba(255,46,168,.12)!important;
+}

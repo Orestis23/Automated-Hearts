@@ -1,0 +1,115 @@
+/* Automated Hearts Round 1260 — mobile-only: slimmer rims, closer/softer carbon, pink lower lips, pink Learning labels. */
+@media (max-width:900px){
+  :root{
+    /* Another 50% visual step closer than Round 1259 (9px -> 13.5px), with softer weave contrast. */
+    --ah-r1260-carbon-soft:
+      repeating-linear-gradient(135deg,
+        rgba(197,216,225,.072) 0 6.75px,
+        rgba(62,82,94,.045) 6.75px 13.5px),
+      repeating-linear-gradient(45deg,
+        rgba(142,169,183,.052) 0 6.75px,
+        rgba(10,21,28,.070) 6.75px 13.5px),
+      linear-gradient(180deg,#263943 0%,#20333d 50%,#192b35 100%);
+    --ah-r1260-green:#8fffd7;
+    --ah-r1260-pink:#ff2ea8;
+    --ah-r1260-pink-lip:#a9006f;
+  }
+
+  /* Carbon is closer/larger but quieter. Header bands and bodies use one treatment. */
+  html body :is(
+    .process,
+    .lite-card,
+    .principle,
+    .rate-card:not(.ah-casio-lcd-card),
+    .ahi-sign,
+    .hero-title,
+    .section-title,
+    .route-label,
+    .action,
+    .consult,
+    .back-top,
+    .solution-process-title,
+    .solution-process-terms,
+    .home-process-key-button,
+    .explore-key
+  ),
+  html body main#main-content .process > h3,
+  html body main#main-content .lite-card .lite-card-body > :is(h2,h3,h4),
+  html body main#main-content .principle > :is(h2,h3,h4){
+    background-color:#20333d!important;
+    background-image:var(--ah-r1260-carbon-soft)!important;
+    background-blend-mode:normal!important;
+  }
+
+  /* Carbon-field/control rims: exact 2/3 of Round 1259's effective 3px. */
+  html body > .page-chip,
+  html body > a.message,
+  html body main#main-content :is(
+    .lcd,.hero-title,.section-title,.ahi-sign,.route-label,.action,.consult,.back-top,
+    .principle,.lite-card,.stage,.process,.rate-card:not(.ah-casio-lcd-card),
+    .solution-process-title,.solution-process-terms,.solution-mobile-window-cover,
+    .home-process-stage,.home-process-key-button,.explore-key,.ah-rates__button,
+    .r864-rates__drawer-toggle,.r865-rates__consultation-action,a.button,button.button,
+    .button--small,.button--compact
+  ){
+    border-width:2px!important;
+    border-style:solid!important;
+  }
+
+  /* Footer face: 4px -> 2.667px, retaining sandy green treatment and inner black depth rim. */
+  html body > nav.footer a[href],
+  html body > nav.footer a[href]:nth-child(n){
+    border-width:2.667px!important;
+    border-style:solid!important;
+    border-color:var(--ah-r1260-green)!important;
+    border-top-color:var(--ah-r1260-green)!important;
+    border-right-color:var(--ah-r1260-green)!important;
+    border-bottom-color:var(--ah-r1260-green)!important;
+    border-left-color:var(--ah-r1260-green)!important;
+    box-shadow:
+      0 3px 0 var(--ah-r1260-pink-lip),
+      inset 0 0 0 1.35px #01050a,
+      inset 0 1px 0 rgba(226,255,247,.14),
+      inset 0 -1px 0 rgba(0,0,0,.80)!important;
+  }
+
+  /* Keep the completed green bottom cap proportional to the slimmer face rim. */
+  html body > nav.footer a[href]::before{
+    left:-2.667px!important;
+    right:-2.667px!important;
+    bottom:-2.667px!important;
+    height:2.667px!important;
+  }
+
+  /* Royal siding still begins beneath the completed green rim; pink lip sits between face and hardware. */
+  html body > nav.footer a[href]::after,
+  html body > nav.footer a[href]:nth-child(n)::after{
+    left:-2.667px!important;
+    right:-2.667px!important;
+    top:calc(100% + 3px)!important;
+  }
+  html body > nav.footer a[href]:is(:active,.is-pressed,.is-nav-pressed,[data-ah-control-pressed="1"])::after{
+    top:calc(100% + 3px)!important;
+  }
+
+  /* Same lower pink edging as the Messages hardware on caption fields beneath large route images. */
+  html body main#main-content .route-card .route-label{
+    position:relative!important;
+    overflow:visible!important;
+    border-color:var(--ah-r1260-green)!important;
+    box-shadow:
+      0 3px 0 var(--ah-r1260-pink-lip),
+      inset 0 0 0 1px rgba(0,0,0,.56),
+      inset 0 1px 0 rgba(255,255,255,.035)!important;
+  }
+
+  /* Learning Center lesson names: neon pink type, green rim retained. */
+  html body main#main-content .route-card[data-lite-learning] .route-label{
+    color:var(--ah-r1260-pink)!important;
+    -webkit-text-fill-color:var(--ah-r1260-pink)!important;
+    text-shadow:
+      0 0 .24px rgba(255,255,255,.58),
+      0 0 .65px rgba(255,114,189,.66),
+      0 0 1.7px rgba(255,46,168,.22)!important;
+  }
+}

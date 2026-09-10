@@ -1,0 +1,87 @@
+/* Automated Hearts Round 1263 — mobile-only #0B1728 footer/message faces, shorter neutral siding, no black press cover. */
+@media (max-width:900px){
+  :root{
+    --ah-r1263-blue:#0B1728;
+    --ah-r1263-blue-side-top:#152840;
+    --ah-r1263-blue-side-bottom:#07101d;
+    --ah-r1263-green:#8fffd7;
+    --ah-r1263-pink:#ff72bd;
+    --ah-r1263-carbon:
+      repeating-linear-gradient(135deg,
+        rgba(143,185,207,.075) 0 3px,
+        rgba(4,15,28,.080) 3px 6px),
+      repeating-linear-gradient(45deg,
+        rgba(98,145,171,.050) 0 3px,
+        rgba(2,11,22,.072) 3px 6px),
+      linear-gradient(180deg,#0d1b2f 0%,var(--ah-r1263-blue) 48%,#091422 100%);
+  }
+
+  /* Only footer buttons + Messages use the requested #0B1728 face. */
+  html body > nav.footer a[href],
+  html body > a.message,
+  html body > nav.footer a[href]:active,
+  html body > nav.footer a[href].is-pressed,
+  html body > nav.footer a[href].is-nav-pressed,
+  html body > nav.footer a[href][aria-pressed="true"],
+  html body > nav.footer a[href][data-ah-control-pressed="1"],
+  html body > a.message:active,
+  html body > a.message.is-pressed,
+  html body > a.message[data-ah-control-pressed="1"]{
+    background-color:var(--ah-r1263-blue)!important;
+    background-image:var(--ah-r1263-carbon)!important;
+    background-blend-mode:normal!important;
+    background-position:center!important;
+    background-size:auto!important;
+    background-repeat:repeat!important;
+  }
+
+  /* Eliminate the old black pressed-face cover while preserving mechanical depression. */
+  html body > nav.footer a[href]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"]){
+    transform:translate3d(0,3.5px,0)!important;
+    box-shadow:
+      inset 0 0 0 1.35px #01050a,
+      inset 0 2px 4px rgba(0,0,0,.24),
+      inset 0 1px 0 rgba(226,255,247,.10)!important;
+  }
+  html body > a.message:is(:active,.is-pressed,[data-ah-control-pressed="1"]){
+    background-color:var(--ah-r1263-blue)!important;
+    background-image:var(--ah-r1263-carbon)!important;
+  }
+
+  /* Keep the complete green lower face rim; remove the prior pink lower/ridged hardware look. */
+  html body > nav.footer a[href],
+  html body > nav.footer a[href]:nth-child(n){
+    box-shadow:
+      inset 0 0 0 1.35px #01050a,
+      inset 0 1px 0 rgba(226,255,247,.14),
+      inset 0 -1px 0 rgba(0,0,0,.60)!important;
+  }
+
+  /* Half-height siding: neutral dark blue, smooth (no pink and no ridges). */
+  html body > nav.footer a[href]::after,
+  html body > nav.footer a[href]:nth-child(n)::after{
+    left:-2.667px!important;
+    right:-2.667px!important;
+    top:calc(100% + 1px)!important;
+    height:3.5px!important;
+    opacity:1!important;
+    background-image:linear-gradient(180deg,var(--ah-r1263-blue-side-top) 0%,#0b1b30 45%,var(--ah-r1263-blue-side-bottom) 100%)!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    box-shadow:
+      inset 0 1px 0 rgba(145,187,215,.20),
+      inset 0 -1px 0 rgba(0,0,0,.68)!important;
+    transition:height 90ms ease,opacity 90ms ease,transform 90ms ease!important;
+  }
+  /* Fully submerge the siding when pushed. */
+  html body > nav.footer a[href]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"])::after{
+    height:0!important;
+    opacity:0!important;
+    transform:scaleY(0)!important;
+  }
+
+  /* Preserve the finished neon-green bottom cap above the siding. */
+  html body > nav.footer a[href]::before{
+    background:var(--ah-r1263-green)!important;
+  }
+}

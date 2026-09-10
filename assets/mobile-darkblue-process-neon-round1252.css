@@ -1,0 +1,62 @@
+/* Automated Hearts Round 1252 — mobile-only Home dark-blue route section, restrained varied neon, clean process headers. */
+@media (max-width:900px){
+  /* Home: the three picture-button section stays dark blue throughout; no fade to black. */
+  html body main#main-content > section.home-route-section{
+    background:
+      radial-gradient(120% 75% at 50% 8%,rgba(24,66,96,.28) 0%,rgba(24,66,96,0) 62%),
+      linear-gradient(180deg,#0b2238 0%,#102b43 48%,#0c2439 100%)!important;
+  }
+
+  /* Restrained neon. The previous stronger glow is the ceiling, not the default. */
+  html body :is(.page-chip,.hero-title,.section-title,.ahi-sign,.action,.consult,.back-top,.solution-process-title,.home-process-key-button),
+  html body .title-stack > .lcd,
+  html body .route-card .route-label{
+    text-shadow:0 0 .18px rgba(255,255,255,.46),0 0 .75px currentColor,0 0 2px color-mix(in srgb,currentColor 24%,transparent)!important;
+  }
+
+  /* Realistic lamp-to-lamp variation: intentionally different strengths, all below the old max. */
+  html body .title-stack > .lcd:nth-child(1){
+    text-shadow:0 0 .12px rgba(255,255,255,.34),0 0 .55px currentColor,0 0 1.45px color-mix(in srgb,currentColor 18%,transparent)!important;
+  }
+  html body .title-stack > .lcd:nth-child(2){
+    text-shadow:0 0 .22px rgba(255,255,255,.50),0 0 .9px currentColor,0 0 2.35px color-mix(in srgb,currentColor 28%,transparent)!important;
+  }
+  html body .title-stack > .lcd:nth-child(3){
+    text-shadow:0 0 .16px rgba(255,255,255,.40),0 0 .68px currentColor,0 0 1.8px color-mix(in srgb,currentColor 21%,transparent)!important;
+  }
+  html body .route-grid > .route-card:nth-child(3n+1) .route-label{
+    text-shadow:0 0 .10px rgba(255,255,255,.28),0 0 .48px currentColor,0 0 1.25px color-mix(in srgb,currentColor 16%,transparent)!important;
+  }
+  html body .route-grid > .route-card:nth-child(3n+2) .route-label{
+    text-shadow:0 0 .18px rgba(255,255,255,.42),0 0 .72px currentColor,0 0 1.85px color-mix(in srgb,currentColor 22%,transparent)!important;
+  }
+  html body .route-grid > .route-card:nth-child(3n) .route-label{
+    text-shadow:0 0 .14px rgba(255,255,255,.35),0 0 .6px currentColor,0 0 1.55px color-mix(in srgb,currentColor 19%,transparent)!important;
+  }
+
+  /* Home process-card headers: clean label, centered in the available top band, with pink underline. */
+  html body main#main-content .process > h3{
+    min-height:58px!important;
+    margin:0!important;
+    padding:10px 14px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    color:#ff5ab4!important;
+    -webkit-text-fill-color:#ff5ab4!important;
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:clamp(19px,5.2vw,22px)!important;
+    font-weight:800!important;
+    line-height:1.05!important;
+    letter-spacing:.025em!important;
+    text-align:center!important;
+    border:0!important;
+    border-bottom:3px solid #ff2ea8!important;
+    text-shadow:0 0 .12px rgba(255,255,255,.28),0 0 .55px #ff5ab4,0 0 1.5px rgba(255,46,168,.18)!important;
+  }
+
+  /* Keep pressed state visibly brighter but well below the previous always-on intensity. */
+  html body :is(.route-card:active .route-label,.action:active,.consult:active,.back-top:active,.home-process-key-button:active){
+    text-shadow:0 0 .35px rgba(255,255,255,.68),0 0 1px currentColor,0 0 2.8px color-mix(in srgb,currentColor 34%,transparent),0 0 5px color-mix(in srgb,currentColor 12%,transparent)!important;
+  }
+}

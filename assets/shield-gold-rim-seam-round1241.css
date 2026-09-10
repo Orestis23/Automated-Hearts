@@ -100,7 +100,7 @@ html body > .page-transition-shield .page-transition-shield__quote{
   padding:0!important;
   color:rgba(246,246,240,.93)!important;
   text-align:center!important;
-  font-family:Orbitron,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;
+  font-family:"Orbitron",system-ui,sans-serif;
   font-size:clamp(18px,1.55vw,31px)!important;
   font-weight:600!important;
   line-height:1.34!important;
@@ -115,6 +115,20 @@ html body > .page-transition-shield .page-transition-shield__quote{
   pointer-events:none!important;
 }
 #ah-route-shield #ah-route-shield-quote[hidden]{display:none!important}
+#ah-route-shield #ah-route-shield-quote .ah-shield-pink,
+html body > #page-transition-shield .page-transition-shield__quote .ah-shield-pink,
+html body > .page-transition-shield .page-transition-shield__quote .ah-shield-pink{
+  color:#ff2ea8!important;
+  -webkit-text-fill-color:#ff2ea8!important;
+  text-shadow:0 0 8px rgba(255,46,168,.34),1px 1px 0 rgba(0,0,0,.94)!important;
+}
+#ah-route-shield #ah-route-shield-quote .ah-shield-green,
+html body > #page-transition-shield .page-transition-shield__quote .ah-shield-green,
+html body > .page-transition-shield .page-transition-shield__quote .ah-shield-green{
+  color:#8fffd7!important;
+  -webkit-text-fill-color:#8fffd7!important;
+  text-shadow:0 0 8px rgba(143,255,215,.30),1px 1px 0 rgba(0,0,0,.94)!important;
+}
 @media(max-width:900px){
   #ah-route-shield #ah-route-shield-quote,
   html body > #page-transition-shield .page-transition-shield__quote,

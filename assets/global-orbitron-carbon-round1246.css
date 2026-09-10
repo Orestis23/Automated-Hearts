@@ -1,0 +1,161 @@
+/* Automated Hearts Round 1246 — global Orbitron, subtle carbon text fields, mobile pressed illumination. */
+:root{
+  --ah-r1246-font:"Orbitron",system-ui,sans-serif;
+  --ah-r1246-carbon:
+    repeating-linear-gradient(135deg,rgba(120,165,195,.030) 0 3px,rgba(0,0,0,.034) 3px 6px),
+    repeating-linear-gradient(45deg,rgba(84,126,158,.022) 0 3px,rgba(0,0,0,.028) 3px 6px),
+    linear-gradient(180deg,rgba(12,38,59,.988),rgba(3,13,23,.997));
+}
+html,body,button,input,select,textarea,optgroup,option{
+  font-family:"Orbitron",system-ui,sans-serif!important;
+}
+html body *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not(polygon):not(ellipse):not(g){
+  font-family:"Orbitron",system-ui,sans-serif!important;
+}
+
+/* Soft carbon-fiber face for blue text-bearing fields. Footer/message hardware is intentionally excluded
+   so its established suede/mechanical texture remains unchanged. */
+:is(
+  .page-chip,
+  .ahi-sign,
+  .lcd,
+  .hero-title,
+  .section-title,
+  .route-label,
+  .action,
+  .consult,
+  .back-top,
+  .principle,
+  .lite-card,
+  .stage,
+  .rate-card:not(.ah-casio-lcd-card),
+  .solution-process-title,
+  .solution-process-terms,
+  .header-page-screen,
+  .home-header-screen,
+  .brand-lcd-bar,
+  .brand-route-screen,
+  .premium-route-card__title-sign,
+  .r1087-subhead-box,
+  .r1061-about-copy-well,
+  .r1061-about-tablet,
+  .r1061-process-step,
+  .r983-retainer-panel,
+  .r983-retainer-card,
+  .r864-rates__hero-screen,
+  .r864-rates__final-screen,
+  .r946-rates__tv-header,
+  .ah-rates__hero-frame,
+  .ah-rates__notice--blue,
+  .ah-rates__price-card--blue,
+  .solution-copper-tablet__copy,
+  a.button,
+  button.button,
+  .button--small,
+  .button--compact,
+  .footer-page-screen,
+  .rim-page-name-screen,
+  .r1000-home-title-screen,
+  .r383-reference-screen,
+  .negative-software-screen-round344,
+  .negative-software-title-round344,
+  .r1176-process-heading-label,
+  .r987-learning-flat-card,
+  .r504-process-surface,
+  .r902-mobile-zero-title,
+  .home-rock-process-panel-round336,
+  .home-rock-process-panel-round338,
+  .ah-route-label-final
+){
+  background-color:#061522!important;
+  background-image:var(--ah-r1246-carbon)!important;
+  background-blend-mode:normal!important;
+}
+
+/* Keep the weave quiet behind long-form copy. */
+:is(.principle,.lite-card,.stage,.r1061-about-copy-well,.r1061-about-tablet,.r1061-process-step,.solution-copper-tablet__copy){
+  --ah-r1246-carbon:
+    repeating-linear-gradient(135deg,rgba(118,160,188,.018) 0 3px,rgba(0,0,0,.022) 3px 6px),
+    repeating-linear-gradient(45deg,rgba(80,119,147,.014) 0 3px,rgba(0,0,0,.018) 3px 6px),
+    linear-gradient(180deg,rgba(10,34,54,.992),rgba(3,14,24,.998));
+}
+
+/* Mobile/coarse-pointer button lettering: realistic energized press without changing geometry. */
+@media (max-width:760px),(hover:none) and (pointer:coarse){
+  :is(
+    .footer a,
+    .route-card .route-label,
+    .action,
+    .consult,
+    .back-top,
+    a.footer-structure-control,
+    button.learning-stage-return
+  ){
+    transition:text-shadow 85ms ease,filter 85ms ease,color 85ms ease,transform 90ms ease!important;
+  }
+  :is(
+    .footer a:active,
+    .footer a.is-pressed,
+    .footer a[data-ah-control-pressed="1"],
+    .route-card:active .route-label,
+    .action:active,
+    .consult:active,
+    .back-top:active,
+    a.footer-structure-control:active,
+    a.footer-structure-control.is-nav-pressed,
+    button.learning-stage-return:active
+  ){
+    text-shadow:
+      0 0 .7px currentColor,
+      0 0 2px currentColor,
+      0 0 5px currentColor,
+      0 0 10px color-mix(in srgb,currentColor 62%,transparent),
+      0 0 16px color-mix(in srgb,currentColor 34%,transparent)!important;
+  }
+}
+
+/* Round 1246 continuation: other navy text fields and mobile footer buttons use the same quiet weave. */
+:is(.process,.home-process-stage,.home-process-key-button,.ah-rates__button,.r864-rates__drawer-toggle,.r865-rates__consultation-action){
+  background-color:#061522!important;
+  background-image:var(--ah-r1246-carbon)!important;
+}
+@media (max-width:760px),(hover:none) and (pointer:coarse){
+  html body > nav.footer a[href]{
+    background-color:#081620!important;
+    background-image:
+      repeating-linear-gradient(135deg,rgba(136,171,192,.025) 0 3px,rgba(0,0,0,.038) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(102,138,160,.018) 0 3px,rgba(0,0,0,.030) 3px 6px),
+      linear-gradient(180deg,#202d35 0%,#0b171f 58%,#040a0e 100%)!important;
+  }
+  html body > nav.footer a[href]:active,
+  html body > nav.footer a[href].is-pressed,
+  html body > nav.footer a[href].is-nav-pressed,
+  html body > nav.footer a[href][data-ah-control-pressed="1"]{
+    background-image:
+      repeating-linear-gradient(135deg,rgba(124,157,177,.018) 0 3px,rgba(0,0,0,.050) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(92,122,141,.014) 0 3px,rgba(0,0,0,.042) 3px 6px),
+      linear-gradient(180deg,#131e25 0%,#071016 58%,#020506 100%)!important;
+  }
+  html body > nav.footer a[href]:nth-child(odd):is(:active,.is-pressed,.is-nav-pressed,[data-ah-control-pressed="1"]){
+    color:#d9fff4!important;
+    -webkit-text-fill-color:#d9fff4!important;
+    text-shadow:0 0 1px #fff,0 0 3px #8fffd7,0 0 7px rgba(143,255,215,.92),0 0 14px rgba(143,255,215,.48)!important;
+  }
+  html body > nav.footer a[href]:nth-child(even):is(:active,.is-pressed,.is-nav-pressed,[data-ah-control-pressed="1"]){
+    color:#ffe1f1!important;
+    -webkit-text-fill-color:#ffe1f1!important;
+    text-shadow:0 0 1px #fff,0 0 3px #ff72bd,0 0 7px rgba(255,46,168,.88),0 0 14px rgba(255,46,168,.44)!important;
+  }
+  :is(.route-card:active .route-label,.action:active,.consult:active,.back-top:active,button.learning-stage-return:active){
+    text-shadow:0 0 1px #fff,0 0 3px currentColor,0 0 7px currentColor,0 0 13px color-mix(in srgb,currentColor 48%,transparent)!important;
+  }
+  /* Any remaining text button gets the same lamp-like lettering response on touch. */
+  :is(a.button,button:not([aria-label="Messages"]):not(.message-button):not(.messages-button),[role="button"]):active{
+    text-shadow:
+      0 0 .7px #fff,
+      0 0 2px currentColor,
+      0 0 5px currentColor,
+      0 0 10px color-mix(in srgb,currentColor 58%,transparent),
+      0 0 16px color-mix(in srgb,currentColor 30%,transparent)!important;
+  }
+}

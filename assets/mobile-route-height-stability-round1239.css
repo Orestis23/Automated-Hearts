@@ -1,0 +1,15 @@
+/* Round 1239 — reserve the full geometry of mobile Learning/Who-We-Help
+   route medallions before lazy image bytes arrive. This prevents Chromium
+   from temporarily calculating a truncated document/iframe scroll height. */
+@media (max-width:900px){
+  html body main#main-content .route-grid .route-media{
+    aspect-ratio:1 / 1!important;
+    min-height:1px;
+  }
+  html body main#main-content .route-grid .route-media > img{
+    width:100%!important;
+    height:100%!important;
+    aspect-ratio:1 / 1!important;
+    object-fit:cover!important;
+  }
+}

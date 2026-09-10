@@ -13,7 +13,7 @@
       iframe: 'home-machine-primary',
       video: 'home-machine-primary-video',
       mobileSrc: './assets/home-machine-orbit-mobile-round1101.mp4',
-      desktopSrc: './solution-machine-pipeline-round1207.html?v=1207r&links=0&home=1'
+      desktopSrc: './solution-machine-pipeline-round1207.html?v=1246r&links=0&home=1'
     },
     {
       frameClass: 'home-hero-rolodex-frame',

@@ -1,0 +1,117 @@
+/* Automated Hearts Round 1248 — mobile-only square controls, footer color hardware, carbon-safe progress. */
+@media (max-width:900px){
+  /* Carbon remains on the page title; progress is a separate physical fill layer. */
+  html body > .page-chip{
+    position:fixed!important;
+    isolation:isolate!important;
+    overflow:hidden!important;
+    border-radius:0!important;
+    background-color:#061522!important;
+    background-image:
+      repeating-linear-gradient(135deg,rgba(120,165,195,.030) 0 3px,rgba(0,0,0,.034) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(84,126,158,.022) 0 3px,rgba(0,0,0,.028) 3px 6px),
+      linear-gradient(180deg,rgba(12,38,59,.988),rgba(3,13,23,.997))!important;
+    background-blend-mode:normal!important;
+  }
+  html body > .page-chip::before{
+    content:""!important;
+    position:absolute!important;
+    z-index:-1!important;
+    top:0!important;
+    bottom:0!important;
+    left:0!important;
+    width:var(--ah-page-scroll-percent,0%)!important;
+    min-width:0!important;
+    background:
+      linear-gradient(90deg,
+        rgba(78,215,173,.50) 0%,
+        rgba(143,255,215,.40) 72%,
+        rgba(178,255,231,.50) 100%)!important;
+    box-shadow:
+      inset -1px 0 0 rgba(217,255,244,.66),
+      1px 0 5px rgba(143,255,215,.25)!important;
+    pointer-events:none!important;
+    transition:width 55ms linear!important;
+  }
+
+  /* Home title stack uses square digital fields. */
+  html body .title-stack .lcd{
+    border-radius:0!important;
+  }
+
+  /* Mobile controls/buttons use square hardware edges. Preserve intentionally circular media/orbs. */
+  html body > a.message,
+  html body > nav.footer a[href],
+  html body .route-label,
+  html body .action,
+  html body .consult,
+  html body .back-top,
+  html body .explore-key,
+  html body .window-shutter,
+  html body button.learning-stage-return,
+  html body a.footer-structure-control,
+  html body .home-process-key-button,
+  html body .ah-rates__button,
+  html body .r864-rates__drawer-toggle,
+  html body .r865-rates__consultation-action,
+  html body button.button,
+  html body a.button{
+    border-radius:0!important;
+  }
+
+  /* Messages: keep red, return it to the restrained pre-neon visual strength. */
+  html body > a.message svg{
+    color:#df6671!important;
+    stroke:#df6671!important;
+    filter:drop-shadow(0 0 1px rgba(223,102,113,.34))!important;
+  }
+
+  /* Footer face: border and lower border edge follow the lettering color. */
+  html body > nav.footer a[href]{
+    overflow:visible!important;
+    border-width:1px 1px 2px!important;
+    border-style:solid!important;
+    box-shadow:none!important;
+  }
+  html body > nav.footer a[href]:nth-child(odd){
+    border-color:#a8dfcf!important;
+    border-bottom-color:#a8dfcf!important;
+  }
+  html body > nav.footer a[href]:nth-child(even){
+    border-color:#dda0bf!important;
+    border-bottom-color:#dda0bf!important;
+  }
+
+  /* Opposite-color mechanical siding below each button, vertically ribbed for rounded-depth metal. */
+  html body > nav.footer a[href]::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:0!important;
+    left:-1px!important;
+    right:-1px!important;
+    bottom:-5px!important;
+    height:5px!important;
+    border:0!important;
+    border-radius:0!important;
+    pointer-events:none!important;
+    opacity:.90!important;
+    transition:height 90ms ease,bottom 90ms ease,opacity 90ms ease!important;
+  }
+  html body > nav.footer a[href]:nth-child(odd)::after{
+    background-image:
+      repeating-linear-gradient(90deg,rgba(255,235,247,.18) 0 1px,rgba(96,0,47,.34) 1px 3px),
+      linear-gradient(180deg,#d75998 0%,#7f174d 52%,#35051f 100%)!important;
+    box-shadow:inset 0 1px 0 rgba(255,219,239,.24),inset 0 -1px 0 rgba(30,0,15,.70)!important;
+  }
+  html body > nav.footer a[href]:nth-child(even)::after{
+    background-image:
+      repeating-linear-gradient(90deg,rgba(232,255,248,.18) 0 1px,rgba(0,79,60,.33) 1px 3px),
+      linear-gradient(180deg,#64c9ab 0%,#267d66 52%,#083c30 100%)!important;
+    box-shadow:inset 0 1px 0 rgba(222,255,245,.24),inset 0 -1px 0 rgba(0,25,19,.72)!important;
+  }
+  html body > nav.footer a[href]:is(:active,.is-pressed,.is-nav-pressed,[data-ah-control-pressed="1"])::after{
+    height:1px!important;
+    bottom:-1px!important;
+    opacity:.48!important;
+  }
+}

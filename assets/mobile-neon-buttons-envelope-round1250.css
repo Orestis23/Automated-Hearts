@@ -1,0 +1,96 @@
+/* Automated Hearts Round 1250 — mobile-only authoritative Home title neon, route-button carbon, gold envelope. */
+@media (max-width:900px){
+  /* Home identity stack: enforce the originally requested 25% height increase and doubled spacing. */
+  html body .title-stack{
+    height:auto!important;
+    min-height:0!important;
+    grid-template-rows:none!important;
+    align-content:initial!important;
+    row-gap:32px!important;
+    gap:32px!important;
+    margin:0 5px 48px!important;
+  }
+  html body .title-stack > .lcd{
+    box-sizing:border-box!important;
+    flex:none!important;
+    width:100%!important;
+    min-height:50px!important;
+    height:50px!important;
+    padding:10px 12px!important;
+    border-radius:0!important;
+    font-size:clamp(20px,5.35vw,22px)!important;
+    line-height:1!important;
+    letter-spacing:.035em!important;
+    font-weight:800!important;
+  }
+
+  /* Green rim -> pink neon type. Pink rim -> green neon type. Stronger tube core so it reads on a phone. */
+  html body .title-stack > .lcd.green{
+    color:#ff72bd!important;
+    -webkit-text-fill-color:#ff72bd!important;
+    text-shadow:
+      0 0 .7px #fff,
+      0 0 1.8px #ffe8f4,
+      0 0 3.5px #ff72bd,
+      0 0 7px rgba(255,46,168,.92),
+      0 0 12px rgba(255,46,168,.62),
+      0 0 19px rgba(255,46,168,.30)!important;
+  }
+  html body .title-stack > .lcd.pink{
+    color:#8fffd7!important;
+    -webkit-text-fill-color:#8fffd7!important;
+    text-shadow:
+      0 0 .7px #fff,
+      0 0 1.8px #eafff8,
+      0 0 3.5px #8fffd7,
+      0 0 7px rgba(143,255,215,.92),
+      0 0 12px rgba(143,255,215,.60),
+      0 0 19px rgba(143,255,215,.28)!important;
+  }
+
+  /* The image-caption route buttons use a more visible but still restrained carbon face everywhere on mobile. */
+  html body .route-card .route-label{
+    background-color:#061522!important;
+    background-image:
+      repeating-linear-gradient(135deg,rgba(132,178,205,.070) 0 3px,rgba(0,0,0,.070) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(95,139,168,.052) 0 3px,rgba(0,0,0,.060) 3px 6px),
+      linear-gradient(180deg,#0d283d 0%,#071b2b 48%,#03101b 100%)!important;
+    background-blend-mode:normal!important;
+    color:#8fffd7!important;
+    -webkit-text-fill-color:#8fffd7!important;
+    border-color:#8fffd7!important;
+    border-radius:0!important;
+    font-weight:800!important;
+    text-shadow:
+      0 0 .55px #fff,
+      0 0 1.8px #dffff5,
+      0 0 4px rgba(143,255,215,.88),
+      0 0 8px rgba(143,255,215,.48),
+      0 0 13px rgba(143,255,215,.22)!important;
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,.025),
+      inset 0 0 10px rgba(143,255,215,.045)!important;
+  }
+  html body .route-card:active .route-label{
+    color:#cffff0!important;
+    -webkit-text-fill-color:#cffff0!important;
+    text-shadow:
+      0 0 .8px #fff,
+      0 0 2px #fff,
+      0 0 5px #8fffd7,
+      0 0 10px rgba(143,255,215,.88),
+      0 0 16px rgba(143,255,215,.46)!important;
+  }
+
+  /* Messages envelope: warm brand gold, readable but only lightly energized. */
+  html body > a.message svg,
+  html body > a.message:active svg,
+  html body > a.message.is-pressed svg,
+  html body > a.message[data-ah-control-pressed="1"] svg{
+    color:#d6b257!important;
+    stroke:#d6b257!important;
+    filter:
+      drop-shadow(0 0 .6px rgba(255,244,205,.48))
+      drop-shadow(0 0 2.5px rgba(214,178,87,.42))!important;
+  }
+}

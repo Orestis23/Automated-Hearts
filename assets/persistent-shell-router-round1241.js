@@ -46,9 +46,9 @@
       shieldQuote:'Negative-Software Solution. Logic, not Size.'
     },
     'who-we-help': {
-      title:'Who We Help', desktop:'who-we-help.html', mobile:'mobile-who-we-help.html',
-      desktopFooter:'Who We Help', mobileFooter:'Industries', mobileMessage:'Thinking outside of the box begins, Now.',
-      shieldQuote:'Thinking out of the box begins, Now.'
+      title:'Who We Help', mobileTitle:'Industries', desktop:'who-we-help.html', mobile:'mobile-who-we-help.html',
+      desktopFooter:'Industries', mobileFooter:'Industries', mobileMessage:'Thinking outside of the box begins Now.',
+      shieldQuote:'Thinking outside of the box begins Now.'
     },
     learning: {
       title:'Learning Center', desktop:'learning-center.html', mobile:'mobile-learning-center.html',
@@ -182,10 +182,23 @@
     #ah-route-shield{position:fixed;z-index:2147483200;inset:var(--current-frame-top,96px) var(--current-frame-side,88px) var(--current-frame-bottom,96px);overflow:hidden;border-radius:var(--current-frame-radius,32px);pointer-events:none}
     #ah-route-shield[hidden]{display:none}
     #ah-route-shield-panel{position:absolute;inset:0;height:100%;width:100%;box-sizing:border-box;overflow:hidden;border:2px solid rgba(214,178,87,.94);border-radius:inherit;background:#08172b url('./assets/page-shield-smoked-heart.webp') center/cover no-repeat;background-clip:padding-box;box-shadow:inset 0 0 0 2px rgba(31,19,3,.96),inset 0 0 0 4px rgba(232,202,126,.30),inset 0 0 10px rgba(216,176,76,.24),inset 0 0 0 5px rgba(255,239,194,.16);transform:translateY(-101%);will-change:transform}
-    #ah-route-shield-quote{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(74%,980px);margin:0;text-align:center;color:#dfffee;font-family:Orbitron,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(22px,2.15vw,42px);font-weight:600;line-height:1.35;letter-spacing:.035em;text-wrap:balance;text-shadow:0 2px 2px rgba(0,0,0,.96),0 0 10px rgba(0,0,0,.88),0 0 16px rgba(143,255,215,.22);pointer-events:none}#ah-route-shield-quote[hidden]{display:none}
+    #ah-route-shield-quote{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(74%,980px);margin:0;text-align:center;color:#f1f7f4;font-family:Orbitron,"Orbitron",system-ui,sans-serif;font-size:clamp(22px,2.15vw,42px);font-weight:600;line-height:1.35;letter-spacing:.035em;text-wrap:balance;text-shadow:0 2px 2px rgba(0,0,0,.96),0 0 10px rgba(0,0,0,.88),0 0 16px rgba(143,255,215,.22);pointer-events:none}#ah-route-shield-quote[hidden]{display:none}#ah-route-shield-quote .ah-shield-pink{color:#ff2ea8;-webkit-text-fill-color:#ff2ea8;text-shadow:0 0 8px rgba(255,46,168,.34),0 2px 2px rgba(0,0,0,.96)}#ah-route-shield-quote .ah-shield-green{color:#8fffd7;-webkit-text-fill-color:#8fffd7;text-shadow:0 0 8px rgba(143,255,215,.30),0 2px 2px rgba(0,0,0,.96)}
     @media(max-width:900px){#ah-route-shield{inset:72px 10px calc(74px + env(safe-area-inset-bottom,0px));border-radius:18px}#ah-route-shield-panel{border:1.5px solid rgba(214,178,87,.90);border-radius:18px;box-shadow:inset 0 0 0 2px rgba(24,12,2,.94),inset 0 0 0 3px rgba(255,238,186,.18),inset 0 0 8px rgba(214,178,87,.18)}#ah-route-shield-quote{width:min(82%,560px);font-size:clamp(17px,5.4vw,28px);line-height:1.42;letter-spacing:.02em}}
   `;
   document.head.appendChild(shieldStyle);
+  const escapeShieldText=(value)=>String(value).replace(/[&<>"']/g,(ch)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const shieldQuoteMarkup=(value)=>{
+    const clean=String(value||'').trim();
+    const exact={
+      'Automation with a Human touch.':'<span class="ah-shield-pink">Automation</span> with a <span class="ah-shield-green">Human</span> touch.',
+      'Negative-Software Solution. Logic, not Size.':'<span class="ah-shield-pink">Negative-Software</span> Solution. <span class="ah-shield-green">Logic</span>, not <span class="ah-shield-pink">Size</span>.',
+      'Thinking outside of the box begins Now.':'Thinking <span class="ah-shield-green">outside of the box</span> begins <span class="ah-shield-pink">Now</span>.',
+      'With the right information, you can predict the future.':'With the <span class="ah-shield-green">right information</span>, you can <span class="ah-shield-pink">predict the future</span>.',
+      'Prioritizing Job-Retention.':'<span class="ah-shield-pink">Prioritizing</span> <span class="ah-shield-green">Job-Retention</span>.',
+      'Fully Customized to your layout.':'<span class="ah-shield-pink">Fully Customized</span> to <span class="ah-shield-green">your layout</span>.'
+    };
+    return exact[clean]||escapeShieldText(clean);
+  };
   const moveShield=async(covered, quoteText)=>{
     if(!shieldPanel){
       const shield=document.createElement('div');
@@ -208,7 +221,7 @@
       const quote = shieldPanel.querySelector('#ah-route-shield-quote');
       if (quote) {
         const clean = quoteText.trim();
-        quote.textContent = clean ? `“${clean}”` : '';
+        quote.innerHTML = clean ? `“${shieldQuoteMarkup(clean)}”` : '';
         quote.hidden = !clean;
       }
     }
@@ -292,6 +305,9 @@
     if (!info) return '#';
     const file = isMobile ? info.mobile : info.desktop;
     const u = new URL(file, location.href);
+    /* Round 1250: version mobile content documents as well as their CSS so the
+       persistent iframe cannot reuse an older page shell after a visual round. */
+    if (isMobile) u.searchParams.set('v','1263r');
     if (isMobile && key === 'home') u.searchParams.set('mobile','1');
     return u.href;
   };
@@ -331,14 +347,15 @@
   const updateShell = (nextKey, previousKey) => {
     const info = pages[nextKey];
     const title = shellPageTitle();
+    const displayTitle = (isMobile && info.mobileTitle) ? info.mobileTitle : info.title;
     if (title) {
-      title.textContent = info.title;
-      title.setAttribute('data-text', info.title);
-      title.setAttribute('aria-label', info.title);
+      title.textContent = displayTitle;
+      title.setAttribute('data-text', displayTitle);
+      title.setAttribute('aria-label', displayTitle);
       const holder = title.closest('.rim-page-name-screen');
-      if (holder) holder.setAttribute('aria-label', `Current page: ${info.title}`);
+      if (holder) holder.setAttribute('aria-label', `Current page: ${displayTitle}`);
     }
-    document.title = `Automated Hearts — ${info.title}`;
+    document.title = `Automated Hearts — ${displayTitle}`;
     if (isMobile) {
       const ticker = document.querySelector('body > .ticker');
       if (ticker) {
@@ -509,12 +526,17 @@
       const node = event.target;
       const link = node && typeof node.closest === 'function' ? node.closest('body > nav.footer a[href]') : null;
       if (!link) { mobileTap = null; return; }
+      const rect = link.getBoundingClientRect();
       mobileTap = {
         id:event.pointerId,
         link,
         x:event.clientX,
         y:event.clientY,
-        t:performance.now()
+        t:performance.now(),
+        left:rect.left - 10,
+        right:rect.right + 10,
+        top:rect.top - 10,
+        bottom:rect.bottom + 10
       };
     }, true);
 
@@ -527,7 +549,14 @@
       if ((dx * dx + dy * dy) > 196 || (performance.now() - tap.t) > 900) return;
       const node = document.elementFromPoint(event.clientX, event.clientY);
       const releaseLink = node && typeof node.closest === 'function' ? node.closest('body > nav.footer a[href]') : null;
-      if (releaseLink !== tap.link) return;
+      const insideOriginalButton = event.clientX >= tap.left && event.clientX <= tap.right &&
+        event.clientY >= tap.top && event.clientY <= tap.bottom;
+      // The physical press animation moves the button down by 5px before
+      // pointerup. Accept the original hit rectangle so the animation itself
+      // can never make a valid tap miss. Still reject release over a different
+      // footer button.
+      if (releaseLink && releaseLink !== tap.link) return;
+      if (!releaseLink && !insideOriginalButton) return;
       const key = keyFromHref(tap.link.href);
       if (!key || !pages[key]) return;
       event.preventDefault();
@@ -542,8 +571,17 @@
       navigate(tap.link.href, {push:true});
     }, true);
 
+    document.addEventListener('pointermove', (event) => {
+      const tap = mobileTap;
+      if (!tap || event.pointerId !== tap.id) return;
+      const dx = event.clientX - tap.x;
+      const dy = event.clientY - tap.y;
+      if ((dx * dx + dy * dy) > 196) mobileTap = null;
+    }, {passive:true, capture:true});
     document.addEventListener('pointercancel', () => { mobileTap = null; }, true);
-    document.addEventListener('scroll', () => { mobileTap = null; }, {passive:true, capture:true});
+    // Do not cancel a footer tap merely because momentum/programmatic scrolling
+    // emits a scroll event while the finger is down. Pointer movement above is
+    // the reliable gesture discriminator.
   }
 
   document.addEventListener('click', (event) => {

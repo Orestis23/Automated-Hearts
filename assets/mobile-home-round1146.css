@@ -56,7 +56,7 @@ main>.section:last-of-type .section-title{
   justify-content:center;
   gap:6px;
   text-align:center;
-  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-family:"Orbitron",system-ui,sans-serif;
 }
 .ahi-sign strong{
   color:var(--green);

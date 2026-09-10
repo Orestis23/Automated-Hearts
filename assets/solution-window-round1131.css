@@ -4,7 +4,7 @@
   width:min(100%,1080px)!important;max-width:100%!important;height:auto!important;
   min-height:64px!important;margin:0 auto 32px!important;padding:18px 24px!important;
   color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;
-  font-family:Orbitron,Arial,sans-serif!important;font-size:clamp(18px,2vw,28px)!important;
+  font-family:"Orbitron",system-ui,sans-serif;font-size:clamp(18px,2vw,28px)!important;
   font-weight:600!important;line-height:1.45!important;text-align:center!important;
   white-space:normal!important;clip:auto!important;clip-path:none!important;
   background:repeating-linear-gradient(0deg,rgba(210,244,255,.026) 0 1px,transparent 1px 4px),linear-gradient(180deg,#0a2237,#041523 52%,#01070d)!important;

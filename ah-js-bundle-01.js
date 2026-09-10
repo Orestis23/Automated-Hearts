@@ -843,20 +843,20 @@
           >
             <label class="nav-contact-field">
               <span class="sr-only">Name</span>
-              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" autocomplete="name" name="name" placeholder="Name (required)" required type="text">
+              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="name" name="name" placeholder="Name (required)" required type="text">
             </label>
             <label class="nav-contact-field">
               <span class="sr-only">Email</span>
-              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" autocomplete="email" name="email" placeholder="Email (required)" required type="email">
+              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="email" name="email" placeholder="Email (required)" required type="email">
             </label>
-<label class="nav-contact-field nav-contact-field--full ah-phone-field"><span class="sr-only">Phone number (required)</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" autocomplete="tel" inputmode="tel" name="phone" placeholder="Phone number (required)" required type="tel"></label>
+<label class="nav-contact-field nav-contact-field--full ah-phone-field"><span class="sr-only">Phone number (required)</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="tel" inputmode="tel" name="phone" placeholder="Phone number (required)" required type="tel"></label>
             <label class="nav-contact-field">
               <span class="sr-only">Business or organization</span>
-              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" autocomplete="organization" name="business" placeholder="Business or organization" type="text">
+              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="organization" name="business" placeholder="Business or organization" type="text">
             </label>
             <label class="nav-contact-field">
               <span class="sr-only">Business type</span>
-              <select class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" aria-label="Business type" name="business_type">
+              <select class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" aria-label="Business type" name="business_type">
                 <option value="">Business type</option>
                 <option>Professional services</option>
                 <option>Construction or trades</option>
@@ -868,7 +868,7 @@
             </label>
             <label class="nav-contact-field nav-contact-field--full">
               <span class="sr-only">What feels harder than it should?</span>
-              <textarea class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;" name="message" placeholder="What feels harder than it should?" required rows="4"></textarea>
+              <textarea class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" name="message" placeholder="What feels harder than it should?" required rows="4"></textarea>
             </label>
             <button class="button button--small send-question-button nav-contact-submit" type="submit">
               <span>Send Message</span>
@@ -1587,7 +1587,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       element.hidden = false;
       element.style.setProperty('-webkit-text-stroke', '0 transparent', 'important');
-      element.style.setProperty('font-family', '"Share Tech Mono", ui-monospace, "Courier New", monospace', 'important');
+      element.style.setProperty('font-family', '"Orbitron",system-ui,sans-serif', 'important');
       element.style.setProperty(
         'font-size',
         isFooterLabel

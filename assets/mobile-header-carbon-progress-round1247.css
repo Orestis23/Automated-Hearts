@@ -1,0 +1,67 @@
+/* Automated Hearts Round 1247 — mobile header carbon, title contrast, visible scroll progress. */
+@media (max-width:900px){
+  /* Keep the carbon weave while restoring the live scroll fill above it. */
+  html body > .page-chip{
+    color:#ff72bd!important;
+    -webkit-text-fill-color:#ff72bd!important;
+    text-shadow:0 0 2px rgba(255,114,189,.46),0 0 7px rgba(255,46,168,.24)!important;
+    background-color:#061522!important;
+    background-image:
+      linear-gradient(90deg,
+        rgba(143,255,215,.52) 0%,
+        rgba(143,255,215,.34) var(--ah-page-scroll-percent,0%),
+        rgba(143,255,215,0) var(--ah-page-scroll-percent,0%),
+        rgba(143,255,215,0) 100%),
+      repeating-linear-gradient(135deg,rgba(120,165,195,.030) 0 3px,rgba(0,0,0,.034) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(84,126,158,.022) 0 3px,rgba(0,0,0,.028) 3px 6px),
+      linear-gradient(180deg,rgba(12,38,59,.988),rgba(3,13,23,.997))!important;
+    background-blend-mode:screen,normal,normal,normal!important;
+    background-size:100% 100%,auto,auto,100% 100%!important;
+    background-position:0 0!important;
+    background-repeat:no-repeat,repeat,repeat,no-repeat!important;
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,.035),
+      inset 0 0 10px rgba(143,255,215,.055),
+      0 0 7px rgba(143,255,215,.20)!important;
+  }
+
+  /* Mobile title-field contrast: green rim = pink type; pink rim = green type. */
+  html body .title-stack .lcd.green{
+    color:#ff72bd!important;
+    -webkit-text-fill-color:#ff72bd!important;
+    text-shadow:0 0 2px rgba(255,114,189,.34),0 0 6px rgba(255,46,168,.18)!important;
+  }
+  html body .title-stack .lcd.pink{
+    color:#8fffd7!important;
+    -webkit-text-fill-color:#8fffd7!important;
+    text-shadow:0 0 2px rgba(143,255,215,.32),0 0 6px rgba(143,255,215,.16)!important;
+  }
+
+  /* Messages control uses the same quiet carbon surface as the blue fields. */
+  html body > a.message,
+  html body > a.message:active,
+  html body > a.message.is-pressed{
+    background-color:#061522!important;
+    background-image:
+      linear-gradient(160deg,rgba(28,70,96,.22),rgba(4,19,32,.38) 58%,rgba(1,7,13,.50)),
+      repeating-linear-gradient(135deg,rgba(120,165,195,.040) 0 3px,rgba(0,0,0,.050) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(84,126,158,.030) 0 3px,rgba(0,0,0,.040) 3px 6px),
+      linear-gradient(180deg,rgba(12,38,59,.988),rgba(3,13,23,.997))!important;
+    background-size:100% 100%,auto,auto,100% 100%!important;
+    background-position:0 0!important;
+    background-repeat:no-repeat,repeat,repeat,no-repeat!important;
+    background-blend-mode:normal,normal,normal,normal!important;
+  }
+  html body > a.message[data-ah-control-pressed="1"]{
+    background-image:
+      linear-gradient(160deg,rgba(8,31,48,.32),rgba(1,10,18,.58)),
+      repeating-linear-gradient(135deg,rgba(108,149,177,.030) 0 3px,rgba(0,0,0,.060) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(76,112,139,.024) 0 3px,rgba(0,0,0,.050) 3px 6px),
+      linear-gradient(180deg,rgba(8,28,45,.992),rgba(2,9,16,.998))!important;
+  }
+  html body > a.message svg{
+    color:#ff1f36!important;
+    stroke:#ff1f36!important;
+    filter:drop-shadow(0 0 1px rgba(255,255,255,.56)) drop-shadow(0 0 3px rgba(255,31,54,.92)) drop-shadow(0 0 7px rgba(255,31,54,.46))!important;
+  }
+}

@@ -1,0 +1,50 @@
+/* Automated Hearts Round 1262 — mobile-only brighter dark-blue carbon hardware, Industries page title, pink footer siding. */
+@media (max-width:900px){
+  :root{
+    --ah-r1262-blue-carbon:
+      repeating-linear-gradient(135deg,
+        rgba(152,205,228,.105) 0 3px,
+        rgba(9,26,40,.105) 3px 6px),
+      repeating-linear-gradient(45deg,
+        rgba(110,173,204,.075) 0 3px,
+        rgba(4,17,31,.11) 3px 6px),
+      linear-gradient(180deg,#173d5d 0%,#12334f 48%,#0d2942 100%);
+    --ah-r1262-pink-hi:#ff78c2;
+    --ah-r1262-pink:#ff2ea8;
+    --ah-r1262-pink-deep:#8b0b5a;
+  }
+
+  /* Brighter dark-blue carbon on persistent mobile hardware. */
+  html body > nav.footer a[href],
+  html body > a.message{
+    background-color:#12334f!important;
+    background-image:var(--ah-r1262-blue-carbon)!important;
+    background-blend-mode:normal!important;
+  }
+
+  /* Industries / Who We Help image-caption controls: keep every route button consistent. */
+  html body main#main-content .route-card[data-industry] .route-label{
+    background-color:#12334f!important;
+    background-image:var(--ah-r1262-blue-carbon)!important;
+    background-blend-mode:normal!important;
+  }
+
+  /* Footer hardware: green face rim remains complete; vertically ridged PINK siding begins beneath it. */
+  html body > nav.footer a[href]::after,
+  html body > nav.footer a[href]:nth-child(n)::after{
+    background-image:
+      repeating-linear-gradient(90deg,
+        rgba(255,218,239,.30) 0 1px,
+        rgba(255,80,177,.30) 1px 2px,
+        rgba(92,4,55,.52) 2px 4px),
+      linear-gradient(180deg,
+        var(--ah-r1262-pink-hi) 0%,
+        var(--ah-r1262-pink) 28%,
+        #c5197f 62%,
+        var(--ah-r1262-pink-deep) 100%)!important;
+    background-size:4px 100%,100% 100%!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,229,245,.48),
+      inset 0 -1px 0 rgba(50,0,30,.90)!important;
+  }
+}

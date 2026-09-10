@@ -8,7 +8,6 @@
 #lite-model-stage #lite-model-shell.solution-mobile-model-shell > iframe{
   opacity:1!important;
   visibility:visible!important;
-  pointer-events:none!important;
 }
 #lite-model-stage #lite-model-shell.solution-mobile-model-shell > button#solution-mobile-cover.solution-mobile-window-cover{
   background-color:rgba(4,10,16,.12)!important;

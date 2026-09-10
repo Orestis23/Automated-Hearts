@@ -39,20 +39,8 @@
 }
 
 /**/
-.footer a{
-  transform:translate3d(0,0,0);
-  transition:transform 240ms cubic-bezier(.22,.72,.24,1),box-shadow 240ms ease,background 240ms ease!important;
-}
-.footer a:active,.footer a.is-pressed{
-  transform:translate3d(0,4px,0)!important;
-  box-shadow:0 0 0 #a9006f,inset 0 2px 5px rgba(0,0,0,.58)!important;
-  background:linear-gradient(#16222b,#050a0e)!important;
-}
-
-/**/
 @media(prefers-reduced-motion:reduce){
   .message{transition-duration:190ms!important}
-  .footer a{transition-duration:240ms!important}
 }
 
 /**/

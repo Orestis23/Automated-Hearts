@@ -1,0 +1,51 @@
+/* Automated Hearts Round 1259 — mobile-only lighter carbon weave, 50% closer visual scale. */
+@media (max-width:900px){
+  :root{
+    /* Round 1246 weave repeated every 6px. This uses a 9px repeat: 50% larger/closer. */
+    --ah-r1259-carbon-forward:
+      repeating-linear-gradient(135deg,
+        rgba(184,205,216,.145) 0 4.5px,
+        rgba(57,76,88,.095) 4.5px 9px),
+      repeating-linear-gradient(45deg,
+        rgba(123,154,171,.105) 0 4.5px,
+        rgba(8,18,25,.145) 4.5px 9px),
+      linear-gradient(180deg,#213441 0%,#172a36 50%,#0f202b 100%);
+  }
+
+  /* Main mobile carbon content fields. Keep the weave visibly charcoal/blue-black, not bright blue. */
+  html body :is(
+    .process,
+    .lite-card,
+    .principle,
+    .rate-card:not(.ah-casio-lcd-card),
+    .ahi-sign,
+    .hero-title,
+    .section-title,
+    .route-label,
+    .action,
+    .consult,
+    .back-top,
+    .solution-process-title,
+    .solution-process-terms,
+    .home-process-key-button,
+    .explore-key
+  ){
+    background-color:#172a36!important;
+    background-image:var(--ah-r1259-carbon-forward)!important;
+    background-blend-mode:normal!important;
+  }
+
+  /* The upper title band of process/content boxes uses exactly the same lighter carbon weave. */
+  html body main#main-content .process > h3,
+  html body main#main-content .lite-card .lite-card-body > :is(h2,h3,h4),
+  html body main#main-content .principle > :is(h2,h3,h4){
+    background-color:#172a36!important;
+    background-image:var(--ah-r1259-carbon-forward)!important;
+    background-blend-mode:normal!important;
+  }
+
+  /* Preserve the established pink process divider/underline. */
+  html body main#main-content .process > h3{
+    border-bottom-color:#ff2ea8!important;
+  }
+}

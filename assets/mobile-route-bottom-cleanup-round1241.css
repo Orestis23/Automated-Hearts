@@ -1,0 +1,18 @@
+/* Automated Hearts Round 1241 — mobile Learning/Industries route-bottom cleanup.
+   Remove the empty staging section while it is not in use. In the persistent
+   shell, reserve only the footer footprint rather than the hidden ticker's
+   larger direct-page clearance. */
+@media (max-width:900px){
+  html body main#main-content > .lite-section:has(> #lite-model-stage[hidden]){
+    display:none!important;
+  }
+
+  html body main#main-content > .lite-section:has(> .route-grid){
+    padding-bottom:12px!important;
+    border-bottom:0!important;
+  }
+
+  html.ah-shell-embedded body:has(main#main-content .route-grid){
+    padding-bottom:calc(var(--ah-mobile-footer-base,74px) + var(--safe-bottom,0px))!important;
+  }
+}

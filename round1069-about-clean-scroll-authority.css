@@ -346,7 +346,7 @@ html body.page-about[data-page="about"] .r1061-policy-content p{
     top:50%!important;
     transform:translateY(-50%)!important;
     color:var(--r1061-mint)!important;
-    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-family:"Orbitron",system-ui,sans-serif;
     font-size:10px!important;
   }
   html body.page-about[data-page="about"] .r1061-process-step::after{display:none!important;}

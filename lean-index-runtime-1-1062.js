@@ -460,7 +460,7 @@
     const firstSize = Math.max(18, parseFloat(getComputedStyle(headers[0]).fontSize) || 18);
     [headers[2], headers[3]].forEach((el)=>{
       important(el,'font-size',firstSize+'px');
-      important(el,'font-family','"Share Tech Mono",ui-monospace,"Courier New",monospace');
+      important(el,'font-family','"Orbitron",system-ui,sans-serif');
       important(el,'font-weight','700');
       important(el,'line-height','1');
       important(el,'letter-spacing','0');
@@ -547,7 +547,7 @@
     if(!mobile.matches) return;
     document.querySelectorAll('#home-solution-framework .negative-software-grid-round344 > article.home-process-stage:not(.home-process-stage--key) > h3').forEach(function(h){
       imp(h,'font-size','18px');
-      imp(h,'font-family','"Share Tech Mono",ui-monospace,"Courier New",monospace');
+      imp(h,'font-family','"Orbitron",system-ui,sans-serif');
       imp(h,'font-weight','700');
       imp(h,'line-height','1');
       imp(h,'letter-spacing','0');

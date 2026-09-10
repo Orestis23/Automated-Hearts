@@ -9,7 +9,7 @@
   padding-inline:18px!important;
   color:#ff4fa8!important;
   -webkit-text-fill-color:#ff4fa8!important;
-  font-family:Orbitron,ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;
+  font-family:"Orbitron",system-ui,sans-serif;
   font-size:clamp(18px,1.7vw,26px)!important;
   font-weight:800!important;
   line-height:1.25!important;

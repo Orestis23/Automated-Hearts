@@ -165,7 +165,7 @@ html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-fra
   position:absolute;z-index:1;inset:0;
   display:grid;place-items:center;
   color:rgba(183,255,232,.38);
-  font:700 12px/1.1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font:700 12px/1.1 "Orbitron",system-ui,sans-serif;
   letter-spacing:.05em;
   pointer-events:none;
 }

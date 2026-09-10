@@ -1,0 +1,46 @@
+/* Automated Hearts Round 1249 — mobile Home title scale/neon + square Human/AI text fields. */
+@media (max-width:900px){
+  /* Three Home identity fields: 25% taller, proportional type, and double the prior 16px gap. */
+  html body .title-stack{
+    height:auto!important;
+    min-height:0!important;
+    grid-template-rows:none!important;
+    align-content:initial!important;
+    gap:32px!important;
+    margin:0 5px 48px!important;
+  }
+  html body .title-stack .lcd{
+    min-height:50px!important;
+    height:50px!important;
+    padding:10px 12px!important;
+    border-radius:0!important;
+    font-size:clamp(20px,5.35vw,22px)!important;
+    line-height:1.05!important;
+    letter-spacing:.035em!important;
+    font-weight:800!important;
+  }
+
+  /* Realistic neon tube lettering: tiny white-hot center, colored bloom, restrained outer halo. */
+  html body .title-stack .lcd.green{
+    text-shadow:
+      0 0 .7px rgba(255,255,255,.98),
+      0 0 2px rgba(255,168,218,.98),
+      0 0 5px rgba(255,46,168,.72),
+      0 0 10px rgba(255,46,168,.34),
+      0 0 16px rgba(255,46,168,.16)!important;
+  }
+  html body .title-stack .lcd.pink{
+    text-shadow:
+      0 0 .7px rgba(255,255,255,.98),
+      0 0 2px rgba(196,255,238,.98),
+      0 0 5px rgba(143,255,215,.74),
+      0 0 10px rgba(143,255,215,.34),
+      0 0 16px rgba(143,255,215,.16)!important;
+  }
+
+  /* The two blue Human + AI fields shown in the mobile Home section are square hardware. */
+  html body main#main-content > .section[aria-label="Humans and AI working together"] .section-title,
+  html body main#main-content > .section[aria-label="Humans and AI working together"] .ahi-sign{
+    border-radius:0!important;
+  }
+}

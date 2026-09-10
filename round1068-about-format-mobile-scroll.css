@@ -340,7 +340,7 @@ html body.page-about[data-page="about"] .r1061-policy-content > section{
     top:50%!important;
     transform:translateY(-50%)!important;
     color:var(--r1061-mint)!important;
-    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-family:"Orbitron",system-ui,sans-serif;
     font-size:11px!important;
   }
   html body.page-about[data-page="about"] .r1061-process-step::after{display:none!important;}

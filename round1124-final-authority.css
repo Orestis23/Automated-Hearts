@@ -153,7 +153,7 @@ html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-servic
 body > main#main-content > section.lite-section > .rate-grid > article.rate-card > *{
   position:relative!important;
   z-index:2!important;
-  font-family:"Share Tech Mono","OCR A Std","Courier New",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;
+  font-family:"Orbitron",system-ui,sans-serif;
   text-shadow:none!important;
 }
 html body.page-pricing[data-page="pricing"] :is(#r864-ai,#r864-web) .r966-service-list > article.r951-rates__card.r966-service-card > h4,

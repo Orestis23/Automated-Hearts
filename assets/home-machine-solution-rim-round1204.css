@@ -1,6 +1,7 @@
 /**/
 /**/
-#machine-stack .machine-frame.machine-3d-frame{
+#machine-stack .machine-frame.machine-3d-frame,
+#machine-stack .machine-frame.cards-frame{
   border:clamp(14px,4.2vw,22px) solid #a9b3b6!important;
   border-image:url('./machine-rim-triple-round1199.svg') 128 stretch!important;
   border-radius:0!important;
@@ -11,14 +12,16 @@
     0 0 0 2px #09131b,
     0 8px 15px rgba(0,0,0,.62)!important;
 }
-#machine-stack .machine-frame.machine-3d-frame .machine-well{
+#machine-stack .machine-frame.machine-3d-frame .machine-well,
+#machine-stack .machine-frame.cards-frame .machine-well{
   border-radius:0!important;
   box-shadow:
     inset 4px 4px 9px rgba(198,224,231,.18),
     inset -7px -7px 14px rgba(0,0,0,.82),
     inset 0 0 0 2px rgba(5,12,18,.96)!important;
 }
-#machine-stack .machine-frame.machine-3d-frame .window-shutter{border-radius:0!important;}
+#machine-stack .machine-frame.machine-3d-frame .window-shutter,
+#machine-stack .machine-frame.cards-frame .window-shutter{border-radius:0!important;}
 
 /**/
 @media(min-width:801px){

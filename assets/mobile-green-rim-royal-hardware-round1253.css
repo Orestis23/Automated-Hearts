@@ -1,0 +1,176 @@
+/* Automated Hearts Round 1253 — mobile-only green-rim hardware, royal-blue siding, Explore carbon, route-section rim shading. */
+@media (max-width:900px){
+  :root{
+    --ah-r1253-green:#8fffd7;
+    --ah-r1253-green-top:#d2fff1;
+    --ah-r1253-pink:#ff72bd;
+    --ah-r1253-royal:#4169e1;
+    --ah-r1253-black:#01050a;
+  }
+
+  /* Every mobile button/control face uses one neon-green perimeter; remove legacy pink button rims. */
+  html body > a.message,
+  html body > nav.footer a[href],
+  html body main#main-content :is(
+    .route-label,
+    .action,
+    .action.pink,
+    .consult,
+    .back-top,
+    .explore-key,
+    .home-process-key-button,
+    .ah-rates__button,
+    .r864-rates__drawer-toggle,
+    .r865-rates__consultation-action,
+    .learning-stage-return,
+    a.button,
+    button.button,
+    .button--small,
+    .button--compact
+  ){
+    border-color:var(--ah-r1253-green)!important;
+    border-top-color:var(--ah-r1253-green-top)!important;
+    border-right-color:var(--ah-r1253-green)!important;
+    border-bottom-color:var(--ah-r1253-green)!important;
+    border-left-color:var(--ah-r1253-green)!important;
+    border-radius:0!important;
+  }
+
+  /* Footer: complete square green face rim, then a black inset lip for depth. */
+  html body > nav.footer a[href]{
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+    border-style:solid!important;
+    border-width:3px!important;
+    border-color:var(--ah-r1253-green)!important;
+    border-top-color:var(--ah-r1253-green-top)!important;
+    border-bottom-color:var(--ah-r1253-green)!important;
+    border-radius:0!important;
+    color:var(--ah-r1253-pink)!important;
+    -webkit-text-fill-color:var(--ah-r1253-pink)!important;
+    text-shadow:0 0 .15px rgba(255,255,255,.38),0 0 .65px #ff72bd,0 0 1.6px rgba(255,46,168,.18)!important;
+    box-shadow:
+      inset 0 0 0 2px var(--ah-r1253-black),
+      inset 0 1px 0 rgba(225,255,246,.20),
+      inset 0 -1px 0 rgba(0,0,0,.78)!important;
+  }
+
+  /* Royal-blue vertically ridged siding lives entirely BELOW the finished bottom green rim. */
+  html body > nav.footer a[href]::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:-1!important;
+    left:-3px!important;
+    right:-3px!important;
+    top:calc(100% + 1px)!important;
+    bottom:auto!important;
+    height:7px!important;
+    border:0!important;
+    border-radius:0!important;
+    opacity:1!important;
+    pointer-events:none!important;
+    background-image:
+      repeating-linear-gradient(90deg,
+        rgba(219,230,255,.28) 0 1px,
+        rgba(65,105,225,.20) 1px 2px,
+        rgba(8,34,94,.48) 2px 4px),
+      linear-gradient(180deg,#5d80ee 0%,#4169e1 26%,#244fb3 62%,#102c72 100%)!important;
+    background-size:4px 100%,100% 100%!important;
+    box-shadow:
+      inset 0 1px 0 rgba(226,235,255,.52),
+      inset 0 -1px 0 rgba(2,12,40,.86)!important;
+    transition:height 90ms ease,opacity 90ms ease!important;
+  }
+  html body > nav.footer a[href]:is(:active,.is-pressed,.is-nav-pressed,[data-ah-control-pressed="1"])::after{
+    top:calc(100% + 1px)!important;
+    bottom:auto!important;
+    height:2px!important;
+    opacity:.82!important;
+  }
+
+  /* Footer page names are consistently neon pink, including the pressed state. */
+  html body > nav.footer a[href]:nth-child(n),
+  html body > nav.footer a[href]:nth-child(n):is(:active,.is-pressed,.is-nav-pressed,[data-ah-control-pressed="1"]){
+    color:var(--ah-r1253-pink)!important;
+    -webkit-text-fill-color:var(--ah-r1253-pink)!important;
+  }
+  html body > nav.footer a[href]:nth-child(n):is(:active,.is-pressed,.is-nav-pressed,[data-ah-control-pressed="1"]){
+    text-shadow:0 0 .4px #fff,0 0 1.4px #ff72bd,0 0 3.2px rgba(255,46,168,.40),0 0 5.5px rgba(255,46,168,.15)!important;
+  }
+
+  /* Explore uses the same quiet carbon-fiber face as the other blue text fields. */
+  html body main#main-content .explore-key{
+    background-color:#061522!important;
+    background-image:var(--ah-r1246-carbon)!important;
+    background-blend-mode:normal!important;
+    border-color:var(--ah-r1253-green)!important;
+    border-top-color:var(--ah-r1253-green-top)!important;
+    border-radius:0!important;
+  }
+
+  /* Home's three picture-button section picks up the same dark-blue shaded character as the top outer rim,
+     while staying entirely in navy/blue rather than fading to black. */
+  html body main#main-content > section.home-route-section{
+    background-color:#0a1728!important;
+    background-image:
+      linear-gradient(180deg,rgba(18,42,72,.34) 0%,rgba(6,17,31,.10) 48%,rgba(16,36,61,.28) 100%),
+      linear-gradient(90deg,#081524 0%,#10213b 35%,#06111f 70%,#081524 100%)!important;
+    background-blend-mode:normal!important;
+  }
+}
+
+
+/* Automated Hearts Round 1258 — mobile-only sandy/granular finish on green button rims.
+   CSS-only: no image asset and no additional network request. */
+@media (max-width:900px){
+  :root{
+    --ah-r1258-sandy-green:repeating-linear-gradient(
+      117deg,
+      #8fffd7 0 1px,
+      #b9ffe9 1px 2px,
+      #72d7ba 2px 3px,
+      #97f8db 3px 5px,
+      #5fbda5 5px 6px,
+      #adffe4 6px 7px,
+      #7be4c5 7px 9px,
+      #8fffd7 9px 11px
+    );
+  }
+
+  html body > a.message,
+  html body > nav.footer a[href],
+  html body main#main-content :is(
+    .route-label,
+    .action,
+    .action.pink,
+    .consult,
+    .back-top,
+    .explore-key,
+    .home-process-key-button,
+    .ah-rates__button,
+    .r864-rates__drawer-toggle,
+    .r865-rates__consultation-action,
+    .learning-stage-return,
+    a.button,
+    button.button,
+    .button--small,
+    .button--compact
+  ){
+    border-color:#8fffd7!important;
+    border-image-source:var(--ah-r1258-sandy-green)!important;
+    border-image-slice:1!important;
+    border-image-width:1!important;
+    border-image-outset:0!important;
+    border-image-repeat:round!important;
+  }
+
+  /* Keep the footer's completed bottom green cap in the same sandy finish
+     before the royal-blue siding begins underneath. */
+  html body > nav.footer a[href]::before{
+    background-color:#8fffd7!important;
+    background-image:var(--ah-r1258-sandy-green)!important;
+    background-repeat:repeat!important;
+    background-size:18px 18px!important;
+  }
+}
