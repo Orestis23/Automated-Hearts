@@ -1,0 +1,85 @@
+/* Automated Hearts Round 1265 — mobile-only route-label #0B1728 carbon + clean footer depth hardware. */
+@media (max-width:900px){
+  :root{
+    --ah-r1265-blue:#0B1728;
+    --ah-r1265-green:#8fffd7;
+    --ah-r1265-black:#000000;
+    --ah-r1265-carbon:
+      repeating-linear-gradient(135deg,
+        rgba(143,185,207,.075) 0 3px,
+        rgba(4,15,28,.080) 3px 6px),
+      repeating-linear-gradient(45deg,
+        rgba(98,145,171,.050) 0 3px,
+        rgba(2,11,22,.072) 3px 6px),
+      linear-gradient(180deg,#0d1b2f 0%,var(--ah-r1265-blue) 48%,#091422 100%);
+  }
+
+  /* Caption/text buttons beneath the large image buttons on Home, Learning Center and Industries.
+     Match the exact footer-button navy/carbon surface. */
+  html body main#main-content .route-card .route-label,
+  html body main#main-content .route-card[data-lite-learning] .route-label,
+  html body main#main-content .route-card[data-industry] .route-label{
+    background-color:var(--ah-r1265-blue)!important;
+    background-image:var(--ah-r1265-carbon)!important;
+    background-position:center!important;
+    background-size:auto!important;
+    background-repeat:repeat!important;
+    background-blend-mode:normal!important;
+  }
+
+  /* Remove the legacy green bottom-cap pseudo element entirely. It was the source of the
+     green tips extending beyond the left and right edges of the footer buttons. */
+  html body > nav.footer a[href]::before,
+  html body > nav.footer a[href]:nth-child(n)::before{
+    content:none!important;
+    display:none!important;
+    width:0!important;
+    height:0!important;
+    left:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    background:none!important;
+    box-shadow:none!important;
+  }
+
+  /* Keep the siding exactly within the button width, with no side protrusions. */
+  html body > nav.footer a[href]::after,
+  html body > nav.footer a[href]:nth-child(n)::after{
+    left:0!important;
+    right:0!important;
+    top:100%!important;
+    width:auto!important;
+    height:3.5px!important;
+    transform-origin:top center!important;
+  }
+  html body > nav.footer a[href]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"])::after{
+    left:0!important;
+    right:0!important;
+    top:100%!important;
+    height:0!important;
+    opacity:0!important;
+    transform:scaleY(0)!important;
+  }
+
+  /* Strong, visibly inset BLACK rim directly inside the green border.
+     A subtle inner bevel after the black line makes the black ring read as physical depth. */
+  html body > nav.footer a[href],
+  html body > nav.footer a[href]:nth-child(n){
+    box-shadow:
+      inset 0 0 0 3px var(--ah-r1265-black),
+      inset 0 0 0 4px rgba(72,96,116,.40),
+      inset 0 2px 2px rgba(255,255,255,.035),
+      inset 0 -2px 3px rgba(0,0,0,.72)!important;
+  }
+
+  /* Preserve the same black depth ring when pushed; only the hardware depression changes. */
+  html body > nav.footer a[href]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"]){
+    background-color:var(--ah-r1265-blue)!important;
+    background-image:var(--ah-r1265-carbon)!important;
+    box-shadow:
+      inset 0 0 0 3px var(--ah-r1265-black),
+      inset 0 0 0 4px rgba(55,76,94,.36),
+      inset 0 3px 5px rgba(0,0,0,.36),
+      inset 0 -1px 2px rgba(255,255,255,.025)!important;
+  }
+}

@@ -1,0 +1,84 @@
+/* Automated Hearts Round 1271 — mobile-only true matte cover over Home title words + bright graphite carbon/footer matte film. */
+@media (max-width:900px){
+  :root{
+    --ah-r1271-graphite:#22282e;
+    --ah-r1271-graphite-carbon:
+      repeating-linear-gradient(135deg,
+        rgba(235,244,249,.120) 0 3px,
+        rgba(0,0,0,.155) 3px 6px),
+      repeating-linear-gradient(45deg,
+        rgba(175,190,201,.090) 0 3px,
+        rgba(0,0,0,.125) 3px 6px),
+      linear-gradient(180deg,#303840 0%,#22282e 48%,#171c21 100%);
+    --ah-r1271-matte:
+      radial-gradient(circle at 1px 1px,rgba(246,253,255,.105) 0 .55px,transparent .82px) 0 0 / 5px 5px,
+      repeating-linear-gradient(0deg,rgba(238,249,255,.052) 0 1px,rgba(0,0,0,.026) 1px 3px),
+      linear-gradient(110deg,transparent 0 10%,rgba(237,249,255,.16) 17%,rgba(225,240,248,.055) 32%,transparent 43% 100%),
+      radial-gradient(145% 58% at 50% -12%,rgba(240,250,255,.17),transparent 66%),
+      linear-gradient(180deg,rgba(221,238,247,.105),rgba(190,211,224,.038) 44%,rgba(0,0,0,.075));
+  }
+
+  /* The Home title-film existed in Round 1268 but sat beneath the words.
+     Raise that physical sheet above the lettering so it visibly covers the text as well as the carbon. */
+  html body .title-stack > .lcd::after{
+    z-index:8!important;
+  }
+  html body .title-stack > .lcd > .lcd-text{
+    z-index:5!important;
+  }
+
+  /* Bright neutral-black/graphite carbon face on footer buttons only.
+     Keep existing green outer rim, black inner rim and pink label treatment. */
+  html body > nav.footer a[href],
+  html body > nav.footer a[href]:nth-child(n),
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ){
+    background-color:var(--ah-r1271-graphite)!important;
+    background-image:var(--ah-r1271-graphite-carbon)!important;
+    background-position:center!important;
+    background-size:auto!important;
+    background-repeat:repeat!important;
+    background-blend-mode:normal!important;
+  }
+
+  /* Preserve readable label under the physical film. */
+  html body > nav.footer a[href] > .footer-nav-label{
+    position:relative!important;
+    z-index:20!important;
+    display:inline-block!important;
+    color:inherit!important;
+    text-shadow:inherit!important;
+    pointer-events:none!important;
+  }
+
+  /* Exact stronger matte recipe used on the Home title fields, now as a real sheet OVER the footer wording.
+     Inset just past the green/black hardware rims so those 3D edges remain visible. */
+  html body > nav.footer a[href] > .footer-matte-film{
+    position:absolute!important;
+    z-index:30!important;
+    inset:4px!important;
+    display:block!important;
+    pointer-events:none!important;
+    border:0!important;
+    border-radius:0!important;
+    background:var(--ah-r1271-matte)!important;
+    opacity:.92!important;
+    mix-blend-mode:normal!important;
+    -webkit-backdrop-filter:blur(1.15px) saturate(.82) contrast(.94)!important;
+    backdrop-filter:blur(1.15px) saturate(.82) contrast(.94)!important;
+    box-shadow:
+      inset 0 0 0 1px rgba(210,228,238,.15),
+      inset 0 1px 0 rgba(255,255,255,.11),
+      inset 0 -1px 0 rgba(0,0,0,.14)!important;
+  }
+
+  /* Film moves with the face; the existing short siding still collapses on press. */
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ) > .footer-matte-film{
+    opacity:.88!important;
+  }
+}

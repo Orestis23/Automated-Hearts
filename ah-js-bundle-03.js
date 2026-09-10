@@ -314,7 +314,7 @@
   });
 
   /* Round 602: round510-model-scroll.js now owns the return sequence for both
-     Learning Center and Who We Help. Keep this legacy fallback only if that
+     Learning Center and Industries. Keep this legacy fallback only if that
      shared controller did not initialize. */
   if (!window.__ahSharedModelReturnRound602) {
     returnButton.addEventListener('click',async () => {
@@ -342,7 +342,7 @@
 
 ;
 /* Round 804 — authoritative Learning Center return controller.
-   Mirrors the proven Who We Help Round 719 return sequence:
+   Mirrors the proven Industries Round 719 return sequence:
    1) raise the local shield completely at the same 2000ms/easing used on reveal,
    2) only then smoothly return the real main viewport to the top,
    3) remove/lock the lesson stage again until another lesson is selected. */
@@ -527,7 +527,7 @@
     if (status) status.textContent = 'Closing the lesson shield and returning to the lesson choices.';
 
     try {
-      /* Exact Who We Help sequence: shield first, then smooth main-scroll return. */
+      /* Exact Industries sequence: shield first, then smooth main-scroll return. */
       await raiseShield();
       await smoothMainToTop();
 

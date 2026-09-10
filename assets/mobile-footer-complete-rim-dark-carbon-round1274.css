@@ -1,0 +1,89 @@
+/* Automated Hearts Round 1274 — mobile-only: complete footer green rim, darker carbon, no matte cover. */
+@media (max-width:900px){
+  :root{
+    --ah-r1274-green:#8fffd7;
+    --ah-r1274-face:#090d11;
+    --ah-r1274-carbon:
+      repeating-linear-gradient(135deg,
+        rgba(112,132,144,.060) 0 3px,
+        rgba(0,0,0,.150) 3px 6px),
+      repeating-linear-gradient(45deg,
+        rgba(72,92,104,.042) 0 3px,
+        rgba(0,0,0,.115) 3px 6px),
+      linear-gradient(180deg,#10161c 0%,#090d11 50%,#05080b 100%);
+  }
+
+  /* Footer face: much darker carbon, with the green rim visibly complete on all four sides. */
+  html body > nav.footer a[href],
+  html body > nav.footer a[href]:nth-child(n),
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ){
+    border-width:2.667px!important;
+    border-style:solid!important;
+    border-color:var(--ah-r1274-green)!important;
+    border-top-color:var(--ah-r1274-green)!important;
+    border-right-color:var(--ah-r1274-green)!important;
+    border-bottom-color:var(--ah-r1274-green)!important;
+    border-left-color:var(--ah-r1274-green)!important;
+    background-color:var(--ah-r1274-face)!important;
+    background-image:var(--ah-r1274-carbon)!important;
+    background-position:center!important;
+    background-size:auto!important;
+    background-repeat:repeat!important;
+    background-blend-mode:normal!important;
+    box-shadow:
+      inset 0 0 0 3px #000,
+      inset 0 0 0 4px rgba(48,62,72,.26),
+      inset 0 1px 0 rgba(255,255,255,.025),
+      inset 0 -2px 3px rgba(0,0,0,.76)!important;
+  }
+
+  /* Remove the physical matte-film sheet from footer buttons completely. */
+  html body > nav.footer a[href] > .footer-matte-film{
+    display:none!important;
+    content:none!important;
+    opacity:0!important;
+    background:none!important;
+    box-shadow:none!important;
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+  }
+
+  /* The glow-strip siding begins BELOW the completed green border instead of covering it. */
+  html body > nav.footer a[href]::after,
+  html body > nav.footer a[href]:nth-child(n)::after{
+    left:0!important;
+    right:0!important;
+    top:calc(100% + 2.667px)!important;
+    height:3.5px!important;
+    width:auto!important;
+  }
+
+  /* When pushed, only the siding submerges; the full green face rim stays visible. */
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  )::after{
+    top:calc(100% + 2.667px)!important;
+    height:0!important;
+    opacity:0!important;
+    transform:scaleY(0)!important;
+    box-shadow:none!important;
+  }
+
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ){
+    background-color:var(--ah-r1274-face)!important;
+    background-image:var(--ah-r1274-carbon)!important;
+    border-bottom-color:var(--ah-r1274-green)!important;
+    box-shadow:
+      inset 0 0 0 3px #000,
+      inset 0 0 0 4px rgba(40,53,62,.22),
+      inset 0 3px 5px rgba(0,0,0,.32),
+      inset 0 -1px 1px rgba(255,255,255,.018)!important;
+  }
+}

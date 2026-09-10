@@ -51,7 +51,7 @@
 
   /* Round 453: feature-card handoff. The card physically sinks first, then its
      local leather cover travels at one-third the former speed. Home/outbound
-     routes continue into the viewport shield. Learning Center and Who We Help
+     routes continue into the viewport shield. Learning Center and Industries
      stay on-page and smoothly scroll to their model stage without re-covering
      the viewport. */
   const pageTransitionShield = $(".page-transition-shield");
@@ -66,12 +66,12 @@
     /* Round 495: deterministic smooth handoff to the lower 3D-model stage.
        Some browsers were still treating scrollTo({behavior:"smooth"}) on the
        fixed main viewport as an immediate jump. Drive the interpolation here
-       so Learning Center and Who We Help visibly glide to the target. */
+       so Learning Center and Industries visibly glide to the target. */
     let activeModelScrollFrame = 0;
     let activeModelScrollFinish = null;
 
     /* Round 496: one deterministic scroll owner for Learning Center and
-       Who We Help. It explicitly disables native smooth-scroll, anchoring and
+       Industries. It explicitly disables native smooth-scroll, anchoring and
        snap behavior while the animation is active so the browser cannot add
        an instantaneous hash jump or a second competing scroll animation. */
     const smoothScrollModelStage = (stage, options = {}) => new Promise((resolve) => {
@@ -1284,7 +1284,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const canonicalSelector = ".screen-text-canonical:not(.home-title-text-standard)";
   const normalize = (element) => {
-    /* Round 530: the Who We Help route labels deliberately contain one span
+    /* Round 530: the Industries route labels deliberately contain one span
        per character. Flattening those children erases the lamp-by-lamp aging
        pattern, so they are excluded from every legacy text normalizer. */
     if (element.classList.contains('r530-who-bulb-field') ||
@@ -2032,7 +2032,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 })();
 
-/* Round 1037: route labels are plain text on both Who We Help and Learning Center.
+/* Round 1037: route labels are plain text on both Industries and Learning Center.
    The retired per-character aged-bulb renderers (Rounds 528/530/531) were removed
    because they rebuilt words after load and collapsed/blurred visible spaces. */
 (() => {

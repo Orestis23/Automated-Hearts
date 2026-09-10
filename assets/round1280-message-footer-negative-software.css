@@ -1,0 +1,175 @@
+/* Automated Hearts Round 1280
+   - Desktop Messages control restored to the sandy/suede face used by the desktop footer family.
+   - Mobile footer keeps the complete mint-green bottom rim, then a crisp black separator, then pink emitted light.
+   - Mobile Negative-Software Solution signs stay on one line; Negative-Software is bright pink and Solution remains mint.
+*/
+
+:root{
+  --ah-r1280-mint:#8fffd7;
+  --ah-r1280-pink:#ff2ea8;
+  --ah-r1280-pink-hot:#ff82c8;
+  --ah-r1280-pink-core:#ffe4f3;
+}
+
+/* DESKTOP MESSAGES --------------------------------------------------------- */
+@media (min-width:901px){
+  :root{
+    --r1005-message-face:url("./message-button-suede-sandy-side-round915.svg?v=1280r")!important;
+  }
+  html.ah-message-persist-open{
+    --r1005-message-face:url("./message-button-suede-sandy-side-pressed-round915.svg?v=1280r")!important;
+  }
+
+  html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    position:fixed!important;
+    left:auto!important;
+    overflow:visible!important;
+    background-color:transparent!important;
+    background-image:url("./message-button-suede-sandy-side-round915.svg?v=1280r")!important;
+    background-position:center!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    background-blend-mode:normal!important;
+  }
+
+  html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(
+    :active,.is-pressed,.is-contact-latched,[aria-expanded="true"],
+    [data-ah-control-pressed="1"],[data-ah-control-pressed="true"]
+  ),
+  html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    background-image:url("./message-button-suede-sandy-side-pressed-round915.svg?v=1280r")!important;
+  }
+
+  /* Keep the envelope above the restored textured face. */
+  html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope{
+    position:absolute!important;
+    z-index:8!important;
+    inset:0!important;
+    display:grid!important;
+    place-items:center!important;
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:none!important;
+  }
+}
+
+/* MOBILE FOOTER HARDWARE --------------------------------------------------- */
+@media (max-width:900px){
+  html body > nav.footer,
+  html body > .footer{
+    overflow:visible!important;
+  }
+
+  /* The mint face rim is complete on all four sides, including the bottom. */
+  html body > nav.footer a[href],
+  html body > nav.footer a[href]:nth-child(n),
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ){
+    box-sizing:border-box!important;
+    border-style:solid!important;
+    border-width:2.667px!important;
+    border-top-color:var(--ah-r1280-mint)!important;
+    border-right-color:var(--ah-r1280-mint)!important;
+    border-bottom-color:var(--ah-r1280-mint)!important;
+    border-left-color:var(--ah-r1280-mint)!important;
+    overflow:visible!important;
+  }
+
+  /* Geometry from top to bottom: mint bottom rim -> black separator -> pink light core.
+     The black border belongs to the glow layer, so it cannot erase the green rim. */
+  html body > nav.footer a[href]::after,
+  html body > nav.footer a[href]:nth-child(n)::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:5!important;
+    left:-2.667px!important;
+    right:-2.667px!important;
+    top:100%!important;
+    bottom:auto!important;
+    width:auto!important;
+    height:2.2px!important;
+    min-height:0!important;
+    box-sizing:content-box!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-top:1px solid #000!important;
+    border-radius:0!important;
+    opacity:1!important;
+    transform:scaleY(1)!important;
+    transform-origin:top center!important;
+    pointer-events:none!important;
+    background:linear-gradient(180deg,
+      var(--ah-r1280-pink-core) 0%,
+      var(--ah-r1280-pink-hot) 24%,
+      var(--ah-r1280-pink) 68%,
+      rgba(255,46,168,.48) 100%)!important;
+    background-image:linear-gradient(180deg,
+      var(--ah-r1280-pink-core) 0%,
+      var(--ah-r1280-pink-hot) 24%,
+      var(--ah-r1280-pink) 68%,
+      rgba(255,46,168,.48) 100%)!important;
+    box-shadow:
+      0 0 2px rgba(255,242,249,.96),
+      0 -1px 4px rgba(255,46,168,.72),
+      0 2px 5px rgba(255,46,168,.94),
+      0 5px 10px rgba(255,46,168,.56)!important;
+    filter:none!important;
+  }
+
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  )::after{
+    top:100%!important;
+    height:0!important;
+    min-height:0!important;
+    border-top-width:0!important;
+    opacity:0!important;
+    transform:scaleY(0)!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+
+  /* MOBILE NEGATIVE-SOFTWARE SIGNS ---------------------------------------- */
+  .section-title.ah-negative-software-title{
+    box-sizing:border-box!important;
+    width:calc(100% - 24px)!important;
+    max-width:none!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding-left:8px!important;
+    padding-right:8px!important;
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:clamp(13px,3.8vw,17px)!important;
+    font-weight:700!important;
+    line-height:1.05!important;
+    letter-spacing:.015em!important;
+    white-space:nowrap!important;
+    word-break:normal!important;
+    overflow-wrap:normal!important;
+    text-align:center!important;
+  }
+
+  .ah-negative-software-title .ah-negative-software-pink,
+  .ticker .ah-negative-software-pink{
+    color:var(--ah-r1280-pink)!important;
+    -webkit-text-fill-color:var(--ah-r1280-pink)!important;
+    text-shadow:
+      0 0 1px rgba(255,225,243,.92),
+      0 0 4px rgba(255,46,168,.72)!important;
+  }
+
+  .ah-negative-software-title .ah-negative-software-solution,
+  .ticker .ah-negative-software-solution{
+    color:var(--ah-r1280-mint)!important;
+    -webkit-text-fill-color:var(--ah-r1280-mint)!important;
+  }
+
+  .ticker.ah-negative-software-ticker{
+    white-space:nowrap!important;
+  }
+}

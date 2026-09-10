@@ -1,0 +1,97 @@
+/* Automated Hearts Round 1285 — clean mobile viewport corners + royal-blue soft-carbon footer faces.
+   Replaces the Round 1284 corner plates with one quiet opacity mask beneath the original continuous gold rim. */
+@media (max-width:900px){
+  :root{
+    --ah-r1285-frame-bottom:calc(74px + var(--safe-bottom, env(safe-area-inset-bottom,0px)));
+    --ah-r1285-gold:#d6b257;
+    --ah-r1285-mint:#8fffd7;
+    --ah-r1285-royal-face:#122b5c;
+    --ah-r1285-royal-carbon:
+      repeating-linear-gradient(135deg,
+        rgba(100,137,232,.18) 0 3px,
+        rgba(8,20,48,.13) 3px 6px),
+      repeating-linear-gradient(45deg,
+        rgba(62,101,201,.13) 0 3px,
+        rgba(3,11,31,.11) 3px 6px),
+      linear-gradient(180deg,#1b3b76 0%,#122b5c 48%,#091a3d 100%);
+  }
+
+  /* Remove the four box-shaped corner plates introduced in Round 1284 and the
+     older side-edge masks. The continuous viewport rim is allowed to draw its
+     own complete rounded corners again. */
+  html body > .shell-edge.l::before,
+  html body > .shell-edge.r::before,
+  html body > .shell-edge.l::after,
+  html body > .shell-edge.r::after{
+    content:none!important;
+    display:none!important;
+    background:none!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+
+  /* A single underlay paints only the four tiny areas OUTSIDE the 18px rounded
+     viewport black. It is below the gold rim and above all moving shields, so
+     every corner stays fully opaque without adding a second visible rim. */
+  html::before{
+    content:""!important;
+    display:block!important;
+    position:fixed!important;
+    z-index:2147483238!important;
+    top:72px!important;
+    right:10px!important;
+    bottom:var(--ah-r1285-frame-bottom)!important;
+    left:10px!important;
+    pointer-events:none!important;
+    background:
+      radial-gradient(circle at 18px 18px,transparent 0 17.25px,#000 18.25px 100%) left top/22px 22px no-repeat,
+      radial-gradient(circle at 4px 18px,transparent 0 17.25px,#000 18.25px 100%) right top/22px 22px no-repeat,
+      radial-gradient(circle at 18px 4px,transparent 0 17.25px,#000 18.25px 100%) left bottom/22px 22px no-repeat,
+      radial-gradient(circle at 4px 4px,transparent 0 17.25px,#000 18.25px 100%) right bottom/22px 22px no-repeat!important;
+    opacity:1!important;
+  }
+
+  /* Return the viewport and moving panels to the established footer boundary;
+     Round 1284's extra 4px lift created the doubled/nested lower-rim look. */
+  html body::before{
+    bottom:var(--ah-r1285-frame-bottom)!important;
+    border:1.5px solid rgba(214,178,87,.98)!important;
+    border-radius:18px!important;
+    background:transparent!important;
+    box-shadow:
+      0 0 0 2px rgba(24,12,2,.98),
+      inset 0 0 0 1px rgba(255,238,186,.26),
+      0 0 5px rgba(214,178,87,.14)!important;
+  }
+  #ah-route-shield,
+  html body[data-page] > #page-transition-shield.page-transition-shield,
+  html body[data-page] > .page-transition-shield.page-transition-shield,
+  html[data-ah-site-intro="1"] body > #site-first-visit-intro,
+  html[data-ah-intro="1"] body > #first-visit-intro{
+    bottom:var(--ah-r1285-frame-bottom)!important;
+  }
+
+  /* Footer faces: royal-blue carbon fiber with deliberately soft contrast.
+     Existing mint hardware, black inner lip, pink labels and pink underglow are untouched. */
+  html body > nav.footer a[href],
+  html body > nav.footer a[href]:nth-child(n),
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ){
+    background-color:var(--ah-r1285-royal-face)!important;
+    background-image:var(--ah-r1285-royal-carbon)!important;
+    background-position:center!important;
+    background-size:auto!important;
+    background-repeat:repeat!important;
+    background-blend-mode:normal!important;
+    border-bottom-color:var(--ah-r1285-mint)!important;
+  }
+
+  /* Keep the real Round 1283 lower mint cap visibly on top of the new face and glow. */
+  html body > nav.footer a[href] > .ah-footer-bottom-rim{
+    background:var(--ah-r1285-mint)!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+}

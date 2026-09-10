@@ -462,7 +462,7 @@
   const labels={
     home:'Hub',
     solutions:'The Solution',
-    'who-we-help':'Who We Help',
+    'who-we-help':'Industries',
     learning:'Learning Center',
     about:'About Us',
     pricing:'Rates & Services'
@@ -584,7 +584,7 @@
   const primaryPages = new Map([
     ['index.html', {page:'home', label:'Hub', navLabel:'Hub', href:'./index.html'}],
     ['solutions.html', {page:'solutions', label:'The Solution', navLabel:'The Solution', href:'./solutions.html'}],
-    ['who-we-help.html', {page:'who-we-help', label:'Who We Help', navLabel:'Who We Help', href:'./who-we-help.html'}],
+    ['who-we-help.html', {page:'who-we-help', label:'Industries', navLabel:'Industries', href:'./who-we-help.html'}],
     ['learning-center.html', {page:'learning', label:'Learning Center', navLabel:'Learning Center', href:'./learning-center.html'}],
     ['about.html', {page:'about', label:'About Us & Policies', navLabel:'About Us', href:'./about.html'}],
     ['pricing.html', {page:'pricing', label:'Rates & Services', navLabel:'Rates & Services', href:'./pricing.html'}]
@@ -879,7 +879,7 @@
   var mq=window.matchMedia('(max-width:760px)');
   var full={
     solutions:'The Solution',
-    'who-we-help':'Who We Help',
+    'who-we-help':'Industries',
     learning:'Learning Center',
     about:'About Us',
     pricing:'Rates & Services'

@@ -1,0 +1,35 @@
+/* Automated Hearts Round 1266 — mobile page-title lettering follows the live progress fill. */
+@media (max-width:900px){
+  /* Unfilled title remains neon pink. */
+  html body > .page-chip{
+    color:#ff2ea8!important;
+    -webkit-text-fill-color:#ff2ea8!important;
+    text-shadow:0 0 2px rgba(255,46,168,.52),0 0 7px rgba(255,46,168,.28)!important;
+  }
+
+  /* Duplicate the title exactly over itself, but reveal the dark-blue copy only
+     where the green progress fill has physically passed. Reversing scroll clips
+     this copy back again, exposing the original pink lettering underneath. */
+  html body > .page-chip::after{
+    content:attr(data-text)!important;
+    position:absolute!important;
+    inset:0!important;
+    z-index:3!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    box-sizing:border-box!important;
+    padding:0 8px!important;
+    pointer-events:none!important;
+    overflow:hidden!important;
+    color:#0b1728!important;
+    -webkit-text-fill-color:#0b1728!important;
+    text-shadow:0 1px 0 rgba(255,255,255,.12),0 0 1px rgba(0,0,0,.18)!important;
+    font:inherit!important;
+    letter-spacing:inherit!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+    clip-path:inset(0 calc(100% - var(--ah-page-scroll-percent,0%)) 0 0)!important;
+    transition:clip-path 55ms linear!important;
+  }
+}

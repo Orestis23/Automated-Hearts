@@ -1,4 +1,4 @@
-/* Automated Hearts Round 1088 — authoritative Who We Help industry-model controller.
+/* Automated Hearts Round 1088 — authoritative Industries industry-model controller.
    Owns route clicks, deterministic model reveal, and the return sequence.
    Return sequence is intentionally serialized: embossed local shield rises for 2 seconds,
    then the page scrolls slowly to its chooser, then the lower model stage is collapsed. */

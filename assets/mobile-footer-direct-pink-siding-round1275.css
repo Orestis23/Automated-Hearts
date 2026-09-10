@@ -1,0 +1,71 @@
+/* Automated Hearts Round 1275 — mobile footer: completed green rim with pink glow siding directly beneath, no black separator. */
+@media (max-width:900px){
+  :root{
+    --ah-r1275-green:#8fffd7;
+    --ah-r1275-pink:#ff2ea8;
+    --ah-r1275-pink-hot:#ff79c3;
+    --ah-r1275-pink-deep:#9d105f;
+  }
+
+  /* Keep the face rim complete on all four sides in every state. */
+  html body > nav.footer a[href],
+  html body > nav.footer a[href]:nth-child(n),
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ){
+    border-style:solid!important;
+    border-color:var(--ah-r1275-green)!important;
+    border-bottom-color:var(--ah-r1275-green)!important;
+  }
+
+  /* Pink siding touches the OUTSIDE of the completed green bottom rim directly.
+     No dark mechanical stripe, black separator, top highlight, or neutral gap. */
+  html body > nav.footer a[href]::after,
+  html body > nav.footer a[href]:nth-child(n)::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:-1!important;
+    left:0!important;
+    right:0!important;
+    top:calc(100% + 2.667px)!important;
+    bottom:auto!important;
+    width:auto!important;
+    height:3.5px!important;
+    min-height:0!important;
+    margin:0!important;
+    border:0!important;
+    border-radius:0!important;
+    opacity:1!important;
+    transform:scaleY(1)!important;
+    transform-origin:top center!important;
+    pointer-events:none!important;
+    background:linear-gradient(180deg,
+      var(--ah-r1275-pink-hot) 0%,
+      var(--ah-r1275-pink) 40%,
+      var(--ah-r1275-pink) 68%,
+      var(--ah-r1275-pink-deep) 100%)!important;
+    background-image:linear-gradient(180deg,
+      var(--ah-r1275-pink-hot) 0%,
+      var(--ah-r1275-pink) 40%,
+      var(--ah-r1275-pink) 68%,
+      var(--ah-r1275-pink-deep) 100%)!important;
+    box-shadow:
+      0 1px 2px rgba(255,46,168,.74),
+      0 3px 5px rgba(255,46,168,.28)!important;
+    transition:height 105ms ease,opacity 105ms ease,transform 105ms ease!important;
+  }
+
+  /* Pressing submerges only the pink siding. The completed green rim remains. */
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  )::after{
+    top:calc(100% + 2.667px)!important;
+    height:0!important;
+    min-height:0!important;
+    opacity:0!important;
+    transform:scaleY(0)!important;
+    box-shadow:none!important;
+  }
+}

@@ -46,7 +46,7 @@
       shieldQuote:'Negative-Software Solution. Logic, not Size.'
     },
     'who-we-help': {
-      title:'Who We Help', mobileTitle:'Industries', desktop:'who-we-help.html', mobile:'mobile-who-we-help.html',
+      title:'Industries', mobileTitle:'Industries', desktop:'who-we-help.html', mobile:'mobile-who-we-help.html',
       desktopFooter:'Industries', mobileFooter:'Industries', mobileMessage:'Thinking outside of the box begins Now.',
       shieldQuote:'Thinking outside of the box begins Now.'
     },
@@ -307,7 +307,7 @@
     const u = new URL(file, location.href);
     /* Round 1250: version mobile content documents as well as their CSS so the
        persistent iframe cannot reuse an older page shell after a visual round. */
-    if (isMobile) u.searchParams.set('v','1263r');
+    if (isMobile) u.searchParams.set('v','1277r');
     if (isMobile && key === 'home') u.searchParams.set('mobile','1');
     return u.href;
   };

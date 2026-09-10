@@ -1,0 +1,65 @@
+/* Automated Hearts Round 1276 — mobile footer: half-height pink underglow + illuminated pressed label. */
+@media (max-width:900px){
+  :root{
+    --ah-r1276-pink:#ff2ea8;
+    --ah-r1276-pink-hot:#ff78c2;
+    --ah-r1276-pink-core:#ffd3ec;
+  }
+
+  /* Keep the physical strip very thin; most of the depth is now light cast below it. */
+  html body > nav.footer a[href]::after,
+  html body > nav.footer a[href]:nth-child(n)::after{
+    top:calc(100% + 2.667px)!important;
+    height:1.75px!important; /* exactly half of Round 1275's 3.5px siding */
+    min-height:0!important;
+    opacity:.94!important;
+    transform:scaleY(1)!important;
+    transform-origin:top center!important;
+    background:linear-gradient(180deg,
+      var(--ah-r1276-pink-hot) 0%,
+      var(--ah-r1276-pink) 52%,
+      rgba(255,46,168,.34) 100%)!important;
+    background-image:linear-gradient(180deg,
+      var(--ah-r1276-pink-hot) 0%,
+      var(--ah-r1276-pink) 52%,
+      rgba(255,46,168,.34) 100%)!important;
+    box-shadow:
+      0 1px 2px rgba(255,100,190,.72),
+      0 3px 6px rgba(255,46,168,.52),
+      0 6px 11px rgba(255,46,168,.24)!important;
+    transition:height 105ms ease,opacity 105ms ease,transform 105ms ease,box-shadow 105ms ease!important;
+  }
+
+  /* Normal label stays clean pink with only a restrained halo. */
+  html body > nav.footer a[href] > .footer-nav-label{
+    color:#ff55b7!important;
+    text-shadow:0 0 2px rgba(255,46,168,.24)!important;
+    transition:color 90ms ease,text-shadow 90ms ease,filter 90ms ease!important;
+  }
+
+  /* Press: siding fully submerges while the word itself lights up. */
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  )::after{
+    top:calc(100% + 2.667px)!important;
+    height:0!important;
+    min-height:0!important;
+    opacity:0!important;
+    transform:scaleY(0)!important;
+    box-shadow:none!important;
+  }
+
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ) > .footer-nav-label{
+    color:var(--ah-r1276-pink-core)!important;
+    text-shadow:
+      0 0 1px #fff,
+      0 0 4px var(--ah-r1276-pink-hot),
+      0 0 8px var(--ah-r1276-pink),
+      0 0 13px rgba(255,46,168,.70)!important;
+    filter:brightness(1.18)!important;
+  }
+}

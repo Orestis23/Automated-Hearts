@@ -1,0 +1,82 @@
+/* Automated Hearts Round 1287
+   - Restore the desktop Messages hardware to the full square footer-matched button face.
+   - Tighten the mobile Home Negative-Software title band and enlarge its one-line label.
+*/
+
+@media (min-width:901px){
+  :root{
+    --r1005-message-face:url("./message-button-square-footer-match-round1095.svg?v=1287r")!important;
+  }
+  html.ah-message-persist-open{
+    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1287r")!important;
+  }
+
+  html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    position:fixed!important;
+    top:var(--r1005-message-top,6px)!important;
+    right:var(--r1005-message-right,6px)!important;
+    bottom:auto!important;
+    left:auto!important;
+    width:var(--r1005-message-size,84px)!important;
+    min-width:var(--r1005-message-size,84px)!important;
+    max-width:var(--r1005-message-size,84px)!important;
+    height:var(--r1005-message-size,84px)!important;
+    min-height:var(--r1005-message-size,84px)!important;
+    max-height:var(--r1005-message-size,84px)!important;
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    overflow:visible!important;
+    background-color:transparent!important;
+    background-image:url("./message-button-square-footer-match-round1095.svg?v=1287r")!important;
+    background-position:center!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    background-blend-mode:normal!important;
+    border:0!important;
+    border-radius:0!important;
+  }
+
+  html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(
+    :active,.is-pressed,.is-contact-latched,[aria-expanded="true"],
+    [data-ah-control-pressed="1"],[data-ah-control-pressed="true"]
+  ),
+  html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    background-image:url("./message-button-square-footer-match-pressed-round1095.svg?v=1287r")!important;
+  }
+
+  /* Keep the gold envelope centered above the complete hardware face. */
+  html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope{
+    position:absolute!important;
+    inset:0!important;
+    z-index:8!important;
+    display:grid!important;
+    place-items:center!important;
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:none!important;
+  }
+}
+
+@media (max-width:900px){
+  /* Home only: make the title sit evenly between the section break and first process card. */
+  html body.page-home main#main-content > .section[aria-label="Negative Software Solution"],
+  html body[data-page="home"] main#main-content > .section[aria-label="Negative Software Solution"]{
+    padding-top:24px!important;
+  }
+
+  html body.page-home main#main-content > .section[aria-label="Negative Software Solution"] > .section-title.ah-negative-software-title,
+  html body[data-page="home"] main#main-content > .section[aria-label="Negative Software Solution"] > .section-title.ah-negative-software-title{
+    width:calc(100% - 24px)!important;
+    max-width:none!important;
+    min-height:0!important;
+    margin:0 auto 24px!important;
+    padding:9px 5px!important;
+    font-size:clamp(16px,4.7vw,19px)!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+    text-align:center!important;
+  }
+}

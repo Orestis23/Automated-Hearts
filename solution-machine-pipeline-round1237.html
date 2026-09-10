@@ -801,7 +801,7 @@ function baseRingButtonTexture(lines,accent='#ff1836'){
  const state={canvas:c,ctx,lines:Array.isArray(lines)?lines:[lines],accent:'#ff1836',fontSize:Array.isArray(lines)&&lines.length>1?126:166,texture:null,phase:Math.random()*20,intensity:1,hot:MOBILE_PREVIEW ? .26 : 0,targetHot:MOBILE_PREVIEW ? .26 : 0,lastDraw:-1,refreshEvery:.080+Math.random()*.035};
  const tex=new THREE.CanvasTexture(c);tex.colorSpace=THREE.SRGBColorSpace;tex.anisotropy=renderer.capabilities.getMaxAnisotropy();state.texture=tex;baseRingTextures.push(state);drawBaseRingButtonTexture(state,0);return tex;
 }
-function makeBaseRingButton({key,lines,theta,accent='#8fffd7',width=2.55}){
+function makeBaseRingButton({key,lines,theta,accent='#8fffd7',width=2.55,heightOffset=0,mobileHeightOffset=null}){
  if(Array.isArray(lines)&&lines.length>1)width*=1.28;
  width*=1.50;
  const height=.78*1.50,depth=.36,cut=.22,shape=new THREE.Shape();
@@ -817,8 +817,11 @@ function makeBaseRingButton({key,lines,theta,accent='#8fffd7',width=2.55}){
  // but the whole plane now floats high above the machine. The camera focus targets remain
  // down at the physical components, so clicking a sign sends the viewpoint underneath
  // the overhead signs and into the selected equipment.
- const overheadSignY=floorY+5.15;
- group.position.set(Math.sin(rad)*r,overheadSignY,Math.cos(rad)*r);group.rotation.set(0,rad,0);baseRingMenu.add(group);
+ const overheadSignY=floorY+5.03+(MOBILE_PREVIEW && mobileHeightOffset!==null ? mobileHeightOffset : heightOffset);
+ group.position.set(Math.sin(rad)*r,overheadSignY,Math.cos(rad)*r);
+ // Keep the signs following the arc, but turn them toward the viewer enough that the outer labels
+ // do not collapse edge-on. Their positions still follow the machine's circular navigation path.
+ group.rotation.set(0,rad*.35,0);baseRingMenu.add(group);
  // No pedestal: the signs float as an overhead navigation arc.
  const glow=new THREE.PointLight(0xff1836,2.0,6.2);glow.position.copy(group.position);glow.position.y+=.04;baseRingMenu.add(glow);electricState.light=glow;
  makeSignLink(face,key);return group;
@@ -826,12 +829,15 @@ function makeBaseRingButton({key,lines,theta,accent='#8fffd7',width=2.55}){
 // The order mirrors Option 5 from left to right around the front ring.
 if(BASE_RING_MENU_ENABLED){
  const menuDefs=[
-  {key:'consolidate',lines:['CONSOLIDATE'],theta:-76,accent:'#ff1836',width:2.70},
-  {key:'streamline',lines:['STREAMLINE'],theta:-40,accent:'#ff1836',width:2.62},
-  {key:'realData',lines:['REAL-TIME','DATA'],theta:-12,accent:'#ff1836',width:2.60},
-  {key:'automate',lines:['AUTOMATE'],theta:12,accent:'#ff1836',width:2.50},
-  {key:'optimize',lines:['OPTIMIZE'],theta:40,accent:'#ff1836',width:2.45},
-  {key:'explore',lines:['EXPLORE'],theta:76,accent:'#ff1836',width:2.38}
+  // Round 1269: stagger adjacent signs into three vertical bands so no two neighboring faces
+  // occupy the same screen space. Mobile receives slightly wider vertical separation because
+  // its narrow camera compresses the navigation arc more strongly.
+  {key:'consolidate',lines:['CONSOLIDATE'],theta:-76,accent:'#ff1836',width:2.70,heightOffset:0.00,mobileHeightOffset:0.00},
+  {key:'streamline',lines:['STREAMLINE'],theta:-40,accent:'#ff1836',width:2.62,heightOffset:1.20,mobileHeightOffset:1.35},
+  {key:'realData',lines:['REAL-TIME','DATA'],theta:-12,accent:'#ff1836',width:2.60,heightOffset:2.40,mobileHeightOffset:2.70},
+  {key:'automate',lines:['AUTOMATE'],theta:12,accent:'#ff1836',width:2.50,heightOffset:0.10,mobileHeightOffset:0.20},
+  {key:'optimize',lines:['OPTIMIZE'],theta:40,accent:'#ff1836',width:2.45,heightOffset:1.30,mobileHeightOffset:1.50},
+  {key:'explore',lines:['EXPLORE'],theta:76,accent:'#ff1836',width:2.38,heightOffset:2.95,mobileHeightOffset:3.30}
  ];
  menuDefs.forEach(makeBaseRingButton);
  const menuRingMat=new THREE.MeshStandardMaterial({color:0x081a2c,metalness:.76,roughness:.30,emissive:0x020b16,emissiveIntensity:.34,side:THREE.DoubleSide});

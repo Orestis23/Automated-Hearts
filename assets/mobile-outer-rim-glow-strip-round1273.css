@@ -1,0 +1,159 @@
+/* Automated Hearts Round 1273 — mobile-only outer-rim glow-strip siding + heart-shaped illuminated depth. */
+@media (max-width:900px){
+  :root{
+    --ah-r1273-pink:#ff2ea8;
+    --ah-r1273-pink-hot:#ff79c3;
+    --ah-r1273-side-black:#080b0f;
+    --ah-r1273-side-top:#1a2026;
+    --ah-r1273-footer-graphite:#151b21;
+    --ah-r1273-footer-carbon:
+      repeating-linear-gradient(135deg,
+        rgba(185,201,211,.085) 0 3px,
+        rgba(0,0,0,.135) 3px 6px),
+      repeating-linear-gradient(45deg,
+        rgba(128,145,157,.060) 0 3px,
+        rgba(0,0,0,.115) 3px 6px),
+      linear-gradient(180deg,#20272e 0%,#151b21 48%,#0c1116 100%);
+  }
+
+  /* Footer carbon correction: only slightly brighter than the older dark face,
+     instead of the much brighter graphite used in Round 1271. */
+  html body > nav.footer a[href],
+  html body > nav.footer a[href]:nth-child(n),
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ){
+    background-color:var(--ah-r1273-footer-graphite)!important;
+    background-image:var(--ah-r1273-footer-carbon)!important;
+    background-position:center!important;
+    background-size:auto!important;
+    background-repeat:repeat!important;
+    background-blend-mode:normal!important;
+  }
+
+  /* Selected GLOW STRIP treatment: a short black mechanical wall with a bright
+     pink illuminated strip at its lower edge. No ridges. */
+  html body > nav.footer a[href]::after,
+  html body > nav.footer a[href]:nth-child(n)::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:-1!important;
+    left:0!important;
+    right:0!important;
+    top:100%!important;
+    bottom:auto!important;
+    width:auto!important;
+    height:3.5px!important;
+    min-height:0!important;
+    border:0!important;
+    border-radius:0!important;
+    opacity:1!important;
+    transform:scaleY(1)!important;
+    transform-origin:top center!important;
+    pointer-events:none!important;
+    background-image:linear-gradient(180deg,
+      var(--ah-r1273-side-top) 0%,
+      var(--ah-r1273-side-black) 48%,
+      #7a124e 49%,
+      var(--ah-r1273-pink) 69%,
+      var(--ah-r1273-pink-hot) 100%)!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.10),
+      0 1px 2px rgba(255,46,168,.72),
+      0 3px 5px rgba(255,46,168,.30)!important;
+    transition:height 105ms ease,opacity 105ms ease,transform 105ms ease!important;
+  }
+
+  /* Siding fully submerges beneath the face when pressed. */
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  )::after{
+    height:0!important;
+    opacity:0!important;
+    transform:scaleY(0)!important;
+    box-shadow:none!important;
+  }
+
+  /* Messages button gets the exact same short glow-strip depth treatment. */
+  html body > a.message{
+    position:fixed!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+  }
+  html body > a.message::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:0!important;
+    left:0!important;
+    right:0!important;
+    top:100%!important;
+    bottom:auto!important;
+    width:auto!important;
+    height:3.5px!important;
+    border:0!important;
+    border-radius:0!important;
+    pointer-events:none!important;
+    opacity:1!important;
+    transform:scaleY(1)!important;
+    transform-origin:top center!important;
+    background-image:linear-gradient(180deg,
+      var(--ah-r1273-side-top) 0%,
+      var(--ah-r1273-side-black) 48%,
+      #7a124e 49%,
+      var(--ah-r1273-pink) 69%,
+      var(--ah-r1273-pink-hot) 100%)!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.10),
+      0 1px 2px rgba(255,46,168,.72),
+      0 3px 5px rgba(255,46,168,.30)!important;
+    transition:height 105ms ease,opacity 105ms ease,transform 105ms ease!important;
+  }
+  html body > a.message svg{
+    position:relative!important;
+    z-index:2!important;
+  }
+  html body > a.message:is(
+    :active,.is-pressed,.is-contact-latched,[aria-expanded="true"],
+    [data-ah-control-pressed="1"],[data-ah-control-pressed="true"]
+  )::after{
+    height:0!important;
+    opacity:0!important;
+    transform:scaleY(0)!important;
+    box-shadow:none!important;
+  }
+
+  /* HEART: use alpha-aware drop shadows so the illuminated side edge follows
+     the real heart silhouette instead of a rectangular control box. */
+  html body > a.heart{
+    overflow:visible!important;
+    transform:translate3d(0,0,0)!important;
+    filter:
+      brightness(1.32)
+      contrast(1.12)
+      drop-shadow(0 1px 0 rgba(20,8,15,.98))
+      drop-shadow(0 2.4px 0 rgba(255,46,168,.96))
+      drop-shadow(0 4px 3px rgba(255,46,168,.46))!important;
+    transition:transform 105ms cubic-bezier(.22,.72,.24,1),filter 105ms ease!important;
+    will-change:transform,filter!important;
+  }
+  html body > a.heart::after{
+    content:none!important;
+    display:none!important;
+  }
+
+  /* As the heart is pushed, its heart-shaped pink extrusion collapses into the face. */
+  html body > a.heart:is(:active,.is-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"]){
+    transform:translate3d(0,2.4px,0)!important;
+    filter:
+      brightness(1.28)
+      contrast(1.10)
+      drop-shadow(0 0 1.5px rgba(255,46,168,.28))!important;
+  }
+}

@@ -22,7 +22,7 @@
     background-blend-mode:normal!important;
   }
 
-  /* Industries / Who We Help image-caption controls: keep every route button consistent. */
+  /* Industries / Industries image-caption controls: keep every route button consistent. */
   html body main#main-content .route-card[data-industry] .route-label{
     background-color:#12334f!important;
     background-image:var(--ah-r1262-blue-carbon)!important;

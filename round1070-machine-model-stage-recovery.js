@@ -104,7 +104,7 @@
     }
   },true);
 
-  /* Learning Center / Who We Help model-stage recovery ---------------- */
+  /* Learning Center / Industries model-stage recovery ---------------- */
   const modelConfig=window.__AH_R1071_MODEL_CONTROLLER?null:page==='learning'
     ? {stage:'#learning-model-stage',control:'#learning-route-buttons [data-learning-model]'}
     : page==='who-we-help'

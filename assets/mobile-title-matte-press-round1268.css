@@ -1,0 +1,116 @@
+/* Automated Hearts Round 1268 — mobile-only Home title correction + universal button siding depression. */
+@media (max-width:900px){
+  :root{
+    --ah-r1268-blue:#0B1728;
+    --ah-r1268-green:#8fffd7;
+    --ah-r1268-pink-side:#a9006f;
+    /* Exact footer-button carbon treatment from Round 1263. */
+    --ah-r1268-footer-carbon:
+      repeating-linear-gradient(135deg,
+        rgba(143,185,207,.075) 0 3px,
+        rgba(4,15,28,.080) 3px 6px),
+      repeating-linear-gradient(45deg,
+        rgba(98,145,171,.050) 0 3px,
+        rgba(2,11,22,.072) 3px 6px),
+      linear-gradient(180deg,#0d1b2f 0%,var(--ah-r1268-blue) 48%,#091422 100%);
+  }
+
+  /* Home title stack: retain dimensions, remove one-third of the 32px gap. */
+  html body .title-stack{
+    gap:21.333px!important;
+  }
+
+  /* Exact same navy/carbon face as the current mobile footer buttons. */
+  html body .title-stack > .lcd{
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:hidden!important;
+    background-color:var(--ah-r1268-blue)!important;
+    background-image:var(--ah-r1268-footer-carbon)!important;
+    background-position:center!important;
+    background-size:auto!important;
+    background-repeat:repeat!important;
+    background-blend-mode:normal!important;
+  }
+
+  /* Keep title lettering crisp above the matte sheet. */
+  html body .title-stack > .lcd > .lcd-text{
+    position:relative!important;
+    z-index:5!important;
+    display:inline-block!important;
+  }
+
+  /* Clearly visible matte film: milky diffusion + fine speckle + scan grain + soft reflection.
+     It sits ABOVE the carbon and BELOW the words. */
+  html body .title-stack > .lcd::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:3!important;
+    inset:2px!important;
+    display:block!important;
+    pointer-events:none!important;
+    border:0!important;
+    border-radius:0!important;
+    background:
+      radial-gradient(circle at 1px 1px,rgba(246,253,255,.105) 0 .55px,transparent .82px) 0 0 / 5px 5px,
+      repeating-linear-gradient(0deg,rgba(238,249,255,.052) 0 1px,rgba(0,0,0,.026) 1px 3px),
+      linear-gradient(110deg,transparent 0 10%,rgba(237,249,255,.16) 17%,rgba(225,240,248,.055) 32%,transparent 43% 100%),
+      radial-gradient(145% 58% at 50% -12%,rgba(240,250,255,.17),transparent 66%),
+      linear-gradient(180deg,rgba(221,238,247,.105),rgba(190,211,224,.038) 44%,rgba(0,0,0,.075))!important;
+    opacity:.92!important;
+    mix-blend-mode:normal!important;
+    -webkit-backdrop-filter:blur(1.15px) saturate(.82) contrast(.94)!important;
+    backdrop-filter:blur(1.15px) saturate(.82) contrast(.94)!important;
+    box-shadow:
+      inset 0 0 0 1px rgba(210,228,238,.15),
+      inset 0 1px 0 rgba(255,255,255,.11),
+      inset 0 -1px 0 rgba(0,0,0,.14)!important;
+  }
+
+  /* Footer: its existing physical ::after siding must disappear completely on every press state. */
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
+  )::after{
+    height:0!important;
+    min-height:0!important;
+    opacity:0!important;
+    transform:scaleY(0)!important;
+  }
+
+  /* Messages: the lower external shadow is the visible siding. Depress the face by that depth and remove it. */
+  html body > a.message:is(
+    :active,.is-pressed,.is-contact-latched,[aria-expanded="true"],
+    [data-ah-control-pressed="1"],[data-ah-control-pressed="true"]
+  ){
+    transform:translate3d(0,3px,0)!important;
+    background-color:var(--ah-r1268-blue)!important;
+    box-shadow:
+      inset 0 0 0 2px #01050a,
+      inset 0 3px 5px rgba(0,0,0,.42),
+      inset 0 -1px 1px rgba(255,255,255,.035)!important;
+  }
+
+  /* Large image-caption buttons: their 3px lower lip/siding disappears into the face while pressed. */
+  html body main#main-content .route-card:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]) .route-label{
+    transform:translate3d(0,3px,0)!important;
+    box-shadow:
+      inset 0 0 0 1px rgba(0,0,0,.62),
+      inset 0 3px 5px rgba(0,0,0,.34),
+      inset 0 1px 0 rgba(255,255,255,.025)!important;
+  }
+
+  /* Any remaining mobile hardware button that uses an external lower shadow for depth loses that
+     external siding during the physical press. Borders remain intact. */
+  html body main#main-content :is(
+    .action,.consult,.back-top,.explore-key,.home-process-key-button,
+    .ah-rates__button,.r864-rates__drawer-toggle,.r865-rates__consultation-action,
+    .learning-stage-return,a.button,button.button,.button--small,.button--compact
+  ):is(:active,.is-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+    transform:translate3d(0,3px,0)!important;
+    box-shadow:
+      inset 0 3px 5px rgba(0,0,0,.36),
+      inset 0 0 0 1px rgba(0,0,0,.50),
+      inset 0 1px 0 rgba(255,255,255,.025)!important;
+  }
+}

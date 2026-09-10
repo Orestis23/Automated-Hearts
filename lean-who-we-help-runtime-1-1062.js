@@ -2,7 +2,7 @@
 
 /* SOURCE: round510-model-scroll.js */
 /* Round 718 (based on Round 510): a single deterministic scroll owner for the Learning Center and
-   Who We Help image buttons. This capture listener runs before the legacy
+   Industries image buttons. This capture listener runs before the legacy
    navigation and generic hash handlers, preventing either from introducing a
    second animation or an instantaneous native hash jump. */
 (() => {
@@ -104,11 +104,11 @@
 
   const documentSurface = () => document.scrollingElement || document.documentElement;
 
-  /* Round 718 — Who We Help scroll gate.
+  /* Round 718 — Industries scroll gate.
      While the model stage is locked, users may still scroll through the upper
      choice area on short/mobile viewports, but they cannot scroll past its
      bottom boundary into the lower stage/footer area. The only unlock path is
-     clicking another Who We Help category card. */
+     clicking another Industries category card. */
   let whoHelpTouchY = null;
   let whoHelpClampFrame = 0;
   let returnInputLocked = false;
@@ -537,7 +537,7 @@
         await smoothBackToPageTop(pageTopTarget);
 
         /* Remove the lower stage from layout again only after the smooth return.
-           A subsequent Who We Help card click is the only code path that calls
+           A subsequent Industries card click is the only code path that calls
            setStageLocked(false), so the lower stage cannot be scrolled back into. */
         setStageLocked(true);
         await new Promise((resolve) => requestAnimationFrame(resolve));
@@ -622,7 +622,7 @@
 
   /* Round 453: feature-card handoff. The card physically sinks first, then its
      local leather cover travels at one-third the former speed. Home/outbound
-     routes continue into the viewport shield. Learning Center and Who We Help
+     routes continue into the viewport shield. Learning Center and Industries
      stay on-page and smoothly scroll to their model stage without re-covering
      the viewport. */
   const pageTransitionShield = $(".page-transition-shield");
@@ -637,12 +637,12 @@
     /* Round 495: deterministic smooth handoff to the lower 3D-model stage.
        Some browsers were still treating scrollTo({behavior:"smooth"}) on the
        fixed main viewport as an immediate jump. Drive the interpolation here
-       so Learning Center and Who We Help visibly glide to the target. */
+       so Learning Center and Industries visibly glide to the target. */
     let activeModelScrollFrame = 0;
     let activeModelScrollFinish = null;
 
     /* Round 496: one deterministic scroll owner for Learning Center and
-       Who We Help. It explicitly disables native smooth-scroll, anchoring and
+       Industries. It explicitly disables native smooth-scroll, anchoring and
        snap behavior while the animation is active so the browser cannot add
        an instantaneous hash jump or a second competing scroll animation. */
     const smoothScrollModelStage = (stage, options = {}) => new Promise((resolve) => {
@@ -1825,7 +1825,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const canonicalSelector = ".screen-text-canonical:not(.home-title-text-standard)";
   const normalize = (element) => {
-    /* Round 530: the Who We Help route labels deliberately contain one span
+    /* Round 530: the Industries route labels deliberately contain one span
        per character. Flattening those children erases the lamp-by-lamp aging
        pattern, so they are excluded from every legacy text normalizer. */
     if (element.classList.contains('r530-who-bulb-field') ||
@@ -2573,7 +2573,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 })();
 
-/* Round 1037: route labels are plain text on both Who We Help and Learning Center.
+/* Round 1037: route labels are plain text on both Industries and Learning Center.
    The retired per-character aged-bulb renderers (Rounds 528/530/531) were removed
    because they rebuilt words after load and collapsed/blurred visible spaces. */
 (() => {
@@ -2816,7 +2816,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ;
 /* SOURCE: ah-js-bundle-05.js */
-/* Round 933: Who We Help shared model carousel.
+/* Round 933: Industries shared model carousel.
    Uses the supplied Industry Helix first and Readiness Diagnostic second.
    Any industry route resets to the Helix and asks it to focus that industry. */
 (() => {
@@ -2985,7 +2985,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 ;
-/* Round 719 — authoritative Who We Help return controller.
+/* Round 719 — authoritative Industries return controller.
    The page scrolls inside fixed main#main-content, NOT the browser document.
    Sequence: local shield closes upward for the same 2000ms/easing used to reveal
    it -> the real main scroller smoothly returns to top -> the lower stage is
