@@ -674,7 +674,7 @@
   const stages = document.querySelectorAll('#learning-model-stage, #who-help-model-stage');
   if (!stages.length) return;
 
-  const heart = './assets/page-shield-embossed-strong-round1067.webp?v=1060r';
+  const heart = './assets/page-shield-smoked-heart.webp?v=1060r';
 
   const arm = (frame) => {
     if (!frame || frame.dataset.r1020Armed === '1') return;

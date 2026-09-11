@@ -11,12 +11,11 @@
   let modelIndex = 0;
   const learningModels = {
     ai101: [
-      './models/ai-101-1-round1093.html?v=1246r',
-      './models/ai-101-2-round1093.html?v=1246r',
-      './models/ai-101-3-round1093.html?v=1246r',
-      './models/ai-101-4-round1093.html?v=1246r'
+      './models/ai-101-core-principles-round1316.html?v=1316r',
+      './models/ai-101-human-ai-partnership-mobile-round1316.html?v=1316r',
+      './models/ai-101-verification-lab-round1316.html?v=1316r'
     ],
-    practical: ['./models/practical-ai-skills-helix-round1093.html?v=1246r'],
+    practical: ['./models/practical-ai-skills-helix-round1316.html?v=1316r'],
     strategy: ['./models/strategy-lab-ball-round1093.html?v=1246r']
   };
   function unloadModel(){ if(frame){ frame.src='about:blank'; frame.remove(); frame=null; } if(modelShell && !document.getElementById('solution-mobile-cover')) modelShell.hidden=true; }

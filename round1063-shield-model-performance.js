@@ -253,7 +253,7 @@
         cover.style.setProperty('visibility','visible','important');
         cover.style.setProperty('opacity','1','important');
         cover.style.setProperty('background-color','#08172b','important');
-        cover.style.setProperty('background-image','url("./assets/page-shield-embossed-strong-round1067.webp")','important');
+        cover.style.setProperty('background-image','url("./assets/page-shield-smoked-heart.webp")','important');
         cover.style.setProperty('background-position','center center','important');
         cover.style.setProperty('background-size','cover','important');
         cover.style.setProperty('background-repeat','no-repeat','important');
@@ -274,7 +274,7 @@
             cover.style.setProperty('visibility','visible','important');
             cover.style.setProperty('opacity','1','important');
             cover.style.setProperty('background-color','#08172b','important');
-            cover.style.setProperty('background-image','url("./assets/page-shield-embossed-strong-round1067.webp")','important');
+            cover.style.setProperty('background-image','url("./assets/page-shield-smoked-heart.webp")','important');
             cover.style.setProperty('background-position','center center','important');
             cover.style.setProperty('background-size','cover','important');
             cover.style.setProperty('background-repeat','no-repeat','important');
@@ -377,7 +377,7 @@
   const decodeShield = () => {
     const image = new Image();
     image.decoding = 'async';
-    image.src = './assets/page-shield-embossed-strong-round1067.webp';
+    image.src = './assets/page-shield-smoked-heart.webp';
     image.decode?.().catch(()=>{});
   };
   if ('requestIdleCallback' in window) requestIdleCallback(decodeShield,{timeout:800});

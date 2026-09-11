@@ -803,7 +803,7 @@
     const shieldArtworkReady = (() => {
       const shieldImage = new Image();
       shieldImage.decoding = 'async';
-      shieldImage.src = './assets/page-shield-embossed-strong-round1067.webp';
+      shieldImage.src = './assets/page-shield-smoked-heart.webp';
       if (typeof shieldImage.decode === 'function') {
         return shieldImage.decode().catch(() => undefined);
       }

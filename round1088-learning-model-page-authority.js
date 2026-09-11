@@ -10,14 +10,14 @@
   window.__AH1083LearningModelAuthority=1;
   window.__AH1081ModelAuthority=1;
   window.__AH1076ModelAuthority=1; window.__AH1079ModelAuthority=1;
-  const BG='./assets/page-shield-embossed-strong-round1067.webp?v=1088r';
+  const BG='./assets/page-shield-smoked-heart.webp?v=1088r';
   const DURATION=1850;
   const RETURN_SHIELD_MS=2000;
   const RETURN_SCROLL_MS=1750;
   const RETURN_EASE='cubic-bezier(.22,.66,.24,1)';
   let state={page:'',stage:null,viewport:null,slides:[],group:'ai101',index:0,industry:0,activeFrame:null};
   const imp=(el,p,v)=>el&&el.style.setProperty(p,v,'important');
-  const FRAME_BG='url("./assets/page-shield-embossed-strong-round1067.webp?v=1088r")';
+  const FRAME_BG='url("./assets/page-shield-smoked-heart.webp?v=1088r")';
   const paintFrame=(frame)=>{if(!frame)return;imp(frame,'background-color','#08172b');imp(frame,'background-image',FRAME_BG);imp(frame,'background-position','center center');imp(frame,'background-size','cover');imp(frame,'background-repeat','no-repeat');};
   const wake=(frame,on)=>{
     if(!frame?.contentWindow)return;

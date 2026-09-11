@@ -1,0 +1,82 @@
+/* Automated Hearts Round 1289 — mobile footer alternating pink/mint hardware.
+   On odd visual positions (1,3,5), reverse every pink/mint assignment:
+   mint hardware -> pink, pink label/underglow -> mint. Even positions retain Round 1288 styling.
+*/
+@media (max-width:900px){
+  :root{
+    --ah-r1289-pink:#ff2ea8;
+    --ah-r1289-pink-hot:#ff86c9;
+    --ah-r1289-pink-core:#ffe4f3;
+    --ah-r1289-mint:#8fffd7;
+    --ah-r1289-mint-hot:#caffee;
+    --ah-r1289-mint-core:#effff9;
+  }
+
+  /* Odd-position buttons: swap the mint perimeter hardware to pink. */
+  html body > nav.footer a[href]:nth-child(odd),
+  html body > nav.footer a[href]:nth-child(odd):is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],
+    [data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ){
+    border-color:var(--ah-r1289-pink)!important;
+    border-top-color:var(--ah-r1289-pink)!important;
+    border-right-color:var(--ah-r1289-pink)!important;
+    border-bottom-color:var(--ah-r1289-pink)!important;
+    border-left-color:var(--ah-r1289-pink)!important;
+  }
+
+  /* The real lower cap and the legacy top-layer lower-rim fail-safe swap to pink too. */
+  html body > nav.footer a[href]:nth-child(odd) > .ah-footer-bottom-rim,
+  html body > nav.footer a[href]:nth-child(odd)::before,
+  html body > nav.footer a[href]:nth-child(odd):is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],
+    [data-ah-control-pressed="true"],[data-ah-footer-loading]
+  )::before{
+    background:var(--ah-r1289-pink)!important;
+    background-image:none!important;
+    box-shadow:0 0 1px rgba(255,46,168,.60)!important;
+  }
+
+  /* Swap the pink label to mint. */
+  html body > nav.footer a[href]:nth-child(odd) > .footer-nav-label{
+    color:var(--ah-r1289-mint)!important;
+    -webkit-text-fill-color:var(--ah-r1289-mint)!important;
+    text-shadow:0 0 2px rgba(143,255,215,.26)!important;
+  }
+
+  /* Swap the pink lower siding / emitted glow to mint, preserving its geometry. */
+  html body > nav.footer a[href]:nth-child(odd)::after{
+    background:linear-gradient(180deg,
+      var(--ah-r1289-mint-hot) 0%,
+      var(--ah-r1289-mint) 38%,
+      rgba(143,255,215,.72) 72%,
+      rgba(143,255,215,.28) 100%)!important;
+    background-image:linear-gradient(180deg,
+      var(--ah-r1289-mint-hot) 0%,
+      var(--ah-r1289-mint) 38%,
+      rgba(143,255,215,.72) 72%,
+      rgba(143,255,215,.28) 100%)!important;
+    box-shadow:
+      0 1px 2px rgba(235,255,248,.82),
+      0 3px 6px rgba(143,255,215,.68),
+      0 6px 11px rgba(143,255,215,.26)!important;
+    filter:drop-shadow(0 2px 3px rgba(143,255,215,.50))!important;
+  }
+
+  /* Pressed odd-position label illuminates in mint, mirroring the existing pink behavior. */
+  html body > nav.footer a[href]:nth-child(odd):is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],
+    [data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ) > .footer-nav-label{
+    color:var(--ah-r1289-mint-core)!important;
+    -webkit-text-fill-color:var(--ah-r1289-mint-core)!important;
+    text-shadow:
+      0 0 1px #fff,
+      0 0 4px var(--ah-r1289-mint-hot),
+      0 0 8px var(--ah-r1289-mint),
+      0 0 13px rgba(143,255,215,.62)!important;
+  }
+}

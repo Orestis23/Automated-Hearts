@@ -1,0 +1,147 @@
+/* Automated Hearts Round 1313
+   1) Keep the mobile dark-navy outer chassis continuous through the lower rounded
+      viewport corners and footer surround.
+   2) Restore the DESKTOP Messages control to the exact square footer-matched
+      treatment used by the user-supplied reference build. */
+
+@media (max-width:900px){
+  :root{
+    --ah-r1313-shell:#06111f;
+    --ah-r1313-shell-hi:#081827;
+  }
+
+  /* One uninterrupted navy hardware surface through the footer band. */
+  html body > .shell-edge.b,
+  html body > nav.footer,
+  html body > .footer{
+    background-color:var(--ah-r1313-shell)!important;
+    background-image:linear-gradient(180deg,var(--ah-r1313-shell-hi) 0%,var(--ah-r1313-shell) 100%)!important;
+    opacity:1!important;
+    filter:none!important;
+    mix-blend-mode:normal!important;
+  }
+
+  /* The lower side rails terminate at the footer. Restore ONLY the two opaque
+     quarter-corner fillers there, using the exact chassis navy. Their transparent
+     inner quarter preserves the viewport opening; the navy outer quarter removes
+     the black/color break at both lower corners. */
+  html body > .shell-edge.l::after,
+  html body > .shell-edge.r::after{
+    content:""!important;
+    display:block!important;
+    visibility:visible!important;
+    position:absolute!important;
+    z-index:2147483635!important;
+    bottom:-2px!important;
+    width:24px!important;
+    height:24px!important;
+    opacity:1!important;
+    pointer-events:none!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+    mix-blend-mode:normal!important;
+  }
+  html body > .shell-edge.l::after{
+    left:100%!important;
+    right:auto!important;
+    background:radial-gradient(circle at 100% 0,
+      transparent 0 17.2px,
+      var(--ah-r1313-shell) 17.8px 100%)!important;
+  }
+  html body > .shell-edge.r::after{
+    right:100%!important;
+    left:auto!important;
+    background:radial-gradient(circle at 0 0,
+      transparent 0 17.2px,
+      var(--ah-r1313-shell) 17.8px 100%)!important;
+  }
+
+  /* Keep the side rails themselves solid navy all the way to those fillers. */
+  html body > .shell-edge.l,
+  html body > .shell-edge.r{
+    background-color:var(--ah-r1313-shell)!important;
+    background-image:linear-gradient(180deg,var(--ah-r1313-shell-hi) 0%,var(--ah-r1313-shell) 100%)!important;
+    opacity:1!important;
+  }
+}
+
+/* Desktop-only Messages restoration from the supplied reference ZIP.
+   Mobile keeps the current Round 1312/1306 red-envelope treatment. */
+@media (min-width:901px){
+  :root{
+    --r1005-message-size:84px!important;
+    --r1005-message-top:6px!important;
+    --r1005-message-right:6px!important;
+    --r1005-envelope-width:42%!important;
+    --r1005-message-face:url("./message-button-square-footer-match-round1095.svg?v=1095r")!important;
+  }
+  html.ah-message-persist-open{
+    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
+    position:fixed!important;
+    top:var(--r1005-message-top)!important;
+    right:var(--r1005-message-right)!important;
+    width:var(--r1005-message-size)!important;
+    min-width:var(--r1005-message-size)!important;
+    max-width:var(--r1005-message-size)!important;
+    height:var(--r1005-message-size)!important;
+    min-height:var(--r1005-message-size)!important;
+    max-height:var(--r1005-message-size)!important;
+    padding:0!important;
+    background-color:transparent!important;
+    background-image:var(--r1005-message-face)!important;
+    background-position:center!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+    overflow:visible!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope{
+    position:absolute!important;
+    inset:0!important;
+    display:grid!important;
+    place-items:center!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    color:#ff2ea8!important;
+    -webkit-text-fill-color:#ff2ea8!important;
+    filter:none!important;
+    transform:none!important;
+    pointer-events:none!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope svg{
+    position:static!important;
+    display:block!important;
+    width:var(--r1005-envelope-width)!important;
+    max-width:var(--r1005-envelope-width)!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    color:#ff2ea8!important;
+    stroke:#ff2ea8!important;
+    filter:none!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope path{
+    fill:none!important;
+    stroke:currentColor!important;
+    stroke-width:1.6!important;
+    stroke-linecap:round!important;
+    stroke-linejoin:round!important;
+    vector-effect:non-scaling-stroke!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched),
+  html.ah-message-persist-open body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
+    background-image:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    transform:translate3d(0,4px,0)!important;
+  }
+}

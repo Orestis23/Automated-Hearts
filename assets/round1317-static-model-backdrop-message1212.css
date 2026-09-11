@@ -1,0 +1,117 @@
+/* Round 1317 — parent-owned static 3D backdrop + exact Round 1212 desktop Messages authority. */
+
+/* Learning Center + Who We Help: one unchanging dark embossed-heart surface behind every model. */
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage),
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport,
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) > .model-dedicated-backdrop,
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) > .learning-stage-shield[data-learning-stage-shield],
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) .r1060-static-model-heart{
+  background-color:#08172b!important;
+  background-image:url("./page-shield-smoked-heart.webp?v=1317r")!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  background-attachment:scroll!important;
+  animation:none!important;
+}
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) :is(.learning-lesson-track,.learning-lesson-slide),
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) iframe{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+}
+
+/* Mobile light pages use exactly the same static parent-owned backdrop. */
+@media (max-width:900px){
+  html body #lite-model-stage,
+  html body #lite-model-shell{
+    background-color:#08172b!important;
+    background-image:url("./page-shield-smoked-heart.webp?v=1317r")!important;
+    background-position:center center!important;
+    background-size:cover!important;
+    background-repeat:no-repeat!important;
+    background-attachment:scroll!important;
+  }
+  html body #lite-model-shell iframe{
+    background:transparent!important;
+    background-color:transparent!important;
+    background-image:none!important;
+  }
+  /* Practical AI and Strategy Lab have one model; no previous/next controls. */
+  html body #model-controls[hidden]{display:none!important;visibility:hidden!important;pointer-events:none!important;}
+}
+
+/* Desktop Messages: exact Round 1212 final treatment. */
+@media (min-width:801px){
+  html:root{
+    --r1005-message-size:84px!important;
+    --r1005-message-top:12px!important;
+    --r1005-message-right:18px!important;
+    --r1005-message-face:url("./message-button-square-footer-match-pinklip-round1181.svg?v=1181r")!important;
+    --r1005-message-transform:none!important;
+    --r1005-envelope-width:42%!important;
+  }
+  html.ah-message-persist-open{
+    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    --r1005-message-transform:translate3d(0,3px,0)!important;
+  }
+  html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    position:fixed!important;
+    z-index:2147483646!important;
+    top:12px!important;
+    right:18px!important;
+    bottom:auto!important;
+    left:auto!important;
+    width:84px!important;
+    min-width:84px!important;
+    max-width:84px!important;
+    height:84px!important;
+    min-height:84px!important;
+    max-height:84px!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    background-color:transparent!important;
+    background-image:url("./message-button-square-footer-match-pinklip-round1181.svg?v=1181r")!important;
+    background-position:center!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+    clip-path:none!important;
+    -webkit-clip-path:none!important;
+    mask:none!important;
+    -webkit-mask:none!important;
+    transform:none!important;
+    transition:none!important;
+    animation:none!important;
+  }
+  html body[data-page] > a#header-send-message#header-send-message::before,
+  html body[data-page] > a#header-send-message#header-send-message::after{content:none!important;display:none!important;}
+  html body[data-page] > a#header-send-message#header-send-message > :not(.r1005-message-envelope){display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;}
+  html body[data-page] > a#header-send-message#header-send-message > .r1005-message-envelope{
+    position:absolute!important;z-index:20!important;left:50%!important;top:50%!important;right:auto!important;bottom:auto!important;
+    display:block!important;visibility:visible!important;opacity:1!important;width:42%!important;max-width:42%!important;height:auto!important;aspect-ratio:32/22!important;
+    margin:0!important;padding:0!important;color:#ff2ea8!important;transform:translate(-50%,-50%)!important;transform-origin:center!important;pointer-events:none!important;
+  }
+  html body[data-page] > a#header-send-message#header-send-message > .r1005-message-envelope svg{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;overflow:visible!important;}
+  html body[data-page] > a#header-send-message#header-send-message > .r1005-message-envelope path{fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important;vector-effect:non-scaling-stroke!important;}
+  html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]),
+  html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    background-image:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    transform:translate3d(0,3px,0)!important;
+  }
+}
+
+/* Failsafe: single-model desktop lessons never expose carousel navigation. */
+html body.page-learning[data-page="learning"] #learning-model-stage[data-learning-group="practical"] > .learning-lesson-orb,
+html body.page-learning[data-page="learning"] #learning-model-stage[data-learning-group="strategy"] > .learning-lesson-orb{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}

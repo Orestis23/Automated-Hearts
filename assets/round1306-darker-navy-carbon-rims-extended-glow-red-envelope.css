@@ -1,0 +1,144 @@
+/* Automated Hearts Round 1306 — darker navy footer faces, carbon-fiber colored rims,
+   slightly deeper soft underglow, and a true-red Messages envelope.
+   This is the final authority layer for these details only. */
+
+/* Messages envelope is red on both desktop and mobile. */
+html body > a.message svg,
+html body > a.message:active svg,
+html body > a.message.is-pressed svg,
+html body > a.message[data-ah-control-pressed="1"] svg,
+html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope,
+html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope svg{
+  color:#ff3030!important;
+  -webkit-text-fill-color:#ff3030!important;
+  stroke:#ff3030!important;
+  filter:drop-shadow(0 0 .7px rgba(255,210,210,.38)) drop-shadow(0 0 3px rgba(255,48,48,.42))!important;
+}
+html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope path,
+html body > a.message svg path{
+  fill:none!important;
+  stroke:#ff3030!important;
+}
+
+@media (max-width:900px){
+  :root{
+    --ah-r1306-face-top:#071523;
+    --ah-r1306-face-mid:#030d19;
+    --ah-r1306-face-bottom:#010711;
+  }
+
+  /* Visible positions keep the established color pattern. The rim now uses a subtle
+     carbon-fiber weave while remaining one single physical perimeter. */
+  html body > nav.footer a[href]:nth-child(odd){
+    --ah-r1306-rim-rgb:255,46,168;
+    --ah-r1306-glow-rgb:143,255,215;
+  }
+  html body > nav.footer a[href]:nth-child(even){
+    --ah-r1306-rim-rgb:143,255,215;
+    --ah-r1306-glow-rgb:255,46,168;
+  }
+
+  html body > nav.footer a[href],
+  html body > nav.footer a[href]:nth-child(n),
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],
+    [data-ah-control-pressed="true"],[data-ah-footer-loading]
+  ){
+    box-sizing:border-box!important;
+    border:2px solid transparent!important;
+    outline:0!important;
+    /* Three clipped layers create the darker navy carbon face; the last layer is
+       the single 2px colored carbon rim visible only in the border box. */
+    background-image:
+      repeating-linear-gradient(135deg,
+        rgba(41,78,116,.085) 0 3px,
+        rgba(0,4,10,.035) 3px 6px),
+      repeating-linear-gradient(45deg,
+        rgba(20,48,78,.065) 0 3px,
+        rgba(0,3,8,.070) 3px 6px),
+      linear-gradient(180deg,var(--ah-r1306-face-top) 0%,var(--ah-r1306-face-mid) 52%,var(--ah-r1306-face-bottom) 100%),
+      repeating-linear-gradient(135deg,
+        rgba(var(--ah-r1306-rim-rgb),1) 0 1px,
+        rgba(var(--ah-r1306-rim-rgb),.62) 1px 2px,
+        rgba(var(--ah-r1306-rim-rgb),.92) 2px 3px,
+        rgba(var(--ah-r1306-rim-rgb),.50) 3px 4px)!important;
+    background-origin:padding-box,padding-box,padding-box,border-box!important;
+    background-clip:padding-box,padding-box,padding-box,border-box!important;
+    background-position:center,center,center,0 0!important;
+    background-size:auto,auto,auto,4px 4px!important;
+    background-repeat:repeat,repeat,no-repeat,repeat!important;
+    background-blend-mode:normal!important;
+    /* Keep only dark recessed shading; no extra bright inner rim. */
+    box-shadow:
+      inset 0 0 5px rgba(0,0,0,.82),
+      inset 0 2px 3px rgba(0,0,0,.28),
+      inset 0 -2px 3px rgba(0,0,0,.58)!important;
+  }
+
+  /* Disable old helper rim layers so the textured perimeter remains the only rim. */
+  html body > nav.footer a[href] > .ah-footer-bottom-rim,
+  html body > nav.footer a[href]::before,
+  html body > nav.footer a[href]:nth-child(n)::before{
+    content:none!important;
+    display:none!important;
+    width:0!important;
+    height:0!important;
+    min-width:0!important;
+    min-height:0!important;
+    border:0!important;
+    background:none!important;
+    box-shadow:none!important;
+    opacity:0!important;
+  }
+
+  /* Slightly deeper/stronger than Round 1305, but the light falls away at both
+     horizontal ends so the bottom edge never becomes one solid glowing bar. */
+  html body > nav.footer a[href]::after,
+  html body > nav.footer a[href]:nth-child(n)::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:1!important;
+    left:-2px!important;
+    right:-2px!important;
+    top:calc(100% + 1px)!important;
+    bottom:auto!important;
+    width:auto!important;
+    height:8px!important;
+    min-height:8px!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0 0 50% 50%!important;
+    background:radial-gradient(ellipse at 50% 0%,
+      rgba(var(--ah-r1306-glow-rgb),.70) 0%,
+      rgba(var(--ah-r1306-glow-rgb),.52) 38%,
+      rgba(var(--ah-r1306-glow-rgb),.25) 66%,
+      rgba(var(--ah-r1306-glow-rgb),.08) 82%,
+      rgba(var(--ah-r1306-glow-rgb),0) 100%)!important;
+    box-shadow:
+      0 3px 5px rgba(var(--ah-r1306-glow-rgb),.30),
+      0 6px 9px rgba(var(--ah-r1306-glow-rgb),.16)!important;
+    filter:blur(.5px)!important;
+    opacity:1!important;
+    transform:scaleY(1)!important;
+    transform-origin:top center!important;
+    pointer-events:none!important;
+  }
+
+  html body > nav.footer a[href]:is(
+    :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
+    [aria-pressed="true"],[data-ah-control-pressed="1"],
+    [data-ah-control-pressed="true"],[data-ah-footer-loading]
+  )::after{
+    height:0!important;
+    min-height:0!important;
+    opacity:0!important;
+    transform:scaleY(0)!important;
+    background:none!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+}

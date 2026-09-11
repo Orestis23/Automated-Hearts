@@ -40,12 +40,11 @@
 
   const learningModels = {
     ai101: [
-      './models/ai-101-1-round1093.html?v=1246r',
-      './models/ai-101-2-round1093.html?v=1246r',
-      './models/ai-101-3-round1093.html?v=1246r',
-      './models/ai-101-4-round1093.html?v=1246r'
+      './models/ai-101-core-principles-round1316.html?v=1316r',
+      './models/ai-101-human-ai-partnership-mobile-round1316.html?v=1316r',
+      './models/ai-101-verification-lab-round1316.html?v=1316r'
     ],
-    practical: ['./models/practical-ai-skills-helix-round1093.html?v=1246r'],
+    practical: ['./models/practical-ai-skills-helix-round1316.html?v=1316r'],
     strategy: ['./models/strategy-lab-ball-round1093.html?v=1246r']
   };
 
@@ -81,7 +80,7 @@
     modelShell.hidden=false;
     const models=learningModels[selected] || [];
     const ctrls=$('#model-controls');
-    if(ctrls) ctrls.hidden=models.length<2;
+    if(ctrls){const multi=models.length>1;ctrls.hidden=!multi;ctrls.style.setProperty('display',multi?'flex':'none','important');ctrls.style.setProperty('visibility',multi?'visible':'hidden','important');ctrls.style.setProperty('pointer-events',multi?'auto':'none','important');}
     const scrollDuration=1850;
     smoothToElement(modelShell, scrollDuration).then((finished)=>{
       if(finished===false)return;
