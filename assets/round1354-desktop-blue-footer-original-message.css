@@ -1,0 +1,211 @@
+/* Round 1354 — desktop-only restoration authority.
+   Restores the pre-keycap navy/blue footer hardware and original desktop Messages button.
+   Mobile controls are intentionally untouched. */
+@media (min-width:801px){
+  :root{
+    --r1354-footer-rest:url('./footer-button-message-border-match-round1095.svg?v=1354r')!important;
+    --r1354-footer-pressed:url('./footer-button-message-border-match-pressed-round1095.svg?v=1354r')!important;
+    --r1354-message-rest:url('./message-button-square-footer-match-round1095.svg?v=1354r')!important;
+    --r1354-message-pressed:url('./message-button-square-footer-match-pressed-round1095.svg?v=1354r')!important;
+    --r1005-message-size:84px!important;
+    --r1005-message-top:6px!important;
+    --r1005-message-right:6px!important;
+    --r1005-envelope-width:42%!important;
+    --r1005-message-face:var(--r1354-message-rest)!important;
+    --r1005-message-transform:none!important;
+  }
+  html.ah-message-persist-open{
+    --r1005-message-face:var(--r1354-message-pressed)!important;
+    --r1005-message-transform:translate3d(0,4px,0)!important;
+  }
+
+  /* Desktop footer: restore the original navy/blue hardware image and remove every
+     later keyboard/keycap layer that can sit over it. */
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]{
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    background-color:transparent!important;
+    background-image:var(--r1354-footer-rest)!important;
+    background-position:center!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    border:0!important;
+    border-color:transparent!important;
+    border-style:none!important;
+    border-image:none!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    clip-path:none!important;
+    -webkit-clip-path:none!important;
+    filter:none!important;
+  }
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]::before,
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]
+  > .send-control-copy.footer-control-copy{
+    position:absolute!important;
+    z-index:3!important;
+    inset:0!important;
+    display:grid!important;
+    place-items:center!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0 10px 4px!important;
+    background:transparent!important;
+    background-image:none!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    clip-path:none!important;
+    -webkit-clip-path:none!important;
+    filter:none!important;
+    transform:none!important;
+  }
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]
+  > .send-control-indicator.send-control-indicator{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    width:0!important;
+    height:0!important;
+    background:none!important;
+    box-shadow:none!important;
+  }
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true']){
+    background-image:var(--r1354-footer-pressed)!important;
+    transform:none!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'])
+  > .send-control-copy.footer-control-copy{
+    transform:translate3d(0,4px,0)!important;
+  }
+
+  /* Original desktop Messages hardware: exact 84px Round-1212/1095 face,
+     no later red glow, pseudo overlays, keycap siding, or altered geometry. */
+  html body[data-page][class][class][class][class][class][class][class][class][class][class]
+  > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    position:fixed!important;
+    z-index:2147483646!important;
+    top:6px!important;
+    right:6px!important;
+    bottom:auto!important;
+    left:auto!important;
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    width:84px!important;
+    min-width:84px!important;
+    max-width:84px!important;
+    height:84px!important;
+    min-height:84px!important;
+    max-height:84px!important;
+    box-sizing:border-box!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    background-color:transparent!important;
+    background-image:var(--r1354-message-rest)!important;
+    background-position:center!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+    clip-path:none!important;
+    -webkit-clip-path:none!important;
+    mask:none!important;
+    -webkit-mask:none!important;
+    transform:none!important;
+    translate:none!important;
+    scale:none!important;
+    rotate:none!important;
+    pointer-events:auto!important;
+    isolation:auto!important;
+  }
+  html body[data-page][class][class][class][class][class][class][class][class][class][class]
+  > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control::before,
+  html body[data-page][class][class][class][class][class][class][class][class][class][class]
+  > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body[data-page] > a#header-send-message > :not(.r1005-message-envelope){
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope{
+    position:absolute!important;
+    z-index:20!important;
+    inset:0!important;
+    display:grid!important;
+    place-items:center!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    color:#ff2ea8!important;
+    transform:none!important;
+    pointer-events:none!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
+    display:block!important;
+    width:42%!important;
+    max-width:42%!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope path{
+    fill:none!important;
+    stroke:currentColor!important;
+    stroke-width:1.6!important;
+    stroke-linecap:round!important;
+    stroke-linejoin:round!important;
+    vector-effect:non-scaling-stroke!important;
+  }
+  html.ah-message-persist-open body[data-page][class][class][class][class][class][class]
+  > a#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control,
+  html body[data-page][class][class][class][class][class][class]
+  > a#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded='true'],.is-contact-latched,.is-pressed,[data-ah-control-pressed='1'],[data-ah-control-pressed='true']){
+    background-image:var(--r1354-message-pressed)!important;
+    transform:translate3d(0,4px,0)!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+}

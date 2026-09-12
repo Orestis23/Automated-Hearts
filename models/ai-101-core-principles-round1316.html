@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<head><style id="ah-r1322-early-transparent-model-surface">html,body,canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;}body::before,body::after{content:none!important;display:none!important;background:none!important;background-image:none!important;}</style><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>AI 101 | Core Principles | Round 10</title>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap");
@@ -42,7 +42,24 @@ html,body,canvas{background:transparent!important;background-color:transparent!i
 body::before,body::after{content:none!important;display:none!important;background:none!important;background-image:none!important;}
 canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;}
 </style>
+
+<style id="ah-r1326-real-static-model-backdrop">
+#ah-static-model-backdrop-r1326{
+  position:fixed!important;inset:0!important;z-index:0!important;display:block!important;
+  width:100vw!important;height:100vh!important;pointer-events:none!important;
+  background-color:#02060c!important;
+  background-image:url("../assets/model-backdrop-heartless-leather-desktop-round1323.webp?v=1326r")!important;
+  background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;
+  transform:none!important;animation:none!important;transition:none!important;filter:none!important;
+}
+@media(max-width:800px){#ah-static-model-backdrop-r1326{background-image:url("../assets/model-backdrop-heartless-leather-mobile-round1323.webp?v=1326r")!important;}}
+html,body{background:transparent!important;background-color:transparent!important;background-image:none!important;}
+canvas{position:relative!important;z-index:1!important;background:transparent!important;background-color:transparent!important;background-image:none!important;}
+#ui,.title,.head,.hint,.status,.labels,#tip{position:relative;z-index:5!important;}
+</style>
 </head><body>
+<div id="ah-static-model-backdrop-r1326" aria-hidden="true"></div>
+
 <div class="title"><b>AI 101 • CORE PRINCIPLES</b><span>Seven foundations to understand before using artificial intelligence.</span></div>
 <div class="status" id="status">PRINCIPLE MODE</div><div class="hint">Drag to rotate • Scroll to zoom • Click any face</div>
 <script id="three-js-embedded-r160">
@@ -70,7 +87,8 @@ const entries=[
 const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);camera.position.set(0,.35,9.3);
 const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setClearColor(0x000000,0);renderer.setClearAlpha(0);renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,((matchMedia('(max-width:760px)').matches||((navigator.hardwareConcurrency||8)<=4)||((navigator.deviceMemory||8)<=4))?1.25:1.75)));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.25;document.body.prepend(renderer.domElement);
 scene.add(new THREE.HemisphereLight(0xF6F7F2,0x07182D,2.6));const key=new THREE.DirectionalLight(0xF6F7F2,4.5);key.position.set(6,8,10);scene.add(key);const rim=new THREE.DirectionalLight(0xFF2EA8,3);rim.position.set(-7,1,-5);scene.add(rim);
-const root=new THREE.Group();root.rotation.x=-.22;scene.add(root);const clickable=[],transitions=[];
+const root=new THREE.Group();root.rotation.x=-.22;scene.add(root);const clickable=[],transitions=[]; function ahOpenModelContact(service){try{if(window.parent&&window.parent!==window&&typeof window.parent.AutomatedHeartsOpenContact==='function'){window.parent.AutomatedHeartsOpenContact({service});return true}}catch(_){}try{window.parent.postMessage({type:'automated-hearts:open-contact',service},'*');return true}catch(_){return false}}
+
 function makeTexture(index,detail){
   // Render panel art at 2x resolution, then let WebGL downsample it. This keeps Orbitron edges crisp,
   // especially when a panel is angled away from the camera.
@@ -265,8 +283,8 @@ const topCarbonTexture=makeNeonCarbonTexture('#8FFFD7','rgba(45,181,143,.68)','r
 const bottomCarbonTexture=makeNeonCarbonTexture('#FF2EA8','rgba(190,24,122,.70)','rgba(82,8,52,.84)');
 const topCapMaterial=new THREE.MeshBasicMaterial({map:topCarbonTexture,color:0xFFFFFF,side:THREE.DoubleSide,toneMapped:false});
 const bottomCapMaterial=new THREE.MeshBasicMaterial({map:bottomCarbonTexture,color:0xFFFFFF,side:THREE.DoubleSide,toneMapped:false});
-const topMesh=new THREE.Mesh(capGeometry(top,true),topCapMaterial);topMesh.userData={contactOnly:true};root.add(topMesh);
-const bottomMesh=new THREE.Mesh(capGeometry(bottom,false),bottomCapMaterial);bottomMesh.userData={contactOnly:true};root.add(bottomMesh);
+const topMesh=new THREE.Mesh(capGeometry(top,true),topCapMaterial);topMesh.userData={contactOnly:true,contactService:'AI 101 — Core Principles'};root.add(topMesh);clickable.push(topMesh);
+const bottomMesh=new THREE.Mesh(capGeometry(bottom,false),bottomCapMaterial);bottomMesh.userData={contactOnly:true,contactService:'AI 101 — Core Principles'};root.add(bottomMesh);clickable.push(bottomMesh);
 // Keep only a restrained matte finish on the horizontal contact caps; heading bands themselves have no matte cover.
 const capMatteMaterial=new THREE.MeshPhysicalMaterial({
   map:matteFilmTexture,color:0xF6F7F2,metalness:0,roughness:1,transmission:0,thickness:.16,
@@ -345,7 +363,8 @@ function addContactEnvelope(y,isTop,material){
   const p=new THREE.Mesh(new THREE.PlaneGeometry(5.10,4.20),material);
   p.position.set(0,y,0);
   p.rotation.x=isTop?-Math.PI/2:Math.PI/2;
-  p.renderOrder=18;root.add(p);return p;
+  p.userData={contactOnly:true,contactService:'AI 101 — Core Principles'};
+  p.renderOrder=18;root.add(p);clickable.push(p);return p;
 }
 addContactEnvelope(topY+.052,true,topContactMaterial);
 addContactEnvelope(bottomY-.052,false,bottomContactMaterial);
@@ -478,9 +497,16 @@ function updateHeartFX(t){
   }
 }
 const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();let drag=false,moved=false,lx=0,ly=0;
-renderer.domElement.addEventListener('pointerdown',e=>{drag=true;moved=false;lx=e.clientX;ly=e.clientY;renderer.domElement.setPointerCapture(e.pointerId)});renderer.domElement.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-lx,dy=e.clientY-ly;if(Math.abs(dx)+Math.abs(dy)>3)moved=true;root.rotation.y+=dx*.008;root.rotation.x=THREE.MathUtils.clamp(root.rotation.x+dy*.005,-1.15,1.15);lx=e.clientX;ly=e.clientY});renderer.domElement.addEventListener('pointerup',e=>{drag=false;if(moved)return;const r=renderer.domElement.getBoundingClientRect();mouse.x=(e.clientX-r.left)/r.width*2-1;mouse.y=-(e.clientY-r.top)/r.height*2+1;ray.setFromCamera(mouse,camera);const h=ray.intersectObjects(clickable,false)[0];if(!h)return;const m=h.object;if(m.userData.transitioning)return;launchTubeHearts(m.userData.index,m.userData.detail);m.userData.transitioning=true;transitions.push({m,phase:0,start:performance.now(),next:!m.userData.detail});});renderer.domElement.addEventListener('wheel',e=>{e.preventDefault();camera.position.z=THREE.MathUtils.clamp(camera.position.z+e.deltaY*.007,6.8,12)},{passive:false});
+renderer.domElement.addEventListener('pointerdown',e=>{drag=true;moved=false;lx=e.clientX;ly=e.clientY;renderer.domElement.setPointerCapture(e.pointerId)});renderer.domElement.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-lx,dy=e.clientY-ly;if(Math.abs(dx)+Math.abs(dy)>3)moved=true;root.rotation.y+=dx*.008;root.rotation.x=THREE.MathUtils.clamp(root.rotation.x+dy*.005,-1.15,1.15);lx=e.clientX;ly=e.clientY});renderer.domElement.addEventListener('pointerup',e=>{drag=false;if(moved)return;const r=renderer.domElement.getBoundingClientRect();mouse.x=(e.clientX-r.left)/r.width*2-1;mouse.y=-(e.clientY-r.top)/r.height*2+1;ray.setFromCamera(mouse,camera);const h=ray.intersectObjects(clickable,false)[0];if(!h)return;const m=h.object;if(m.userData.contactOnly){ahOpenModelContact(m.userData.contactService||'AI 101 — Core Principles');return}if(m.userData.transitioning)return;launchTubeHearts(m.userData.index,m.userData.detail);m.userData.transitioning=true;transitions.push({m,phase:0,start:performance.now(),next:!m.userData.detail});});renderer.domElement.addEventListener('wheel',e=>{e.preventDefault();camera.position.z=THREE.MathUtils.clamp(camera.position.z+e.deltaY*.007,6.8,12)},{passive:false});
 function update(t){for(let i=transitions.length-1;i>=0;i--){const q=transitions[i],u=Math.min(1,(t-q.start)/(q.phase?300:220)),e=u*u*(3-2*u);if(!q.phase){q.m.material.opacity=1-e;if(u>=1){if(q.m.material.map)q.m.material.map.dispose();q.m.userData.detail=q.next;q.m.material.map=makeTexture(q.m.userData.index,q.next);q.m.material.needsUpdate=true;q.phase=1;q.start=t}}else{q.m.material.opacity=e;if(u>=1){q.m.material.opacity=1;q.m.userData.transitioning=false;transitions.splice(i,1);const st=document.getElementById('status');st.textContent=q.m.userData.detail?'PRACTICAL MEANING':'PRINCIPLE MODE';st.style.color=q.m.userData.detail?'#8FFFD7':'#FF2EA8'}}}}
 function animate(t){requestAnimationFrame(animate);update(t);updateHeartFX(t);if(!drag)root.rotation.y+=.0018;root.position.y=Math.sin(t*.0013)*.1;renderer.render(scene,camera)}requestAnimationFrame(animate);addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
 })();
+</script>
+<style id="ah-r1321-parent-owned-model-background">
+html,body{background:transparent!important;background-color:transparent!important;background-image:none!important;background-attachment:scroll!important;}
+body::before,body::after{content:none!important;display:none!important;background:none!important;background-image:none!important;}
+canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;}
+</style><script id="ah-r1321-transparent-renderer-guard">
+(()=>{try{const enforce=()=>{document.documentElement.style.setProperty('background','transparent','important');document.body&&document.body.style.setProperty('background','transparent','important');document.querySelectorAll('canvas').forEach(c=>{c.style.setProperty('background','transparent','important');c.style.setProperty('background-image','none','important')});};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enforce,{once:true});else enforce();new MutationObserver(enforce).observe(document.documentElement,{childList:true,subtree:true});}catch(_){}})();
 </script>
 </body></html>

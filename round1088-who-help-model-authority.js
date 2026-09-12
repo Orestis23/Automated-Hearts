@@ -9,6 +9,7 @@
   /* Mark older authorities as superseded before their deferred runtimes can attach competing handlers. */
   window.__AH1081ModelAuthority=1; window.__AH1076ModelAuthority=1; window.__AH1079ModelAuthority=1;
   const BG='./assets/page-shield-smoked-heart.webp?v=1088r';
+  const MODEL_BG='./assets/model-backdrop-heartless-leather-desktop-round1323.webp?v=1327r';
   const DURATION=1850;
   const RETURN_SHIELD_MS=2000;
   const RETURN_SCROLL_MS=1750;
@@ -81,10 +82,10 @@
   const paintStaticBackdrop=()=>{
     const {stage,viewport}=state;if(!stage)return;
     for(const el of [stage,viewport]){
-      imp(el,'background-color','#08172b');imp(el,'background-image',`url("${BG}")`);imp(el,'background-position','center center');imp(el,'background-size','cover');imp(el,'background-repeat','no-repeat');
+      imp(el,'background-color','#08172b');imp(el,'background-image',`url("${MODEL_BG}")`);imp(el,'background-position','center center');imp(el,'background-size','cover');imp(el,'background-repeat','no-repeat');
     }
     const heart=viewport?.querySelector(':scope > .r1060-static-model-heart');
-    if(heart){imp(heart,'display','block');imp(heart,'visibility','visible');imp(heart,'opacity','1');imp(heart,'position','absolute');imp(heart,'inset','0');imp(heart,'z-index','0');imp(heart,'background-color','#08172b');imp(heart,'background-image',`url("${BG}")`);imp(heart,'background-position','center center');imp(heart,'background-size','cover');imp(heart,'background-repeat','no-repeat');imp(heart,'transform','none');imp(heart,'animation','none');imp(heart,'transition','none');imp(heart,'pointer-events','none');}
+    if(heart){imp(heart,'display','block');imp(heart,'visibility','visible');imp(heart,'opacity','1');imp(heart,'position','absolute');imp(heart,'inset','0');imp(heart,'z-index','0');imp(heart,'background-color','#08172b');imp(heart,'background-image',`url("${MODEL_BG}")`);imp(heart,'background-position','center center');imp(heart,'background-size','cover');imp(heart,'background-repeat','no-repeat');imp(heart,'transform','none');imp(heart,'animation','none');imp(heart,'transition','none');imp(heart,'pointer-events','none');}
     const track=viewport?.querySelector(':scope > .learning-lesson-track');
     if(track){imp(track,'background','transparent');imp(track,'background-color','transparent');imp(track,'background-image','none');}
   };
@@ -103,7 +104,7 @@
       imp(shield,'display','block');imp(shield,'visibility','visible');imp(shield,'opacity','1');
       imp(shield,'position','absolute');imp(shield,'inset','0');imp(shield,'z-index','140');
       imp(shield,'background-color','#08172b');imp(shield,'background-image',`url("${BG}")`);
-      imp(shield,'background-position','center center');imp(shield,'background-size','cover');imp(shield,'background-repeat','no-repeat');
+      imp(shield,'background-position','center center');imp(shield,'background-size','cover');imp(shield,'background-repeat','no-repeat');imp(shield,'box-sizing','border-box');imp(shield,'border-top','2px solid #CDAA4D');
       imp(shield,'transform','translate3d(0,101.5%,0)');imp(shield,'transition','none');
       imp(shield,'will-change','transform');imp(shield,'backface-visibility','hidden');imp(shield,'pointer-events','none');
     }
@@ -111,9 +112,9 @@
   };
   const sourceFor=(frame)=>{
     if(!frame)return'';
-    if(state.page==='who-we-help'&&frame.closest('[data-shared-slide="helix"]'))return `./models/who-we-help-industry-helix-round1093.html?industry=${state.industry}&v=1246r`;
+    if(state.page==='who-we-help'&&frame.closest('[data-shared-slide="helix"]'))return `./models/who-we-help-industry-helix-round1093.html?industry=${state.industry}&v=1353r`;
     const raw=frame.dataset.src||frame.getAttribute('src')||'';if(!raw)return'';
-    try{const u=new URL(raw,location.href);u.searchParams.set('v','1125r');return u.href}catch(_){return raw}
+    try{const u=new URL(raw,location.href);u.searchParams.set('v','1327r');return u.href}catch(_){return raw}
   };
   const groupSlides=()=>state.page==='learning'?state.slides.filter(s=>s.dataset.learningSlide===state.group):state.slides;
   const activate=(n,{scroll=false,force=false}={})=>{
@@ -168,7 +169,7 @@
     imp(shield,'display','block');imp(shield,'visibility','visible');imp(shield,'opacity','1');
     imp(shield,'position','absolute');imp(shield,'inset','0');imp(shield,'z-index','140');
     imp(shield,'background-color','#08172b');imp(shield,'background-image',`url("${BG}")`);
-    imp(shield,'background-position','center center');imp(shield,'background-size','cover');imp(shield,'background-repeat','no-repeat');
+    imp(shield,'background-position','center center');imp(shield,'background-size','cover');imp(shield,'background-repeat','no-repeat');imp(shield,'box-sizing','border-box');imp(shield,'border-top','2px solid #CDAA4D');
     imp(shield,'will-change','transform');imp(shield,'backface-visibility','hidden');imp(shield,'pointer-events','auto');
     imp(shield,'transition','none');imp(shield,'transform','translate3d(0,101.5%,0)');
     shield.getBoundingClientRect();

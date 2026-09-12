@@ -1,0 +1,455 @@
+/* Automated Hearts Round 1345
+   Footer key cleanup: remove the old ridged/frame border so the actual keycap
+   face + smooth sloped side wall are what define the 3D key.
+   Desktop Messages: restore the exact Round 1212 hardware (no later glow/pseudo layers). */
+
+:root{
+  --ah-r1345-mint:#8fffd7;
+  --ah-r1345-pink:#ff2ea8;
+  --ah-r1345-carbon:#090e13;
+}
+
+/* --------------------------------------------------------------------------
+   DESKTOP FOOTER KEYS — smooth key top + visible side wall, no ridged frame.
+   -------------------------------------------------------------------------- */
+@media (min-width:901px){
+  html body[data-page][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav][data-nav]{
+    --ah-r1345-key-rgb:143,255,215;
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:5px 5px 4px 4px!important;
+    background-color:var(--ah-r1345-carbon)!important;
+    background-image:
+      linear-gradient(180deg,rgba(255,255,255,.105) 0%,rgba(255,255,255,.036) 17%,rgba(0,0,0,.045) 53%,rgba(0,0,0,.29) 100%),
+      url('./home-carbon-weave-round737-seamless.webp')!important;
+    background-position:center,center!important;
+    background-size:100% 100%,220px auto!important;
+    background-repeat:no-repeat,repeat!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.19),
+      inset 1px 0 0 rgba(255,255,255,.035),
+      inset -1px 0 0 rgba(0,0,0,.28),
+      inset 0 -3px 0 rgba(0,0,0,.46)!important;
+    filter:none!important;
+    transform:translate3d(0,0,0)!important;
+  }
+  html body[data-page][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav][data-nav]:nth-child(even){
+    --ah-r1345-key-rgb:255,46,168;
+  }
+  html body[data-page][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav][data-nav] .footer-nav-label{
+    color:rgb(var(--ah-r1345-key-rgb))!important;
+    -webkit-text-fill-color:rgb(var(--ah-r1345-key-rgb))!important;
+    text-shadow:0 0 4px rgba(var(--ah-r1345-key-rgb),.26)!important;
+  }
+  /* Glow exists only when the key is physically pressed. */
+  html body[data-page][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav][data-nav]::before{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:-2!important;
+    left:11%!important;
+    right:11%!important;
+    top:calc(100% + 1px)!important;
+    bottom:auto!important;
+    width:auto!important;
+    height:10px!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:50%!important;
+    background:radial-gradient(ellipse at 50% 0%,rgba(var(--ah-r1345-key-rgb),.82) 0%,rgba(var(--ah-r1345-key-rgb),.34) 42%,rgba(var(--ah-r1345-key-rgb),.09) 68%,rgba(var(--ah-r1345-key-rgb),0) 89%)!important;
+    box-shadow:none!important;
+    filter:blur(1.3px)!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  /* Smooth trapezoidal side wall. No border/ridges around it. */
+  html body[data-page][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav][data-nav]::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:-1!important;
+    left:2px!important;
+    right:2px!important;
+    top:4px!important;
+    bottom:-8px!important;
+    width:auto!important;
+    height:auto!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0 0 5px 5px!important;
+    background:
+      linear-gradient(90deg,
+        #343d45 0%,#252d34 4%,#1a2127 13%,#12181d 50%,#0d1216 87%,#07090c 100%)!important;
+    clip-path:polygon(1.5% 0,98.5% 0,100% 100%,0 100%)!important;
+    box-shadow:inset 0 -2px 0 rgba(0,0,0,.56),0 4px 6px rgba(0,0,0,.38)!important;
+    pointer-events:none!important;
+  }
+  html body[data-page][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav][data-nav]
+  > :is(.r969-pink-depth-bottom,.r969-pink-depth-right,.ah-footer-bottom-rim){
+    display:none!important;visibility:hidden!important;opacity:0!important;
+  }
+  html body[data-page][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(
+    :active,.is-nav-pressed,.is-pressed,.is-route-pressed,[aria-pressed='true'],
+    [data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]
+  ){
+    transform:translate3d(0,5px,0)!important;
+    box-shadow:inset 0 4px 8px rgba(0,0,0,.64),inset 0 1px 0 rgba(255,255,255,.035)!important;
+    filter:brightness(.93)!important;
+  }
+  html body[data-page][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(
+    :active,.is-nav-pressed,.is-pressed,.is-route-pressed,[aria-pressed='true'],
+    [data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]
+  )::before{top:calc(100% - 1px)!important;opacity:.98!important;}
+  html body[data-page][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(
+    :active,.is-nav-pressed,.is-pressed,.is-route-pressed,[aria-pressed='true'],
+    [data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]
+  )::after{top:2px!important;bottom:-2px!important;box-shadow:inset 0 -1px 0 rgba(0,0,0,.54),0 1px 2px rgba(0,0,0,.28)!important;}
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE FOOTER KEYS — same smooth construction, scaled down.
+   -------------------------------------------------------------------------- */
+@media (max-width:900px){
+  html body > nav.footer.footer a[href],
+  html body > nav.footer.footer a[href]:nth-child(n){
+    --ah-r1345-key-rgb:143,255,215;
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:4px 4px 3px 3px!important;
+    background-color:var(--ah-r1345-carbon)!important;
+    background-image:
+      linear-gradient(180deg,rgba(255,255,255,.095) 0%,rgba(255,255,255,.03) 18%,rgba(0,0,0,.05) 54%,rgba(0,0,0,.29) 100%),
+      url('./home-carbon-weave-round737-seamless.webp')!important;
+    background-position:center,center!important;
+    background-size:100% 100%,180px auto!important;
+    background-repeat:no-repeat,repeat!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.17),inset 0 -2px 0 rgba(0,0,0,.44)!important;
+    filter:none!important;
+    transform:translate3d(0,0,0)!important;
+  }
+  html body > nav.footer.footer a[href]:nth-child(even){--ah-r1345-key-rgb:255,46,168;}
+  html body > nav.footer.footer a[href] .footer-nav-label{
+    color:rgb(var(--ah-r1345-key-rgb))!important;
+    -webkit-text-fill-color:rgb(var(--ah-r1345-key-rgb))!important;
+    text-shadow:0 0 3px rgba(var(--ah-r1345-key-rgb),.24)!important;
+  }
+  html body > nav.footer.footer a[href]::before,
+  html body > nav.footer.footer a[href]:nth-child(n)::before{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:-2!important;
+    left:10%!important;
+    right:10%!important;
+    top:calc(100% + 1px)!important;
+    height:8px!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:50%!important;
+    background:radial-gradient(ellipse at 50% 0%,rgba(var(--ah-r1345-key-rgb),.82) 0%,rgba(var(--ah-r1345-key-rgb),.34) 43%,rgba(var(--ah-r1345-key-rgb),.08) 68%,rgba(var(--ah-r1345-key-rgb),0) 89%)!important;
+    box-shadow:none!important;
+    filter:blur(1.05px)!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  html body > nav.footer.footer a[href]::after,
+  html body > nav.footer.footer a[href]:nth-child(n)::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:-1!important;
+    left:1px!important;
+    right:1px!important;
+    top:3px!important;
+    bottom:-6px!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0 0 4px 4px!important;
+    background:linear-gradient(90deg,#313a42 0%,#222a31 5%,#151b20 48%,#0b1014 94%,#06080a 100%)!important;
+    clip-path:polygon(1.8% 0,98.2% 0,100% 100%,0 100%)!important;
+    box-shadow:inset 0 -1px 0 rgba(0,0,0,.56),0 2px 4px rgba(0,0,0,.38)!important;
+    pointer-events:none!important;
+  }
+  html body > nav.footer.footer a[href] > .ah-footer-bottom-rim{display:none!important;visibility:hidden!important;opacity:0!important;}
+  html body > nav.footer.footer a[href]:is(
+    :active,.is-nav-pressed,.is-pressed,.is-route-pressed,[aria-pressed='true'],
+    [data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]
+  ){
+    transform:translate3d(0,4px,0)!important;
+    box-shadow:inset 0 4px 7px rgba(0,0,0,.64),inset 0 1px 0 rgba(255,255,255,.03)!important;
+    filter:brightness(.93)!important;
+  }
+  html body > nav.footer.footer a[href]:is(
+    :active,.is-nav-pressed,.is-pressed,.is-route-pressed,[aria-pressed='true'],
+    [data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]
+  )::before{top:calc(100% - 1px)!important;opacity:.98!important;}
+  html body > nav.footer.footer a[href]:is(
+    :active,.is-nav-pressed,.is-pressed,.is-route-pressed,[aria-pressed='true'],
+    [data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]
+  )::after{top:2px!important;bottom:-1px!important;}
+}
+
+/* --------------------------------------------------------------------------
+   DESKTOP MESSAGES — exact pre-glow / Round 1212 treatment.
+   84px square, 6px from top/right, Round 1095 face, centered 42% pink envelope,
+   no red/mint underglow and no pseudo overlay.
+   -------------------------------------------------------------------------- */
+@media (min-width:801px){
+  :root{
+    --r1005-message-size:84px!important;
+    --r1005-message-top:6px!important;
+    --r1005-message-right:6px!important;
+    --r1005-envelope-width:42%!important;
+    --r1005-message-face:url('./message-button-square-footer-match-round1095.svg?v=1095r')!important;
+    --r1005-message-transform:none!important;
+  }
+  html.ah-message-persist-open{
+    --r1005-message-face:url('./message-button-square-footer-match-pressed-round1095.svg?v=1095r')!important;
+    --r1005-message-transform:translate3d(0,4px,0)!important;
+  }
+  html body[data-page][class][class][class][class][class]
+  > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    position:fixed!important;
+    z-index:2147483646!important;
+    top:6px!important;
+    right:6px!important;
+    bottom:auto!important;
+    left:auto!important;
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    width:84px!important;
+    min-width:84px!important;
+    max-width:84px!important;
+    height:84px!important;
+    min-height:84px!important;
+    max-height:84px!important;
+    box-sizing:border-box!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    background-color:transparent!important;
+    background-image:url('./message-button-square-footer-match-round1095.svg?v=1095r')!important;
+    background-position:center!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+    clip-path:none!important;
+    -webkit-clip-path:none!important;
+    mask:none!important;
+    -webkit-mask:none!important;
+    transform:none!important;
+    translate:none!important;
+    scale:none!important;
+    rotate:none!important;
+    -webkit-appearance:none!important;
+    appearance:none!important;
+    pointer-events:auto!important;
+    isolation:auto!important;
+  }
+  html body[data-page][class][class][class][class][class]
+  > a#header-send-message#header-send-message.header-send-message.mechanical-send-control::before,
+  html body[data-page][class][class][class][class][class]
+  > a#header-send-message#header-send-message.header-send-message.mechanical-send-control::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body[data-page] > a#header-send-message > :not(.r1005-message-envelope){
+    display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope{
+    position:absolute!important;
+    z-index:20!important;
+    inset:0!important;
+    display:grid!important;
+    place-items:center!important;
+    width:100%!important;
+    max-width:100%!important;
+    height:100%!important;
+    max-height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    color:#ff2ea8!important;
+    transform:none!important;
+    pointer-events:none!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
+    position:static!important;
+    display:block!important;
+    width:42%!important;
+    max-width:42%!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope path{
+    fill:none!important;
+    stroke:currentColor!important;
+    stroke-width:1.6!important;
+    stroke-linecap:round!important;
+    stroke-linejoin:round!important;
+    vector-effect:non-scaling-stroke!important;
+  }
+  html body[data-page][class][class][class][class][class]
+  > a#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(
+    :active,[aria-expanded='true'],.is-contact-latched,.is-pressed,[data-ah-control-pressed='1'],[data-ah-control-pressed='true']
+  ),
+  html.ah-message-persist-open body[data-page][class][class]
+  > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    background-image:url('./message-button-square-footer-match-pressed-round1095.svg?v=1095r')!important;
+    transform:translate3d(0,4px,0)!important;
+    box-shadow:none!important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FINAL AUTHORITY: legacy builds contain deliberately over-specific hardware
+   selectors. These selectors outrank them so no old ridged border/pane can sit
+   on top of the new key side wall or the restored desktop Messages control.
+   -------------------------------------------------------------------------- */
+@media (min-width:901px){
+  html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
+  > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav][data-nav]{
+    border:0!important;border-color:transparent!important;border-image:none!important;outline:0!important;outline-color:transparent!important;
+    overflow:visible!important;
+    background-color:var(--ah-r1345-carbon)!important;
+    background-image:linear-gradient(180deg,rgba(255,255,255,.105) 0%,rgba(255,255,255,.036) 17%,rgba(0,0,0,.045) 53%,rgba(0,0,0,.29) 100%),url('./home-carbon-weave-round737-seamless.webp')!important;
+    background-position:center,center!important;background-size:100% 100%,220px auto!important;background-repeat:no-repeat,repeat!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.19),inset 1px 0 0 rgba(255,255,255,.035),inset -1px 0 0 rgba(0,0,0,.28),inset 0 -3px 0 rgba(0,0,0,.46)!important;
+  }
+  html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
+  > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav][data-nav]::after{
+    content:""!important;display:block!important;position:absolute!important;z-index:-1!important;
+    inset:4px 2px -8px 2px!important;width:auto!important;height:auto!important;
+    border:0!important;border-color:transparent!important;border-image:none!important;outline:0!important;
+    border-radius:0 0 5px 5px!important;
+    background:linear-gradient(90deg,#343d45 0%,#252d34 4%,#1a2127 13%,#12181d 50%,#0d1216 87%,#07090c 100%)!important;
+    clip-path:polygon(1.5% 0,98.5% 0,100% 100%,0 100%)!important;
+    box-shadow:inset 0 -2px 0 rgba(0,0,0,.56),0 4px 6px rgba(0,0,0,.38)!important;
+    opacity:1!important;filter:none!important;pointer-events:none!important;
+  }
+}
+
+@media (max-width:900px){
+  html body[class][class][class][class][class][class][class][class][class][class][class][class]
+  > nav.footer.footer.footer.footer.footer.footer a[href]{
+    border:0!important;border-color:transparent!important;border-image:none!important;outline:0!important;outline-color:transparent!important;
+    overflow:visible!important;
+    background-color:var(--ah-r1345-carbon)!important;
+    background-image:linear-gradient(180deg,rgba(255,255,255,.095) 0%,rgba(255,255,255,.03) 18%,rgba(0,0,0,.05) 54%,rgba(0,0,0,.29) 100%),url('./home-carbon-weave-round737-seamless.webp')!important;
+    background-position:center,center!important;background-size:100% 100%,180px auto!important;background-repeat:no-repeat,repeat!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.17),inset 0 -2px 0 rgba(0,0,0,.44)!important;
+  }
+  html body[class][class][class][class][class][class][class][class][class][class][class][class]
+  > nav.footer.footer.footer.footer.footer.footer a[href]::after{
+    content:""!important;display:block!important;position:absolute!important;z-index:-1!important;
+    inset:3px 1px -6px 1px!important;width:auto!important;height:auto!important;
+    border:0!important;border-color:transparent!important;border-image:none!important;outline:0!important;
+    border-radius:0 0 4px 4px!important;
+    background:linear-gradient(90deg,#313a42 0%,#222a31 5%,#151b20 48%,#0b1014 94%,#06080a 100%)!important;
+    clip-path:polygon(1.8% 0,98.2% 0,100% 100%,0 100%)!important;
+    box-shadow:inset 0 -1px 0 rgba(0,0,0,.56),0 2px 4px rgba(0,0,0,.38)!important;
+    opacity:1!important;filter:none!important;pointer-events:none!important;
+  }
+}
+
+@media (min-width:801px){
+  html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
+  > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    top:6px!important;right:6px!important;width:84px!important;min-width:84px!important;max-width:84px!important;height:84px!important;min-height:84px!important;max-height:84px!important;
+    overflow:visible!important;background-color:transparent!important;background-image:url('./message-button-square-footer-match-round1095.svg?v=1095r')!important;background-position:center!important;background-size:100% 100%!important;background-repeat:no-repeat!important;
+    border:0!important;border-radius:0!important;outline:0!important;box-shadow:none!important;filter:none!important;isolation:auto!important;
+  }
+  html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
+  > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control::before,
+  html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
+  > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control::after{
+    content:none!important;display:none!important;opacity:0!important;background:none!important;box-shadow:none!important;filter:none!important;
+  }
+  html.ah-message-persist-open body[data-page][class][class][class][class][class][class][class][class][class][class]
+  > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control,
+  html body[data-page][class][class][class][class][class][class][class][class][class][class]
+  > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded='true'],.is-contact-latched,.is-pressed,[data-ah-control-pressed='1'],[data-ah-control-pressed='true']){
+    background-image:url('./message-button-square-footer-match-pressed-round1095.svg?v=1095r')!important;
+    transform:translate3d(0,4px,0)!important;box-shadow:none!important;filter:none!important;
+  }
+}
+
+/* Mobile body has no class attribute; ID-weighted :not() selectors make the final
+   no-ridge key authority win over older mobile !important hardware rules. */
+@media (max-width:900px){
+  html body:not(#r1345a):not(#r1345b):not(#r1345c):not(#r1345d):not(#r1345e):not(#r1345f):not(#r1345g):not(#r1345h)
+  > nav.footer.footer.footer.footer a[href]{
+    border:0!important;border-color:transparent!important;border-style:none!important;border-image:none!important;
+    outline:0!important;outline-color:transparent!important;outline-style:none!important;
+    overflow:visible!important;
+    background-color:var(--ah-r1345-carbon)!important;
+    background-image:linear-gradient(180deg,rgba(255,255,255,.095) 0%,rgba(255,255,255,.03) 18%,rgba(0,0,0,.05) 54%,rgba(0,0,0,.29) 100%),url('./home-carbon-weave-round737-seamless.webp')!important;
+    background-position:center,center!important;background-size:100% 100%,180px auto!important;background-repeat:no-repeat,repeat!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.17),inset 0 -2px 0 rgba(0,0,0,.44)!important;
+  }
+  html body:not(#r1345a):not(#r1345b):not(#r1345c):not(#r1345d):not(#r1345e):not(#r1345f):not(#r1345g):not(#r1345h)
+  > nav.footer.footer.footer.footer a[href]::after{
+    content:""!important;display:block!important;position:absolute!important;z-index:-1!important;
+    inset:3px 1px -6px 1px!important;width:auto!important;height:auto!important;
+    border:0!important;border-color:transparent!important;border-style:none!important;border-image:none!important;outline:0!important;
+    border-radius:0 0 4px 4px!important;
+    background:linear-gradient(90deg,#313a42 0%,#222a31 5%,#151b20 48%,#0b1014 94%,#06080a 100%)!important;
+    clip-path:polygon(1.8% 0,98.2% 0,100% 100%,0 100%)!important;
+    box-shadow:inset 0 -1px 0 rgba(0,0,0,.56),0 2px 4px rgba(0,0,0,.38)!important;
+    opacity:1!important;filter:none!important;pointer-events:none!important;
+  }
+  html body:not(#r1345a):not(#r1345b):not(#r1345c):not(#r1345d):not(#r1345e):not(#r1345f):not(#r1345g):not(#r1345h)
+  > nav.footer.footer.footer.footer a[href]::before{
+    border:0!important;outline:0!important;box-shadow:none!important;
+  }
+  html body:not(#r1345a):not(#r1345b):not(#r1345c):not(#r1345d):not(#r1345e):not(#r1345f):not(#r1345g):not(#r1345h)
+  > nav.footer.footer.footer.footer a[href] > .ah-footer-bottom-rim{
+    display:none!important;visibility:hidden!important;opacity:0!important;
+  }
+}

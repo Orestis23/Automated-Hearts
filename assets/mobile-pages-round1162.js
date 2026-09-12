@@ -40,12 +40,12 @@
 
   const learningModels = {
     ai101: [
-      './models/ai-101-core-principles-round1316.html?v=1316r',
-      './models/ai-101-human-ai-partnership-mobile-round1316.html?v=1316r',
-      './models/ai-101-verification-lab-round1316.html?v=1316r'
+      './models/ai-101-core-principles-round1316.html?v=1353r',
+      './models/ai-101-human-ai-partnership-mobile-round1316.html?v=1327r',
+      './models/ai-101-verification-lab-round1316.html?v=1327r'
     ],
-    practical: ['./models/practical-ai-skills-helix-round1316.html?v=1316r'],
-    strategy: ['./models/strategy-lab-ball-round1093.html?v=1246r']
+    practical: ['./models/practical-ai-skills-helix-round1316.html?v=1353r'],
+    strategy: ['./models/strategy-lab-ball-round1093.html?v=1327r']
   };
 
   function unloadModel(){

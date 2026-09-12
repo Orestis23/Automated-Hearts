@@ -1,0 +1,55 @@
+/* Round 1321 — one parent-owned, static embossed-heart leather backdrop for every Learning Center / Industries 3D model. */
+:root{--ah-r1321-model-backdrop:url("./model-backdrop-heartless-leather-desktop-round1323.webp?v=1325r");}
+@media(max-width:800px){:root{--ah-r1321-model-backdrop:url("./model-backdrop-heartless-leather-mobile-round1323.webp?v=1325r");}}
+
+/* Desktop Learning Center + Industries model stages: one immutable surface behind every iframe. */
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage),
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport,
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport.r984-static-model-viewport,
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) > .model-dedicated-backdrop,
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) .r1060-static-model-heart,
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) img.r978-persistent-model-backdrop,
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) img.r980-persistent-embossed-backdrop{
+  background-color:#08172b!important;
+  background-image:var(--ah-r1321-model-backdrop)!important;
+  background-position:50% 50%!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  background-attachment:scroll!important;
+  animation:none!important;
+  transition:none!important;
+  filter:none!important;
+}
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) img.r978-persistent-model-backdrop,
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) img.r980-persistent-embossed-backdrop{
+  content:var(--ah-r1321-model-backdrop)!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) :is(.learning-lesson-track,.learning-lesson-slide),
+html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) iframe{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+}
+
+/* Mobile light pages use the exact same asset; the iframe/canvas is only the rotating model layer. */
+@media (max-width:900px){
+  html body #lite-model-stage,
+  html body #lite-model-shell,
+  html body #lite-model-shell.model-shell{
+    background-color:#08172b!important;
+    background-image:var(--ah-r1321-model-backdrop)!important;
+    background-position:50% 50%!important;
+    background-size:cover!important;
+    background-repeat:no-repeat!important;
+    background-attachment:scroll!important;
+    animation:none!important;
+    transition:none!important;
+  }
+  html body #lite-model-shell iframe{
+    background:transparent!important;
+    background-color:transparent!important;
+    background-image:none!important;
+  }
+}

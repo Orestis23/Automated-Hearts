@@ -1,0 +1,80 @@
+/* Round 1335: matching Home/Solution machine covers, hearts, and rims. */
+@layer ah-machine-window-match {
+#lite-model-stage #lite-model-shell.solution-mobile-model-shell {
+ border-top-color:#e0e7e9!important;
+ border-left-color:#c4ced2!important;
+ border-right-color:#68777e!important;
+ border-bottom-color:#4d5b62!important;
+ border:clamp(14px,4.2vw,22px) solid #a9b3b6!important;
+ border-image:url("./machine-rim-triple-round1199.svg") 128 stretch!important;
+ border-radius:0!important;
+ background:linear-gradient(135deg,#71818b 0%,#354650 28%,#111e28 65%,#060d15 100%)!important;
+ box-shadow:inset 4px 4px 8px rgba(201,224,231,.20),
+    inset -6px -6px 12px rgba(0,0,0,.72),
+    0 0 0 2px #09131b,
+    0 8px 15px rgba(0,0,0,.62)!important;
+ box-sizing:border-box!important;
+}
+#solution-process-header .solution-process-window {
+ border:28px solid #a9b3b6!important;
+ border-image:url("./machine-rim-triple-round1199.svg") 128 stretch!important;
+ border-radius:0!important;
+ background:linear-gradient(135deg,#71818b 0%,#354650 28%,#111e28 65%,#060d15 100%)!important;
+ box-shadow:inset 4px 4px 8px rgba(201,224,231,.20),inset -6px -6px 12px rgba(0,0,0,.72),0 8px 15px rgba(0,0,0,.62)!important;
+ box-sizing:border-box!important;
+}
+#machine-stack .window-shutter, #lite-model-stage .solution-mobile-window-cover, #home-machine-grid .home-machine-haze-screen, #solution-process-header .solution-process-cover {
+ background:radial-gradient(ellipse 118% 78% at 50% 18%,rgba(242,255,255,.11) 0%,rgba(208,236,240,.055) 30%,transparent 62%),
+    radial-gradient(ellipse 142% 126% at 50% 46%,rgba(172,208,217,.085) 0%,rgba(102,137,148,.060) 55%,rgba(10,23,30,.105) 82%,rgba(0,4,8,.17) 100%),
+    linear-gradient(180deg,rgba(65,92,105,.86),rgba(15,34,47,.94) 56%,rgba(3,11,17,.98))!important;
+ background-color:rgba(5,12,18,.28)!important;
+ background-image:radial-gradient(ellipse 118% 78% at 50% 14%,rgba(229,251,255,.10) 0%,rgba(170,208,216,.038) 38%,transparent 67%),
+    linear-gradient(180deg,rgba(67,94,104,.12),rgba(15,34,43,.19) 62%,rgba(3,10,15,.25)),
+    url("./machine-haze-carbon-clear-round1140.webp")!important;
+ background-position:center,center,0 0!important;
+ background-size:auto,auto,245px auto!important;
+ background-repeat:no-repeat,no-repeat,repeat!important;
+ box-shadow:inset 0 1px 0 rgba(231,249,252,.24),
+    inset 0 -22px 38px rgba(0,0,0,.20),
+    inset 0 0 0 1px rgba(197,226,233,.16)!important;
+ border-radius:0!important;
+}
+#machine-stack .window-shutter::before,
+#lite-model-stage .solution-mobile-window-cover::before,
+#home-machine-grid .home-machine-haze-screen::before,
+#solution-process-header .solution-process-cover::before {
+
+ content:""!important;
+ position:absolute!important;
+ top:auto!important;
+ left:50%!important;
+ bottom:14px!important;
+ width:clamp(28px,8vw,35px)!important;
+ height:auto!important;
+ aspect-ratio:330/488!important;
+ background:url('./rim-heart-embossed-round291.webp') center/contain no-repeat!important;
+ transform:translateX(-50%) scale(.94)!important;
+ transform-origin:50% 100%!important;
+ opacity:.96!important;
+ z-index:7!important;
+ pointer-events:none!important;
+ filter:brightness(1.82) contrast(1.17) saturate(1.28)
+   drop-shadow(-3px 0 5px rgba(255,46,168,.96))
+   drop-shadow(3px 0 5px rgba(143,255,215,.96))
+   drop-shadow(0 0 9px rgba(255,46,168,.56))
+   drop-shadow(0 0 11px rgba(143,255,215,.58))!important;
+ animation:r1140-bottom-heart-pulse 2.15s cubic-bezier(.42,0,.34,1) infinite!important;
+}
+/* Replace the old Solution rim decorations with Home's actual border asset. */
+#solution-process-header .solution-process-window-anchor::before,
+#solution-process-header .solution-process-window-anchor::after {
+ content:none!important;
+ display:none!important;
+}
+@media(prefers-reduced-motion:reduce){
+ #machine-stack .window-shutter::before,
+ #lite-model-stage .solution-mobile-window-cover::before,
+ #home-machine-grid .home-machine-haze-screen::before,
+ #solution-process-header .solution-process-cover::before { animation:none!important; }
+}
+}

@@ -1,0 +1,111 @@
+/* Round 1325 — exact Round 1212 desktop Messages authority.
+   Restores the Round 1212 desktop Messages hardware without later glass/pseudo overlays.
+   Mobile Messages remains owned by the mobile rules. */
+@media (min-width:801px){
+  :root{
+    --r1005-message-size:84px!important;
+    --r1005-message-top:6px!important;
+    --r1005-message-right:6px!important;
+    --r1005-envelope-width:42%!important;
+    --r1005-message-face:url("./message-button-square-footer-match-round1095.svg?v=1095r")!important;
+    --r1005-message-transform:none!important;
+  }
+  html.ah-message-persist-open{
+    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    --r1005-message-transform:translate3d(0,4px,0)!important;
+  }
+  html body[data-page][class][class][class][class] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    position:fixed!important;
+    z-index:2147483646!important;
+    top:6px!important;
+    right:6px!important;
+    bottom:auto!important;
+    left:auto!important;
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    width:84px!important;
+    min-width:84px!important;
+    max-width:84px!important;
+    height:84px!important;
+    min-height:84px!important;
+    max-height:84px!important;
+    box-sizing:border-box!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    background-color:transparent!important;
+    background-image:url("./message-button-square-footer-match-round1095.svg?v=1095r")!important;
+    background-position:center!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+    clip-path:none!important;
+    -webkit-clip-path:none!important;
+    mask:none!important;
+    -webkit-mask:none!important;
+    transform:none!important;
+    translate:none!important;
+    scale:none!important;
+    rotate:none!important;
+    -webkit-appearance:none!important;
+    appearance:none!important;
+    pointer-events:auto!important;
+    isolation:auto!important;
+  }
+  html body[data-page][class][class][class][class] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control::before,
+  html body[data-page][class][class][class][class] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body[data-page] > a#header-send-message > :not(.r1005-message-envelope){
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope{
+    position:absolute!important;
+    z-index:20!important;
+    inset:0!important;
+    display:grid!important;
+    place-items:center!important;
+    width:100%!important;
+    max-width:100%!important;
+    height:100%!important;
+    max-height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    color:#ff2ea8!important;
+    transform:none!important;
+    pointer-events:none!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
+    position:static!important;
+    display:block!important;
+    width:42%!important;
+    max-width:42%!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope path{
+    fill:none!important;
+    stroke:currentColor!important;
+    stroke-width:1.6!important;
+    stroke-linecap:round!important;
+    stroke-linejoin:round!important;
+    vector-effect:non-scaling-stroke!important;
+  }
+  html body[data-page][class][class][class][class] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]),
+  html.ah-message-persist-open body[data-page][class][class] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+    background-image:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    transform:translate3d(0,4px,0)!important;
+  }
+}

@@ -1,0 +1,53 @@
+/* Round 1334: Home caption colors and process-header matte film. */
+@layer ah-industries-caption-match {
+  .ah-home-caption.ah-industries-caption-mobile,
+  .ah-home-caption.ah-industries-caption-desktop {
+    border:3px solid #8fffd7!important;
+    border-image:none!important;
+    color:#ff2ea8!important;
+    -webkit-text-fill-color:#ff2ea8!important;
+    text-shadow:0 0 .5px rgba(255,46,168,.65),0 0 2.8px rgba(255,46,168,.22)!important;
+    box-shadow:inset 0 1px 0 rgba(237,250,255,.075),inset 0 -7px 12px rgba(0,0,0,.36),0 2px 0 #8fffd7,0 4px 7px rgba(143,255,215,.58),0 8px 13px rgba(143,255,215,.30)!important;
+  }
+  .ah-home-caption.ah-industries-caption-desktop > .ah-route-label-final {
+    color:#ff2ea8!important;
+    -webkit-text-fill-color:#ff2ea8!important;
+    text-shadow:0 0 .5px rgba(255,46,168,.65),0 0 2.8px rgba(255,46,168,.22)!important;
+  }
+  .route-card:active .ah-home-caption.ah-industries-caption-mobile {
+    color:#ff8bd0!important;
+    -webkit-text-fill-color:#ff8bd0!important;
+    box-shadow:inset 0 5px 8px rgba(0,0,0,.65),inset 0 0 0 1px rgba(143,255,215,.18),0 0 7px rgba(143,255,215,.10)!important;
+  }
+  .ah-home-process-box {
+    border:3px solid #8fffd7!important;
+    border-image:none!important;
+    box-sizing:border-box!important;
+  }
+  .ah-home-process-box > h3 {
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:hidden!important;
+  }
+  .ah-home-process-box > h3 > .ah-home-header-matte {
+    display:block!important;
+    position:absolute!important;
+    inset:2px 2px 3px!important;
+    width:auto!important;
+    height:auto!important;
+    z-index:100!important;
+    pointer-events:none!important;
+    border:0!important;
+    border-radius:0!important;
+    background:
+      radial-gradient(circle at 1px 1px,rgba(247,252,255,.078) 0 .52px,transparent .84px) 0 0/5px 5px,
+      repeating-linear-gradient(0deg,rgba(236,247,252,.035) 0 1px,rgba(0,0,0,.022) 1px 3px),
+      linear-gradient(108deg,transparent 0 10%,rgba(237,249,255,.14) 17%,rgba(222,239,247,.050) 30%,transparent 43% 100%),
+      radial-gradient(150% 62% at 50% -10%,rgba(242,251,255,.14),transparent 66%),
+      linear-gradient(180deg,rgba(222,238,247,.082),rgba(194,213,225,.030) 48%,rgba(0,0,0,.065))!important;
+    opacity:.64!important;
+    box-shadow:inset 0 0 0 1px rgba(216,233,242,.10),inset 0 1px 0 rgba(255,255,255,.085),inset 0 -1px 0 rgba(0,0,0,.18)!important;
+    -webkit-backdrop-filter:blur(.72px) saturate(.86) contrast(.96)!important;
+    backdrop-filter:blur(.72px) saturate(.86) contrast(.96)!important;
+  }
+}

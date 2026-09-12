@@ -3,7 +3,8 @@
 #ah-home-mobile-interaction-hint span:nth-child(odd){color:#8fffd7;text-shadow:0 0 7px rgba(143,255,215,.38)}
 #ah-home-mobile-interaction-hint span:nth-child(even){color:#ff2daa;text-shadow:0 0 7px rgba(255,45,170,.38)}
 html.ah-home-signfree #ah-home-mobile-interaction-hint{display:flex}
-</style><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./assets/global-orbitron-carbon-round1246.css?v=1246r"><link rel="stylesheet" href="./assets/round1289-mobile-footer-alternating-pink-mint-swap.css?v=1289r"><link rel="stylesheet" href="./assets/round1314-smooth-black-carbon-signs-reference-desktop-message.css?v=1314r"></head><body><div aria-hidden="true" id="ah-home-mobile-interaction-hint"><span>Click.</span><span>Drag.</span><span>Zoom.</span></div><script src="./vendor/three-0.160.0/three.min.js?v=1196r"></script><script src="./vendor/three-0.160.0/OrbitControls-classic.js?v=1196r"></script><script>
+</style><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./assets/global-orbitron-carbon-round1246.css?v=1246r"><link rel="stylesheet" href="./assets/round1289-mobile-footer-alternating-pink-mint-swap.css?v=1289r"><link rel="stylesheet" href="./assets/round1314-smooth-black-carbon-signs-reference-desktop-message.css?v=1314r"><link rel="stylesheet" href="./assets/round1347-machine-contact-smooth-footer.css?v=1347r"><link rel="stylesheet" href="./assets/round1348-no-ridges-home-bottom-only-glow.css?v=1348r"><link rel="stylesheet" href="./assets/round1354-desktop-blue-footer-original-message.css?v=1354r">
+</head><body><div aria-hidden="true" id="ah-home-mobile-interaction-hint"><span>Click.</span><span>Drag.</span><span>Zoom.</span></div><script src="./vendor/three-0.160.0/three.min.js?v=1196r"></script><script src="./vendor/three-0.160.0/OrbitControls-classic.js?v=1196r"></script><script>
 
 const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,innerWidth/innerHeight,.1,100),renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setClearColor(0x000000,0);renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.45;document.body.appendChild(renderer.domElement);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.enablePan=false;controls.minDistance=9;controls.maxDistance=38;
 const M={dark:new THREE.MeshStandardMaterial({color:0x172637,metalness:.88,roughness:.22}),steel:new THREE.MeshStandardMaterial({color:0x70839a,metalness:.82,roughness:.18}),pinkMetal:new THREE.MeshStandardMaterial({color:0xd8569c,metalness:.95,roughness:.14}),greenMetal:new THREE.MeshStandardMaterial({color:0x69cf95,metalness:.95,roughness:.14}),pink:new THREE.MeshBasicMaterial({color:0xff2f92,toneMapped:false}),green:new THREE.MeshBasicMaterial({color:0x39ff9d,toneMapped:false}),blue:new THREE.MeshBasicMaterial({color:0x35a8ff,toneMapped:false}),glass:new THREE.MeshPhysicalMaterial({color:0x8de8d0,transparent:true,opacity:.08,roughness:.03,transmission:.55,depthWrite:false,side:THREE.DoubleSide})};
@@ -743,16 +744,58 @@ earthPinkSpark.intensity=1.4+fusionPulse*1.8+Math.random()*.7;
 earthGreenSpark.intensity=1.4+fusionPulse*1.8+Math.random()*.7;automateFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));});optimizeWaveFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));d.mat.color.copy(optimizeColorAt(u));d.q.scale.setScalar(1+Math.sin((u+t)*Math.PI*8)*.18)});consolidateBranchFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));});rimConnectorFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));});stageFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));d.q.scale.setScalar(1+Math.sin((u+t)*Math.PI*6)*.16)});streamlineFlow.forEach(d=>{const u=(t*d.speed+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));});streamlineCoilFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));d.q.scale.setScalar(1+Math.sin((u+t)*Math.PI*9)*.18)});rearGearFlow.forEach(d=>{const u=(t*d.speed+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));d.q.scale.setScalar(1+Math.sin((u+t)*Math.PI*7)*.18)});heartWheelDataFlow.forEach(d=>{let u=(t*d.s+d.o)%1;if(d.reverse)u=1-u;d.q.position.copy(d.cv.getPointAt(u));d.q.scale.setScalar(.75+Math.pow(Math.max(0,Math.sin((u+t)*Math.PI*10)),4)*.85)});exploreCoreFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));d.q.scale.setScalar(1+Math.sin((u+t)*Math.PI*10)*.24)});exploreCoreLight.intensity=2.2+Math.pow(Math.max(0,Math.sin(t*6)),6)*3.0;flushEntryGlow.intensity=2.4+Math.pow(Math.max(0,Math.sin(t*6.2)),6)*2.8;liveDataDisplays.forEach(d=>drawLiveDataRing(d,t));controls.update();updateIdentityBillboards(t);renderer.render(scene,camera)}animate();
 
 // Activate a sign only for a tap/click, never a drag or pinch.
-const signRaycaster=new THREE.Raycaster(),signPointer=new THREE.Vector2();let signPointerDown=null;
+const signRaycaster=new THREE.Raycaster(),signPointer=new THREE.Vector2();let signPointerDown=null,lastSignActivationAt=0;
 function signHit(ev){const r=renderer.domElement.getBoundingClientRect();signPointer.x=((ev.clientX-r.left)/r.width)*2-1;signPointer.y=-((ev.clientY-r.top)/r.height)*2+1;signRaycaster.setFromCamera(signPointer,camera);const hits=signRaycaster.intersectObjects(clickableSigns,false);return hits.length?hits[0].object:null}
 renderer.domElement.addEventListener('pointermove',ev=>{if(signPointerDown&&Math.hypot(ev.clientX-signPointerDown.x,ev.clientY-signPointerDown.y)>7)signPointerDown.dragged=true;renderer.domElement.style.cursor=signHit(ev)?'pointer':''});
 renderer.domElement.addEventListener('pointerdown',ev=>{if(!ev.isPrimary){signPointerDown=null;return}signPointerDown={id:ev.pointerId,x:ev.clientX,y:ev.clientY,hit:signHit(ev),dragged:false}});
 renderer.domElement.addEventListener('pointercancel',()=>{signPointerDown=null});
-function activateSolutionSign(hash){
+// Round 1319: every red sign first zooms smoothly into its physical machine stage,
+// then hands off to the host page's controlled smooth anchor scroll.
+const SIGN_FOCUS_POINTS=Object.freeze({
+ '#solution-consolidate':new THREE.Vector3(-5.20,0.02,.22),
+ '#solution-streamline':new THREE.Vector3(-2.55,.02,.16),
+ '#solution-automate':new THREE.Vector3(-.18,-.28,.18),
+ '#solution-optimize':new THREE.Vector3(2.58,.42,.22),
+ '#solution-explore':new THREE.Vector3(5.20,.02,.24),
+ '#solution-world-intelligence':new THREE.Vector3(.80,2.10,-4.00)
+});
+let signFocusToken=0;
+function navigateSolutionAnchor(hash){
  if(window.parent===window){location.href='./solutions.html'+hash;return}
- try{if(typeof window.parent.ahSolutionNavigate==='function'){window.parent.ahSolutionNavigate(hash);return}}catch(_){}
+ try{if(typeof window.parent.ahSolutionNavigate==='function'&&window.parent.ahSolutionNavigate(hash)===true)return}catch(_){}
  window.parent.postMessage({type:'ah:solution-anchor',hash},'*');
 }
-renderer.domElement.addEventListener('click',ev=>{const down=signPointerDown;signPointerDown=null;if(down&&(down.dragged||Math.hypot(ev.clientX-down.x,ev.clientY-down.y)>7))return;const hit=signHit(ev);if(hit)activateSolutionSign(hit.userData.anchorHash||SIGN_LINKS[hit.userData.linkKey]);});
+function activateSolutionSign(hash){
+ const localTarget=SIGN_FOCUS_POINTS[hash];
+ if(!localTarget){navigateSolutionAnchor(hash);return}
+ const token=++signFocusToken;
+ engine.updateWorldMatrix(true,false);
+ const worldTarget=engine.localToWorld(localTarget.clone());
+ const startTarget=controls.target.clone();
+ const startPosition=camera.position.clone();
+ let viewVector=startPosition.clone().sub(startTarget);
+ if(viewVector.lengthSq()<.0001)viewVector.set(0,0,1);
+ viewVector.normalize();
+ const focusDistance=hash==='#solution-world-intelligence'?5.15:4.35;
+ const endPosition=worldTarget.clone().add(viewVector.multiplyScalar(focusDistance));
+ if(hash==='#solution-world-intelligence')endPosition.y+=.22;
+ const priorDamping=controls.enableDamping,priorMinDistance=controls.minDistance;
+ controls.enabled=false;controls.enableDamping=false;controls.minDistance=Math.min(priorMinDistance,3.9);
+ const started=performance.now(),duration=1080;
+ const ease=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+ function frame(now){
+  if(token!==signFocusToken)return;
+  const p=Math.min(1,(now-started)/duration),e=ease(p);
+  camera.position.lerpVectors(startPosition,endPosition,e);
+  controls.target.lerpVectors(startTarget,worldTarget,e);
+  controls.update();
+  if(p<1){requestAnimationFrame(frame);return}
+  camera.position.copy(endPosition);controls.target.copy(worldTarget);controls.update();
+  controls.enableDamping=priorDamping;controls.minDistance=priorMinDistance;controls.enabled=true;
+  setTimeout(()=>{if(token===signFocusToken)navigateSolutionAnchor(hash)},240);
+ }
+ requestAnimationFrame(frame);
+}
+renderer.domElement.addEventListener('click',ev=>{const down=signPointerDown;signPointerDown=null;if(down&&(down.dragged||Math.hypot(ev.clientX-down.x,ev.clientY-down.y)>7))return;if(performance.now()-lastSignActivationAt<450)return;const hit=signHit(ev);if(hit){lastSignActivationAt=performance.now();activateSolutionSign(hit.userData.anchorHash||SIGN_LINKS[hit.userData.linkKey]);}});
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)})
 </script></body></html>

@@ -1,0 +1,356 @@
+/* Automated Hearts Round 1348
+   1) Footer keys: remove every legacy ridged/ribbed edge and perimeter layer.
+      Use a normal smooth keyboard-key top with one solid side/depth wall.
+      Legend-color glow appears only underneath while the key is pressed.
+   2) Home three route caption controls: keep the carbon/matte face, but make
+      the Learning Center-style mint light originate ONLY below the control.
+      No outer glow is allowed above or behind the top edge. */
+
+:root{
+  --ah-r1348-mint:#8fffd7;
+  --ah-r1348-pink:#ff2ea8;
+  --ah-r1348-key-face:#090e13;
+  --ah-r1348-key-side:#151d24;
+  --ah-r1348-key-side-dark:#080c10;
+}
+
+/* ========================================================================== */
+/* HOME ROUTE CAPTIONS — bottom-only Learning Center-style emission            */
+/* ========================================================================== */
+
+html body.page-home[data-page="home"]:not(#r1348h1):not(#r1348h2):not(#r1348h3)
+#home-route-buttons .premium-route-card__title-sign.brand-route-screen.ah-home-caption,
+html body[data-ah-mobile-surface="home"]:not(#r1348h4):not(#r1348h5):not(#r1348h6)
+main#main-content .route-card > .route-label.ah-home-caption{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:visible!important;
+  box-sizing:border-box!important;
+  border:2px solid var(--ah-r1348-mint)!important;
+  border-image:none!important;
+  outline:1px solid rgba(210,255,242,.42)!important;
+  outline-offset:-6px!important;
+  filter:none!important;
+  -webkit-filter:none!important;
+  box-shadow:
+    inset 0 0 0 3px rgba(3,10,16,.78),
+    inset 0 1px 0 rgba(239,255,250,.08),
+    inset 0 -7px 12px rgba(0,0,0,.38),
+    0 3px 0 #06131a!important;
+}
+
+/* Matte film only. Absolutely no exterior light from this layer. */
+html body.page-home[data-page="home"]:not(#r1348h7):not(#r1348h8):not(#r1348h9)
+#home-route-buttons .premium-route-card__title-sign.brand-route-screen.ah-home-caption::before,
+html body[data-ah-mobile-surface="home"]:not(#r1348h10):not(#r1348h11):not(#r1348h12)
+main#main-content .route-card > .route-label.ah-home-caption::before{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  z-index:1!important;
+  inset:4px!important;
+  border:0!important;
+  outline:0!important;
+  border-radius:inherit!important;
+  background:
+    radial-gradient(circle at 1px 1px,rgba(255,255,255,.036) 0 .46px,transparent .74px) 0 0/5px 5px,
+    repeating-linear-gradient(0deg,rgba(255,255,255,.017) 0 1px,rgba(0,0,0,.014) 1px 3px),
+    linear-gradient(180deg,rgba(255,255,255,.037),transparent 38%,rgba(0,0,0,.08))!important;
+  box-shadow:none!important;
+  filter:none!important;
+  -webkit-filter:none!important;
+  opacity:.40!important;
+  pointer-events:none!important;
+}
+
+/* Underlight starts below the key. The pseudo-element never overlaps the face. */
+html body.page-home[data-page="home"]:not(#r1348h13):not(#r1348h14):not(#r1348h15)
+#home-route-buttons .premium-route-card__title-sign.brand-route-screen.ah-home-caption::after,
+html body[data-ah-mobile-surface="home"]:not(#r1348h16):not(#r1348h17):not(#r1348h18)
+main#main-content .route-card > .route-label.ah-home-caption::after{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  z-index:-1!important;
+  left:9%!important;
+  right:9%!important;
+  top:calc(100% + 3px)!important;
+  bottom:auto!important;
+  width:auto!important;
+  height:11px!important;
+  margin:0!important;
+  border:0!important;
+  outline:0!important;
+  border-radius:50%!important;
+  background:radial-gradient(ellipse at 50% 0%,
+    rgba(143,255,215,.72) 0%,
+    rgba(143,255,215,.30) 43%,
+    rgba(143,255,215,.07) 68%,
+    rgba(143,255,215,0) 90%)!important;
+  box-shadow:none!important;
+  filter:blur(1px)!important;
+  -webkit-filter:blur(1px)!important;
+  opacity:1!important;
+  pointer-events:none!important;
+}
+
+/* Keep captions/legends above the matte pane. */
+html body.page-home[data-page="home"] #home-route-buttons
+.premium-route-card__title-sign.brand-route-screen.ah-home-caption > *,
+html body[data-ah-mobile-surface="home"] main#main-content
+.route-card > .route-label.ah-home-caption{
+  z-index:3!important;
+}
+
+/* ========================================================================== */
+/* FOOTER — remove ribbed/ridged geometry and use a clean normal keycap       */
+/* ========================================================================== */
+
+/* Clean the footer bed too, so no old ribbing shows through between keycaps. */
+@media (max-width:900px){
+  html body:not(#r1348bed1):not(#r1348bed2):not(#r1348bed3) > nav.footer.footer{
+    background:linear-gradient(180deg,#0b1723 0%,#040b12 48%,#010408 100%)!important;
+    background-image:linear-gradient(180deg,#0b1723 0%,#040b12 48%,#010408 100%)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.035)!important;
+  }
+
+  html body:not(#r1348m1):not(#r1348m2):not(#r1348m3):not(#r1348m4):not(#r1348m5):not(#r1348m6)
+  > nav.footer.footer.footer.footer.footer a[href]{
+    --ah-r1348-key-rgb:143,255,215;
+    position:relative!important;
+    z-index:1!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    border:0!important;
+    border-width:0!important;
+    border-style:none!important;
+    border-color:transparent!important;
+    border-image:none!important;
+    outline:0!important;
+    outline-offset:0!important;
+    border-radius:5px!important;
+    background-color:var(--ah-r1348-key-face)!important;
+    background-image:
+      linear-gradient(180deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.035) 18%,rgba(0,0,0,.07) 58%,rgba(0,0,0,.31) 100%),
+      url('./home-carbon-weave-round737-seamless.webp')!important;
+    background-position:center,center!important;
+    background-size:100% 100%,270px auto!important;
+    background-repeat:no-repeat,repeat!important;
+    background-blend-mode:normal!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.15),
+      inset 1px 0 0 rgba(255,255,255,.035),
+      inset -1px 0 0 rgba(0,0,0,.28),
+      inset 0 -2px 0 rgba(0,0,0,.48),
+      0 5px 0 var(--ah-r1348-key-side),
+      0 7px 5px rgba(0,0,0,.50)!important;
+    filter:none!important;
+    -webkit-filter:none!important;
+    transform:translate3d(0,0,0)!important;
+    transition:transform 90ms ease,box-shadow 90ms ease,filter 90ms ease!important;
+  }
+  html body > nav.footer.footer.footer a[href]:nth-child(even){--ah-r1348-key-rgb:255,46,168;}
+
+  html body > nav.footer.footer.footer a[href] .footer-nav-label{
+    position:relative!important;
+    z-index:4!important;
+    color:rgb(var(--ah-r1348-key-rgb))!important;
+    -webkit-text-fill-color:rgb(var(--ah-r1348-key-rgb))!important;
+    text-shadow:0 0 3px rgba(var(--ah-r1348-key-rgb),.24)!important;
+  }
+
+  /* Old ribbed siding / pink lip / nested edge spans are all disabled. */
+  html body > nav.footer.footer.footer a[href]
+  > :is(.ah-footer-bottom-rim,.r969-pink-depth-bottom,.r969-pink-depth-right,.ah-bottom-siding){
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    width:0!important;
+    height:0!important;
+    border:0!important;
+    background:none!important;
+    box-shadow:none!important;
+  }
+
+  /* There is no pseudo-element side wall anymore; the solid 5px box-shadow is the smooth side. */
+  html body:not(#r1348m7):not(#r1348m8):not(#r1348m9)
+  > nav.footer.footer.footer a[href]::after{
+    content:none!important;
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    border:0!important;
+    background:none!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+
+  /* Press glow: OFF while resting, ON only after the key moves down. */
+  html body:not(#r1348m10):not(#r1348m11):not(#r1348m12)
+  > nav.footer.footer.footer a[href]::before{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:-1!important;
+    left:10%!important;
+    right:10%!important;
+    top:calc(100% + 3px)!important;
+    bottom:auto!important;
+    width:auto!important;
+    height:9px!important;
+    margin:0!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:50%!important;
+    background:radial-gradient(ellipse at 50% 0%,
+      rgba(var(--ah-r1348-key-rgb),.78) 0%,
+      rgba(var(--ah-r1348-key-rgb),.31) 44%,
+      rgba(var(--ah-r1348-key-rgb),.07) 69%,
+      rgba(var(--ah-r1348-key-rgb),0) 90%)!important;
+    box-shadow:none!important;
+    filter:blur(1px)!important;
+    opacity:0!important;
+    pointer-events:none!important;
+    transition:opacity 80ms ease!important;
+  }
+
+  html body:not(#r1348m13):not(#r1348m14):not(#r1348m15)
+  > nav.footer.footer.footer a[href]:is(
+    :active,.is-nav-pressed,.is-pressed,.is-route-pressed,[aria-pressed='true'],
+    [data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]
+  ){
+    transform:translate3d(0,4px,0)!important;
+    filter:brightness(.94)!important;
+    box-shadow:
+      inset 0 4px 7px rgba(0,0,0,.64),
+      inset 0 1px 0 rgba(255,255,255,.035),
+      0 1px 0 var(--ah-r1348-key-side-dark),
+      0 3px 3px rgba(0,0,0,.42)!important;
+  }
+  html body > nav.footer.footer.footer a[href]:is(
+    :active,.is-nav-pressed,.is-pressed,.is-route-pressed,[aria-pressed='true'],
+    [data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]
+  )::before{opacity:.98!important;}
+}
+
+/* Desktop persistent footer: same smooth key construction, scaled up. */
+@media (min-width:901px){
+  html body[data-page]:not(#r1348d1):not(#r1348d2):not(#r1348d3):not(#r1348d4):not(#r1348d5):not(#r1348d6)
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav]{
+    --ah-r1348-key-rgb:143,255,215;
+    position:relative!important;
+    z-index:1!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    border:0!important;
+    border-width:0!important;
+    border-style:none!important;
+    border-color:transparent!important;
+    border-image:none!important;
+    outline:0!important;
+    outline-offset:0!important;
+    border-radius:5px!important;
+    background-color:var(--ah-r1348-key-face)!important;
+    background-image:
+      linear-gradient(180deg,rgba(255,255,255,.105) 0%,rgba(255,255,255,.036) 18%,rgba(0,0,0,.065) 57%,rgba(0,0,0,.30) 100%),
+      url('./home-carbon-weave-round737-seamless.webp')!important;
+    background-position:center,center!important;
+    background-size:100% 100%,300px auto!important;
+    background-repeat:no-repeat,repeat!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.16),
+      inset 1px 0 0 rgba(255,255,255,.035),
+      inset -1px 0 0 rgba(0,0,0,.30),
+      inset 0 -2px 0 rgba(0,0,0,.48),
+      0 6px 0 var(--ah-r1348-key-side),
+      0 9px 6px rgba(0,0,0,.48)!important;
+    filter:none!important;
+    transform:translate3d(0,0,0)!important;
+    transition:transform 90ms ease,box-shadow 90ms ease,filter 90ms ease!important;
+  }
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav]:nth-child(even){--ah-r1348-key-rgb:255,46,168;}
+
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav] .footer-nav-label{
+    position:relative!important;
+    z-index:4!important;
+    color:rgb(var(--ah-r1348-key-rgb))!important;
+    -webkit-text-fill-color:rgb(var(--ah-r1348-key-rgb))!important;
+    text-shadow:0 0 4px rgba(var(--ah-r1348-key-rgb),.24)!important;
+  }
+
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav]
+  > :is(.r969-pink-depth-bottom,.r969-pink-depth-right,.ah-footer-bottom-rim,.ah-bottom-siding){
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    width:0!important;
+    height:0!important;
+    border:0!important;
+    background:none!important;
+    box-shadow:none!important;
+  }
+
+  html body[data-page]:not(#r1348d7):not(#r1348d8):not(#r1348d9)
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav]::after{
+    content:none!important;
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    border:0!important;
+    background:none!important;
+    box-shadow:none!important;
+  }
+
+  html body[data-page]:not(#r1348d10):not(#r1348d11):not(#r1348d12)
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav]::before{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:-1!important;
+    left:10%!important;
+    right:10%!important;
+    top:calc(100% + 3px)!important;
+    height:10px!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:50%!important;
+    background:radial-gradient(ellipse at 50% 0%,rgba(var(--ah-r1348-key-rgb),.78) 0%,rgba(var(--ah-r1348-key-rgb),.31) 44%,rgba(var(--ah-r1348-key-rgb),.07) 69%,rgba(var(--ah-r1348-key-rgb),0) 90%)!important;
+    box-shadow:none!important;
+    filter:blur(1.1px)!important;
+    opacity:0!important;
+    pointer-events:none!important;
+    transition:opacity 80ms ease!important;
+  }
+
+  html body[data-page]:not(#r1348d13):not(#r1348d14):not(#r1348d15)
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav]:is(
+    :active,.is-nav-pressed,.is-pressed,.is-route-pressed,[aria-pressed='true'],
+    [data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]
+  ){
+    transform:translate3d(0,5px,0)!important;
+    filter:brightness(.94)!important;
+    box-shadow:
+      inset 0 4px 8px rgba(0,0,0,.64),
+      inset 0 1px 0 rgba(255,255,255,.035),
+      0 1px 0 var(--ah-r1348-key-side-dark),
+      0 3px 4px rgba(0,0,0,.42)!important;
+  }
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav]:is(
+    :active,.is-nav-pressed,.is-pressed,.is-route-pressed,[aria-pressed='true'],
+    [data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]
+  )::before{opacity:.98!important;}
+}

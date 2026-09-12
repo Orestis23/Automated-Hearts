@@ -1,4 +1,5 @@
-<!doctype html><html><head><script id="ah-runtime-frame-gate-v942">(()=>{'use strict';if(window.__ahRuntimeFrameGate942)return;window.__ahRuntimeFrameGate942=1;const raf0=window.requestAnimationFrame.bind(window),caf0=window.cancelAnimationFrame.bind(window);let seq=1,hostActive=new URLSearchParams(location.search).get('preview')!=='1',viewportActive=true,shutterMoving=false,queued=new Map(),nativeHandles=new Map();const active=()=>hostActive&&viewportActive&&!shutterMoving&&!document.hidden;const schedule=(id,cb)=>{const h=raf0(ts=>{nativeHandles.delete(id);if(!active()){queued.set(id,cb);return}cb(ts)});nativeHandles.set(id,h)};const flush=()=>{if(!active()||!queued.size)return;const q=[...queued];queued.clear();q.forEach(([id,cb])=>schedule(id,cb))};window.requestAnimationFrame=(cb)=>{const id=seq++;if(active())schedule(id,cb);else queued.set(id,cb);return id};window.cancelAnimationFrame=(id)=>{queued.delete(id);const h=nativeHandles.get(id);if(h!==undefined){caf0(h);nativeHandles.delete(id)}};addEventListener('message',e=>{const d=e.data||{};if(d.type==='ah:home-shutter-motion'){shutterMoving=!!d.moving;flush();return}if(d.type==='engine-visibility')hostActive=!!d.visible;else if(d.type==='automated-hearts:learning-activity')hostActive=!!d.active;else if(d.type==='automated-hearts:viewport-activity')viewportActive=!!d.active;else return;flush()});document.addEventListener('visibilitychange',flush,{passive:true});window.__ahRuntimeFrameGate={isActive:active,resume:flush}})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet"><title>Automated Hearts Five-Stage Engine</title><style>*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000;font-family:Orbitron,system-ui,sans-serif;color:#fff}canvas{display:block;background:transparent!important;touch-action:none}</style><link rel="stylesheet" href="./assets/global-orbitron-carbon-round1246.css?v=1246r"><link rel="stylesheet" href="./assets/round1289-mobile-footer-alternating-pink-mint-swap.css?v=1289r"><link rel="stylesheet" href="./assets/round1314-smooth-black-carbon-signs-reference-desktop-message.css?v=1314r"></head><body><script src="./vendor/three-0.160.0/three.min.js?v=1196r"></script><script src="./vendor/three-0.160.0/OrbitControls-classic.js?v=1196r"></script><script>
+<!doctype html><html><head><script id="ah-runtime-frame-gate-v942">(()=>{'use strict';if(window.__ahRuntimeFrameGate942)return;window.__ahRuntimeFrameGate942=1;const raf0=window.requestAnimationFrame.bind(window),caf0=window.cancelAnimationFrame.bind(window);window.__ahNativeRAF=raf0;window.__ahNativeCAF=caf0;let seq=1,hostActive=new URLSearchParams(location.search).get('preview')!=='1',viewportActive=true,shutterMoving=false,queued=new Map(),nativeHandles=new Map();const active=()=>hostActive&&viewportActive&&!shutterMoving&&!document.hidden;const schedule=(id,cb)=>{const h=raf0(ts=>{nativeHandles.delete(id);if(!active()){queued.set(id,cb);return}cb(ts)});nativeHandles.set(id,h)};const flush=()=>{if(!active()||!queued.size)return;const q=[...queued];queued.clear();q.forEach(([id,cb])=>schedule(id,cb))};window.requestAnimationFrame=(cb)=>{const id=seq++;if(active())schedule(id,cb);else queued.set(id,cb);return id};window.cancelAnimationFrame=(id)=>{queued.delete(id);const h=nativeHandles.get(id);if(h!==undefined){caf0(h);nativeHandles.delete(id)}};addEventListener('message',e=>{const d=e.data||{};if(d.type==='ah:home-shutter-motion'){shutterMoving=!!d.moving;flush();return}if(d.type==='engine-visibility')hostActive=!!d.visible;else if(d.type==='automated-hearts:learning-activity')hostActive=!!d.active;else if(d.type==='automated-hearts:viewport-activity')viewportActive=!!d.active;else return;flush()});document.addEventListener('visibilitychange',flush,{passive:true});window.__ahRuntimeFrameGate={isActive:active,resume:flush}})();</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet"><title>Automated Hearts Five-Stage Engine</title><style>*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000;font-family:Orbitron,system-ui,sans-serif;color:#fff}canvas{display:block;background:transparent!important;touch-action:none}</style><link rel="stylesheet" href="./assets/global-orbitron-carbon-round1246.css?v=1246r"><link rel="stylesheet" href="./assets/round1289-mobile-footer-alternating-pink-mint-swap.css?v=1289r"><link rel="stylesheet" href="./assets/round1314-smooth-black-carbon-signs-reference-desktop-message.css?v=1314r"><link rel="stylesheet" href="./assets/round1347-machine-contact-smooth-footer.css?v=1347r"><link rel="stylesheet" href="./assets/round1348-no-ridges-home-bottom-only-glow.css?v=1348r"><link rel="stylesheet" href="./assets/round1354-desktop-blue-footer-original-message.css?v=1354r">
+</head><body><script src="./vendor/three-0.160.0/three.min.js?v=1196r"></script><script src="./vendor/three-0.160.0/OrbitControls-classic.js?v=1196r"></script><script>
 
 const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,innerWidth/innerHeight,.1,100),renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setClearColor(0x000000,0);renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.45;document.body.appendChild(renderer.domElement);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.enablePan=false;controls.minDistance=9;controls.maxDistance=38;
 const M={dark:new THREE.MeshStandardMaterial({color:0x172637,metalness:.88,roughness:.22}),steel:new THREE.MeshStandardMaterial({color:0x70839a,metalness:.82,roughness:.18}),pinkMetal:new THREE.MeshStandardMaterial({color:0xd8569c,metalness:.95,roughness:.14}),greenMetal:new THREE.MeshStandardMaterial({color:0x69cf95,metalness:.95,roughness:.14}),pink:new THREE.MeshBasicMaterial({color:0xff2f92,toneMapped:false}),green:new THREE.MeshBasicMaterial({color:0x39ff9d,toneMapped:false}),blue:new THREE.MeshBasicMaterial({color:0x35a8ff,toneMapped:false}),glass:new THREE.MeshPhysicalMaterial({color:0x8de8d0,transparent:true,opacity:.08,roughness:.03,transmission:.55,depthWrite:false,side:THREE.DoubleSide})};
@@ -96,7 +97,7 @@ function makeSignLink(mesh,key){
  // Give each sign a slightly larger invisible tap/click surface so the label works reliably on desktop and touch screens.
  const hit=mesh.clone();
  hit.material=signHitMaterial;
- hit.scale.set(1.20,1.65,1);
+ hit.scale.set(1.34,1.88,1);
  hit.userData.linkKey=key;
  hit.userData.anchorHash=SIGN_LINKS[key];
  hit.renderOrder=mesh.renderOrder+1;
@@ -713,6 +714,48 @@ circularStage.rotation.x=-Math.PI/2;circularStage.position.y=floorY+.004;scene.a
 const baseRingMenu=new THREE.Group();
 baseRingMenu.visible=BASE_RING_MENU_ENABLED;scene.add(baseRingMenu);
 const baseRingTextures=[];
+let ahSignTypographyReady = !document.fonts;
+function buildBaseRingTextLayer(state){
+ const w=state.canvas.width,h=state.canvas.height;
+ const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');
+ const fontFamily='"Orbitron", system-ui, sans-serif';
+ const maxWidth=w-54,maxHeight=h-34,lines=state.lines;
+ let fs=lines.length>1?126:166;
+ const minFs=70;
+ x.font=`700 ${fs}px ${fontFamily}`;
+ while(fs>minFs){
+   const widest=Math.max(...lines.map(line=>x.measureText(line).width));
+   const totalH=lines.length===1?fs:fs*1.70;
+   if(widest<=maxWidth&&totalH<=maxHeight)break;
+   fs-=2;x.font=`700 ${fs}px ${fontFamily}`;
+ }
+ state.fontSize=fs;
+ const lineGap=lines.length>1?fs*.80:0;
+ const y0=lines.length===1?h/2+3:h/2-lineGap/2;
+ x.textAlign='center';x.textBaseline='middle';x.font=`700 ${fs}px ${fontFamily}`;
+ // Round 1320: the lettering is rendered once into a dedicated layer. Electrical plasma,
+ // hover state, window opening and camera movement may animate, but the sign typography
+ // never changes size, weight, spacing, alpha, glow or alignment after it appears.
+ lines.forEach((line,i)=>{
+   const y=y0+i*lineGap;
+   // Round 1338: strong dark keyline + bright face keeps every label readable through the closed carbon/pearl screen.
+   x.save();x.globalAlpha=.96;x.strokeStyle='#250008';x.lineWidth=Math.max(8,fs*.070);x.lineJoin='round';x.shadowColor='#000';x.shadowBlur=10;x.strokeText(line,w/2,y,maxWidth);x.restore();
+   x.save();x.globalAlpha=1;x.shadowColor='#ff3650';x.shadowBlur=20;x.fillStyle='#fff4f6';x.fillText(line,w/2,y,maxWidth);x.restore();
+   x.save();x.globalAlpha=.88;x.shadowColor='#ffffff';x.shadowBlur=5;x.fillStyle='#ffdbe0';x.fillText(line,w/2,y,maxWidth);x.restore();
+ });
+ state.textLayer=c;
+}
+function lockAllBaseRingTypography(){
+ if(ahSignTypographyReady && baseRingTextures.every(s=>s.textLayer)) return;
+ ahSignTypographyReady=true;
+ baseRingTextures.forEach(state=>{state.textLayer=null;buildBaseRingTextLayer(state);drawBaseRingButtonTexture(state,0);});
+}
+if(document.fonts){
+ Promise.race([
+   document.fonts.load('700 166px Orbitron'),
+   new Promise(resolve=>setTimeout(resolve,1400))
+ ]).then(lockAllBaseRingTypography).catch(lockAllBaseRingTypography);
+}else{setTimeout(lockAllBaseRingTypography,0)}
 function drawBaseRingButtonTexture(state,time=0){
  const x=state.ctx,w=state.canvas.width,h=state.canvas.height;
  x.clearRect(0,0,w,h);
@@ -760,30 +803,11 @@ function drawBaseRingButtonTexture(state,time=0){
  }
  x.restore();
 
- // Fit every label to the largest practical digital type size.
- const fontFamily='"Orbitron", system-ui, sans-serif';
- const maxWidth=w-54,maxHeight=h-34;
- const lines=state.lines;
- let fs=lines.length>1?126:166;
- const minFs=70;
- x.font=`700 ${fs}px ${fontFamily}`;
- while(fs>minFs){
-   const widest=Math.max(...lines.map(line=>x.measureText(line).width));
-   const totalH=lines.length===1?fs:fs*1.70;
-   if(widest<=maxWidth&&totalH<=maxHeight)break;
-   fs-=2;x.font=`700 ${fs}px ${fontFamily}`;
+ // Round 1320: draw the locked typography layer unchanged on every frame.
+ if(ahSignTypographyReady){
+   if(!state.textLayer)buildBaseRingTextLayer(state);
+   x.drawImage(state.textLayer,0,0);
  }
- state.fontSize=fs;
- const lineGap=lines.length>1?fs*.80:0;
- const y0=lines.length===1?h/2+3:h/2-lineGap/2;
- x.textAlign='center';x.textBaseline='middle';x.font=`700 ${fs}px ${fontFamily}`;
- const coreAlpha=Math.min(1,.95*state.intensity);
- lines.forEach((line,i)=>{
-   const y=y0+i*lineGap;
-   x.save();x.globalAlpha=.82*state.intensity;x.shadowColor='#ff001d';x.shadowBlur=46*state.intensity;x.fillStyle='#ff071e';x.fillText(line,w/2,y,maxWidth);x.restore();
-   x.save();x.globalAlpha=coreAlpha;x.shadowColor='#ff2438';x.shadowBlur=18*state.intensity;x.fillStyle='#ff2538';x.fillText(line,w/2,y,maxWidth);x.restore();
-   x.save();x.globalAlpha=.88*state.intensity;x.shadowColor='#fff0f2';x.shadowBlur=7;x.fillStyle='#ffd4d8';x.fillText(line,w/2,y,maxWidth);x.restore();
- });
 
  // Fast bright pulses and scan tears travel through the sign interior.
  if(Math.random()<.17){
@@ -866,14 +890,18 @@ earthPinkSpark.intensity=1.4+fusionPulse*1.8+Math.random()*.7;
 earthGreenSpark.intensity=1.4+fusionPulse*1.8+Math.random()*.7;automateFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));});optimizeWaveFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));d.mat.color.copy(optimizeColorAt(u));d.q.scale.setScalar(1+Math.sin((u+t)*Math.PI*8)*.18)});consolidateBranchFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));});rimConnectorFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));});stageFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));d.q.scale.setScalar(1+Math.sin((u+t)*Math.PI*6)*.16)});streamlineFlow.forEach(d=>{const u=(t*d.speed+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));});streamlineCoilFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));d.q.scale.setScalar(1+Math.sin((u+t)*Math.PI*9)*.18)});rearGearFlow.forEach(d=>{const u=(t*d.speed+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));d.q.scale.setScalar(1+Math.sin((u+t)*Math.PI*7)*.18)});heartWheelDataFlow.forEach(d=>{let u=(t*d.s+d.o)%1;if(d.reverse)u=1-u;d.q.position.copy(d.cv.getPointAt(u));d.q.scale.setScalar(.75+Math.pow(Math.max(0,Math.sin((u+t)*Math.PI*10)),4)*.85)});exploreCoreFlow.forEach(d=>{const u=(t*d.s+d.o)%1;d.q.position.copy(d.cv.getPointAt(u));d.q.scale.setScalar(1+Math.sin((u+t)*Math.PI*10)*.24)});exploreCoreLight.intensity=2.2+Math.pow(Math.max(0,Math.sin(t*6)),6)*3.0;flushEntryGlow.intensity=2.4+Math.pow(Math.max(0,Math.sin(t*6.2)),6)*2.8;liveDataDisplays.forEach(d=>drawLiveDataRing(d,t));controls.update();updateIdentityBillboards(t);renderer.render(scene,camera)}animate();
 
 // Activate a sign only for a tap/click, never a drag or pinch.
-const signRaycaster=new THREE.Raycaster(),signPointer=new THREE.Vector2();let signPointerDown=null;
+const signRaycaster=new THREE.Raycaster(),signPointer=new THREE.Vector2();let signPointerDown=null,lastSignActivationAt=0,signFocusActive=false;
 function signHit(ev){
  const r=renderer.domElement.getBoundingClientRect();
  signPointer.set(((ev.clientX-r.left)/r.width)*2-1,-((ev.clientY-r.top)/r.height)*2+1);
  signRaycaster.setFromCamera(signPointer,camera);
  const hits=signRaycaster.intersectObjects(clickableSigns,false);
  if(hits.length)return hits[0].object;
- if(ev.pointerType!=='touch'&&!matchMedia('(pointer:coarse)').matches)return null;
+ // Desktop can miss an exact raycast when the beveled sign face is viewed at a sharp angle.
+ // Use the same projected screen-space hit fallback for mouse, pen and touch so every visible
+ // red sign has a reliable clickable rectangle on both desktop and mobile.
+ const coarse=ev.pointerType==='touch'||matchMedia('(pointer:coarse)').matches;
+ const pad=coarse?24:14;
  let best=null,score=Infinity;
  for(const mesh of clickableSigns){
   if(mesh.material===signHitMaterial)continue;
@@ -886,8 +914,10 @@ function signHit(ev){
    minX=Math.min(minX,px);maxX=Math.max(maxX,px);minY=Math.min(minY,py);maxY=Math.max(maxY,py);
   }
   if(!Number.isFinite(minX))continue;
-  const cx=(minX+maxX)/2,cy=(minY+maxY)/2,w=Math.max(48,maxX-minX+16),h=Math.max(48,maxY-minY+16);
-  const dx=Math.abs(ev.clientX-cx),dy=Math.abs(ev.clientY-cy),d=dx*dx+dy*dy;
+  const cx=(minX+maxX)/2,cy=(minY+maxY)/2;
+  const w=Math.max(coarse?58:44,maxX-minX+pad*2),h=Math.max(coarse?58:42,maxY-minY+pad*2);
+  const dx=Math.abs(ev.clientX-cx),dy=Math.abs(ev.clientY-cy);
+  const nx=dx/(w/2),ny=dy/(h/2),d=nx*nx+ny*ny;
   if(dx<=w/2&&dy<=h/2&&d<score){best=mesh;score=d;}
  }
  return best;
@@ -900,25 +930,39 @@ function energizeSign(hit,level=1){
  if(next)next.targetHot=Math.max(MOBILE_PREVIEW ? .26 : 0,level);
 }
 renderer.domElement.addEventListener('pointermove',ev=>{
- if(signPointerDown&&Math.hypot(ev.clientX-signPointerDown.x,ev.clientY-signPointerDown.y)>14){signPointerDown.dragged=true;controls.enabled=true;}
+ if(signPointerDown){const moveLimit=ev.pointerType==='touch'?30:22;if(Math.hypot(ev.clientX-signPointerDown.x,ev.clientY-signPointerDown.y)>moveLimit){signPointerDown.dragged=true;if(!signFocusActive)controls.enabled=true;}}
  const hit=signHit(ev);
  renderer.domElement.style.cursor=hit?'pointer':'';
  if(ev.pointerType!=='touch'&&!matchMedia('(pointer:coarse)').matches)energizeSign(hit,1);
 });
 renderer.domElement.addEventListener('pointerleave',()=>{if(!MOBILE_PREVIEW)energizeSign(null,0);});
 renderer.domElement.addEventListener('pointerdown',ev=>{
- if(!ev.isPrimary){signPointerDown=null;controls.enabled=true;return;}
+ if(signFocusActive){signPointerDown=null;return;}
+ if(!ev.isPrimary){signPointerDown=null;if(!signFocusActive)controls.enabled=true;return;}
  const hit=signHit(ev);signPointerDown={id:ev.pointerId,x:ev.clientX,y:ev.clientY,hit,dragged:false};
  if(hit){controls.enabled=false;energizeSign(hit,1);}
 },true);
-renderer.domElement.addEventListener('pointercancel',()=>{signPointerDown=null;controls.enabled=true;if(MOBILE_PREVIEW)energizeSign(null,.26);});
-window.addEventListener('pointerup',()=>{signPointerDown=null;controls.enabled=true;});
-window.addEventListener('blur',()=>{signPointerDown=null;controls.enabled=true;});
+renderer.domElement.addEventListener('pointercancel',()=>{signPointerDown=null;if(!signFocusActive)controls.enabled=true;if(MOBILE_PREVIEW)energizeSign(null,.26);});
+window.addEventListener('pointerup',()=>{signPointerDown=null;if(!signFocusActive)controls.enabled=true;});
+window.addEventListener('blur',()=>{signPointerDown=null;if(!signFocusActive)controls.enabled=true;});
 renderer.domElement.addEventListener('pointerup',ev=>{
- const down=signPointerDown;signPointerDown=null;controls.enabled=true;
- if(!down||down.id!==ev.pointerId||down.dragged||Math.hypot(ev.clientX-down.x,ev.clientY-down.y)>14)return;
+ const down=signPointerDown;signPointerDown=null;if(!signFocusActive)controls.enabled=true;
+ const releaseLimit=ev.pointerType==='touch'?30:22;if(!down||down.id!==ev.pointerId||down.dragged||Math.hypot(ev.clientX-down.x,ev.clientY-down.y)>releaseLimit)return;
  const hit=down.hit||signHit(ev);
- if(hit)activateSolutionSign(hit.userData.anchorHash||SIGN_LINKS[hit.userData.linkKey]);
+ if(hit){
+  // Capture the clean click before OrbitControls or any outer desktop shell can consume it.
+  ev.preventDefault();ev.stopPropagation();
+  lastSignActivationAt=performance.now();activateSolutionSign(hit.userData.anchorHash||SIGN_LINKS[hit.userData.linkKey]);
+ }
+},true);
+// Click fallback: some touch/browser combinations hand the final gesture to OrbitControls.
+// Pointer-up remains primary; this only fires when it did not already activate the sign.
+renderer.domElement.addEventListener('click',ev=>{
+ if(signFocusActive)return;
+ if(performance.now()-lastSignActivationAt<450)return;
+ const hit=signHit(ev);if(!hit)return;
+ lastSignActivationAt=performance.now();
+ activateSolutionSign(hit.userData.anchorHash||SIGN_LINKS[hit.userData.linkKey]);
 });
 // Round 1206: sign selection first focuses the 3D camera on that physical machine stage,
 // then hands off to the existing host-page smooth anchor scroller.
@@ -940,6 +984,7 @@ function activateSolutionSign(hash){
  const localTarget=SIGN_FOCUS_POINTS[hash];
  if(!localTarget){navigateSolutionAnchor(hash);return}
  const token=++signFocusToken;
+ signFocusActive=true;
  engine.updateWorldMatrix(true,false);
  const worldTarget=engine.localToWorld(localTarget.clone());
  const startTarget=controls.target.clone();
@@ -947,30 +992,49 @@ function activateSolutionSign(hash){
  let viewVector=startPosition.clone().sub(startTarget);
  if(viewVector.lengthSq()<.0001)viewVector.set(0,0,1);
  viewVector.normalize();
- // The live-data wheel sits farther behind the main machine, so retain a touch more camera distance there.
- const focusDistance=hash==='#solution-world-intelligence'?6.35:5.55;
+ // Keep the same focus behavior for every red sign. The deeper Real-World Intelligence
+ // assembly needs slightly more stand-off so the whole selected wheel remains readable.
+ const focusDistance=hash==='#solution-world-intelligence'?(MOBILE_PREVIEW?5.10:5.45):(MOBILE_PREVIEW?4.30:4.65);
  const endPosition=worldTarget.clone().add(viewVector.multiplyScalar(focusDistance));
  if(hash==='#solution-world-intelligence')endPosition.y+=.22;
  const priorDamping=controls.enableDamping;
  const priorMinDistance=controls.minDistance;
  controls.enabled=false;
  controls.enableDamping=false;
- controls.minDistance=Math.min(priorMinDistance,4.6);
+ controls.minDistance=Math.min(priorMinDistance,3.8);
  const started=performance.now(),duration=1120;
  const ease=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+ // Use the browser's native RAF for this short user-triggered focus move rather than the
+ // performance gate. This guarantees the selected component visibly zooms first on both
+ // mobile and desktop, even if an intersection/visibility message changes during the move.
+ const focusRaf=window.__ahNativeRAF||window.requestAnimationFrame.bind(window);
  function frame(now){
   if(token!==signFocusToken)return;
   const p=Math.min(1,(now-started)/duration),e=ease(p);
   camera.position.lerpVectors(startPosition,endPosition,e);
   controls.target.lerpVectors(startTarget,worldTarget,e);
   controls.update();
-  if(p<1){requestAnimationFrame(frame);return}
-  camera.position.copy(endPosition);controls.target.copy(worldTarget);controls.update();
-  controls.enableDamping=priorDamping;controls.minDistance=priorMinDistance;controls.enabled=true;
-  // Brief visual hold makes the selected component read before the page begins moving.
-  setTimeout(()=>{if(token===signFocusToken)navigateSolutionAnchor(hash)},300);
+  renderer.render(scene,camera);
+  if(p<1){focusRaf(frame);return}
+  camera.position.copy(endPosition);controls.target.copy(worldTarget);controls.update();renderer.render(scene,camera);
+  // Round 1346: hold the exact focused camera through the handoff. Restoring the
+  // old OrbitControls minimum distance immediately here caused the camera to pull
+  // back/re-angle for one visible beat before the page began scrolling. Keep the
+  // focus constraints active until the host glide is already underway.
+  const restoreFocusedControls=()=>{
+   if(token!==signFocusToken)return;
+   controls.enableDamping=priorDamping;
+   controls.minDistance=priorMinDistance;
+   controls.enabled=true;
+   signFocusActive=false;
+  };
+  // Start the page movement directly from the completed zoomed view.
+  setTimeout(()=>{if(token===signFocusToken)navigateSolutionAnchor(hash)},70);
+  // By the time normal interaction is restored, the model is already moving out
+  // of the viewport, so there is no intermediate camera-angle change to see.
+  setTimeout(restoreFocusedControls,900);
  }
- requestAnimationFrame(frame);
+ focusRaf(frame);
 }
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)})
 </script></body></html>

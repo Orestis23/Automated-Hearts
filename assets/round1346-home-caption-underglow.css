@@ -1,0 +1,96 @@
+/* Automated Hearts Round 1346
+   Home route-caption treatment: keep the carbon/matte face, but use the same
+   bottom-emission language as the Learning Center spacebar controls. No halo
+   is allowed above or behind the top edge of the three Home caption fields. */
+
+:root{
+  --ah-r1346-mint:#8fffd7;
+}
+
+/* Desktop Home route captions. */
+html body.page-home[data-page="home"] #home-route-buttons
+.premium-route-card__title-sign.brand-route-screen.ah-home-caption{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:visible!important;
+  filter:none!important;
+  box-shadow:
+    inset 0 1px 0 rgba(244,255,252,.075),
+    inset 0 -7px 12px rgba(0,0,0,.38),
+    inset 0 0 0 1px rgba(143,255,215,.10)!important;
+}
+
+/* Mobile Home route captions use the lightweight route-label DOM. */
+html body[data-ah-mobile-surface="home"] main#main-content
+.route-card > .route-label.ah-home-caption{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:visible!important;
+  filter:none!important;
+  box-shadow:
+    inset 0 1px 0 rgba(244,255,252,.075),
+    inset 0 -7px 12px rgba(0,0,0,.38),
+    inset 0 0 0 1px rgba(143,255,215,.10)!important;
+}
+
+/* Matte-film layer only. It must not produce an exterior glow. */
+html body.page-home[data-page="home"] #home-route-buttons
+.premium-route-card__title-sign.brand-route-screen.ah-home-caption::before,
+html body[data-ah-mobile-surface="home"] main#main-content
+.route-card > .route-label.ah-home-caption::before{
+  content:""!important;
+  position:absolute!important;
+  z-index:1!important;
+  inset:4px!important;
+  display:block!important;
+  border:0!important;
+  outline:0!important;
+  border-radius:inherit!important;
+  background:
+    radial-gradient(circle at 1px 1px,rgba(255,255,255,.038) 0 .48px,transparent .76px) 0 0/5px 5px,
+    repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,rgba(0,0,0,.014) 1px 3px),
+    linear-gradient(180deg,rgba(255,255,255,.041),transparent 38%,rgba(0,0,0,.078))!important;
+  opacity:.408!important;
+  -webkit-backdrop-filter:blur(1.212px) saturate(.88)!important;
+  backdrop-filter:blur(1.212px) saturate(.88)!important;
+  box-shadow:inset 0 0 0 1px rgba(182,201,214,.108)!important;
+  filter:none!important;
+  pointer-events:none!important;
+}
+
+/* Learning Center-style light pool: starts below the face, so none of the
+   luminous blur can wrap over the top/back edge. */
+html body.page-home[data-page="home"] #home-route-buttons
+.premium-route-card__title-sign.brand-route-screen.ah-home-caption::after,
+html body[data-ah-mobile-surface="home"] main#main-content
+.route-card > .route-label.ah-home-caption::after{
+  content:""!important;
+  position:absolute!important;
+  z-index:-1!important;
+  left:10%!important;
+  right:10%!important;
+  top:calc(100% + 2px)!important;
+  bottom:auto!important;
+  display:block!important;
+  width:auto!important;
+  height:9px!important;
+  border:0!important;
+  outline:0!important;
+  border-radius:50%!important;
+  background:radial-gradient(ellipse at 50% 0%,
+    rgba(143,255,215,.66) 0%,
+    rgba(143,255,215,.26) 45%,
+    rgba(143,255,215,.06) 68%,
+    rgba(143,255,215,0) 88%)!important;
+  box-shadow:none!important;
+  filter:blur(1.2px)!important;
+  opacity:1!important;
+  pointer-events:none!important;
+}
+
+html body.page-home[data-page="home"] #home-route-buttons
+.premium-route-card__title-sign.brand-route-screen.ah-home-caption > .ah-route-label-final,
+html body[data-ah-mobile-surface="home"] main#main-content
+.route-card > .route-label.ah-home-caption{
+  z-index:3!important;
+}

@@ -1,0 +1,15 @@
+/* Round 1332: approved About Us images, full composition on every screen. */
+.ah-about-block > img.ah-about-principle-image {
+ display:block!important;
+ position:relative!important;
+ width:100%!important;
+ max-width:100%!important;
+ height:auto!important;
+ aspect-ratio:16 / 9;
+ object-fit:contain!important;
+ margin:0!important;
+ padding:0!important;
+ border:0!important;
+ border-bottom:1px solid rgba(143,255,215,.35)!important;
+ box-sizing:border-box;
+}

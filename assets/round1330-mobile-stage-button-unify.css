@@ -1,0 +1,223 @@
+/* Round 1330 — tighten mobile 3D stage height and unify mobile button hardware.
+   Goals:
+   1) No empty scrollable void below mobile 3D model sections.
+   2) Footer / message / action buttons visually match the Learning Center field style:
+      dark carbon face, reflective glass, mint rim, pink siding, and controlled glow. */
+@media (max-width:900px){
+  /* --- Mobile 3D stage: remove the artificial blank runway below the model area. --- */
+  html body .lite-section.ah-stage-open{
+    content-visibility:visible!important;
+    contain-intrinsic-size:auto!important;
+    padding-bottom:18px!important;
+    min-height:0!important;
+  }
+  html body .lite-section:has(#lite-model-stage:not([hidden])){
+    content-visibility:visible!important;
+    contain-intrinsic-size:auto!important;
+    padding-bottom:18px!important;
+    min-height:0!important;
+  }
+  html body #lite-model-stage,
+  html body #lite-model-stage.stage{
+    min-height:0!important;
+    height:auto!important;
+    overflow:hidden!important;
+    overscroll-behavior:contain!important;
+    padding:14px 12px 16px!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    align-content:start!important;
+    gap:12px!important;
+  }
+  html body #lite-model-stage > *{
+    min-height:0!important;
+  }
+  html body #lite-model-stage .stage-choose-row,
+  html body #lite-model-stage .model-controls{
+    margin:0!important;
+  }
+  html body #lite-model-stage .model-shell,
+  html body #lite-model-shell.model-shell{
+    margin-top:0!important;
+    width:100%!important;
+    min-height:180px!important;
+    height:clamp(210px,37svh,350px)!important;
+    max-height:min(350px,42svh)!important;
+    aspect-ratio:auto!important;
+    overflow:hidden!important;
+    overscroll-behavior:contain!important;
+    align-self:start!important;
+    justify-self:stretch!important;
+  }
+  html body #lite-model-stage .model-shell[hidden],
+  html body #lite-model-shell[hidden]{
+    display:none!important;
+  }
+  html body #lite-model-stage .model-shell iframe,
+  html body #lite-model-shell iframe{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    background:transparent!important;
+  }
+
+  /* --- One visual language for the mobile button family. --- */
+  html body > nav.footer a[href],
+  html body > a.message,
+  html body main#main-content .route-card > .route-label,
+  html body main#main-content .action,
+  html body main#main-content .consult,
+  html body main#main-content .lite-return-control,
+  html body main#main-content .mobile-model-zoom-controls button{
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:hidden!important;
+    border:1.5px solid rgba(143,255,215,.92)!important;
+    border-radius:10px!important;
+    background:
+      linear-gradient(180deg,rgba(16,43,72,.92) 0%,rgba(8,23,43,.97) 56%,rgba(3,7,12,.98) 100%),
+      url('../button-carbon-weave.webp') center/cover no-repeat!important;
+    box-shadow:
+      inset 0 0 0 1px rgba(214,178,87,.22),
+      inset 0 10px 18px rgba(255,255,255,.05),
+      inset 0 -12px 18px rgba(0,0,0,.38),
+      0 0 11px rgba(143,255,215,.18),
+      0 10px 18px rgba(0,0,0,.34)!important;
+    color:#f7ffff!important;
+    text-shadow:0 0 4px rgba(255,255,255,.06),0 0 8px rgba(143,255,215,.08)!important;
+  }
+  html body > nav.footer a[href]::before,
+  html body > a.message::before,
+  html body main#main-content .route-card > .route-label::before,
+  html body main#main-content .action::before,
+  html body main#main-content .consult::before,
+  html body main#main-content .lite-return-control::before,
+  html body main#main-content .mobile-model-zoom-controls button::before{
+    content:""!important;
+    position:absolute!important;
+    inset:3px!important;
+    z-index:2!important;
+    pointer-events:none!important;
+    background:
+      linear-gradient(160deg,
+        rgba(255,255,255,.24) 0%,
+        rgba(255,255,255,.10) 9%,
+        rgba(210,238,255,.05) 18%,
+        rgba(255,255,255,0) 38%,
+        rgba(255,255,255,0) 69%,
+        rgba(91,148,186,.05) 84%,
+        rgba(0,0,0,.11) 100%),
+      radial-gradient(ellipse at 30% -20%,rgba(198,238,255,.18) 0%,rgba(198,238,255,.07) 30%,transparent 65%)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.22),
+      inset 1px 0 0 rgba(255,255,255,.06),
+      inset 0 -2px 3px rgba(0,0,0,.28)!important;
+    opacity:.95!important;
+  }
+  html body > nav.footer a[href]::after,
+  html body > a.message::after,
+  html body main#main-content .route-card > .route-label::after,
+  html body main#main-content .action::after,
+  html body main#main-content .consult::after,
+  html body main#main-content .lite-return-control::after,
+  html body main#main-content .mobile-model-zoom-controls button::after{
+    content:""!important;
+    position:absolute!important;
+    left:3px!important;
+    right:3px!important;
+    bottom:-1px!important;
+    height:5px!important;
+    z-index:1!important;
+    pointer-events:none!important;
+    border-radius:0 0 8px 8px!important;
+    background:linear-gradient(180deg,#ff74c1 0%,#df2a92 42%,#8f0f56 78%,#3f041f 100%)!important;
+    box-shadow:0 0 8px rgba(255,46,168,.32),0 1px 0 rgba(255,180,222,.18) inset!important;
+    opacity:.92!important;
+  }
+
+  /* Keep labels / icons above the glass. */
+  html body > nav.footer a[href] > .footer-nav-label,
+  html body > a.message svg{
+    position:relative!important;
+    z-index:4!important;
+  }
+  html body > a.message svg path{
+    stroke:#ff4933!important;
+  }
+
+  /* Route labels are text nodes, so keep their glass subtle and the glow even. */
+  html body main#main-content .route-card > .route-label,
+  html body main#main-content .action,
+  html body main#main-content .consult,
+  html body main#main-content .lite-return-control{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    letter-spacing:.01em!important;
+  }
+  html body main#main-content .action,
+  html body main#main-content .consult,
+  html body main#main-content .lite-return-control{
+    min-height:48px!important;
+    padding:11px 14px!important;
+  }
+  html body > nav.footer a[href]{
+    box-shadow:
+      inset 0 0 0 1px rgba(214,178,87,.18),
+      inset 0 10px 16px rgba(255,255,255,.045),
+      inset 0 -12px 18px rgba(0,0,0,.40),
+      0 0 9px rgba(143,255,215,.14)!important;
+  }
+  html body > a.message{
+    box-shadow:
+      inset 0 0 0 1px rgba(214,178,87,.26),
+      inset 0 10px 16px rgba(255,255,255,.05),
+      inset 0 -12px 18px rgba(0,0,0,.42),
+      0 0 12px rgba(143,255,215,.20)!important;
+  }
+
+  /* Pressed state: visible travel with the pink siding tucked under. */
+  html body > nav.footer a[href]:active,
+  html body > nav.footer a[href].is-pressed,
+  html body > nav.footer a[href][data-ah-control-pressed="1"],
+  html body > a.message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]),
+  html body main#main-content .route-card:active > .route-label,
+  html body main#main-content .action:active,
+  html body main#main-content .consult:active,
+  html body main#main-content .lite-return-control:active,
+  html body main#main-content .mobile-model-zoom-controls button:active{
+    transform:translateY(2px)!important;
+    box-shadow:
+      inset 0 5px 8px rgba(0,0,0,.65),
+      inset 0 0 0 1px rgba(214,178,87,.14),
+      0 0 7px rgba(143,255,215,.10)!important;
+  }
+  html body > nav.footer a[href]:active::after,
+  html body > nav.footer a[href].is-pressed::after,
+  html body > nav.footer a[href][data-ah-control-pressed="1"]::after,
+  html body > a.message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"])::after,
+  html body main#main-content .route-card:active > .route-label::after,
+  html body main#main-content .action:active::after,
+  html body main#main-content .consult:active::after,
+  html body main#main-content .lite-return-control:active::after,
+  html body main#main-content .mobile-model-zoom-controls button:active::after{
+    opacity:0!important;
+    transform:scaleY(.35)!important;
+  }
+
+  /* Make the mobile model zoom controls visually belong to the same system. */
+  html body .mobile-model-zoom-controls{
+    gap:9px!important;
+  }
+  html body .mobile-model-zoom-controls button{
+    width:42px!important;
+    height:42px!important;
+    min-width:42px!important;
+    min-height:42px!important;
+    font:800 24px/1 Orbitron,system-ui,sans-serif!important;
+  }
+  html body .mobile-model-zoom-controls button[data-model-zoom="out"]{
+    color:#ff70bd!important;
+  }
+}

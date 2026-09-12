@@ -52,7 +52,7 @@
     frame.loading='eager';
     frame.allow='webgl';
     frame.setAttribute('allowtransparency','true');
-    frame.src=`./models/who-we-help-industry-helix-round1093.html?industry=${encodeURIComponent(index)}&v=1160r`;
+    frame.src=`./models/who-we-help-industry-helix-round1093.html?industry=${encodeURIComponent(index)}&v=1353r`;
     modelShell.appendChild(frame);
     modelShell.hidden=false;
   }

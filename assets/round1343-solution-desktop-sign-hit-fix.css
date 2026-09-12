@@ -1,0 +1,13 @@
+/* Round 1343 — authoritative Solution red-sign desktop hit fix.
+   The raised/open machine cover previously retained pointer-events:auto and left a
+   104px interactive lip over the same screen area occupied by the overhead signs.
+   Keep the visual lip, but make the open glass click-through so the 3D canvas receives
+   every sign click. */
+#solution-process-header .solution-process-cover.is-open,
+#lite-model-stage #solution-mobile-cover.solution-mobile-window-cover.is-open{
+  pointer-events:none!important;
+}
+#solution-process-header #solution-engine-model,
+#lite-model-stage #lite-model-shell iframe{
+  pointer-events:auto!important;
+}

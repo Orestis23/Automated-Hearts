@@ -1,0 +1,23 @@
+/* Round 1327 — reliable mobile zoom controls for every embedded lesson / industry 3D model. */
+.model-shell{position:relative!important;}
+.mobile-model-zoom-controls{
+  position:absolute;right:10px;bottom:10px;z-index:40;
+  display:flex;gap:7px;align-items:center;
+  pointer-events:auto;
+}
+.mobile-model-zoom-controls button{
+  width:40px;height:40px;min-width:40px;min-height:40px;
+  display:grid;place-items:center;
+  border:1px solid rgba(205,170,77,.92);
+  border-radius:7px;
+  background:linear-gradient(180deg,rgba(10,20,34,.90),rgba(2,8,15,.94));
+  color:#8fffd7;
+  font:800 24px/1 Orbitron,system-ui,sans-serif;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 -4px 10px rgba(0,0,0,.55),0 4px 10px rgba(0,0,0,.42);
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  user-select:none;
+}
+.mobile-model-zoom-controls button[data-model-zoom="out"]{color:#ff2eaa;}
+.mobile-model-zoom-controls button:active{transform:translateY(2px);box-shadow:inset 0 4px 10px rgba(0,0,0,.65);}
+@media (min-width:801px){.mobile-model-zoom-controls{display:none!important;}}
