@@ -253,3 +253,28 @@
     }
   }
 }
+
+
+/* Round 1475 Home correction: headings sit directly on the live navy screen; no black plaque. */
+@layer ah-desktop-controls-1221 {
+  html body.page-home[data-page="home"] #home-solution-framework .ah-home-process-box > h3,
+  html body[data-ah-mobile-surface="home"] main#main-content .ah-home-process-box > h3,
+  html body main#main-content .ah-home-process-box > h3{
+    background-color:transparent!important;
+    background-image:none!important;
+    border:0!important;
+    border-bottom:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework .ah-home-process-box > h3 > .ah-home-header-matte,
+  html body[data-ah-mobile-surface="home"] main#main-content .ah-home-process-box > h3 > .ah-home-header-matte,
+  html body main#main-content .ah-home-process-box > h3 > .ah-home-header-matte{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    background:none!important;
+    box-shadow:none!important;
+  }
+}

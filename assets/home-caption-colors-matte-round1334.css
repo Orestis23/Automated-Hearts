@@ -51,3 +51,15 @@
     backdrop-filter:blur(.72px) saturate(.86) contrast(.96)!important;
   }
 }
+
+
+@layer ah-industries-caption-match {
+  html body.page-home[data-page="home"] .ah-home-process-box > h3 > .ah-home-header-matte,
+  html body[data-ah-mobile-surface="home"] .ah-home-process-box > h3 > .ah-home-header-matte{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    background:none!important;
+    box-shadow:none!important;
+  }
+}

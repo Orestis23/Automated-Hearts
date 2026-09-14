@@ -23,3 +23,19 @@
     opacity:1!important;
   }
 }
+
+
+/* Round 1475 correction: the Home route-button section must NOT have a divider above it. */
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="home"] main#main-content > .section:first-child{
+    border-bottom:0!important;
+    box-shadow:none!important;
+  }
+  html body[data-ah-mobile-surface="home"] main#main-content > .section:first-child::after{
+    content:none!important;
+    display:none!important;
+    opacity:0!important;
+    background:none!important;
+    box-shadow:none!important;
+  }
+}

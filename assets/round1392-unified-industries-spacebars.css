@@ -142,3 +142,57 @@ width:100%!important;min-width:0!important;max-width:100%!important;box-sizing:b
 html body.page-learning .ah-unified-spacebar{width:100%!important;min-width:0!important;max-width:100%!important;}
 }
 }
+
+/* Round 1480 — mobile route-button copy doubled from the current r1392 visible baseline.
+   Keep this inside the original ah-r1392-route-keys layer so its !important
+   declarations actually outrank the older layered rules. */
+@layer ah-r1392-route-keys {
+  @media (max-width:900px){
+    html body[data-ah-mobile-surface="home"] main#main-content
+    .route-card > .route-label.ah-home-caption.ah-unified-spacebar,
+    html body[data-ah-mobile-surface="learning"] main#main-content
+    .route-card > .route-label.ah-unified-spacebar,
+    html body[data-ah-mobile-surface="industries"] main#main-content
+    .route-card > .route-label.ah-unified-spacebar{
+      font-family:"Orbitron",system-ui,sans-serif!important;
+      font-size:clamp(24px,6.9vw,32px)!important;
+      font-weight:800!important;
+      line-height:.94!important;
+      letter-spacing:.01em!important;
+      white-space:normal!important;
+      text-align:center!important;
+      text-wrap:balance!important;
+    }
+
+    /* Home + Learning: preserve the same key art while giving the larger copy enough vertical room. */
+    html body[data-ah-mobile-surface="home"] main#main-content
+    .route-card > .route-label.ah-home-caption.ah-unified-spacebar,
+    html body[data-ah-mobile-surface="learning"] main#main-content
+    .route-card > .route-label.ah-unified-spacebar{
+      height:78px!important;
+      min-height:78px!important;
+      max-height:78px!important;
+      padding:8px 12px!important;
+    }
+
+    /* Industries has longer names, so allow a clean two-line wrap without clipping. */
+    html body[data-ah-mobile-surface="industries"] main#main-content
+    .route-card > .route-label.ah-unified-spacebar{
+      height:auto!important;
+      min-height:92px!important;
+      max-height:none!important;
+      padding:10px 12px!important;
+    }
+
+    html body[data-ah-mobile-surface="learning"] main#main-content
+    .route-card > .route-label.ah-unified-spacebar > .ah-route-label-final{
+      font:inherit!important;
+      font-size:inherit!important;
+      line-height:inherit!important;
+      letter-spacing:inherit!important;
+      white-space:normal!important;
+      text-align:center!important;
+      text-wrap:balance!important;
+    }
+  }
+}
