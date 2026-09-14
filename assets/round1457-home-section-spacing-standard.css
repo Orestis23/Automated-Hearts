@@ -1,0 +1,107 @@
+/* Round 1457 — Desktop Home spacing authority.
+   Brand standard on Home section boundaries:
+   • 2/3 CSS inch (64px) from the last content above to the horizontal break.
+   • 1/2 CSS inch (48px) from the horizontal break to the first content below.
+   • Section break uses a restrained pink neon glow.
+   This also restores full clearance below the two Home machine windows. */
+
+@layer ah-r929-final {
+  @media (min-width:901px){
+    :root{
+      --ah-home-before-break:64px;
+      --ah-home-after-break:48px;
+      --ah-home-break-pink:rgba(255,46,168,.98);
+    }
+
+    /* Opening machine section: never let the bottom of the machine hardware
+       collide with or disappear behind the following section boundary. */
+    html body.page-home[data-page="home"] main#main-content > #home-opening-hero{
+      box-sizing:border-box!important;
+      height:auto!important;
+      max-height:none!important;
+      min-height:0!important;
+      padding-bottom:var(--ah-home-before-break)!important;
+      overflow:visible!important;
+    }
+    html body.page-home[data-page="home"] #home-opening-hero > #home-hero-shell,
+    html body.page-home[data-page="home"] #home-opening-hero #home-hero-housing{
+      box-sizing:border-box!important;
+      height:auto!important;
+      max-height:none!important;
+      min-height:0!important;
+      overflow:visible!important;
+    }
+    html body.page-home[data-page="home"] #home-opening-hero #home-machine-grid{
+      margin-bottom:0!important;
+    }
+
+    /* Home section rhythm. 48px after a break / 64px before the next break. */
+    html body.page-home[data-page="home"] main#main-content > #home-route-buttons,
+    html body.page-home[data-page="home"] main#main-content > #home-solution-framework,
+    html body.page-home[data-page="home"] main#main-content > .home-overview-display-section{
+      box-sizing:border-box!important;
+      padding-top:var(--ah-home-after-break)!important;
+      padding-bottom:var(--ah-home-before-break)!important;
+      margin-top:0!important;
+      margin-bottom:0!important;
+    }
+
+    /* Remove older one-off clearances so the actual content follows the
+       same brand spacing rather than stacking extra legacy margins. */
+    html body.page-home[data-page="home"] #home-route-buttons > .shell,
+    html body.page-home[data-page="home"] #home-solution-framework > .shell,
+    html body.page-home[data-page="home"] .home-overview-display-section > .shell{
+      margin-top:0!important;
+      margin-bottom:0!important;
+    }
+    html body.page-home[data-page="home"] #home-route-buttons .home-explore-grid,
+    html body.page-home[data-page="home"] .home-overview-display-section .home-transition-carousel{
+      margin-top:0!important;
+      margin-bottom:0!important;
+    }
+
+    /* Negative-Software header had a legacy offset that made the apparent
+       border-to-content gap larger than the section padding. Normalize it. */
+    html body.page-home[data-page="home"] #home-solution-framework .negative-software-heading-round344,
+    html body.page-home[data-page="home"] #home-negative-software-title{
+      margin-top:0!important;
+    }
+
+    /* Slightly glowing horizontal section breaks across Desktop Home. */
+    html body.page-home[data-page="home"] main#main-content > section + section{
+      border-top:2px solid var(--ah-home-break-pink)!important;
+      box-shadow:
+        inset 0 3px 5px rgba(255,46,168,.18),
+        0 -1px 4px rgba(255,46,168,.36)!important;
+    }
+
+    /* Neutralize older dedicated divider pseudo-lines so there is one clean
+       break line rather than doubled pink strokes. */
+    html body.page-home[data-page="home"] main#main-content > #home-solution-framework::after{
+      content:none!important;
+      display:none!important;
+    }
+  }
+}
+
+/* Final specificity lock for the Negative-Software section: the desktop-only
+   mobile title stack was still reserving space, and an older selector forced
+   64px top padding. Remove that hidden reservation so the visible title begins
+   exactly one-half inch below the glowing break. */
+@layer ah-r929-final {
+  @media (min-width:901px){
+    html body.page-home[data-page="home"] main#main-content > section#home-solution-framework.negative-software-section-round344{
+      padding-top:var(--ah-home-after-break)!important;
+      padding-bottom:var(--ah-home-before-break)!important;
+    }
+    html body.page-home[data-page="home"] #home-solution-framework .r902-mobile-zero-title-stack{
+      display:none!important;
+      width:0!important;
+      height:0!important;
+      min-height:0!important;
+      margin:0!important;
+      padding:0!important;
+      overflow:hidden!important;
+    }
+  }
+}

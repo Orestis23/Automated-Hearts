@@ -1,0 +1,80 @@
+/* Automated Hearts Round 1453 — final verified authority.
+   Fixes Learning Center chooser centering, persistent ticker glow, exact
+   Messages-button accent geometry on all footer keys, and desktop footer copy. */
+:root{--ah1453-pink:#ff2ea8;--ah1453-mint:#8fffd7;--ah1453-red:#ff3030;}
+
+@media (min-width:901px){
+  body.page-learning.ah-model-stage-locked[data-page="learning"] main#main-content > #learning-route-buttons{
+    position:absolute!important;z-index:18!important;top:0!important;right:0!important;
+    bottom:var(--r857-ticker-height,48px)!important;left:0!important;
+    width:auto!important;min-width:0!important;max-width:none!important;
+    height:auto!important;min-height:0!important;max-height:none!important;
+    margin:0!important;padding:0!important;overflow:visible!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    transform:none!important;translate:none!important;
+  }
+  body.page-learning.ah-model-stage-locked[data-page="learning"] #learning-route-buttons > .shell.compact-hero-grid{
+    position:relative!important;width:100%!important;min-width:0!important;max-width:100%!important;
+    height:100%!important;min-height:0!important;max-height:100%!important;
+    margin:0!important;padding:0!important;display:flex!important;
+    align-items:center!important;justify-content:center!important;overflow:visible!important;
+    transform:none!important;translate:none!important;
+  }
+  body.page-learning.ah-model-stage-locked[data-page="learning"] #learning-paths{
+    position:relative!important;width:min(calc(100% - 36px),1600px)!important;min-width:0!important;max-width:1600px!important;
+    height:auto!important;min-height:0!important;max-height:100%!important;margin:0 auto!important;padding:0!important;
+    transform:none!important;translate:none!important;
+  }
+  body.page-learning.ah-model-stage-locked[data-page="learning"] .learning-header-grid.r987-learning-flat-grid{
+    position:relative!important;width:100%!important;min-width:0!important;max-width:1600px!important;
+    height:auto!important;min-height:0!important;max-height:100%!important;margin:0 auto!important;padding:0!important;
+    display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:auto!important;
+    align-items:center!important;justify-items:center!important;align-content:center!important;justify-content:center!important;
+    gap:clamp(22px,3.2vw,58px)!important;transform:none!important;translate:none!important;
+  }
+  body.page-learning.ah-model-stage-locked[data-page="learning"] #learning-route-buttons > .ah-learning-ticker-line-r1451{
+    position:absolute!important;z-index:100!important;right:0!important;bottom:-2px!important;left:0!important;top:auto!important;
+    width:auto!important;height:2px!important;margin:0!important;padding:0!important;border:0!important;
+    background:#ff2ea8!important;box-shadow:0 0 3px rgba(255,46,168,.78),0 0 7px rgba(255,46,168,.25)!important;
+    opacity:1!important;pointer-events:none!important;
+  }
+}
+
+/* Remove every older corner-accent painter before applying the final exact trace. */
+.ah-footer-pink-corners,.ah1451-message-match-accents,.ah1452-message-corner-overlay{
+  display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;
+}
+.ah1453-message-corner-overlay{
+  position:absolute!important;z-index:96!important;inset:0!important;display:block!important;visibility:visible!important;
+  opacity:1!important;overflow:hidden!important;pointer-events:none!important;background-color:transparent!important;
+  background-position:center!important;background-size:100% 100%!important;background-repeat:no-repeat!important;filter:none!important;
+}
+@media (min-width:801px){
+  footer#site-footer .ah1453-message-corner-overlay{
+    background-image:url('./footer-message-mobile-geometry-pink-round1453.svg?v=1453r')!important;
+  }
+  footer#site-footer .footer-nav-label{
+    font-family:"Orbitron",system-ui,sans-serif!important;font-size:16px!important;font-weight:700!important;
+    line-height:1!important;letter-spacing:0!important;text-align:center!important;
+    color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;
+    text-shadow:0 0 1px rgba(255,114,199,.24)!important;filter:none!important;opacity:1!important;
+  }
+}
+@media (max-width:900px){
+  body > nav.footer > a[href]{
+    position:relative!important;background-image:url('./mobile-footer-key-navy-wide-round1388.svg?v=1453r')!important;
+    background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;
+  }
+  body > nav.footer > a[href]:nth-child(odd) > .ah1453-message-corner-overlay{
+    background-image:url('./footer-message-mobile-geometry-mint-round1453.svg?v=1453r')!important;
+  }
+  body > nav.footer > a[href]:nth-child(even) > .ah1453-message-corner-overlay{
+    background-image:url('./footer-message-mobile-geometry-pink-round1453.svg?v=1453r')!important;
+  }
+  body > a.message{
+    background-image:url('./mobile-message-key-pointed-red-round1446.svg?v=1453r')!important;
+    background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;
+  }
+  body > a.message svg{color:#ff3030!important;filter:drop-shadow(0 0 1px rgba(255,48,48,.35))!important;}
+  body > a.message svg :is(path,polyline,line){stroke:#ff3030!important;}
+}

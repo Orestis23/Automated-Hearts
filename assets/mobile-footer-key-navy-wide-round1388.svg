@@ -55,4 +55,9 @@
   <path d="M18 12H106" stroke="#8db0cc" stroke-opacity=".19"/>
   <path d="M12 18V59" stroke="#6c93b4" stroke-opacity=".11"/>
   <path d="M112 18V59" stroke="#000" stroke-opacity=".48"/>
-<path d="M16 10H108L114 16V61L106 70H18L10 61V16Z" fill="none" stroke="#020810" stroke-width="5.5" stroke-linejoin="round"/><path d="M16 10H108L114 16V61L106 70H18L10 61V16Z" fill="none" stroke="url(#rim1389)" stroke-width="3.2" stroke-linejoin="round"/></svg>
+<path d="M16 10H108L114 16V61L106 70H18L10 61V16Z" fill="none" stroke="#020810" stroke-width="5.5" stroke-linejoin="round"/><path d="M16 10H108L114 16V61L106 70H18L10 61V16Z" fill="none" stroke="url(#rim1389)" stroke-width="3.2" stroke-linejoin="round"/>
+  <g id="ah1445-mobile-footer-corner-trace" fill="none" stroke="#ff2ea8" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" opacity="1">
+    <path d="M10 32V16L16 10H38"/>
+    <path d="M86 70H106L114 61V46"/>
+  </g>
+</svg>

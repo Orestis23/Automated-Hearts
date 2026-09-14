@@ -1,0 +1,79 @@
+AUTOMATED HEARTS — ROUND 1453 QA REPORT
+Date: 2026-09-14
+
+SCOPE
+1. Learning Center desktop chooser vertical position/centering.
+2. Learning Center ticker top-line pink glow and route-state restoration.
+3. Desktop footer text size/legibility.
+4. Desktop and mobile footer corner accents matching the Messages-button geometry with complete sharp-point endpoints.
+5. Messages button red treatment preserved.
+6. Persistent-router cache/version behavior so updated pages actually load.
+
+ROOT CAUSE FOUND
+- The persistent shell router was still loading embedded pages with v=1394r. That allowed a browser/CDN cache to reuse an older Learning Center document even when newer CSS existed in the ZIP.
+- Legacy footer/learning rules include high-specificity and inline !important styles. A final inline authority layer is required to win deterministically.
+- Earlier accent art used a separate approximation. Round 1453 uses the exact path geometry from the mobile Messages button.
+
+FIXES APPLIED
+- Persistent iframe route version raised to v=1453r and the router script itself is cache-busted at v=1453r on all shell pages.
+- Learning Center chooser is positioned inside the actual main-content frame, reserving 48px for the ticker and centering the chooser in the remaining band.
+- Medallion size is constrained by both vertical room and real column width, preventing overlap at narrower desktop widths.
+- Learning ticker line top aligns exactly with the chooser band bottom; its 2px pink line uses restrained 3px + 7px glow falloff.
+- Desktop footer text is 24px (50% larger than the 16px measured baseline) with only a 1px restrained glow.
+- Footer accents now use the exact mobile Messages-button accent paths, including the diagonal corner segment and marker-based sharp points at both ends.
+- Desktop accents remain pink; mobile accents alternate mint/pink to match the corresponding button copy; Messages button remains red.
+
+COMPUTED-LAYOUT QA — LEARNING CENTER
+- 1920x832: PASS | top gap 16.0px | bottom-to-line gap 16.0px | center delta 0.0px | medallion 460.0px | within column: YES
+- 1920x900: PASS | top gap 50.0px | bottom-to-line gap 50.0px | center delta 0.0px | medallion 460.0px | within column: YES
+- 1440x900: PASS | top gap 91.0px | bottom-to-line gap 91.0px | center delta 0.0px | medallion 378.0px | within column: YES
+- 1366x768: PASS | top gap 36.5px | bottom-to-line gap 36.5px | center delta 0.0px | medallion 355.0px | within column: YES
+- 1280x720: PASS | top gap 26.0px | bottom-to-line gap 26.0px | center delta 0.0px | medallion 328.0px | within column: YES
+
+TICKER ROUTE-STATE QA
+- Normal page before Learning: 2px solid rgba(210, 229, 237, 0.96); shadow none.
+- Learning route: 2px solid rgb(255, 46, 168); shadow rgba(255, 46, 168, 0.78) 0px 0px 3px 0px, rgba(255, 46, 168, 0.25) 0px 0px 7px 0px.
+- After leaving Learning: 2px solid rgba(210, 229, 237, 0.96); shadow none.
+- State transition/restoration: PASS.
+
+FOOTER QA — DESKTOP
+- Primary computed test: PASS.
+- Expected font size: 24px. Expected text glow: 1px only. Expected overlay count: exactly one final accent overlay per button.
+- desktop-home.html: PASS (5 footer buttons checked)
+- solutions.html: PASS (5 footer buttons checked)
+- who-we-help.html: PASS (5 footer buttons checked)
+- learning-center.html: PASS (5 footer buttons checked)
+- about.html: PASS (5 footer buttons checked)
+- pricing.html: PASS (5 footer buttons checked)
+
+FOOTER QA — MOBILE
+- Primary computed test: PASS.
+- index.html: PASS (5 footer buttons checked)
+- mobile-solutions.html: PASS (5 footer buttons checked)
+- mobile-who-we-help.html: PASS (5 footer buttons checked)
+- mobile-learning-center.html: PASS (5 footer buttons checked)
+- mobile-about.html: PASS (5 footer buttons checked)
+- mobile-pricing.html: PASS (5 footer buttons checked)
+
+ACCENT GEOMETRY QA
+- Exact path match to mobile Messages button: PASS.
+- Top-left path: M10 32V16L16 10H34
+- Bottom-right path: M56 70H72L80 61V46
+- Start and end markers are present on both accent paths, so each exposed endpoint terminates in a complete sharp point rather than a blunt/clipped line.
+- Accent overlays have pointer-events:none so they cannot block navigation clicks/taps.
+
+MESSAGES BUTTON QA
+- Desktop Messages button still uses message-button-pointed-red-round1446.svg (red accent artwork).
+- Mobile Messages button still uses mobile-message-key-pointed-red-round1446.svg; red envelope/stroke treatment remains active.
+
+CACHE/LOAD QA
+- All HTML references to the previous Round 1452 authority were replaced with Round 1453 unique filenames.
+- Persistent shell router embedded-page cache key is v=1453r.
+- Persistent shell router script reference is v=1453r across desktop and mobile shell pages.
+
+SYNTAX/INTEGRITY
+- round1453-verified-ui-authority.js: Node syntax check PASS.
+- persistent-shell-router-round1241.js: Node syntax check PASS.
+- Final ZIP integrity test: PASS (unzip -t, no compressed-data errors).
+
+OVERALL RESULT: PASS

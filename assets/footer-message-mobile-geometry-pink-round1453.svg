@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90" preserveAspectRatio="none">
+  <defs>
+    <marker id="tip" markerWidth="1.4" markerHeight="1" refX="0.7" refY="0.5" viewBox="0 0 1.4 1" orient="auto-start-reverse" markerUnits="strokeWidth"><path d="M0 0L1.4 .5L0 1Z" fill="#ff2ea8"/></marker>
+  </defs>
+  <g fill="none" stroke="#ff2ea8" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" marker-start="url(#tip)" marker-end="url(#tip)">
+    <path d="M10 32V16L16 10H34"/>
+    <path d="M56 70H72L80 61V46"/>
+  </g>
+</svg>

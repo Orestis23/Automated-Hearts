@@ -27,4 +27,9 @@
 <g clip-path="url(#face-clip)"><rect width="640" height="160" fill="#08172b"/><rect width="640" height="160" fill="url(#suede)"/><rect width="640" height="160" fill="url(#face-light)"/></g>
 <use href="#face-shape" fill="none" stroke="#8fffd7" stroke-width="2.4" stroke-linejoin="round"/>
 <use href="#inner-rim" fill="none" stroke="#c1ffec" stroke-opacity=".80" stroke-width="1" stroke-linejoin="round"/>
-<rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="#020810" stroke-width="5"/><rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="url(#rim1389)" stroke-width="2.8"/></svg>
+<rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="#020810" stroke-width="5"/><rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="url(#rim1389)" stroke-width="2.8"/>
+<g id="ah1445-footer-corner-trace" fill="none" stroke="#ff2ea8" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter" opacity="1">
+  <path d="M8 34V8H66"/>
+  <path d="M632 119V145H574"/>
+</g>
+</svg>

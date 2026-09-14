@@ -1,0 +1,65 @@
+/* Round 1466 — focused learning/mobile spacebar authority.
+   1) Desktop Learning Center: slightly larger breathing room between each large lesson button/image and its text spacebar so the lower glow reads more clearly.
+   2) Mobile Home / Learning / Industries: route-spacebar copy is 50% larger than the Round 1429 final mobile copy baseline. */
+
+@layer ah-r929-final {
+  /* Desktop Learning Center: give the lower glow more room to breathe. */
+  @media (min-width:901px){
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    .learning-header-grid.r987-learning-flat-grid
+    > article.r987-learning-flat-card{
+      gap:20px!important;
+      row-gap:20px!important;
+    }
+
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    .learning-header-grid.r987-learning-flat-grid
+    > article.r987-learning-flat-card
+    > .premium-route-card__title-sign.ah-unified-spacebar{
+      margin-top:0!important;
+      margin-bottom:0!important;
+    }
+  }
+
+  @media (max-width:900px){
+    /* HOME: Round 1429 = clamp(27px, 7.3vw, 36px); exact 150% = 40.5 / 10.95vw / 54. */
+    html body[data-ah-mobile-surface="home"] main#main-content
+    .route-card > .route-label.ah-home-caption.ah-unified-spacebar{
+      font-size:clamp(40.5px,10.95vw,54px)!important;
+      line-height:.90!important;
+      white-space:normal!important;
+      text-wrap:balance!important;
+    }
+
+    /* LEARNING: same Round 1429 mobile baseline, enlarged exactly 50%. */
+    html body[data-ah-mobile-surface="learning"] main#main-content
+    .route-card > .route-label.ah-unified-spacebar{
+      font-size:clamp(40.5px,10.95vw,54px)!important;
+      line-height:.90!important;
+      white-space:normal!important;
+      text-wrap:balance!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content
+    .route-card > .route-label.ah-unified-spacebar > .ah-route-label-final{
+      font-size:inherit!important;
+      line-height:inherit!important;
+      white-space:normal!important;
+      text-wrap:balance!important;
+    }
+
+    /* INDUSTRIES: Round 1429 = clamp(24px, 6.2vw, 32px); exact 150% = 36 / 9.3vw / 48. */
+    html body[data-ah-mobile-surface="industries"] main#main-content
+    .route-card > .route-label.ah-unified-spacebar{
+      font-size:clamp(36px,9.3vw,48px)!important;
+      line-height:.88!important;
+      white-space:normal!important;
+      text-wrap:balance!important;
+      min-height:76px!important;
+      height:auto!important;
+      padding-top:8px!important;
+      padding-bottom:8px!important;
+    }
+  }
+}

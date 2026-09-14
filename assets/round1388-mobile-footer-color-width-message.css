@@ -3,7 +3,7 @@
 @layer ah-r1381-mobile-root {
   @media (max-width:900px) {
     :root{
-      --r1388-footer-key:url('./mobile-footer-key-navy-wide-round1388.svg?v=1389r');
+      --r1388-footer-key:url('./mobile-footer-key-navy-wide-round1388.svg?v=1445r');
       --r1388-message-key:url('./mobile-message-key-navy-wide-round1388.svg?v=1389r');
     }
 

@@ -367,7 +367,7 @@
     const u = new URL(file, location.href);
     /* Round 1250: version mobile content documents as well as their CSS so the
        persistent iframe cannot reuse an older page shell after a visual round. */
-    u.searchParams.set('v','1394r');
+    u.searchParams.set('v','1466r');
     if (isMobile && key === 'home') u.searchParams.set('mobile','1');
     return u.href;
   };
@@ -406,6 +406,33 @@
 
   const updateShell = (nextKey, previousKey) => {
     const info = pages[nextKey];
+    /* Round 1453: publish the live persistent-shell route and make the Learning
+       ticker top edge pink/glowing in the parent shell. The ticker has inline
+       !important hardware styles, so this must be applied through CSSOM here. */
+    try {
+      document.documentElement.dataset.ahShellPage = nextKey;
+      document.body.dataset.ahShellPage = nextKey;
+      const tickerScreen = document.querySelector('body > #home-ticker-wrap > #home-charity-ticker');
+      if (tickerScreen) {
+        if (!('ah1453OriginalBoxShadow' in tickerScreen.dataset)) {
+          tickerScreen.dataset.ah1453OriginalBoxShadow = tickerScreen.style.getPropertyValue('box-shadow') || '';
+          tickerScreen.dataset.ah1453OriginalBorderTop = tickerScreen.style.getPropertyValue('border-top') || getComputedStyle(tickerScreen).borderTop || '';
+        }
+        if (nextKey === 'learning') {
+          tickerScreen.style.setProperty('border-top','2px solid #ff2ea8','important');
+          const baseShadow = tickerScreen.dataset.ah1453OriginalBoxShadow || '';
+          const glow = '0 0 3px rgba(255,46,168,.78), 0 0 7px rgba(255,46,168,.25)';
+          tickerScreen.style.setProperty('box-shadow', baseShadow ? (baseShadow + ', ' + glow) : glow, 'important');
+        } else {
+          const originalBorder = tickerScreen.dataset.ah1453OriginalBorderTop || '';
+          if (originalBorder) tickerScreen.style.setProperty('border-top', originalBorder, 'important');
+          else tickerScreen.style.removeProperty('border-top');
+          const original = tickerScreen.dataset.ah1453OriginalBoxShadow || '';
+          if (original) tickerScreen.style.setProperty('box-shadow', original, 'important');
+          else tickerScreen.style.removeProperty('box-shadow');
+        }
+      }
+    } catch (_) {}
     const title = shellPageTitle();
     const displayTitle = (isMobile && info.mobileTitle) ? info.mobileTitle : info.title;
     if (title) {

@@ -3,8 +3,8 @@
    Mobile controls are intentionally untouched. */
 @media (min-width:801px){
   :root{
-    --r1354-footer-rest:url('./footer-button-message-border-match-round1095.svg?v=1354r')!important;
-    --r1354-footer-pressed:url('./footer-button-message-border-match-pressed-round1095.svg?v=1354r')!important;
+    --r1354-footer-rest:url('./footer-button-message-border-match-round1095.svg?v=1445r')!important;
+    --r1354-footer-pressed:url('./footer-button-message-border-match-pressed-round1095.svg?v=1445r')!important;
     --r1354-message-rest:url('./message-button-square-footer-match-round1095.svg?v=1354r')!important;
     --r1354-message-pressed:url('./message-button-square-footer-match-pressed-round1095.svg?v=1354r')!important;
     --r1005-message-size:84px!important;
@@ -80,6 +80,15 @@
     -webkit-clip-path:none!important;
     filter:none!important;
     transform:none!important;
+  }
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]
+  :is(.footer-nav-label,.send-control-copy.footer-control-copy){
+    color:#ff2ea8!important;
+    -webkit-text-fill-color:#ff2ea8!important;
+    text-shadow:0 0 2px rgba(255,91,188,.96),0 0 8px rgba(255,46,168,.38)!important;
   }
   html body[data-page][class][class][class][class][class][class]
   > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal

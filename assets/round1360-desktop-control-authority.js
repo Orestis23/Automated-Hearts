@@ -3,9 +3,9 @@
 (function(){
   'use strict';
   var MQ='(min-width:801px)';
-  var FOOT_REST='./assets/footer-button-message-border-match-round1095.svg?v=1390r';
+  var FOOT_REST='./assets/footer-button-message-border-match-round1095.svg?v=1451r';
   var FOOT_DOWN=FOOT_REST;
-  var MSG_REST='./assets/message-button-square-footer-match-round1095.svg?v=1390r';
+  var MSG_REST='./assets/message-button-pointed-red-round1446.svg?v=1451r';
   var MSG_DOWN=MSG_REST;
   var timers=new WeakMap();
   function imp(el,p,v){if(el)el.style.setProperty(p,v,'important');}

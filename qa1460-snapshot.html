@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><style>@layer ah-r1459-authority, ah-r1392-route-keys, ah-r1389-controls;</style><style>@layer ah-r1392-route-keys;</style><style>@layer ah-r1389-controls;</style><link href="./assets/desktop-pink-borders-controls-round1221.css?v=1240r" rel="stylesheet"/><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><style id="ah-desktop-first-visit-critical-r1157">
+html[data-ah-desktop-intro="1"] #desktop-first-visit-intro{display:grid!important;place-items:center!important;position:fixed!important;z-index:2147483190!important;top:var(--current-frame-top,96px)!important;right:var(--current-frame-side,88px)!important;bottom:var(--current-frame-bottom,96px)!important;left:var(--current-frame-side,88px)!important;overflow:hidden!important;box-sizing:border-box!important;border-radius:var(--current-frame-radius,32px)!important;background-color:#08172b!important;background-image:url("./assets/page-shield-smoked-heart.webp")!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;color:#f5fbff!important;transform:translate3d(0,0,0);transition:transform 3000ms cubic-bezier(.18,.68,.20,1)!important}
+html[data-ah-desktop-intro="1"]{overflow:hidden!important}
+html[data-ah-desktop-intro="1"] #desktop-first-visit-intro.is-raising{transform:translate3d(0,-105%,0)!important}
+html[data-ah-desktop-intro="1"] body[data-page] > #page-transition-shield{display:none!important;visibility:hidden!important}
+#desktop-first-visit-intro .desktop-intro-copy{position:relative;z-index:1;width:min(72vw,920px);padding:34px 42px;color:#f5fbff;font:700 clamp(22px,2.05vw,36px)/1.48 "Orbitron",system-ui,sans-serif;letter-spacing:.012em;text-shadow:0 2px 4px rgba(0,0,0,.94)}
+#desktop-first-visit-intro .desktop-intro-line{min-height:1.48em;margin:0 0 24px}#desktop-first-visit-intro .pink{color:#ff2ea8}#desktop-first-visit-intro .green{color:#8fffd7}
+#desktop-first-visit-intro .desktop-intro-cursor{display:inline-block;width:.55em;height:1.04em;margin-left:.13em;vertical-align:-.13em;background:#8fffd7;animation:ahEarlyDesktopCursor1157 .78s steps(1,end) infinite}
+#desktop-first-visit-intro .desktop-intro-signature-heart{display:block;width:clamp(64px,5.2vw,94px);height:auto;margin:4px auto 0;opacity:0;visibility:hidden;clip-path:circle(0% at 50% 52%);transform:scale(.78);transform-origin:50% 52%;filter:grayscale(1) brightness(3.65) contrast(1.62) drop-shadow(0 0 5px rgba(255,255,255,.36));pointer-events:none}#desktop-first-visit-intro .desktop-intro-signature-heart[hidden]{display:none!important}#desktop-first-visit-intro .desktop-intro-signature-heart.is-signing{visibility:visible;animation:ahDesktopSignatureHeartInsideOut1165 1450ms cubic-bezier(.16,.72,.18,1) forwards}@keyframes ahDesktopSignatureHeartInsideOut1165{0%{opacity:0;clip-path:circle(0% at 50% 52%);transform:scale(.78);filter:grayscale(1) brightness(5) contrast(1.8) drop-shadow(0 0 2px rgba(255,255,255,.12))}18%{opacity:.72;clip-path:circle(12% at 50% 52%);filter:grayscale(1) brightness(4.35) contrast(1.72) drop-shadow(0 0 10px rgba(255,255,255,.88))}52%{opacity:.93;clip-path:circle(39% at 50% 52%);transform:scale(.91);filter:grayscale(1) brightness(3.95) contrast(1.67) drop-shadow(0 0 14px rgba(255,255,255,.9))}78%{opacity:.98;clip-path:circle(61% at 50% 52%);filter:grayscale(1) brightness(3.72) contrast(1.62) drop-shadow(0 0 11px rgba(255,255,255,.75))}100%{opacity:.96;clip-path:circle(78% at 50% 52%);transform:scale(1);filter:grayscale(1) brightness(3.55) contrast(1.58) drop-shadow(0 0 8px rgba(255,255,255,.6))}}
+@keyframes ahEarlyDesktopCursor1157{50%{opacity:0}}
+</style>
+<!-- Round 1163: theater-style first-visit shield; the persistent shell masks its upward travel. -->
+<style id="ah-desktop-intro-theater-layer-r1163">
+html[data-ah-desktop-intro="1"] body[data-page] > #desktop-first-visit-intro.desktop-first-visit-intro,
+body[data-page] > #desktop-first-visit-intro.desktop-first-visit-intro{
+  z-index:2147483190!important;
+  isolation:isolate!important;
+}
+body[data-page] > .ah-persistent-outer-rim{z-index:2147483200!important;}
+body[data-page] > .ah-persistent-gold-rim{z-index:2147483250!important;}
+</style>
+<style id="r1064-deployment-shield-critical">@view-transition{navigation:auto}html.page-shield-arrival body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel{transform:translate3d(0,0,0)!important;-webkit-transform:translate3d(0,0,0)!important;transition:none!important}html.ah-persistent-content-active body>main#main-content{visibility:visible!important;pointer-events:auto!important}#ah-persistent-page-frame,#ah-persistent-route-loading{display:none!important;visibility:hidden!important;pointer-events:none!important}</style><style id="r913-message-critical">html body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-color:transparent!important;background-image:url('./assets/message-button-pointed-red-round1446.svg?v=1453r')!important;background-position:top right!important;background-size:100% 100%!important;background-repeat:no-repeat!important;border:0!important;box-shadow:none!important;filter:brightness(1.36) saturate(1.08) contrast(1.06) drop-shadow(0 5px 6px rgba(0,0,0,.48)) drop-shadow(0 0 8px rgba(143,255,215,.25))!important}html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-image:url("./assets/message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;transform:translate3d(0,4px,0)!important}</style><link as="image" fetchpriority="high" href="./assets/footer-button-message-border-match-round1095.svg?v=1445r" rel="preload"/><link as="image" fetchpriority="high" href="./assets/message-button-square-footer-match-round1095.svg?v=1095r" rel="preload"/><style id="r1034-hardware-critical">:root{--r1034-footer-rest:url("./assets/footer-button-message-border-match-round1095.svg?v=1445r");--r1034-footer-pressed:url("./assets/footer-button-message-border-match-pressed-round1095.svg?v=1445r");--r1034-message-rest:url("./assets/message-button-square-footer-match-round1095.svg?v=1095r");--r1034-message-pressed:url("./assets/message-button-square-footer-match-pressed-round1095.svg?v=1095r");--r1005-message-size:84px;--r1005-message-top:6px;--r1005-message-right:6px;--r1005-message-face:var(--r1034-message-rest)}html.ah-message-persist-open{--r1005-message-face:var(--r1034-message-pressed)}body[data-page]>.ah-persistent-outer-rim{position:fixed!important;inset:0!important;opacity:1!important;visibility:visible!important;transition:none!important;animation:none!important}body[data-page]>.ah-persistent-gold-rim{opacity:1!important;visibility:visible!important;transition:none!important;animation:none!important}body[data-page]>a#header-send-message{position:fixed!important;top:var(--r1005-message-top)!important;right:var(--r1005-message-right)!important;width:var(--r1005-message-size)!important;height:var(--r1005-message-size)!important;background-image:var(--r1005-message-face)!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;transition:none!important}body[data-page]>footer#site-footer{position:fixed!important;left:0!important;right:0!important;bottom:0!important;height:96px!important;transition:none!important}body[data-page]>footer#site-footer nav#primary-nav{position:absolute!important;left:24px!important;right:24px!important;top:50%!important;height:70px!important;transform:translateY(-50%)!important}body[data-page]>footer#site-footer nav#primary-nav>.primary-nav__group{display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important;height:70px!important;gap:18px!important}body[data-page]>footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]{flex:0 0 220px!important;width:220px!important;min-width:220px!important;max-width:220px!important;height:70px!important;min-height:70px!important;max-height:70px!important;background-image:var(--r1034-footer-rest)!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;transition:none!important}@media(max-width:1100px){body[data-page]>footer#site-footer{height:88px!important}}@media(max-width:760px){:root{--r1005-message-size:37.5px;--r1005-message-top:max(15.25px,calc(env(safe-area-inset-top,0px) + 15.25px));--r1005-message-right:max(14.25px,calc(env(safe-area-inset-right,0px) + 14.25px))}body[data-page]>footer#site-footer{height:78px!important}body[data-page]>footer#site-footer nav#primary-nav{left:3px!important;right:3px!important;height:52px!important}body[data-page]>footer#site-footer nav#primary-nav>.primary-nav__group{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;height:52px!important;gap:2px!important}body[data-page]>footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]{flex:none!important;width:100%!important;min-width:0!important;max-width:none!important;height:50px!important;min-height:50px!important;max-height:50px!important}}@media(max-width:360px){:root{--r1005-message-size:34.5px;--r1005-message-top:max(14.75px,calc(env(safe-area-inset-top,0px) + 14.75px));--r1005-message-right:max(13.75px,calc(env(safe-area-inset-right,0px) + 13.75px))}}</style>
+<style id="r1036-shell-persistence-critical">
+@view-transition{navigation:auto}
+body[data-page]>.ah-persistent-outer-rim{view-transition-name:ah-outer-rim!important}body[data-page]>.ah-persistent-gold-rim{view-transition-name:ah-gold-rim!important}body[data-page]>.rim-heart-emblem{view-transition-name:ah-rim-heart!important}body[data-page]>.rim-page-name-screen{view-transition-name:ah-page-screen!important}body[data-page]>#header-send-message{view-transition-name:ah-message-button!important}body[data-page]>#home-ticker-wrap{view-transition-name:ah-ticker-hardware!important}body[data-page]>#site-footer{view-transition-name:ah-footer-hardware!important}
+</style>
+<link as="image" fetchpriority="high" href="./assets/page-shield-smoked-heart.webp" rel="preload" type="image/webp"/>
+<link as="image" fetchpriority="high" href="./assets/solution-formula-current-brand-round823.webp" rel="preload" type="image/webp"/>
+<style id="viewport-shell-critical">
+:root{--r919-rim-size:clamp(1280px,83.333vw,2560px);}
+html,body{background-color:#000!important;background-image:none!important;background-position:center center!important;background-size:var(--r919-rim-size) var(--r919-rim-size)!important;background-repeat:repeat!important;background-attachment:fixed!important;background-blend-mode:normal!important;}
+html:not(.ah-shell-dom-ready)::after{content:""!important;position:fixed!important;z-index:2147483250!important;top:var(--current-frame-top,96px)!important;right:var(--current-frame-side,88px)!important;bottom:var(--current-frame-bottom,96px)!important;left:var(--current-frame-side,88px)!important;box-sizing:border-box!important;display:block!important;border:2px solid rgba(214,178,87,.94)!important;border-radius:var(--current-frame-radius,32px)!important;background:transparent!important;box-shadow:0 0 0 2px rgba(31,19,3,.96),0 0 0 4px rgba(232,202,126,.30),0 0 10px rgba(216,176,76,.24),inset 0 0 0 1px rgba(255,239,194,.28),inset 0 0 0 4px rgba(2,5,8,.30)!important;pointer-events:none!important;}
+html.page-shield-arrival:not(.ah-shield-dom-ready)::before{content:""!important;position:fixed!important;z-index:2147483190!important;top:var(--current-frame-top,96px)!important;right:var(--current-frame-side,88px)!important;bottom:var(--current-frame-bottom,96px)!important;left:var(--current-frame-side,88px)!important;display:block!important;box-sizing:border-box!important;border:1px solid rgba(143,255,215,.24)!important;border-radius:calc(var(--current-frame-radius,32px) - 2px)!important;background:#08172b url("./assets/page-shield-embossed-strong-round1067.webp") center/cover no-repeat!important;box-shadow:inset 0 0 0 1px rgba(0,0,0,.62)!important;pointer-events:none!important;}
+
+html,body{min-height:100%;
+        margin:0;
+        background-color:#000;
+        background-image:none;
+        background-size:clamp(1280px,83.333vw,2560px) clamp(1280px,83.333vw,2560px);
+        background-position:center center;
+        background-repeat:repeat;
+        background-attachment:fixed;
+        background-blend-mode:normal;
+        color-scheme:dark;}
+body[data-page] > .rim-heart-emblem{position: fixed;
+        z-index: 10075;
+        top: calc((96px - 122px) / 2 + 3px);
+        left: calc((88px - 110px) / 2);
+        display: block;
+        width: 110px;
+        height: 122px;
+        background: url("./assets/rim-heart-embossed-round291.webp")
+          center/contain no-repeat;
+        opacity: 1;
+        visibility: visible;
+        filter: brightness(1.42) contrast(1.42) saturate(0.82);}
+body[data-page]::after{content: "";
+        position: fixed;
+        z-index: 1520;
+        top: 96px;
+        right: 88px;
+        bottom: 78px;
+        left: 88px;
+        box-sizing: border-box;
+        border: 2px solid rgba(214, 178, 87, 0.94);
+        border-radius: 28px;
+        pointer-events: none;
+        box-shadow:
+          0 0 0 2px rgba(31, 19, 3, 0.96),
+          0 0 0 4px rgba(232, 202, 126, 0.3),
+          0 0 10px rgba(216, 176, 76, 0.24),
+          inset 0 0 0 1px rgba(255, 239, 194, 0.28),
+          inset 0 0 0 4px rgba(2, 5, 8, 0.3);}
+@media (max-width: 1100px){body[data-page] > .rim-heart-emblem{top: calc((88px - 122px) / 2 + 2px);
+          left: calc((80px - 110px) / 2);}
+body[data-page]::after{top: 88px;
+          right: 80px;
+          bottom: 88px;
+          left: 80px;}}
+@media (max-width: 760px){html,body{background-size:cover;}}
+@media (max-width: 760px){body[data-page] > .rim-heart-emblem{top: calc((78px - 83px) / 2 + 1px);
+          left: calc((66px - 74px) / 2);
+          width: 74px;
+          height: 83px;}
+body[data-page]::after{top: 78px;
+          right: 66px;
+          bottom: 78px;
+          left: 66px;}}
+body[data-page] > footer#site-footer.site-footer--minimal{position: fixed !important;
+        z-index: 1510 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 96px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        overflow: hidden !important;}
+body[data-page] > footer#site-footer > .minimal-footer-row{position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: transparent !important;}
+@media (max-width: 1100px){body[data-page] > footer#site-footer.site-footer--minimal{height: 88px !important;}}
+@media (max-width: 760px){body[data-page] > footer#site-footer.site-footer--minimal{height: 78px !important;}}
+body[data-page] > header.site-header{z-index: 1510 !important;
+        pointer-events: none !important;}
+body[data-page] > .rim-page-name-screen{--page-sign-fill-color: #ff2ea8;
+        --page-sign-inverse-color: #ff2ea8;
+        position: fixed !important;
+        z-index: 2147483200 !important;
+        top: 48px !important;
+        left: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+        width: 716px !important;
+        height: 58px !important;
+        margin: 0 !important;
+        padding: 6.25px 15px !important;
+        overflow: hidden !important;
+        border: 2.5px solid #8fffd7 !important;
+        border-radius: 17.5px !important;
+        background: linear-gradient(180deg, #0a2037, #020914) !important;
+        box-shadow:
+          0 0 0 2.5px rgba(3, 4, 5, 0.94),
+          0 0 8px rgba(143, 255, 215, 0.44),
+          inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translate(-50%, -50%) !important;
+        pointer-events: none !important;}
+body[data-page]
+        > .rim-page-name-screen
+        > :is(.footer-page-led, .header-page-led){display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 6px !important;
+        overflow: hidden !important;
+        font-family: "Orbitron",system-ui,sans-serif;
+        font-size: 20pt !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        letter-spacing: 0.001em !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        opacity: 1 !important;
+        visibility: visible !important;}
+@media (max-width: 1100px){body[data-page] > .rim-page-name-screen{top: 44px !important;}}
+@media (max-width: 760px){body[data-page] > .rim-page-name-screen{top: 39px !important;
+          width: min(560px, calc(100vw - 120px)) !important;
+          height: 48px !important;
+          padding: 5px 11.25px !important;}
+body[data-page]
+          > .rim-page-name-screen
+          > :is(.footer-page-led, .header-page-led){font-size: 18.75pt !important;
+          padding-inline: 3.75px !important;}}
+body[data-page] > .page-transition-shield{position: fixed !important;
+        z-index: 2147483000 !important;
+        top: var(--current-frame-top, 96px) !important;
+        right: var(--current-frame-side, 88px) !important;
+        bottom: var(--current-frame-bottom, 96px) !important;
+        left: var(--current-frame-side, 88px) !important;
+        display: block !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+        border: 0 solid transparent !important;
+        border-radius: calc(var(--current-frame-radius, 32px) - 2px) !important;
+        pointer-events: none !important;
+        background: transparent !important;
+        contain: strict !important;
+        isolation: isolate !important;
+        transform: translateZ(0) !important;
+        backface-visibility: hidden !important;}
+body[data-page] > .page-transition-shield::before{content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        display: block !important;
+        border-radius: inherit !important;
+        background-color: #08172b !important;
+        background-image:
+          radial-gradient(ellipse 48% 42% at 20% 22%, rgba(88,137,182,.16), transparent 72%),
+          radial-gradient(ellipse 45% 38% at 82% 76%, rgba(191,43,133,.10), transparent 74%),
+          linear-gradient(180deg, rgba(255,255,255,.035), rgba(0,0,0,.20)),
+          url("./assets/page-shield-embossed-strong-round1067.webp") !important;
+        background-position: center, center, center, center !important;
+        background-size: auto, auto, 100% 100%, cover !important;
+        background-repeat: no-repeat !important;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,.62) !important;
+        transform: translate3d(0,-100.6%,0) !important;
+        transform-origin: 50% 0 !important;
+        backface-visibility: hidden !important;
+        will-change: transform !important;
+        pointer-events: none !important;}
+html.page-shield-arrival body[data-page] > .page-transition-shield{pointer-events: auto !important;
+        background-color: #08172b !important;
+        background-image:
+          radial-gradient(ellipse 48% 42% at 20% 22%, rgba(88,137,182,.16), transparent 72%),
+          radial-gradient(ellipse 45% 38% at 82% 76%, rgba(191,43,133,.10), transparent 74%),
+          linear-gradient(180deg, rgba(255,255,255,.035), rgba(0,0,0,.20)),
+          url("./assets/page-shield-embossed-strong-round1067.webp") !important;
+        background-position: center, center, center, center !important;
+        background-size: auto, auto, 100% 100%, cover !important;
+        background-repeat: no-repeat !important;}
+html.page-shield-covering body[data-page] > .page-transition-shield{pointer-events: auto !important;}
+html.page-shield-arrival body[data-page] > .page-transition-shield::before,html.page-shield-covering body[data-page] > .page-transition-shield::before{transform: translate3d(0,0,0) !important;}
+html.page-shield-arrival body[data-page] > .page-transition-shield::before{transition: none !important;}
+@media (max-width: 760px){body[data-page] > .page-transition-shield{top: var(--current-frame-top, 78px) !important;
+          right: var(--current-frame-side, 66px) !important;
+          bottom: var(--current-frame-bottom, 78px) !important;
+          left: var(--current-frame-side, 66px) !important;}}
+
+/* Round 911 critical persistent shell: same pixels before external CSS arrives. */
+:root{--current-frame-side:88px;--current-frame-top:96px;--current-frame-bottom:96px;--current-frame-radius:32px;--r911-rim-size:clamp(1280px,83.333vw,2560px);}
+html,body{background-color:#000!important;background-image:none!important;background-position:center!important;background-size:var(--r911-rim-size) var(--r911-rim-size)!important;background-repeat:repeat!important;}
+body[data-page]::after{display:none!important;content:none!important;}
+body[data-page]>.ah-persistent-outer-rim{position:fixed;inset:0;z-index:2147483200;display:block;pointer-events:none;overflow:hidden;contain:strict;isolation:isolate;}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge{position:absolute;inset:0;display:block;background:#06101d url("./assets/solution-formula-current-brand-round823.webp") center/var(--r911-rim-size) var(--r911-rim-size) repeat;}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--top{clip-path:inset(0 0 calc(100% - var(--current-frame-top)) 0)}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--bottom{clip-path:inset(calc(100% - var(--current-frame-bottom)) 0 0 0)}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--left{clip-path:inset(0 calc(100% - var(--current-frame-side)) 0 0)}
+body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge--right{clip-path:inset(0 0 0 calc(100% - var(--current-frame-side)))}
+body[data-page]>.ah-persistent-gold-rim{position:fixed;z-index:2147483250;top:var(--current-frame-top);right:var(--current-frame-side);bottom:var(--current-frame-bottom);left:var(--current-frame-side);box-sizing:border-box;border:2px solid rgba(214,178,87,.94);border-radius:var(--current-frame-radius);pointer-events:none;box-shadow:0 0 0 2px rgba(31,19,3,.96),0 0 0 4px rgba(232,202,126,.30),0 0 10px rgba(216,176,76,.24),inset 0 0 0 1px rgba(255,239,194,.28),inset 0 0 0 4px rgba(2,5,8,.30);}
+body[data-page]>.viewport-carbon-backdrop,body[data-page]>.viewport-frame-edges{display:none!important;}
+/* Round 912 critical persistent hardware */
+body[data-page]>:is(.rim-heart-emblem,.rim-page-name-screen,#header-send-message,#site-footer){z-index:2147483300!important;}
+body[data-page]>footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]{border:0!important;outline:0!important;background-color:transparent!important;background-image:url("./assets/footer-button-message-border-match-round1095.svg?v=1445r")!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;box-shadow:none!important;}
+body[data-page]>footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]::before,body[data-page]>footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav]::after{content:none!important;display:none!important;}
+@media(max-width:1100px){:root{--current-frame-side:80px;--current-frame-top:88px;--current-frame-bottom:88px;}}
+@media(max-width:760px){:root{--current-frame-side:66px;--current-frame-top:78px;--current-frame-bottom:78px;--r911-rim-size:800px;}}
+</style>
+<style id="r916-shield-message-critical">
+html body[data-page][class][class][class]>.page-transition-shield.page-transition-shield{background-color:#08172b!important;background-image:url("./assets/page-shield-embossed-strong-round1067.webp")!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;transform:translate3d(0,-102%,0)!important;transition:transform 2000ms cubic-bezier(.22,.66,.24,1)!important;will-change:transform!important;backface-visibility:hidden!important;clip-path:none!important}
+html body[data-page]>.page-transition-shield::before,html body[data-page]>.page-transition-shield::after{content:none!important;display:none!important;animation:none!important;transition:none!important}
+html.page-shield-arrival body[data-page]>.page-transition-shield,html.page-shield-covering body[data-page]>#page-transition-shield.page-transition-shield{transform:translate3d(0,0,0)!important}
+html.page-shield-revealing body[data-page]>#page-transition-shield.page-transition-shield{transform:translate3d(0,-102%,0)!important}
+html body[data-page][class][class][class][class][class][class][class][class] > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched),html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{background-image:url("./assets/message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;transform:translate3d(0,4px,0)!important}
+</style>
+<style id="r917-shield-home-critical">
+html body[data-page]>.page-transition-shield.page-transition-shield{position:fixed!important;z-index:2147483190!important;top:var(--current-frame-top,96px)!important;right:var(--current-frame-side,88px)!important;bottom:var(--current-frame-bottom,96px)!important;left:var(--current-frame-side,88px)!important;display:block!important;overflow:hidden!important;background:none!important;opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important;contain:paint!important;isolation:isolate!important;pointer-events:none!important}
+html body[data-page]>.page-transition-shield.page-transition-shield::before{content:""!important;position:absolute!important;inset:0!important;display:block!important;border-radius:inherit!important;background:#08172b url("./assets/page-shield-embossed-strong-round1067.webp") center/cover no-repeat!important;opacity:1!important;visibility:visible!important;transform:translate3d(0,-102%,0)!important;transition:transform 2000ms cubic-bezier(.22,.66,.24,1)!important;will-change:transform!important;backface-visibility:hidden!important}
+html body[data-page]>.page-transition-shield.page-transition-shield::after{content:none!important;display:none!important}
+html.page-shield-arrival body[data-page]>.page-transition-shield.page-transition-shield::before,html.page-shield-covering body[data-page]>.page-transition-shield.page-transition-shield::before{transform:translate3d(0,0,0)!important}
+html.page-shield-revealing body[data-page]>.page-transition-shield.page-transition-shield::before{transform:translate3d(0,-102%,0)!important}
+</style>
+<style id="r919-home-surface-critical">html body.page-home[data-page="home"] main#main-content>section#home-opening-hero#home-opening-hero{background-color:#06101d!important;background-image:url("./assets/solution-formula-current-brand-round823.webp")!important;background-position:center center!important;background-size:var(--r919-rim-size,clamp(1280px,83.333vw,2560px)) var(--r919-rim-size,clamp(1280px,83.333vw,2560px))!important;background-repeat:repeat!important;background-attachment:fixed!important;background-blend-mode:normal!important}html body.page-home[data-page="home"] #home-opening-hero :is(#home-hero-shell,#home-hero-housing){background:transparent!important;background-image:none!important}html body.page-home[data-page="home"] #home-opening-hero::before,html body.page-home[data-page="home"] #home-opening-hero::after,html body.page-home[data-page="home"] #home-hero-shell::before,html body.page-home[data-page="home"] #home-hero-shell::after,html body.page-home[data-page="home"] #home-hero-housing::before,html body.page-home[data-page="home"] #home-hero-housing::after{content:none!important;display:none!important}</style>
+<title>
+      Small Business AI Consulting &amp; Automation | Automated Hearts
+    </title>
+<meta content="Human-centered AI consulting, workflow automation, process improvement, and practical AI training for small businesses and local teams." name="description"/>
+<meta content="#06101d" name="theme-color"/>
+<link href="./" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Small Business AI Consulting &amp; Automation | Automated Hearts" property="og:title"/>
+<meta content="Human-centered AI consulting, workflow automation, process improvement, and practical AI training for small businesses and local teams." property="og:description"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Small Business AI Consulting &amp; Automation | Automated Hearts" name="twitter:title"/>
+<meta content="Human-centered AI consulting, workflow automation, process improvement, and practical AI training for small businesses and local teams." name="twitter:description"/>
+<link href="./assets/favicon.ico" rel="icon" sizes="any"/>
+<link as="image" fetchpriority="high" href="./assets/rim-heart-embossed-round291.webp" rel="preload"/>
+<link as="image" href="./assets/button-leather-grain-visible-round794.webp" rel="preload"/>
+<link as="image" fetchpriority="high" href="./assets/home-carbon-weave-round737-seamless.webp" media="(min-width:760.01px)" rel="preload"/>
+<link as="image" fetchpriority="high" href="./assets/home-carbon-weave-round1101-mobile.webp" media="(max-width:760px)" rel="preload"/>
+<link href="./assets/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&amp;display=swap" rel="stylesheet"/></noscript>
+<noscript></noscript>
+<link as="image" href="./assets/page-shield-embossed-strong-round1067.webp" rel="preload"/>
+<!-- Round 614: canonical Automated Hearts color and typography system applied to Home page only. -->
+<style id="r1035-shell-shield-critical">
+:root{--r1035-shield-duration:2000ms;--r1035-shield-ease:cubic-bezier(.20,.72,.22,1)}
+body[data-page]>.ah-persistent-outer-rim,body[data-page]>.ah-persistent-gold-rim,body[data-page]>.rim-heart-emblem,body[data-page]>.rim-page-name-screen,body[data-page]>#header-send-message,body[data-page]>#home-ticker-wrap,body[data-page]>#site-footer{visibility:visible!important;opacity:1!important}
+body[data-page]>#page-transition-shield.page-transition-shield{transform:none!important;transition:none!important;background:none!important;background-image:none!important;overflow:hidden!important}
+body[data-page]>#page-transition-shield.page-transition-shield::before,body[data-page]>#page-transition-shield.page-transition-shield::after{content:none!important;display:none!important;background:none!important;background-image:none!important}
+body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel{position:absolute!important;inset:0!important;display:block!important;background:#08172b url("./assets/page-shield-embossed-strong-round1067.webp") center/cover no-repeat!important;transform:translate3d(0,-100.5%,0)!important;transition:transform var(--r1035-shield-duration) var(--r1035-shield-ease)!important;will-change:transform!important;backface-visibility:hidden!important}
+html.page-shield-arrival body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel,html.page-shield-covering body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel,html[data-page-shield-state="covered"] body[data-page]>#page-transition-shield.page-transition-shield>.page-transition-shield__panel{transform:translate3d(0,0,0)!important}
+@media(max-width:760px){body[data-page]>a.rim-heart-emblem.rim-heart-home-link{position:fixed!important;top:0!important;left:-4px!important;width:74px!important;height:83px!important;margin:0!important}}
+@media(max-width:374px){body[data-page]>a.rim-heart-emblem.rim-heart-home-link{left:-3px!important;width:70px!important;height:78px!important}}
+</style>
+<link href="./round1063-shield-model-performance.css?v=1222r" rel="stylesheet"/><link href="./round1064-vercel-navigation-shield-fix.css?v=1222r" rel="stylesheet"/>
+<link as="script" fetchpriority="high" href="./vendor/three-0.160.0/three.min.js?v=1196r" media="(min-width:760.01px)" rel="preload"/>
+<link as="image" fetchpriority="high" href="./assets/home-machine-asteroid-surface-round936.webp" media="(min-width:760.01px)" rel="preload"/>
+<link as="image" fetchpriority="high" href="./assets/home-machine-asteroid-emissive-round936.webp" media="(min-width:760.01px)" rel="preload"/>
+<link as="image" fetchpriority="high" href="./assets/home-machine-earth-cinematic-round936.webp" media="(min-width:760.01px)" rel="preload"/>
+<link href="./round1065-machine-3d-restore.css?v=1222r" rel="stylesheet"/>
+<link href="./round1070-machine-model-stage-learning-rims.css?v=1222r" rel="stylesheet"/>
+<link href="./round1073-interaction-model-authority.css?v=1222r" rel="stylesheet"/><link href="./round1094-shield-rolodex-authority.css?v=1222r" rel="stylesheet"/><link href="./round1095-depth-matte-authority.css?v=1222r" rel="stylesheet"/><link href="./round1096-interaction-stability.css?v=1222r" rel="stylesheet"/><link href="./round1101-home-mobile-stability.css?v=1222r" rel="stylesheet"/><link href="./round1102-home-mobile-performance.css?v=1222r" rel="stylesheet"/><link href="./round1103-mobile-static-correction.css?v=1222r" media="(max-width:760px)" rel="stylesheet"/>
+<style id="ah-desktop-first-visit-intro-style-v1115">
+.desktop-first-visit-intro{display:none;position:fixed;z-index:2147483190;top:var(--current-frame-top,96px);right:var(--current-frame-side,88px);bottom:var(--current-frame-bottom,96px);left:var(--current-frame-side,88px);overflow:hidden;box-sizing:border-box;border-radius:var(--current-frame-radius,32px);background:#08172b url("./assets/page-shield-smoked-heart.webp") center/cover no-repeat;box-shadow:inset 0 0 0 1px rgba(143,255,215,.22),inset 0 0 70px rgba(0,0,0,.42);contain:paint;isolation:isolate;transform:translate3d(0,0,0);transition:transform 3000ms cubic-bezier(.18,.68,.20,1);pointer-events:auto}
+html[data-ah-desktop-intro="1"] .desktop-first-visit-intro{display:grid;place-items:center}
+html[data-ah-desktop-intro="1"]{overflow:hidden}
+.desktop-first-visit-intro[hidden][hidden]{display:none!important}
+.desktop-first-visit-intro::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.24),rgba(3,13,24,.10) 42%,rgba(0,0,0,.38));pointer-events:none}
+.desktop-first-visit-intro.is-raising{transform:translate3d(0,-105%,0)}
+.desktop-intro-copy{position:relative;z-index:1;width:min(72vw,920px);padding:34px 42px;color:#f5fbff;font:700 clamp(22px,2.05vw,36px)/1.48 "Orbitron",system-ui,sans-serif;letter-spacing:.012em;text-shadow:0 2px 4px rgba(0,0,0,.94)}
+.desktop-intro-line{min-height:1.48em;margin:0 0 24px}.desktop-intro-line:last-of-type{margin-bottom:0}
+.desktop-intro-copy .pink{color:#ff2ea8;text-shadow:0 0 10px rgba(255,46,168,.34),0 2px 4px #000}
+.desktop-intro-copy .green{color:#8fffd7;text-shadow:0 0 10px rgba(143,255,215,.28),0 2px 4px #000}
+.desktop-intro-cursor{display:inline-block;width:.55em;height:1.04em;margin-left:.13em;vertical-align:-.13em;background:#8fffd7;box-shadow:0 0 8px rgba(143,255,215,.38);animation:ahDesktopIntroCursor .78s steps(1,end) infinite}
+@keyframes ahDesktopIntroCursor{50%{opacity:0}}
+@media(max-width:900px){.desktop-first-visit-intro{display:none!important}}
+@media(prefers-reduced-motion:reduce){.desktop-first-visit-intro{transition-property:transform!important;transition-duration:3000ms!important;transition-timing-function:cubic-bezier(.18,.68,.20,1)!important}.desktop-intro-cursor{animation:none}}
+</style>
+<style id="ah-intro-shield-three-second-authority-v1116">
+.desktop-first-visit-intro{transition-property:transform!important;transition-duration:3000ms!important;transition-timing-function:cubic-bezier(.18,.68,.20,1)!important}
+.desktop-first-visit-intro.is-raising{transform:translate3d(0,-105%,0)!important}
+@media(prefers-reduced-motion:reduce){.desktop-first-visit-intro{transition-property:transform!important;transition-duration:3000ms!important;transition-timing-function:cubic-bezier(.18,.68,.20,1)!important}}
+</style>
+<link href="./round1124-final-authority.css?v=1222r" rel="stylesheet"/><link href="./assets/home-explore-texture-heading-round1169.css?v=1222r" rel="stylesheet"/>
+<style id="ah-carousel-exact-r1125">
+@media (min-width:801px){
+  html body.page-home[data-page="home"] main#main-content>section.home-overview-carousel-section{position:relative!important;box-sizing:border-box!important;margin:0!important;overflow:hidden!important;}
+  html body.page-home[data-page="home"] main#main-content>section.home-overview-carousel-section>.shell{position:relative!important;top:0;transform:none;will-change:auto!important;}
+}
+</style>
+<link href="./assets/window-shields-round1138.css?v=1222r" rel="stylesheet"/>
+<link href="./assets/window-shields-carbon-bottom-heart-round1140.css?v=1222r" rel="stylesheet"/>
+<link href="./assets/persistent-shell-round1142.css?v=1222r" rel="stylesheet"/>
+<link href="./assets/persistent-shell-router-round1156.css?v=1222r" rel="stylesheet"/><link href="./assets/footer-navigation-load-hold-round1169.css?v=1222r" rel="stylesheet"/><link href="./assets/window-open-lip-round1171.css?v=1222r" rel="stylesheet"/><link href="./assets/window-open-overhang-round1207.css?v=1222r" rel="stylesheet"/><link href="./assets/home-process-explore-round1174.css?v=1222r" rel="stylesheet"/><style id="round1175-home-final-authority">
+@media (min-width:901px){
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore > .explore-title-1175{
+    grid-row:auto!important;align-self:stretch!important;justify-self:stretch!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore > .explore-title-1175::before,
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore > .explore-title-1175::after{
+    content:none!important;display:none!important;
+  }
+}
+</style><style id="round1176-home-final-authority">
+@media (min-width:901px){
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-grid-round344 > article.home-process-stage.negative-software-screen-round344:not(.home-process-stage--key) > h3{font-size:0!important;font-family:Orbitron,system-ui,sans-serif;}
+  html body.page-home[data-page="home"] #home-solution-framework .r1176-process-heading-label{display:block!important;width:100%!important;font-family:Orbitron,system-ui,sans-serif;font-size:clamp(20px,1.28vw,22px)!important;font-weight:900!important;line-height:1!important;letter-spacing:0!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;}
+  html body.page-home[data-page="home"] #negative-software-explore{grid-template-rows:96px minmax(0,1fr) auto!important;}
+  html body.page-home[data-page="home"] #negative-software-explore > .explore-title-1175::before,
+  html body.page-home[data-page="home"] #negative-software-explore > .explore-title-1175::after{content:none!important;display:none!important;border:0!important;background:none!important;box-shadow:none!important;}
+}
+</style><link href="./assets/home-process-fit-surface-round1177.css?v=1240r" rel="stylesheet"/><link href="./round1179-control-edge-explore-message.css?v=1240r" rel="stylesheet"/><link href="./round1180-desktop-control-fix.css?v=1240r" rel="stylesheet"/><style id="ah-carousel-equal-spacing-r1181">
+@media (min-width:801px){
+  html body.page-home[data-page="home"] main#main-content>section.home-overview-carousel-section{
+    height:auto!important;min-height:0!important;margin:0!important;padding:64px 0!important;overflow:hidden!important;
+  }
+  html body.page-home[data-page="home"] main#main-content>section.home-overview-carousel-section>.shell{
+    position:relative!important;top:0!important;transform:none!important;margin:0 auto!important;padding:0!important;
+  }
+  html body.page-home[data-page="home"] main#main-content>section.home-overview-carousel-section .home-transition-carousel,
+  html body.page-home[data-page="home"] main#main-content>section.home-overview-carousel-section .home-transition-track,
+  html body.page-home[data-page="home"] main#main-content>section.home-overview-carousel-section .home-transition-slide{
+    margin-top:0!important;margin-bottom:0!important;
+  }
+}
+@media (min-width:801px) and (max-height:700px){
+  html body.page-home[data-page="home"] main#main-content>section.home-overview-carousel-section{padding:48px 0!important;}
+}
+</style>
+<link href="./assets/desktop-message-position-round1195.css?v=1222r" rel="stylesheet"/><link href="./assets/contact-red-screens-round1198.css?v=1222r" rel="stylesheet"/><link href="./assets/machine-rims-round1199.css?v=1222r" rel="stylesheet"/><link href="./assets/home-machine-solution-rim-round1204.css?v=1222r" rel="stylesheet"/><link href="./assets/home-explore-carbon-3d-round1205.css?v=1222r" rel="stylesheet"/><style id="ah-intro-shield-restore-round1219">
+/* Round 1219: restore the opening shield for this version. On desktop the
+   shield itself moves inside a stationary clipped viewport so its upward
+   travel disappears beneath the upper gold rim instead of crossing over it. */
+html[data-ah-desktop-intro="1"] body[data-page] > #desktop-first-visit-intro.desktop-first-visit-intro{
+  display:block!important;
+  position:fixed!important;
+  top:var(--current-frame-top,96px)!important;
+  right:var(--current-frame-side,88px)!important;
+  bottom:var(--current-frame-bottom,96px)!important;
+  left:var(--current-frame-side,88px)!important;
+  z-index:2147483190!important;
+  overflow:hidden!important;
+  border-radius:var(--current-frame-radius,32px)!important;
+  background:transparent!important;
+  background-image:none!important;
+  transform:none!important;
+  transition:none!important;
+  contain:paint!important;
+  isolation:isolate!important;
+}
+html[data-ah-desktop-intro="1"] body[data-page] > #desktop-first-visit-intro.desktop-first-visit-intro.is-raising{
+  transform:none!important;
+}
+html[data-ah-desktop-intro="1"] #desktop-first-visit-intro > .desktop-first-visit-panel{
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+  border-radius:inherit!important;
+  background-color:#08172b!important;
+  background-image:url("./assets/page-shield-smoked-heart.webp")!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  box-shadow:inset 0 0 0 1px rgba(143,255,215,.22),inset 0 0 70px rgba(0,0,0,.42)!important;
+  transform:translate3d(0,0,0)!important;
+  transition:transform 3000ms cubic-bezier(.18,.68,.20,1)!important;
+  will-change:transform!important;
+  backface-visibility:hidden!important;
+}
+html[data-ah-desktop-intro="1"] #desktop-first-visit-intro.is-raising > .desktop-first-visit-panel{
+  transform:translate3d(0,-105%,0)!important;
+}
+/* The persistent outer and gold rims stay above the clipped shield. */
+body[data-page] > .ah-persistent-outer-rim{z-index:2147483200!important;}
+body[data-page] > .ah-persistent-gold-rim{z-index:2147483250!important;}
+</style><link href="./assets/desktop-mobile-edge-controls-round1232.css?v=1240r" rel="stylesheet"/><link href="./assets/ticker-human-spacing-round1232.css?v=1232r" rel="stylesheet"/><link href="./assets/home-breathing-room-round1232.css?v=1232r" rel="stylesheet"/><link href="./assets/shield-gold-rim-seam-round1241.css?v=1241r" rel="stylesheet"/><link href="./assets/global-orbitron-carbon-round1246.css?v=1246r" rel="stylesheet"/><link href="./assets/pink-bottom-glow-system-round1279.css?v=1279r" rel="stylesheet"/>
+<link href="./assets/round1280-message-footer-negative-software.css?v=1280r" rel="stylesheet"/>
+<link href="./assets/round1287-desktop-message-mobile-negative-spacing.css?v=1287r" rel="stylesheet"/>
+<link href="./assets/round1288-mobile-message-desktop-clone-inset-rim-learning-title.css?v=1288r" rel="stylesheet"/><link href="./assets/round1289-mobile-footer-alternating-pink-mint-swap.css?v=1289r" rel="stylesheet"/>
+<link href="./assets/round1306-darker-navy-carbon-rims-extended-glow-red-envelope.css?v=1306r" rel="stylesheet"/><link href="./assets/round1313-bottom-navy-continuity-desktop-message-reference.css?v=1313r" rel="stylesheet"/><link href="./assets/round1314-smooth-black-carbon-signs-reference-desktop-message.css?v=1314r" rel="stylesheet"/><link href="./assets/round1315-cleanup-heart-glow-black-signs-desktop-message1212.css?v=1315r" rel="stylesheet"/><link href="./assets/round1317-static-model-backdrop-message1212.css?v=1317r" rel="stylesheet"/><link href="./assets/round1322-desktop-reflective-glass-model-qa.css?v=1324r" rel="stylesheet"/><link href="./assets/round1325-exact-desktop-message1212.css?v=1325r" rel="stylesheet"/><link href="./assets/round1331-exact-round1212-desktop-message.css?v=1331r" rel="stylesheet"/><link href="./assets/industries-caption-match-round1333.css?v=1333r" rel="stylesheet"/>
+<link href="./assets/home-caption-colors-matte-round1334.css?v=1334r" rel="stylesheet"/>
+<link href="./assets/machine-heart-rim-match-round1335.css?v=1335r" rel="stylesheet"/>
+<link href="./assets/machine-pearl-solution-type-round1336.css?v=1336r" rel="stylesheet"/>
+<link href="./assets/round1339-digital-window-keyboard-footer.css?v=1339r" rel="stylesheet"/>
+<link href="./assets/round1340-home-glow-keycaps-red-message.css?v=1340r" rel="stylesheet"/>
+<link href="./assets/round1341-key-siding-pricing-spacebar.css?v=1341r" rel="stylesheet"/>
+<link href="./assets/round1345-clean-key-sides-message1212.css?v=1345r" rel="stylesheet"/>
+<link href="./assets/round1346-home-caption-underglow.css?v=1346r" rel="stylesheet"/><link href="./assets/round1347-machine-contact-smooth-footer.css?v=1347r" rel="stylesheet"/><link href="./assets/round1348-no-ridges-home-bottom-only-glow.css?v=1348r" rel="stylesheet"/><link href="./assets/round1349-learning-spacebars-classic-footer-neon-process.css?v=1349r" rel="stylesheet"/><link href="./assets/round1354-desktop-blue-footer-original-message.css?v=1445r" rel="stylesheet"/>
+<link href="./assets/round1355-home-ai101-caption-match.css?v=1355r" rel="stylesheet"/>
+<link href="./assets/round1356-ai101-home-mobile-message-desktop1212.css?v=1356r" rel="stylesheet"/><link href="./assets/round1357-desktop-unified-submerge-controls.css?v=1357r" rel="stylesheet"/><link href="./assets/round1358-desktop-control-home-visibility.css?v=1358r" rel="stylesheet"/><link href="./assets/round1359-live-digital-screens.css?v=1359r" rel="stylesheet"/><link href="./assets/round1360-industries-spacebars-message-submerge.css?v=1360r" rel="stylesheet"/><link href="./assets/round1362-solution-preview-home-desktop-title.css?v=1362r" rel="stylesheet"/><link href="./assets/round1364-home-title-fields-double-matte.css?v=1364r" rel="stylesheet"/><link href="./assets/round1367-home-pricing-authority.css?v=1367r" rel="stylesheet"/><link href="./assets/round1368-learning-home-key-press.css?v=1368r" rel="stylesheet"/>
+<link href="./assets/round1369-industries-position-home-spacebar-behavior.css?v=1369r" rel="stylesheet"/>
+<link href="./assets/round1371-home-learning-glow-only.css?v=1371r" rel="stylesheet"/>
+<link href="./assets/round1372-spacebar-only-controls.css?v=1373r" rel="stylesheet"/><link href="./assets/round1373-learning-center-spacebar-authority.css?v=1373r" rel="stylesheet"/><link href="./assets/round1374-pricing-mech-keys.css?v=1374r" rel="stylesheet"/><link href="./assets/round1375-stagger-vintage-keys.css?v=1375r" rel="stylesheet"/><link href="./assets/round1376-footer-message-solution-fixes.css?v=1376r" rel="stylesheet"/><link href="./assets/round1377-mobile-reference-keys-desktop-restore.css?v=1377r" rel="stylesheet"/><link href="./assets/round1388-mobile-footer-color-width-message.css?v=1445r" rel="stylesheet"/><link href="./assets/round1389-inner-rim-centered-press.css?v=1392r" rel="stylesheet"/><link href="./assets/round1390-home-title-spacebar-match.css?v=1392r" rel="stylesheet"/><link href="./assets/round1391-opaque-footer-learning-edge.css?v=1392r" rel="stylesheet"/><link href="./assets/round1392-unified-industries-spacebars.css?v=1392r" rel="stylesheet"/><link href="./assets/round1395-weathered-gold-authority.css?v=1395r" rel="stylesheet"/>
+<link href="./assets/round1398-solution-home-refinements.css?v=1398r" rel="stylesheet"/><link href="./assets/round1399-square-hero-title-signs.css?v=1399r" rel="stylesheet"/><link href="./assets/round1400-square-prompts-larger-spacebar-copy.css?v=1400r" rel="stylesheet"/><link href="./assets/round1408-brand-depth-home-machine.css?v=1408r" rel="stylesheet"/><link href="./assets/round1409-negative-live-screen-authority.css?v=1409r" rel="stylesheet"/><link href="./assets/round1410-industries-fit-home-gap-authority.css?v=1410r" rel="stylesheet"/><link href="./assets/round1416-desktop-footer-pink.css?v=1416r" rel="stylesheet"/>
+<link href="./assets/round1418-industries-fit-footer-pink.css?v=1418r" rel="stylesheet"/>
+<link href="./assets/round1419-footer-pink-learning-corners.css?v=1419r" rel="stylesheet"/><link href="./assets/round1420-footer-center-pink-accents.css?v=1420r" rel="stylesheet"/><link href="./assets/round1421-footer-visual-final.css?v=1421r" rel="stylesheet"/><link href="./assets/round1422-solution-sign-footer-inner-corners.css?v=1422r" rel="stylesheet"/><link href="./assets/round1423-solution-sign-footer-baked-accents.css?v=1445r" rel="stylesheet"/><link href="./assets/round1424-solution-home-sign-mobile-accent-cleanup.css?v=1424r" rel="stylesheet"/><link href="./assets/round1425-solution-compact-sign-contact-spacebar.css?v=1425r" rel="stylesheet"/><link href="./assets/round1429-button-copy-industries-compact-final.css?v=1429r" rel="stylesheet"/><link href="./assets/round1433-spacebar-copy-industries-restore.css?v=1433r" rel="stylesheet"/>
+<link href="./assets/round1446-pointed-inset-accents-red-message.css?v=1446r" rel="stylesheet"/><link href="./assets/round1448-desktop-home-balanced-divider-title.css?v=1448r" rel="stylesheet"/><link href="./assets/round1453-verified-ui-authority.css?v=1453r" rel="stylesheet"/><link href="./assets/round1454-accent-authority.css?v=1454r" rel="stylesheet"/><link href="./assets/round1456-home-divider-balance-carbon-glow.css?v=1456r" rel="stylesheet"/><link href="./assets/round1457-home-section-spacing-standard.css?v=1457r" rel="stylesheet"/><link href="./assets/round1458-home-divider-glow-spacing-fix.css?v=1458r" rel="stylesheet"/><link href="./assets/round1459-home-brand-spacing-system.css?v=1459r" rel="stylesheet"/><link href="./assets/round1460-home-route-submerged-glass.css?v=1460r" rel="stylesheet"/><link href="./lean-index-home-1102.css" rel="stylesheet"/><style>#desktop-first-visit-intro{display:none!important}</style><style id="ah1465-desktop-footer-critical">
+@media (min-width:801px){
+html body[data-page] > footer#site-footer .footer-nav-label{font-family:"Orbitron",system-ui,sans-serif!important;font-size:16px!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;transform:none!important;filter:none!important;animation:none!important;transition:none!important}
+html body[data-page] > footer#site-footer :is(.ah-footer-pink-corners,.ah-footer-corner,.ah1451-message-match-accents,.ah1452-message-corner-overlay,.ah1453-message-corner-overlay,.ah1454-mobile-corner-overlay),html body[data-page] > a#header-send-message :is(.ah-footer-pink-corners,.ah-footer-corner,.ah1451-message-match-accents,.ah1452-message-corner-overlay,.ah1453-message-corner-overlay,.ah1454-mobile-corner-overlay){display:none!important;visibility:hidden!important;opacity:0!important;background:none!important;background-image:none!important;box-shadow:none!important}
+}
+</style><link href="./assets/round1465-desktop-lock-industries-rim-depth.css?v=1465r" rel="stylesheet"/></head>
+<body class="page-home" data-page="home"><div aria-label="Automated Hearts introduction" aria-live="polite" class="desktop-first-visit-intro" id="desktop-first-visit-intro"><div aria-hidden="true" class="desktop-first-visit-panel"><div class="desktop-intro-copy" id="desktop-intro-copy"><div class="desktop-intro-line" data-desktop-line="0"></div><div class="desktop-intro-line" data-desktop-line="1"></div><div class="desktop-intro-line" data-desktop-line="2"></div><div class="desktop-intro-line" data-desktop-line="3"></div><div class="desktop-intro-line" data-desktop-line="4"></div><span aria-hidden="true" class="desktop-intro-cursor" id="desktop-intro-cursor"></span></div></div></div>
+<div aria-hidden="true" class="ah-persistent-outer-rim" data-m1103="0"><span class="ah-shell-edge ah-shell-edge--top" data-m1103="1"></span><span class="ah-shell-edge ah-shell-edge--right" data-m1103="2"></span><span class="ah-shell-edge ah-shell-edge--bottom" data-m1103="3"></span><span class="ah-shell-edge ah-shell-edge--left" data-m1103="4"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--tl" data-m1103="5"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--tr" data-m1103="6"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--bl" data-m1103="7"></span><span aria-hidden="true" class="ah-r932-corner-mask ah-r932-corner-mask--br" data-m1103="8"></span></div><div aria-hidden="true" class="ah-persistent-gold-rim" data-m1103="9"></div>
+<div aria-hidden="true" class="page-transition-shield" data-m1103="11" id="page-transition-shield"><span aria-hidden="true" class="page-transition-shield__panel" data-m1103="12"></span></div>
+<a aria-label="Go to homepage" class="rim-heart-emblem rim-heart-home-link" data-m1103="14" href="./index.html?v=1246r" id="rim-heart-home"><span aria-hidden="true" class="rim-heart-home-link__glow" data-m1103="15"></span><span class="sr-only" data-m1103="16">Home</span></a><a class="skip-link" data-m1103="17" href="#main-content">Skip to content</a>
+<header class="site-header" data-m1103="18">
+<div class="shell header-inner" data-m1103="19">
+<a aria-label="Automated Hearts home" class="brand" data-m1103="20" href="./index.html?v=1246r"><img alt="" class="brand-mark" data-m1103="21" decoding="async" height="64" loading="lazy" src="./assets/heart-logo.webp" width="64"/><span class="brand-name" data-m1103="22"><strong data-m1103="23">Automated</strong> Hearts</span></a>
+</div>
+</header>
+<div aria-label="Current page: Hub" class="footer-page-screen rim-page-name-screen header-page-screen header-page-screen--top header-page-screen-round339 r383-reference-screen" data-m1103="24" role="status">
+<span aria-label="Hub" class="footer-page-led header-page-led screen-text-canonical screen-text-canonical--green screen-text-size-page r383-reference-text" data-m1103="25" data-text="Hub">Hub</span>
+<span aria-hidden="true" class="r488-extra-matte-film" data-m1103="26"></span></div>
+<a aria-label="Send Message" class="r973-pink-edge header-send-message mechanical-send-control" data-contact-origin="header" data-contact-trigger="" data-m1103="27" data-nav="contact" href="#contact" id="header-send-message" style="position:fixed!important;z-index:2147483646!important;top:var(--r1005-message-top)!important;right:var(--r1005-message-right)!important;bottom:auto!important;left:auto!important;display:block!important;visibility:visible!important;opacity:1!important;width:var(--r1005-message-size)!important;min-width:var(--r1005-message-size)!important;max-width:var(--r1005-message-size)!important;height:var(--r1005-message-size)!important;min-height:var(--r1005-message-size)!important;max-height:var(--r1005-message-size)!important;box-sizing:border-box!important;margin:0!important;padding:0!important;overflow:visible!important;background-color:transparent!important;background-image:url('./assets/message-button-pointed-red-round1446.svg?v=1453r')!important;background-position:center!important;background-size:100% 100%!important;background-repeat:no-repeat!important;border:0!important;border-radius:0!important;outline:0!important;box-shadow:0 5px 7px rgba(255,46,168,.13)!important;filter:none!important;clip-path:none!important;-webkit-clip-path:none!important;mask:none!important;-webkit-mask:none!important;transform:none!important;translate:none!important;scale:none!important;rotate:none!important;-webkit-appearance:none!important;appearance:none!important;pointer-events:auto!important;"><span aria-hidden="true" class="r1005-message-envelope" data-m1103="28"><svg data-m1103="29" focusable="false" viewbox="0 0 32 22"><path d="M2.5 2.5h27v17h-27z" data-m1103="30"></path><path d="m3.5 4 12.5 9L28.5 4" data-m1103="31"></path><path d="m3.5 18 8.8-7.1M28.5 18l-8.8-7.1" data-m1103="32"></path></svg></span></a>
+<main data-m1103="33" id="main-content">
+<section aria-label="Automated Hearts introduction" class="hero hero--home home-image-hero section--black" data-m1103="34" id="home-opening-hero" style="display:block!important;box-sizing:border-box!important;height:auto!important;min-height:0!important;max-height:none!important;padding-top:64px!important;padding-bottom:64px!important;margin:0!important;overflow:visible!important;">
+<div class="home-hero-engine-shell" data-m1103="35" id="home-hero-shell" style="box-sizing:border-box!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important;overflow:visible!important;">
+<div class="home-hero-brushed-housing" data-m1103="36" id="home-hero-housing" style="display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;gap:48px!important;box-sizing:border-box!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important;overflow:visible!important;">
+<div aria-hidden="true" class="home-header-screen-row home-header-screen-row-round338 home-header-screen-row-round339 home-header-screen-row-round340 r1000-home-title-row r1362-home-title-row" id="home-title-fields" style="margin:0!important;transform:none!important;flex:0 0 auto!important;align-self:center!important;">
+<div class="r1362-home-title-field r1362-home-title-field--green"><span class="r1362-home-title-text">Automated Hearts</span></div>
+<div class="r1362-home-title-field r1362-home-title-field--pink"><span class="r1362-home-title-text">Web &amp; Automation</span></div>
+<div class="r1362-home-title-field r1362-home-title-field--green"><span class="r1362-home-title-text">Architecture</span></div>
+</div>
+<div class="home-hero-machine-grid" data-m1103="47" id="home-machine-grid" style="margin:0 auto!important;transform:none!important;flex:0 0 auto!important;align-self:center!important;">
+<div class="home-hero-engine-frame" data-m1103="48">
+<div aria-hidden="true" class="model-dedicated-backdrop" data-m1103="49"></div>
+<template data-m1103="50" id="home-machine-primary-template"><iframe class="home-hero-engine-embed" data-m1103="51" fetchpriority="high" id="home-machine-primary" loading="lazy" scrolling="no" tabindex="0" title="Interactive Automated Hearts Solution machine; drag to orbit and scroll or pinch to zoom"></iframe></template>
+<img alt="" aria-hidden="true" class="home-mobile-machine-poster home-mobile-machine-poster--primary" data-m1103="52" decoding="async" fetchpriority="high" height="270" loading="lazy" src="./assets/home-machine-orbit-mobile-round1101-poster.webp" width="480"/>
+<video aria-hidden="true" class="home-mobile-machine-loop home-mobile-machine-loop--primary" data-m1103="53" height="270" id="home-machine-primary-video" loop="" muted="" playsinline="" preload="none" webkit-playsinline="" width="480"></video>
+<div aria-hidden="true" class="machine-three-ridge-overlay" data-m1103="54"></div>
+<button aria-controls="home-machine-primary" aria-expanded="false" aria-label="Reveal Automated Hearts Solution machine" class="home-machine-haze-screen" data-m1103="55" data-machine-haze="" type="button"><span class="sr-only" data-m1103="56">Reveal machine window</span></button>
+</div>
+<div class="home-hero-engine-frame home-hero-rolodex-frame" data-m1103="57">
+<template data-m1103="58" id="home-machine-rolodex-template"><iframe allow="fullscreen" class="home-hero-engine-embed home-hero-rolodex-embed" data-m1103="59" fetchpriority="low" id="home-machine-rolodex" loading="lazy" title="Interactive digital Rolodex"></iframe></template>
+<img alt="" aria-hidden="true" class="home-mobile-machine-poster home-mobile-machine-poster--rolodex" data-m1103="60" decoding="async" fetchpriority="high" height="270" loading="lazy" src="./assets/home-rolodex-scroll-mobile-round1101-poster.webp" width="480"/>
+<video aria-hidden="true" class="home-mobile-machine-loop home-mobile-machine-loop--rolodex" data-m1103="61" height="270" id="home-machine-rolodex-video" loop="" muted="" playsinline="" preload="none" webkit-playsinline="" width="480"></video>
+<div aria-hidden="true" class="machine-three-ridge-overlay" data-m1103="62"></div>
+<button aria-controls="home-machine-rolodex" aria-expanded="false" aria-label="Reveal digital Rolodex" class="home-machine-haze-screen" data-m1103="63" data-machine-haze="" type="button"><span class="sr-only" data-m1103="64">Reveal machine window</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section--divider home-explore-section home-explore-section--relocated" data-m1103="65" id="home-route-buttons" style="box-sizing:border-box!important;height:auto!important;min-height:0!important;max-height:none!important;padding:64px 0!important;margin:0!important;overflow:visible!important;border-top:0!important;box-shadow:none!important;position:relative!important;">
+<div class="shell" data-m1103="66" style="box-sizing:border-box!important;height:auto!important;min-height:0!important;max-height:none!important;padding:0!important;margin:0 auto!important;overflow:visible!important;">
+<div class="explore-grid home-explore-grid premium-route-grid" data-m1103="67" style="height:auto!important;min-height:0!important;max-height:none!important;grid-template-rows:auto!important;grid-auto-rows:auto!important;align-content:start!important;row-gap:0!important;margin:0!important;padding:0!important;">
+<article class="premium-route-card premium-route-card--teal home-route-card" data-m1103="68" data-route-index="1" style="grid-row:auto!important;height:auto!important;min-height:0!important;max-height:none!important;grid-template-rows:auto auto!important;margin:0!important;padding:0!important;align-self:start!important;overflow:visible!important;row-gap:24px!important;gap:24px!important;">
+<div aria-hidden="true" class="premium-route-card__link premium-route-card__image-button ah-route-image-visual" data-m1103="69" data-route-index="1" style=";position:relative!important;isolation:isolate!important;padding:10px!important;border:0!important;outline:0!important;outline-offset:0!important;background-color:#02060c!important;overflow:hidden!important;"><span class="premium-route-card__media" data-m1103="70" style=";position:absolute!important;inset:10px!important;z-index:2!important;border:0!important;outline:0!important;"><img alt="A man, a woman, and a robot planning a connected logistics system together" data-m1103="71" decoding="async" fetchpriority="low" height="908" loading="lazy" src="./assets/home-card-who-we-help-round455-frameless.webp" style=";border:0!important;outline:0!important;box-shadow:none!important;" width="841"/></span><span aria-hidden="true" class="ah1460-route-glass-base"></span><span aria-hidden="true" class="ah1460-route-glass-sheen"></span></div>
+<a aria-label="Industries: See the industries, teams, and everyday business challenges where practical AI support can help." class="premium-route-card__title-sign brand-route-screen ah-industries-caption-desktop ah-home-caption ah-spacebar-only-trigger ah-unified-spacebar" data-m1103="72" href="./who-we-help.html?v=1435r"><span class="ah-route-label-final" data-m1103="73" style="position:relative!important;z-index:50!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;margin:0!important;white-space:pre!important;transform:none!important;line-height:.96!important;white-space:normal!important;">Industries</span></a>
+</article>
+<article class="premium-route-card premium-route-card--pink home-route-card" data-m1103="74" data-route-index="2" style="grid-row:auto!important;height:auto!important;min-height:0!important;max-height:none!important;grid-template-rows:auto auto!important;margin:0!important;padding:0!important;align-self:start!important;overflow:visible!important;row-gap:24px!important;gap:24px!important;">
+<div aria-hidden="true" class="premium-route-card__link premium-route-card__image-button ah-route-image-visual" data-m1103="75" data-route-index="2" style=";position:relative!important;isolation:isolate!important;padding:10px!important;border:0!important;outline:0!important;outline-offset:0!important;background-color:#02060c!important;overflow:hidden!important;"><span class="premium-route-card__media" data-m1103="76" style=";position:absolute!important;inset:10px!important;z-index:2!important;border:0!important;outline:0!important;"><img alt="A mechanical network illustrating the connected Automated Hearts solution" data-m1103="77" decoding="async" fetchpriority="low" height="908" loading="lazy" src="./assets/home-card-the-solution-round455-frameless.webp" style=";border:0!important;outline:0!important;box-shadow:none!important;" width="841"/></span><span aria-hidden="true" class="ah1460-route-glass-base"></span><span aria-hidden="true" class="ah1460-route-glass-sheen"></span></div>
+<a aria-label="The Solution: Clean up the clutter, simplify the process, and create a stronger foundation without adding more software." class="premium-route-card__title-sign brand-route-screen ah-industries-caption-desktop ah-home-caption ah-spacebar-only-trigger ah-unified-spacebar" data-m1103="78" href="./solutions.html?v=1108r"><span class="ah-route-label-final" data-m1103="79" style="position:relative!important;z-index:50!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;margin:0!important;white-space:pre!important;transform:none!important;line-height:.96!important;white-space:normal!important;">The Solution</span></a>
+</article>
+<article class="premium-route-card premium-route-card--gold home-route-card" data-m1103="80" data-route-index="3" style="grid-row:auto!important;height:auto!important;min-height:0!important;max-height:none!important;grid-template-rows:auto auto!important;margin:0!important;padding:0!important;align-self:start!important;overflow:visible!important;row-gap:24px!important;gap:24px!important;">
+<div aria-hidden="true" class="premium-route-card__link premium-route-card__image-button ah-route-image-visual" data-m1103="81" data-route-index="3" style=";position:relative!important;isolation:isolate!important;padding:10px!important;border:0!important;outline:0!important;outline-offset:0!important;background-color:#02060c!important;overflow:hidden!important;"><span class="premium-route-card__media" data-m1103="82" style=";position:absolute!important;inset:10px!important;z-index:2!important;border:0!important;outline:0!important;"><img alt="A person and a robot learning through a connected set of practical concepts" data-m1103="83" decoding="async" fetchpriority="low" height="908" loading="lazy" src="./assets/home-card-learning-center-round455-frameless.webp" style=";border:0!important;outline:0!important;box-shadow:none!important;" width="841"/></span><span aria-hidden="true" class="ah1460-route-glass-base"></span><span aria-hidden="true" class="ah1460-route-glass-sheen"></span></div>
+<a aria-label="Learning Center: Build confidence with plain-English guidance, practical AI lessons, and useful ways to think more clearly." class="premium-route-card__title-sign brand-route-screen ah-industries-caption-desktop ah-home-caption ah-spacebar-only-trigger ah-unified-spacebar" data-m1103="84" href="./learning-center.html?v=1246r"><span class="ah-route-label-final" data-m1103="85" style="position:relative!important;z-index:50!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;margin:0!important;white-space:pre!important;transform:none!important;line-height:.96!important;white-space:normal!important;">Learning Center</span></a>
+</article>
+</div>
+</div>
+</section>
+<section aria-labelledby="home-negative-software-title" class="section section--divider home-rock-framework-round336 home-rock-framework-round338 home-rock-framework-round339 negative-software-section-round344" data-m1103="86" data-r828-starfield="" id="home-solution-framework" style="background:#000000!important;background-color:#000000!important;background-image:var(--r830-stars)!important;background-position:center!important;background-size:100% 100%!important;background-repeat:no-repeat!important;box-sizing:border-box!important;height:auto!important;min-height:0!important;max-height:none!important;padding:64px 0!important;margin:0!important;overflow:visible!important;border-top:0!important;box-shadow:none!important;position:relative!important;">
+<span aria-hidden="true" class="r828-starfield" data-m1103="87"><i class="r828-star" data-m1103="88"></i><i class="r828-star" data-m1103="89"></i><i class="r828-star" data-m1103="90"></i><i class="r828-star" data-m1103="91"></i><i class="r828-star" data-m1103="92"></i><i class="r828-star" data-m1103="93"></i><i class="r828-star" data-m1103="94"></i><i class="r828-star" data-m1103="95"></i><i class="r828-star" data-m1103="96"></i><i class="r828-star" data-m1103="97"></i><i class="r828-star" data-m1103="98"></i><i class="r828-star" data-m1103="99"></i><i class="r828-star" data-m1103="100"></i><i class="r828-star" data-m1103="101"></i><i class="r828-star" data-m1103="102"></i><i class="r828-star" data-m1103="103"></i><i class="r828-star" data-m1103="104"></i><i class="r828-star" data-m1103="105"></i><i class="r828-star" data-m1103="106"></i><i class="r828-star" data-m1103="107"></i></span>
+<div class="shell" data-m1103="108" style="box-sizing:border-box!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0 auto!important;padding:0!important;overflow:visible!important;">
+<div class="home-zero-system-console home-rock-console-round336 home-rock-console-round338 negative-software-console-round344" data-m1103="109" style="display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:48px!important;box-sizing:border-box!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important;overflow:visible!important;">
+<div class="section-heading section-heading--center reveal home-zero-software-heading negative-software-heading-round344" data-m1103="110" style="margin:0!important;padding:0!important;">
+<div aria-hidden="true" class="r902-mobile-zero-title-stack" data-m1103="111" style="display:none!important;width:0!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;">
+<div class="brand-lcd-bar negative-software-title-round344 r383-reference-screen r902-mobile-zero-title" data-m1103="112"><span class="screen-text-canonical screen-text-canonical--green screen-text-size-wide r383-reference-text" data-m1103="113">Negative Software</span><span aria-hidden="true" class="r488-extra-matte-film" data-m1103="114"></span></div>
+<div class="brand-lcd-bar negative-software-title-round344 r383-reference-screen r902-mobile-zero-title" data-m1103="115"><span class="screen-text-canonical screen-text-canonical--green screen-text-size-wide r383-reference-text" data-m1103="116">Solution</span><span aria-hidden="true" class="r488-extra-matte-film" data-m1103="117"></span></div>
+</div>
+<h2 class="brand-lcd-bar negative-software-title-round344 r383-reference-screen" data-m1103="118" id="home-negative-software-title">
+<span class="screen-text-canonical screen-text-size-wide r383-reference-text ah-negative-software-title-copy" data-m1103="119" data-text="Negative-Software Solution"><span class="ah-negative-software-pink">Negative-Software</span><span class="ah-negative-software-solution"> Solution</span></span>
+<span aria-hidden="true" class="r488-extra-matte-film" data-m1103="120"></span></h2>
+</div>
+<div class="r504-process-surface" data-m1103="121" style="margin:0!important;padding:0!important;position:relative!important;z-index:10!important;box-sizing:border-box!important;height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;">
+<div aria-label="The Automated Hearts negative-software process" class="home-process-lcd-row home-rock-process-panel-round336 home-rock-process-panel-round338 negative-software-grid-round344" data-m1103="122" role="list">
+<article class="home-process-stage negative-software-screen-round344 ah-home-process-box" data-m1103="123" role="listitem" style="display:var(--r1005-process-display)!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;box-sizing:border-box!important;height:var(--r1005-process-height)!important;min-height:var(--r1005-process-min-height)!important;max-height:var(--r1005-process-max-height)!important;margin:0!important;padding:var(--r1005-process-padding)!important;overflow:hidden!important;">
+<h3 data-m1103="124"><span class="r1176-process-heading-label">Consolidate</span><span aria-hidden="true" class="ah-home-header-matte"></span></h3>
+<ul class="home-process-stage__list" data-m1103="125" style="display:grid!important;grid-template-columns:1fr!important;grid-template-rows:var(--r1005-process-list-rows)!important;align-items:var(--r1005-process-list-align)!important;justify-content:stretch!important;width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;gap:var(--r1005-process-list-gap)!important;list-style:none!important;transform:none!important;flex:1 1 auto!important;">
+<li data-m1103="126" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Less software.</li>
+<li data-m1103="127" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Fewer tools.</li>
+<li data-m1103="128" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Lower costs.</li>
+<li data-m1103="129" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Clean data.</li>
+</ul>
+<span aria-hidden="true" class="r488-extra-matte-film" data-m1103="130"></span></article>
+<article class="home-process-stage negative-software-screen-round344 ah-home-process-box" data-m1103="131" role="listitem" style="display:var(--r1005-process-display)!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;box-sizing:border-box!important;height:var(--r1005-process-height)!important;min-height:var(--r1005-process-min-height)!important;max-height:var(--r1005-process-max-height)!important;margin:0!important;padding:var(--r1005-process-padding)!important;overflow:hidden!important;">
+<h3 data-m1103="132"><span class="r1176-process-heading-label">Streamline</span><span aria-hidden="true" class="ah-home-header-matte"></span></h3>
+<ul class="home-process-stage__list" data-m1103="133" style="display:grid!important;grid-template-columns:1fr!important;grid-template-rows:var(--r1005-process-list-rows)!important;align-items:var(--r1005-process-list-align)!important;justify-content:stretch!important;width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;gap:var(--r1005-process-list-gap)!important;list-style:none!important;transform:none!important;flex:1 1 auto!important;">
+<li data-m1103="134" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Fewer steps.</li>
+<li data-m1103="135" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Less clicks.</li>
+<li data-m1103="136" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Fewer errors.</li>
+<li data-m1103="137" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Less duplication.</li>
+</ul>
+<span aria-hidden="true" class="r488-extra-matte-film" data-m1103="138"></span></article>
+<article class="home-process-stage negative-software-screen-round344 ah-home-process-box" data-m1103="139" role="listitem" style="display:var(--r1005-process-display)!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;box-sizing:border-box!important;height:var(--r1005-process-height)!important;min-height:var(--r1005-process-min-height)!important;max-height:var(--r1005-process-max-height)!important;margin:0!important;padding:var(--r1005-process-padding)!important;overflow:hidden!important;">
+<h3 data-m1103="140"><span class="r1176-process-heading-label">Automate</span><span aria-hidden="true" class="ah-home-header-matte"></span></h3>
+<ul class="home-process-stage__list" data-m1103="141" style="display:grid!important;grid-template-columns:1fr!important;grid-template-rows:var(--r1005-process-list-rows)!important;align-items:var(--r1005-process-list-align)!important;justify-content:stretch!important;width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;gap:var(--r1005-process-list-gap)!important;list-style:none!important;transform:none!important;flex:1 1 auto!important;">
+<li data-m1103="142" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Monitor information.</li>
+<li data-m1103="143" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Maintain full visibility.</li>
+<li data-m1103="144" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Let it run.</li>
+<li data-m1103="145" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Free your time.</li>
+</ul>
+<span aria-hidden="true" class="r488-extra-matte-film" data-m1103="146"></span></article>
+<article class="home-process-stage negative-software-screen-round344 ah-home-process-box" data-m1103="147" role="listitem" style="display:var(--r1005-process-display)!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;box-sizing:border-box!important;height:var(--r1005-process-height)!important;min-height:var(--r1005-process-min-height)!important;max-height:var(--r1005-process-max-height)!important;margin:0!important;padding:var(--r1005-process-padding)!important;overflow:hidden!important;">
+<h3 data-m1103="148"><span class="r1176-process-heading-label">Optimize</span><span aria-hidden="true" class="ah-home-header-matte"></span></h3>
+<ul class="home-process-stage__list" data-m1103="149" style="display:grid!important;grid-template-columns:1fr!important;grid-template-rows:var(--r1005-process-list-rows)!important;align-items:var(--r1005-process-list-align)!important;justify-content:stretch!important;width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:0!important;gap:var(--r1005-process-list-gap)!important;list-style:none!important;transform:none!important;flex:1 1 auto!important;">
+<li data-m1103="150" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">See what works.</li>
+<li data-m1103="151" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Reveal patterns.</li>
+<li data-m1103="152" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Adjust sooner.</li>
+<li data-m1103="153" style="position:relative!important;z-index:40!important;display:flex!important;align-items:center!important;width:100%!important;min-width:0!important;margin:0!important;padding:0!important;color:#00c783!important;-webkit-text-fill-color:#00c783!important;-webkit-text-stroke:0!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,19px)!important;font-weight:700!important;line-height:1.18!important;letter-spacing:0!important;text-shadow:0 1px 0 rgba(0,26,19,.98),0 0 2px rgba(0,199,131,.28)!important;white-space:normal!important;overflow:visible!important;">Improve predictions.</li>
+</ul>
+<span aria-hidden="true" class="r488-extra-matte-film" data-m1103="154"></span></article>
+<article aria-label="Explore" class="home-process-stage home-process-stage--key negative-software-explore-round344" data-m1103="155" role="listitem" style="height:390px!important;min-height:390px!important;max-height:390px!important;overflow:visible!important;">
+<a aria-pressed="false" class="home-process-key-button negative-software-explore-button-round344" data-explore-lock="" data-m1103="156" href="./learning-center.html?v=1246r#learning-model-stage" id="negative-software-explore" style="display:grid!important;grid-template-rows:auto minmax(0,1fr) auto!important;align-items:stretch!important;justify-items:stretch!important;width:100%!important;min-width:0!important;max-width:100%!important;height:100%!important;min-height:100%!important;max-height:100%!important;box-sizing:border-box!important;padding:18px 16px 18px!important;overflow:hidden!important;">
+<div class="explore-title-1175" data-m1103="158" style="position:relative!important;z-index:10!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;max-width:100%!important;min-height:64px!important;margin:0!important;padding:4px 4px 8px!important;box-sizing:border-box!important;overflow:visible!important;font-family:Orbitron,system-ui,sans-serif;font-size:clamp(38px,3.15vw,54px)!important;font-weight:900!important;line-height:1!important;letter-spacing:.015em!important;text-align:center!important;white-space:nowrap!important;color:#ff58b8!important;-webkit-text-fill-color:#ff58b8!important;-webkit-text-stroke:.3px #ff91cf!important;text-shadow:0 1px 0 #ff91cf,0 2px 0 #d91c8d,0 3px 0 #9c0d62,0 5px 8px rgba(0,0,0,.62),0 0 6px rgba(255,46,168,.30)!important;">Explore</div>
+<p class="r930-explore-quote" data-m1103="159" style="position:relative!important;z-index:10!important;align-self:center!important;justify-self:center!important;width:100%!important;max-width:100%!important;margin:0!important;padding:8px 4px 4px!important;box-sizing:border-box!important;overflow:visible!important;color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(16px,1.22vw,21px)!important;font-weight:800!important;line-height:1.34!important;letter-spacing:0!important;text-align:center!important;white-space:normal!important;transform:none!important;"><span class="r1225-quote-line">“The only limitation</span><span class="r1225-quote-line">is your imagination.”</span></p>
+<p class="r930-explore-attribution" data-m1103="160" style="position:relative!important;z-index:10!important;align-self:end!important;justify-self:stretch!important;width:100%!important;max-width:100%!important;margin:0!important;padding:4px 8px 4px!important;box-sizing:border-box!important;overflow:visible!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;font-family:Orbitron,system-ui,sans-serif!important;font-size:clamp(15px,1.08vw,18px)!important;font-weight:800!important;line-height:1.1!important;text-align:right!important;white-space:nowrap!important;transform:none!important;">- TruthBot</p>
+<span aria-hidden="true" class="ah-bottom-siding"></span></a>
+</article>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="Human and AI transition carousel" class="section home-overview-display-section home-overview-carousel-section" data-m1103="161" id="home-overview-section" style="box-sizing:border-box!important;height:auto!important;min-height:0!important;max-height:none!important;padding:64px 0!important;margin:0!important;overflow:hidden!important;border-top:0!important;box-shadow:none!important;position:relative!important;">
+<div class="shell" data-m1103="162" style="box-sizing:border-box!important;height:auto!important;min-height:0!important;max-height:none!important;padding:0!important;margin:0 auto!important;overflow:visible!important;">
+<div aria-label="Moments of humans and AI working and learning together" class="home-transition-carousel reveal home-transition-carousel-round340" data-m1103="163" style="margin:0!important;">
+<button aria-label="Scroll the carousel continuously to the right while pressed." class="home-transition-orb home-transition-orb--left" data-carousel-direction="right" data-m1103="164" type="button">
+<span aria-hidden="true" class="home-transition-orb__core" data-m1103="165"></span>
+</button>
+<div class="home-transition-track home-transition-track-round340" data-home-transition-track="" data-m1103="166">
+<figure class="home-transition-slide" data-m1103="167"><img alt="Humans and a transparent anatomically heart-lit robot sharing pizza and laughing together at a casual pizza party" data-m1103="168" decoding="async" fetchpriority="low" height="941" loading="lazy" src="./assets/home-carousel-pizza-party-anatomical-sharp-round502.webp" width="1672"/></figure><figure class="home-transition-slide" data-m1103="169"><img alt="Human and AI moving toward a practical future together" data-m1103="170" decoding="async" fetchpriority="low" height="1080" loading="lazy" src="./assets/home-carousel-work-guidance-round494.webp" width="1920"/></figure><figure class="home-transition-slide" data-m1103="171"><img alt="Humans and an anatomically heart-lit robot enjoying a relaxed backyard barbecue together" data-m1103="172" decoding="async" fetchpriority="low" height="941" loading="lazy" src="./assets/home-carousel-bbq-anatomical-sharp-round502.webp" width="1672"/></figure><figure class="home-transition-slide" data-m1103="173"><img alt="Human explaining one practical concept to an AI collaborator" data-m1103="174" decoding="async" fetchpriority="low" height="1080" loading="lazy" src="./assets/home-carousel-work-concept-round494.webp" width="1920"/></figure><figure class="home-transition-slide" data-m1103="175"><img alt="Friends and an anatomically heart-lit robot relaxing together in a living room" data-m1103="176" decoding="async" fetchpriority="low" height="941" loading="lazy" src="./assets/home-carousel-living-room-anatomical-sharp-round502.webp" width="1672"/></figure><figure class="home-transition-slide" data-m1103="177"><img alt="Human and AI simplifying a working system together" data-m1103="178" decoding="async" fetchpriority="low" height="1080" loading="lazy" src="./assets/home-carousel-work-simplify-round494.webp" width="1920"/></figure><figure class="home-transition-slide" data-m1103="179"><img alt="A friendly anatomically heart-lit robot talking with a smiling man while their friends watch football" data-m1103="180" decoding="async" fetchpriority="low" height="941" loading="lazy" src="./assets/home-carousel-football-friendly-conversation-round503.webp" width="1672"/></figure><figure class="home-transition-slide" data-m1103="181"><img alt="Human and AI planning practical next steps together" data-m1103="182" decoding="async" fetchpriority="low" height="1080" loading="lazy" src="./assets/home-carousel-work-planning-round494.webp" width="1920"/></figure><figure class="home-transition-slide" data-m1103="183"><img alt="A woman and an anatomically heart-lit robot having fun together during an arcade night" data-m1103="184" decoding="async" fetchpriority="low" height="941" loading="lazy" src="./assets/home-carousel-arcade-anatomical-sharp-round502.webp" width="1672"/></figure></div>
+<button aria-label="Scroll the carousel continuously to the left while pressed." class="home-transition-orb home-transition-orb--right" data-carousel-direction="left" data-m1103="185" type="button">
+<span aria-hidden="true" class="home-transition-orb__core" data-m1103="186"></span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<div class="home-hero-message-wrap reveal home-hero-message-wrap-round339" data-m1103="187" id="home-ticker-wrap">
+<p class="home-message-display home-message-display--charity" data-m1103="188" id="home-charity-ticker" style="position:absolute!important;inset:0!important;display:block!important;box-sizing:border-box!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;overflow:hidden!important;border:2px solid rgba(210,229,237,.96)!important;border-radius:28px!important;background:radial-gradient(165% 135% at 50% -29%,rgba(255,255,255,.48) 0%,rgba(226,248,253,.25) 11%,rgba(154,213,226,.08) 27%,rgba(255,255,255,0) 43%),radial-gradient(130% 90% at 50% 122%,rgba(66,151,174,.16) 0%,rgba(10,31,46,0) 58%),linear-gradient(180deg,rgba(20,52,69,.96) 0%,rgba(7,27,41,.985) 31%,rgba(3,15,26,.995) 64%,rgba(1,8,15,1) 100%)!important;filter:none!important;isolation:isolate!important;"><span aria-hidden="true" class="ticker-end-rim ticker-end-rim--left" data-m1103="189" style="position:absolute!important;left:1px!important;top:2px!important;bottom:2px!important;width:17px!important;z-index:20!important;display:block!important;pointer-events:none!important;border-radius:23px 0 0 23px!important;clip-path:polygon(0 0,100% 0,45% 18%,32% 50%,45% 82%,100% 100%,0 100%)!important;background:linear-gradient(180deg,rgba(248,252,253,.96) 0%,rgba(160,176,184,.96) 12%,rgba(62,82,94,.94) 38%,rgba(16,31,42,.96) 58%,rgba(112,133,144,.96) 82%,rgba(238,244,246,.96) 100%)!important;"></span><span aria-hidden="true" class="ticker-end-rim ticker-end-rim--right" data-m1103="190" style="position:absolute!important;right:1px!important;top:2px!important;bottom:2px!important;width:17px!important;z-index:20!important;display:block!important;pointer-events:none!important;border-radius:0 23px 23px 0!important;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,55% 82%,68% 50%,55% 18%)!important;background:linear-gradient(180deg,rgba(248,252,253,.96) 0%,rgba(160,176,184,.96) 12%,rgba(62,82,94,.94) 38%,rgba(16,31,42,.96) 58%,rgba(112,133,144,.96) 82%,rgba(238,244,246,.96) 100%)!important;"></span>
+<strong aria-label="Prioritizing Job-Retention. Automation with a human touch. Elevating the human, not obsoleting them." class="charity-marquee" data-m1103="191" data-text="Prioritizing Job-Retention. Automation with a human touch. Elevating the human, not obsoleting them." id="home-charity-marquee"><span aria-hidden="true" class="charity-marquee__track" data-m1103="192"></span></strong><span aria-hidden="true" class="r488-extra-matte-film ticker-matte-film" data-m1103="193" style="position:absolute!important;inset:2px!important;z-index:7!important;display:block!important;pointer-events:none!important;border-radius:26px!important;background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.075) 15%,rgba(255,255,255,.018) 34%,rgba(0,0,0,.035) 67%,rgba(255,255,255,.045) 100%),radial-gradient(150% 82% at 50% -4%,rgba(255,255,255,.20) 0%,rgba(255,255,255,.07) 24%,rgba(255,255,255,0) 53%),repeating-linear-gradient(180deg,rgba(211,244,249,.040) 0 1px,rgba(8,25,36,.012) 1px 3px,transparent 3px 5px),repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0 1px,transparent 1px 4px)!important;opacity:.82!important;mix-blend-mode:screen!important;-webkit-backdrop-filter:blur(.35px) saturate(.90)!important;backdrop-filter:blur(.35px) saturate(.90)!important;"></span>
+<span aria-hidden="true" class="r966-ticker-bubble-lens" data-m1103="194"></span><span aria-hidden="true" class="r966-ticker-matte-film" data-m1103="195"></span></p>
+</div>
+<footer class="site-footer site-footer--minimal" data-m1103="196" id="site-footer">
+<div class="shell minimal-footer-row" data-m1103="197">
+<nav aria-label="Primary navigation" class="footer-primary-nav" data-m1103="198" id="primary-nav">
+<div class="primary-nav__group primary-nav__group--centered" data-m1103="199">
+<a class="r973-pink-edge footer-structure-control mechanical-send-control" data-m1103="200" data-nav="solutions" href="./solutions.html?v=1108r" style="overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy" data-m1103="201"><span class="footer-nav-label" data-m1103="202" style="font-family:Orbitron,system-ui,sans-serif;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;font-size:24px!important;text-shadow:0 0 1px rgba(255,114,199,.28)!important;;font-family:Orbitron,system-ui,sans-serif!important;font-size:16px!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;transform:none!important;filter:none!important;animation:none!important;transition:none!important;">The Solution</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-m1103="204" data-nav="who-we-help" href="./who-we-help.html?v=1435r" style="overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy" data-m1103="205"><span class="footer-nav-label" data-m1103="206" style="font-family:Orbitron,system-ui,sans-serif;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;font-size:24px!important;text-shadow:0 0 1px rgba(255,114,199,.28)!important;;font-family:Orbitron,system-ui,sans-serif!important;font-size:16px!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;transform:none!important;filter:none!important;animation:none!important;transition:none!important;">Industries</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-m1103="208" data-nav="learning" href="./learning-center.html?v=1246r" style="overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy" data-m1103="209"><span class="footer-nav-label" data-m1103="210" style="font-family:Orbitron,system-ui,sans-serif;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;font-size:24px!important;text-shadow:0 0 1px rgba(255,114,199,.28)!important;;font-family:Orbitron,system-ui,sans-serif!important;font-size:16px!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;transform:none!important;filter:none!important;animation:none!important;transition:none!important;">Learning Center</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-m1103="212" data-nav="about" href="./about.html?v=1435r" style="overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy" data-m1103="213"><span class="footer-nav-label" data-m1103="214" style="font-family:Orbitron,system-ui,sans-serif;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;font-size:24px!important;text-shadow:0 0 1px rgba(255,114,199,.28)!important;;font-family:Orbitron,system-ui,sans-serif!important;font-size:16px!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;transform:none!important;filter:none!important;animation:none!important;transition:none!important;">About Us</span></span><span aria-hidden="true" class="send-control-indicator"></span></a><a class="r973-pink-edge footer-structure-control mechanical-send-control" data-m1103="216" data-nav="pricing" href="./pricing.html?v=1441r" style="overflow:visible!important;background-color:transparent!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;box-shadow:none!important;"><span class="send-control-copy footer-control-copy" data-m1103="217"><span class="footer-nav-label" data-m1103="218" style="font-family:Orbitron,system-ui,sans-serif;font-weight:700!important;line-height:1!important;letter-spacing:0!important;white-space:normal!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;font-size:24px!important;text-shadow:0 0 1px rgba(255,114,199,.28)!important;;font-family:Orbitron,system-ui,sans-serif!important;font-size:16px!important;font-weight:700!important;line-height:1!important;letter-spacing:0!important;transform:none!important;filter:none!important;animation:none!important;transition:none!important;">Rates &amp; Services</span></span><span aria-hidden="true" class="send-control-indicator"></span></a>
+</div>
+</nav>
+</div>
+</footer>
+<style id="r1105-mobile-footer-hit-reliability">
+@media (max-width:760px){
+  body[data-page] > footer#site-footer{z-index:2147483000!important;pointer-events:auto!important;isolation:isolate!important;}
+  body[data-page] > footer#site-footer nav#primary-nav,
+  body[data-page] > footer#site-footer nav#primary-nav > .primary-nav__group{pointer-events:auto!important;}
+  body[data-page] > footer#site-footer a.footer-structure-control[data-nav]{position:relative!important;z-index:2!important;pointer-events:auto!important;touch-action:manipulation!important;-webkit-tap-highlight-color:transparent!important;min-height:50px!important;}
+  body[data-page] > footer#site-footer a.footer-structure-control[data-nav]::before,
+  body[data-page] > footer#site-footer a.footer-structure-control[data-nav]::after{pointer-events:none!important;}
+  html:not(.page-shield-arrival):not(.page-shield-covering):not(.page-shield-revealing) body[data-page] > #page-transition-shield{pointer-events:none!important;}
+}
+</style>
+<!-- Round 1181: removed scroll-time carousel recenter runtime; equal spacing is pure CSS. -->
+</body>
+</html>
