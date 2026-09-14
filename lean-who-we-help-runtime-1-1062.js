@@ -16,7 +16,7 @@
       }
     : page === 'who-we-help'
       ? {
-          selector:'#who-we-help-solutions .premium-route-card__image-button',
+          selector:'#who-we-help-solutions .premium-route-card__title-sign[data-route-index]',
           stage:'#who-help-model-stage'
         }
       : null;
@@ -452,7 +452,7 @@
     } else {
       document.querySelectorAll('#who-we-help-solutions .premium-route-card').forEach((item) => {
         item.classList.toggle('is-who-help-active',item === card);
-        item.querySelector(':is(.premium-route-card__image-button,.learning-medallion-button)')?.setAttribute(
+        item.querySelector('.premium-route-card__title-sign[data-route-index]')?.setAttribute(
           'aria-pressed',String(item === card)
         );
       });
@@ -550,7 +550,7 @@
           history.replaceState(history.state,'',window.location.pathname + window.location.search);
         } catch (error) {}
 
-        pageTopTarget.querySelector(':is(.premium-route-card__image-button,.learning-medallion-button)')?.focus({ preventScroll:true });
+        pageTopTarget.querySelector('.premium-route-card__title-sign[data-route-index]')?.focus({ preventScroll:true });
         if (status) status.textContent = page === 'learning'
           ? 'Choose AI 101, Practical AI, or Strategy Lab.'
           : 'Choose a category to view the interactive models.';
@@ -793,7 +793,7 @@
     const localRouteSelector = [
       'body.page-home #home-route-buttons .premium-route-card__image-button',
       'body.page-learning #learning-route-buttons .learning-medallion-button',
-      'body.page-who-we-help #who-we-help-solutions .premium-route-card__image-button'
+      'body.page-who-we-help #who-we-help-solutions .premium-route-card__title-sign[data-route-index]'
     ].join(',');
 
     /* Round 480: decode the shield artwork up front so a route click never
@@ -1100,7 +1100,7 @@
       if (routeCard && pageName === "who-we-help") {
         document.querySelectorAll("#who-we-help-solutions .premium-route-card").forEach((card) => {
           card.classList.remove("is-who-help-active");
-          card.querySelector(".premium-route-card__image-button")?.setAttribute("aria-pressed", "false");
+          card.querySelector(".premium-route-card__title-sign[data-route-index]")?.setAttribute("aria-pressed", "false");
         });
         routeCard.classList.add("is-who-help-active");
         link.setAttribute("aria-pressed", "true");
@@ -3000,7 +3000,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const shield = stage?.querySelector('[data-learning-stage-shield]');
   const returnButton = stage?.querySelector('[data-who-help-back-to-top]');
   const mainScroller = document.querySelector('main#main-content');
-  const cardSelector = '#who-we-help-solutions .premium-route-card__image-button';
+  const cardSelector = '#who-we-help-solutions .premium-route-card__title-sign[data-route-index]';
   const body = document.body;
   if (!stage || !shield || !returnButton || !mainScroller || !body) return;
 

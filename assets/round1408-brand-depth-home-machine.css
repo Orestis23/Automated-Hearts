@@ -1,0 +1,137 @@
+/* Automated Hearts Round 1408
+   Global top-of-page copy geometry + restored deep gold rim + Home spacebar lettering authority.
+   This file intentionally does not alter button faces, dimensions, textures, rims or press behavior. */
+:root{
+  --ah-brand-top-gap-desktop:64px; /* 2/3 CSS inch */
+  --ah-brand-top-gap-mobile:48px;  /* 1/2 CSS inch */
+  --ah-brand-top-max:1120px;
+  --ah-brand-title-desktop:clamp(34px,3.15vw,54px);
+  --ah-brand-title-mobile:clamp(24px,7vw,34px);
+  --ah-brand-copy-desktop:clamp(18px,1.25vw,21px);
+  --ah-brand-copy-mobile:clamp(16px,4.3vw,18px);
+  --ah-brand-title-line:1.08;
+  --ah-brand-copy-line:1.55;
+}
+
+/* Restore the dimensional falloff at the inside of the persistent gold frame.
+   The deeper shadow is intentionally about twice the prior visual depth, while
+   the physical frame geometry remains unchanged. */
+html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
+  border-top-color:rgba(226,190,94,.96)!important;
+  border-right-color:rgba(122,82,24,.98)!important;
+  border-bottom-color:rgba(72,44,10,.99)!important;
+  border-left-color:rgba(188,140,48,.96)!important;
+  box-shadow:
+    0 0 0 2px rgba(27,15,3,.99),
+    0 0 0 4px rgba(118,79,22,.62),
+    0 0 0 6px rgba(25,14,3,.72),
+    0 7px 12px rgba(0,0,0,.62),
+    0 14px 26px rgba(0,0,0,.52),
+    inset 0 2px 0 rgba(255,226,142,.42),
+    inset 2px 0 0 rgba(222,174,76,.25),
+    inset -3px 0 5px rgba(32,18,3,.80),
+    inset 0 -4px 7px rgba(19,10,2,.92),
+    inset 0 0 0 3px rgba(103,68,18,.42),
+    inset 0 0 14px rgba(0,0,0,.74),
+    inset 0 0 28px rgba(0,0,0,.44)!important;
+  filter:drop-shadow(0 8px 10px rgba(0,0,0,.34))!important;
+}
+
+/* The Home lower route keys keep their exact existing hardware. Only the pink copy grows. */
+@media (min-width:901px){
+  html body.page-home[data-page="home"] #home-route-buttons .premium-route-card
+  > .premium-route-card__title-sign.ah-home-caption.ah-unified-spacebar{
+    font-size:clamp(42px,3.05vw,50px)!important;
+    line-height:.92!important;
+  }
+  html body.page-home[data-page="home"] #home-route-buttons .premium-route-card
+  > .premium-route-card__title-sign.ah-home-caption.ah-unified-spacebar > .ah-route-label-final{
+    font-size:inherit!important;
+    line-height:.92!important;
+  }
+}
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="home"] .home-route-section .route-card
+  > .route-label.ah-home-caption.ah-unified-spacebar{
+    font-size:clamp(30px,8.8vw,38px)!important;
+    line-height:.94!important;
+  }
+}
+
+/* Brand standard: top-of-page copy uses the same readable measure, optical centering,
+   title scale and vertical breathing room. Page-specific sign materials remain untouched. */
+@media (min-width:901px){
+  html body.page-home[data-page="home"] #home-title-fields,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-exhibit > #solution-process-heading,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .r1399-prompt-sign,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .r1399-prompt-sign,
+  html body.page-pricing[data-page="pricing"] .r864-rates__hero > .r864-rates__hero-screen,
+  html body.page-about[data-page="about"] .ah-about-intro-sign{
+    box-sizing:border-box!important;
+    width:min(92%,var(--ah-brand-top-max))!important;
+    max-width:var(--ah-brand-top-max)!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  html body.page-learning[data-page="learning"] #learning-route-buttons .r1399-prompt-sign,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .r1399-prompt-sign,
+  html body.page-pricing[data-page="pricing"] .r864-rates__hero > .r864-rates__hero-screen,
+  html body.page-about[data-page="about"] .ah-about-intro-sign{
+    margin-top:var(--ah-brand-top-gap-desktop)!important;
+  }
+
+  html body.page-learning[data-page="learning"] #learning-route-buttons .r1399-prompt-sign > span,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .r1399-prompt-sign > span,
+  html body.page-pricing[data-page="pricing"] .r864-rates__hero-screen h1,
+  html body.page-about[data-page="about"] .ah-about-intro-sign h1{
+    font-size:var(--ah-brand-title-desktop)!important;
+    line-height:var(--ah-brand-title-line)!important;
+    text-align:center!important;
+  }
+
+  html body.page-about[data-page="about"] .ah-about-intro-sign p{
+    max-width:960px!important;
+    margin:18px auto 0!important;
+    font-size:var(--ah-brand-copy-desktop)!important;
+    line-height:var(--ah-brand-copy-line)!important;
+    text-align:center!important;
+  }
+}
+
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="home"] main#main-content > .section:first-child .title-stack,
+  html body[data-ah-mobile-surface="solutions"] main#main-content > .lite-section:first-child > .solution-mobile-process-name,
+  html body[data-ah-mobile-surface="learning"] main#main-content > .lite-section:first-child > .hero-title,
+  html body[data-ah-mobile-surface="industries"] main#main-content > .lite-section:first-child > .hero-title,
+  html body[data-ah-mobile-surface="pricing"] main#main-content > .lite-section:first-child > .hero-title,
+  html body[data-ah-mobile-surface="about"] .ah-about-intro-sign{
+    box-sizing:border-box!important;
+    width:calc(100% - 28px)!important;
+    max-width:680px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] main#main-content > .lite-section:first-child > .hero-title,
+  html body[data-ah-mobile-surface="industries"] main#main-content > .lite-section:first-child > .hero-title,
+  html body[data-ah-mobile-surface="pricing"] main#main-content > .lite-section:first-child > .hero-title,
+  html body[data-ah-mobile-surface="about"] .ah-about-intro-sign{
+    margin-top:var(--ah-brand-top-gap-mobile)!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] main#main-content > .lite-section:first-child > .hero-title,
+  html body[data-ah-mobile-surface="industries"] main#main-content > .lite-section:first-child > .hero-title,
+  html body[data-ah-mobile-surface="pricing"] main#main-content > .lite-section:first-child > .hero-title,
+  html body[data-ah-mobile-surface="about"] .ah-about-intro-sign h1{
+    font-size:var(--ah-brand-title-mobile)!important;
+    line-height:var(--ah-brand-title-line)!important;
+    text-align:center!important;
+  }
+
+  html body[data-ah-mobile-surface="about"] .ah-about-intro-sign p{
+    font-size:var(--ah-brand-copy-mobile)!important;
+    line-height:var(--ah-brand-copy-line)!important;
+    text-align:center!important;
+  }
+}

@@ -1,0 +1,130 @@
+/* Automated Hearts Round 1362
+   1) Solution machine: live closed-screen preview, visible red-sign type, instructions only after opening.
+   2) Desktop Home: use the same graphite-carbon matte title-field treatment as mobile without changing mobile. */
+
+/* ---------- Solution machine window ---------- */
+#solution-process-header #solution-process-cover.solution-process-cover,
+#lite-model-stage #solution-mobile-cover.solution-mobile-window-cover{
+  /* Transparent carbon-film construction so the real machine remains visible underneath. */
+  background-color:rgba(5,12,18,.10)!important;
+  background-image:
+    linear-gradient(118deg,transparent 3%,rgba(244,250,248,.055) 18%,rgba(255,46,168,.018) 31%,rgba(143,255,215,.024) 43%,transparent 58%,rgba(143,255,215,.018) 76%,transparent 93%),
+    radial-gradient(ellipse 125% 82% at 50% 8%,rgba(227,247,251,.075) 0%,rgba(141,177,188,.018) 42%,transparent 70%),
+    repeating-linear-gradient(135deg,rgba(145,171,179,.085) 0 3px,rgba(4,10,14,.12) 3px 6px),
+    repeating-linear-gradient(45deg,rgba(90,119,130,.052) 0 3px,rgba(0,0,0,.075) 3px 6px)!important;
+  background-position:center!important;
+  background-size:100% 100%,100% 100%,6px 6px,6px 6px!important;
+  background-repeat:no-repeat,no-repeat,repeat,repeat!important;
+  background-blend-mode:normal!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+  box-shadow:
+    inset 0 1px 0 rgba(232,250,252,.18),
+    inset 0 -18px 34px rgba(0,0,0,.08),
+    inset 0 0 0 1px rgba(194,226,233,.10)!important;
+}
+
+/* The digital interaction line belongs to the open machine only. */
+#solution-process-header #solution-process-cover:not(.is-open) ~ .solution-machine-window-footer,
+#lite-model-stage #solution-mobile-cover:not(.is-open) ~ .solution-machine-window-footer{
+  opacity:0!important;
+  visibility:hidden!important;
+  transform:translateX(-50%) translateY(5px)!important;
+  transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s!important;
+}
+#solution-process-header #solution-process-cover.is-open ~ .solution-machine-window-footer,
+#lite-model-stage #solution-mobile-cover.is-open ~ .solution-machine-window-footer{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:translateX(-50%) translateY(0)!important;
+  transition:opacity .22s ease .12s,transform .22s ease .12s,visibility 0s!important;
+}
+
+/* ---------- Desktop Home title fields ---------- */
+@media (min-width:901px){
+  html body.page-home[data-page="home"] #home-title-fields#home-title-fields.r1362-home-title-row{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    align-items:stretch!important;
+    justify-content:center!important;
+    gap:clamp(14px,1.45vw,24px)!important;
+  }
+
+  /* These are new elements rather than restyled legacy screens, so old inline !important rules cannot leak through. */
+  html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field{
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:hidden!important;
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    min-width:0!important;
+    min-height:52px!important;
+    height:52px!important;
+    padding:0 14px!important;
+    border-radius:0!important;
+    outline:0!important;
+    background-color:#0b1728!important;
+    background-image:
+      linear-gradient(180deg,rgba(255,255,255,.040) 0%,rgba(255,255,255,.010) 27%,rgba(0,0,0,.13) 100%),
+      url('./home-carbon-weave-round737-seamless.webp')!important;
+    background-position:center,center!important;
+    background-size:100% 100%,230px auto!important;
+    background-repeat:no-repeat,repeat!important;
+    background-blend-mode:normal!important;
+  }
+
+  html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field--green{
+    border:2px solid #8fffd7!important;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.90),inset 0 1px 0 rgba(228,255,248,.12),0 0 4px rgba(143,255,215,.12)!important;
+  }
+  html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field--pink{
+    border:2px solid #ff4faf!important;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.90),inset 0 1px 0 rgba(255,235,247,.10),0 0 4px rgba(255,46,168,.10)!important;
+  }
+
+  /* Same matte sheet character as the mobile fields: carbon behind it, lettering underneath it. */
+  html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:8!important;
+    inset:2px!important;
+    display:block!important;
+    pointer-events:none!important;
+    background:
+      radial-gradient(circle at 1px 1px,rgba(246,253,255,.090) 0 .52px,transparent .82px) 0 0/5px 5px,
+      repeating-linear-gradient(0deg,rgba(238,249,255,.046) 0 1px,rgba(0,0,0,.024) 1px 3px),
+      linear-gradient(110deg,transparent 0 10%,rgba(237,249,255,.14) 17%,rgba(225,240,248,.050) 32%,transparent 43% 100%),
+      radial-gradient(145% 58% at 50% -12%,rgba(240,250,255,.15),transparent 66%),
+      linear-gradient(180deg,rgba(221,238,247,.09),rgba(190,211,224,.03) 44%,rgba(0,0,0,.065))!important;
+    opacity:.86!important;
+    mix-blend-mode:screen!important;
+  }
+
+  html body.page-home[data-page="home"] #home-title-fields .r1362-home-title-text{
+    position:relative!important;
+    z-index:5!important;
+    display:block!important;
+    margin:0!important;
+    padding:0!important;
+    font-family:'Orbitron',system-ui,sans-serif!important;
+    font-size:clamp(15px,1.15vw,21px)!important;
+    font-weight:800!important;
+    line-height:1!important;
+    letter-spacing:.02em!important;
+    white-space:nowrap!important;
+    text-align:center!important;
+  }
+
+  html body.page-home[data-page="home"] #home-title-fields .r1362-home-title-field--green .r1362-home-title-text{
+    color:#ff70bd!important;
+    -webkit-text-fill-color:#ff70bd!important;
+    text-shadow:0 0 .45px #fff,0 0 1.3px #ffb4d8,0 0 4px rgba(255,46,168,.38)!important;
+  }
+  html body.page-home[data-page="home"] #home-title-fields .r1362-home-title-field--pink .r1362-home-title-text{
+    color:#8fffd7!important;
+    -webkit-text-fill-color:#8fffd7!important;
+    text-shadow:0 0 .45px #fff,0 0 1.3px #dffff5,0 0 4px rgba(143,255,215,.36)!important;
+  }
+}

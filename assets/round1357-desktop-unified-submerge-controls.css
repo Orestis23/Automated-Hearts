@@ -1,0 +1,205 @@
+/* Round 1357 — DESKTOP ONLY.
+   Unifies the top-right Messages control with the Round-1212 footer hardware family.
+   Footer and Messages remain fixed mounting boxes; the hardware face, legend/envelope and
+   lower illumination visually sink into the slot on press. Mobile is intentionally untouched. */
+
+@layer ah-desktop-controls-1221 {
+  @media (min-width:801px){
+    :root{
+      --ah-r1357-pink:#ff2ea8;
+      --ah-r1357-footer-rest:url('./footer-button-message-border-match-pinklip-round1181.svg')!important;
+      --ah-r1357-footer-down:url('./footer-button-message-border-match-pressed-round1095.svg?v=1357r')!important;
+      --ah-r1357-message-rest:url('./message-button-square-footer-match-pinklip-round1181.svg')!important;
+      --ah-r1357-message-down:url('./message-button-square-footer-match-pressed-round1095.svg?v=1357r')!important;
+      --ah-r1357-press-depth:4px;
+    }
+
+    /* =========================== FOOTER =========================== */
+    html body[data-page][class][class][class][class][class][class][class][class]
+    > footer#site-footer#site-footer.site-footer.site-footer--minimal
+    nav#primary-nav#primary-nav.footer-primary-nav
+    > .primary-nav__group.primary-nav__group
+    > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]{
+      position:relative!important;
+      isolation:isolate!important;
+      overflow:visible!important;
+      background-color:transparent!important;
+      background-image:var(--ah-r1357-footer-rest)!important;
+      background-position:center!important;
+      background-size:100% 100%!important;
+      background-repeat:no-repeat!important;
+      border:0!important;
+      border-radius:0!important;
+      outline:0!important;
+      transform:none!important;
+      translate:none!important;
+      scale:none!important;
+      /* subtle light that lives beneath the key hardware, never around the top */
+      box-shadow:
+        inset 0 -2px 0 rgba(255,46,168,.66),
+        inset 0 -5px 7px rgba(255,46,168,.075),
+        0 5px 7px rgba(255,46,168,.16)!important;
+      filter:none!important;
+      transition:box-shadow 78ms cubic-bezier(.2,.78,.24,1),filter 78ms ease!important;
+    }
+
+    /* Remove every legacy pseudo/DOM edge so only the baked Round-1212 hardware is visible. */
+    html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+    a.footer-structure-control.mechanical-send-control[data-nav]::before,
+    html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+    a.footer-structure-control.mechanical-send-control[data-nav]::after,
+    html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+    a.footer-structure-control.mechanical-send-control[data-nav] > :is(.r969-pink-depth-bottom,.r969-pink-depth-right){
+      content:none!important;
+      display:none!important;
+      visibility:hidden!important;
+      opacity:0!important;
+    }
+
+    /* Stationary mounting box; the pressed artwork contains the submerged face. */
+    html body[data-page][class][class][class][class][class][class][class][class]
+    > footer#site-footer#site-footer.site-footer.site-footer--minimal
+    nav#primary-nav#primary-nav.footer-primary-nav
+    > .primary-nav__group.primary-nav__group
+    > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]:is(:active,.is-nav-pressed,.is-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+      background-image:var(--ah-r1357-footer-down)!important;
+      transform:none!important;
+      translate:none!important;
+      scale:none!important;
+      /* glow disappears into the slot with the face */
+      box-shadow:
+        inset 0 -1px 0 rgba(255,46,168,.08),
+        inset 0 4px 7px rgba(0,0,0,.22),
+        0 1px 2px rgba(0,0,0,.24)!important;
+      filter:brightness(.96)!important;
+    }
+
+    html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+    a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy{
+      transform:none!important;
+      transition:transform 78ms cubic-bezier(.2,.78,.24,1)!important;
+    }
+    html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav
+    a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,.is-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"])
+    > .send-control-copy.footer-control-copy{
+      transform:translate3d(0,var(--ah-r1357-press-depth),0)!important;
+    }
+
+    /* ======================== DESKTOP MESSAGES ======================== */
+    /* Same exact hardware family as the footer, using its square-matched Round-1212 asset. */
+    html body[data-page][class][class][class][class][class][class][class][class]
+    > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
+      position:fixed!important;
+      z-index:2147483646!important;
+      top:6px!important;
+      right:6px!important;
+      bottom:auto!important;
+      left:auto!important;
+      width:84px!important;
+      min-width:84px!important;
+      max-width:84px!important;
+      height:84px!important;
+      min-height:84px!important;
+      max-height:84px!important;
+      margin:0!important;
+      padding:0!important;
+      box-sizing:border-box!important;
+      isolation:isolate!important;
+      overflow:visible!important;
+      display:block!important;
+      visibility:visible!important;
+      opacity:1!important;
+      background-color:transparent!important;
+      background-image:var(--ah-r1357-message-rest)!important;
+      background-position:center!important;
+      background-size:100% 100%!important;
+      background-repeat:no-repeat!important;
+      border:0!important;
+      border-radius:0!important;
+      outline:0!important;
+      clip-path:none!important;
+      -webkit-clip-path:none!important;
+      mask:none!important;
+      -webkit-mask:none!important;
+      transform:none!important;
+      translate:none!important;
+      scale:none!important;
+      rotate:none!important;
+      box-shadow:
+        inset 0 -2px 0 rgba(255,46,168,.66),
+        inset 0 -5px 7px rgba(255,46,168,.075),
+        0 5px 7px rgba(255,46,168,.16)!important;
+      filter:none!important;
+      pointer-events:auto!important;
+      transition:box-shadow 78ms cubic-bezier(.2,.78,.24,1),filter 78ms ease!important;
+    }
+
+    html body[data-page] > a#header-send-message::before,
+    html body[data-page] > a#header-send-message::after,
+    html body[data-page] > a#header-send-message > :is(.r969-pink-depth-bottom,.r969-pink-depth-right,.r996-message-face){
+      content:none!important;
+      display:none!important;
+      visibility:hidden!important;
+      opacity:0!important;
+    }
+
+    /* Keep only the centered envelope; it follows the physical face down. */
+    html body[data-page] > a#header-send-message > :not(.r1005-message-envelope){
+      display:none!important;
+      visibility:hidden!important;
+      opacity:0!important;
+      pointer-events:none!important;
+    }
+    html body[data-page] > a#header-send-message > .r1005-message-envelope{
+      position:absolute!important;
+      z-index:20!important;
+      inset:0!important;
+      display:grid!important;
+      place-items:center!important;
+      width:100%!important;
+      height:100%!important;
+      margin:0!important;
+      padding:0!important;
+      color:var(--ah-r1357-pink)!important;
+      transform:none!important;
+      transition:transform 78ms cubic-bezier(.2,.78,.24,1)!important;
+      pointer-events:none!important;
+    }
+    html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
+      display:block!important;
+      width:42%!important;
+      max-width:42%!important;
+      height:auto!important;
+      margin:0!important;
+      padding:0!important;
+    }
+    html body[data-page] > a#header-send-message > .r1005-message-envelope path{
+      fill:none!important;
+      stroke:currentColor!important;
+      stroke-width:1.6!important;
+      stroke-linecap:round!important;
+      stroke-linejoin:round!important;
+      vector-effect:non-scaling-stroke!important;
+    }
+
+    html.ah-message-persist-open body[data-page]
+    > a#header-send-message#header-send-message.header-send-message.mechanical-send-control,
+    html body[data-page]
+    > a#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+      background-image:var(--ah-r1357-message-down)!important;
+      transform:none!important;
+      translate:none!important;
+      scale:none!important;
+      box-shadow:
+        inset 0 -1px 0 rgba(255,46,168,.08),
+        inset 0 4px 7px rgba(0,0,0,.22),
+        0 1px 2px rgba(0,0,0,.24)!important;
+      filter:brightness(.96)!important;
+    }
+    html.ah-message-persist-open body[data-page] > a#header-send-message > .r1005-message-envelope,
+    html body[data-page] > a#header-send-message:is(:active,[aria-expanded="true"],.is-contact-latched,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"])
+    > .r1005-message-envelope{
+      transform:translate3d(0,var(--ah-r1357-press-depth),0)!important;
+    }
+  }
+}

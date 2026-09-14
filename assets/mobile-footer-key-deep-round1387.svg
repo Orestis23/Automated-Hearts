@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 90" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a2aeba"/><stop offset=".09" stop-color="#667585"/><stop offset=".24" stop-color="#334354"/><stop offset=".58" stop-color="#101b27"/><stop offset="1" stop-color="#02070c"/>
+    </linearGradient>
+    <linearGradient id="left" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b3bec8"/><stop offset=".34" stop-color="#566574"/><stop offset=".70" stop-color="#172431"/><stop offset="1" stop-color="#050c12"/></linearGradient>
+    <linearGradient id="right" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5c6977"/><stop offset=".38" stop-color="#2d3b49"/><stop offset=".74" stop-color="#101a24"/><stop offset="1" stop-color="#03090e"/></linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#273646"/><stop offset=".35" stop-color="#111c28"/><stop offset="1" stop-color="#010509"/></linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#27394d"/><stop offset=".22" stop-color="#182a3b"/><stop offset=".75" stop-color="#0a1724"/><stop offset="1" stop-color="#06101a"/></linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".20"/><stop offset=".24" stop-color="#fff" stop-opacity=".045"/><stop offset=".58" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".20"/></linearGradient>
+    <pattern id="carbon" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#0d1926"/><rect width="5" height="10" fill="#16283a"/><rect width="2" height="10" fill="#253b50" opacity=".55"/><rect x="5" width="1.5" height="10" fill="#08121c" opacity=".88"/></pattern>
+  </defs>
+  <!-- wide lower housing -->
+  <path d="M12 1H112L123 14V72L111 89H13L1 72V14Z" fill="url(#base)" stroke="#02060b" stroke-width="2"/>
+  <!-- deliberately broad sloping walls -->
+  <path d="M12 1L22 13V62L12 80L1 72V14Z" fill="url(#left)"/>
+  <path d="M112 1L102 13V62L112 80L123 72V14Z" fill="url(#right)"/>
+  <path d="M12 80L22 62H102L112 80V89H13Z" fill="url(#front)"/>
+  <path d="M12 1H112L102 13H22Z" fill="#d0d9e0" opacity=".28"/>
+  <!-- smaller raised keycap face -->
+  <path d="M22 12H102L109 19V58L101 67H23L15 58V19Z" fill="url(#face)" stroke="#667c91" stroke-width="1.2"/>
+  <path d="M22 12H102L109 19V58L101 67H23L15 58V19Z" fill="url(#carbon)" opacity=".62"/>
+  <path d="M22 12H102L109 19V58L101 67H23L15 58V19Z" fill="url(#sheen)"/>
+  <path d="M23 14H101" stroke="#d4e2ed" stroke-opacity=".25"/>
+  <path d="M17 21V56" stroke="#d4e2ed" stroke-opacity=".13"/>
+  <path d="M107 21V56" stroke="#000" stroke-opacity=".46"/>
+</svg>

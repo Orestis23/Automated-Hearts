@@ -87,8 +87,24 @@
     window.__ahPersistentNavigate = askParentToNavigate;
     window.__ahShellNavigate = askParentToNavigate;
 
+    const setEmbeddedRenderActive = (active) => {
+      const on = !!active;
+      document.documentElement.classList.toggle('ah-shell-render-paused', !on);
+      document.querySelectorAll('iframe').forEach((frame) => {
+        try { frame.contentWindow?.postMessage({type:'engine-visibility', visible:on}, '*'); } catch (_) {}
+        try { frame.contentWindow?.postMessage({type:'automated-hearts:viewport-activity', active:on}, '*'); } catch (_) {}
+      });
+      document.querySelectorAll('video').forEach((video) => {
+        try { if (on) { if (video.dataset.ahShellWasPlaying === '1') video.play().catch(()=>{}); } else { video.dataset.ahShellWasPlaying = video.paused ? '0' : '1'; video.pause(); } } catch (_) {}
+      });
+    };
+
     addEventListener('message', (event) => {
       const data = event.data || {};
+      if (data.type === 'ah:shell-render-active') {
+        setEmbeddedRenderActive(data.active);
+        return;
+      }
       if (data.type !== 'ah:shell-anchor' || typeof data.hash !== 'string') return;
       let el = null;
       try {
@@ -176,12 +192,14 @@
   let initialMainRetired = false;
   let shieldPanel = null;
   let shieldMotion = null;
+  let shieldCovered = false;
   let navigationTimeout = 0;
+  let navigationActive = false;
   const shieldStyle=document.createElement('style');
   shieldStyle.textContent=`
     #ah-route-shield{position:fixed;z-index:2147483200;inset:var(--current-frame-top,96px) var(--current-frame-side,88px) var(--current-frame-bottom,96px);overflow:hidden;border-radius:var(--current-frame-radius,32px);pointer-events:none}
     #ah-route-shield[hidden]{display:none}
-    #ah-route-shield-panel{position:absolute;inset:0;height:100%;width:100%;box-sizing:border-box;overflow:hidden;border:2px solid rgba(214,178,87,.94);border-radius:inherit;background:#08172b url('./assets/page-shield-smoked-heart.webp') center/cover no-repeat;background-clip:padding-box;box-shadow:inset 0 0 0 2px rgba(31,19,3,.96),inset 0 0 0 4px rgba(232,202,126,.30),inset 0 0 10px rgba(216,176,76,.24),inset 0 0 0 5px rgba(255,239,194,.16);transform:translateY(-101%);will-change:transform}
+    #ah-route-shield-panel{position:absolute;inset:0;height:100%;width:100%;box-sizing:border-box;overflow:hidden;border:2px solid rgba(214,178,87,.94);border-radius:inherit;background:#08172b url('./assets/page-shield-smoked-heart.webp') center/cover no-repeat;background-clip:padding-box;box-shadow:inset 0 0 0 2px rgba(31,19,3,.96),inset 0 0 0 4px rgba(232,202,126,.30),inset 0 0 10px rgba(216,176,76,.24),inset 0 0 0 5px rgba(255,239,194,.16);transform:translate3d(0,-101%,0);will-change:transform;backface-visibility:hidden;transform-style:preserve-3d;contain:paint;isolation:isolate}
     #ah-route-shield-quote{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(74%,980px);margin:0;text-align:center;color:#f1f7f4;font-family:Orbitron,"Orbitron",system-ui,sans-serif;font-size:clamp(22px,2.15vw,42px);font-weight:600;line-height:1.35;letter-spacing:.035em;text-wrap:balance;text-shadow:0 2px 2px rgba(0,0,0,.96),0 0 10px rgba(0,0,0,.88),0 0 16px rgba(143,255,215,.22);pointer-events:none}#ah-route-shield-quote[hidden]{display:none}#ah-route-shield-quote .ah-shield-pink{color:#ff2ea8;-webkit-text-fill-color:#ff2ea8;text-shadow:0 0 8px rgba(255,46,168,.34),0 2px 2px rgba(0,0,0,.96)}#ah-route-shield-quote .ah-shield-green{color:#8fffd7;-webkit-text-fill-color:#8fffd7;text-shadow:0 0 8px rgba(143,255,215,.30),0 2px 2px rgba(0,0,0,.96)}
     @media(max-width:900px){#ah-route-shield{inset:72px 10px calc(74px + env(safe-area-inset-bottom,0px));border-radius:18px}#ah-route-shield-panel{border:1.5px solid rgba(214,178,87,.90);border-radius:18px;box-shadow:inset 0 0 0 2px rgba(24,12,2,.94),inset 0 0 0 3px rgba(255,238,186,.18),inset 0 0 8px rgba(214,178,87,.18)}#ah-route-shield-quote{width:min(82%,560px);font-size:clamp(17px,5.4vw,28px);line-height:1.42;letter-spacing:.02em}}
   `;
@@ -199,24 +217,56 @@
     };
     return exact[clean]||escapeShieldText(clean);
   };
-  const moveShield=async(covered, quoteText)=>{
-    if(!shieldPanel){
-      const shield=document.createElement('div');
-      shield.id='ah-route-shield';
-      shield.setAttribute('aria-hidden','true');
-      shieldPanel=document.createElement('div');
-      shieldPanel.id='ah-route-shield-panel';
-      const quote=document.createElement('div');
-      quote.id='ah-route-shield-quote';
-      quote.setAttribute('aria-hidden','true');
-      quote.hidden=true;
-      shieldPanel.appendChild(quote);
-      shield.appendChild(shieldPanel);
-      document.body.appendChild(shield);
+  const ensureShield = () => {
+    if (shieldPanel) return shieldPanel;
+    const shield=document.createElement('div');
+    shield.id='ah-route-shield';
+    shield.setAttribute('aria-hidden','true');
+    shieldPanel=document.createElement('div');
+    shieldPanel.id='ah-route-shield-panel';
+    const quote=document.createElement('div');
+    quote.id='ah-route-shield-quote';
+    quote.setAttribute('aria-hidden','true');
+    quote.hidden=true;
+    shieldPanel.appendChild(quote);
+    shield.appendChild(shieldPanel);
+    document.body.appendChild(shield);
+    shieldPanel.style.transform='translate3d(0,-101%,0)';
+    // Force one early layout/paint while the panel is offscreen so the first
+    // route does not pay setup/raster cost during visible motion.
+    void shieldPanel.offsetHeight;
+    return shieldPanel;
+  };
+
+  const shieldArtworkReady = (() => {
+    const img = new Image();
+    img.decoding = 'async';
+    img.src = './assets/page-shield-smoked-heart.webp';
+    if (typeof img.decode === 'function') return img.decode().catch(()=>undefined);
+    return new Promise((resolve) => {
+      if (img.complete) return resolve();
+      img.addEventListener('load', resolve, {once:true});
+      img.addEventListener('error', resolve, {once:true});
+    });
+  })();
+
+  const setPageRenderActive = (active, frame=currentFrame) => {
+    const on = !!active;
+    if (frame) {
+      try { frame.contentWindow?.postMessage({type:'ah:shell-render-active', active:on}, '*'); } catch (_) {}
+      return;
     }
-    // Restore layout before sampling the transform: a display:none ancestor
-    // makes percentage transforms unreliable on the second and later routes.
-    shieldPanel.parentElement.hidden=false;
+    document.querySelectorAll('body > main#main-content iframe').forEach((model) => {
+      try { model.contentWindow?.postMessage({type:'engine-visibility', visible:on}, '*'); } catch (_) {}
+      try { model.contentWindow?.postMessage({type:'automated-hearts:viewport-activity', active:on}, '*'); } catch (_) {}
+    });
+    document.querySelectorAll('body > main#main-content video').forEach((video) => {
+      try { if (on) { if (video.dataset.ahShellWasPlaying === '1') video.play().catch(()=>{}); } else { video.dataset.ahShellWasPlaying = video.paused ? '0' : '1'; video.pause(); } } catch (_) {}
+    });
+  };
+
+  const moveShield=async(covered, quoteText)=>{
+    ensureShield();
     if (typeof quoteText === 'string') {
       const quote = shieldPanel.querySelector('#ah-route-shield-quote');
       if (quote) {
@@ -225,27 +275,37 @@
         quote.hidden = !clean;
       }
     }
-    const from=getComputedStyle(shieldPanel).transform;
-    shieldMotion?.cancel();
-    const to=covered?'translateY(0)':'translateY(-101%)';
+    const toCovered = !!covered;
+    if (toCovered === shieldCovered && !shieldMotion) return;
+    const from = shieldCovered ? 'translate3d(0,0,0)' : 'translate3d(0,-101%,0)';
+    const to = toCovered ? 'translate3d(0,0,0)' : 'translate3d(0,-101%,0)';
+    try { shieldMotion?.cancel(); } catch (_) {}
+    shieldMotion = null;
+    shieldPanel.style.transition='none';
+    shieldPanel.style.transform=from;
+    shieldPanel.style.webkitTransform=from;
+    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
     if (typeof shieldPanel.animate === 'function') {
-      shieldPanel.style.transform=to;
       const motion=shieldPanel.animate([{transform:from},{transform:to}],{
         duration:2000,
-        easing:'cubic-bezier(.45,0,.55,1)'
+        easing:'cubic-bezier(.22,.66,.24,1)',
+        fill:'forwards'
       });
       shieldMotion=motion;
       try{await motion.finished;}catch(_){}
-    } else {
-      // Keep navigation functional on engines without Web Animations.
-      shieldPanel.style.transition='none';
-      shieldPanel.style.transform=from;
-      void shieldPanel.offsetHeight;
-      shieldPanel.style.transition='transform 2000ms cubic-bezier(.45,0,.55,1)';
+      if (shieldMotion !== motion) return;
       shieldPanel.style.transform=to;
+      shieldPanel.style.webkitTransform=to;
+      try { motion.cancel(); } catch (_) {}
+      shieldMotion=null;
+    } else {
+      shieldPanel.style.transition='transform 2000ms cubic-bezier(.22,.66,.24,1)';
+      shieldPanel.style.transform=to;
+      shieldPanel.style.webkitTransform=to;
       await new Promise(resolve=>setTimeout(resolve,2000));
+      shieldPanel.style.transition='none';
     }
-
+    shieldCovered=toCovered;
   };
 
   const contentFrameStyle = (frame) => {
@@ -307,7 +367,7 @@
     const u = new URL(file, location.href);
     /* Round 1250: version mobile content documents as well as their CSS so the
        persistent iframe cannot reuse an older page shell after a visual round. */
-    if (isMobile) u.searchParams.set('v','1277r');
+    u.searchParams.set('v','1394r');
     if (isMobile && key === 'home') u.searchParams.set('mobile','1');
     return u.href;
   };
@@ -433,6 +493,11 @@
   const navigate = (href, options = {}) => {
     const normalized = normalizeTarget(href);
     if (!normalized) return false;
+    if (navigationActive) return true;
+    navigationActive = true;
+    ensureShield();
+    shieldArtworkReady.catch(()=>{});
+    setPageRenderActive(false);
     const {key:nextKey, target, historyUrl} = normalized;
     const token = ++routeToken;
     clearTimeout(navigationTimeout);
@@ -463,6 +528,7 @@
       retireInitialContent();
 
       const oldFrame = currentFrame;
+      try { frame.contentWindow?.postMessage({type:'ah:shell-render-active', active:false}, '*'); } catch (_) {}
       revealLoadedFrame(frame);
       currentFrame = frame;
       pendingFrame = null;
@@ -483,7 +549,8 @@
       }
       await moveShield(false);
       if(token!==routeToken)return;
-      shieldPanel.parentElement.hidden=true;
+      setPageRenderActive(true, frame);
+      navigationActive = false;
       window.dispatchEvent(new CustomEvent('ah:persistent-route-complete', {detail:{page:nextKey}}));
     };
 
@@ -504,7 +571,8 @@
       pendingFrame=null;
       await moveShield(false);
       if(token!==routeToken)return;
-      shieldPanel.parentElement.hidden=true;
+      setPageRenderActive(true);
+      navigationActive = false;
       window.dispatchEvent(new CustomEvent('ah:persistent-route-complete'));
     },15000);
     return true;
@@ -644,6 +712,10 @@
     navigate(location.href, {push:false});
   });
 
+  // Round 1394: keep the route shield mounted and precomposited between routes.
+  // Recreating or display:none-hiding it forces avoidable raster/compositor work.
+  ensureShield();
+  shieldArtworkReady.catch(()=>{});
   identifyFooterButtons();
   updateShell(currentKey, null);
   document.documentElement.classList.add('ah-shell-router-ready');

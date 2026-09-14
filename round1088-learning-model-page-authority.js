@@ -165,6 +165,22 @@
       setTimeout(()=>{if(selected.dataset.r1084Transitioning==='1'){delete selected.dataset.r1084Transitioning;imp(selected,'transition','none');imp(selected,'transform','none');imp(selected,'opacity','1');}},620);
     }
     const frame=selected.querySelector('iframe');state.activeFrame=frame;
+    /* Round 1372: hydrate every other model in this opened section immediately.
+       They stay hidden and paused, but their HTML/assets/WebGL setup are ready before
+       the user advances the carousel. */
+    list.forEach(slide=>{
+      if(slide===selected)return;
+      const hiddenFrame=slide.querySelector('iframe');
+      if(!hiddenFrame)return;
+      hiddenFrame.loading='eager';
+      const hiddenSrc=sourceFor(hiddenFrame), hiddenOld=hiddenFrame.getAttribute('src')||'';
+      if(hiddenSrc&&hiddenOld!==hiddenSrc){
+        hiddenFrame.addEventListener('load',()=>{wake(hiddenFrame,false);},{once:true});
+        hiddenFrame.setAttribute('src',hiddenSrc);
+      }else if(hiddenOld){
+        wake(hiddenFrame,false);
+      }
+    });
     if(frame){
       frame.loading='eager';frame.tabIndex=0;paintFrame(frame);
       for(const [p,v] of [['display','block'],['visibility','visible'],['opacity','1'],['pointer-events','auto'],['transform','none']])imp(frame,p,v);
@@ -250,8 +266,8 @@
   const controlFrom=(target)=>{
     if(!(target instanceof Element))return null;
     if(!state.page)init();
-    if(state.page==='learning')return target.closest('#learning-route-buttons [data-learning-model],#learning-route-buttons article.r987-learning-flat-card,#learning-model-stage [data-learning-carousel-direction],#learning-model-stage .learning-stage-return,#learning-model-stage [data-learning-choose-another]');
-    if(state.page==='who-we-help')return target.closest('#who-we-help-solutions .premium-route-card__image-button,#who-we-help-solutions article.who-help-route-card,#who-help-model-stage [data-shared-carousel-direction],#who-help-model-stage .learning-stage-return,#who-help-model-stage [data-who-help-back-to-top]');
+    if(state.page==='learning')return target.closest('#learning-route-buttons .premium-route-card__title-sign[data-learning-model],#learning-model-stage [data-learning-carousel-direction],#learning-model-stage .learning-stage-return,#learning-model-stage [data-learning-choose-another]');
+    if(state.page==='who-we-help')return target.closest('#who-we-help-solutions .premium-route-card__title-sign[data-route-index],#who-help-model-stage [data-shared-carousel-direction],#who-help-model-stage .learning-stage-return,#who-help-model-stage [data-who-help-back-to-top]');
     return null;
   };
   const run=(control)=>{

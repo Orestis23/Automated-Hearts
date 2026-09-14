@@ -1,0 +1,154 @@
+/* Automated Hearts Round 1424
+   - Solution "Open the window." uses the compact Home "Automated Hearts" title-field material and scale.
+   - Pink corner accents are desktop-footer-only. Remove them from every mobile button and from Learning Center lesson keys. */
+:root{
+  --ah1424-mint:#8fffd7;
+  --ah1424-pink:#ff72bd;
+  --ah1424-carbon:
+    repeating-linear-gradient(135deg,rgba(168,184,194,.05) 0 3px,rgba(4,8,12,.035) 3px 6px),
+    repeating-linear-gradient(45deg,rgba(104,121,132,.04) 0 3px,rgba(0,3,6,.06) 3px 6px),
+    linear-gradient(#151b20 0%,#0d1217 50%,#070a0e 100%);
+}
+
+/* Exact Home-title-field look, but content-fit width. */
+html body.page-solutions[data-page="solutions"] #solution-process-header .ah-solution-open-sign,
+html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section .ah-solution-open-sign{
+  position:relative!important;
+  inset:auto!important;
+  isolation:isolate!important;
+  box-sizing:border-box!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+  width:max-content!important;
+  min-width:0!important;
+  max-width:calc(100vw - 28px)!important;
+  height:clamp(52px,4.8vw,76px)!important;
+  min-height:clamp(52px,4.8vw,76px)!important;
+  max-height:76px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  padding:10px clamp(16px,1.2vw,22px)!important;
+  overflow:hidden!important;
+  border:2px solid var(--ah1424-mint)!important;
+  border-radius:0!important;
+  outline:0!important;
+  background-color:#0d1217!important;
+  background-image:var(--ah1424-carbon)!important;
+  background-size:auto,auto,auto!important;
+  background-position:center!important;
+  background-repeat:repeat!important;
+  background-blend-mode:normal!important;
+  box-shadow:0 0 6px rgba(143,255,215,.14)!important;
+  filter:none!important;
+  backdrop-filter:none!important;
+  transform:none!important;
+}
+html body.page-solutions[data-page="solutions"] #solution-process-header .ah-solution-open-sign::before,
+html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section .ah-solution-open-sign::before{
+  content:none!important;
+  display:none!important;
+}
+html body.page-solutions[data-page="solutions"] #solution-process-header .ah-solution-open-sign::after,
+html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section .ah-solution-open-sign::after{
+  content:""!important;
+  position:absolute!important;
+  z-index:8!important;
+  inset:2px!important;
+  display:block!important;
+  pointer-events:none!important;
+  border:0!important;
+  border-radius:0!important;
+  background-image:
+    radial-gradient(circle at 1px 1px,rgba(246,253,255,.106) 0 .55px,transparent .82px),
+    repeating-linear-gradient(0deg,rgba(238,249,255,.05) 0 1px,rgba(0,0,0,.027) 1px 3px),
+    linear-gradient(110deg,transparent 0 10%,rgba(237,249,255,.16) 17%,rgba(225,240,248,.055) 32%,transparent 43% 100%),
+    radial-gradient(145% 58% at 50% -12%,rgba(240,250,255,.17),transparent 66%),
+    linear-gradient(180deg,rgba(221,238,247,.106),rgba(190,211,224,.04) 44%,rgba(0,0,0,.075))!important;
+  background-size:5px 5px,auto,auto,auto,auto!important;
+  opacity:.92!important;
+  mix-blend-mode:normal!important;
+  -webkit-backdrop-filter:blur(1.15px) saturate(.82) contrast(.94)!important;
+  backdrop-filter:blur(1.15px) saturate(.82) contrast(.94)!important;
+  box-shadow:inset 0 0 0 1px rgba(210,228,238,.15),inset 0 1px 0 rgba(255,255,255,.11),inset 0 -1px 0 rgba(0,0,0,.14)!important;
+}
+html body.page-solutions[data-page="solutions"] #solution-process-header .ah-solution-open-sign__text,
+html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section .ah-solution-open-sign__text{
+  position:relative!important;
+  z-index:12!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  margin:0!important;
+  padding:0!important;
+  color:var(--ah1424-pink)!important;
+  -webkit-text-fill-color:var(--ah1424-pink)!important;
+  font-family:"Orbitron",system-ui,sans-serif!important;
+  font-size:clamp(17px,1.85vw,30px)!important;
+  font-weight:800!important;
+  line-height:1.05!important;
+  letter-spacing:.035em!important;
+  white-space:nowrap!important;
+  text-align:center!important;
+  text-shadow:0 0 .35px rgba(255,255,255,.88),0 0 1.2px currentColor,0 0 3px rgba(255,114,189,.42)!important;
+}
+
+/* Keep the established 2/3-inch rhythm around the sign and machine. */
+@media (min-width:801px){
+  html body.page-solutions[data-page="solutions"] #solution-process-header{
+    min-height:0!important;
+    height:auto!important;
+    padding:64px 24px!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-exhibit{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:64px!important;
+    width:min(1080px,calc(100% - 54px))!important;
+    max-width:1080px!important;
+    margin:0 auto!important;
+    padding:0!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window-anchor{
+    margin:0!important;
+    padding:0!important;
+  }
+}
+@media (max-width:800px){
+  html body[data-ah-mobile-surface="solutions"] main#main-content > .solution-mobile-header-section{
+    box-sizing:border-box!important;
+    padding-top:64px!important;
+    padding-bottom:64px!important;
+  }
+  html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section .ah-solution-open-sign{
+    margin:0 auto 64px!important;
+    padding-inline:16px!important;
+  }
+  html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section .ah-solution-open-sign__text{
+    font-size:clamp(17px,5.1vw,24px)!important;
+  }
+  html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section #lite-model-stage{
+    margin-top:0!important;
+  }
+}
+
+/* Accents belong ONLY to the desktop persistent footer buttons. */
+html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar > .ah-route-label-final::before,
+html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar > .ah-route-label-final::after,
+html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-label.ah-unified-spacebar > .ah-route-label-final::before,
+html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-label.ah-unified-spacebar > .ah-route-label-final::after{
+  content:none!important;
+  display:none!important;
+}
+@media (max-width:760px){
+  html body .ah-footer-pink-corners,
+  html body .ah-footer-corner,
+  html body .ah-footer-corner--tl,
+  html body .ah-footer-corner--br{
+    display:none!important;
+    content:none!important;
+  }
+}

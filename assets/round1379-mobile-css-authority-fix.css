@@ -1,0 +1,456 @@
+/* Automated Hearts Round 1379
+   IMPORTANT: this intentionally re-opens ah-r929-final. Earlier mobile controls
+   use !important inside that layer, which outranked the unlayered Round 1378
+   rules. These rules therefore live in the same authority layer and load last. */
+
+@layer ah-r929-final {
+  @media (max-width:900px) {
+    :root{
+      --r1379-mint:#8fffd7;
+      --r1379-pink:#ff2ea8;
+      --r1379-carbon:url('./home-carbon-fiber-procedural-round714.webp');
+    }
+
+    /* ==============================================================
+       MOBILE FOOTER: pronounced vintage mechanical/pyramid keycaps.
+       Outer element = sloped key body, ::before = recessed top face,
+       ::after = front-edge light. No rear halo.
+       ============================================================== */
+    html body[data-ah-mobile-surface] > nav.footer.footer{
+      position:fixed!important;
+      z-index:2147483641!important;
+      left:0!important;
+      right:0!important;
+      bottom:0!important;
+      height:auto!important;
+      min-height:92px!important;
+      padding:6px 5px calc(8px + var(--safe-bottom,env(safe-area-inset-bottom,0px)))!important;
+      display:grid!important;
+      grid-template-columns:repeat(5,minmax(0,1fr))!important;
+      gap:4px!important;
+      overflow:visible!important;
+      background:linear-gradient(180deg,#0b1728 0%,#050c14 54%,#010407 100%)!important;
+      box-shadow:inset 0 1px 0 rgba(142,199,241,.08)!important;
+    }
+
+    html body[data-ah-mobile-surface] > nav.footer.footer > a[href],
+    html body[data-ah-mobile-surface] > nav.footer.footer > a[href]:link,
+    html body[data-ah-mobile-surface] > nav.footer.footer > a[href]:visited{
+      position:relative!important;
+      isolation:isolate!important;
+      overflow:visible!important;
+      min-width:0!important;
+      min-height:80px!important;
+      height:80px!important;
+      margin:0!important;
+      padding:0 2px 9px!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      border:0!important;
+      border-radius:0!important;
+      outline:0!important;
+      clip-path:polygon(12% 0,88% 0,100% 14%,100% 88%,91% 100%,9% 100%,0 88%,0 14%)!important;
+      -webkit-clip-path:polygon(12% 0,88% 0,100% 14%,100% 88%,91% 100%,9% 100%,0 88%,0 14%)!important;
+      background:
+        linear-gradient(135deg,rgba(213,227,239,.36) 0 9%,rgba(109,127,145,.34) 9% 15%,transparent 15%),
+        linear-gradient(225deg,rgba(110,127,144,.26) 0 9%,rgba(31,42,55,.38) 9% 15%,transparent 15%),
+        linear-gradient(45deg,rgba(3,8,13,.98) 0 17%,transparent 17%),
+        linear-gradient(315deg,rgba(2,7,12,.98) 0 17%,transparent 17%),
+        linear-gradient(180deg,#687889 0%,#344454 14%,#172432 47%,#07101a 78%,#02070c 100%)!important;
+      background-size:100% 100%!important;
+      background-repeat:no-repeat!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.20),
+        inset 1px 0 0 rgba(213,228,242,.08),
+        inset -2px 0 0 rgba(0,0,0,.40),
+        inset 0 -8px 0 rgba(0,0,0,.42),
+        0 1px 0 #000,
+        0 4px 0 #02070d,
+        0 8px 10px rgba(0,0,0,.34)!important;
+      filter:none!important;
+      transform:none!important;
+      transition:transform 95ms ease,box-shadow 95ms ease,filter 95ms ease!important;
+    }
+
+    html body[data-ah-mobile-surface] > nav.footer.footer > a[href]::before{
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:1!important;
+      left:7px!important;
+      right:7px!important;
+      top:5px!important;
+      bottom:15px!important;
+      pointer-events:none!important;
+      border:1px solid rgba(177,207,232,.27)!important;
+      border-radius:7px!important;
+      clip-path:polygon(6% 0,94% 0,100% 9%,100% 92%,94% 100%,6% 100%,0 92%,0 9%)!important;
+      -webkit-clip-path:polygon(6% 0,94% 0,100% 9%,100% 92%,94% 100%,6% 100%,0 92%,0 9%)!important;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.045) 14%,transparent 27%,rgba(0,0,0,.18) 100%),
+        linear-gradient(180deg,rgba(21,37,53,.32),rgba(5,14,23,.18) 45%,rgba(0,6,11,.38)),
+        var(--r1379-carbon)!important;
+      background-position:center,center,center!important;
+      background-size:100% 100%,100% 100%,132px 132px!important;
+      background-repeat:no-repeat,no-repeat,repeat!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        inset 0 -8px 10px rgba(0,0,0,.34),
+        inset 0 0 0 1px rgba(0,5,9,.75)!important;
+    }
+
+    html body[data-ah-mobile-surface] > nav.footer.footer > a[href]::after{
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:0!important;
+      left:12%!important;
+      right:12%!important;
+      top:auto!important;
+      bottom:2px!important;
+      height:4px!important;
+      min-height:4px!important;
+      pointer-events:none!important;
+      border:0!important;
+      border-left:1px solid rgba(143,255,215,.72)!important;
+      border-right:1px solid rgba(143,255,215,.72)!important;
+      border-bottom:1px solid var(--r1379-mint)!important;
+      border-radius:0 0 8px 8px!important;
+      background:linear-gradient(180deg,#c8fff0 0%,#63dfc0 52%,#1b5445 100%)!important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.18)!important;
+      opacity:.96!important;
+      transform:none!important;
+    }
+
+    html body[data-ah-mobile-surface] > nav.footer.footer > a[href] > .footer-nav-label{
+      position:relative!important;
+      z-index:3!important;
+      width:100%!important;
+      height:100%!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      padding:0 3px 12px!important;
+      color:inherit!important;
+      font-size:clamp(10px,2.9vw,14px)!important;
+      line-height:1.02!important;
+      text-align:center!important;
+      text-shadow:0 0 5px rgba(143,255,215,.12)!important;
+    }
+    html body[data-ah-mobile-surface] > nav.footer.footer > a[href] > .ah-footer-bottom-rim{
+      display:none!important;
+    }
+
+    html body[data-ah-mobile-surface] > nav.footer.footer > a[href]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]){
+      transform:translate3d(0,3px,0)!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.14),
+        inset 0 -4px 7px rgba(0,0,0,.56),
+        0 1px 0 #000,
+        0 2px 0 #02070d,
+        0 5px 7px rgba(0,0,0,.24)!important;
+    }
+    html body[data-ah-mobile-surface] > nav.footer.footer > a[href]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading])::before{
+      top:7px!important;
+      bottom:12px!important;
+    }
+    html body[data-ah-mobile-surface] > nav.footer.footer > a[href]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading])::after{
+      height:2px!important;
+      min-height:2px!important;
+      opacity:.68!important;
+    }
+
+    /* ==============================================================
+       MOBILE MESSAGES: same selected key family, square and fixed top-right.
+       ============================================================== */
+    html body[data-ah-mobile-surface] > a.message.message,
+    html body[data-ah-mobile-surface] > a.message.message:link,
+    html body[data-ah-mobile-surface] > a.message.message:visited{
+      position:fixed!important;
+      z-index:2147483647!important;
+      top:calc(var(--safe-top,env(safe-area-inset-top,0px)) + 7px)!important;
+      right:14px!important;
+      left:auto!important;
+      bottom:auto!important;
+      width:52px!important;
+      min-width:52px!important;
+      max-width:52px!important;
+      height:52px!important;
+      min-height:52px!important;
+      max-height:52px!important;
+      margin:0!important;
+      padding:0 0 7px!important;
+      display:grid!important;
+      place-items:center!important;
+      isolation:isolate!important;
+      overflow:visible!important;
+      border:0!important;
+      border-radius:0!important;
+      outline:0!important;
+      clip-path:polygon(13% 0,87% 0,100% 13%,100% 87%,87% 100%,13% 100%,0 87%,0 13%)!important;
+      -webkit-clip-path:polygon(13% 0,87% 0,100% 13%,100% 87%,87% 100%,13% 100%,0 87%,0 13%)!important;
+      background:
+        linear-gradient(135deg,rgba(213,227,239,.36) 0 10%,rgba(109,127,145,.34) 10% 16%,transparent 16%),
+        linear-gradient(225deg,rgba(110,127,144,.26) 0 10%,rgba(31,42,55,.38) 10% 16%,transparent 16%),
+        linear-gradient(180deg,#687889 0%,#344454 16%,#172432 50%,#07101a 80%,#02070c 100%)!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.20),
+        inset 0 -7px 0 rgba(0,0,0,.44),
+        0 1px 0 #000,
+        0 4px 0 #02070d,
+        0 8px 10px rgba(0,0,0,.34)!important;
+      filter:none!important;
+      transform:none!important;
+    }
+    html body[data-ah-mobile-surface] > a.message.message::before{
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:1!important;
+      left:6px!important;
+      right:6px!important;
+      top:5px!important;
+      bottom:13px!important;
+      border:1px solid rgba(177,207,232,.28)!important;
+      border-radius:6px!important;
+      clip-path:polygon(7% 0,93% 0,100% 10%,100% 90%,93% 100%,7% 100%,0 90%,0 10%)!important;
+      -webkit-clip-path:polygon(7% 0,93% 0,100% 10%,100% 90%,93% 100%,7% 100%,0 90%,0 10%)!important;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.04) 14%,transparent 28%,rgba(0,0,0,.20) 100%),
+        var(--r1379-carbon)!important;
+      background-position:center,center!important;
+      background-size:100% 100%,120px 120px!important;
+      background-repeat:no-repeat,repeat!important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.11),inset 0 -7px 9px rgba(0,0,0,.32)!important;
+      pointer-events:none!important;
+    }
+    html body[data-ah-mobile-surface] > a.message.message::after{
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:0!important;
+      left:14%!important;
+      right:14%!important;
+      top:auto!important;
+      bottom:2px!important;
+      height:4px!important;
+      min-height:4px!important;
+      border:0!important;
+      border-left:1px solid rgba(143,255,215,.72)!important;
+      border-right:1px solid rgba(143,255,215,.72)!important;
+      border-bottom:1px solid var(--r1379-mint)!important;
+      border-radius:0 0 7px 7px!important;
+      background:linear-gradient(180deg,#c8fff0 0%,#63dfc0 52%,#1b5445 100%)!important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.18)!important;
+      opacity:.96!important;
+      pointer-events:none!important;
+    }
+    html body[data-ah-mobile-surface] > a.message.message svg{
+      position:relative!important;
+      z-index:3!important;
+      display:block!important;
+      width:56%!important;
+      height:auto!important;
+      margin:0 0 7px!important;
+      color:#ff63aa!important;
+      filter:none!important;
+      transform:none!important;
+    }
+    html body[data-ah-mobile-surface] > a.message.message svg path{
+      fill:none!important;
+      stroke:#ff63aa!important;
+      stroke-width:2.2!important;
+      stroke-linecap:round!important;
+      stroke-linejoin:round!important;
+    }
+    html body[data-ah-mobile-surface] > a.message.message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true']){
+      transform:translate3d(0,3px,0)!important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.13),inset 0 -3px 5px rgba(0,0,0,.50),0 1px 0 #000,0 2px 0 #02070d,0 5px 7px rgba(0,0,0,.23)!important;
+    }
+    html body[data-ah-mobile-surface] > a.message.message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'])::after{
+      height:2px!important;
+      min-height:2px!important;
+      opacity:.66!important;
+    }
+
+    /* ==============================================================
+       LEARNING CENTER MOBILE: center the card, move medallion slightly left,
+       resize bar cleanly, and use the Home-style physical glow geometry.
+       ============================================================== */
+    html body[data-ah-mobile-surface="learning"][data-ah-mobile-surface="learning"] main#main-content#main-content > .lite-section:first-child{
+      box-sizing:border-box!important;
+      padding:40px 4px 72px!important;
+      min-height:0!important;
+      content-visibility:visible!important;
+      overflow:visible!important;
+    }
+    html body[data-ah-mobile-surface="learning"][data-ah-mobile-surface="learning"] main#main-content#main-content .route-grid.route-grid{
+      box-sizing:border-box!important;
+      width:100%!important;
+      max-width:100%!important;
+      margin:0 auto!important;
+      padding:0 2px!important;
+      display:grid!important;
+      grid-template-columns:minmax(0,1fr)!important;
+      justify-items:center!important;
+      align-items:start!important;
+      row-gap:36px!important;
+      overflow:visible!important;
+    }
+    html body[data-ah-mobile-surface="learning"][data-ah-mobile-surface="learning"] main#main-content#main-content .route-card.ah-spacebar-card.ah-spacebar-card{
+      box-sizing:border-box!important;
+      width:min(91vw,404px)!important;
+      max-width:404px!important;
+      margin:0 auto!important;
+      padding:0!important;
+      display:flex!important;
+      flex-direction:column!important;
+      align-items:center!important;
+      justify-content:center!important;
+      gap:14px!important;
+      overflow:visible!important;
+      transform:none!important;
+    }
+    html body[data-ah-mobile-surface="learning"][data-ah-mobile-surface="learning"] main#main-content#main-content .route-card.ah-spacebar-card
+    > .route-media.ah-route-image-visual.ah-route-image-visual{
+      box-sizing:border-box!important;
+      width:min(78vw,332px)!important;
+      max-width:332px!important;
+      height:auto!important;
+      aspect-ratio:1/1!important;
+      margin:0 auto!important;
+      border:0!important;
+      border-radius:50%!important;
+      overflow:hidden!important;
+      background:transparent!important;
+      box-shadow:none!important;
+      filter:none!important;
+      transform:translate3d(-7px,0,0)!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card.ah-spacebar-card > .route-media.ah-route-image-visual img{
+      display:block!important;
+      width:100%!important;
+      height:100%!important;
+      max-width:none!important;
+      object-fit:contain!important;
+      object-position:center!important;
+      border:0!important;
+      transform:none!important;
+    }
+
+    html body[data-ah-mobile-surface="learning"][data-ah-mobile-surface="learning"] main#main-content#main-content .route-card.ah-spacebar-card
+    > .route-label.ah-industries-caption-mobile.ah-spacebar-only-trigger{
+      position:relative!important;
+      isolation:isolate!important;
+      box-sizing:border-box!important;
+      width:min(88vw,390px)!important;
+      max-width:390px!important;
+      min-height:62px!important;
+      height:62px!important;
+      margin:0 auto!important;
+      padding:8px 12px!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      overflow:visible!important;
+      border-style:solid!important;
+      border-width:1px 2px 2px!important;
+      border-top-color:rgba(54,77,96,.88)!important;
+      border-left-color:rgba(255,46,168,.68)!important;
+      border-right-color:rgba(255,46,168,.68)!important;
+      border-bottom-color:var(--r1379-pink)!important;
+      border-radius:11px!important;
+      outline:0!important;
+      background-color:#07111b!important;
+      background-image:
+        linear-gradient(180deg,rgba(24,43,60,.34) 0%,rgba(5,15,24,.12) 38%,rgba(0,5,10,.34) 100%),
+        var(--r1379-carbon)!important;
+      background-position:center,center!important;
+      background-size:100% 100%,190px 190px!important;
+      background-repeat:no-repeat,repeat!important;
+      color:var(--r1379-mint)!important;
+      -webkit-text-fill-color:var(--r1379-mint)!important;
+      font-family:"Orbitron",system-ui,sans-serif!important;
+      font-size:clamp(17px,5vw,21px)!important;
+      font-weight:800!important;
+      line-height:1!important;
+      text-align:center!important;
+      text-shadow:0 0 .4px rgba(235,255,249,.86),0 0 1.7px rgba(143,255,215,.76),0 0 4px rgba(143,255,215,.18)!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.13),
+        inset 0 8px 14px rgba(255,255,255,.025),
+        inset 0 -10px 15px rgba(0,0,0,.48),
+        inset 0 0 0 1px rgba(2,8,13,.82)!important;
+      filter:none!important;
+      transform:none!important;
+      transition:transform 95ms ease,box-shadow 95ms ease,filter 95ms ease!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card.ah-spacebar-card
+    > .route-label.ah-industries-caption-mobile.ah-spacebar-only-trigger::before{
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:2!important;
+      inset:3px!important;
+      pointer-events:none!important;
+      border:0!important;
+      border-radius:7px!important;
+      background:
+        linear-gradient(164deg,rgba(255,255,255,.15) 0%,rgba(222,241,255,.065) 12%,transparent 35%,transparent 72%,rgba(0,0,0,.09) 100%),
+        radial-gradient(ellipse at 31% -24%,rgba(202,235,255,.11),transparent 62%)!important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 -2px 3px rgba(0,0,0,.27)!important;
+      opacity:.90!important;
+    }
+    /* Same physical glow placement as Home: only the front/side lip is lit. */
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card.ah-spacebar-card
+    > .route-label.ah-industries-caption-mobile.ah-spacebar-only-trigger::after{
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:-1!important;
+      left:5px!important;
+      right:5px!important;
+      top:calc(100% - 1px)!important;
+      bottom:auto!important;
+      height:5px!important;
+      pointer-events:none!important;
+      border:0!important;
+      border-left:2px solid rgba(255,46,168,.82)!important;
+      border-right:2px solid rgba(255,46,168,.82)!important;
+      border-bottom:2px solid var(--r1379-pink)!important;
+      border-radius:0 0 9px 9px!important;
+      background:linear-gradient(180deg,#ff9bd4 0%,#e63a9d 58%,#58102f 100%)!important;
+      box-shadow:inset 0 1px 0 rgba(255,225,242,.22)!important;
+      filter:none!important;
+      opacity:.94!important;
+      transform:none!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card.ah-spacebar-card:active
+    > .route-label.ah-spacebar-only-trigger:not(:active){
+      transform:none!important;
+      filter:none!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card.ah-spacebar-card
+    > .route-label.ah-industries-caption-mobile.ah-spacebar-only-trigger:active{
+      transform:translate3d(0,3px,0)!important;
+      box-shadow:
+        inset 0 6px 10px rgba(0,0,0,.70),
+        inset 0 -4px 7px rgba(0,0,0,.34),
+        inset 0 0 0 1px rgba(255,46,168,.16),
+        -3px 1px 7px rgba(255,46,168,.15),
+        3px 1px 7px rgba(255,46,168,.15),
+        0 3px 7px rgba(255,46,168,.18)!important;
+      filter:brightness(.96)!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card.ah-spacebar-card
+    > .route-label.ah-industries-caption-mobile.ah-spacebar-only-trigger:active::after{
+      height:2px!important;
+      border-left-width:1px!important;
+      border-right-width:1px!important;
+      border-bottom-width:1px!important;
+      opacity:.70!important;
+      box-shadow:none!important;
+    }
+  }
+}

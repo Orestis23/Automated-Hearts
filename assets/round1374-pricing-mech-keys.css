@@ -1,0 +1,331 @@
+/* Round 1374: pricing page concise screens + mechanical footer/message keys */
+
+:root{
+  --ah1374-carbon:url('../button-carbon-weave.webp');
+  --ah1374-carbon-mobile:url('./home-carbon-fiber-procedural-round714.webp');
+  --ah1374-face-top:rgba(83,98,117,.96);
+  --ah1374-face-mid:rgba(26,38,55,.98);
+  --ah1374-face-bot:rgba(6,12,21,.99);
+  --ah1374-mint:#9ffff0;
+  --ah1374-cyan:#74fff0;
+  --ah1374-pink:#ff2ea8;
+  --ah1374-red:#ff5b7f;
+  --ah1374-red-deep:#a40838;
+  --ah1374-red-body:#6d001d;
+}
+
+/* ---------- Pricing title screens ---------- */
+body[data-page] .r951-rates__card.ah-pricing-red-screen,
+body[data-page] .r983-retainer-card.ah-pricing-red-screen,
+body .rate-card.ah-pricing-red-screen{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:0!important;
+  padding:14px 18px 18px!important;
+}
+
+body[data-page] .r951-rates__card .ah-tech-title-screen,
+body[data-page] .r983-retainer-card .ah-tech-title-screen,
+body .rate-card .ah-tech-title-screen{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:64px!important;
+  margin:-2px -2px 14px!important;
+  padding:10px 16px!important;
+  border:2px solid rgba(148,255,238,.82)!important;
+  border-radius:8px!important;
+  overflow:hidden!important;
+  background:
+    linear-gradient(180deg, rgba(186,255,240,.16) 0%, rgba(57,150,133,.08) 16%, rgba(3,17,16,.06) 44%, rgba(0,0,0,.14) 100%),
+    repeating-linear-gradient(180deg, rgba(162,255,239,.12) 0px, rgba(162,255,239,.12) 2px, rgba(0,0,0,.0) 2px, rgba(0,0,0,.0) 6px),
+    radial-gradient(circle at 14% 50%, rgba(110,255,237,.22), transparent 26%),
+    radial-gradient(circle at 86% 50%, rgba(255,56,174,.18), transparent 26%),
+    linear-gradient(180deg, rgba(33,63,77,.88) 0%, rgba(8,25,31,.96) 48%, rgba(2,10,14,.98) 100%),
+    var(--ah1374-carbon)!important;
+  background-size:auto,auto,auto,auto,auto,cover!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.24),
+    inset 0 0 0 1px rgba(0,0,0,.55),
+    0 0 0 1px rgba(0,255,229,.14),
+    0 0 10px rgba(112,255,238,.08)!important;
+}
+
+body[data-page] .r951-rates__card .ah-tech-title-screen::after,
+body[data-page] .r983-retainer-card .ah-tech-title-screen::after,
+body .rate-card .ah-tech-title-screen::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg, rgba(255,255,255,.14), transparent 24%, transparent 76%, rgba(0,0,0,.34));
+}
+
+body[data-page] .r951-rates__card .ah-tech-title-screen h4,
+body[data-page] .r983-retainer-card .ah-tech-title-screen h4,
+body .rate-card .ah-tech-title-screen :is(h3,h4){
+  position:relative!important;
+  z-index:1!important;
+  margin:0!important;
+  color:var(--ah1374-mint)!important;
+  font-family:Orbitron,system-ui,sans-serif!important;
+  font-weight:800!important;
+  font-size:clamp(20px,1.45vw,32px)!important;
+  line-height:1.12!important;
+  letter-spacing:.02em!important;
+  text-align:center!important;
+  text-shadow:0 0 8px rgba(155,255,241,.14)!important;
+}
+
+body .rate-card .ah-tech-title-screen :is(h3,h4){
+  font-size:clamp(18px,5.6vw,26px)!important;
+}
+
+body[data-page] .ah-pricing-bullets,
+body .ah-pricing-bullets{
+  margin:4px 0 12px 1.15em!important;
+  padding:0!important;
+  list-style:disc!important;
+  color:rgba(255,231,236,.96)!important;
+  font-family:Rajdhani,'Segoe UI',Arial,sans-serif!important;
+  font-size:clamp(17px,1.05vw,22px)!important;
+  font-weight:700!important;
+  line-height:1.18!important;
+}
+
+body[data-page] .ah-pricing-bullets li,
+body .ah-pricing-bullets li{
+  margin:.18em 0!important;
+}
+
+body .ah-pricing-bullets{
+  font-size:clamp(17px,4.4vw,22px)!important;
+  line-height:1.16!important;
+}
+
+body[data-page] :is(.r951-rates__price,.r983-retainer-price),
+body .price{
+  margin-top:auto!important;
+  align-self:center!important;
+  color:#ffc9d4!important;
+  font-family:Orbitron,system-ui,sans-serif!important;
+  font-weight:900!important;
+  letter-spacing:.03em!important;
+  text-shadow:0 0 8px rgba(255,179,198,.22)!important;
+}
+
+body[data-page] .r983-retainer-heading small{opacity:.84!important;}
+body[data-page] .ah-pricing-positioning,
+body[data-page] .ah-pricing-standard,
+body[data-page] .ah-pricing-phase,
+body[data-page] .ah-pricing-consult-copy,
+body :is(.ah-pricing-positioning,.ah-pricing-standard,.ah-pricing-phase,.ah-pricing-consult-copy){
+  font-family:Rajdhani,'Segoe UI',Arial,sans-serif!important;
+  font-weight:700!important;
+}
+
+/* ---------- Shared mechanical key surfaces ---------- */
+body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav],
+body[data-page] > a#header-send-message,
+body nav.footer > a,
+body > a.message{
+  position:relative!important;
+  overflow:visible!important;
+  isolation:isolate!important;
+  background:transparent!important;
+  border:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+
+body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]::before,
+body[data-page] > a#header-send-message::before,
+body nav.footer > a::before,
+body > a.message::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:12px!important;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,.06) 18%, rgba(0,0,0,0) 19%, rgba(0,0,0,0) 74%, rgba(0,0,0,.24) 100%),
+    linear-gradient(180deg, var(--ah1374-face-top) 0%, var(--ah1374-face-mid) 35%, var(--ah1374-face-bot) 100%),
+    var(--ah1374-carbon)!important;
+  background-size:auto,auto,cover!important;
+  background-position:center!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.33),
+    inset 0 0 0 1px rgba(0,0,0,.68),
+    inset 0 0 0 2px rgba(167,255,242,.74),
+    inset 0 -12px 20px rgba(0,0,0,.48),
+    inset 0 -2px 0 rgba(255,49,167,.95),
+    0 2px 0 rgba(255,49,167,.92),
+    2px 5px 0 rgba(10,20,29,.96),
+    3px 7px 12px rgba(0,0,0,.42),
+    0 0 10px rgba(112,255,238,.18)!important;
+  transition:transform .11s ease, box-shadow .11s ease, filter .11s ease!important;
+}
+
+body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]::after,
+body[data-page] > a#header-send-message::after,
+body nav.footer > a::after,
+body > a.message::after{
+  content:"";
+  position:absolute;
+  left:7px;
+  right:3px;
+  bottom:-8px;
+  height:11px;
+  border-radius:0 0 10px 10px!important;
+  z-index:-1;
+  pointer-events:none;
+  background:linear-gradient(180deg, rgba(255,70,176,.95) 0%, rgba(67,5,38,.98) 100%)!important;
+  clip-path:polygon(2% 0,100% 0,97% 100%,0 100%);
+  filter:drop-shadow(2px 1px 0 rgba(6,18,27,.96));
+  transition:transform .11s ease, bottom .11s ease, height .11s ease, opacity .11s ease!important;
+}
+
+body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav] > *,
+body[data-page] > a#header-send-message > *,
+body nav.footer > a > *,
+body > a.message > *{
+  position:relative!important;
+  z-index:2!important;
+}
+
+body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]:active::before,
+body nav.footer > a:active::before,
+body > a.message:active::before,
+html.ah-message-persist-open body[data-page] > a#header-send-message::before,
+body[data-page] > a#header-send-message:active::before{
+  transform:translate3d(2px,4px,0)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.22),
+    inset 0 0 0 1px rgba(0,0,0,.74),
+    inset 0 0 0 2px rgba(166,255,242,.68),
+    inset 0 -8px 16px rgba(0,0,0,.56),
+    inset 0 -1px 0 rgba(255,49,167,.85),
+    0 1px 0 rgba(255,49,167,.72),
+    1px 2px 0 rgba(10,20,29,.96),
+    1px 3px 8px rgba(0,0,0,.32),
+    0 0 8px rgba(112,255,238,.14)!important;
+}
+
+body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]:active::after,
+body nav.footer > a:active::after,
+body > a.message:active::after,
+html.ah-message-persist-open body[data-page] > a#header-send-message::after,
+body[data-page] > a#header-send-message:active::after{
+  transform:translate3d(2px,4px,0)!important;
+  bottom:-3px!important;
+  height:6px!important;
+}
+
+/* footer text and centering */
+body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav],
+body nav.footer > a{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
+
+body[data-page] > footer#site-footer nav#primary-nav .footer-nav-label,
+body nav.footer .footer-nav-label{
+  position:relative!important;
+  z-index:2!important;
+  text-shadow:0 0 8px rgba(124,255,240,.14)!important;
+}
+
+body[data-page] > footer#site-footer nav#primary-nav .send-control-indicator,
+body nav.footer .ah-footer-bottom-rim{
+  display:none!important;
+}
+
+/* message buttons */
+body[data-page] > a#header-send-message,
+body > a.message{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+body[data-page] > a#header-send-message::before,
+body[data-page] > a#header-send-message::after,
+body > a.message::before,
+body > a.message::after{
+  border-radius:14px!important;
+}
+
+body[data-page] > a#header-send-message .r1005-message-envelope,
+body > a.message svg{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:54%!important;
+  height:54%!important;
+  filter:drop-shadow(0 0 4px rgba(255,89,125,.28))!important;
+}
+
+body[data-page] > a#header-send-message .r1005-message-envelope svg,
+body > a.message svg{
+  width:100%!important;
+  height:100%!important;
+}
+
+body[data-page] > a#header-send-message .r1005-message-envelope svg path,
+body > a.message svg path{
+  fill:none!important;
+  stroke:var(--ah1374-red)!important;
+  stroke-width:2.25!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+
+/* desktop footer keeps hardware visible */
+body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]{
+  border-radius:12px!important;
+}
+
+@media (max-width:760px){
+  body nav.footer > a::before,
+  body > a.message::before{
+    border-radius:10px!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.28),
+      inset 0 0 0 1px rgba(0,0,0,.68),
+      inset 0 0 0 1px rgba(167,255,242,.64),
+      inset 0 -10px 16px rgba(0,0,0,.48),
+      inset 0 -2px 0 rgba(255,49,167,.90),
+      0 2px 0 rgba(255,49,167,.86),
+      1px 4px 0 rgba(10,20,29,.96),
+      2px 5px 10px rgba(0,0,0,.36),
+      0 0 7px rgba(112,255,238,.12)!important;
+  }
+  body nav.footer > a::after,
+  body > a.message::after{
+    left:5px!important;
+    right:2px!important;
+    bottom:-6px!important;
+    height:8px!important;
+    border-radius:0 0 8px 8px!important;
+  }
+  body nav.footer > a:active::after,
+  body > a.message:active::after{
+    bottom:-2px!important;
+    height:4px!important;
+  }
+  body nav.footer .footer-nav-label{
+    font-size:clamp(12px,3.75vw,18px)!important;
+    line-height:1.08!important;
+  }
+}
+
+body[data-page] > footer#site-footer,
+body[data-page] > footer#site-footer nav#primary-nav,
+body[data-page] > footer#site-footer nav#primary-nav > .primary-nav__group,
+body nav.footer{
+  overflow:visible!important;
+}

@@ -1,0 +1,250 @@
+/* Automated Hearts Round 1410 — Industries viewport fit + Home route-gap authority.
+   This file is intentionally loaded LAST on the affected desktop pages. */
+
+/* HOME DESKTOP — remove the legacy breathing-room dead zone at the bottom of the three route keys. */
+@media (min-width:901px){
+  html body.page-home[data-page="home"] main#main-content > section#home-route-buttons.home-explore-section.home-explore-section--relocated{
+    box-sizing:border-box!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0!important;
+    padding-top:clamp(42px,4.2vw,64px)!important;
+    padding-bottom:14px!important;
+  }
+  html body.page-home[data-page="home"] main#main-content > #home-route-buttons > .shell{
+    min-height:0!important;
+    height:auto!important;
+    margin-bottom:0!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+  }
+  html body.page-home[data-page="home"] main#main-content > #home-route-buttons .home-explore-grid{
+    margin-bottom:0!important;
+    padding-bottom:0!important;
+  }
+  html body.page-home[data-page="home"] main#main-content > #home-route-buttons .home-route-card{
+    margin-bottom:0!important;
+  }
+  html body.page-home[data-page="home"] main#main-content > section#home-solution-framework.negative-software-section-round344{
+    min-height:0!important;
+    margin-top:0!important;
+    padding-top:14px!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework > .shell,
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-console-round344,
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-heading-round344{
+    margin-top:0!important;
+    padding-top:0!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-heading-round344{
+    margin-bottom:16px!important;
+  }
+}
+
+/* INDUSTRIES DESKTOP — one compact 2x2 composition that fits above the fixed ticker, including glows. */
+@media (min-width:901px){
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content > section#who-we-help-solutions{
+    box-sizing:border-box!important;
+    width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions > .shell{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    width:min(94vw,1180px)!important;
+    max-width:1180px!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0 auto!important;
+    padding:8px 0 calc(var(--r857-ticker-height,48px) + 42px)!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:0!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:visible!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .r1399-prompt-sign{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    width:min(82vw,900px)!important;
+    max-width:900px!important;
+    min-height:54px!important;
+    height:54px!important;
+    margin:0 auto 10px!important;
+    padding:6px 20px!important;
+    flex:0 0 54px!important;
+    transform:none!important;
+    translate:none!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .r1399-prompt-sign > span{
+    font-size:clamp(30px,2.65vw,42px)!important;
+    line-height:1!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .audience-grid.who-help-button-grid{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    width:min(92vw,1080px)!important;
+    max-width:1080px!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0 auto!important;
+    padding:0 0 24px!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:repeat(2,auto)!important;
+    column-gap:clamp(18px,2.4vw,30px)!important;
+    row-gap:10px!important;
+    align-items:start!important;
+    justify-items:stretch!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:visible!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    max-width:none!important;
+    min-width:0!important;
+    min-height:0!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    display:grid!important;
+    grid-template-rows:clamp(104px,14vh,135px) 58px!important;
+    gap:5px!important;
+    align-items:stretch!important;
+    justify-items:stretch!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:visible!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card:nth-child(n){
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link.premium-route-card__image-button.ah-route-image-visual{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    max-width:none!important;
+    min-width:0!important;
+    height:100%!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:auto!important;
+    margin:0!important;
+    padding:0!important;
+    display:block!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:hidden!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link .premium-route-card__media,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    display:block!important;
+    transform:none!important;
+    translate:none!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link img{
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.premium-route-card__title-sign.ah-unified-spacebar{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    height:58px!important;
+    min-height:58px!important;
+    max-height:58px!important;
+    margin:0!important;
+    padding:5px 10px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:visible!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.premium-route-card__title-sign.ah-unified-spacebar > .ah-route-label-final{
+    width:100%!important;
+    height:100%!important;
+    padding:0 6px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    font-size:clamp(23px,1.75vw,30px)!important;
+    line-height:.96!important;
+    letter-spacing:-.015em!important;
+    white-space:normal!important;
+    text-align:center!important;
+    text-wrap:balance!important;
+    transform:none!important;
+  }
+}
+
+/* Extra compaction for short desktop windows. */
+@media (min-width:901px) and (max-height:780px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions > .shell{
+    padding-top:4px!important;
+    padding-bottom:calc(var(--r857-ticker-height,48px) + 34px)!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .r1399-prompt-sign{
+    height:48px!important;
+    min-height:48px!important;
+    flex-basis:48px!important;
+    margin-bottom:7px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .r1399-prompt-sign > span{
+    font-size:clamp(27px,2.35vw,36px)!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .audience-grid.who-help-button-grid{
+    row-gap:7px!important;
+    padding-bottom:18px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card{
+    grid-template-rows:clamp(92px,12.5vh,112px) 52px!important;
+    gap:4px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.premium-route-card__title-sign.ah-unified-spacebar{
+    height:52px!important;
+    min-height:52px!important;
+    max-height:52px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.premium-route-card__title-sign.ah-unified-spacebar > .ah-route-label-final{
+    font-size:clamp(21px,1.6vw,27px)!important;
+  }
+}
+
+/* Mobile Industries keeps its existing single-column structure; only guarantee ticker-safe ending. */
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="industries"] #who-we-help-solutions > .shell{
+    padding-bottom:calc(172px + env(safe-area-inset-bottom,0px))!important;
+  }
+  html body[data-ah-mobile-surface="industries"] #who-we-help-solutions .who-help-route-card:last-child{
+    margin-bottom:28px!important;
+  }
+}

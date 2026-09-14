@@ -1,0 +1,79 @@
+/* Automated Hearts Round 1400
+   1) Learning + Industries prompt signs: exact same squared geometry.
+   2) Unified spacebar lettering enlarged only; button geometry/finish/behavior untouched. */
+
+/* Prompt signs: hard square corners, exact shared treatment. */
+html body[data-page] .r1399-prompt-sign,
+html body[data-page] main#main-content .hero-title.ah-learning-lesson-title,
+html body[data-ah-mobile-surface="industries"] .r1399-prompt-sign,
+html body[data-ah-mobile-surface="learning"] main#main-content .hero-title.ah-learning-lesson-title{
+  border-radius:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
+html body[data-page] .r1399-prompt-sign::before,
+html body[data-page] .r1399-prompt-sign::after,
+html body[data-page] main#main-content .hero-title.ah-learning-lesson-title::before,
+html body[data-page] main#main-content .hero-title.ah-learning-lesson-title::after,
+html body[data-ah-mobile-surface="industries"] .r1399-prompt-sign::before,
+html body[data-ah-mobile-surface="industries"] .r1399-prompt-sign::after,
+html body[data-ah-mobile-surface="learning"] main#main-content .hero-title.ah-learning-lesson-title::before,
+html body[data-ah-mobile-surface="learning"] main#main-content .hero-title.ah-learning-lesson-title::after{
+  border-radius:0!important;
+}
+
+/* Make the two prompt signs dimensionally identical at the same breakpoint. */
+@media (min-width:901px){
+  html body[data-page] .r1399-prompt-sign,
+  html body.page-learning[data-page="learning"] main#main-content .hero-title.ah-learning-lesson-title{
+    width:min(92%,1080px)!important;
+    min-height:76px!important;
+    height:auto!important;
+    padding:10px clamp(18px,3vw,42px)!important;
+    margin:0 auto clamp(28px,3vw,48px)!important;
+  }
+}
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="learning"] main#main-content .hero-title.ah-learning-lesson-title,
+  html body[data-ah-mobile-surface="industries"] .r1399-prompt-sign{
+    width:calc(100% - 28px)!important;
+    min-height:62px!important;
+    height:62px!important;
+    padding:8px 12px!important;
+    margin:0 auto 28px!important;
+    border-radius:0!important;
+    font-size:clamp(20px,6vw,29px)!important;
+    line-height:1!important;
+  }
+}
+
+/* Lettering only: intentionally do NOT touch width, height, padding, border,
+   radius, backgrounds, pseudo-elements, shadows, transform or press behavior. */
+html body .ah-unified-spacebar{
+  font-size:clamp(24px,6.9vw,32px)!important;
+  line-height:.98!important;
+  letter-spacing:0!important;
+}
+html body .ah-unified-spacebar > .ah-route-label-final{
+  font-size:inherit!important;
+  line-height:.98!important;
+  letter-spacing:0!important;
+}
+
+@media (min-width:901px){
+  html body .ah-unified-spacebar{
+    font-size:clamp(36px,3.1vw,44px)!important;
+    line-height:.96!important;
+  }
+}
+
+/* Longer labels may wrap, but remain centered inside the unchanged key face. */
+html body .ah-unified-spacebar,
+html body .ah-unified-spacebar > .ah-route-label-final{
+  white-space:normal!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  text-align:center!important;
+}

@@ -1,0 +1,30 @@
+/* Round 1391 — opaque lower shell, including the outside of its rounded corners. */
+@layer ah-r1389-controls {
+ @media(max-width:900px){
+  html:not(.ah-shell-embedded) body > .shell-edge.b {
+   display:block!important;visibility:visible!important;opacity:1!important;
+   position:fixed!important;z-index:2147483639!important;
+   left:0!important;right:0!important;top:auto!important;bottom:0!important;
+   width:100%!important;height:calc(var(--r1387-footer-h,96px) + var(--safe-bottom,env(safe-area-inset-bottom,0px)) + 24px)!important;
+   border:0!important;border-radius:0!important;box-shadow:none!important;
+   background:
+    radial-gradient(circle at 100% 0,transparent 23px,#02070c 24px) left top/34px 24px no-repeat,
+    radial-gradient(circle at 0 0,transparent 23px,#02070c 24px) right top/34px 24px no-repeat,
+    linear-gradient(#02070c,#02070c) left bottom/100% calc(100% - 24px) no-repeat!important;
+   transform:none!important;filter:none!important;mask:none!important;-webkit-mask:none!important;
+   clip-path:none!important;pointer-events:none!important;
+  }
+  html:not(.ah-shell-embedded) body > nav.footer {
+   background-color:#02070c!important;background-image:none!important;
+  }
+ }
+ html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption){
+  background-clip:border-box!important;
+ }
+ /* The Home-only projecting strip reads as a second illuminated edge.
+    Keep the Learning carbon face and inset rim; use the existing bottom border
+    as the single visible lower edge. */
+ html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption)::after {
+  content:none!important;display:none!important;box-shadow:none!important;
+ }
+}

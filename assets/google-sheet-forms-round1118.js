@@ -52,7 +52,7 @@
     data.set('page_url', location.href);
     data.set('contact_context', contactContext(form));
     data.set('submitted_at_client', new Date().toISOString());
-    data.set('form_version', '1198');
+    data.set('form_version', '1436');
 
     // Simple honeypot support if one is added later.
     if (data.get('website')) return;

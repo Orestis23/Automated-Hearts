@@ -1,0 +1,492 @@
+/* Round 1373 — Learning route geometry + strict spacebar-only press behavior.
+   The Learning cards are vertically centered in the available desktop stage,
+   enlarged to use the space, and the button press/light model matches Home. */
+@layer ah-r929-final {
+  /* Images are visual surfaces, not controls. Keep pointer events so the early
+     capture guard receives the click instead of allowing it to fall through to
+     a card-level legacy listener. */
+  html body .ah-route-image-visual {
+    pointer-events:auto!important;
+    cursor:default!important;
+    user-select:none!important;
+    -webkit-user-select:none!important;
+    touch-action:pan-y!important;
+  }
+  html body .ah-route-image-visual img {
+    pointer-events:none!important;
+    user-select:none!important;
+    -webkit-user-select:none!important;
+  }
+
+  /* ================================================================
+     LEARNING CENTER — desktop: center the whole three-choice cluster
+     vertically in the usable stage and let it occupy most of that area.
+     ================================================================ */
+  @media (min-width:761px) {
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    main#main-content#main-content > section#learning-route-buttons.learning-paths-hero {
+      box-sizing:border-box!important;
+      min-height:calc(100dvh - var(--current-frame-bottom,108px) - 8px)!important;
+      height:auto!important;
+      padding:22px 0 32px!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      overflow:visible!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons > .shell.compact-hero-grid {
+      box-sizing:border-box!important;
+      width:min(96%,1660px)!important;
+      max-width:1660px!important;
+      min-height:calc(100dvh - var(--current-frame-bottom,108px) - 62px)!important;
+      height:auto!important;
+      margin:0 auto!important;
+      padding:0 clamp(14px,1.5vw,28px)!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons .learning-header-paths {
+      width:100%!important;
+      height:auto!important;
+      margin:0!important;
+      padding:0!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons .learning-header-grid.premium-route-grid.r987-learning-flat-grid {
+      box-sizing:border-box!important;
+      width:min(100%,1560px)!important;
+      max-width:1560px!important;
+      margin:0 auto!important;
+      padding:0!important;
+      display:grid!important;
+      grid-template-columns:repeat(3,minmax(0,1fr))!important;
+      align-items:center!important;
+      justify-items:center!important;
+      column-gap:clamp(28px,3.2vw,58px)!important;
+      row-gap:0!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons article.premium-route-card.r987-learning-flat-card {
+      box-sizing:border-box!important;
+      width:100%!important;
+      min-width:0!important;
+      max-width:500px!important;
+      height:auto!important;
+      min-height:0!important;
+      margin:0!important;
+      padding:0!important;
+      display:flex!important;
+      flex-direction:column!important;
+      align-items:center!important;
+      justify-content:center!important;
+      align-self:center!important;
+      justify-self:center!important;
+      gap:clamp(12px,1.2vw,18px)!important;
+      overflow:visible!important;
+      background:transparent!important;
+      box-shadow:none!important;
+      transform:none!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons article.premium-route-card.r987-learning-flat-card
+    > .learning-medallion-button.ah-route-image-visual {
+      position:relative!important;
+      inset:auto!important;
+      display:block!important;
+      flex:0 0 auto!important;
+      width:min(100%,460px)!important;
+      max-width:460px!important;
+      aspect-ratio:1/1!important;
+      height:auto!important;
+      max-height:none!important;
+      margin:0 auto!important;
+      padding:0!important;
+      overflow:hidden!important;
+      clip-path:circle(48.3% at 50% 50%)!important;
+      -webkit-clip-path:circle(48.3% at 50% 50%)!important;
+      border:0!important;
+      outline:0!important;
+      border-radius:50%!important;
+      background:transparent!important;
+      box-shadow:none!important;
+      filter:none!important;
+      transform:none!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons .learning-medallion-button.ah-route-image-visual
+    .learning-medallion-media,
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons .learning-medallion-button.ah-route-image-visual img {
+      position:absolute!important;
+      inset:0!important;
+      display:block!important;
+      width:100%!important;
+      height:100%!important;
+      max-width:none!important;
+      max-height:none!important;
+      margin:0!important;
+      padding:0!important;
+      object-fit:contain!important;
+      object-position:center!important;
+      border:0!important;
+      border-radius:50%!important;
+      background:transparent!important;
+      transform:none!important;
+    }
+
+    /* Learning keyboard bars: exact Home physical light/travel model, with the
+       established Learning palette (mint legend / pink front-side light). */
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons article.r987-learning-flat-card
+    > .premium-route-card__title-sign.brand-route-screen.ah-spacebar-only-trigger {
+      position:relative!important;
+      inset:auto!important;
+      isolation:isolate!important;
+      box-sizing:border-box!important;
+      display:flex!important;
+      flex:0 0 auto!important;
+      align-items:center!important;
+      justify-content:center!important;
+      width:100%!important;
+      max-width:500px!important;
+      height:62px!important;
+      min-height:62px!important;
+      max-height:62px!important;
+      margin:0 auto!important;
+      padding:8px 14px!important;
+      overflow:visible!important;
+      border-style:solid!important;
+      border-width:1px 2px 2px!important;
+      border-top-color:rgba(54,77,96,.88)!important;
+      border-left-color:rgba(255,46,168,.68)!important;
+      border-right-color:rgba(255,46,168,.68)!important;
+      border-bottom-color:#ff2ea8!important;
+      border-radius:11px!important;
+      outline:0!important;
+      background-color:#07111b!important;
+      background-image:
+        linear-gradient(180deg,rgba(24,43,60,.34) 0%,rgba(5,15,24,.12) 38%,rgba(0,5,10,.34) 100%),
+        url('./home-carbon-fiber-procedural-round714.webp')!important;
+      background-position:center,center!important;
+      background-size:100% 100%,190px 190px!important;
+      background-repeat:no-repeat,repeat!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.13),
+        inset 0 8px 14px rgba(255,255,255,.025),
+        inset 0 -10px 15px rgba(0,0,0,.48),
+        inset 0 0 0 1px rgba(2,8,13,.82)!important;
+      filter:none!important;
+      -webkit-filter:none!important;
+      translate:none!important;
+      transform:none!important;
+      transition:transform 95ms ease,box-shadow 95ms ease,filter 95ms ease!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons article.r987-learning-flat-card
+    > .premium-route-card__title-sign.brand-route-screen.ah-spacebar-only-trigger::before {
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:2!important;
+      inset:3px!important;
+      pointer-events:none!important;
+      border:0!important;
+      outline:0!important;
+      border-radius:7px!important;
+      background:
+        linear-gradient(164deg,rgba(255,255,255,.15) 0%,rgba(222,241,255,.065) 12%,transparent 35%,transparent 72%,rgba(0,0,0,.09) 100%),
+        radial-gradient(ellipse at 31% -24%,rgba(202,235,255,.11),transparent 62%)!important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 -2px 3px rgba(0,0,0,.27)!important;
+      opacity:.90!important;
+      filter:none!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons article.r987-learning-flat-card
+    > .premium-route-card__title-sign.brand-route-screen.ah-spacebar-only-trigger::after {
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:-1!important;
+      left:5px!important;
+      right:5px!important;
+      top:calc(100% - 1px)!important;
+      bottom:auto!important;
+      height:5px!important;
+      pointer-events:none!important;
+      border:0!important;
+      border-left:2px solid rgba(255,46,168,.82)!important;
+      border-right:2px solid rgba(255,46,168,.82)!important;
+      border-bottom:2px solid #ff2ea8!important;
+      border-radius:0 0 9px 9px!important;
+      background:linear-gradient(180deg,#ff9bd4 0%,#e63a9d 58%,#58102f 100%)!important;
+      box-shadow:inset 0 1px 0 rgba(255,225,242,.22)!important;
+      filter:none!important;
+      opacity:.94!important;
+      transform:none!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons .ah-spacebar-only-trigger > .ah-route-label-final {
+      position:relative!important;
+      z-index:5!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      width:100%!important;
+      height:100%!important;
+      margin:0!important;
+      padding:0 10px!important;
+      color:#8fffd7!important;
+      -webkit-text-fill-color:#8fffd7!important;
+      -webkit-text-stroke:0!important;
+      font-family:"Orbitron",system-ui,sans-serif!important;
+      font-size:clamp(20px,1.5vw,26px)!important;
+      font-weight:800!important;
+      line-height:1!important;
+      letter-spacing:.01em!important;
+      text-align:center!important;
+      text-shadow:0 0 .4px rgba(235,255,249,.88),0 0 1.7px rgba(143,255,215,.76),0 0 4px rgba(143,255,215,.20)!important;
+      transform:none!important;
+    }
+
+    /* Clicking the image can make the CARD itself :active. Explicitly keep the
+       keyboard bar at rest unless the bar is the active target. */
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons article.r987-learning-flat-card:active
+    > .ah-spacebar-only-trigger:not(:active) {
+      transform:none!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.13),
+        inset 0 8px 14px rgba(255,255,255,.025),
+        inset 0 -10px 15px rgba(0,0,0,.48),
+        inset 0 0 0 1px rgba(2,8,13,.82)!important;
+      filter:none!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons article.r987-learning-flat-card:active
+    > .ah-spacebar-only-trigger:not(:active)::after {
+      height:5px!important;
+      border-left-width:2px!important;
+      border-right-width:2px!important;
+      border-bottom-width:2px!important;
+      opacity:.94!important;
+      box-shadow:inset 0 1px 0 rgba(255,225,242,.22)!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons article.r987-learning-flat-card
+    > .ah-spacebar-only-trigger:active,
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons article.r987-learning-flat-card.is-route-pressed
+    > .ah-spacebar-only-trigger {
+      transform:translate3d(0,3px,0)!important;
+      box-shadow:
+        inset 0 6px 10px rgba(0,0,0,.70),
+        inset 0 -4px 7px rgba(0,0,0,.34),
+        inset 0 0 0 1px rgba(255,46,168,.16),
+        -3px 1px 7px rgba(255,46,168,.16),
+        3px 1px 7px rgba(255,46,168,.16),
+        0 3px 7px rgba(255,46,168,.20)!important;
+      filter:brightness(.96)!important;
+    }
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons article.r987-learning-flat-card
+    > .ah-spacebar-only-trigger:active::after,
+    html body.page-learning.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons article.r987-learning-flat-card.is-route-pressed
+    > .ah-spacebar-only-trigger::after {
+      height:2px!important;
+      border-left-width:1px!important;
+      border-right-width:1px!important;
+      border-bottom-width:1px!important;
+      opacity:.70!important;
+      box-shadow:none!important;
+    }
+  }
+
+  /* ================================================================
+     HOME + INDUSTRIES: images must not visually press their keyboard bar.
+     The existing route colors/styles remain; only the activation ownership is
+     corrected so the spacebar itself is the physical control.
+     ================================================================ */
+  html body.page-home[data-page="home"] #home-route-buttons article.home-route-card:active
+  > .ah-home-caption.ah-spacebar-only-trigger:not(:active),
+  html body[data-ah-mobile-surface="home"] main#main-content .route-card:active
+  > .route-label.ah-home-caption.ah-spacebar-only-trigger:not(:active) {
+    transform:none!important;
+    filter:none!important;
+  }
+  html body.page-home[data-page="home"] #home-route-buttons article.home-route-card
+  > .ah-home-caption.ah-spacebar-only-trigger:active,
+  html body.page-home[data-page="home"] #home-route-buttons article.home-route-card.is-route-pressed
+  > .ah-home-caption.ah-spacebar-only-trigger,
+  html body[data-ah-mobile-surface="home"] main#main-content .route-card
+  > .route-label.ah-home-caption.ah-spacebar-only-trigger:active {
+    transform:translate3d(0,3px,0)!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card:active
+  > .ah-spacebar-only-trigger:not(:active),
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-card:active
+  > .route-label.ah-spacebar-only-trigger:not(:active) {
+    transform:none!important;
+    filter:none!important;
+  }
+
+  /* ================================================================
+     MOBILE LEARNING: clean centered stack; images remain inert and bars use
+     the same press/light geometry as desktop/Home while retaining Learning's
+     mint legend + pink edge light.
+     ================================================================ */
+  @media (max-width:760px) {
+    html body[data-ah-mobile-surface="learning"] main#main-content > .lite-section:first-child {
+      box-sizing:border-box!important;
+      padding:48px 7px 58px!important;
+      min-height:0!important;
+      content-visibility:visible!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-grid {
+      width:100%!important;
+      margin:0 auto!important;
+      display:grid!important;
+      grid-template-columns:minmax(0,1fr)!important;
+      justify-items:center!important;
+      row-gap:clamp(34px,8vw,48px)!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card.ah-spacebar-card {
+      box-sizing:border-box!important;
+      width:min(94vw,440px)!important;
+      max-width:440px!important;
+      margin:0 auto!important;
+      padding:0!important;
+      display:flex!important;
+      flex-direction:column!important;
+      align-items:center!important;
+      justify-content:center!important;
+      gap:12px!important;
+      transform:none!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card
+    > .route-media.ah-route-image-visual {
+      box-sizing:border-box!important;
+      width:min(76vw,330px)!important;
+      max-width:330px!important;
+      aspect-ratio:1/1!important;
+      margin:0 auto!important;
+      border-radius:50%!important;
+      transform:none!important;
+      filter:none!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card
+    > .route-label.ah-spacebar-only-trigger {
+      position:relative!important;
+      isolation:isolate!important;
+      box-sizing:border-box!important;
+      width:min(92vw,430px)!important;
+      max-width:430px!important;
+      min-height:58px!important;
+      height:58px!important;
+      margin:0 auto!important;
+      padding:8px 12px!important;
+      overflow:visible!important;
+      border-style:solid!important;
+      border-width:1px 2px 2px!important;
+      border-top-color:rgba(54,77,96,.88)!important;
+      border-left-color:rgba(255,46,168,.68)!important;
+      border-right-color:rgba(255,46,168,.68)!important;
+      border-bottom-color:#ff2ea8!important;
+      border-radius:11px!important;
+      background-color:#07111b!important;
+      background-image:
+        linear-gradient(180deg,rgba(24,43,60,.34) 0%,rgba(5,15,24,.12) 38%,rgba(0,5,10,.34) 100%),
+        url('./home-carbon-fiber-procedural-round714.webp')!important;
+      background-position:center,center!important;
+      background-size:100% 100%,160px 160px!important;
+      background-repeat:no-repeat,repeat!important;
+      color:#8fffd7!important;
+      -webkit-text-fill-color:#8fffd7!important;
+      font-family:"Orbitron",system-ui,sans-serif!important;
+      font-size:clamp(16px,5vw,21px)!important;
+      font-weight:800!important;
+      line-height:1!important;
+      text-align:center!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.13),
+        inset 0 8px 14px rgba(255,255,255,.025),
+        inset 0 -10px 15px rgba(0,0,0,.48),
+        inset 0 0 0 1px rgba(2,8,13,.82)!important;
+      text-shadow:0 0 .4px rgba(235,255,249,.88),0 0 1.7px rgba(143,255,215,.76),0 0 4px rgba(143,255,215,.20)!important;
+      transform:none!important;
+      filter:none!important;
+      transition:transform 95ms ease,box-shadow 95ms ease,filter 95ms ease!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card
+    > .route-label.ah-spacebar-only-trigger::before {
+      content:""!important;
+      position:absolute!important;
+      z-index:2!important;
+      inset:3px!important;
+      pointer-events:none!important;
+      border:0!important;
+      border-radius:7px!important;
+      background:linear-gradient(164deg,rgba(255,255,255,.15),rgba(222,241,255,.065) 12%,transparent 35%,transparent 72%,rgba(0,0,0,.09))!important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 -2px 3px rgba(0,0,0,.27)!important;
+      opacity:.90!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card
+    > .route-label.ah-spacebar-only-trigger::after {
+      content:""!important;
+      position:absolute!important;
+      z-index:-1!important;
+      left:5px!important;
+      right:5px!important;
+      top:calc(100% - 1px)!important;
+      bottom:auto!important;
+      height:5px!important;
+      pointer-events:none!important;
+      border:0!important;
+      border-left:2px solid rgba(255,46,168,.82)!important;
+      border-right:2px solid rgba(255,46,168,.82)!important;
+      border-bottom:2px solid #ff2ea8!important;
+      border-radius:0 0 9px 9px!important;
+      background:linear-gradient(180deg,#ff9bd4,#e63a9d 58%,#58102f)!important;
+      box-shadow:inset 0 1px 0 rgba(255,225,242,.22)!important;
+      opacity:.94!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card:active
+    > .route-label.ah-spacebar-only-trigger:not(:active) {
+      transform:none!important;
+      filter:none!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.13),
+        inset 0 8px 14px rgba(255,255,255,.025),
+        inset 0 -10px 15px rgba(0,0,0,.48),
+        inset 0 0 0 1px rgba(2,8,13,.82)!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card
+    > .route-label.ah-spacebar-only-trigger:active {
+      transform:translateY(3px)!important;
+      box-shadow:
+        inset 0 6px 10px rgba(0,0,0,.70),
+        inset 0 -4px 7px rgba(0,0,0,.34),
+        inset 0 0 0 1px rgba(255,46,168,.16),
+        -3px 1px 7px rgba(255,46,168,.16),
+        3px 1px 7px rgba(255,46,168,.16),
+        0 3px 7px rgba(255,46,168,.20)!important;
+      filter:brightness(.96)!important;
+    }
+    html body[data-ah-mobile-surface="learning"] main#main-content .route-card
+    > .route-label.ah-spacebar-only-trigger:active::after {
+      height:2px!important;
+      border-left-width:1px!important;
+      border-right-width:1px!important;
+      border-bottom-width:1px!important;
+      opacity:.70!important;
+      box-shadow:none!important;
+    }
+  }
+}

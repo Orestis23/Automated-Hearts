@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8794a2"/><stop offset=".11" stop-color="#566575"/><stop offset=".29" stop-color="#273747"/><stop offset=".70" stop-color="#101b27"/><stop offset="1" stop-color="#030910"/>
+    </linearGradient>
+    <linearGradient id="left" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#96a3ae"/><stop offset=".4" stop-color="#40505f"/><stop offset="1" stop-color="#0a121a"/></linearGradient>
+    <linearGradient id="right" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4d5a68"/><stop offset=".45" stop-color="#1b2835"/><stop offset="1" stop-color="#050a10"/></linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#182534"/><stop offset=".55" stop-color="#071019"/><stop offset="1" stop-color="#02060b"/></linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26384c"/><stop offset=".2" stop-color="#17283a"/><stop offset=".72" stop-color="#0b1725"/><stop offset="1" stop-color="#07111b"/></linearGradient>
+    <pattern id="carbon" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#0d1a28"/><rect width="4" height="8" fill="#17283a"/><rect width="1.5" height="8" fill="#233a50" opacity=".6"/></pattern>
+    <linearGradient id="mint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7fff9"/><stop offset=".3" stop-color="#8fffd7"/><stop offset="1" stop-color="#1c6b57"/></linearGradient>
+    <filter id="glow" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <path d="M11 1 H77 L87 11 V71 L77 87 H11 L1 71 V11 Z" fill="url(#shell)" stroke="#02060b" stroke-width="2"/>
+  <path d="M11 1 L19 12 V64 L11 78 L1 71 V11 Z" fill="url(#left)"/>
+  <path d="M77 1 L69 12 V64 L77 78 L87 71 V11 Z" fill="url(#right)"/>
+  <path d="M11 78 L19 64 H69 L77 78 V87 H11 Z" fill="url(#front)"/>
+  <path d="M11 1 H77 L69 12 H19 Z" fill="#a9b5bf" opacity=".36"/>
+  <path d="M19 11 H69 L76 18 V61 L68 69 H20 L12 61 V18 Z" fill="url(#face)" stroke="#64788b" stroke-width="1.2"/>
+  <path d="M19 11 H69 L76 18 V61 L68 69 H20 L12 61 V18 Z" fill="url(#carbon)" opacity=".58"/>
+  <path d="M20 13 H68" stroke="#d5e2ee" stroke-opacity=".25"/>
+  <path d="M14 20 V58" stroke="#d5e2ee" stroke-opacity=".13"/>
+  <path d="M74 20 V58" stroke="#000" stroke-opacity=".42"/>
+  <path d="M13 78 H75" stroke="url(#mint)" stroke-width="2.4" stroke-linecap="round" filter="url(#glow)"/>
+</svg>

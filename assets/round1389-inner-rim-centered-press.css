@@ -1,0 +1,20 @@
+/* Round 1389: centered press and inset rim. First layer wins over legacy important rules. */
+@layer ah-r1389-controls {
+html body > nav.footer > a[href],
+html body > a.message,
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav],
+html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{transform:scale(1)!important;translate:none!important;scale:none!important;transform-origin:50% 50%!important;transition:transform 110ms ease,filter 110ms ease!important;}
+html body > nav.footer > a[href]:is([data-ah-key-down='1'],:active,.is-pressed,.is-nav-pressed,.is-contact-latched,[aria-pressed='true'],[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]),
+html body > a.message:is([data-ah-key-down='1'],:active,.is-pressed,.is-nav-pressed,.is-contact-latched,[aria-pressed='true'],[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]),
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]:is([data-ah-key-down='1'],:active,.is-pressed,.is-nav-pressed,.is-contact-latched,[aria-pressed='true'],[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]),
+html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control:is([data-ah-key-down='1'],:active,.is-pressed,.is-nav-pressed,.is-contact-latched,[aria-pressed='true'],[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]),
+html.ah-message-persist-open body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{transform:scale(.96)!important;translate:none!important;scale:none!important;}
+html body > nav.footer > a[href] > .send-control-copy.footer-control-copy,
+html body > a.message > .send-control-copy.footer-control-copy,
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy,
+html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .send-control-copy.footer-control-copy{transform:none!important;translate:none!important;}
+@media(min-width:901px){
+html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]:is([data-ah-key-down='1'],:active,.is-pressed,.is-nav-pressed,.is-contact-latched,[aria-pressed='true'],[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]){background-image:var(--r1377-footer-rest)!important;}
+html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control:is([data-ah-key-down='1'],:active,.is-pressed,.is-nav-pressed,.is-contact-latched,[aria-pressed='true'],[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]),html.ah-message-persist-open body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{background-image:var(--r1377-message-rest)!important;}
+}
+}

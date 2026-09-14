@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16385a"/><stop offset=".18" stop-color="#0d2a48"/><stop offset=".55" stop-color="#081b31"/><stop offset="1" stop-color="#020a13"/></linearGradient>
+    <linearGradient id="left" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#214c77"/><stop offset=".38" stop-color="#123557"/><stop offset="1" stop-color="#020910"/></linearGradient>
+    <linearGradient id="right" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#183c62"/><stop offset=".44" stop-color="#0d2946"/><stop offset="1" stop-color="#02080f"/></linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d2a49"/><stop offset=".38" stop-color="#071a2e"/><stop offset="1" stop-color="#01070d"/></linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22272c"/><stop offset=".30" stop-color="#181c20"/><stop offset=".72" stop-color="#101317"/><stop offset="1" stop-color="#090c10"/></linearGradient>
+    <pattern id="carbon" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="8" height="8" fill="#15181b"/><rect width="4" height="8" fill="#202428"/><rect width="1.5" height="8" fill="#2b3035" opacity=".42"/></pattern>
+  <linearGradient id="rim1389" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#a5c2ce"/><stop offset=".18" stop-color="#536f80"/><stop offset=".48" stop-color="#1c3445"/><stop offset=".78" stop-color="#08121d"/><stop offset="1" stop-color="#648594"/></linearGradient></defs>
+  <path d="M10 1H80L89 10V72L79 89H11L1 72V10Z" fill="url(#base)" stroke="#01060b" stroke-width="2"/>
+  <path d="M10 1L16 10V65L10 82L1 72V10Z" fill="url(#left)"/>
+  <path d="M80 1L74 10V65L80 82L89 72V10Z" fill="url(#right)"/>
+  <path d="M10 82L16 65H74L80 82V89H11Z" fill="url(#front)"/>
+  <path d="M10 1H80L74 10H16Z" fill="#4d7194" opacity=".22"/>
+  <path d="M16 10H74L80 16V61L72 70H18L10 61V16Z" fill="url(#face)" stroke="#36516a" stroke-width="1.1"/>
+  <path d="M16 10H74L80 16V61L72 70H18L10 61V16Z" fill="url(#carbon)" opacity=".74"/>
+  <path d="M18 12H72" stroke="#8db0cc" stroke-opacity=".19"/>
+<path d="M16 10H74L80 16V61L72 70H18L10 61V16Z" fill="none" stroke="#020810" stroke-width="5.5" stroke-linejoin="round"/><path d="M16 10H74L80 16V61L72 70H18L10 61V16Z" fill="none" stroke="url(#rim1389)" stroke-width="3.2" stroke-linejoin="round"/></svg>

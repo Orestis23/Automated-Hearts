@@ -1,0 +1,236 @@
+/* Round 1366 — Learning Center desktop caption authority.
+   IMPORTANT: lives in the original ah-r929-final cascade layer because that
+   layer contains older !important Learning Center rules that outrank later
+   unlayered overrides. */
+@layer ah-r929-final {
+  @media (min-width:761px) {
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    .learning-header-grid.premium-route-grid {
+      display:grid!important;
+      grid-template-columns:repeat(3,minmax(0,1fr))!important;
+      align-items:start!important;
+      justify-items:center!important;
+      width:min(100%,1200px)!important;
+      max-width:1200px!important;
+      margin:0 auto!important;
+      padding:0 clamp(10px,1.4vw,24px)!important;
+      column-gap:clamp(24px,3vw,48px)!important;
+      row-gap:0!important;
+    }
+
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    .learning-header-grid.premium-route-grid > article.premium-route-card.r987-learning-flat-card {
+      display:flex!important;
+      flex-direction:column!important;
+      align-items:center!important;
+      justify-content:flex-start!important;
+      justify-self:stretch!important;
+      width:100%!important;
+      max-width:none!important;
+      height:auto!important;
+      min-height:0!important;
+      margin:0!important;
+      padding:0!important;
+      gap:10px!important;
+      overflow:visible!important;
+      background:transparent!important;
+      box-shadow:none!important;
+      transform:none!important;
+    }
+
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    article.premium-route-card.r987-learning-flat-card > a.learning-medallion-button {
+      position:relative!important;
+      inset:auto!important;
+      display:block!important;
+      flex:0 0 auto!important;
+      align-self:center!important;
+      justify-self:center!important;
+      width:var(--r946-learning-diameter,min(480px,29.2vw))!important;
+      max-width:480px!important;
+      height:var(--r946-learning-diameter,min(480px,29.2vw))!important;
+      max-height:480px!important;
+      margin:0 auto!important;
+      transform:none!important;
+    }
+
+    /* Same construction as the mobile AI 101 / Practical AI / Strategy Lab spacebars. */
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    article.premium-route-card.r987-learning-flat-card
+    > .premium-route-card__title-sign.brand-route-screen.ah-industries-caption-desktop {
+      position:relative!important;
+      inset:auto!important;
+      isolation:isolate!important;
+      display:flex!important;
+      flex:0 0 auto!important;
+      align-items:center!important;
+      justify-content:center!important;
+      align-self:center!important;
+      justify-self:center!important;
+      box-sizing:border-box!important;
+      width:var(--r946-learning-diameter,min(480px,29.2vw))!important;
+      max-width:480px!important;
+      height:58px!important;
+      min-height:58px!important;
+      max-height:58px!important;
+      margin:0 auto!important;
+      padding:8px 14px!important;
+      overflow:visible!important;
+      border:2px solid #ff2ea8!important;
+      border-radius:12px!important;
+      outline:0!important;
+      outline-offset:0!important;
+      background-color:#071523!important;
+      background-image:
+        linear-gradient(180deg,rgba(18,42,66,.72) 0%,rgba(7,21,35,.86) 51%,rgba(2,8,14,.96) 100%),
+        url('./button-carbon-weave.webp')!important;
+      background-position:center,center!important;
+      background-size:100% 100%,cover!important;
+      background-repeat:no-repeat,no-repeat!important;
+      background-blend-mode:normal,normal!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.18),
+        inset 0 10px 18px rgba(255,255,255,.045),
+        inset 0 -12px 18px rgba(0,0,0,.42),
+        inset 0 0 0 1px rgba(3,10,17,.82),
+        0 2px 0 rgba(255,46,168,.95),
+        0 5px 9px rgba(255,46,168,.52),
+        0 9px 15px rgba(255,46,168,.24)!important;
+      filter:none!important;
+      -webkit-filter:none!important;
+      transform:none!important;
+      transition:transform 95ms ease,box-shadow 95ms ease,filter 95ms ease!important;
+    }
+
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    article.premium-route-card.r987-learning-flat-card
+    > .premium-route-card__title-sign.brand-route-screen.ah-industries-caption-desktop::before {
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:2!important;
+      inset:3px!important;
+      pointer-events:none!important;
+      border:0!important;
+      outline:0!important;
+      border-radius:8px!important;
+      background:
+        linear-gradient(160deg,
+          rgba(255,255,255,.24) 0%,
+          rgba(255,255,255,.10) 9%,
+          rgba(210,238,255,.05) 18%,
+          rgba(255,255,255,0) 38%,
+          rgba(255,255,255,0) 69%,
+          rgba(91,148,186,.05) 84%,
+          rgba(0,0,0,.11) 100%),
+        radial-gradient(ellipse at 30% -20%,rgba(198,238,255,.18) 0%,rgba(198,238,255,.07) 30%,transparent 65%)!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.22),
+        inset 1px 0 0 rgba(255,255,255,.06),
+        inset 0 -2px 3px rgba(0,0,0,.28)!important;
+      opacity:.95!important;
+      mix-blend-mode:normal!important;
+      -webkit-backdrop-filter:blur(.3px) saturate(.96)!important;
+      backdrop-filter:blur(.3px) saturate(.96)!important;
+    }
+
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    article.premium-route-card.r987-learning-flat-card
+    > .premium-route-card__title-sign.brand-route-screen.ah-industries-caption-desktop::after {
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:-1!important;
+      left:4px!important;
+      right:4px!important;
+      top:calc(100% - 1px)!important;
+      bottom:auto!important;
+      height:6px!important;
+      pointer-events:none!important;
+      border:0!important;
+      outline:0!important;
+      border-radius:0 0 9px 9px!important;
+      background:linear-gradient(180deg,#ff74c1 0%,#df2a92 42%,#8f0f56 78%,#3f041f 100%)!important;
+      box-shadow:
+        0 1px 0 rgba(255,196,229,.28) inset,
+        0 2px 2px rgba(255,46,168,.84),
+        0 5px 8px rgba(255,46,168,.52),
+        0 9px 13px rgba(255,46,168,.25)!important;
+      opacity:.96!important;
+      transform:none!important;
+    }
+
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    .premium-route-card__title-sign.brand-route-screen.ah-industries-caption-desktop
+    > .r1058-title-matte-film {
+      display:none!important;
+      visibility:hidden!important;
+      opacity:0!important;
+    }
+
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    .premium-route-card__title-sign.brand-route-screen.ah-industries-caption-desktop
+    > .ah-route-label-final {
+      position:relative!important;
+      z-index:5!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      width:100%!important;
+      min-width:0!important;
+      max-width:100%!important;
+      height:100%!important;
+      min-height:0!important;
+      max-height:100%!important;
+      margin:0!important;
+      padding:0 10px!important;
+      overflow:visible!important;
+      background:none!important;
+      background-image:none!important;
+      color:#8fffd7!important;
+      -webkit-text-fill-color:#8fffd7!important;
+      -webkit-text-stroke:0!important;
+      font-family:"Orbitron",system-ui,sans-serif!important;
+      font-size:clamp(18px,1.45vw,24px)!important;
+      font-weight:800!important;
+      line-height:1!important;
+      letter-spacing:.01em!important;
+      text-align:center!important;
+      text-shadow:
+        0 0 .4px rgba(235,255,249,.88),
+        0 0 1.7px rgba(143,255,215,.76),
+        0 0 4px rgba(143,255,215,.20)!important;
+      filter:none!important;
+      transform:none!important;
+    }
+
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    article.premium-route-card.r987-learning-flat-card:active
+    > .premium-route-card__title-sign.brand-route-screen.ah-industries-caption-desktop {
+      transform:translateY(2px)!important;
+      box-shadow:
+        inset 0 5px 8px rgba(0,0,0,.66),
+        inset 0 0 0 1px rgba(40,76,101,.44),
+        0 0 5px rgba(255,46,168,.10)!important;
+      filter:brightness(.95)!important;
+    }
+
+    html body.page-learning.page-learning[data-page="learning"]
+    #learning-route-buttons#learning-route-buttons
+    article.premium-route-card.r987-learning-flat-card:active
+    > .premium-route-card__title-sign.brand-route-screen.ah-industries-caption-desktop::after {
+      height:2px!important;
+      opacity:.14!important;
+      box-shadow:none!important;
+    }
+  }
+}

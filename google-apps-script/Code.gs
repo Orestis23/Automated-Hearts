@@ -14,7 +14,7 @@
 */
 
 const AH_TAB_NAME = 'Website Form Entries';
-const AH_NOTIFICATION_EMAIL = 'automatedhearts@gmail.com';
+const AH_NOTIFICATION_EMAIL = 'orestis.sinis@automatedhearts.com';
 
 function setup() {
   const active = SpreadsheetApp.getActiveSpreadsheet();
@@ -81,7 +81,13 @@ function doPost(e) {
         '',
         'Page URL: ' + pageUrl
       ].join('\n');
-      MailApp.sendEmail(AH_NOTIFICATION_EMAIL, 'New Website Inquiry — ' + subjectName, body);
+      MailApp.sendEmail({
+        to: AH_NOTIFICATION_EMAIL,
+        subject: 'New Website Inquiry — ' + subjectName,
+        body: body,
+        replyTo: email,
+        name: 'Automated Hearts Website'
+      });
     }
 
     return json_({ok:true});

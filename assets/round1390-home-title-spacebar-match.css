@@ -1,0 +1,152 @@
+/* Round 1390 — match the mobile Home title finish and Learning spacebar construction.
+   Use the established first layer so legacy important backdrop filters cannot blur the carbon. */
+@layer ah-r1389-controls {
+@media(min-width:901px){
+html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field{
+background-image:repeating-linear-gradient(135deg, rgba(168, 184, 194, 0.05) 0px, rgba(168, 184, 194, 0.05) 3px, rgba(4, 8, 12, 0.035) 3px, rgba(4, 8, 12, 0.035) 6px), repeating-linear-gradient(45deg, rgba(104, 121, 132, 0.04) 0px, rgba(104, 121, 132, 0.04) 3px, rgba(0, 3, 6, 0.06) 3px, rgba(0, 3, 6, 0.06) 6px), linear-gradient(rgb(21, 27, 32) 0%, rgb(13, 18, 23) 50%, rgb(7, 10, 14) 100%)!important;
+background-size:auto, auto, auto!important;
+background-color:rgb(13, 18, 23)!important;
+border-image:none!important;
+border-radius:0px!important;
+filter:none!important;
+backdrop-filter:none!important;
+position:relative!important;isolation:isolate!important;overflow:hidden!important;
+box-sizing:border-box!important;height:clamp(52px,4.8vw,76px)!important;min-height:clamp(52px,4.8vw,76px)!important;
+padding:10px clamp(12px,1.2vw,20px)!important;outline:0!important;background-repeat:repeat!important;background-position:center!important;background-blend-mode:normal!important;
+}
+html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field--green{border:2px solid rgb(143, 255, 215)!important;
+box-shadow:rgba(143, 255, 215, 0.14) 0px 0px 6px 0px!important;
+color:rgb(255, 114, 189)!important;
+}
+html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field--pink{border:2px solid rgb(255, 112, 189)!important;
+box-shadow:rgba(143, 255, 215, 0.14) 0px 0px 6px 0px!important;
+color:rgb(143, 255, 215)!important;
+}
+html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field::before{content:none!important;display:none!important;}
+html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field::after{background-image:radial-gradient(circle at 1px 1px, rgba(246, 253, 255, 0.106) 0px, rgba(246, 253, 255, 0.106) 0.55px, rgba(0, 0, 0, 0) 0.82px), repeating-linear-gradient(0deg, rgba(238, 249, 255, 0.05) 0px, rgba(238, 249, 255, 0.05) 1px, rgba(0, 0, 0, 0.027) 1px, rgba(0, 0, 0, 0.027) 3px), linear-gradient(110deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 10%, rgba(237, 249, 255, 0.16) 17%, rgba(225, 240, 248, 0.055) 32%, rgba(0, 0, 0, 0) 43%, rgba(0, 0, 0, 0) 100%), radial-gradient(145% 58% at 50% -12%, rgba(240, 250, 255, 0.17), rgba(0, 0, 0, 0) 66%), linear-gradient(rgba(221, 238, 247, 0.106), rgba(190, 211, 224, 0.04) 44%, rgba(0, 0, 0, 0.075))!important;
+background-size:5px 5px, auto, auto, auto, auto!important;
+background-color:rgba(0, 0, 0, 0)!important;
+border:0px none rgb(255, 114, 189)!important;
+border-radius:0px!important;
+box-shadow:rgba(210, 228, 238, 0.15) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.11) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.14) 0px -1px 0px 0px inset!important;
+backdrop-filter:blur(1.15px) saturate(0.82) contrast(0.94)!important;
+opacity:0.92!important;
+z-index:8!important;
+inset:2px!important;
+content:""!important;position:absolute!important;display:block!important;pointer-events:none!important;
+height:auto!important;width:auto!important;mix-blend-mode:normal!important;-webkit-backdrop-filter:blur(1.15px) saturate(.82) contrast(.94)!important;}
+html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field > .r1362-home-title-text{position:relative!important;z-index:5!important;font-family:"Orbitron",system-ui,sans-serif!important;font-size:clamp(17px,1.85vw,30px)!important;font-weight:800!important;line-height:1.05!important;letter-spacing:.035em!important;white-space:nowrap!important;}
+html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field--green > .r1362-home-title-text{color:rgb(255, 114, 189)!important;-webkit-text-fill-color:rgb(255, 114, 189)!important;text-shadow:0 0 .35px rgba(255,255,255,.88),0 0 1.2px currentColor,0 0 3px color-mix(in srgb,currentColor 42%,transparent)!important;}
+html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-field--pink > .r1362-home-title-text{color:rgb(143, 255, 215)!important;-webkit-text-fill-color:rgb(143, 255, 215)!important;text-shadow:0 0 .35px rgba(255,255,255,.88),0 0 1.2px currentColor,0 0 3px color-mix(in srgb,currentColor 42%,transparent)!important;}
+}
+    html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption){
+      position:relative!important;
+      isolation:isolate!important;
+      box-sizing:border-box!important;
+      width:calc(100% - 6px)!important;
+      max-width:430px!important;
+      min-height:60px!important;
+      height:60px!important;
+      margin:10px auto 0!important;
+      padding:8px 12px!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      overflow:visible!important;
+      border-style:solid!important;
+      border-width:1px 2px 2px!important;
+      border-top-color:rgba(54,77,96,.88)!important;
+      border-left-color:rgba(143,255,215,.68)!important;
+      border-right-color:rgba(143,255,215,.68)!important;
+      border-bottom-color:#8fffd7!important;
+      border-radius:11px!important;
+      outline:0!important;
+      background-color:#07111b!important;
+      background-image:
+        linear-gradient(180deg,rgba(24,43,60,.34) 0%,rgba(5,15,24,.12) 38%,rgba(0,5,10,.34) 100%),
+        url('./home-carbon-fiber-procedural-round714.webp')!important;
+      background-position:center,center!important;
+      background-size:100% 100%,190px 190px!important;
+      background-repeat:no-repeat,repeat!important;
+      color:#ff2ea8!important;
+      -webkit-text-fill-color:#ff2ea8!important;
+      font-family:"Orbitron",system-ui,sans-serif!important;
+      font-size:clamp(17px,4.8vw,21px)!important;
+      font-weight:800!important;
+      line-height:1!important;
+      text-align:center!important;
+      text-shadow:0 0 .4px rgba(255,235,248,.82),0 0 1.7px rgba(255,46,168,.72),0 0 4px rgba(255,46,168,.18)!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.13),
+        inset 0 8px 14px rgba(255,255,255,.025),
+        inset 0 -10px 15px rgba(0,0,0,.48),
+        inset 0 0 0 1px rgba(2,8,13,.82)!important;
+      filter:none!important;
+      transform:none!important;
+      transition:transform 95ms ease,box-shadow 95ms ease,filter 95ms ease!important;
+    }
+    html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption)::before{
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:2!important;
+      inset:3px!important;
+      pointer-events:none!important;
+      border:0!important;
+      border-radius:7px!important;
+      background:
+        linear-gradient(164deg,rgba(255,255,255,.15) 0%,rgba(222,241,255,.065) 12%,transparent 35%,transparent 72%,rgba(0,0,0,.09) 100%),
+        radial-gradient(ellipse at 31% -24%,rgba(202,235,255,.11),transparent 62%)!important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 -2px 3px rgba(0,0,0,.27)!important;
+      opacity:.90!important;
+    }
+    html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption)::after{
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:-1!important;
+      left:5px!important;
+      right:5px!important;
+      top:calc(100% - 1px)!important;
+      bottom:auto!important;
+      height:5px!important;
+      pointer-events:none!important;
+      border:0!important;
+      border-left:2px solid rgba(143,255,215,.82)!important;
+      border-right:2px solid rgba(143,255,215,.82)!important;
+      border-bottom:2px solid #8fffd7!important;
+      border-radius:0 0 9px 9px!important;
+      background:linear-gradient(180deg,#a9ffe4 0%,#58d8b4 58%,#164d40 100%)!important;
+      box-shadow:inset 0 1px 0 rgba(225,255,247,.22)!important;
+      opacity:.94!important;
+      transform:none!important;
+    }
+
+    html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption):active{
+      transform:translate3d(0,3px,0)!important;
+      box-shadow:
+        inset 0 6px 10px rgba(0,0,0,.70),
+        inset 0 -4px 7px rgba(0,0,0,.34),
+        inset 0 0 0 1px rgba(143,255,215,.16),
+        -3px 1px 7px rgba(143,255,215,.16),
+        3px 1px 7px rgba(143,255,215,.16),
+        0 3px 7px rgba(143,255,215,.20)!important;
+      filter:brightness(.96)!important;
+    }
+    html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption):active::after{
+      height:2px!important;
+      border-left-width:1px!important;
+      border-right-width:1px!important;
+      border-bottom-width:1px!important;
+      opacity:.70!important;
+      box-shadow:none!important;
+    }
+html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption){border-image:none!important;background-blend-mode:normal!important;
+backdrop-filter:none!important;-webkit-backdrop-filter:none!important;clip-path:none!important;
+text-decoration:none!important;opacity:1!important;}
+html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption)::before,html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption)::after{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+-webkit-filter:none!important;filter:none!important;mask:none!important;-webkit-mask:none!important;
+clip-path:none!important;outline:0!important;min-height:0!important;width:auto!important;max-height:none!important;}
+html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption) > .ah-route-label-final{color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;font-family:"Orbitron",system-ui,sans-serif!important;font-size:inherit!important;font-weight:800!important;line-height:1!important;text-shadow:inherit!important;filter:none!important;}
+@media(min-width:901px){html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption){width:100%!important;max-width:500px!important;height:64px!important;min-height:64px!important;max-height:64px!important;margin:0 auto!important;padding:8px 16px!important;font-size:clamp(20px,1.5vw,26px)!important;}html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption)::before{backdrop-filter:blur(.3px) saturate(.96)!important;-webkit-backdrop-filter:blur(.3px) saturate(.96)!important;}}
+}

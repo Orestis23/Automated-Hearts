@@ -1,0 +1,381 @@
+/* Round 1375 — stagger Industries cards, keep button glow above ticker,
+   and restyle footer/message buttons as deeper vintage mechanical keys. */
+
+@layer ah-r929-final {
+  :root{
+    --ah1375-footer-side-dark:#06101a;
+    --ah1375-footer-side-mid:#162231;
+    --ah1375-footer-face-top:rgba(87,101,121,.97);
+    --ah1375-footer-face-mid:rgba(23,35,52,.98);
+    --ah1375-footer-face-bot:rgba(6,12,20,.99);
+    --ah1375-footer-pink:#ff2ea8;
+    --ah1375-footer-mint:#8fffd7;
+  }
+
+  /* ---------- Make route-button glow visible above ticker ---------- */
+  @media (min-width:761px){
+    html body.page-home[data-page="home"] #home-route-buttons,
+    html body.page-learning[data-page="learning"] #learning-route-buttons,
+    html body.page-who-we-help[data-page="who-we-help"] section#who-we-help-solutions {
+      position:relative!important;
+      overflow:visible!important;
+      padding-bottom:132px!important;
+      margin-bottom:0!important;
+    }
+  }
+
+  @media (max-width:760px){
+    html body.page-home main#main-content .route-grid,
+    html body.page-learning main#main-content .route-grid,
+    html body.page-who-we-help main#main-content .route-grid,
+    html body.page-learning #learning-route-buttons,
+    html body.page-who-we-help #who-we-help-solutions {
+      position:relative!important;
+      overflow:visible!important;
+      padding-bottom:104px!important;
+      margin-bottom:0!important;
+    }
+  }
+
+  /* ---------- Desktop Industries: stagger cards and enlarge use of space ---------- */
+  @media (min-width:761px){
+    html body.page-who-we-help[data-page="who-we-help"]
+    section#who-we-help-solutions .audience-grid.who-help-button-grid{
+      display:grid!important;
+      grid-template-columns:repeat(2,minmax(0,1fr))!important;
+      width:min(100%,1960px)!important;
+      max-width:1960px!important;
+      margin:0 auto!important;
+      padding:0 24px!important;
+      column-gap:clamp(64px,7vw,170px)!important;
+      row-gap:34px!important;
+      align-items:start!important;
+      justify-items:center!important;
+    }
+
+    html body.page-who-we-help[data-page="who-we-help"]
+    section#who-we-help-solutions article.who-help-route-card{
+      width:100%!important;
+      max-width:920px!important;
+      display:flex!important;
+      flex-direction:column!important;
+      align-items:center!important;
+      justify-content:flex-start!important;
+      gap:18px!important;
+      margin:0!important;
+      padding:0!important;
+      overflow:visible!important;
+      background:transparent!important;
+      box-shadow:none!important;
+      transform:none!important;
+    }
+
+    html body.page-who-we-help[data-page="who-we-help"]
+    section#who-we-help-solutions article.who-help-route-card:nth-child(2),
+    html body.page-who-we-help[data-page="who-we-help"]
+    section#who-we-help-solutions article.who-help-route-card:nth-child(4){
+      margin-top:70px!important;
+    }
+
+    html body.page-who-we-help[data-page="who-we-help"]
+    section#who-we-help-solutions article.who-help-route-card > .premium-route-card__image-button.ah-route-image-visual{
+      width:min(100%,860px)!important;
+      max-width:860px!important;
+      aspect-ratio:1.95/1!important;
+      height:auto!important;
+      margin:0 auto!important;
+      overflow:hidden!important;
+      display:block!important;
+      flex:0 0 auto!important;
+    }
+
+    html body.page-who-we-help[data-page="who-we-help"]
+    section#who-we-help-solutions article.who-help-route-card > .premium-route-card__image-button.ah-route-image-visual .premium-route-card__media,
+    html body.page-who-we-help[data-page="who-we-help"]
+    section#who-we-help-solutions article.who-help-route-card > .premium-route-card__image-button.ah-route-image-visual img{
+      width:100%!important;
+      height:100%!important;
+      object-fit:cover!important;
+      object-position:center!important;
+      display:block!important;
+    }
+
+    html body.page-who-we-help[data-page="who-we-help"]
+    section#who-we-help-solutions .who-help-route-card > .premium-route-card__title-sign.brand-route-screen.ah-spacebar-only-trigger{
+      width:min(100%,860px)!important;
+      max-width:860px!important;
+      min-height:88px!important;
+      height:88px!important;
+      margin:0 auto!important;
+      align-self:center!important;
+      justify-self:center!important;
+    }
+
+    html body.page-who-we-help[data-page="who-we-help"]
+    section#who-we-help-solutions .who-help-route-card > .premium-route-card__title-sign.brand-route-screen.ah-spacebar-only-trigger > .ah-route-label-final{
+      font-size:clamp(24px,2.2vw,34px)!important;
+      line-height:1.02!important;
+      white-space:nowrap!important;
+      padding:0 16px!important;
+    }
+  }
+
+  /* ---------- Mobile Industries: keep cards centered and bars full width ---------- */
+  @media (max-width:760px){
+    html body.page-who-we-help .route-grid{
+      display:grid!important;
+      grid-template-columns:1fr!important;
+      gap:26px!important;
+      align-items:start!important;
+      justify-items:center!important;
+      padding-left:12px!important;
+      padding-right:12px!important;
+    }
+    html body.page-who-we-help .route-card.ah-spacebar-card{
+      width:100%!important;
+      max-width:420px!important;
+      display:flex!important;
+      flex-direction:column!important;
+      align-items:center!important;
+      gap:12px!important;
+      overflow:visible!important;
+    }
+    html body.page-who-we-help .route-card .route-media.ah-route-image-visual{
+      width:min(100%,420px)!important;
+      max-width:420px!important;
+      aspect-ratio:1.54/1!important;
+      height:auto!important;
+      overflow:hidden!important;
+      display:block!important;
+    }
+    html body.page-who-we-help .route-card .route-media.ah-route-image-visual img{
+      width:100%!important;
+      height:100%!important;
+      object-fit:cover!important;
+      object-position:center!important;
+      display:block!important;
+    }
+    html body.page-who-we-help .route-card > .route-label.ah-spacebar-only-trigger{
+      width:min(100%,420px)!important;
+      min-height:60px!important;
+      height:auto!important;
+      padding:11px 14px!important;
+      margin:0 auto!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      text-align:center!important;
+    }
+  }
+
+  /* ---------- Vintage mechanical footer / message keys ---------- */
+  html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav],
+  html body[data-page] > a#header-send-message,
+  html body nav.footer > a,
+  html body > a.message{
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+    border:1px solid rgba(0,0,0,.86)!important;
+    border-radius:11px!important;
+    background-image:none!important;
+    background:
+      linear-gradient(145deg, rgba(86,98,116,.96) 0%, rgba(37,52,70,.98) 16%, rgba(9,18,28,.98) 55%, rgba(5,10,16,1) 100%)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.17),
+      inset -1px -1px 0 rgba(0,0,0,.65),
+      0 1px 0 rgba(0,0,0,.92),
+      2px 4px 0 rgba(6,14,22,.94),
+      4px 7px 10px rgba(0,0,0,.42)!important;
+    transform:none!important;
+    transition:transform .09s ease, box-shadow .09s ease, filter .09s ease!important;
+  }
+
+  html body[data-page] > footer#site-footer,
+  html body[data-page] > footer#site-footer nav#primary-nav,
+  html body[data-page] > footer#site-footer nav#primary-nav > .primary-nav__group,
+  html body nav.footer{
+    overflow:visible!important;
+  }
+
+  html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]::before,
+  html body[data-page] > a#header-send-message::before,
+  html body nav.footer > a::before,
+  html body > a.message::before{
+    content:""!important;
+    position:absolute!important;
+    z-index:0!important;
+    left:4px!important;
+    right:9px!important;
+    top:4px!important;
+    bottom:11px!important;
+    border-radius:8px!important;
+    pointer-events:none!important;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.05) 14%, transparent 16%, transparent 72%, rgba(0,0,0,.24) 100%),
+      radial-gradient(circle at 20% 0%, rgba(255,255,255,.13), transparent 40%),
+      linear-gradient(180deg, rgba(52,72,92,.98) 0%, rgba(17,29,44,.98) 45%, rgba(7,14,23,.99) 100%),
+      url('./home-carbon-fiber-procedural-round714.webp') center/150px 150px repeat!important;
+    border-top:1px solid rgba(245,250,255,.3)!important;
+    border-left:1px solid rgba(132,153,176,.48)!important;
+    border-right:1px solid rgba(0,0,0,.52)!important;
+    border-bottom:1px solid rgba(0,0,0,.75)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.20),
+      inset 0 0 0 1px rgba(143,255,215,.78),
+      inset 0 -2px 0 rgba(255,46,168,.92),
+      0 0 10px rgba(112,255,238,.16)!important;
+  }
+
+  html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]::after,
+  html body[data-page] > a#header-send-message::after,
+  html body nav.footer > a::after,
+  html body > a.message::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:-1!important;
+    left:8px!important;
+    right:2px!important;
+    top:12px!important;
+    bottom:-8px!important;
+    border-radius:0 0 10px 8px!important;
+    pointer-events:none!important;
+    background:
+      linear-gradient(180deg, rgba(255,46,168,.92) 0%, rgba(84,8,47,.96) 30%, rgba(16,25,38,.98) 31%, rgba(6,12,20,.99) 100%)!important;
+    clip-path:polygon(0 0,100% 0,100% 78%,95% 100%,0 100%)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,205,232,.2),
+      2px 2px 0 rgba(3,10,18,.92)!important;
+  }
+
+  html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav] > *,
+  html body[data-page] > a#header-send-message > *,
+  html body nav.footer > a > *,
+  html body > a.message > *{
+    position:relative!important;
+    z-index:2!important;
+  }
+
+  html body[data-page] > footer#site-footer nav#primary-nav .send-control-indicator,
+  html body nav.footer .ah-footer-bottom-rim{
+    display:none!important;
+  }
+
+  html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]:is(:active,.is-pressed,[aria-current="page"]) ,
+  html body nav.footer > a:is(:active,.is-pressed,[aria-current="page"]),
+  html body[data-page] > a#header-send-message:is(:active,[aria-expanded="true"],.is-contact-latched),
+  html.ah-message-persist-open body[data-page] > a#header-send-message,
+  html body > a.message:is(:active,[aria-expanded="true"],.is-contact-latched){
+    transform:translate3d(2px,4px,0)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.10),
+      0 1px 0 rgba(0,0,0,.88),
+      1px 2px 0 rgba(6,14,22,.94),
+      2px 4px 7px rgba(0,0,0,.30)!important;
+    filter:brightness(.98)!important;
+  }
+
+  html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]:is(:active,.is-pressed,[aria-current="page"])::before,
+  html body nav.footer > a:is(:active,.is-pressed,[aria-current="page"])::before,
+  html body[data-page] > a#header-send-message:is(:active,[aria-expanded="true"],.is-contact-latched)::before,
+  html.ah-message-persist-open body[data-page] > a#header-send-message::before,
+  html body > a.message:is(:active,[aria-expanded="true"],.is-contact-latched)::before{
+    left:5px!important;
+    right:8px!important;
+    top:6px!important;
+    bottom:8px!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.12),
+      inset 0 0 0 1px rgba(143,255,215,.68),
+      inset 0 -1px 0 rgba(255,46,168,.78),
+      0 0 8px rgba(112,255,238,.12)!important;
+  }
+
+  html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]:is(:active,.is-pressed,[aria-current="page"])::after,
+  html body nav.footer > a:is(:active,.is-pressed,[aria-current="page"])::after,
+  html body[data-page] > a#header-send-message:is(:active,[aria-expanded="true"],.is-contact-latched)::after,
+  html.ah-message-persist-open body[data-page] > a#header-send-message::after,
+  html body > a.message:is(:active,[aria-expanded="true"],.is-contact-latched)::after{
+    bottom:-4px!important;
+    right:1px!important;
+  }
+
+  html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav],
+  html body nav.footer > a,
+  html body[data-page] > a#header-send-message,
+  html body > a.message{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+  }
+
+  html body[data-page] > footer#site-footer nav#primary-nav .footer-nav-label,
+  html body nav.footer .footer-nav-label{
+    position:relative!important;
+    z-index:2!important;
+    text-shadow:0 0 6px rgba(112,255,238,.18)!important;
+  }
+
+  html body[data-page] > a#header-send-message .r1005-message-envelope,
+  html body > a.message svg{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:54%!important;
+    height:54%!important;
+    filter:drop-shadow(0 0 5px rgba(255,80,124,.28))!important;
+  }
+
+  html body[data-page] > a#header-send-message .r1005-message-envelope svg,
+  html body > a.message svg{
+    width:100%!important;
+    height:100%!important;
+  }
+
+  html body[data-page] > a#header-send-message .r1005-message-envelope svg path,
+  html body > a.message svg path{
+    fill:none!important;
+    stroke:#ff6689!important;
+    stroke-width:2.15!important;
+    stroke-linecap:round!important;
+    stroke-linejoin:round!important;
+  }
+
+  @media (max-width:760px){
+    html body nav.footer > a,
+    html body > a.message{
+      border-radius:10px!important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.14),
+        0 1px 0 rgba(0,0,0,.90),
+        1px 3px 0 rgba(6,14,22,.94),
+        2px 5px 8px rgba(0,0,0,.34)!important;
+    }
+    html body nav.footer > a::before,
+    html body > a.message::before{
+      left:3px!important;
+      right:6px!important;
+      top:3px!important;
+      bottom:8px!important;
+      border-radius:7px!important;
+    }
+    html body nav.footer > a::after,
+    html body > a.message::after{
+      left:6px!important;
+      right:1px!important;
+      top:10px!important;
+      bottom:-6px!important;
+      border-radius:0 0 8px 7px!important;
+    }
+    html body nav.footer > a:is(:active,.is-pressed,[aria-current="page"])::before,
+    html body > a.message:is(:active,[aria-expanded="true"],.is-contact-latched)::before{
+      top:5px!important;
+      bottom:6px!important;
+    }
+    html body nav.footer > a:is(:active,.is-pressed,[aria-current="page"])::after,
+    html body > a.message:is(:active,[aria-expanded="true"],.is-contact-latched)::after{
+      bottom:-3px!important;
+    }
+  }
+}

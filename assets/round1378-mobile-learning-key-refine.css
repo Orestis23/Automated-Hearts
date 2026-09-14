@@ -1,0 +1,341 @@
+/* Automated Hearts Round 1378
+   - Refine mobile footer keys + mobile Messages button to match the selected
+     vintage mechanical key reference more closely.
+   - Restore Learning Center mobile route-button sizing/centering.
+   - Use the verified Home route-key glow behavior on Learning mobile spacebars.
+*/
+
+@media (max-width:900px){
+  :root{
+    --ah1378-mint:#8fffd7;
+    --ah1378-pink:#ff2ea8;
+    --ah1378-carbon:url('./home-carbon-fiber-procedural-round714.webp');
+    --ah1378-key-face-top:#4e5a67;
+    --ah1378-key-face-mid:#233041;
+    --ah1378-key-face-bot:#08111b;
+    --ah1378-key-shell-top:#627181;
+    --ah1378-key-shell-mid:#233140;
+    --ah1378-key-shell-bot:#040a10;
+  }
+
+  /* =========================
+     MOBILE FOOTER + MESSAGE
+     ========================= */
+  html body{
+    padding-bottom:calc(108px + var(--safe-bottom,0px))!important;
+  }
+
+  html body > nav.footer{
+    position:fixed!important;
+    z-index:12000!important;
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    height:auto!important;
+    min-height:92px!important;
+    padding:6px 6px calc(8px + var(--safe-bottom,0px))!important;
+    display:grid!important;
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    gap:4px!important;
+    overflow:visible!important;
+    background:linear-gradient(180deg,#10213b 0%,#08111c 42%,#02060b 100%)!important;
+    box-shadow:inset 0 1px 0 rgba(155,214,255,.08)!important;
+  }
+
+  html body > nav.footer a[href],
+  html body > nav.footer a[href]:link,
+  html body > nav.footer a[href]:visited,
+  html body > a.message,
+  html body > a.message:link,
+  html body > a.message:visited{
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    border:1px solid rgba(146,167,188,.34)!important;
+    border-radius:10px!important;
+    outline:0!important;
+    background:
+      linear-gradient(180deg,var(--ah1378-key-shell-top) 0%, #2e3b4a 10%, var(--ah1378-key-shell-mid) 28%, #0d1621 56%, var(--ah1378-key-shell-bot) 100%)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.18),
+      inset 1px 0 0 rgba(215,235,255,.08),
+      inset -1px 0 0 rgba(0,0,0,.44),
+      inset 0 -10px 12px rgba(0,0,0,.52),
+      0 1px 0 rgba(0,0,0,.94),
+      0 3px 0 #02070d,
+      0 8px 12px rgba(0,0,0,.34)!important;
+    transform:none!important;
+    transition:transform 95ms ease, box-shadow 95ms ease, filter 95ms ease!important;
+    filter:none!important;
+    -webkit-filter:none!important;
+  }
+
+  /* The inset face creates the true keycap / pyramid wall look. */
+  html body > nav.footer a[href]::before,
+  html body > a.message::before{
+    content:""!important;
+    position:absolute!important;
+    z-index:1!important;
+    left:4px!important;
+    right:4px!important;
+    top:3px!important;
+    bottom:10px!important;
+    display:block!important;
+    pointer-events:none!important;
+    border:1px solid rgba(197,231,255,.30)!important;
+    border-radius:7px!important;
+    clip-path:polygon(7% 0,93% 0,100% 11%,100% 91%,93% 100%,7% 100%,0 91%,0 11%)!important;
+    -webkit-clip-path:polygon(7% 0,93% 0,100% 11%,100% 91%,93% 100%,7% 100%,0 91%,0 11%)!important;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.04) 14%, rgba(0,0,0,.02) 28%, rgba(0,0,0,.22) 100%),
+      linear-gradient(180deg, rgba(26,43,60,.34) 0%, rgba(7,17,27,.14) 40%, rgba(2,8,13,.36) 100%),
+      var(--ah1378-carbon)!important;
+    background-position:center,center,center!important;
+    background-size:100% 100%,100% 100%,140px 140px!important;
+    background-repeat:no-repeat,no-repeat,repeat!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.12),
+      inset 0 -8px 10px rgba(0,0,0,.32),
+      inset 0 0 0 1px rgba(2,8,13,.76)!important;
+  }
+
+  /* Subtle mint light only on the front / bottom edge, not a rear halo. */
+  html body > nav.footer a[href]::after,
+  html body > a.message::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:0!important;
+    left:10%!important;
+    right:10%!important;
+    bottom:1px!important;
+    height:5px!important;
+    display:block!important;
+    pointer-events:none!important;
+    border-left:1px solid rgba(143,255,215,.72)!important;
+    border-right:1px solid rgba(143,255,215,.72)!important;
+    border-bottom:1px solid var(--ah1378-mint)!important;
+    border-radius:0 0 8px 8px!important;
+    background:linear-gradient(180deg,#cffff1 0%, #67e4c4 52%, #194b40 100%)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.18)!important;
+    opacity:.97!important;
+  }
+
+  html body > nav.footer a[href]{
+    min-height:82px!important;
+    padding:0 2px 8px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  html body > nav.footer a[href] > .footer-nav-label{
+    position:relative!important;
+    z-index:3!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    min-height:100%!important;
+    padding:0 2px 10px!important;
+    text-align:center!important;
+    line-height:1.02!important;
+    font-size:10px!important;
+    letter-spacing:.01em!important;
+  }
+  html body > nav.footer a[href] > .ah-footer-bottom-rim{
+    display:none!important;
+  }
+
+  html body > nav.footer a[href]:is(:active,.is-nav-pressed,.is-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]),
+  html body > a.message:is(:active,.is-contact-latched,.is-pressed,[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true']){
+    transform:translate3d(0,3px,0)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.14),
+      inset 0 -5px 8px rgba(0,0,0,.60),
+      0 1px 0 rgba(0,0,0,.90),
+      0 2px 0 #02070d,
+      0 5px 8px rgba(0,0,0,.24)!important;
+  }
+  html body > nav.footer a[href]:is(:active,.is-nav-pressed,.is-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading])::after,
+  html body > a.message:is(:active,.is-contact-latched,.is-pressed,[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'])::after{
+    height:2px!important;
+    opacity:.76!important;
+  }
+
+  html body > a.message,
+  html body > a.message:link,
+  html body > a.message:visited{
+    position:fixed!important;
+    z-index:2147483647!important;
+    top:calc(var(--safe-top,0px) + 8px)!important;
+    right:14px!important;
+    left:auto!important;
+    bottom:auto!important;
+    width:50px!important;
+    min-width:50px!important;
+    max-width:50px!important;
+    height:50px!important;
+    min-height:50px!important;
+    max-height:50px!important;
+    margin:0!important;
+    padding:0!important;
+    display:grid!important;
+    place-items:center!important;
+  }
+  html body > a.message::before{
+    left:4px!important;
+    right:4px!important;
+    top:3px!important;
+    bottom:9px!important;
+  }
+  html body > a.message svg{
+    position:relative!important;
+    z-index:3!important;
+    display:block!important;
+    width:54%!important;
+    height:auto!important;
+    margin:0 0 7px 0!important;
+    filter:none!important;
+  }
+  html body > a.message svg path{
+    fill:none!important;
+    stroke:#ff6cae!important;
+    stroke-width:2.15!important;
+    stroke-linecap:round!important;
+    stroke-linejoin:round!important;
+  }
+
+  /* =========================
+     LEARNING CENTER MOBILE
+     ========================= */
+  html body[data-ah-mobile-surface="learning"] main#main-content > .lite-section:first-child{
+    padding:42px 6px 72px!important;
+    min-height:0!important;
+  }
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-grid{
+    width:100%!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    justify-items:center!important;
+    row-gap:34px!important;
+  }
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-card.ah-spacebar-card{
+    width:min(95vw,452px)!important;
+    max-width:452px!important;
+    margin:0 auto!important;
+    padding:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:14px!important;
+    transform:none!important;
+  }
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-media.ah-route-image-visual{
+    width:min(82vw,350px)!important;
+    max-width:350px!important;
+    margin:0 auto!important;
+    border-radius:50%!important;
+    overflow:hidden!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    transform:translateX(-8px)!important;
+  }
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-media.ah-route-image-visual img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+  }
+
+  /* Match Home key glow behavior: physical front lip only, no rear pink halo. */
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-label.ah-spacebar-only-trigger{
+    position:relative!important;
+    isolation:isolate!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:min(92vw,440px)!important;
+    max-width:440px!important;
+    min-height:66px!important;
+    margin:0 auto!important;
+    padding:8px 14px 10px!important;
+    overflow:visible!important;
+    border-style:solid!important;
+    border-width:1px 2px 2px!important;
+    border-top-color:rgba(54,77,96,.88)!important;
+    border-left-color:rgba(143,255,215,.68)!important;
+    border-right-color:rgba(143,255,215,.68)!important;
+    border-bottom-color:var(--ah1378-mint)!important;
+    border-radius:11px!important;
+    background-color:#07111b!important;
+    background-image:
+      linear-gradient(180deg,rgba(24,43,60,.34) 0%,rgba(5,15,24,.12) 38%,rgba(0,5,10,.34) 100%),
+      var(--ah1378-carbon)!important;
+    background-position:center,center!important;
+    background-size:100% 100%,190px 190px!important;
+    background-repeat:no-repeat,repeat!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.13),
+      inset 0 8px 14px rgba(255,255,255,.025),
+      inset 0 -10px 15px rgba(0,0,0,.48),
+      inset 0 0 0 1px rgba(2,8,13,.82)!important;
+    transform:none!important;
+    transition:transform 95ms ease, box-shadow 95ms ease, filter 95ms ease!important;
+    color:var(--ah1378-mint)!important;
+    -webkit-text-fill-color:var(--ah1378-mint)!important;
+    text-shadow:0 0 .4px rgba(234,255,249,.82),0 0 1.7px rgba(143,255,215,.72),0 0 4px rgba(143,255,215,.18)!important;
+  }
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-label.ah-spacebar-only-trigger::before{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:2!important;
+    inset:3px!important;
+    border-radius:7px!important;
+    pointer-events:none!important;
+    background:
+      linear-gradient(164deg, rgba(255,255,255,.15) 0%, rgba(222,241,255,.065) 12%, transparent 35%, transparent 72%, rgba(0,0,0,.09) 100%),
+      radial-gradient(ellipse at 31% -24%, rgba(202,235,255,.11), transparent 62%)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.12), inset 0 -2px 3px rgba(0,0,0,.27)!important;
+    opacity:.90!important;
+  }
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-label.ah-spacebar-only-trigger::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:-1!important;
+    left:5px!important;
+    right:5px!important;
+    top:calc(100% - 1px)!important;
+    height:5px!important;
+    border-left:2px solid rgba(143,255,215,.82)!important;
+    border-right:2px solid rgba(143,255,215,.82)!important;
+    border-bottom:2px solid var(--ah1378-mint)!important;
+    border-radius:0 0 9px 9px!important;
+    background:linear-gradient(180deg,#a9ffe4 0%,#58d8b4 58%,#164d40 100%)!important;
+    box-shadow:inset 0 1px 0 rgba(225,255,247,.22)!important;
+    opacity:.94!important;
+  }
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-label.ah-spacebar-only-trigger:is(:active,.is-route-pressed){
+    transform:translate3d(0,3px,0)!important;
+    box-shadow:
+      inset 0 6px 10px rgba(0,0,0,.70),
+      inset 0 -4px 7px rgba(0,0,0,.34),
+      inset 0 0 0 1px rgba(143,255,215,.16),
+      -3px 1px 7px rgba(143,255,215,.16),
+      3px 1px 7px rgba(143,255,215,.16),
+      0 3px 7px rgba(143,255,215,.20)!important;
+    filter:brightness(.96)!important;
+  }
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-label.ah-spacebar-only-trigger:is(:active,.is-route-pressed)::after{
+    height:2px!important;
+    border-left-width:1px!important;
+    border-right-width:1px!important;
+    border-bottom-width:1px!important;
+    opacity:.70!important;
+    box-shadow:none!important;
+  }
+}

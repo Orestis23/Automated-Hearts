@@ -1,0 +1,211 @@
+/* Automated Hearts Round 1418
+   Industries viewport-fit authority + desktop footer pink copy authority.
+   Loaded last so legacy card sizing and footer text colors cannot override it. */
+
+/* DESKTOP INDUSTRIES: keep the full 2x2 image/button composition inside the
+   visible viewport above the fixed ticker, including the button underglow. */
+@media (min-width:901px){
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content > section#who-we-help-solutions{
+    box-sizing:border-box!important;
+    width:100%!important;
+    height:calc(100svh - var(--r857-ticker-height,48px) - 20px)!important;
+    min-height:520px!important;
+    max-height:calc(100svh - var(--r857-ticker-height,48px) - 20px)!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions > .shell{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    width:min(90vw,1360px)!important;
+    max-width:1360px!important;
+    height:100%!important;
+    min-height:0!important;
+    max-height:100%!important;
+    margin:0 auto!important;
+    padding:clamp(12px,2vh,22px) 0 clamp(22px,3vh,34px)!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:visible!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .audience-grid.who-help-button-grid{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    width:min(88vw,1280px)!important;
+    max-width:1280px!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:100%!important;
+    margin:0 auto!important;
+    padding:0 0 14px!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:repeat(2,auto)!important;
+    column-gap:clamp(34px,5vw,88px)!important;
+    row-gap:clamp(10px,1.6vh,16px)!important;
+    align-items:start!important;
+    justify-items:center!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:visible!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    max-width:560px!important;
+    min-width:0!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0 auto!important;
+    padding:0!important;
+    display:grid!important;
+    grid-template-rows:clamp(128px,24vh,190px) 48px!important;
+    gap:6px!important;
+    align-items:stretch!important;
+    justify-items:stretch!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:visible!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card:nth-child(n){
+    margin-top:0!important;
+    margin-bottom:0!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link.premium-route-card__image-button.ah-route-image-visual{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+    max-width:none!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    aspect-ratio:auto!important;
+    display:block!important;
+    overflow:hidden!important;
+    transform:none!important;
+    translate:none!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link .premium-route-card__media,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    display:block!important;
+    transform:none!important;
+    translate:none!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link img{
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.premium-route-card__title-sign.ah-unified-spacebar{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    height:48px!important;
+    min-height:48px!important;
+    max-height:48px!important;
+    margin:0!important;
+    padding:3px 8px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:visible!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.premium-route-card__title-sign.ah-unified-spacebar > .ah-route-label-final{
+    width:100%!important;
+    height:100%!important;
+    min-width:0!important;
+    padding:0 4px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    font-size:clamp(19px,1.45vw,25px)!important;
+    line-height:1!important;
+    letter-spacing:-.02em!important;
+    white-space:normal!important;
+    text-align:center!important;
+    text-wrap:balance!important;
+    color:#ff2ea8!important;
+    -webkit-text-fill-color:#ff2ea8!important;
+  }
+}
+
+/* Typical 13-inch laptop / MacBook desktop viewport heights. */
+@media (min-width:901px) and (max-height:820px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions > .shell{
+    padding-top:8px!important;
+    padding-bottom:24px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .audience-grid.who-help-button-grid{
+    row-gap:8px!important;
+    padding-bottom:10px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card{
+    grid-template-rows:clamp(112px,20.5vh,156px) 44px!important;
+    gap:5px!important;
+    max-width:520px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.premium-route-card__title-sign.ah-unified-spacebar{
+    height:44px!important;
+    min-height:44px!important;
+    max-height:44px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.premium-route-card__title-sign.ah-unified-spacebar > .ah-route-label-final{
+    font-size:clamp(18px,1.32vw,23px)!important;
+  }
+}
+
+@media (min-width:901px) and (max-height:700px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card{
+    grid-template-rows:clamp(96px,18vh,126px) 40px!important;
+    gap:4px!important;
+    max-width:470px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.premium-route-card__title-sign.ah-unified-spacebar{
+    height:40px!important;
+    min-height:40px!important;
+    max-height:40px!important;
+  }
+}
+
+/* Desktop footer navigation: text-only authority. Button geometry and behavior stay untouched. */
+@media (min-width:761px){
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav a.footer-structure-control[data-nav] .send-control-copy.footer-control-copy .footer-nav-label,
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav] span.footer-nav-label{
+    color:#ff2ea8!important;
+    -webkit-text-fill-color:#ff2ea8!important;
+    text-shadow:0 0 2px rgba(255,75,179,.78),0 0 8px rgba(255,46,168,.24)!important;
+  }
+}

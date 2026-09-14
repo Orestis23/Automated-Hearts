@@ -20,11 +20,11 @@
 
 <linearGradient id="pink-depth" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff70bd"/><stop offset=".32" stop-color="#e2359a"/><stop offset=".72" stop-color="#a61768"/><stop offset="1" stop-color="#4d062e"/></linearGradient>
 <linearGradient id="face-light" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a6ffe5" stop-opacity=".08"/><stop offset=".26" stop-color="#7edbc7" stop-opacity=".05"/><stop offset=".58" stop-color="#ff4fb2" stop-opacity=".028"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
-</defs>
+<linearGradient id="rim1389" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#a5c2ce"/><stop offset=".18" stop-color="#536f80"/><stop offset=".48" stop-color="#1c3445"/><stop offset=".78" stop-color="#08121d"/><stop offset="1" stop-color="#648594"/></linearGradient></defs>
 <use href="#face-shape" transform="translate(0 4)" fill="#000" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
 <g clip-path="url(#side-clip)" filter="url(#sand-wear)"><rect width="160" height="160" fill="url(#pink-depth)"/><rect width="160" height="160" fill="url(#coarse-sand)" opacity=".58"/></g>
 <use href="#face-shape" fill="#000" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
 <g clip-path="url(#face-clip)"><rect width="160" height="160" fill="#08172b"/><rect width="160" height="160" fill="url(#suede)"/><rect width="160" height="160" fill="url(#face-light)"/></g>
 <use href="#face-shape" fill="none" stroke="#8fffd7" stroke-width="2.4" stroke-linejoin="round"/>
 <use href="#inner-rim" fill="none" stroke="#c1ffec" stroke-opacity=".80" stroke-width="1" stroke-linejoin="round"/>
-</svg>
+<rect x="14" y="14" width="132" height="125" rx="2" fill="none" stroke="#020810" stroke-width="5"/><rect x="14" y="14" width="132" height="125" rx="2" fill="none" stroke="url(#rim1389)" stroke-width="2.8"/></svg>

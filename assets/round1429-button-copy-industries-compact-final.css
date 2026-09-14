@@ -1,0 +1,208 @@
+/* Round 1429 — final visible authority for route-button copy + Industries desktop fit. */
+
+/* HOME: roughly double the previous route-key lettering without changing the key artwork. */
+@media (min-width:901px){
+  html body.page-home #home-route-buttons .ah-unified-spacebar > .ah-route-label-final{
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:clamp(40px,2.7vw,48px)!important;
+    font-weight:800!important;
+    line-height:.96!important;
+    letter-spacing:0!important;
+    white-space:normal!important;
+    text-align:center!important;
+  }
+
+  /* LEARNING CENTER: about 2x the old 20–26px lettering. */
+  html body.page-learning #learning-route-buttons .ah-unified-spacebar > .ah-route-label-final{
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:clamp(38px,2.45vw,44px)!important;
+    font-weight:800!important;
+    line-height:.96!important;
+    letter-spacing:0!important;
+    white-space:normal!important;
+    text-align:center!important;
+  }
+
+  /* INDUSTRIES: one compact, authoritative 2x2 layout. */
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions{
+    box-sizing:border-box!important;
+    min-height:0!important;
+    height:auto!important;
+    padding:14px 24px 92px!important;
+    overflow:visible!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions > .shell{
+    width:100%!important;
+    max-width:none!important;
+    margin:0 auto!important;
+    padding:0!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-button-grid{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,430px))!important;
+    grid-auto-rows:auto!important;
+    justify-content:center!important;
+    align-content:start!important;
+    column-gap:72px!important;
+    row-gap:12px!important;
+    width:min(100%,960px)!important;
+    max-width:960px!important;
+    margin:0 auto!important;
+    padding:0!important;
+    transform:none!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card{
+    display:grid!important;
+    grid-template-rows:auto 68px!important;
+    gap:8px!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:430px!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+    overflow:visible!important;
+    border:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    background:transparent!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card::before,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card::after,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link::before,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link::after,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card .premium-route-card__media::before,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card .premium-route-card__media::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link.ah-route-image-visual,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card .premium-route-card__media{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+    background:transparent!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:2 / 1!important;
+    object-fit:cover!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar{
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:430px!important;
+    height:68px!important;
+    min-height:68px!important;
+    max-height:68px!important;
+    margin:0 auto!important;
+    padding:6px 12px!important;
+    transform:none!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar > .ah-route-label-final{
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:clamp(32px,2.15vw,40px)!important;
+    font-weight:800!important;
+    line-height:.92!important;
+    letter-spacing:0!important;
+    white-space:normal!important;
+    text-align:center!important;
+    overflow:visible!important;
+  }
+}
+
+/* Extra compaction for short desktop/laptop viewports. */
+@media (min-width:901px) and (max-height:820px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions{
+    padding-top:8px!important;
+    padding-bottom:78px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-button-grid{
+    grid-template-columns:repeat(2,minmax(0,370px))!important;
+    width:min(100%,830px)!important;
+    max-width:830px!important;
+    column-gap:64px!important;
+    row-gap:8px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card{
+    max-width:370px!important;
+    grid-template-rows:auto 58px!important;
+    gap:6px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar{
+    max-width:370px!important;
+    height:58px!important;
+    min-height:58px!important;
+    max-height:58px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar > .ah-route-label-final{
+    font-size:clamp(28px,1.9vw,34px)!important;
+    line-height:.92!important;
+  }
+}
+
+@media (min-width:901px) and (max-height:720px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-button-grid{
+    grid-template-columns:repeat(2,minmax(0,330px))!important;
+    width:min(100%,740px)!important;
+    max-width:740px!important;
+    column-gap:52px!important;
+    row-gap:6px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card{
+    max-width:330px!important;
+    grid-template-rows:auto 54px!important;
+    gap:5px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar{
+    max-width:330px!important;
+    height:54px!important;
+    min-height:54px!important;
+    max-height:54px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar > .ah-route-label-final{
+    font-size:clamp(25px,1.7vw,30px)!important;
+  }
+}
+
+/* Mobile: visibly larger copy, but still safe for long labels. */
+@media (max-width:900px){
+  html body .route-card > .route-label.ah-home-caption.ah-unified-spacebar,
+  html body[data-ah-mobile-surface="learning"] .route-card > .route-label.ah-unified-spacebar,
+  html body[data-ah-mobile-surface="industries"] .route-card > .route-label.ah-unified-spacebar{
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:clamp(27px,7.3vw,36px)!important;
+    font-weight:800!important;
+    line-height:.94!important;
+    white-space:normal!important;
+    text-align:center!important;
+  }
+  html body[data-ah-mobile-surface="learning"] .route-card > .route-label.ah-unified-spacebar > .ah-route-label-final{
+    font-size:inherit!important;
+    line-height:inherit!important;
+    white-space:normal!important;
+  }
+  html body[data-ah-mobile-surface="industries"] .route-card > .route-label.ah-unified-spacebar{
+    font-size:clamp(24px,6.2vw,32px)!important;
+  }
+}

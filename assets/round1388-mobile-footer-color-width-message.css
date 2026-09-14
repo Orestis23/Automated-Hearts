@@ -1,0 +1,83 @@
+/* Round 1388 — mobile-only footer refinement: brand navy sides, light-black carbon faces,
+   wider key surfaces, sharper text, and higher Messages placement. */
+@layer ah-r1381-mobile-root {
+  @media (max-width:900px) {
+    :root{
+      --r1388-footer-key:url('./mobile-footer-key-navy-wide-round1388.svg?v=1389r');
+      --r1388-message-key:url('./mobile-message-key-navy-wide-round1388.svg?v=1389r');
+    }
+
+    html body > nav.footer{
+      gap:0!important;
+      padding-left:1px!important;
+      padding-right:1px!important;
+    }
+
+    html body > nav.footer > a[href],
+    html body > nav.footer > a[href]:link,
+    html body > nav.footer > a[href]:visited{
+      background-image:var(--r1388-footer-key)!important;
+      background-size:100% 100%!important;
+      background-position:center!important;
+      background-repeat:no-repeat!important;
+    }
+
+    html body > nav.footer > a[href] > .footer-nav-label{
+      padding:0 1px 15px!important;
+      font-size:clamp(9.2px,2.56vw,12.2px)!important;
+      font-weight:700!important;
+      line-height:1!important;
+      letter-spacing:-.018em!important;
+      white-space:nowrap!important;
+      text-shadow:
+        0 0 .35px currentColor,
+        0 0 .8px currentColor!important;
+      filter:none!important;
+      -webkit-filter:none!important;
+    }
+
+    /* Keep the under-light gentle and controlled. */
+    html body > nav.footer > a[href]::after{
+      left:16%!important;
+      right:16%!important;
+      bottom:1px!important;
+      height:5px!important;
+      min-height:5px!important;
+      opacity:.18!important;
+      filter:blur(4px)!important;
+    }
+    html body > nav.footer > a[href]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading])::after{
+      height:3px!important;
+      opacity:.28!important;
+      filter:blur(2.5px)!important;
+    }
+
+    html body > a.message,
+    html body > a.message:link,
+    html body > a.message:visited{
+      top:calc(var(--safe-top,env(safe-area-inset-top,0px)) + 2px)!important;
+      right:6px!important;
+      left:auto!important;
+      bottom:auto!important;
+      width:56px!important;
+      min-width:56px!important;
+      max-width:56px!important;
+      height:56px!important;
+      min-height:56px!important;
+      max-height:56px!important;
+      background-image:var(--r1388-message-key)!important;
+      background-size:100% 100%!important;
+      background-position:center!important;
+      background-repeat:no-repeat!important;
+    }
+    html body > a.message svg{
+      width:42%!important;
+      margin:0 0 9px!important;
+      filter:none!important;
+    }
+    html body > a.message svg path{
+      stroke:#ff5ea8!important;
+      stroke-width:2.05!important;
+    }
+  }
+}

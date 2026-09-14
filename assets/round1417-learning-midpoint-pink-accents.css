@@ -1,0 +1,161 @@
+/* Automated Hearts Round 1417 — Learning Center midpoint + desktop pink label/corner accents.
+   Layout authority only for the chooser state. Keeps existing key construction, artwork and interaction. */
+
+@media (min-width:901px){
+  html body.page-learning[data-page="learning"] #learning-route-buttons{
+    box-sizing:border-box!important;
+    height:calc(100svh - 54px)!important;
+    min-height:560px!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    align-items:stretch!important;
+    justify-content:center!important;
+    overflow:visible!important;
+  }
+
+  html body.page-learning[data-page="learning"] #learning-route-buttons > .shell.compact-hero-grid{
+    box-sizing:border-box!important;
+    width:min(calc(100% - 40px),1680px)!important;
+    max-width:1680px!important;
+    height:100%!important;
+    min-height:0!important;
+    margin:0 auto!important;
+    padding:18px 0 20px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    transform:none!important;
+    translate:none!important;
+  }
+
+  html body.page-learning[data-page="learning"] #learning-route-buttons .learning-header-paths{
+    width:100%!important;
+    max-width:1600px!important;
+    margin:0 auto!important;
+    position:relative!important;
+    inset:auto!important;
+    transform:none!important;
+    translate:none!important;
+  }
+
+  html body.page-learning[data-page="learning"] #learning-route-buttons .learning-header-grid.r987-learning-flat-grid{
+    width:100%!important;
+    max-width:1600px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    align-items:center!important;
+    justify-items:center!important;
+    justify-content:center!important;
+    gap:clamp(22px,3.2vw,58px)!important;
+    position:relative!important;
+    inset:auto!important;
+    transform:none!important;
+    translate:none!important;
+  }
+
+  html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card{
+    width:100%!important;
+    max-width:500px!important;
+    margin:0 auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:clamp(10px,1.2vh,14px)!important;
+    position:relative!important;
+    inset:auto!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:visible!important;
+  }
+
+  html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card > .learning-medallion-button,
+  html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card .learning-medallion-media{
+    width:min(29vw,440px)!important;
+    max-width:440px!important;
+    height:auto!important;
+    aspect-ratio:1/1!important;
+    margin:0 auto!important;
+  }
+
+  html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card img.r987-learning-flat-button-image{
+    display:block!important;
+    width:100%!important;
+    max-width:440px!important;
+    height:auto!important;
+    margin:0 auto!important;
+  }
+
+  /* Text-only brand correction: keep key geometry/surface/rims unchanged. */
+  html body.page-learning[data-page="learning"] #learning-route-buttons .premium-route-card__title-sign.ah-unified-spacebar,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .premium-route-card__title-sign.ah-unified-spacebar > .ah-route-label-final{
+    color:#ff2ea8!important;
+    -webkit-text-fill-color:#ff2ea8!important;
+    text-shadow:0 0 2px rgba(255,93,184,.88),0 0 8px rgba(255,46,168,.26)!important;
+  }
+
+  /* Opposite-corner pink accents are painted into the existing key face so the
+     established ::before/::after glass + press-depth layers remain untouched. */
+  html body.page-learning[data-page="learning"] #learning-route-buttons .premium-route-card__title-sign.ah-unified-spacebar{
+    background-image:
+      linear-gradient(#ff2ea8,#ff2ea8),
+      linear-gradient(#ff2ea8,#ff2ea8),
+      linear-gradient(#ff2ea8,#ff2ea8),
+      linear-gradient(#ff2ea8,#ff2ea8),
+      repeating-linear-gradient(135deg,rgba(143,185,207,.075) 0 3px,rgba(4,15,28,.08) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(98,145,171,.05) 0 3px,rgba(2,11,22,.07) 3px 6px),
+      linear-gradient(#0d1b2f 0%,#0b1728 48%,#091422 100%)!important;
+    background-size:
+      34px 3px,
+      3px 20px,
+      34px 3px,
+      3px 20px,
+      auto,auto,auto!important;
+    background-position:
+      6px 5px,
+      6px 5px,
+      calc(100% - 6px) calc(100% - 5px),
+      calc(100% - 6px) calc(100% - 5px),
+      center,center,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+  }
+}
+
+/* 13-inch / shorter desktop viewport support: preserve midpoint while scaling cards. */
+@media (min-width:901px) and (max-height:850px){
+  html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card > .learning-medallion-button,
+  html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card .learning-medallion-media{
+    width:min(27vw,390px)!important;
+    max-width:390px!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card img.r987-learning-flat-button-image{
+    max-width:390px!important;
+  }
+}
+
+@media (min-width:901px) and (max-height:740px){
+  html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card > .learning-medallion-button,
+  html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card .learning-medallion-media{
+    width:min(25vw,330px)!important;
+    max-width:330px!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-route-buttons article.r987-learning-flat-card img.r987-learning-flat-button-image{
+    max-width:330px!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-route-buttons .premium-route-card__title-sign.ah-unified-spacebar{
+    height:58px!important;
+    min-height:58px!important;
+    max-height:58px!important;
+  }
+}
+
+/* Mobile stays responsive and centered; no desktop-only corner sizing assumptions. */
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="learning"] #learning-route-buttons > .shell.compact-hero-grid{
+    transform:none!important;
+    translate:none!important;
+  }
+}

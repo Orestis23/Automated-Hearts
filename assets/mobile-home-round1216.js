@@ -13,8 +13,8 @@
   function colorize(v){let x=esc(v);x=x.replace(/AI/g,'<span class="pink">AI</span>').replace(/Human/g,'<span class="green">Human</span>').replace(/maximum efficiency/g,'<span class="green">maximum efficiency</span>').replace(/Nothing you don&#39;t need\./g,'<span class="pink">Nothing</span> you <span class="green">don&#39;t need.</span>').replace(/Just what you do\./g,'<span class="pink">Just</span> <span class="green">what you do.</span>');return x}
   const state=['','','','',''];
   function render(i){lineEls[i].innerHTML=colorize(state[i]);lineEls[i].appendChild(cursor)}
-  async function type(i,text){for(const ch of text){state[i]+=ch;render(i);let d=34+Math.random()*48;if(/[.,%]/.test(ch))d+=65;await sleep(d)}}
-  async function back(i,n){for(let k=0;k<n;k++){state[i]=state[i].slice(0,-1);render(i);await sleep(78+Math.random()*42)}}
+  async function type(i,text){for(const ch of text){state[i]+=ch;render(i);try{window.__AHIntroKeySound?.('type')}catch(_){};let d=34+Math.random()*48;if(/[.,%]/.test(ch))d+=65;await sleep(d)}}
+  async function back(i,n){for(let k=0;k<n;k++){state[i]=state[i].slice(0,-1);render(i);try{window.__AHIntroKeySound?.('delete')}catch(_){};await sleep(78+Math.random()*42)}}
   async function typeStory(){await type(0,'AI should elevtae');await sleep(330);await back(0,3);await sleep(160);await type(0,'ate the Human.');await sleep(620);await type(1,'Fully customized minimalistic systems in both design & foundation for maximum efficency');await sleep(340);await back(1,5);await sleep(160);await type(1,'ciency.');await sleep(610);await type(2,'Nothing you dont');await sleep(310);await back(2,4);await sleep(150);await type(2,"don't need.");await sleep(520);await type(3,'Just what you do.');await sleep(520)}
   function loadImage(url){return new Promise((resolve)=>{const img=new Image();img.decoding='async';img.onload=()=>img.decode?img.decode().catch(()=>{}).finally(resolve):resolve();img.onerror=resolve;img.src=url})}
 
@@ -138,6 +138,7 @@
     await typeStory();
     try{localStorage.setItem(INTRO_KEY,'1')}catch(_){}
     cursor.style.opacity='0'; await sleep(180); if(signature){signature.classList.add('is-visible');await sleep(1250)}else{await sleep(420)}; intro.classList.add('is-raising');
+    try{window.dispatchEvent(new CustomEvent('ah:first-intro-raising',{detail:{intro}}))}catch(_){}
     await Promise.race([new Promise(r=>intro.addEventListener('transitionend',r,{once:true})),sleep(3300)]);
     intro.hidden=true; document.documentElement.setAttribute('data-ah-intro','0');
     syncLiveSurface();

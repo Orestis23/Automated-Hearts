@@ -1,0 +1,10 @@
+/* Automated Hearts Round 1416 — desktop footer copy color authority.
+   Text-only change: preserves all existing footer geometry, surfaces, rims, glow, depth and press behavior. */
+@media (min-width: 761px) {
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav .footer-nav-label,
+  html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav a[data-nav] .footer-nav-label {
+    color:#ff4fb2 !important;
+    -webkit-text-fill-color:#ff4fb2 !important;
+    text-shadow:0 0 2px rgba(255,79,178,.55),0 0 8px rgba(255,79,178,.18) !important;
+  }
+}

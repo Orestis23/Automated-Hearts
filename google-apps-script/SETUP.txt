@@ -20,4 +20,4 @@ Website Form Entries
 Columns:
 Received At | Name | Email | Business / Organization | Business Type | Message | Page | Page URL | Contact Context | Client Submitted At | Form Version
 
-The script also sends a notification copy to automatedhearts@gmail.com.
+Every valid website contact-form submission is emailed directly to orestis.sinis@automatedhearts.com. The sender’s email is set as Reply-To for convenient responses.

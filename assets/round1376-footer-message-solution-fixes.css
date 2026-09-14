@@ -1,0 +1,281 @@
+/* Automated Hearts Round 1376
+   - Restore footer buttons and Messages button as true vintage mechanical keys
+   - Re-pin the mobile Messages button to the top-right corner
+   - Give the "Open the window." field the matte-film + black carbon-fiber treatment */
+
+:root{
+  --ah1376-mint:#8fffd7;
+  --ah1376-pink:#ff2ea8;
+  --ah1376-face-top:#4f6074;
+  --ah1376-face-mid:#1a2a3c;
+  --ah1376-face-bot:#07111b;
+  --ah1376-side-top:#223247;
+  --ah1376-side-bot:#020910;
+  --ah1376-black:#03070d;
+  --ah1376-key-edge:rgba(182,214,255,.26);
+}
+
+/* -------------------- OPEN THE WINDOW field -------------------- */
+html body main#main-content .solution-process-instruction-copy,
+html body.page-solutions main#main-content #solution-process-heading.solution-process-instruction-copy,
+html body .solution-mobile-header-section .solution-process-title.solution-process-instruction-copy{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+  border:2px solid rgba(95,214,255,.58)!important;
+  outline:1px solid rgba(0,0,0,.82)!important;
+  outline-offset:-2px!important;
+  border-radius:0!important;
+  background:
+    linear-gradient(180deg, rgba(13,22,33,.96) 0%, rgba(4,11,18,.985) 100%),
+    url('./home-carbon-fiber-procedural-round714.webp') center/210px 210px repeat!important;
+  background-blend-mode:screen,normal!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(143,255,215,.18),
+    inset 0 1px 0 rgba(238,255,251,.12),
+    inset 0 -14px 24px rgba(0,0,0,.48),
+    0 0 0 2px rgba(0,0,0,.66),
+    0 10px 18px rgba(0,0,0,.32)!important;
+}
+
+html body main#main-content .solution-process-instruction-copy::before,
+html body.page-solutions main#main-content #solution-process-heading.solution-process-instruction-copy::before,
+html body .solution-mobile-header-section .solution-process-title.solution-process-instruction-copy::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:2!important;
+  pointer-events:none!important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.11) 0%, rgba(255,255,255,.03) 14%, rgba(255,255,255,0) 26%, rgba(0,0,0,.10) 74%, rgba(0,0,0,.20) 100%),
+    radial-gradient(130% 42% at 50% -8%, rgba(255,255,255,.14), rgba(255,255,255,0) 52%),
+    linear-gradient(115deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.016) 24%, transparent 42%, rgba(255,255,255,.03) 57%, transparent 75%)!important;
+  opacity:.95!important;
+}
+
+html body main#main-content .solution-process-instruction-copy::after,
+html body.page-solutions main#main-content #solution-process-heading.solution-process-instruction-copy::after,
+html body .solution-mobile-header-section .solution-process-title.solution-process-instruction-copy::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:3!important;
+  pointer-events:none!important;
+  background:
+    repeating-linear-gradient(0deg, rgba(240,255,251,.028) 0 1px, rgba(0,0,0,.018) 1px 3px),
+    linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.04) 100%)!important;
+  mix-blend-mode:screen!important;
+  opacity:.85!important;
+}
+
+html body main#main-content .solution-process-instruction-copy > *,
+html body.page-solutions main#main-content #solution-process-heading.solution-process-instruction-copy > *,
+html body .solution-mobile-header-section .solution-process-title.solution-process-instruction-copy > *{
+  position:relative!important;
+  z-index:4!important;
+}
+
+html body main#main-content .solution-process-instruction-copy .solution-instruction-line,
+html body.page-solutions main#main-content #solution-process-heading.solution-process-instruction-copy .solution-instruction-line,
+html body .solution-mobile-header-section .solution-process-title.solution-process-instruction-copy .solution-instruction-line{
+  color:var(--ah1376-mint)!important;
+  -webkit-text-fill-color:var(--ah1376-mint)!important;
+  text-shadow:0 0 2px #ecfff9, 0 0 8px rgba(143,255,215,.62), 0 0 18px rgba(143,255,215,.18)!important;
+}
+
+/* -------------------- Mobile Messages button position -------------------- */
+@media (max-width:900px){
+  html body > a.message,
+  html body > a.message:link,
+  html body > a.message:visited{
+    position:fixed!important;
+    top:calc(env(safe-area-inset-top,0px) + 12px)!important;
+    right:14px!important;
+    left:auto!important;
+    bottom:auto!important;
+    margin:0!important;
+    width:48px!important;
+    min-width:48px!important;
+    max-width:48px!important;
+    height:48px!important;
+    min-height:48px!important;
+    max-height:48px!important;
+    z-index:2147483647!important;
+    transform:none!important;
+  }
+}
+
+/* -------------------- Footer / message key structure -------------------- */
+@media (min-width:901px){
+  html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav],
+  html body[data-page] > #header-send-message{
+    --ah1376-key-height:12px;
+  }
+}
+@media (max-width:900px){
+  html body > nav.footer a[href],
+  html body > a.message{
+    --ah1376-key-height:9px;
+  }
+}
+
+html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav],
+html body[data-page] > #header-send-message,
+html body > nav.footer a[href],
+html body > a.message{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:visible!important;
+  border:1px solid rgba(0,0,0,.88)!important;
+  border-radius:10px!important;
+  background:none!important;
+  background-image:none!important;
+  background-color:transparent!important;
+  box-shadow:
+    0 1px 0 rgba(0,0,0,.95),
+    0 calc(var(--ah1376-key-height) - 2px) 0 rgba(3,10,16,.98),
+    0 calc(var(--ah1376-key-height) + 4px) 12px rgba(0,0,0,.32)!important;
+  filter:none!important;
+  transform:translate3d(0,0,0)!important;
+  transition:transform .10s ease, box-shadow .10s ease!important;
+}
+
+html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav]::before,
+html body[data-page] > #header-send-message::before,
+html body > nav.footer a[href]::before,
+html body > a.message::before{
+  content:""!important;
+  position:absolute!important;
+  z-index:0!important;
+  left:2px!important;
+  right:2px!important;
+  top:2px!important;
+  bottom:calc(var(--ah1376-key-height) - 1px)!important;
+  border-radius:8px!important;
+  pointer-events:none!important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.04) 14%, rgba(0,0,0,.04) 64%, rgba(0,0,0,.18) 100%),
+    radial-gradient(100% 45% at 50% 0%, rgba(255,255,255,.12), rgba(255,255,255,0) 55%),
+    linear-gradient(180deg, var(--ah1376-face-top) 0%, var(--ah1376-face-mid) 38%, var(--ah1376-face-bot) 100%),
+    url('./home-carbon-fiber-procedural-round714.webp') center/148px 148px repeat!important;
+  background-blend-mode:screen,screen,normal,normal!important;
+  border-top:1px solid rgba(255,255,255,.24)!important;
+  border-left:1px solid rgba(167,191,220,.42)!important;
+  border-right:1px solid rgba(0,0,0,.58)!important;
+  border-bottom:1px solid rgba(0,0,0,.80)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    inset 0 0 0 1px rgba(255,255,255,.03),
+    inset 0 -1px 0 rgba(255,46,168,.58),
+    inset 0 0 0 2px rgba(143,255,215,.18)!important;
+}
+
+html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav]::after,
+html body[data-page] > #header-send-message::after,
+html body > nav.footer a[href]::after,
+html body > a.message::after{
+  content:""!important;
+  position:absolute!important;
+  z-index:-1!important;
+  left:5px!important;
+  right:0!important;
+  top:calc(100% - var(--ah1376-key-height))!important;
+  bottom:-1px!important;
+  border-radius:0 0 9px 8px!important;
+  pointer-events:none!important;
+  background:
+    linear-gradient(180deg, rgba(109,127,149,.42) 0%, rgba(18,29,43,.82) 24%, rgba(6,12,20,.98) 100%)!important;
+  clip-path:polygon(0 0,100% 0,100% 100%,93% 100%,88% 70%,12% 70%,7% 100%,0 100%)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 1px 0 rgba(0,0,0,.88)!important;
+}
+
+/* right side wall to make the keys feel chunkier */
+html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav] > .ah-key-side,
+html body[data-page] > #header-send-message > .ah-key-side,
+html body > nav.footer a[href] > .ah-key-side,
+html body > a.message > .ah-key-side{display:none!important;}
+
+html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav] > *,
+html body[data-page] > #header-send-message > *,
+html body > nav.footer a[href] > *,
+html body > a.message > *{
+  position:relative!important;
+  z-index:2!important;
+}
+
+html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav] .footer-nav-label,
+html body > nav.footer a[href] .footer-nav-label{
+  text-shadow:0 0 6px rgba(143,255,215,.13)!important;
+}
+
+html body[data-page] > #header-send-message .r1005-message-envelope,
+html body > a.message svg{
+  position:relative!important;
+  z-index:2!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+html body[data-page] > #header-send-message .r1005-message-envelope svg path,
+html body > a.message svg path{
+  fill:none!important;
+  stroke:#ff6a99!important;
+  stroke-width:2.15!important;
+  stroke-linecap:round!important;
+  stroke-linejoin:round!important;
+}
+
+html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav]:is(:active,.is-nav-pressed,.is-pressed,[aria-current="page"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]),
+html body[data-page] > #header-send-message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]),
+html.ah-message-persist-open body[data-page] > #header-send-message,
+html body > nav.footer a[href]:is(:active,.is-nav-pressed,.is-pressed,[aria-current="page"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]),
+html body > a.message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+  transform:translate3d(0,4px,0)!important;
+  box-shadow:
+    0 1px 0 rgba(0,0,0,.95),
+    0 calc(var(--ah1376-key-height) - 6px) 0 rgba(3,10,16,.98),
+    0 calc(var(--ah1376-key-height) - 1px) 10px rgba(0,0,0,.26)!important;
+}
+
+html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav]:is(:active,.is-nav-pressed,.is-pressed,[aria-current="page"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading])::before,
+html body[data-page] > #header-send-message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"])::before,
+html.ah-message-persist-open body[data-page] > #header-send-message::before,
+html body > nav.footer a[href]:is(:active,.is-nav-pressed,.is-pressed,[aria-current="page"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading])::before,
+html body > a.message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"])::before{
+  top:4px!important;
+  bottom:calc(var(--ah1376-key-height) - 3px)!important;
+}
+
+html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav]:is(:active,.is-nav-pressed,.is-pressed,[aria-current="page"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading])::after,
+html body[data-page] > #header-send-message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"])::after,
+html.ah-message-persist-open body[data-page] > #header-send-message::after,
+html body > nav.footer a[href]:is(:active,.is-nav-pressed,.is-pressed,[aria-current="page"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading])::after,
+html body > a.message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"])::after{
+  top:calc(100% - (var(--ah1376-key-height) - 4px))!important;
+}
+
+@media (max-width:900px){
+  html body > nav.footer a[href],
+  html body > a.message{
+    border-radius:11px!important;
+  }
+  html body > nav.footer a[href]::before,
+  html body > a.message::before{
+    left:2px!important;
+    right:2px!important;
+    top:2px!important;
+    bottom:8px!important;
+    border-radius:8px!important;
+  }
+  html body > nav.footer a[href]::after,
+  html body > a.message::after{
+    left:4px!important;
+    right:0!important;
+    top:calc(100% - 9px)!important;
+    bottom:-1px!important;
+    border-radius:0 0 9px 8px!important;
+  }
+}

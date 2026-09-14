@@ -1,0 +1,265 @@
+/* Automated Hearts Round 1405 — final authoritative layout + large spacebar labels.
+   This file intentionally loads last on Learning Center and Industries pages. */
+
+/* ---------- LARGE SPACEBAR LETTERING ONLY ---------- */
+@media (min-width:901px){
+  html body.page-learning[data-page="learning"] #learning-route-buttons .premium-route-card__title-sign.ah-unified-spacebar > .ah-route-label-final{
+    font-size:clamp(42px,3vw,52px)!important;
+    line-height:.92!important;
+    letter-spacing:0!important;
+    white-space:normal!important;
+    text-align:center!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .premium-route-card__title-sign.ah-unified-spacebar > .ah-route-label-final{
+    font-size:clamp(31px,2.15vw,42px)!important;
+    line-height:.94!important;
+    letter-spacing:-.015em!important;
+    white-space:normal!important;
+    text-align:center!important;
+    text-wrap:balance!important;
+  }
+}
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="learning"] #learning-route-buttons .ah-unified-spacebar > .ah-route-label-final{
+    font-size:clamp(28px,8vw,36px)!important;
+    line-height:.94!important;
+    white-space:normal!important;
+  }
+  html body[data-ah-mobile-surface="industries"] #who-we-help-solutions .ah-unified-spacebar > .ah-route-label-final{
+    font-size:clamp(25px,7vw,34px)!important;
+    line-height:.94!important;
+    white-space:normal!important;
+    text-wrap:balance!important;
+  }
+}
+
+/* ---------- INDUSTRIES DESKTOP: ONE CLEAN CENTERED 2x2 GRID ---------- */
+@media (min-width:901px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions{
+    box-sizing:border-box!important;
+    position:relative!important;
+    width:100%!important;
+    min-height:calc(100svh - 72px)!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions > .shell{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    translate:none!important;
+    transform:none!important;
+    width:min(94vw,1280px)!important;
+    max-width:1280px!important;
+    min-height:calc(100svh - 72px)!important;
+    margin:0 auto!important;
+    padding:clamp(10px,1.6vh,22px) 0 clamp(98px,11vh,128px)!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:0!important;
+    overflow:visible!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .r1399-prompt-sign{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    translate:none!important;
+    transform:none!important;
+    width:min(86vw,1080px)!important;
+    max-width:1080px!important;
+    min-height:68px!important;
+    height:68px!important;
+    margin:0 auto clamp(16px,2vh,24px)!important;
+    padding:8px 24px!important;
+    flex:0 0 68px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-button-grid{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;
+    translate:none!important;
+    transform:none!important;
+    width:min(100%,1180px)!important;
+    max-width:1180px!important;
+    height:auto!important;
+    margin:0 auto!important;
+    padding:0!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:auto auto!important;
+    gap:clamp(14px,1.8vh,22px) clamp(20px,2.2vw,34px)!important;
+    align-items:start!important;
+    justify-items:stretch!important;
+    overflow:visible!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;
+    translate:none!important;
+    transform:none!important;
+    rotate:none!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    display:grid!important;
+    grid-template-rows:clamp(138px,18vh,205px) 74px!important;
+    gap:8px!important;
+    align-items:stretch!important;
+    justify-items:stretch!important;
+    overflow:visible!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card > .premium-route-card__link.ah-route-image-visual{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    translate:none!important;
+    transform:none!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:100%!important;
+    min-height:0!important;
+    aspect-ratio:auto!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card > .premium-route-card__link.ah-route-image-visual .premium-route-card__media,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card > .premium-route-card__link.ah-route-image-visual img{
+    box-sizing:border-box!important;
+    position:absolute!important;
+    inset:0!important;
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    translate:none!important;
+    transform:none!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card > .premium-route-card__link.ah-route-image-visual img{
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card > .premium-route-card__title-sign.ah-unified-spacebar{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;
+    translate:none!important;
+    transform:none!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    height:74px!important;
+    min-height:74px!important;
+    max-height:74px!important;
+    margin:0!important;
+    padding:6px 12px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:visible!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card > .premium-route-card__title-sign.ah-unified-spacebar > .ah-route-label-final{
+    box-sizing:border-box!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0 8px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+}
+
+/* Very short desktops: preserve 2x2 structure, compact only vertical geometry. */
+@media (min-width:901px) and (max-height:760px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions > .shell{
+    padding-top:6px!important;
+    padding-bottom:86px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .r1399-prompt-sign{
+    min-height:58px!important;
+    height:58px!important;
+    flex-basis:58px!important;
+    margin-bottom:10px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-button-grid{
+    gap:10px 26px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card{
+    grid-template-rows:clamp(118px,16vh,150px) 64px!important;
+    gap:6px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card > .premium-route-card__title-sign.ah-unified-spacebar{
+    height:64px!important;
+    min-height:64px!important;
+    max-height:64px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .premium-route-card__title-sign.ah-unified-spacebar > .ah-route-label-final{
+    font-size:clamp(27px,1.9vw,36px)!important;
+  }
+}
+
+/* ---------- INDUSTRIES MOBILE: explicit single column and exact prompt alignment ---------- */
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="industries"] #who-we-help-solutions > .shell{
+    position:relative!important;
+    inset:auto!important;
+    translate:none!important;
+    transform:none!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:100%!important;
+    margin:0 auto!important;
+    padding:10px 12px calc(148px + env(safe-area-inset-bottom,0px))!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+  }
+  html body[data-ah-mobile-surface="industries"] #who-we-help-solutions .who-help-button-grid{
+    position:relative!important;
+    inset:auto!important;
+    translate:none!important;
+    transform:none!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:500px!important;
+    margin:0 auto!important;
+    padding:0!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:24px!important;
+    justify-items:center!important;
+  }
+  html body[data-ah-mobile-surface="industries"] #who-we-help-solutions .who-help-route-card{
+    position:relative!important;
+    inset:auto!important;
+    translate:none!important;
+    transform:none!important;
+    box-sizing:border-box!important;
+    width:min(92vw,440px)!important;
+    max-width:440px!important;
+    height:auto!important;
+    margin:0 auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+    gap:8px!important;
+  }
+}

@@ -7,11 +7,11 @@
   const $$ = (s, r=document) => [...r.querySelectorAll(s)];
   const stage = $('#lite-model-stage');
   const modelShell = $('#lite-model-shell');
-  let frame = null;
   let selected = null;
   let modelIndex = 0;
   let scrollToken = 0;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const frameCache = new Map();
 
   function smoothToElement(el, duration=1850){
     const token=++scrollToken;
@@ -48,43 +48,99 @@
     strategy: ['./models/strategy-lab-ball-round1093.html?v=1327r']
   };
 
-  function unloadModel(){
-    if(frame){
-      frame.src='about:blank';
-      frame.remove();
-      frame=null;
-    }
-    if(modelShell) modelShell.hidden=true;
+  function sendActivity(frame, active){
+    try{
+      frame?.contentWindow?.postMessage({type:'automated-hearts:learning-activity',active:!!active},'*');
+      frame?.contentWindow?.postMessage({type:'automated-hearts:viewport-activity',active:!!active},'*');
+      frame?.contentWindow?.postMessage({type:'engine-visibility',visible:!!active},'*');
+    }catch(_){}
   }
 
-  function loadUrl(url){
-    if(!modelShell) return;
-    unloadModel();
-    frame=document.createElement('iframe');
+  function ensureFrame(url){
+    if(!modelShell || !url) return null;
+    if(frameCache.has(url)) return frameCache.get(url);
+    const frame=document.createElement('iframe');
     frame.title='Interactive Automated Hearts 3D model';
     frame.loading='eager';
     frame.allow='webgl';
     frame.setAttribute('allowtransparency','true');
-    frame.src=url;
+    frame.setAttribute('aria-hidden','true');
+    frame.style.position='absolute';
+    frame.style.inset='0';
+    frame.style.width='100%';
+    frame.style.height='100%';
+    frame.style.border='0';
+    frame.style.visibility='hidden';
+    frame.style.opacity='0';
+    frame.style.pointerEvents='none';
+    frame.style.transform='none';
+    frame.addEventListener('load',()=>{
+      if(frame.dataset.ahActive==='1'){
+        [0,80,220,520].forEach(ms=>setTimeout(()=>sendActivity(frame,true),ms));
+      }else{
+        [0,100,360].forEach(ms=>setTimeout(()=>sendActivity(frame,false),ms));
+      }
+    });
     modelShell.appendChild(frame);
+    frameCache.set(url,frame);
+    frame.src=url;
+    return frame;
+  }
+
+  function warmGroup(group){
+    const urls=learningModels[group]||[];
+    urls.forEach((url,index)=>{
+      if(index===0) ensureFrame(url);
+      else setTimeout(()=>ensureFrame(url),80*index);
+    });
+  }
+
+  function showModel(url){
+    if(!modelShell || !url) return;
+    const active=ensureFrame(url);
+    frameCache.forEach((frame)=>{
+      const on=frame===active;
+      frame.dataset.ahActive=on?'1':'0';
+      frame.setAttribute('aria-hidden',on?'false':'true');
+      frame.style.visibility=on?'visible':'hidden';
+      frame.style.opacity=on?'1':'0';
+      frame.style.pointerEvents=on?'auto':'none';
+      sendActivity(frame,on);
+    });
     modelShell.hidden=false;
   }
 
-  $$('[data-lite-learning]').forEach((el) => el.addEventListener('click', (e) => {
+  function pauseAll(){
+    frameCache.forEach(frame=>{
+      frame.dataset.ahActive='0';
+      frame.style.pointerEvents='none';
+      sendActivity(frame,false);
+    });
+  }
+
+  $$('.route-label[data-lite-learning]').forEach((el) => el.addEventListener('click', (e) => {
     e.preventDefault();
     selected=el.dataset.liteLearning;
     modelIndex=0;
-    unloadModel();
     if(stage) stage.hidden=false;
-    stage.closest('.lite-section').style.contentVisibility='visible';
-    modelShell.hidden=false;
+    stage?.closest('.lite-section')?.style.setProperty('content-visibility','visible');
+    if(modelShell){
+      modelShell.hidden=false;
+      modelShell.style.position='relative';
+    }
     const models=learningModels[selected] || [];
+    warmGroup(selected); // Load every model in this lesson while the stage opens.
     const ctrls=$('#model-controls');
-    if(ctrls){const multi=models.length>1;ctrls.hidden=!multi;ctrls.style.setProperty('display',multi?'flex':'none','important');ctrls.style.setProperty('visibility',multi?'visible':'hidden','important');ctrls.style.setProperty('pointer-events',multi?'auto':'none','important');}
-    const scrollDuration=1850;
-    smoothToElement(modelShell, scrollDuration).then((finished)=>{
-      if(finished===false)return;
-      if(selected && learningModels[selected]) loadUrl(learningModels[selected][0]);
+    if(ctrls){
+      const multi=models.length>1;
+      ctrls.hidden=!multi;
+      ctrls.style.setProperty('display',multi?'flex':'none','important');
+      ctrls.style.setProperty('visibility',multi?'visible':'hidden','important');
+      ctrls.style.setProperty('pointer-events',multi?'auto':'none','important');
+    }
+    smoothToElement(modelShell,1850).then((finished)=>{
+      if(finished===false || !selected || !learningModels[selected]) return;
+      showModel(learningModels[selected][0]);
     });
   }));
 
@@ -92,14 +148,14 @@
     if(!selected) return;
     const models=learningModels[selected];
     modelIndex=(modelIndex-1+models.length)%models.length;
-    loadUrl(models[modelIndex]);
+    showModel(models[modelIndex]);
   });
 
   $('#model-next')?.addEventListener('click',()=>{
     if(!selected) return;
     const models=learningModels[selected];
     modelIndex=(modelIndex+1)%models.length;
-    loadUrl(models[modelIndex]);
+    showModel(models[modelIndex]);
   });
 
   $('#learning-choose-another')?.addEventListener('click', async (event)=>{
@@ -107,10 +163,10 @@
     const button=event.currentTarget;
     button.disabled=true;
     try{
-      frame?.contentWindow?.postMessage({type:'automated-hearts:learning-activity',active:false},'*');
+      pauseAll();
       const choices=document.querySelector('.route-grid') || document.querySelector('[data-lite-learning]')?.closest('.lite-section');
-      await smoothToElement(choices, 1900);
-      unloadModel();
+      await smoothToElement(choices,1900);
+      if(modelShell) modelShell.hidden=true;
       if(stage) stage.hidden=true;
       selected=null;
       modelIndex=0;
@@ -120,5 +176,11 @@
     }
   });
 
-  document.addEventListener('visibilitychange',()=>{ if(document.hidden) unloadModel(); });
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden) pauseAll();
+    else if(selected){
+      const models=learningModels[selected]||[];
+      showModel(models[modelIndex]||models[0]);
+    }
+  });
 })();

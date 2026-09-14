@@ -1,0 +1,372 @@
+/* Round 1377 — mobile-only vintage keycap system. Desktop footer/message restored.
+   Also adds the requested thick pink underline beneath Home process headings. */
+
+:root{
+  --r1377-mint:#8fffd7;
+  --r1377-pink:#ff2ea8;
+  --r1377-mobile-key-carbon:url('./home-carbon-fiber-procedural-round714.webp');
+}
+
+/* HOME PROCESS: thick pink underline matching the green outer-border weight. */
+html body .ah-home-process-box > h3{
+  position:relative!important;
+}
+html body .ah-home-process-box > h3::after{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  z-index:8!important;
+  left:0!important;
+  right:0!important;
+  bottom:0!important;
+  width:100%!important;
+  height:3px!important;
+  min-height:3px!important;
+  border:0!important;
+  background:#ff2ea8!important;
+  box-shadow:0 0 5px rgba(255,46,168,.34)!important;
+  transform:none!important;
+  opacity:1!important;
+  pointer-events:none!important;
+}
+@media (max-width:800px){
+  html body .ah-home-process-box > h3::after{
+    height:3px!important;
+    min-height:3px!important;
+    bottom:0!important;
+  }
+}
+
+/* ================================================================
+   DESKTOP: restore the known-working Round 1095/1212 blue hardware.
+   The new vintage reference-key styling does NOT apply on desktop.
+   ================================================================ */
+@media (min-width:901px){
+  :root{
+    --r1377-footer-rest:url('./footer-button-message-border-match-round1095.svg?v=1389r')!important;
+    --r1377-footer-pressed:url('./footer-button-message-border-match-pressed-round1095.svg?v=1389r')!important;
+    --r1377-message-rest:url('./message-button-square-footer-match-round1095.svg?v=1389r')!important;
+    --r1377-message-pressed:url('./message-button-square-footer-match-pressed-round1095.svg?v=1389r')!important;
+    --r1005-message-size:84px!important;
+    --r1005-message-top:6px!important;
+    --r1005-message-right:6px!important;
+  }
+
+  html body[data-page] > footer#site-footer.site-footer--minimal
+  nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav]{
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    background-color:transparent!important;
+    background-image:var(--r1377-footer-rest)!important;
+    background-position:center!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    clip-path:none!important;
+    -webkit-clip-path:none!important;
+    filter:none!important;
+    transform:none!important;
+  }
+  html body[data-page] > footer#site-footer.site-footer--minimal
+  nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav]::before,
+  html body[data-page] > footer#site-footer.site-footer--minimal
+  nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav]::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body[data-page] > footer#site-footer.site-footer--minimal
+  nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav]
+  > .send-control-copy.footer-control-copy{
+    position:absolute!important;
+    z-index:3!important;
+    inset:0!important;
+    display:grid!important;
+    place-items:center!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0 10px 4px!important;
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+    transform:none!important;
+  }
+  html body[data-page] > footer#site-footer.site-footer--minimal
+  nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav]
+  > .send-control-indicator{
+    display:none!important;
+  }
+  html body[data-page] > footer#site-footer.site-footer--minimal
+  nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,.is-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]){
+    background-image:var(--r1377-footer-pressed)!important;
+    transform:none!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+  html body[data-page] > footer#site-footer.site-footer--minimal
+  nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-nav-pressed,.is-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading])
+  > .send-control-copy.footer-control-copy{
+    transform:translate3d(0,4px,0)!important;
+  }
+
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
+    position:fixed!important;
+    z-index:2147483646!important;
+    top:6px!important;
+    right:6px!important;
+    bottom:auto!important;
+    left:auto!important;
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    width:84px!important;
+    min-width:84px!important;
+    max-width:84px!important;
+    height:84px!important;
+    min-height:84px!important;
+    max-height:84px!important;
+    box-sizing:border-box!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    background-color:transparent!important;
+    background-image:var(--r1377-message-rest)!important;
+    background-position:center!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+    clip-path:none!important;
+    -webkit-clip-path:none!important;
+    transform:none!important;
+    pointer-events:auto!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control::before,
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope{
+    position:absolute!important;
+    z-index:20!important;
+    inset:0!important;
+    display:grid!important;
+    place-items:center!important;
+    width:100%!important;
+    height:100%!important;
+    color:#ff2ea8!important;
+    transform:none!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope svg{
+    display:block!important;
+    width:42%!important;
+    max-width:42%!important;
+    height:auto!important;
+  }
+  html body[data-page] > a#header-send-message > .r1005-message-envelope path{
+    fill:none!important;
+    stroke:currentColor!important;
+    stroke-width:1.6!important;
+    stroke-linecap:round!important;
+    stroke-linejoin:round!important;
+  }
+  html.ah-message-persist-open body[data-page] > a#header-send-message.header-send-message.mechanical-send-control,
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded='true'],.is-contact-latched,.is-pressed,[data-ah-control-pressed='1'],[data-ah-control-pressed='true']){
+    background-image:var(--r1377-message-pressed)!important;
+    transform:translate3d(0,4px,0)!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+}
+
+/* ================================================================
+   MOBILE ONLY: use the selected reference-key shape for footer + Messages.
+   Raised dark keycap, strong slanted side walls, recessed top face,
+   mint front under-light, no rear halo.
+   ================================================================ */
+@media (max-width:900px){
+  html body > nav.footer{
+    overflow:visible!important;
+  }
+
+  html body > nav.footer a[href],
+  html body > a.message,
+  html body > a.message:link,
+  html body > a.message:visited{
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    background:
+      linear-gradient(180deg,#8794a2 0%,#485566 8%,#1d2b3c 31%,#08111c 100%)!important;
+    background-image:linear-gradient(180deg,#8794a2 0%,#485566 8%,#1d2b3c 31%,#08111c 100%)!important;
+    clip-path:polygon(10% 0,90% 0,100% 10%,100% 88%,91% 100%,9% 100%,0 88%,0 10%)!important;
+    -webkit-clip-path:polygon(10% 0,90% 0,100% 10%,100% 88%,91% 100%,9% 100%,0 88%,0 10%)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.28),
+      inset 3px 0 0 rgba(188,204,220,.13),
+      inset -4px 0 0 rgba(0,0,0,.38),
+      inset 0 -7px 0 rgba(0,0,0,.55),
+      0 1px 0 #000,
+      0 5px 0 #030910,
+      0 8px 10px rgba(0,0,0,.36),
+      0 8px 12px rgba(143,255,215,.16)!important;
+    filter:none!important;
+    transform:none!important;
+    transition:transform 95ms ease,box-shadow 95ms ease,filter 95ms ease!important;
+  }
+
+  html body > nav.footer a[href]::before,
+  html body > a.message::before{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:0!important;
+    left:5px!important;
+    right:5px!important;
+    top:5px!important;
+    bottom:12px!important;
+    pointer-events:none!important;
+    border:1px solid rgba(143,255,215,.48)!important;
+    border-radius:3px!important;
+    outline:1px solid rgba(0,0,0,.70)!important;
+    outline-offset:-2px!important;
+    background:
+      linear-gradient(180deg,rgba(255,255,255,.10),transparent 18%,rgba(0,0,0,.16) 100%),
+      var(--r1377-mobile-key-carbon)!important;
+    background-position:center,center!important;
+    background-size:100% 100%,140px 140px!important;
+    background-repeat:no-repeat,repeat!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.11),
+      inset 0 -10px 15px rgba(0,0,0,.36),
+      inset 0 0 0 1px rgba(2,7,12,.78)!important;
+  }
+
+  html body > nav.footer a[href]::after,
+  html body > a.message::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:-1!important;
+    left:12%!important;
+    right:12%!important;
+    top:auto!important;
+    bottom:-2px!important;
+    height:3px!important;
+    min-height:3px!important;
+    pointer-events:none!important;
+    border:0!important;
+    border-radius:50%!important;
+    background:#8fffd7!important;
+    box-shadow:
+      0 0 3px rgba(143,255,215,.82),
+      0 2px 6px rgba(143,255,215,.46)!important;
+    opacity:.94!important;
+    transform:none!important;
+  }
+
+  html body > nav.footer a[href] > *,
+  html body > a.message > *{
+    position:relative!important;
+    z-index:2!important;
+  }
+
+  html body > nav.footer a[href] > .footer-nav-label{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    height:100%!important;
+    padding:0 5px 8px!important;
+    box-sizing:border-box!important;
+    line-height:1.04!important;
+    text-align:center!important;
+  }
+  html body > nav.footer a[href] > .ah-footer-bottom-rim{
+    display:none!important;
+  }
+
+  html body > nav.footer a[href]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]),
+  html body > a.message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true']){
+    transform:translate3d(0,3px,0)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.20),
+      inset 3px 0 0 rgba(188,204,220,.10),
+      inset -3px 0 0 rgba(0,0,0,.35),
+      inset 0 -3px 0 rgba(0,0,0,.48),
+      0 1px 0 #000,
+      0 2px 0 #030910,
+      0 4px 7px rgba(0,0,0,.28)!important;
+  }
+  html body > nav.footer a[href]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading])::after,
+  html body > a.message:is(:active,.is-pressed,.is-contact-latched,[aria-expanded='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'])::after{
+    bottom:-1px!important;
+    height:2px!important;
+    min-height:2px!important;
+    opacity:.68!important;
+    box-shadow:0 0 3px rgba(143,255,215,.46)!important;
+  }
+
+  /* Restore the Messages key to the original top-right mobile location. */
+  html body > a.message,
+  html body > a.message:link,
+  html body > a.message:visited{
+    position:fixed!important;
+    z-index:2147483647!important;
+    top:calc(var(--safe-top,0px) + 7px)!important;
+    right:14px!important;
+    bottom:auto!important;
+    left:auto!important;
+    width:42px!important;
+    min-width:42px!important;
+    max-width:42px!important;
+    height:42px!important;
+    min-height:42px!important;
+    max-height:42px!important;
+    margin:0!important;
+    padding:0!important;
+    display:grid!important;
+    place-items:center!important;
+  }
+  html body > a.message::before{
+    left:4px!important;
+    right:4px!important;
+    top:4px!important;
+    bottom:10px!important;
+  }
+  html body > a.message svg{
+    position:relative!important;
+    z-index:3!important;
+    width:48%!important;
+    height:auto!important;
+    display:block!important;
+    margin:0 0 7px 0!important;
+    filter:drop-shadow(0 0 3px rgba(255,46,168,.24))!important;
+  }
+  html body > a.message svg path{
+    fill:none!important;
+    stroke:#ff5ea8!important;
+    stroke-width:2.15!important;
+    stroke-linecap:round!important;
+    stroke-linejoin:round!important;
+  }
+}

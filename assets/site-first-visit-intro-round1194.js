@@ -40,6 +40,7 @@
       for (const char of text) {
         state[index] += char;
         render(index);
+        try { window.__AHIntroKeySound?.('type'); } catch (_) {}
         let delay = 34 + Math.random() * 48;
         if (/[.,%]/.test(char)) delay += 65;
         await sleep(delay);
@@ -49,6 +50,7 @@
       for (let i = 0; i < amount; i += 1) {
         state[index] = state[index].slice(0, -1);
         render(index);
+        try { window.__AHIntroKeySound?.('delete'); } catch (_) {}
         await sleep(78 + Math.random() * 42);
       }
     };
@@ -72,6 +74,7 @@
         await sleep(420);
       }
       intro.classList.add('is-raising');
+      try { window.dispatchEvent(new CustomEvent('ah:first-intro-raising', {detail:{intro}})); } catch (_) {}
       await Promise.race([
         new Promise((resolve) => intro.addEventListener('transitionend', resolve, {once:true})),
         sleep(3300)

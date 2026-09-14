@@ -1,0 +1,45 @@
+/* Round 1434 — Industries desktop spacebar refinement only.
+   Keep mobile unchanged. Narrower, thinner keys with hard-centered copy. */
+@media (min-width: 901px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card > a.ah-unified-spacebar{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:340px!important;
+    min-width:0!important;
+    max-width:340px!important;
+    height:48px!important;
+    min-height:48px!important;
+    max-height:48px!important;
+    margin:8px auto 0!important;
+    padding:5px 14px!important;
+    text-align:center!important;
+    overflow:hidden!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card > a.ah-unified-spacebar > .ah-route-label-final{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    text-align:center!important;
+    font-size:20px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+}
+@media (min-width: 901px) and (max-width: 1350px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card > a.ah-unified-spacebar{
+    width:310px!important;
+    max-width:310px!important;
+    height:46px!important;
+    min-height:46px!important;
+    max-height:46px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-route-card > a.ah-unified-spacebar > .ah-route-label-final{
+    font-size:18px!important;
+  }
+}
