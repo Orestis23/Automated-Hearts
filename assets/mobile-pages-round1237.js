@@ -1,7 +1,6 @@
 (() => {
   'use strict';
-  if ('serviceWorker' in navigator) navigator.serviceWorker.getRegistrations().then((regs)=>regs.forEach((r)=>r.unregister())).catch(()=>{});
-  const $ = (s, r=document) => r.querySelector(s);
+const $ = (s, r=document) => r.querySelector(s);
   const $$ = (s, r=document) => [...r.querySelectorAll(s)];
   // Native route cards remain ordinary links/buttons. Only explicit 3D loading uses JS.
   const stage = $('#lite-model-stage');

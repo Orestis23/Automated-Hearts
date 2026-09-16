@@ -1,0 +1,23 @@
+ROUND 1484 PERFORMANCE QA
+=========================
+
+desktop-home.html: local CSS links 125 -> 18; bundles=13; GA occurrences=2
+index.html: local CSS links 122 -> 8; bundles=6; GA occurrences=2
+mobile-home.html: local CSS links 133 -> 8; bundles=6; GA occurrences=2
+solutions.html: local CSS links 107 -> 13; bundles=10; GA occurrences=2
+mobile-solutions.html: local CSS links 122 -> 9; bundles=5; GA occurrences=2
+learning-center.html: local CSS links 109 -> 13; bundles=9; GA occurrences=2
+mobile-learning-center.html: local CSS links 117 -> 8; bundles=5; GA occurrences=2
+who-we-help.html: local CSS links 95 -> 12; bundles=9; GA occurrences=2
+mobile-who-we-help.html: local CSS links 110 -> 8; bundles=5; GA occurrences=2
+about.html: local CSS links 85 -> 12; bundles=8; GA occurrences=2
+mobile-about.html: local CSS links 95 -> 8; bundles=5; GA occurrences=2
+pricing.html: local CSS links 85 -> 13; bundles=9; GA occurrences=2
+mobile-pricing.html: local CSS links 97 -> 9; bundles=6; GA occurrences=2
+
+Missing local URL targets in bundles: 0
+Active service-worker register/unregister refs remaining: 0
+Modified runtime JS syntax checks: PASS
+Google Analytics retained on every public page: True
+Round 1483 global glowing section-border CSS retained in all public bundles: True
+Vercel root CSS/JS cache rules added: True

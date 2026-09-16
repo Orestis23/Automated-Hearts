@@ -1,7 +1,4 @@
-/* Automated Hearts Round 1287
-   - Restore the desktop Messages hardware to the full square footer-matched button face.
-   - Tighten the mobile Home Negative-Software title band and enlarge its one-line label.
-*/
+
 
 @media (min-width:901px){
   :root{
@@ -45,7 +42,7 @@
     background-image:url("./message-button-square-footer-match-pressed-round1095.svg?v=1287r")!important;
   }
 
-  /* Keep the gold envelope centered above the complete hardware face. */
+  
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope{
     position:absolute!important;
     inset:0!important;
@@ -59,7 +56,7 @@
 }
 
 @media (max-width:900px){
-  /* Home only: make the title sit evenly between the section break and first process card. */
+  
   html body.page-home main#main-content > .section[aria-label="Negative Software Solution"],
   html body[data-page="home"] main#main-content > .section[aria-label="Negative Software Solution"]{
     padding-top:24px!important;

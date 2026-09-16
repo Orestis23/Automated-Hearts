@@ -1,4 +1,4 @@
-/* Round 1374: pricing page concise screens + mechanical footer/message keys */
+
 
 :root{
   --ah1374-carbon:url('../button-carbon-weave.webp');
@@ -14,7 +14,7 @@
   --ah1374-red-body:#6d001d;
 }
 
-/* ---------- Pricing title screens ---------- */
+
 body[data-page] .r951-rates__card.ah-pricing-red-screen,
 body[data-page] .r983-retainer-card.ah-pricing-red-screen,
 body .rate-card.ah-pricing-red-screen{
@@ -125,7 +125,7 @@ body :is(.ah-pricing-positioning,.ah-pricing-standard,.ah-pricing-phase,.ah-pric
   font-weight:700!important;
 }
 
-/* ---------- Shared mechanical key surfaces ---------- */
+
 body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav],
 body[data-page] > a#header-send-message,
 body nav.footer > a,
@@ -223,7 +223,7 @@ body[data-page] > a#header-send-message:active::after{
   height:6px!important;
 }
 
-/* footer text and centering */
+
 body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav],
 body nav.footer > a{
   display:flex!important;
@@ -244,7 +244,7 @@ body nav.footer .ah-footer-bottom-rim{
   display:none!important;
 }
 
-/* message buttons */
+
 body[data-page] > a#header-send-message,
 body > a.message{
   display:flex!important;
@@ -284,7 +284,7 @@ body > a.message svg path{
   stroke-linejoin:round!important;
 }
 
-/* desktop footer keeps hardware visible */
+
 body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]{
   border-radius:12px!important;
 }

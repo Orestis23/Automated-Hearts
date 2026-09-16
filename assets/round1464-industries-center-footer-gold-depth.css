@@ -1,14 +1,7 @@
-/* Round 1464 — desktop-only finishing authority.
-   1) Industries four-card chooser is vertically centered between the inner gold rim's
-      top edge and the top of the fixed ticker.
-   2) Desktop footer copy defaults to the smaller 16px size with no late size transition.
-   3) Restore raised-depth shading inside the persistent gold rim so the gold frame reads
-      as an elevated outer layer above the page surface. */
+
 
 @media (min-width:801px){
-  /* INDUSTRIES: use the actual shell frame geometry as the centering aperture.
-     The section starts at viewport top; top padding removes the gold-rim/header zone,
-     and the section bottom stops at the fixed ticker/footer edge. */
+  
   html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content
   > section#who-we-help-solutions#who-we-help-solutions{
     box-sizing:border-box!important;
@@ -53,7 +46,7 @@
     translate:none!important;
   }
 
-  /* FOOTER: lock the smaller baseline from first paint through settled state. */
+  
   html body[data-page] > footer#site-footer.site-footer--minimal
   nav#primary-nav a.footer-structure-control[data-nav] .footer-nav-label,
   html body[data-page] > footer#site-footer.site-footer--minimal
@@ -71,9 +64,7 @@
     text-shadow:0 0 1px rgba(255,114,199,.22)!important;
   }
 
-  /* GOLD RIM: retain the metal line while adding a deep interior edge shadow.
-     The 64px top falloff corresponds to the site's 2/3-inch spatial standard and
-     visually separates the raised frame from the content surface beneath it. */
+  
   html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
     isolation:isolate!important;
     box-shadow:

@@ -1,6 +1,4 @@
-/* Round 1331 — exact desktop Messages appearance from Round 1212.
-   This authority is loaded after all later desktop message experiments.
-   Mobile Messages is intentionally untouched. */
+
 @media (min-width:801px){
   :root{
     --r1005-message-size:84px!important;
@@ -61,7 +59,7 @@
     isolation:auto!important;
   }
 
-  /* Round 1212 had no added reflective/pseudo pane on this control. */
+  
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control::before,
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control::after{
     content:none!important;

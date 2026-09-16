@@ -1,4 +1,4 @@
-/* Automated Hearts Round 1315 — visual authority + conservative CSS cleanup. */
+
 :root{
   --ah-r1315-black-carbon:
     repeating-linear-gradient(135deg,rgba(168,184,194,.050) 0 3px,rgba(4,8,12,.035) 3px 6px),
@@ -6,7 +6,7 @@
     linear-gradient(180deg,#151b20 0%,#0d1217 50%,#070a0e 100%);
 }
 
-/* Mobile: use the desktop anatomical-heart art and restrained desktop-style treatment. */
+
 @media (max-width:900px){
   html body > a.heart{
     background-image:url('./rim-heart-embossed-round291.webp')!important;
@@ -31,8 +31,7 @@
   }
   html body > a.heart:is(:active,.is-heart-pulsing)::before{opacity:.34!important;}
 
-  /* Every large/mobile sign field uses the same quiet black carbon face. Typography,
-     rims and matte/glass layers stay owned by their existing component rules. */
+  
   html body .page-chip,
   html body main#main-content .lcd,
   html body main#main-content .route-card > .route-label,
@@ -51,8 +50,7 @@
     background-blend-mode:normal!important;
   }
 
-  /* Outer-rim controls: same neon character, half the vertical depth, and softly
-     feathered ends so the light never looks cropped at either corner. */
+  
   html body > nav.footer{overflow:visible!important;}
   html body > nav.footer a[href]{overflow:visible!important;isolation:isolate!important;}
   html body > nav.footer a[href]::after,
@@ -91,7 +89,7 @@
   }
 }
 
-/* Desktop Messages: exact Round 1212 geometry/material/child layout. */
+
 @media (min-width:901px){
   :root{
     --r1005-message-size:84px!important;

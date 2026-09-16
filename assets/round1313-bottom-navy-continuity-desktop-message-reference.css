@@ -1,8 +1,4 @@
-/* Automated Hearts Round 1313
-   1) Keep the mobile dark-navy outer chassis continuous through the lower rounded
-      viewport corners and footer surround.
-   2) Restore the DESKTOP Messages control to the exact square footer-matched
-      treatment used by the user-supplied reference build. */
+
 
 @media (max-width:900px){
   :root{
@@ -10,7 +6,7 @@
     --ah-r1313-shell-hi:#081827;
   }
 
-  /* One uninterrupted navy hardware surface through the footer band. */
+  
   html body > .shell-edge.b,
   html body > nav.footer,
   html body > .footer{
@@ -21,10 +17,7 @@
     mix-blend-mode:normal!important;
   }
 
-  /* The lower side rails terminate at the footer. Restore ONLY the two opaque
-     quarter-corner fillers there, using the exact chassis navy. Their transparent
-     inner quarter preserves the viewport opening; the navy outer quarter removes
-     the black/color break at both lower corners. */
+  
   html body > .shell-edge.l::after,
   html body > .shell-edge.r::after{
     content:""!important;
@@ -59,7 +52,7 @@
       var(--ah-r1313-shell) 17.8px 100%)!important;
   }
 
-  /* Keep the side rails themselves solid navy all the way to those fillers. */
+  
   html body > .shell-edge.l,
   html body > .shell-edge.r{
     background-color:var(--ah-r1313-shell)!important;
@@ -68,8 +61,7 @@
   }
 }
 
-/* Desktop-only Messages restoration from the supplied reference ZIP.
-   Mobile keeps the current Round 1312/1306 red-envelope treatment. */
+
 @media (min-width:901px){
   :root{
     --r1005-message-size:84px!important;

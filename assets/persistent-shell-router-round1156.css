@@ -1,4 +1,4 @@
-/**/
+
 .ah-shell-content-frame{
   position:fixed!important;
   inset:0!important;
@@ -11,7 +11,7 @@
   z-index:1000!important;
 }
 
-/**/
+
 html.ah-shell-embedded body > :is(
   .first-visit-intro,
   .desktop-first-visit-intro,
@@ -40,7 +40,7 @@ html.ah-shell-embedded body{
   overflow-x:hidden!important;
 }
 
-/**/
+
 html.ah-shell-embedded body[data-page] > :is(
   .desktop-first-visit-intro,
   .ah-persistent-outer-rim,

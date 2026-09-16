@@ -1,8 +1,6 @@
-/* Automated Hearts Round 1419 — authoritative desktop footer pink copy +
-   Learning Center opposite-corner pink accents on both desktop and mobile.
-   This file changes text/accent color only; button surfaces, rims, glow and press behavior remain intact. */
 
-/* DESKTOP FOOTER — target the actual persistent-shell text layers and direct-page footer variants. */
+
+
 @media (min-width:761px){
   html body[data-page] > footer#site-footer nav#primary-nav a[data-nav],
   html body[data-page] > footer#site-footer nav#primary-nav a[data-nav] .send-control-copy,
@@ -16,8 +14,7 @@
   }
 }
 
-/* LEARNING CENTER — use the label layer for two opposite-corner accents so
-   existing key-face ::before/::after layers are untouched. */
+
 html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar > .ah-route-label-final,
 html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-label.ah-unified-spacebar > .ah-route-label-final{
   position:relative!important;

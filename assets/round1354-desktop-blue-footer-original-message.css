@@ -1,6 +1,4 @@
-/* Round 1354 — desktop-only restoration authority.
-   Restores the pre-keycap navy/blue footer hardware and original desktop Messages button.
-   Mobile controls are intentionally untouched. */
+
 @media (min-width:801px){
   :root{
     --r1354-footer-rest:url('./footer-button-message-border-match-round1095.svg?v=1445r')!important;
@@ -19,8 +17,7 @@
     --r1005-message-transform:translate3d(0,4px,0)!important;
   }
 
-  /* Desktop footer: restore the original navy/blue hardware image and remove every
-     later keyboard/keycap layer that can sit over it. */
+  
   html body[data-page][class][class][class][class][class][class]
   > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
   nav#primary-nav#primary-nav#primary-nav > .primary-nav__group
@@ -120,8 +117,7 @@
     transform:translate3d(0,4px,0)!important;
   }
 
-  /* Original desktop Messages hardware: exact 84px Round-1212/1095 face,
-     no later red glow, pseudo overlays, keycap siding, or altered geometry. */
+  
   html body[data-page][class][class][class][class][class][class][class][class][class][class]
   > a#header-send-message#header-send-message#header-send-message#header-send-message.header-send-message.mechanical-send-control{
     position:fixed!important;

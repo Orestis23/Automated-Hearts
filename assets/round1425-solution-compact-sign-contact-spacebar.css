@@ -1,6 +1,4 @@
-/* Automated Hearts Round 1425
-   1) Desktop Solution open-window sign trims tightly to copy while preserving Home title-field material.
-   2) Contact-form Send Message uses the Learning Center spacebar visual language. */
+
 :root{
   --ah1425-green:#8fffd7;
   --ah1425-pink:#ff2ea8;
@@ -10,7 +8,7 @@
     linear-gradient(#0d1b2f 0%,#0b1728 48%,#091422 100%);
 }
 
-/* DESKTOP SOLUTION — eliminate the long empty ends. */
+
 @media (min-width:801px){
   html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-exhibit > h1#solution-process-heading.ah-solution-open-sign{
     display:inline-flex!important;
@@ -36,7 +34,7 @@
   }
 }
 
-/* CONTACT FORM — Learning Center spacebar surface, glow and pink Orbitron copy. */
+
 html body[data-page] .nav-contact-panel.casio-contact-panel form.nav-contact-form.nav-contact-form--full button.button.button--small.send-question-button.nav-contact-submit,
 html body[data-page] .casio-contact-panel form.quick-contact-form button.send-question-button,
 html body[data-ah-mobile-surface] .send-question-button,

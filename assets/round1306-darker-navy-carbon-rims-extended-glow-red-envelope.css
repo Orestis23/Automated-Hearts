@@ -1,8 +1,6 @@
-/* Automated Hearts Round 1306 — darker navy footer faces, carbon-fiber colored rims,
-   slightly deeper soft underglow, and a true-red Messages envelope.
-   This is the final authority layer for these details only. */
 
-/* Messages envelope is red on both desktop and mobile. */
+
+
 html body > a.message svg,
 html body > a.message:active svg,
 html body > a.message.is-pressed svg,
@@ -27,8 +25,7 @@ html body > a.message svg path{
     --ah-r1306-face-bottom:#010711;
   }
 
-  /* Visible positions keep the established color pattern. The rim now uses a subtle
-     carbon-fiber weave while remaining one single physical perimeter. */
+  
   html body > nav.footer a[href]:nth-child(odd){
     --ah-r1306-rim-rgb:255,46,168;
     --ah-r1306-glow-rgb:143,255,215;
@@ -48,8 +45,7 @@ html body > a.message svg path{
     box-sizing:border-box!important;
     border:2px solid transparent!important;
     outline:0!important;
-    /* Three clipped layers create the darker navy carbon face; the last layer is
-       the single 2px colored carbon rim visible only in the border box. */
+    
     background-image:
       repeating-linear-gradient(135deg,
         rgba(41,78,116,.085) 0 3px,
@@ -69,14 +65,14 @@ html body > a.message svg path{
     background-size:auto,auto,auto,4px 4px!important;
     background-repeat:repeat,repeat,no-repeat,repeat!important;
     background-blend-mode:normal!important;
-    /* Keep only dark recessed shading; no extra bright inner rim. */
+    
     box-shadow:
       inset 0 0 5px rgba(0,0,0,.82),
       inset 0 2px 3px rgba(0,0,0,.28),
       inset 0 -2px 3px rgba(0,0,0,.58)!important;
   }
 
-  /* Disable old helper rim layers so the textured perimeter remains the only rim. */
+  
   html body > nav.footer a[href] > .ah-footer-bottom-rim,
   html body > nav.footer a[href]::before,
   html body > nav.footer a[href]:nth-child(n)::before{
@@ -92,8 +88,7 @@ html body > a.message svg path{
     opacity:0!important;
   }
 
-  /* Slightly deeper/stronger than Round 1305, but the light falls away at both
-     horizontal ends so the bottom edge never becomes one solid glowing bar. */
+  
   html body > nav.footer a[href]::after,
   html body > nav.footer a[href]:nth-child(n)::after{
     content:""!important;

@@ -36,7 +36,7 @@
     const available=Math.max(0,sec.getBoundingClientRect().height);
     const sampleSign=sec.querySelector('.premium-route-card__title-sign');
     const signH=Math.max(56,Math.min(72,sampleSign?.getBoundingClientRect().height||72));
-    const itemGap=20, breathing=24;
+    const itemGap=12, breathing=24;
     const verticalMax=Math.max(220,Math.floor(available-signH-itemGap-breathing));
     const gridW=Math.max(0,grid.getBoundingClientRect().width);
     const gapPx=parseFloat(getComputedStyle(grid).columnGap)||22;

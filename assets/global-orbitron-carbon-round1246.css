@@ -1,4 +1,4 @@
-/* Automated Hearts Round 1246 — global Orbitron, subtle carbon text fields, mobile pressed illumination. */
+
 :root{
   --ah-r1246-font:"Orbitron",system-ui,sans-serif;
   --ah-r1246-carbon:
@@ -13,8 +13,7 @@ html body *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not
   font-family:"Orbitron",system-ui,sans-serif!important;
 }
 
-/* Soft carbon-fiber face for blue text-bearing fields. Footer/message hardware is intentionally excluded
-   so its established suede/mechanical texture remains unchanged. */
+
 :is(
   .page-chip,
   .ahi-sign,
@@ -72,7 +71,7 @@ html body *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not
   background-blend-mode:normal!important;
 }
 
-/* Keep the weave quiet behind long-form copy. */
+
 :is(.principle,.lite-card,.stage,.r1061-about-copy-well,.r1061-about-tablet,.r1061-process-step,.solution-copper-tablet__copy){
   --ah-r1246-carbon:
     repeating-linear-gradient(135deg,rgba(118,160,188,.018) 0 3px,rgba(0,0,0,.022) 3px 6px),
@@ -80,7 +79,7 @@ html body *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not
     linear-gradient(180deg,rgba(10,34,54,.992),rgba(3,14,24,.998));
 }
 
-/* Mobile/coarse-pointer button lettering: realistic energized press without changing geometry. */
+
 @media (max-width:760px),(hover:none) and (pointer:coarse){
   :is(
     .footer a,
@@ -114,7 +113,7 @@ html body *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not
   }
 }
 
-/* Round 1246 continuation: other navy text fields and mobile footer buttons use the same quiet weave. */
+
 :is(.process,.home-process-stage,.home-process-key-button,.ah-rates__button,.r864-rates__drawer-toggle,.r865-rates__consultation-action){
   background-color:#061522!important;
   background-image:var(--ah-r1246-carbon)!important;
@@ -149,7 +148,7 @@ html body *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not
   :is(.route-card:active .route-label,.action:active,.consult:active,.back-top:active,button.learning-stage-return:active){
     text-shadow:0 0 1px #fff,0 0 3px currentColor,0 0 7px currentColor,0 0 13px color-mix(in srgb,currentColor 48%,transparent)!important;
   }
-  /* Any remaining text button gets the same lamp-like lettering response on touch. */
+  
   :is(a.button,button:not([aria-label="Messages"]):not(.message-button):not(.messages-button),[role="button"]):active{
     text-shadow:
       0 0 .7px #fff,

@@ -1,8 +1,4 @@
-/* Automated Hearts Round 1446 — pointed inset button accents.
-   Desktop footer: pink pointed-end inner accents.
-   Mobile footer: pointed-end inner accents match each button label color.
-   Messages (desktop + mobile): red envelope and red pointed-end inner accents.
-   Existing key geometry, carbon faces, rims, depth and press behavior are preserved. */
+
 :root{
   --ah1446-pink:#ff2ea8;
   --ah1446-mint:#8fffd7;
@@ -21,9 +17,7 @@
 }
 
 
-/* Cascade-layer authority: the older control systems use !important rules inside
-   named layers, which outrank unlayered !important declarations. Re-enter those
-   exact layers so Round 1446 actually wins without changing any geometry. */
+
 @layer ah-desktop-controls-1221 {
   @media (min-width:801px){
     :root{
@@ -86,7 +80,7 @@
   }
 }
 
-/* Desktop persistent footer: the accent is part of the face, inset from the outside hardware. */
+
 html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control.mechanical-send-control[data-nav],
 html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]{
   background-image:var(--ah1446-footer-rest)!important;
@@ -103,7 +97,7 @@ html body[data-page] > footer#site-footer #primary-nav a.footer-structure-contro
   -webkit-text-fill-color:var(--ah1446-pink)!important;
 }
 
-/* Mobile footer: match the accent to the already alternating label color. */
+
 @media (max-width:900px){
   html body > nav.footer > a[href]:nth-child(odd),
   html body > nav.footer > a[href]:nth-child(odd):link,
@@ -124,7 +118,7 @@ html body[data-page] > footer#site-footer #primary-nav a.footer-structure-contro
     -webkit-text-fill-color:var(--ah1446-pink)!important;
   }
 
-  /* Mobile Messages uses the same inset pointed-corner language, in red. */
+  
   html body > a.message,
   html body > a.message:link,
   html body > a.message:visited{
@@ -142,7 +136,7 @@ html body[data-page] > footer#site-footer #primary-nav a.footer-structure-contro
   }
 }
 
-/* Desktop Messages: retain exact sizing/placement/press behavior, swap only face accents + envelope color. */
+
 html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
   background-image:var(--ah1446-message-rest)!important;
   background-position:center!important;

@@ -1,10 +1,7 @@
-/* Round 1232 — desktop controls from the Round 1225/1231 baseline.
-   Use one consistent mobile-style edge on all four sides, no pink/depth strip.
-   The Messages control keeps its full square hardware instead of a floating envelope. */
+
 @media (min-width:901px){
   :root{
-    /* Inline desktop markup consumes this variable with !important, so the
-       complete visible face is supplied here: dark physical face + leather. */
+    
     --r1005-message-face:
       linear-gradient(160deg,rgba(42,57,69,.98) 0%,rgba(14,23,31,.985) 55%,rgba(2,8,13,.995) 100%),
       url('./button-leather-grain-visible-round794.webp') !important;
@@ -16,7 +13,7 @@
       url('./button-leather-grain-visible-round794.webp') !important;
   }
 
-  /* Remove every old separate siding/depth/indicator layer. */
+  
   html body[data-page] > footer#site-footer .ah-bottom-siding,
   html body[data-page] > footer#site-footer .send-control-indicator,
   html body[data-page] > #header-send-message .ah-bottom-siding,
@@ -34,8 +31,7 @@
     box-shadow:none !important;
   }
 
-  /* Footer: one edge treatment on top/right/bottom/left.  No extra green
-     side rails and no pink line beneath the control. */
+  
   html body[data-page][class] > footer#site-footer#site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group
   > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav]{
@@ -70,8 +66,7 @@
     filter:brightness(.84) !important;
   }
 
-  /* Messages: same all-around edge and same 2px mobile-style press travel.
-     The envelope remains centered inside a fully visible square face. */
+  
   html body[data-page][class] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
     --r1005-message-transform:translate3d(0,0,0) !important;
     --ah-control-shadow:

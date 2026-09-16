@@ -1,9 +1,6 @@
-/* Round 1233 — transition shield rim/seam authority.
-   Match the moving route shield to the site's persistent inner gold rim and
-   use the exact frame radius so the lower corners meet the shell seamlessly. */
 
-/* Persistent-router shield: the wrapper is the clipping aperture; the panel is
-   the part that physically travels, so the gold rim travels with the shield. */
+
+
 #ah-route-shield{
   box-sizing:border-box!important;
   overflow:hidden!important;
@@ -22,7 +19,7 @@
     inset 0 0 0 5px rgba(255,239,194,.16)!important;
 }
 
-/* Direct/non-router transition shield fallback. */
+
 html body[data-page] > #page-transition-shield.page-transition-shield,
 html body[data-page] > .page-transition-shield.page-transition-shield{
   box-sizing:border-box!important;
@@ -47,8 +44,7 @@ html.page-shield-arrival:not(.ah-shield-dom-ready)::before{
     inset 0 0 0 5px rgba(255,239,194,.16)!important;
 }
 
-/* Mobile shell's inner rim uses an 18px corner and a slightly finer gold line.
-   Mirror those exact proportions on the moving shield. */
+
 @media (max-width:900px){
   #ah-route-shield{
     border-radius:18px!important;
@@ -80,8 +76,7 @@ html.page-shield-arrival:not(.ah-shield-dom-ready)::before{
   }
 }
 
-/* Round 1235 — page quote placement and embossed-white treatment.
-   Keep one quote-style authority: lower field between the heart and shield edge. */
+
 html body > #page-transition-shield .page-transition-shield__panel,
 html body > .page-transition-shield .page-transition-shield__panel{
   position:absolute!important;

@@ -153,15 +153,6 @@
     addEventListener('scroll', schedule, { passive: true });
     addEventListener('resize', schedule, { passive: true });
   }
-
-  /* Runtime cache. Service workers require HTTPS (localhost is also allowed).
-     Register during the first idle slot instead of waiting for every image and
-     model, so later model requests can reuse cache sooner. */
-  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-    const register = () => navigator.serviceWorker.register('./ah-sw.js?v=1107', { scope: './', updateViaCache: 'none' }).catch(() => {});
-    if ('requestIdleCallback' in window) requestIdleCallback(register, { timeout: 1800 });
-    else window.setTimeout(register, 500);
-  }
 })();
 
 ;
@@ -598,7 +589,14 @@
     imp(section,'height','auto');
     imp(section,'min-height','0');
     imp(section,'max-height','none');
-    imp(section,'padding','64px 0');
+    /* Round 1487: the Home ticker is fixed and visually overlaps the bottom
+       of the scrollable content. Reserve the ticker's actual height plus the
+       same 64px leather breathing room used above the carousel, so the visible
+       image-to-ticker gap matches the upper border-to-image gap. */
+    const ticker=document.getElementById('home-ticker-wrap');
+    const tickerHeight=Math.max(0,Math.ceil(ticker?.getBoundingClientRect?.().height||48));
+    const carouselBottomPad=64+tickerHeight+5;
+    imp(section,'padding',`64px 0 ${carouselBottomPad}px`);
     imp(section,'display','block');
     imp(section,'place-items','initial');
     imp(section,'align-content','initial');
@@ -740,7 +738,21 @@
       }else{
         const full=el.dataset.r1019DesktopText;
         if(full && el.textContent.trim()!==full) el.textContent=full;
-        ['font-size','line-height','letter-spacing','white-space','word-break','overflow-wrap'].forEach(function(p){el.style.removeProperty(p);});
+        /* Round 1502: desktop footer typography is a fixed brand dimension.
+           Do not remove these inline values: doing so exposed older high-specificity
+           CSS and made the labels jump larger only after persistent navigation. */
+        el.style.setProperty('font-family','Orbitron,system-ui,sans-serif','important');
+        el.style.setProperty('font-size','16px','important');
+        el.style.setProperty('font-weight','700','important');
+        el.style.setProperty('line-height','1','important');
+        el.style.setProperty('letter-spacing','0','important');
+        el.style.setProperty('white-space','normal','important');
+        el.style.setProperty('word-break','normal','important');
+        el.style.setProperty('overflow-wrap','normal','important');
+        el.style.setProperty('transform','none','important');
+        el.style.setProperty('filter','none','important');
+        el.style.setProperty('animation','none','important');
+        el.style.setProperty('transition','none','important');
       }
     });
     applying=false;

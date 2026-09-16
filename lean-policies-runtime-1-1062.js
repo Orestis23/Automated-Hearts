@@ -115,15 +115,6 @@
     addEventListener('scroll', schedule, { passive: true });
     addEventListener('resize', schedule, { passive: true });
   }
-
-  /* Runtime cache. Service workers require HTTPS (localhost is also allowed).
-     Register during the first idle slot instead of waiting for every image and
-     model, so later model requests can reuse cache sooner. */
-  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-    const register = () => navigator.serviceWorker.register('./ah-sw.js?v=1107', { scope: './', updateViaCache: 'none' }).catch(() => {});
-    if ('requestIdleCallback' in window) requestIdleCallback(register, { timeout: 1800 });
-    else window.setTimeout(register, 500);
-  }
 })();
 
 ;

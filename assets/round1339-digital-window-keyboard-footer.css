@@ -1,5 +1,4 @@
-/* Automated Hearts Round 1339 — Solution digital instruction treatment + keyboard footer keys.
-   Loaded last so these rules are authoritative over the accumulated legacy layers. */
+
 
 :root{
   --ah-r1339-carbon:#0d1217;
@@ -7,10 +6,7 @@
   --ah-r1339-pink:#ff2ea8;
 }
 
-/* --------------------------------------------------------------------------
-   SOLUTION: keep "Open the window." in a black carbon-fiber matte field,
-   but move the machine closer to it.
-   -------------------------------------------------------------------------- */
+
 html body main#main-content .solution-process-instruction-copy{
   position:relative!important;
   isolation:isolate!important;
@@ -76,10 +72,7 @@ html body main#main-content .solution-process-instruction-copy .solution-instruc
   }
 }
 
-/* --------------------------------------------------------------------------
-   SOLUTION machine footer: digital text only — no physical bar/object.
-   This mirrors the colored digital hint inside the Home machine.
-   -------------------------------------------------------------------------- */
+
 html body .solution-machine-window-footer{
   position:absolute!important;
   z-index:60!important;
@@ -143,7 +136,7 @@ html body .solution-machine-window-footer .solution-footer-neutral{
     bottom:7px!important;
     font-size:clamp(10px,.78vw,13px)!important;
   }
-  /* Keep the shutter heart clear of the digital text. */
+  
   html body.page-solutions[data-page='solutions'] #solution-process-header .solution-process-cover::before{
     bottom:30px!important;
   }
@@ -160,12 +153,9 @@ html body .solution-machine-window-footer .solution-footer-neutral{
   }
 }
 
-/* --------------------------------------------------------------------------
-   GLOBAL FOOTER NAV: keep existing dimensions, replace the face with a raised
-   numpad-style carbon-fiber keycap and a restrained colored underglow.
-   -------------------------------------------------------------------------- */
 
-/* Desktop footer keycaps. */
+
+
 @media (min-width:901px){
   html body[data-page] > footer#site-footer#site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group
@@ -251,7 +241,7 @@ html body .solution-machine-window-footer .solution-footer-neutral{
   }
 }
 
-/* Mobile footer keycaps. */
+
 @media (max-width:900px){
   html body > nav.footer a[href],
   html body > nav.footer a[href]:nth-child(n){

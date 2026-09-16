@@ -1,6 +1,4 @@
-/* Round 1325 — exact Round 1212 desktop Messages authority.
-   Restores the Round 1212 desktop Messages hardware without later glass/pseudo overlays.
-   Mobile Messages remains owned by the mobile rules. */
+
 @media (min-width:801px){
   :root{
     --r1005-message-size:84px!important;

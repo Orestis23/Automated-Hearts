@@ -399,8 +399,20 @@
     button.style.removeProperty('display');
     const label = labelFor(key);
     const nested = button.querySelector('.footer-nav-label');
-    if (nested) nested.textContent = label;
-    else button.textContent = label;
+    if (nested) {
+      nested.textContent = label;
+      if (!isMobile) {
+        nested.style.setProperty('font-family','Orbitron, system-ui, sans-serif','important');
+        nested.style.setProperty('font-size','16px','important');
+        nested.style.setProperty('font-weight','700','important');
+        nested.style.setProperty('line-height','1','important');
+        nested.style.setProperty('letter-spacing','0','important');
+        nested.style.setProperty('transform','none','important');
+        nested.style.setProperty('filter','none','important');
+        nested.style.setProperty('animation','none','important');
+        nested.style.setProperty('transition','none','important');
+      }
+    } else button.textContent = label;
     button.setAttribute('aria-label', label);
   };
 

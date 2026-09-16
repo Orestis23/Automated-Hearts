@@ -1,5 +1,4 @@
-/* Round 1388 — mobile-only footer refinement: brand navy sides, light-black carbon faces,
-   wider key surfaces, sharper text, and higher Messages placement. */
+
 @layer ah-r1381-mobile-root {
   @media (max-width:900px) {
     :root{
@@ -36,7 +35,7 @@
       -webkit-filter:none!important;
     }
 
-    /* Keep the under-light gentle and controlled. */
+    
     html body > nav.footer > a[href]::after{
       left:16%!important;
       right:16%!important;

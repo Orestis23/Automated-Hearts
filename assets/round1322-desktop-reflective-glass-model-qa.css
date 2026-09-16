@@ -1,10 +1,6 @@
-/* Round 1322 — desktop reflective glass completion.
-   Adds an optical glass pane above the existing Round 1212 Messages face and
-   the existing desktop footer-button faces without changing their geometry,
-   artwork, labels, press travel, or navigation hit areas. Mobile glass remains
-   owned by Round 1318/1319. */
+
 @media (min-width:901px){
-  /* Desktop footer hardware: glass lives inside the artwork rim. */
+  
   html body[data-page][class] > footer#site-footer#site-footer.site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group >
   a.footer-structure-control.mechanical-send-control[data-nav]{
@@ -53,7 +49,7 @@
     z-index:5!important;
   }
 
-  /* Desktop Messages: retain the exact Round 1212/1181 face underneath. */
+  
   html body[data-page][class] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
     position:fixed!important;
     isolation:isolate!important;
@@ -96,7 +92,7 @@
     z-index:6!important;
   }
 
-  /* Keep the optical pane attached to the hardware during the existing press travel. */
+  
   html body[data-page][class] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(
     :active,.is-pressed,.is-contact-latched,[aria-expanded="true"],
     [data-ah-control-pressed="1"],[data-ah-control-pressed="true"]
@@ -104,9 +100,7 @@
     opacity:.58!important;
   }
 
-  /* Round 1324 QA: complete the requested glass treatment on the large desktop
-     Home and Industries route controls as well. The pane is visual only and sits
-     above the existing carbon/image surface without changing layout or hit areas. */
+  
   html body.page-home[data-page="home"] main#main-content .home-route-card .premium-route-card__media,
   html body.page-who-we-help[data-page="who-we-help"] main#main-content .who-help-route-card .premium-route-card__media,
   html body.page-home[data-page="home"] main#main-content .home-route-card .premium-route-card__title-sign,

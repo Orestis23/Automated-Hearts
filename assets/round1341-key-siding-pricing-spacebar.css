@@ -1,9 +1,4 @@
-/* Automated Hearts Round 1341
-   - Footer navigation: conventional carbon keycaps with visible key siding/depth.
-     No static halo; when pressed, the underglow matches the key legend color.
-   - Rates & Services: Total Transparency gets the stronger black-carbon matte-film treatment.
-   - Courtesy Consultation text field uses the Learning Center spacebar treatment,
-     with pink lettering and a light-green underglow. */
+
 
 :root{
   --ah-r1341-mint:#8fffd7;
@@ -15,11 +10,7 @@
   --ah-r1341-side-low:#07090c;
 }
 
-/* --------------------------------------------------------------------------
-   FOOTER — DESKTOP KEYCAPS
-   The face is the key top. ::after is the visible sloped siding beneath it.
-   ::before is reserved for the pressed-state legend-colored glow.
-   -------------------------------------------------------------------------- */
+
 @media (min-width:901px){
   html body[data-page] > footer#site-footer#site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group
@@ -61,7 +52,7 @@
     --ah-r1341-key-rgb:255,46,168;
   }
 
-  /* Force the legend and the pressed glow to share one color source. */
+  
   html body[data-page] > footer#site-footer#site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group
   > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav] .footer-nav-label{
@@ -70,7 +61,7 @@
     text-shadow:0 0 4px rgba(var(--ah-r1341-key-rgb),.26)!important;
   }
 
-  /* Pressed-only light pool. */
+  
   html body[data-page] > footer#site-footer#site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group
   > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav]::before{
@@ -93,7 +84,7 @@
     transition:opacity 85ms ease,top 85ms ease!important;
   }
 
-  /* Visible key siding/depth. Starts below the top surface so there is no rear/top glow. */
+  
   html body[data-page] > footer#site-footer#site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group
   > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav]::after{
@@ -162,10 +153,7 @@
   }
 }
 
-/* --------------------------------------------------------------------------
-   FOOTER — MOBILE KEYCAPS
-   Same construction, scaled to the smaller persistent mobile footer.
-   -------------------------------------------------------------------------- */
+
 @media (max-width:900px){
   html body > nav.footer a[href],
   html body > nav.footer a[href]:nth-child(n){
@@ -258,9 +246,7 @@
   )::after{top:3px!important;bottom:-1px!important;}
 }
 
-/* --------------------------------------------------------------------------
-   RATES & SERVICES — TOP FIELD: black carbon + stronger matte-film treatment.
-   -------------------------------------------------------------------------- */
+
 html body.page-pricing[data-page="pricing"] .r864-rates__hero-screen.r383-reference-screen{
   isolation:isolate!important;
   background-color:#05080c!important;
@@ -297,10 +283,7 @@ html body.page-pricing[data-page="pricing"] .r864-rates__hero-screen.r383-refere
   pointer-events:none!important;
 }
 
-/* --------------------------------------------------------------------------
-   RATES & SERVICES — CONSULTATION FIELD: Learning Center spacebar language.
-   Pink legend, mint underglow, carbon/navy face, inset key rim and key depth.
-   -------------------------------------------------------------------------- */
+
 html body.page-pricing[data-page="pricing"] .r865-rates__consultation-copy{
   position:relative!important;
   isolation:isolate!important;
@@ -356,7 +339,7 @@ html body.page-pricing[data-page="pricing"] .r865-rates__consultation h2{
   text-shadow:0 0 2px rgba(255,93,184,.86),0 0 8px rgba(255,46,168,.30)!important;
 }
 
-/* Mobile pricing uses a separate lightweight DOM. Match the two fields there. */
+
 @media (max-width:900px){
   html body main#main-content .lite-section:first-child > h1.hero-title{
     position:relative!important;

@@ -1,7 +1,4 @@
-/* Automated Hearts Round 1340
-   1) Home's three route-caption buttons use the Learning Center-style glow only beneath the face.
-   2) Footer navigation is rendered as conventional raised keyboard keycaps while preserving carbon fiber and a restrained brand underglow.
-   3) Messages gets a bottom-only TRUE-RED underglow; no halo around the top/back of the control. */
+
 
 :root{
   --ah-r1340-carbon:#0b1016;
@@ -13,10 +10,7 @@
   --ah-r1340-red:#ff3b30;
 }
 
-/* --------------------------------------------------------------------------
-   HOME: three caption buttons — keep the existing carbon/matte face and text,
-   but constrain the luminous treatment to the LOWER edge only. No rear/top halo.
-   -------------------------------------------------------------------------- */
+
 html body .home-route-card .ah-home-caption.ah-industries-caption-desktop,
 html body[data-ah-mobile-surface="home"] main#main-content .route-card > .route-label.ah-home-caption,
 html body main#main-content .route-card > .route-label.ah-home-caption{
@@ -37,7 +31,7 @@ html body main#main-content .route-card > .route-label.ah-home-caption::after{
   filter:none!important;
   box-shadow:none!important;
 }
-/* Preserve the matte/glass film itself, but don't let that film emit a halo. */
+
 html body main#main-content .route-card > .route-label.ah-home-caption::before,
 html body main#main-content .route-card > .route-label.ah-home-caption::after{
   opacity:.68!important;
@@ -52,10 +46,7 @@ html body .home-route-card:active .ah-home-caption.ah-industries-caption-desktop
     0 3px 5px rgba(255,46,168,.16)!important;
 }
 
-/* --------------------------------------------------------------------------
-   FOOTER: conventional keyboard keycaps. No neon outline around the key face.
-   The brand light exists only as a short, soft pool directly UNDER each key.
-   -------------------------------------------------------------------------- */
+
 @media (min-width:901px){
   html body[data-page] > footer#site-footer#site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group
@@ -223,9 +214,7 @@ html body .home-route-card:active .ah-home-caption.ah-industries-caption-desktop
   }
 }
 
-/* --------------------------------------------------------------------------
-   MESSAGES: bottom-only red emission. Remove any old all-around mint/pink halo.
-   -------------------------------------------------------------------------- */
+
 @media (min-width:801px){
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
     isolation:isolate!important;

@@ -1,8 +1,4 @@
-/* Automated Hearts Round 1280
-   - Desktop Messages control restored to the sandy/suede face used by the desktop footer family.
-   - Mobile footer keeps the complete mint-green bottom rim, then a crisp black separator, then pink emitted light.
-   - Mobile Negative-Software Solution signs stay on one line; Negative-Software is bright pink and Solution remains mint.
-*/
+
 
 :root{
   --ah-r1280-mint:#8fffd7;
@@ -11,7 +7,7 @@
   --ah-r1280-pink-core:#ffe4f3;
 }
 
-/* DESKTOP MESSAGES --------------------------------------------------------- */
+
 @media (min-width:901px){
   :root{
     --r1005-message-face:url("./message-button-suede-sandy-side-round915.svg?v=1280r")!important;
@@ -40,7 +36,7 @@
     background-image:url("./message-button-suede-sandy-side-pressed-round915.svg?v=1280r")!important;
   }
 
-  /* Keep the envelope above the restored textured face. */
+  
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope{
     position:absolute!important;
     z-index:8!important;
@@ -53,14 +49,14 @@
   }
 }
 
-/* MOBILE FOOTER HARDWARE --------------------------------------------------- */
+
 @media (max-width:900px){
   html body > nav.footer,
   html body > .footer{
     overflow:visible!important;
   }
 
-  /* The mint face rim is complete on all four sides, including the bottom. */
+  
   html body > nav.footer a[href],
   html body > nav.footer a[href]:nth-child(n),
   html body > nav.footer a[href]:is(
@@ -77,8 +73,7 @@
     overflow:visible!important;
   }
 
-  /* Geometry from top to bottom: mint bottom rim -> black separator -> pink light core.
-     The black border belongs to the glow layer, so it cannot erase the green rim. */
+  
   html body > nav.footer a[href]::after,
   html body > nav.footer a[href]:nth-child(n)::after{
     content:""!important;
@@ -134,7 +129,7 @@
     filter:none!important;
   }
 
-  /* MOBILE NEGATIVE-SOFTWARE SIGNS ---------------------------------------- */
+  
   .section-title.ah-negative-software-title{
     box-sizing:border-box!important;
     width:calc(100% - 24px)!important;

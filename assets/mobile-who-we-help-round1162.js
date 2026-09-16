@@ -1,9 +1,6 @@
 (() => {
   'use strict';
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.getRegistrations().then((regs)=>regs.forEach((r)=>r.unregister())).catch(()=>{});
-  }
-  const $ = (s, r=document) => r.querySelector(s);
+const $ = (s, r=document) => r.querySelector(s);
   const $$ = (s, r=document) => [...r.querySelectorAll(s)];
   const stage = $('#lite-model-stage');
   const modelShell = $('#lite-model-shell');

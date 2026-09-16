@@ -1,6 +1,6 @@
-/* Round 1317 — parent-owned static 3D backdrop + exact Round 1212 desktop Messages authority. */
 
-/* Learning Center + Who We Help: one unchanging dark embossed-heart surface behind every model. */
+
+
 html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage),
 html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) > .learning-lesson-viewport,
 html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(#learning-model-stage,#who-help-model-stage) > .model-dedicated-backdrop,
@@ -21,7 +21,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(
   background-image:none!important;
 }
 
-/* Mobile light pages use exactly the same static parent-owned backdrop. */
+
 @media (max-width:900px){
   html body #lite-model-stage,
   html body #lite-model-shell{
@@ -37,11 +37,11 @@ html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(
     background-color:transparent!important;
     background-image:none!important;
   }
-  /* Practical AI and Strategy Lab have one model; no previous/next controls. */
+  
   html body #model-controls[hidden]{display:none!important;visibility:hidden!important;pointer-events:none!important;}
 }
 
-/* Desktop Messages: exact Round 1212 final treatment. */
+
 @media (min-width:801px){
   html:root{
     --r1005-message-size:84px!important;
@@ -107,7 +107,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(
   }
 }
 
-/* Failsafe: single-model desktop lessons never expose carousel navigation. */
+
 html body.page-learning[data-page="learning"] #learning-model-stage[data-learning-group="practical"] > .learning-lesson-orb,
 html body.page-learning[data-page="learning"] #learning-model-stage[data-learning-group="strategy"] > .learning-lesson-orb{
   display:none!important;

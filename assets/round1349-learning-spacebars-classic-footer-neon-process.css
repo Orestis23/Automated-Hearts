@@ -1,8 +1,4 @@
-/* Automated Hearts Round 1349 — final authority for:
-   1) Home route-caption "spacebars": Learning Center-style hardware with NO top/rear glow.
-   2) Footer navigation: smooth old-school keyboard keycaps, no ridged/ribbed edges.
-   3) Home Negative-Software process boxes: all visible copy neon green.
-   This file is intentionally loaded last. */
+
 
 :root{
   --ah-r1349-mint:#8fffd7;
@@ -16,10 +12,10 @@
 
 
 @layer ah-desktop-controls-1221 {
-/* ========================================================================== */
-/* HOME — copy the Learning Center spacebar language, but constrain the mint  */
-/* light to a separate lamp pool BELOW the control. Nothing glows above it.   */
-/* ========================================================================== */
+
+
+
+
 
 html body.page-home[data-page="home"] #home-route-buttons .home-route-card,
 html body[data-ah-mobile-surface="home"] main#main-content .route-card{
@@ -52,7 +48,7 @@ html body[data-ah-mobile-surface="home"] main#main-content
   color:var(--ah-r1349-pink)!important;
   -webkit-text-fill-color:var(--ah-r1349-pink)!important;
   text-shadow:0 0 2px rgba(255,93,184,.82),0 0 7px rgba(255,46,168,.22)!important;
-  /* Only internal depth + neutral black drop. NO colored exterior box-shadow. */
+  
   box-shadow:
     inset 0 0 0 3px #06111e,
     inset 0 1px 0 rgba(255,255,255,.09),
@@ -72,7 +68,7 @@ html body.page-home[data-page="home"] #home-route-buttons
   text-shadow:0 0 2px rgba(255,93,184,.82),0 0 7px rgba(255,46,168,.22)!important;
 }
 
-/* Matte-film pane, matching the Learning Center's subdued equipment glass. */
+
 html body.page-home[data-page="home"] #home-route-buttons
 .premium-route-card__title-sign.brand-route-screen.ah-home-caption::before,
 html body[data-ah-mobile-surface="home"] main#main-content
@@ -96,7 +92,7 @@ html body[data-ah-mobile-surface="home"] main#main-content
   pointer-events:none!important;
 }
 
-/* Mint emission exists ONLY below the spacebar. */
+
 html body.page-home[data-page="home"] #home-route-buttons
 .premium-route-card__title-sign.brand-route-screen.ah-home-caption::after,
 html body[data-ah-mobile-surface="home"] main#main-content
@@ -127,9 +123,9 @@ html body[data-ah-mobile-surface="home"] main#main-content
   pointer-events:none!important;
 }
 
-/* ========================================================================== */
-/* HOME PROCESS BOXES — all visible text neon green, mobile + desktop.         */
-/* ========================================================================== */
+
+
+
 
 html body .ah-home-process-box,
 html body .ah-home-process-box > h3,
@@ -152,11 +148,11 @@ html body .ah-home-process-box li::marker{
   color:var(--ah-r1349-mint)!important;
 }
 
-/* ========================================================================== */
-/* FOOTER — old-school keyboard keycaps. Smooth molded walls, no ribbing.      */
-/* ========================================================================== */
 
-/* Disable every historical edge/ridge child that may still be in the markup. */
+
+
+
+
 html body > nav.footer a[href] > :is(.ah-footer-bottom-rim,.r969-pink-depth-bottom,.r969-pink-depth-right,.ah-bottom-siding),
 html body[data-page] > footer#site-footer nav#primary-nav a[data-nav] > :is(.ah-footer-bottom-rim,.r969-pink-depth-bottom,.r969-pink-depth-right,.ah-bottom-siding){
   display:none!important;
@@ -176,7 +172,7 @@ html body[data-page] > footer#site-footer nav#primary-nav a[data-nav] > :is(.ah-
   filter:none!important;
 }
 
-/* No decorative pseudo-layers on the legend/wrapper themselves. */
+
 html body > nav.footer a[href] .footer-nav-label::before,
 html body > nav.footer a[href] .footer-nav-label::after,
 html body[data-page] > footer#site-footer nav#primary-nav a[data-nav] .footer-nav-label::before,
@@ -222,7 +218,7 @@ html body[data-page] > footer#site-footer nav#primary-nav a[data-nav] .footer-co
     background-position:center!important;
     background-size:100% 100%!important;
     background-repeat:no-repeat!important;
-    /* Smooth molded top + one smooth side wall, like an old keyboard key. */
+    
     box-shadow:
       inset 0 2px 0 rgba(255,255,255,.16),
       inset 2px 0 0 rgba(255,255,255,.055),
@@ -247,7 +243,7 @@ html body[data-page] > footer#site-footer nav#primary-nav a[data-nav] .footer-co
     box-shadow:none!important;
     filter:none!important;
   }
-  /* The only pseudo-element is the pressed under-key lamp. */
+  
   html body > nav.footer.footer.footer.footer.footer a[href]::after{
     content:""!important;
     display:block!important;

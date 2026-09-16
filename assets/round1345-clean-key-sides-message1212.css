@@ -1,7 +1,4 @@
-/* Automated Hearts Round 1345
-   Footer key cleanup: remove the old ridged/frame border so the actual keycap
-   face + smooth sloped side wall are what define the 3D key.
-   Desktop Messages: restore the exact Round 1212 hardware (no later glow/pseudo layers). */
+
 
 :root{
   --ah-r1345-mint:#8fffd7;
@@ -9,9 +6,7 @@
   --ah-r1345-carbon:#090e13;
 }
 
-/* --------------------------------------------------------------------------
-   DESKTOP FOOTER KEYS — smooth key top + visible side wall, no ridged frame.
-   -------------------------------------------------------------------------- */
+
 @media (min-width:901px){
   html body[data-page][class][class][class][class]
   > footer#site-footer#site-footer.site-footer.site-footer--minimal
@@ -54,7 +49,7 @@
     -webkit-text-fill-color:rgb(var(--ah-r1345-key-rgb))!important;
     text-shadow:0 0 4px rgba(var(--ah-r1345-key-rgb),.26)!important;
   }
-  /* Glow exists only when the key is physically pressed. */
+  
   html body[data-page][class][class][class][class]
   > footer#site-footer#site-footer.site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group
@@ -78,7 +73,7 @@
     opacity:0!important;
     pointer-events:none!important;
   }
-  /* Smooth trapezoidal side wall. No border/ridges around it. */
+  
   html body[data-page][class][class][class][class]
   > footer#site-footer#site-footer.site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group
@@ -137,9 +132,7 @@
   )::after{top:2px!important;bottom:-2px!important;box-shadow:inset 0 -1px 0 rgba(0,0,0,.54),0 1px 2px rgba(0,0,0,.28)!important;}
 }
 
-/* --------------------------------------------------------------------------
-   MOBILE FOOTER KEYS — same smooth construction, scaled down.
-   -------------------------------------------------------------------------- */
+
 @media (max-width:900px){
   html body > nav.footer.footer a[href],
   html body > nav.footer.footer a[href]:nth-child(n){
@@ -224,11 +217,7 @@
   )::after{top:2px!important;bottom:-1px!important;}
 }
 
-/* --------------------------------------------------------------------------
-   DESKTOP MESSAGES — exact pre-glow / Round 1212 treatment.
-   84px square, 6px from top/right, Round 1095 face, centered 42% pink envelope,
-   no red/mint underglow and no pseudo overlay.
-   -------------------------------------------------------------------------- */
+
 @media (min-width:801px){
   :root{
     --r1005-message-size:84px!important;
@@ -343,11 +332,7 @@
   }
 }
 
-/* --------------------------------------------------------------------------
-   FINAL AUTHORITY: legacy builds contain deliberately over-specific hardware
-   selectors. These selectors outrank them so no old ridged border/pane can sit
-   on top of the new key side wall or the restored desktop Messages control.
-   -------------------------------------------------------------------------- */
+
 @media (min-width:901px){
   html body[data-page][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class][class]
   > footer#site-footer#site-footer#site-footer#site-footer.site-footer.site-footer--minimal
@@ -420,8 +405,7 @@
   }
 }
 
-/* Mobile body has no class attribute; ID-weighted :not() selectors make the final
-   no-ridge key authority win over older mobile !important hardware rules. */
+
 @media (max-width:900px){
   html body:not(#r1345a):not(#r1345b):not(#r1345c):not(#r1345d):not(#r1345e):not(#r1345f):not(#r1345g):not(#r1345h)
   > nav.footer.footer.footer.footer a[href]{

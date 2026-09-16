@@ -1,7 +1,7 @@
-/* Automated Hearts Round 1454 — desktop accent removal + mobile accent cleanup. */
+
 :root{--ah1454-mint:#8fffd7;--ah1454-pink:#ff2ea8;}
 
-/* Desktop: no decorative corner accents on footer keys or Messages hardware. */
+
 @media (min-width:801px){
   footer#site-footer .ah-footer-pink-corners,
   footer#site-footer .ah1451-message-match-accents,
@@ -23,7 +23,7 @@
   }
 }
 
-/* Mobile: one clean base, then one color-matched corner highlight. No old pink underneath. */
+
 @media (max-width:900px){
   body > nav.footer > a[href]{
     position:relative!important;

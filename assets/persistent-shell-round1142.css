@@ -1,7 +1,7 @@
-/**/
+
 @view-transition { navigation: auto; }
 
-/**/
+
 html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim{
   view-transition-name:ah-r1142-outer-rim!important;
 }
@@ -18,7 +18,7 @@ html body[data-page] > #site-footer#site-footer{
   view-transition-name:ah-r1142-footer!important;
 }
 
-/**/
+
 html body > .shell-edge.t{view-transition-name:ah-r1142-mobile-top!important}
 html body > .shell-edge.b{view-transition-name:ah-r1142-mobile-bottom!important}
 html body > .shell-edge.l{view-transition-name:ah-r1142-mobile-left!important}
@@ -27,7 +27,7 @@ html body > .heart{view-transition-name:ah-r1142-mobile-heart!important}
 html body > .message{view-transition-name:ah-r1142-mobile-message!important}
 html body > .footer{view-transition-name:ah-r1142-mobile-footer!important}
 
-/**/
+
 ::view-transition-group(ah-r1142-outer-rim),
 ::view-transition-group(ah-r1142-gold-rim),
 ::view-transition-group(ah-r1142-heart),
@@ -56,12 +56,12 @@ html body > .footer{view-transition-name:ah-r1142-mobile-footer!important}
   animation:none!important;opacity:1!important;mix-blend-mode:normal!important;
 }
 
-/**/
+
 ::view-transition-group(root),::view-transition-old(root),::view-transition-new(root){
   animation:none!important;mix-blend-mode:normal!important;
 }
 
-/**/
+
 html body.page-home[data-page="home"] > .desktop-first-visit-intro.desktop-first-visit-intro{
   z-index:2147483180!important;
 }

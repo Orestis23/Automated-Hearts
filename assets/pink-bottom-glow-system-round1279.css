@@ -1,6 +1,4 @@
-/* Automated Hearts Round 1278 — shared pink bottom-emission system.
-   Standardizes the thin pink hardware edge + visible downward glow so the luminous core
-   spans the complete control width. Also removes the legacy desktop Messages face cap. */
+
 :root{
   --ah-r1278-pink:#ff2ea8;
   --ah-r1278-pink-hot:#ff86c9;
@@ -10,14 +8,14 @@
   --ah-r1278-glow-far:rgba(255,46,168,.38);
 }
 
-/* Utility hook for future controls that need the same bottom-only light treatment. */
+
 .ah-pink-bottom-glow{
   --ah-r1278-enable-glow:1;
 }
 
-/* MOBILE ------------------------------------------------------------------ */
+
 @media (max-width:900px){
-  /* Make sure emitted light is never clipped by the control itself. */
+  
   html body > a.message,
   html body > nav.footer a[href]{
     position:relative!important;
@@ -25,8 +23,7 @@
     overflow:visible!important;
   }
 
-  /* Footer buttons: exact edge-to-edge luminous core, measured to the OUTSIDE of the
-     2.667px green rim. This replaces the short inset strip from Round 1277. */
+  
   html body > nav.footer a[href]::after,
   html body > nav.footer a[href]:nth-child(n)::after{
     content:""!important;
@@ -67,7 +64,7 @@
     transition:height 105ms ease,opacity 105ms ease,transform 105ms ease,box-shadow 105ms ease,filter 105ms ease!important;
   }
 
-  /* Messages: same emission recipe, spanning the full outside width of its 2px green rim. */
+  
   html body > a.message::after{
     content:""!important;
     display:block!important;
@@ -107,9 +104,7 @@
     transition:height 105ms ease,opacity 105ms ease,transform 105ms ease,box-shadow 105ms ease,filter 105ms ease!important;
   }
 
-  /* Carbon caption buttons under the large Home / Learning / Industries image controls.
-     Their ::before/::after layers are already occupied by the matte film, so the same light
-     is emitted with full-width outer shadows instead of another pseudo-element. */
+  
   html body main#main-content .route-card .route-label{
     box-shadow:
       inset 0 0 0 1px rgba(0,0,0,.56),
@@ -120,7 +115,7 @@
       0 10px 16px var(--ah-r1278-glow-far)!important;
   }
 
-  /* Mechanical press: the pink depth/light submerges instead of remaining behind the face. */
+  
   html body > nav.footer a[href]:is(
     :active,.is-pressed,.is-nav-pressed,.is-route-pressed,
     [aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]
@@ -145,10 +140,9 @@
   }
 }
 
-/* DESKTOP ----------------------------------------------------------------- */
+
 @media (min-width:901px){
-  /* Feed the existing inline Messages background through the original textured SVG only.
-     This removes the later black/gradient cap while preserving the established hardware art. */
+  
   :root{
     --r1005-message-face:url("./message-button-square-footer-match-round1095.svg?v=1278r")!important;
   }
@@ -161,7 +155,7 @@
     --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1278r")!important;
   }
 
-  /* The old desktop bottom-siding child is superseded by the shared emission layer. */
+  
   html body[data-page] .ah-bottom-siding{
     display:none!important;
     visibility:hidden!important;
@@ -177,8 +171,7 @@
     overflow:visible!important;
   }
 
-  /* Desktop Messages: remove the legacy black face/cap overlay and show the textured button
-     artwork directly. The envelope remains the only layer above the face. */
+  
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
     background-color:transparent!important;
     background-image:url("./message-button-square-footer-match-round1095.svg?v=1278r")!important;
@@ -210,7 +203,7 @@
     background-image:url("./message-button-square-footer-match-pressed-round1095.svg?v=1278r")!important;
   }
 
-  /* One reusable full-width desktop underglow for Messages and every footer navigation button. */
+  
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control::after,
   html body[data-page][class] > footer#site-footer#site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group
@@ -265,15 +258,9 @@
   }
 }
 
-/* Automated Hearts Round 1279 correction layer ---------------------------------
-   1) Restore Messages to its persistent top-right fixed position. Round 1278's
-      containing-block rule accidentally changed the control itself to relative.
-   2) Make footer underglow readable even at the viewport edge by keeping the
-      luminous core on the button's bottom edge and casting part of the light upward.
-*/
+
 @media (max-width:900px){
-  /* The button itself must remain fixed; a fixed element already provides the
-     containing block needed by its absolute ::after glow. */
+  
   html body > a.message,
   html body > a.message:active,
   html body > a.message.is-pressed,
@@ -291,16 +278,13 @@
     overflow:visible!important;
   }
 
-  /* Footer itself was clipping almost all downward blur. Keep its normal geometry,
-     but let emitted light paint outside the footer's content box. */
+  
   html body > nav.footer,
   html body > .footer{
     overflow:visible!important;
   }
 
-  /* Full-width footer light core. The negative Y shadows are deliberate: they make
-     the underglow visible at the bottom of the screen without turning it into a
-     general halo around the control. */
+  
   html body > nav.footer a[href]::after,
   html body > nav.footer a[href]:nth-child(n)::after{
     left:-2.667px!important;
@@ -347,8 +331,7 @@
 }
 
 @media (min-width:901px){
-  /* Restore desktop Messages to the fixed persistent shell position. Do not replace
-     its existing top/right variables; only correct the positioning mode. */
+  
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control,
   html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
     position:fixed!important;
@@ -357,8 +340,7 @@
     overflow:visible!important;
   }
 
-  /* Footer controls sit close to the viewport edge too, so give only their bottom
-     edge the stronger bidirectional emission. Messages retains the Round 1278 glow. */
+  
   html body[data-page][class] > footer#site-footer#site-footer.site-footer--minimal
   nav#primary-nav#primary-nav > .primary-nav__group
   > a.footer-structure-control.footer-structure-control.mechanical-send-control[data-nav]::after{

@@ -1,9 +1,4 @@
-/* Automated Hearts Round 1288
-   - Desktop Messages uses the exact mobile graphite/carbon hardware treatment, enlarged to the established 84px square.
-   - Mobile gold viewport sides move inward by 3px without changing page-content geometry.
-   - Four dedicated opaque corner masks prevent moving shields/content from showing through the rounded gold corners.
-   - Learning Center "Choose a lesson." becomes pink on quiet black carbon with a matte film over the complete field.
-*/
+
 
 @media (min-width:901px){
   :root{
@@ -84,7 +79,7 @@
     stroke-linejoin:round!important;
   }
 
-  /* Same full-width pink lower emission used by the mobile control, scaled for the 84px face. */
+  
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control::after{
     content:""!important;
     display:block!important;
@@ -126,19 +121,19 @@
     --ah-r1288-black:#000;
   }
 
-  /* Retire Round 1285's older 10px pseudo corner mask; the four real masks below now own opacity. */
+  
   html::before{
     content:none!important;
     display:none!important;
   }
 
-  /* Move only the visual gold viewport sides inward. Main/body/card dimensions are untouched. */
+  
   html body::before{
     left:var(--ah-r1288-frame-side)!important;
     right:var(--ah-r1288-frame-side)!important;
   }
 
-  /* Keep every moving shield aligned with the visually inset gold viewport. */
+  
   #ah-route-shield,
   html body[data-page] > #page-transition-shield.page-transition-shield,
   html body[data-page] > .page-transition-shield.page-transition-shield,
@@ -148,8 +143,7 @@
     right:var(--ah-r1288-frame-side)!important;
   }
 
-  /* Real DOM masks, not another decorative rim. Each mask paints only the area outside
-     the rounded viewport arc solid black and sits above shields but below the gold rim. */
+  
   html body > .ah-opaque-corner{
     display:block!important;
     position:fixed!important;
@@ -185,7 +179,7 @@
     background:radial-gradient(circle at 4px 4px,transparent 0 16.9px,#000 18.2px 100%)!important;
   }
 
-  /* Learning Center opening field: same quiet black carbon as the footer faces. */
+  
   html body main#main-content .hero-title.ah-learning-lesson-title{
     position:relative!important;
     isolation:isolate!important;
@@ -201,7 +195,7 @@
     background-blend-mode:normal!important;
   }
 
-  /* Matte film intentionally sits in front of both the carbon face and the lettering. */
+  
   html body main#main-content .hero-title.ah-learning-lesson-title::after{
     content:""!important;
     position:absolute!important;

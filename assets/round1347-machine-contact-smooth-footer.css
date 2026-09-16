@@ -1,7 +1,4 @@
-/* Automated Hearts Round 1347
-   Contact form becomes a true machine-equipment panel using the exact triple
-   machine-window rim asset. Footer keycaps lose the remaining ridged edge
-   treatment while preserving the smooth 3D side wall and press glow. */
+
 
 :root{
   --ah-r1347-mint:#8fffd7;
@@ -12,11 +9,9 @@
   --ah-r1347-carbon:url('./home-carbon-weave-round737-seamless.webp');
 }
 
-/* ========================================================================== 
-   CONTACT FORM — shared machine language
-   ========================================================================== */
 
-/* Desktop injected contact drawer: use the identical machine-window rim. */
+
+
 @media (min-width:801px){
   html body[data-page]:not(#r1347a):not(#r1347b):not(#r1347c):not(#r1347d)
   .nav-contact-panel.casio-contact-panel#nav-contact-panel{
@@ -45,7 +40,7 @@
       0 10px 22px rgba(0,0,0,.65)!important;
   }
 
-  /* Inner equipment bay: hard rectangular mounting plate, not a floating card. */
+  
   html body[data-page]:not(#r1347e):not(#r1347f):not(#r1347g):not(#r1347h)
   .nav-contact-panel.casio-contact-panel#nav-contact-panel form.nav-contact-form.nav-contact-form--full{
     position:relative!important;
@@ -67,7 +62,7 @@
       inset 0 0 0 7px rgba(0,0,0,.23)!important;
   }
 
-  /* Close key becomes a small machine control. */
+  
   html body[data-page]:not(#r1347i):not(#r1347j):not(#r1347k):not(#r1347l)
   .nav-contact-panel.casio-contact-panel#nav-contact-panel > button.nav-contact-close{
     top:16px!important;
@@ -100,7 +95,7 @@
     box-shadow:inset 0 4px 7px rgba(0,0,0,.68),0 1px 0 #020507!important;
   }
 
-  /* Keep the red digital screens, but mount each screen into a machine recess. */
+  
   html body[data-page]:not(#r1347m):not(#r1347n):not(#r1347o):not(#r1347p)
   .nav-contact-panel.casio-contact-panel#nav-contact-panel form.nav-contact-form label.nav-contact-field{
     position:relative!important;
@@ -116,7 +111,7 @@
     content:none!important;display:none!important;
   }
 
-  /* Submit becomes the wide mechanical control for the equipment bay. */
+  
   html body[data-page]:not(#r1347q):not(#r1347r):not(#r1347s):not(#r1347t)
   .nav-contact-panel.casio-contact-panel#nav-contact-panel form.nav-contact-form button.nav-contact-submit{
     position:relative!important;
@@ -151,7 +146,7 @@
   }
 }
 
-/* Mobile overlay: same exact triple window rim, scaled to the available width. */
+
 @media (max-width:800px){
   html body:not(#r1347u):not(#r1347v):not(#r1347w):not(#r1347x)
   > .ah-mobile-contact .ah-mobile-contact__panel{
@@ -179,7 +174,7 @@
     box-shadow:inset 3px 3px 7px rgba(201,224,231,.18),inset -5px -5px 10px rgba(0,0,0,.74),0 12px 26px rgba(0,0,0,.68)!important;
   }
 
-  /* Title is an embedded machine display instead of loose text. */
+  
   html body:not(#r1347y):not(#r1347z) > .ah-mobile-contact .ah-mobile-contact__title{
     box-sizing:border-box!important;
     width:calc(100% - 54px)!important;
@@ -218,7 +213,7 @@
     box-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -3px 0 #010305,0 4px 0 #101820,0 6px 8px rgba(0,0,0,.42)!important;
   }
 
-  /* Every red screen sits in a dark metal recess, like a machine readout. */
+  
   html body > .ah-mobile-contact form{
     box-sizing:border-box!important;
     gap:8px!important;
@@ -240,7 +235,7 @@
     box-shadow:inset 0 1px 0 rgba(255,255,255,.07),inset 0 -3px 5px rgba(0,0,0,.70)!important;
   }
 
-  /* Preserve the red digital screens, but sharpen them as equipment displays. */
+  
   html body > .ah-mobile-contact :is(input.ah-red-screen,select.ah-red-screen,textarea.ah-red-screen){
     border:1px solid #ff405a!important;
     border-radius:4px!important;
@@ -271,10 +266,7 @@
   }
 }
 
-/* ========================================================================== 
-   FOOTER KEYS — remove ALL remaining ridged perimeter treatments.
-   Keep a clean carbon key top plus the smooth side wall beneath it.
-   ========================================================================== */
+
 @media (min-width:901px){
   html body[data-page]:not(#r1347fa):not(#r1347fb):not(#r1347fc):not(#r1347fd):not(#r1347fe):not(#r1347ff)
   > footer#site-footer#site-footer.site-footer.site-footer--minimal
