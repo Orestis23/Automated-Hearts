@@ -1,0 +1,49 @@
+/* Round 1459 — Desktop Home divider authority.
+   The r1459 layer is declared before legacy layers in desktop-home.html so
+   these !important pseudo-element rules win the site's older layered dividers. */
+@layer ah-r1459-authority {
+  @media (min-width:901px){
+    html body.page-home[data-page="home"] main#main-content > section#home-route-buttons::after,
+    html body.page-home[data-page="home"] main#main-content > section#home-solution-framework::after,
+    html body.page-home[data-page="home"] main#main-content > section#home-overview-section::after{
+      content:""!important;
+      display:block!important;
+      position:absolute!important;
+      z-index:214!important;
+      top:0!important;
+      left:0!important;
+      right:0!important;
+      width:auto!important;
+      height:1px!important;
+      margin:0!important;
+      padding:0!important;
+      border:0!important;
+      border-radius:0!important;
+      background:rgba(255,46,168,.84)!important;
+      box-shadow:
+        0 0 3px rgba(255,46,168,.56),
+        0 0 7px rgba(255,46,168,.26),
+        0 0 12px rgba(255,46,168,.11)!important;
+      filter:none!important;
+      opacity:1!important;
+      transform:none!important;
+      pointer-events:none!important;
+    }
+  }
+}
+
+
+@layer ah-r1459-authority {
+  @media (min-width:901px){
+    html body.page-home[data-page="home"] main#main-content > section#home-route-buttons::after,
+    html body.page-home[data-page="home"] main#main-content > section#home-solution-framework::after{
+      content:none!important;
+      display:none!important;
+      width:0!important;
+      height:0!important;
+      background:none!important;
+      box-shadow:none!important;
+      opacity:0!important;
+    }
+  }
+}

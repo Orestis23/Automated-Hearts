@@ -1,0 +1,30 @@
+Round 1479 Google Analytics QA
+Measurement ID: G-EBKTYVYQ09
+
+Installed the supplied Google tag immediately after <head> on these public pages:
+- index.html
+- desktop-home.html
+- mobile-home.html
+- solutions.html
+- mobile-solutions.html
+- who-we-help.html
+- mobile-who-we-help.html
+- learning-center.html
+- mobile-learning-center.html
+- pricing.html
+- mobile-pricing.html
+- about.html
+- mobile-about.html
+- policies.html
+
+Deliberately NOT installed on internal iframe/QA pages to avoid duplicate analytics pageviews from embedded content:
+- solution-machine-pipeline-round1207.html
+- solution-machine-pipeline-round1216-mobile-home.html
+- solution-machine-pipeline-round1237.html
+- qa1460-snapshot.html
+- heart-to-heart-digital-rolodex-round1094.html
+
+Automated checks passed:
+- Every public page contains exactly one Google tag block.
+- The tag is placed immediately after the opening <head> tag.
+- Internal iframe/QA pages contain no Google Analytics tag.

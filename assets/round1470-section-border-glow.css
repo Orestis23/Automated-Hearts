@@ -8,7 +8,7 @@
     --ah1470-green-glow-soft: rgba(143,255,215,.10);
   }
 
-  
+  /* Desktop home: pink section breaks */
   @media (min-width:901px){
     html body.page-home[data-page="home"] main#main-content > section + section {
       position:relative!important;
@@ -33,7 +33,7 @@
     }
   }
 
-  
+  /* Desktop interior pages: green section breaks */
   @media (min-width:901px){
     html body[data-page]:not([data-page="home"]) main#main-content > section + section,
     html body[data-page]:not([data-page="home"]) main#main-content > section.section--divider,
@@ -62,7 +62,7 @@
     }
   }
 
-  
+  /* Mobile home: pink section separators */
   html body[data-ah-mobile-surface="home"] main#main-content > :is(.section,.lite-section) + :is(.section,.lite-section) {
     position:relative!important;
     border-top:2px solid var(--ah1470-pink-line)!important;
@@ -85,7 +85,7 @@
     z-index:2!important;
   }
 
-  
+  /* Mobile non-home pages: green section separators */
   html body[data-ah-mobile-surface]:not([data-ah-mobile-surface="home"]) main#main-content > :is(.section,.lite-section) + :is(.section,.lite-section) {
     position:relative!important;
     border-top:2px solid var(--ah1470-green-line)!important;
