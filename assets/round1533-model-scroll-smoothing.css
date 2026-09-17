@@ -1,0 +1,37 @@
+/* Automated Hearts Round 1533 — Learning/Industries model transition smoothing.
+   Programmatic stage travel owns the scroll position. Native smooth/snap/anchor
+   behavior is disabled during the serialized transition so no second scrolling
+   system can fight the requestAnimationFrame trajectory. */
+html,body,main#main-content{scroll-behavior:auto!important;}
+body[data-ah-stage-scrolling="1"],
+body[data-ah-stage-scrolling="1"] main#main-content,
+body[data-ah-stage-scrolling="1"] #learning-model-stage,
+body[data-ah-stage-scrolling="1"] #who-help-model-stage,
+body[data-ah-stage-scrolling="1"] #lite-model-stage{
+  scroll-behavior:auto!important;
+  scroll-snap-type:none!important;
+  overflow-anchor:none!important;
+}
+body[data-ah-stage-scrolling="1"]{overscroll-behavior-y:none!important;}
+body[data-ah-stage-scrolling="1"] :is(#learning-model-stage,#who-help-model-stage,#lite-model-stage) iframe{pointer-events:none!important;}
+
+/* Round 1535 — serialize the full scroll/shield sequence. While a transition is
+   active, user scroll gestures cannot fight the scripted path; the local model
+   shield stays on its own compositor layer for a clean 2-second travel. */
+body[data-ah-stage-transition="1"]{overscroll-behavior-y:none!important;overflow-anchor:none!important;}
+body[data-ah-stage-transition="1"] main#main-content{overflow-anchor:none!important;}
+body[data-ah-stage-transition="1"] :is(#learning-model-stage,#who-help-model-stage,#lite-model-stage){overflow-anchor:none!important;}
+body[data-ah-stage-transition="1"] :is([data-learning-stage-shield],.ah1528-model-shield){
+  will-change:transform!important;
+  backface-visibility:hidden!important;
+  transform-style:preserve-3d!important;
+}
+body[data-ah-stage-transition="1"] :is(#learning-model-stage,#who-help-model-stage,#lite-model-stage) iframe{pointer-events:none!important;}
+
+
+/* Round 1545 — final anti-jerk layer. The model stage keeps one fixed geometry
+   for the complete scripted trajectory, and the root scroll anchor cannot apply
+   a competing correction when the hidden stage is inserted into layout. */
+html:has(body[data-ah-stage-scrolling="1"]),
+html:has(body[data-ah-stage-transition="1"]){overflow-anchor:none!important;}
+body[data-ah-stage-transition="1"] :is(#learning-route-buttons,#who-we-help-solutions,.lite-section){overflow-anchor:none!important;}

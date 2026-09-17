@@ -69,7 +69,7 @@ function focusIndustry(value){
   root.rotation.y=t-Math.PI/2;
   root.rotation.x=0;
   controls.target.set(0,targetY,0);
-  const distance=matchMedia('(max-width:760px)').matches?19.5:22.5;
+  const distance=matchMedia('(max-width:760px)').matches?34:22.5;
   camera.position.set(0,targetY+.18,distance);
   controls.minDistance=11;
   controls.maxDistance=34;
@@ -121,4 +121,4 @@ canvas{background:transparent!important;background-color:transparent!important;b
 </style><script id="ah-r1321-transparent-renderer-guard">
 (()=>{try{const enforce=()=>{document.documentElement.style.setProperty('background','transparent','important');document.body&&document.body.style.setProperty('background','transparent','important');document.querySelectorAll('canvas').forEach(c=>{c.style.setProperty('background','transparent','important');c.style.setProperty('background-image','none','important')});};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enforce,{once:true});else enforce();new MutationObserver(enforce).observe(document.documentElement,{childList:true,subtree:true});}catch(_){}})();
 </script>
-</body></html>
+<script src="../assets/model-touch-pinch-round1527.js?v=1527r"></script></body></html>

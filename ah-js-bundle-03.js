@@ -348,6 +348,7 @@
    3) remove/lock the lesson stage again until another lesson is selected. */
 (() => {
   'use strict';
+  if (window.__AH1533LearningModelAuthority || window.__AH1546LearningTransitionAuthority) return;
 
   if (document.body?.dataset?.page !== 'learning') return;
 

@@ -207,11 +207,9 @@
       nav.dataset.r990BloomReady='1';
       const buttons=()=>nav.querySelectorAll('a.footer-structure-control.mechanical-send-control[data-nav]');
       const hot=()=>buttons().forEach(b=>{
-        b.style.setProperty('filter','brightness(1.10) saturate(1.06) contrast(1.02)','important');
         b.style.setProperty('box-shadow','none','important');
       });
       const cool=()=>buttons().forEach(b=>{
-        b.style.setProperty('filter','none','important');
         b.style.setProperty('box-shadow','none','important');
       });
       nav.addEventListener('pointerenter',hot,{passive:true});

@@ -22,6 +22,7 @@ function colorize(v){let x=esc(v);x=x.replace(/AI/g,'<span class="pink">AI</span
   const model=document.querySelector('.machine-3d');
   const modelPoster=document.querySelector('.machine-3d-frame .machine-live-poster');
   const cards=document.querySelector('.cards-video');
+  const cardsLive=document.querySelector('.cards-live-frame');
   let modelReady=false, modelLoadStarted=false, modelReadyResolve=()=>{};
   const modelReadyPromise=new Promise((resolve)=>{modelReadyResolve=resolve});
   const mediaCache=window.__AH_PRELOADED_MEDIA=Object.create(null);
@@ -77,9 +78,9 @@ function colorize(v){let x=esc(v);x=x.replace(/AI/g,'<span class="pink">AI</span
     return pending;
   }
   const cardsUrl='./assets/home-rolodex-scroll-mobile-round1147-smooth.mp4';
-  async function prepareCards(){return fetchVideo(cardsUrl)}
+  async function prepareCards(){if(cardsLive)return true;return fetchVideo(cardsUrl)}
   async function prepareCriticalAssets(){
-    const images=['./assets/home-rolodex-scroll-mobile-round1101-poster.webp','./assets/mobile-lite-heart.webp'];
+    const images=['./assets/mobile-lite-heart.webp'];
     startModelLoad();
     const core=Promise.all([Promise.all(images.map(loadImage)),modelReadyPromise]);
     // Only after the 3D request is underway do we quietly cache the small cards clip.
@@ -88,6 +89,7 @@ function colorize(v){let x=esc(v);x=x.replace(/AI/g,'<span class="pink">AI</span
   }
 
   async function ensureCardsPlaying(){
+    if(cardsLive){cardsFrame?.classList.add('video-ready');return;}
     if(!cards)return;
     if(!cards.src){await prepareCards();cards.src=mediaCache[cardsUrl]||cards.dataset.src;cards.load()}
     if(cards.readyState<2)await Promise.race([new Promise(r=>cards.addEventListener('loadeddata',r,{once:true})),sleep(1800)]);

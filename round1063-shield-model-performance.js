@@ -4,7 +4,7 @@
 (() => {
   'use strict';
   const page = document.body?.dataset?.page || '';
-  const isModelPage = page === 'learning' || page === 'who-we-help';
+  const isModelPage = page === 'who-we-help' || (page === 'learning' && !window.__AH1533LearningModelAuthority && !window.__AH1546LearningTransitionAuthority);
   const SHIELD_MS = 2000;
   const EASE = 'cubic-bezier(.22,.66,.24,1)';
   const readyFrames = new WeakSet();

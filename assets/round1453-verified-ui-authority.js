@@ -61,13 +61,12 @@
   };
   const applyDesktopFooter=()=>{
     if(!matchMedia('(min-width:801px)').matches)return;
-    document.querySelectorAll('footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]').forEach(button=>{
-      button.querySelectorAll('.ah-footer-pink-corners,.ah1451-message-match-accents,.ah1452-message-corner-overlay,.ah1453-message-corner-overlay,.ah1454-mobile-corner-overlay').forEach(n=>n.remove());
-      props(button.querySelector('.footer-nav-label'),{'font-family':'Orbitron,system-ui,sans-serif','font-size':'16px','font-weight':'700','line-height':'1','letter-spacing':'0','white-space':'normal','text-align':'center','color':PINK,'-webkit-text-fill-color':PINK,'text-shadow':'0 0 1px rgba(255,114,199,.24)','filter':'none','opacity':'1','animation':'none','transition':'none','transform':'none'});
-    });
+    /* Round 1559: desktop footer type/surface is owned by the final footer authority. */
   };
   const applyMobileFooter=()=>{
     if(!matchMedia('(max-width:900px)').matches)return;
+    /* Round 1571: mobile footer/message styling is owned by the final mobile shell authority. */
+    return;
     document.querySelectorAll('body > nav.footer > a[href]').forEach((button,i)=>{
       props(button,{'position':'relative','background-image':`url("${MOBILE_BASE}")`,'background-size':'100% 100%','background-position':'center','background-repeat':'no-repeat'});
       const mint=(i%2)===0,color=mint?MINT:PINK;

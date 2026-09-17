@@ -1,0 +1,224 @@
+(()=>{
+  'use strict';
+  if(window.__AH1533MobileLearningModels)return;
+  window.__AH1533MobileLearningModels=1;
+  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+  const stage=$('#lite-model-stage'), modelShell=$('#lite-model-shell');
+  const reducedMotion=false; // Round 1536: explicit smooth-transition authority.
+  const frameCache=new Map();
+  const learningModels={
+    ai101:['./models/ai-101-core-principles-round1316.html?v=1533r','./models/ai-101-human-ai-partnership-desktop-round1316.html?v=1533r','./models/ai-101-verification-lab-round1316.html?v=1533r'],
+    practical:['./models/practical-ai-skills-helix-round1316.html?v=1533r'],
+    strategy:['./models/strategy-lab-ball-round1093.html?v=1533r']
+  };
+  let selected=null, modelIndex=0, scrollToken=0, transitioning=false;
+  let rootAnchorSnapshot=null;
+  const freezeRootAnchor=()=>{
+    if(rootAnchorSnapshot!==null)return;
+    const r=document.documentElement;
+    rootAnchorSnapshot={value:r.style.getPropertyValue('overflow-anchor'),priority:r.style.getPropertyPriority('overflow-anchor')};
+    r.style.setProperty('overflow-anchor','none','important');
+  };
+  const restoreRootAnchor=()=>{
+    if(rootAnchorSnapshot===null)return;
+    const r=document.documentElement,snap=rootAnchorSnapshot;rootAnchorSnapshot=null;
+    if(snap.value)r.style.setProperty('overflow-anchor',snap.value,snap.priority||'');else r.style.removeProperty('overflow-anchor');
+  };
+  const SCROLL_DOWN_MS=2600, SHIELD_MS=2000, SCROLL_UP_MS=2600;
+  const SHIELD_EASE='cubic-bezier(.22,.66,.24,1)';
+
+  function scroller(){return document.scrollingElement||document.documentElement;}
+  function viewportHeight(){return Math.round(window.visualViewport?.height||window.innerHeight);}
+  function maxScroll(){const s=scroller();return Math.max(0,s.scrollHeight-viewportHeight());}
+  function stageTopTarget(){
+    if(!stage)return maxScroll();
+    const s=scroller(),start=s.scrollTop,rect=stage.getBoundingClientRect();
+    /* Mobile chrome reserves 72px at the top both standalone and when embedded
+       in the persistent shell. Target that exact visual boundary so the viewport
+       lock never needs a late corrective snap. */
+    const topInset=72;
+    return Math.max(0,Math.min(maxScroll(),start+rect.top-topInset));
+  }
+  function animateScroll(target,duration){
+    const token=++scrollToken,s=scroller(),start=s.scrollTop;
+    target=Math.max(0,Math.min(maxScroll(),target));
+    const delta=target-start,prevBehavior=s.style.scrollBehavior,prevAnchor=s.style.overflowAnchor;
+    document.body.dataset.ahStageScrolling='1';
+    s.style.setProperty('scroll-behavior','auto','important');
+    s.style.setProperty('overflow-anchor','none','important');
+    const cleanup=()=>{
+      if(prevBehavior)s.style.scrollBehavior=prevBehavior;else s.style.removeProperty('scroll-behavior');
+      if(prevAnchor)s.style.overflowAnchor=prevAnchor;else s.style.removeProperty('overflow-anchor');
+      if(token===scrollToken){delete document.body.dataset.ahStageScrolling;window.dispatchEvent(new Event('automated-hearts:stage-scroll-end'));}
+    };
+    if(Math.abs(delta)<2){s.scrollTop=target;cleanup();return Promise.resolve(true);}
+    return new Promise(resolve=>{
+      const t0=performance.now(),ease=u=>u*u*u*(u*(u*6-15)+10);
+      const step=now=>{
+        if(token!==scrollToken){cleanup();resolve(false);return;}
+        const u=Math.min(1,(now-t0)/duration);
+        s.scrollTop=start+delta*ease(u);
+        if(u<1)requestAnimationFrame(step);
+        else{s.scrollTop=target;cleanup();resolve(true);}
+      };
+      requestAnimationFrame(step);
+    });
+  }
+  function primeStageHeight(){
+    if(!stage)return;
+    const vh=Math.round(window.visualViewport?.height||window.innerHeight);
+    const h=Math.max(248,vh-72-74-12);
+    stage.style.setProperty('--ah1527-model-stage-height',`${h}px`);
+    stage.style.setProperty('--ah1528-model-stage-height',`${h}px`);
+    const parent=stage.closest('.lite-section');
+    if(parent){parent.style.setProperty('--ah1527-model-stage-height',`${h}px`);parent.style.setProperty('--ah1528-model-stage-height',`${h}px`);}
+  }
+  function ensureShield(){
+    if(!stage)return null;
+    let shield=stage.querySelector(':scope > .ah1528-model-shield');
+    if(!shield){
+      shield=document.createElement('div');
+      shield.className='ah1528-model-shield';
+      shield.setAttribute('aria-hidden','true');
+      stage.appendChild(shield);
+    }
+    return shield;
+  }
+  function waitTransform(el,ms){
+    if(!el||reducedMotion)return Promise.resolve();
+    return new Promise(resolve=>{
+      let done=false,timer=0;
+      const finish=()=>{if(done)return;done=true;clearTimeout(timer);el.removeEventListener('transitionend',end);el.removeEventListener('transitioncancel',cancel);resolve();};
+      const end=e=>{if(e.target===el&&e.propertyName==='transform')finish();};
+      const cancel=e=>{if(e.target===el)finish();};
+      el.addEventListener('transitionend',end);el.addEventListener('transitioncancel',cancel);
+      timer=setTimeout(finish,ms+280);
+    });
+  }
+  function setShieldClosed(){
+    const shield=ensureShield(); if(!shield)return;
+    shield.style.setProperty('transition','none','important');
+    shield.style.setProperty('transform','translate3d(0,0,0)','important');
+    shield.style.setProperty('pointer-events','auto','important');
+    shield.getBoundingClientRect();
+  }
+  async function lowerShield(){
+    const shield=ensureShield(); if(!shield)return;
+    shield.style.setProperty('transition','none','important');
+    shield.style.setProperty('transform','translate3d(0,0,0)','important');
+    shield.style.setProperty('pointer-events','auto','important');
+    shield.getBoundingClientRect();
+    if(reducedMotion){shield.style.setProperty('transform','translate3d(0,101.5%,0)','important');shield.style.setProperty('pointer-events','none','important');return;}
+    const done=waitTransform(shield,SHIELD_MS);
+    shield.style.setProperty('transition',`transform ${SHIELD_MS}ms ${SHIELD_EASE}`,'important');
+    requestAnimationFrame(()=>shield.style.setProperty('transform','translate3d(0,101.5%,0)','important'));
+    await done;
+    shield.style.setProperty('transform','translate3d(0,101.5%,0)','important');
+    shield.style.setProperty('pointer-events','none','important');
+  }
+  async function raiseShield(){
+    const shield=ensureShield(); if(!shield)return;
+    shield.style.setProperty('transition','none','important');
+    shield.style.setProperty('transform','translate3d(0,101.5%,0)','important');
+    shield.style.setProperty('pointer-events','auto','important');
+    shield.getBoundingClientRect();
+    if(reducedMotion){shield.style.setProperty('transform','translate3d(0,0,0)','important');return;}
+    const done=waitTransform(shield,SHIELD_MS);
+    shield.style.setProperty('transition',`transform ${SHIELD_MS}ms ${SHIELD_EASE}`,'important');
+    requestAnimationFrame(()=>shield.style.setProperty('transform','translate3d(0,0,0)','important'));
+    await done;
+    shield.style.setProperty('transform','translate3d(0,0,0)','important');
+  }
+  function sendActivity(frame,active){
+    try{
+      frame?.contentWindow?.postMessage({type:'automated-hearts:learning-activity',active:!!active},'*');
+      frame?.contentWindow?.postMessage({type:'automated-hearts:viewport-activity',active:!!active},'*');
+      frame?.contentWindow?.postMessage({type:'engine-visibility',visible:!!active},'*');
+    }catch(_){}
+  }
+  function ensureFrame(url){
+    if(!modelShell||!url)return null;
+    if(frameCache.has(url))return frameCache.get(url);
+    const frame=document.createElement('iframe');
+    frame.title='Interactive Automated Hearts 3D model';frame.loading='eager';frame.allow='webgl';
+    frame.setAttribute('allowtransparency','true');frame.setAttribute('aria-hidden','true');
+    Object.assign(frame.style,{position:'absolute',inset:'0',width:'100%',height:'100%',border:'0',visibility:'hidden',opacity:'0',pointerEvents:'none',transform:'none'});
+    frame.addEventListener('load',()=>{
+      frame.dataset.ah1533Loaded='1';
+      const live=frame.dataset.ahActive==='1'&&document.body.dataset.ahModelHalf==='bottom';
+      [0,80,220,520].forEach(ms=>setTimeout(()=>sendActivity(frame,live),ms));
+    });
+    modelShell.appendChild(frame);frameCache.set(url,frame);frame.src=url;return frame;
+  }
+  function warmGroup(group){(learningModels[group]||[]).forEach((url,index)=>{if(index===0)ensureFrame(url);else setTimeout(()=>ensureFrame(url),80*index);});}
+  function showModel(url){
+    if(!modelShell||!url)return;
+    const active=ensureFrame(url);
+    frameCache.forEach(frame=>{
+      const on=frame===active;frame.dataset.ahActive=on?'1':'0';frame.setAttribute('aria-hidden',on?'false':'true');
+      frame.style.visibility=on?'visible':'hidden';frame.style.opacity=(on&&frame.dataset.ah1533Loaded==='1')?'1':'0';frame.style.pointerEvents=on?'auto':'none';sendActivity(frame,on&&document.body.dataset.ahModelHalf==='bottom');
+    });
+    modelShell.hidden=false;
+  }
+  function pauseAll(){frameCache.forEach(frame=>{frame.dataset.ahActive='0';frame.style.pointerEvents='none';sendActivity(frame,false);});}
+  function syncNavState(){
+    const models=selected?(learningModels[selected]||[]):[],multi=models.length>1,prev=$('#model-prev'),next=$('#model-next');
+    if(prev){prev.disabled=!multi;prev.setAttribute('aria-disabled',multi?'false':'true');}
+    if(next){next.disabled=!multi;next.setAttribute('aria-disabled',multi?'false':'true');}
+  }
+  async function openSelected(){
+    if(transitioning||!selected||!learningModels[selected]||!stage||!modelShell)return;
+    transitioning=true;
+    freezeRootAnchor();
+    document.body.dataset.ahStageTransition='1';
+    document.body.dataset.ahModelHalf='transition-in';
+    primeStageHeight();
+    stage.hidden=false;stage.setAttribute('aria-hidden','false');
+    stage.closest('.lite-section')?.style.setProperty('content-visibility','visible');
+    modelShell.hidden=false;modelShell.style.position='relative';
+    setShieldClosed();
+    syncNavState();
+    /* Round 1545: stage geometry settles for two frames with document anchoring
+       frozen; no instantaneous scrollTop correction is allowed before motion. */
+    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    try{
+      const finished=await animateScroll(stageTopTarget(),SCROLL_DOWN_MS);
+      if(finished===false)return;
+      document.body.dataset.ahModelHalf='bottom';
+      warmGroup(selected);showModel(learningModels[selected][modelIndex]||learningModels[selected][0]);
+      const active=[...frameCache.values()].find(frame=>frame.dataset.ahActive==='1');
+      if(active&&active.dataset.ah1533Loaded!=='1')await Promise.race([new Promise(resolve=>active.addEventListener('load',resolve,{once:true})),new Promise(resolve=>setTimeout(resolve,1250))]);
+      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+      showModel(learningModels[selected][modelIndex]||learningModels[selected][0]);
+      await lowerShield();
+    }finally{delete document.body.dataset.ahStageTransition;restoreRootAnchor();window.dispatchEvent(new Event('automated-hearts:stage-transition-end'));transitioning=false;}
+  }
+  $$('.route-label[data-lite-learning]').forEach(el=>el.addEventListener('click',e=>{
+    e.preventDefault();
+    if(transitioning)return;
+    selected=el.dataset.liteLearning;modelIndex=0;
+    void openSelected();
+  }));
+  $('#model-prev')?.addEventListener('click',()=>{if(transitioning||!selected)return;const models=learningModels[selected]||[];if(models.length<2)return;modelIndex=(modelIndex-1+models.length)%models.length;showModel(models[modelIndex]);});
+  $('#model-next')?.addEventListener('click',()=>{if(transitioning||!selected)return;const models=learningModels[selected]||[];if(models.length<2)return;modelIndex=(modelIndex+1)%models.length;showModel(models[modelIndex]);});
+  $('#learning-choose-another')?.addEventListener('click',async event=>{
+    event.preventDefault(); if(transitioning)return;
+    const button=event.currentTarget;button.disabled=true;transitioning=true;
+    freezeRootAnchor();
+    document.body.dataset.ahStageTransition='1';
+    document.body.dataset.ahModelHalf='transition-out';
+    try{
+      pauseAll();
+      await raiseShield();
+      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+      await animateScroll(0,SCROLL_UP_MS);
+      if(modelShell)modelShell.hidden=true;
+      if(stage){stage.hidden=true;stage.setAttribute('aria-hidden','true');}
+      document.body.dataset.ahModelHalf='top';
+      selected=null;modelIndex=0;syncNavState();setShieldClosed();
+      document.querySelector('[data-lite-learning]')?.focus({preventScroll:true});
+    }finally{delete document.body.dataset.ahStageTransition;restoreRootAnchor();window.dispatchEvent(new Event('automated-hearts:stage-transition-end'));transitioning=false;button.disabled=false;}
+  });
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseAll();else if(selected&&document.body.dataset.ahModelHalf==='bottom'){const models=learningModels[selected]||[];showModel(models[modelIndex]||models[0]);}});
+  document.body.dataset.ahModelHalf='top';syncNavState();setShieldClosed();
+})();

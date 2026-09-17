@@ -84,7 +84,7 @@ const entries=[
  ['WHAT IS AI?','AI identifies patterns in information to generate, classify, summarize, recommend, or predict. It does not possess human judgment or responsibility.'],
  ['','']
 ];
-const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);camera.position.set(0,.35,9.3);
+const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,.1,100);camera.position.set(0,.35,matchMedia('(max-width:760px)').matches?12:9.3);
 const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setClearColor(0x000000,0);renderer.setClearAlpha(0);renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,((matchMedia('(max-width:760px)').matches||((navigator.hardwareConcurrency||8)<=4)||((navigator.deviceMemory||8)<=4))?1.25:1.75)));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.25;document.body.prepend(renderer.domElement);
 scene.add(new THREE.HemisphereLight(0xF6F7F2,0x07182D,2.6));const key=new THREE.DirectionalLight(0xF6F7F2,4.5);key.position.set(6,8,10);scene.add(key);const rim=new THREE.DirectionalLight(0xFF2EA8,3);rim.position.set(-7,1,-5);scene.add(rim);
 const root=new THREE.Group();root.rotation.x=-.22;scene.add(root);const clickable=[],transitions=[]; function ahOpenModelContact(service){try{if(window.parent&&window.parent!==window&&typeof window.parent.AutomatedHeartsOpenContact==='function'){window.parent.AutomatedHeartsOpenContact({service});return true}}catch(_){}try{window.parent.postMessage({type:'automated-hearts:open-contact',service},'*');return true}catch(_){return false}}
@@ -509,4 +509,4 @@ canvas{background:transparent!important;background-color:transparent!important;b
 </style><script id="ah-r1321-transparent-renderer-guard">
 (()=>{try{const enforce=()=>{document.documentElement.style.setProperty('background','transparent','important');document.body&&document.body.style.setProperty('background','transparent','important');document.querySelectorAll('canvas').forEach(c=>{c.style.setProperty('background','transparent','important');c.style.setProperty('background-image','none','important')});};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enforce,{once:true});else enforce();new MutationObserver(enforce).observe(document.documentElement,{childList:true,subtree:true});}catch(_){}})();
 </script>
-</body></html>
+<script src="../assets/model-touch-pinch-round1527.js?v=1527r"></script></body></html>

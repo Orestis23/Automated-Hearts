@@ -1,3 +1,8 @@
+
+# Round 1512: use Brotli when the host supports it; DEFLATE remains the fallback.
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
 # Automated Hearts Round 1062 — optional Apache delivery optimizations.
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml

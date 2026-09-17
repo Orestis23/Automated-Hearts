@@ -834,7 +834,6 @@
           aria-hidden="true"
           inert
         >
-          <button class="nav-contact-close" type="button" aria-label="Close contact form">×</button>
           <form
             action="#"
             class="quick-contact-form nav-contact-form nav-contact-form--full"
@@ -870,8 +869,8 @@
               <span class="sr-only">What feels harder than it should?</span>
               <textarea class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" name="message" placeholder="What feels harder than it should?" required rows="4"></textarea>
             </label>
-            <button class="button button--small send-question-button nav-contact-submit" type="submit">
-              <span>Send Message</span>
+            <button class="button button--small send-question-button nav-contact-submit ah-unified-spacebar" type="submit">
+              <span class="ah-route-label-final">Send Message</span>
             </button>
             <p aria-live="polite" class="quick-contact-form__status nav-contact-form-status"></p>
           </form>

@@ -1,0 +1,35 @@
+/* Automated Hearts Round 1541 — Send Message cleanup.
+   Remove the pink corner accents from the contact-form submit key and reduce
+   only its label text to 50% of the Round 1540 size. */
+
+html body[data-page] #nav-contact-panel#nav-contact-panel#nav-contact-panel#nav-contact-panel#nav-contact-panel button.nav-contact-submit.ah-unified-spacebar,
+html body > .ah-mobile-contact button.ah-mobile-contact__submit.ah-unified-spacebar{
+  font-size:clamp(9px,.775vw,13.5px)!important;
+}
+
+/* Kill the older Round 1538 L-shaped label accents without touching the
+   spacebar surface sheen on the button itself. */
+html body[data-page] #nav-contact-panel#nav-contact-panel#nav-contact-panel#nav-contact-panel#nav-contact-panel button.nav-contact-submit.ah-unified-spacebar > .ah-route-label-final::before,
+html body[data-page] #nav-contact-panel#nav-contact-panel#nav-contact-panel#nav-contact-panel#nav-contact-panel button.nav-contact-submit.ah-unified-spacebar > .ah-route-label-final::after,
+html body[data-page] .nav-contact-panel.casio-contact-panel button.nav-contact-submit > span::before,
+html body[data-page] .nav-contact-panel.casio-contact-panel button.nav-contact-submit > span::after,
+html body[data-page] .casio-contact-panel button.send-question-button > span::before,
+html body[data-page] .casio-contact-panel button.send-question-button > span::after,
+html body[data-ah-mobile-surface] .ah-mobile-contact__submit > span::before,
+html body[data-ah-mobile-surface] .ah-mobile-contact__submit > span::after,
+html body > .ah-mobile-contact .ah-mobile-contact__submit > span::before,
+html body > .ah-mobile-contact .ah-mobile-contact__submit > span::after{
+  content:none!important;
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  border:0!important;
+  box-shadow:none!important;
+  background:none!important;
+}
+
+@media(max-width:800px){
+  html body > .ah-mobile-contact button.ah-mobile-contact__submit.ah-unified-spacebar{
+    font-size:clamp(9px,2.5vw,11px)!important;
+  }
+}

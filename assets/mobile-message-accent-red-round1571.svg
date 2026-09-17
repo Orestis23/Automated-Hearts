@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="tl" x1="10" y1="36" x2="54" y2="10" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff3030" stop-opacity="1"/>
+      <stop offset=".38" stop-color="#ff3030" stop-opacity="1"/>
+      <stop offset=".72" stop-color="#ff3030" stop-opacity=".56"/>
+      <stop offset="1" stop-color="#ff3030" stop-opacity=".08"/>
+    </linearGradient>
+    <linearGradient id="br" x1="46" y1="70" x2="80" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff3030" stop-opacity=".08"/>
+      <stop offset=".28" stop-color="#ff3030" stop-opacity=".56"/>
+      <stop offset=".62" stop-color="#ff3030" stop-opacity="1"/>
+      <stop offset="1" stop-color="#ff3030" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-25%" width="140%" height="150%"><feGaussianBlur stdDeviation=".68" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <!-- Same continuous internal-rim language as the mobile footer keys. -->
+  <path d="M16 10H74L80 16V61L72 70H18L10 61V16Z" fill="none" stroke="#ff3030" stroke-width="1.05" stroke-linejoin="miter" opacity=".48"/>
+  <path d="M10 36V16L16 10H54" fill="none" stroke="url(#tl)" stroke-width="2.15" stroke-linecap="butt" stroke-linejoin="miter" filter="url(#soft)"/>
+  <path d="M46 70H72L80 61V34" fill="none" stroke="url(#br)" stroke-width="2.15" stroke-linecap="butt" stroke-linejoin="miter" filter="url(#soft)"/>
+  <path d="M54 10H74L80 16V34M46 70H18L10 61V36" fill="none" stroke="#ff3030" stroke-width=".62" stroke-linejoin="miter" opacity=".72"/>
+</svg>

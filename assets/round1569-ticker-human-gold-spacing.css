@@ -1,0 +1,27 @@
+/* Round 1569 — ticker human separators: weathered-gold people + doubled breathing room. */
+@media (min-width:761px){
+  html body[data-page] #home-ticker-wrap #home-charity-ticker#home-charity-ticker#home-charity-ticker .charity-marquee__separator,
+  html body[data-page] > footer#site-footer #home-charity-ticker#home-charity-ticker#home-charity-ticker .charity-marquee__separator{
+    box-sizing:content-box!important;
+    flex:0 0 auto!important;
+    width:auto!important;
+    min-width:18px!important;
+    max-width:none!important;
+    margin:0!important;
+    padding-inline:2in!important;
+    color:#d6b257!important;
+    -webkit-text-fill-color:#d6b257!important;
+  }
+  html body[data-page] #home-ticker-wrap #home-charity-ticker#home-charity-ticker#home-charity-ticker .charity-marquee__separator > svg.charity-marquee__person,
+  html body[data-page] > footer#site-footer #home-charity-ticker#home-charity-ticker#home-charity-ticker .charity-marquee__separator > svg.charity-marquee__person{
+    color:#d6b257!important;
+    fill:none!important;
+    stroke:#d6b257!important;
+    filter:drop-shadow(0 0 1px rgba(214,178,87,.44)) drop-shadow(0 0 3px rgba(214,178,87,.16))!important;
+  }
+  html body[data-page] #home-ticker-wrap #home-charity-ticker#home-charity-ticker#home-charity-ticker .charity-marquee__separator > svg.charity-marquee__person circle,
+  html body[data-page] > footer#site-footer #home-charity-ticker#home-charity-ticker#home-charity-ticker .charity-marquee__separator > svg.charity-marquee__person circle{
+    fill:transparent!important;
+    stroke:#d6b257!important;
+  }
+}

@@ -1,7 +1,0 @@
-Round 1501 CSS/loading cleanup
-- Desktop Orbitron loading moved to eager/synchronous loading near the top of <head>.
-- Persistent desktop footer labels re-assert 16px on every shell route update.
-- Obsolete Industries size-only rounds 1498/1499 and redundant Round 1500 type lock removed.
-- Final contiguous CSS runs bundled per page without changing cascade position.
-- Non-license CSS comments removed.
-- Unreferenced CSS files removed: 24 (389214 bytes).

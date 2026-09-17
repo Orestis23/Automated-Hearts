@@ -48,7 +48,7 @@ const $ = (s, r=document) => r.querySelector(s);
     e.preventDefault(); unloadModel(); selected=el.dataset.industry; if(stage){stage.hidden=false; $('#stage-title').textContent=el.dataset.title;} $('#industry-helix')?.setAttribute('data-industry-index',selected); stage?.scrollIntoView({block:'start'});
   }));
   $('#industry-helix')?.addEventListener('click',(e)=>{ const i=e.currentTarget.dataset.industryIndex||'0'; loadUrl(`./models/who-we-help-industry-helix-round1093.html?industry=${encodeURIComponent(i)}&v=1353r`); });
-  $('#industry-readiness')?.addEventListener('click',()=>loadUrl('./models/who-we-help-readiness-signals-round1093.html?v=1353r'));
+  $('#industry-readiness')?.addEventListener('click',()=>loadUrl('./models/who-we-help-readiness-signals-round1513.html?v=1513r'));
   const solutionCover = $('#solution-mobile-cover');
   const solutionUrl = './solution-machine-pipeline-round1237.html?preview=1&v=1362r';
   function setSolutionCover(open){

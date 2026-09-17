@@ -1,0 +1,85 @@
+/* Automated Hearts Round 1565 — footer lettering finish.
+   No floor shadow under desktop footer keys. Carbon weave stays fixed between states;
+   only a restrained physical-looking pink illumination appears during an actual press. */
+@media (min-width:801px){
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]{
+    overflow:visible!important;
+    isolation:isolate!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+
+  /* Remove the previous floor/shading layer completely. */
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .ah1564-floor-shadow{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    background:none!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+
+  /* Keep the requested subtle black inner rim inside the mint edge. */
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .ah1564-inner-black-rim{
+    position:absolute!important;
+    z-index:10!important;
+    inset:4px!important;
+    display:block!important;
+    pointer-events:none!important;
+    border:1px solid rgba(0,0,0,.58)!important;
+    box-shadow:inset 0 0 3px rgba(0,0,0,.26)!important;
+    opacity:.82!important;
+  }
+
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .ah1559-dim-layer{z-index:12!important;}
+  html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy{z-index:30!important;}
+
+  /* Smooth carbon-fiber texture clipped inside each letter. The texture never changes on hover. */
+  html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy > .footer-nav-label,
+  html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:is(:hover,:focus-visible,:active,.is-pressed,.is-nav-pressed,[aria-pressed="true"]) > .send-control-copy.footer-control-copy > .footer-nav-label{
+    font-size:18.4px!important;
+    line-height:18.4px!important;
+    transform:none!important;
+    translate:none!important;
+    scale:1!important;
+    zoom:1!important;
+    transition:none!important;
+    color:transparent!important;
+    -webkit-text-fill-color:transparent!important;
+    background-image:
+      repeating-linear-gradient(135deg,rgba(255,255,255,.075) 0 1px,rgba(255,255,255,0) 1px 3px),
+      repeating-linear-gradient(45deg,rgba(0,0,0,.14) 0 1px,rgba(0,0,0,0) 1px 3px),
+      linear-gradient(180deg,#ff63bc 0%,#ff2ea8 50%,#d61e8a 100%)!important;
+    background-blend-mode:soft-light,multiply,normal!important;
+    background-size:6px 6px,6px 6px,100% 100%!important;
+    background-position:0 0,1px 1px,0 0!important;
+    -webkit-background-clip:text!important;
+    background-clip:text!important;
+    /* Constant, almost imperceptible optical bloom so the lettering reads like illuminated material. */
+    text-shadow:0 0 .7px rgba(255,220,241,.18)!important;
+  }
+
+  /* Hover does not re-texture or enlarge the lettering. */
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group:is(:hover,:focus-within) > a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy > .footer-nav-label{
+    text-shadow:0 0 .7px rgba(255,220,241,.18)!important;
+  }
+
+  /* Actual press: restrained real-light bloom, no cartoon halo. */
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav].ah1559-pressed > .send-control-copy.footer-control-copy > .footer-nav-label,
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]) > .send-control-copy.footer-control-copy > .footer-nav-label{
+    text-shadow:
+      0 0 .8px rgba(255,238,249,.34),
+      0 0 2.4px rgba(255,46,168,.18),
+      0 0 4.2px rgba(255,46,168,.075)!important;
+  }
+
+  /* No external shading under the Messages key. Keep only its internal press depth. */
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
+    box-shadow:none!important;
+    filter:none!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+    box-shadow:inset 0 3px 6px rgba(0,0,0,.24)!important;
+    filter:none!important;
+  }
+}
