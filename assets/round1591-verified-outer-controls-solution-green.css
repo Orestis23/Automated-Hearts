@@ -1,0 +1,39 @@
+/* Automated Hearts Round 1591 — verified outer-control texture + Solution neon-green authority. */
+@media (min-width:801px){
+  html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]{
+    background-color:#050607!important;
+    background-image:
+      url('./footer-button-carbon-inner-rim-round1586.svg?v=1591r'),
+      linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.045) 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,.16) 100%),
+      radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%),
+      repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(145,145,145,.05) 0 3px,rgba(0,0,0,.07) 3px 6px),
+      linear-gradient(#111315 0%,#08090a 48%,#030405 100%)!important;
+    background-size:100% 100%,100% 100%,100% 100%,auto,auto,auto!important;
+    background-position:center,center,center,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
+    background-color:#050607!important;
+    background-image:
+      url('./message-button-carbon-red-round1586.svg?v=1591r'),
+      linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.045) 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,.16) 100%),
+      radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%),
+      repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(145,145,145,.05) 0 3px,rgba(0,0,0,.07) 3px 6px),
+      linear-gradient(#111315 0%,#08090a 48%,#030405 100%)!important;
+    background-size:100% 100%,100% 100%,100% 100%,auto,auto,auto!important;
+    background-position:center,center,center,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+  }
+}
+html body.page-solutions[data-page="solutions"] .ah1483-section-break,
+html body[data-ah-mobile-surface="solutions"] .ah1483-section-break{
+  background:linear-gradient(90deg,#56ffc0 0%,#72ffca 12%,#8fffd7 42%,#9fffe0 50%,#8fffd7 58%,#72ffca 88%,#56ffc0 100%)!important;
+  box-shadow:0 0 2px rgba(143,255,215,.92),0 0 6px rgba(143,255,215,.74),0 0 12px rgba(114,255,202,.58),0 0 22px rgba(86,255,192,.43),0 0 38px rgba(86,255,192,.28),0 0 58px rgba(86,255,192,.16)!important;
+}
+html body.page-solutions[data-page="solutions"] .ah1483-section-break::after,
+html body[data-ah-mobile-surface="solutions"] .ah1483-section-break::after{
+  background:#8fffd7!important;
+  box-shadow:0 0 5px rgba(143,255,215,.72),0 0 11px rgba(86,255,192,.46)!important;
+}

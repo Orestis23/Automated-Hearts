@@ -1,0 +1,131 @@
+/* Automated Hearts Round 1593 — true borderless page-name field.
+   The matte center reaches the full footprint; the only visible boundary is
+   a thin white horizontal line at the top and bottom. */
+@media (min-width:801px){
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top{
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+    width:716px!important;
+    min-width:716px!important;
+    max-width:716px!important;
+    height:58px!important;
+    min-height:58px!important;
+    max-height:58px!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-width:0!important;
+    border-style:none!important;
+    border-color:transparent!important;
+    outline:0!important;
+    outline-offset:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+    background-color:#07111b!important;
+    background-image:
+      linear-gradient(rgba(238,255,251,.86),rgba(238,255,251,.86)),
+      linear-gradient(rgba(238,255,251,.86),rgba(238,255,251,.86)),
+      radial-gradient(circle at 1px 1px,rgba(255,255,255,.024) 0 .42px,transparent .7px),
+      repeating-linear-gradient(0deg,rgba(255,255,255,.011) 0 1px,rgba(0,0,0,.011) 1px 3px),
+      linear-gradient(180deg,#10283d 0%,#071827 48%,#030a12 100%)!important;
+    background-size:100% 1px,100% 1px,5px 5px,auto,auto!important;
+    background-position:left top,left bottom,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+  }
+
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top::before,
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top::after{
+    content:none!important;
+    display:none!important;
+    inset:auto!important;
+    width:0!important;
+    height:0!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    background:none!important;
+    box-shadow:none!important;
+    filter:none!important;
+    opacity:0!important;
+  }
+
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top
+  > .r488-extra-matte-film{
+    position:absolute!important;
+    z-index:1!important;
+    inset:1px 0!important;
+    width:auto!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    background:linear-gradient(160deg,rgba(255,255,255,.042) 0%,rgba(255,255,255,.014) 18%,transparent 42% 72%,rgba(0,0,0,.075) 100%)!important;
+    box-shadow:none!important;
+    filter:none!important;
+    opacity:.72!important;
+    pointer-events:none!important;
+  }
+
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top
+  > :is(.footer-page-led,.header-page-led,.page-sign-progress-inverse){
+    position:relative!important;
+    z-index:3!important;
+    top:0!important;
+    right:0!important;
+    bottom:0!important;
+    left:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0 10px!important;
+    border:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    font-size:18pt!important;
+    font-weight:700!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+  }
+
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top
+  > .page-sign-progress-inverse{
+    position:absolute!important;
+    z-index:2!important;
+    inset:1px 0!important;
+    display:block!important;
+    width:auto!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    background:
+      linear-gradient(90deg,rgba(143,255,215,.24) 0%,rgba(50,127,171,.20) 44%,rgba(255,46,168,.22) 100%),
+      linear-gradient(180deg,#0b2434 0%,#071b29 48%,#04111b 100%)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.035),inset 0 -1px 0 rgba(0,0,0,.36)!important;
+    filter:none!important;
+    opacity:1!important;
+    overflow:hidden!important;
+    pointer-events:none!important;
+    -webkit-clip-path:inset(0 calc(100% - var(--page-sign-scroll-percent,0%)) 0 0)!important;
+    clip-path:inset(0 calc(100% - var(--page-sign-scroll-percent,0%)) 0 0)!important;
+    transition:-webkit-clip-path 70ms linear,clip-path 70ms linear!important;
+  }
+}

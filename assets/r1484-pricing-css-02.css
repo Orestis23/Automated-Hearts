@@ -327,8 +327,8 @@ html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content
 :root{
   --r1095-footer-rest:url("./footer-button-message-border-match-round1095.svg?v=1095r");
   --r1095-footer-pressed:url("./footer-button-message-border-match-pressed-round1095.svg?v=1095r");
-  --r1095-message-rest:url("./message-button-square-footer-match-round1095.svg?v=1095r");
-  --r1095-message-pressed:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r");
+  --r1095-message-rest:url("./message-button-square-footer-match-round1095.svg?v=1585r");
+  --r1095-message-pressed:url("./message-button-square-footer-match-pressed-round1095.svg?v=1585r");
   --r1034-footer-rest:var(--r1095-footer-rest);
   --r1034-footer-pressed:var(--r1095-footer-pressed);
   --r1034-message-rest:var(--r1095-message-rest);

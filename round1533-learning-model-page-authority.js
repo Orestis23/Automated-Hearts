@@ -24,7 +24,7 @@
   const RETURN_EASE='cubic-bezier(.22,.66,.24,1)';
   let state={page:'',stage:null,viewport:null,slides:[],group:'ai101',index:0,industry:0,activeFrame:null};
   let learningFlowSpacer=null;
-  const imp=(el,p,v)=>el&&el.style.setProperty(p,v,'important');
+  const imp=(el,p,v)=>{if(el&&el.style.getPropertyValue(p)!==v)el.style.setProperty(p,v,'important');};
   const ensureLearningFlowSpacer=()=>{
     if(state.page!=='learning'||!state.stage||!matchMedia('(min-width:801px)').matches)return null;
     const choices=document.getElementById('learning-route-buttons');
@@ -265,14 +265,14 @@
       }
     });
     if(scroll){
-      setTimeout(()=>{if(document.body.dataset.ahModelHalf==='bottom')hydrateHiddenFrames();},DURATION+OPEN_SHIELD_MS+360);
+      setTimeout(()=>{if(document.body.dataset.ahModelHalf==='bottom'&&document.body.dataset.ahStageTransition!=='1')hydrateHiddenFrames();},DURATION+OPEN_SHIELD_MS+360);
     }else hydrateHiddenFrames();
     if(frame){
       frame.loading='eager';frame.tabIndex=0;paintFrame(frame);
       for(const [p,v] of [['display','block'],['visibility','visible'],['opacity',frame.dataset.ah1533Loaded==='1'?'1':'0'],['pointer-events','auto'],['transform','none']])imp(frame,p,v);
       const src=sourceFor(frame),old=frame.getAttribute('src')||'';
       const sendIndustry=()=>{if(state.page==='who-we-help'&&selected.dataset.sharedSlide==='helix'&&frame?.contentWindow){try{frame.contentWindow.postMessage({type:'automated-hearts:who-help-industry',industryIndex:state.industry},'*')}catch(_){}}};
-      const ping=()=>{const live=document.body.dataset.ahModelHalf==='bottom';wake(frame,live);if(live)sendIndustry();};
+      const ping=()=>{const live=document.body.dataset.ahModelHalf==='bottom'&&document.body.dataset.ahStageTransition!=='1';wake(frame,live);if(live)sendIndustry();};
       frame.addEventListener('load',()=>{frame.dataset.ah1533Loaded='1';if(frame===state.activeFrame){requestAnimationFrame(()=>requestAnimationFrame(()=>imp(frame,'opacity','1')));}paintStaticBackdrop();[0,80,220,500,1000,1800].forEach(ms=>setTimeout(ping,ms));},{once:true});
       if(src&&(force||old!==src)){if(scroll)frame.dataset.ahPendingSrc=src;else frame.setAttribute('src',src);}else [0,80,220,500,1000].forEach(ms=>setTimeout(ping,ms));
     }
@@ -376,7 +376,9 @@
       document.body.dataset.ahModelHalf='bottom';
       wake(state.activeFrame,true);
       await afterTwoFrames();
+      wake(state.activeFrame,false);
       await lowerOpenShield();
+      wake(state.activeFrame,true);
     }finally{
       delete document.body.dataset.ahStageTransition;
       restoreRootAnchor();

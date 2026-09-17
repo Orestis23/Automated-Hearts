@@ -1,0 +1,141 @@
+/* Automated Hearts Round 1595 — Explore authority.
+   Desktop Explore uses the exact current desktop footer-key face and is height-synced to the process screens.
+   Mobile Explore uses the exact current mobile footer-key shell + accent artwork. */
+
+/* Keep legacy Explore glass/siding below the new authoritative face. */
+html body.page-home[data-page="home"] #negative-software-explore,
+html body[data-ah-mobile-surface="home"] .explore-key{
+  position:relative!important;
+  isolation:isolate!important;
+  border-radius:0!important;
+  overflow:hidden!important;
+}
+html body.page-home[data-page="home"] #negative-software-explore > .ah1595-explore-footer-skin,
+html body[data-ah-mobile-surface="home"] .explore-key > .ah1595-explore-footer-skin{
+  position:absolute!important;
+  z-index:500!important;
+  inset:0!important;
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  pointer-events:none!important;
+  border:0!important;
+  border-radius:0!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+html body.page-home[data-page="home"] #negative-software-explore > :not(.ah1595-explore-footer-skin),
+html body[data-ah-mobile-surface="home"] .explore-key > :not(.ah1595-explore-footer-skin){
+  position:relative!important;
+  z-index:600!important;
+}
+
+@media (min-width:801px){
+  /* The key article and anchor occupy the exact measured process-screen height. */
+  html body.page-home[data-page="home"] #home-solution-framework
+  .negative-software-grid-round344 > article.home-process-stage--key.negative-software-explore-round344{
+    align-self:start!important;
+    box-sizing:border-box!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore{
+    display:grid!important;
+    grid-template-rows:66px minmax(0,1fr) auto!important;
+    align-items:stretch!important;
+    justify-items:stretch!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    margin:0!important;
+    box-sizing:border-box!important;
+    border:0!important;
+    outline:0!important;
+    background:#050607!important;
+    box-shadow:0 6px 12px -4px rgba(255,46,168,.09),0 3px 7px -4px rgba(143,255,215,.06)!important;
+    filter:none!important;
+    transform:none!important;
+  }
+
+  /* This is the exact footer button visual stack from Round 1590/1586.
+     It is placed as a top visual skin so older Explore pseudo-elements cannot cover it. */
+  html body.page-home[data-page="home"] #negative-software-explore > .ah1595-explore-footer-skin{
+    background-color:#050607!important;
+    background-image:
+      url('./footer-button-carbon-inner-rim-round1586.svg?v=1590r'),
+      linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.045) 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,.16) 100%),
+      radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%),
+      repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(145,145,145,.05) 0 3px,rgba(0,0,0,.07) 3px 6px),
+      linear-gradient(#111315 0%,#08090a 48%,#030405 100%)!important;
+    background-size:100% 100%,100% 100%,100% 100%,auto,auto,auto!important;
+    background-position:center,center,center,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+    background-blend-mode:normal!important;
+  }
+  html body.page-home[data-page="home"] #negative-software-explore:is(:active,.is-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]) > .ah1595-explore-footer-skin{
+    background-image:
+      url('./footer-button-carbon-inner-rim-pressed-round1586.svg?v=1590r'),
+      linear-gradient(160deg,rgba(255,255,255,.075) 0%,rgba(255,255,255,.028) 9%,rgba(210,220,225,.020) 18%,transparent 38% 69%,rgba(255,255,255,.012) 84%,rgba(0,0,0,.24) 100%),
+      radial-gradient(at 30% -20%,rgba(220,230,235,.055),transparent 65%),
+      repeating-linear-gradient(135deg,rgba(136,146,151,.060) 0 3px,rgba(2,4,5,.12) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(104,113,119,.038) 0 3px,rgba(1,2,3,.10) 3px 6px),
+      linear-gradient(#0d0f10 0%,#060708 48%,#020303 100%)!important;
+  }
+
+  /* Retire every visible legacy Explore surface. */
+  html body.page-home[data-page="home"] #negative-software-explore > :is(
+    .ah1494-process-glass-base--explore,.ah1494-process-glass-sheen--explore,.ah-bottom-siding,
+    .negative-software-explore-light-round344,.r488-extra-matte-film
+  ){
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+  }
+
+  html body.page-home[data-page="home"] #negative-software-explore > .explore-title-1175,
+  html body.page-home[data-page="home"] #negative-software-explore > .r930-explore-quote,
+  html body.page-home[data-page="home"] #negative-software-explore > .r930-explore-attribution{
+    z-index:620!important;
+  }
+}
+
+@media (max-width:900px){
+  /* Mobile Explore: same navy pyramidal shell, light-black carbon face, steel inner rim,
+     and mint corner/perimeter accent artwork used by the current mobile footer keys. */
+  html body[data-ah-mobile-surface="home"] .explore-key{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:100%!important;
+    margin-top:14px!important;
+    padding:15px 10px!important;
+    border:0!important;
+    outline:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    filter:none!important;
+    transform:translate3d(0,0,0) scale(1)!important;
+    transform-origin:50% 50%!important;
+    transition:transform 110ms ease,filter 110ms ease!important;
+  }
+  html body[data-ah-mobile-surface="home"] .explore-key > .ah1595-explore-footer-skin{
+    background-color:transparent!important;
+    background-image:url('./mobile-footer-accent-mint-round1520.svg?v=1573r'),url('./mobile-footer-key-navy-clean-round1454.svg?v=1573r')!important;
+    background-position:center,center!important;
+    background-size:100% 100%,100% 100%!important;
+    background-repeat:no-repeat,no-repeat!important;
+    background-blend-mode:normal,normal!important;
+  }
+  html body[data-ah-mobile-surface="home"] .explore-key:is(:active,.is-pressed,[data-ah-key-down="1"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+    transform:translate3d(0,3px,0) scale(.97)!important;
+  }
+  html body[data-ah-mobile-surface="home"] .explore-key > strong,
+  html body[data-ah-mobile-surface="home"] .explore-key > small{
+    z-index:620!important;
+  }
+}

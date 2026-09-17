@@ -321,3 +321,80 @@
     display:none!important;visibility:hidden!important;opacity:0!important;width:0!important;height:0!important;
   }
 }
+
+/* Round 1603: white placeholders + green typed text, and simplified leather contact interior */
+@media (min-width:801px){
+  html body[data-page] .nav-contact-panel.casio-contact-panel#nav-contact-panel{
+    background-color:#071628!important;
+    background-image:
+      linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,0) 18%,rgba(0,0,0,.12) 100%),
+      url('./home-carousel-royal-blue-smoked-material.webp')!important;
+    background-position:center,center!important;
+    background-size:100% 100%,cover!important;
+    background-repeat:no-repeat,no-repeat!important;
+  }
+  html body[data-page] .nav-contact-panel.casio-contact-panel#nav-contact-panel form.nav-contact-form.nav-contact-form--full{
+    border:0!important;
+    outline:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    padding:18px 18px 10px!important;
+  }
+  html body[data-page] .nav-contact-panel.casio-contact-panel#nav-contact-panel form.nav-contact-form label.nav-contact-field{
+    border:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    padding:0!important;
+  }
+  html body[data-page] .nav-contact-panel.casio-contact-panel#nav-contact-panel :is(input.ah-red-screen,textarea.ah-red-screen){
+    color:#8fffd7!important;
+    -webkit-text-fill-color:#8fffd7!important;
+    caret-color:#8fffd7!important;
+  }
+  html body[data-page] .nav-contact-panel.casio-contact-panel#nav-contact-panel :is(input.ah-red-screen,textarea.ah-red-screen)::placeholder{
+    color:#ffffff!important;
+    -webkit-text-fill-color:#ffffff!important;
+    opacity:1!important;
+  }
+  html body[data-page] .nav-contact-panel.casio-contact-panel#nav-contact-panel select.ah-red-screen option[value=""]{
+    color:#ffffff!important;
+  }
+}
+
+@media (max-width:800px){
+  html body > .ah-mobile-contact .ah-mobile-contact__panel{
+    background-color:#071628!important;
+    background-image:
+      linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,0) 18%,rgba(0,0,0,.12) 100%),
+      url('./home-carousel-royal-blue-smoked-material.webp')!important;
+    background-position:center,center!important;
+    background-size:100% 100%,cover!important;
+    background-repeat:no-repeat,no-repeat!important;
+  }
+  html body > .ah-mobile-contact form{
+    border:0!important;
+    outline:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    padding:10px 10px 4px!important;
+  }
+  html body > .ah-mobile-contact label{
+    border:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    padding:0!important;
+  }
+  html body > .ah-mobile-contact :is(input.ah-red-screen,textarea.ah-red-screen){
+    color:#8fffd7!important;
+    -webkit-text-fill-color:#8fffd7!important;
+    caret-color:#8fffd7!important;
+  }
+  html body > .ah-mobile-contact :is(input.ah-red-screen,textarea.ah-red-screen)::placeholder{
+    color:#ffffff!important;
+    -webkit-text-fill-color:#ffffff!important;
+    opacity:1!important;
+  }
+  html body > .ah-mobile-contact select.ah-red-screen option[value=""]{
+    color:#ffffff!important;
+  }
+}

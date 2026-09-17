@@ -1,0 +1,39 @@
+/* Pricing: direct entry to service cards, without the surrounding machine rims. */
+html body.page-pricing.page-pricing[data-page="pricing"] main#main-content#main-content#main-content.rates-services-main > section.ah-pricing-page{
+ padding-top:24px!important;padding-bottom:24px!important;
+}
+html body.page-pricing[data-page="pricing"] main#main-content#main-content#main-content .ah-pricing-tower,
+html body[data-ah-mobile-surface="pricing"] main#main-content#main-content#main-content > section.ah-pricing-mobile-section{
+ border:0!important;border-image:none!important;outline:0!important;border-radius:0!important;
+ box-shadow:none!important;background:transparent!important;padding:0!important;
+}
+html body.page-pricing[data-page="pricing"] main#main-content#main-content#main-content .ah-pricing-tower::before,
+html body.page-pricing[data-page="pricing"] main#main-content#main-content#main-content .ah-pricing-tower::after,
+html body[data-ah-mobile-surface="pricing"] main#main-content#main-content#main-content > section.ah-pricing-mobile-section::before,
+html body[data-ah-mobile-surface="pricing"] main#main-content#main-content#main-content > section.ah-pricing-mobile-section::after{content:none!important;display:none!important;}
+html body.page-pricing[data-page="pricing"] main#main-content#main-content .ah-pricing-card-title,
+html body[data-ah-mobile-surface="pricing"] main#main-content#main-content .ah-pricing-card-title{
+ color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;
+ text-shadow:0 0 3px rgba(255,46,168,.2)!important;
+}
+@media(max-width:900px){
+ html body[data-ah-mobile-surface="pricing"] main#main-content#main-content#main-content{
+  padding-top:24px!important;
+ }
+ html body[data-ah-mobile-surface="pricing"] main#main-content#main-content#main-content > section.ah-pricing-mobile-section{
+  width:calc(100% - 20px)!important;margin:0 auto 24px!important;
+ }
+ html body[data-ah-mobile-surface="pricing"] main#main-content#main-content .ah-pricing-card{
+  grid-template-columns:minmax(0,1.7fr) minmax(108px,1fr)!important;
+ }
+ html body[data-ah-mobile-surface="pricing"] main#main-content#main-content .ah-pricing-card-price{
+  font-size:clamp(19px,5.5vw,26px)!important;line-height:1.15!important;
+  padding:10px 5px!important;letter-spacing:0!important;
+ }
+ html body[data-ah-mobile-surface="pricing"] main#main-content#main-content .ah-pricing-card--retainer .ah-pricing-card-price{
+  flex-direction:column!important;gap:4px!important;
+ }
+ html body[data-ah-mobile-surface="pricing"] main#main-content#main-content .ah-pricing-card-price small{
+  font-size:12px!important;line-height:1.2!important;
+ }
+}

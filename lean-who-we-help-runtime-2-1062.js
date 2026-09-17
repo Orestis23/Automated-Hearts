@@ -530,7 +530,7 @@
     'who-we-help':'Industries',
     learning:'Learning Center',
     about:'About Us',
-    pricing:'Rates & Services'
+    pricing:'Services'
   };
   let applying=false;
 
@@ -748,7 +748,7 @@
     ['who-we-help.html', {page:'who-we-help', label:'Industries', navLabel:'Industries', href:'./who-we-help.html'}],
     ['learning-center.html', {page:'learning', label:'Learning Center', navLabel:'Learning Center', href:'./learning-center.html'}],
     ['about.html', {page:'about', label:'About Us & Policies', navLabel:'About Us', href:'./about.html'}],
-    ['pricing.html', {page:'pricing', label:'Rates & Services', navLabel:'Rates & Services', href:'./pricing.html'}]
+    ['pricing.html', {page:'pricing', label:'Services', navLabel:'Services', href:'./pricing.html'}]
   ]);
 
   const cleanBaseName = (pathname) => {
@@ -1043,7 +1043,7 @@
     'who-we-help':'Industries',
     learning:'Learning Center',
     about:'About Us',
-    pricing:'Rates & Services'
+    pricing:'Services'
   };
   var busy=false;
   function apply(){

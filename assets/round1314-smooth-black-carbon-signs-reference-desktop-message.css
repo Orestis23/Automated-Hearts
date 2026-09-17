@@ -40,7 +40,7 @@ html body.page-pricing main#main-content h1[data-text="Total Transparency"]{
   }
 
   html.ah-message-persist-open{
-    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1585r")!important;
     --r1005-message-transform:translate3d(0,3px,0)!important;
   }
 
@@ -157,7 +157,7 @@ html body.page-pricing main#main-content h1[data-text="Total Transparency"]{
     :active,.is-pressed,.is-contact-latched,[aria-expanded="true"],
     [data-ah-control-pressed="1"],[data-ah-control-pressed="true"]
   ){
-    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1585r")!important;
     --r1005-message-transform:translate3d(0,3px,0)!important;
     box-shadow:inset 0 -1px 0 rgba(255,46,168,.10)!important;
   }

@@ -4,7 +4,7 @@
   const root=document.documentElement;
   const triggers=new Set();
   const observers=new WeakMap();
-  const imp=(el,p,v)=>el&&el.style.setProperty(p,v,'important');
+  const imp=(el,p,v)=>{if(el&&el.style.getPropertyValue(p)!==v)el.style.setProperty(p,v,'important');};
   const openState=(el)=>{
     if(!el)return false;
     const expanded=el.getAttribute('aria-expanded');
@@ -18,7 +18,9 @@
   function sync(el){
     if(!el)return;
     const on=openState(el);
-    el.dataset.ahEnvelopeGlow=on?'1':'0';
+    const glow=on?'1':'0';
+    if(el.dataset.ahEnvelopeGlow===glow)return;
+    el.dataset.ahEnvelopeGlow=glow;
     const env=el.querySelector('.r1005-message-envelope');
     const svg=el.querySelector('svg');
     const target=env||svg;

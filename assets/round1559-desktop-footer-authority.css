@@ -1,4 +1,4 @@
-/* Automated Hearts Round 1559 — desktop footer conflict cleanup + final geometry. */
+/* Automated Hearts Round 1590 — Learning-Center spacebar-pattern desktop outer controls. */
 @media (min-width:801px){
   html body > footer#site-footer.site-footer.site-footer--minimal{overflow:visible!important;}
   html body > footer#site-footer.site-footer.site-footer--minimal > .minimal-footer-row.shell{
@@ -16,18 +16,22 @@
   html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]{
     position:relative!important;inset:auto!important;align-self:center!important;height:70px!important;min-height:70px!important;max-height:70px!important;
     margin:0!important;padding:0!important;opacity:1!important;filter:none!important;transform:translate3d(0,0,0)!important;transform-origin:50% 50%!important;
-    background-color:#0b1728!important;background-image:url('./footer-button-navy-integrated-pink-corners-round1559.svg?v=1559r')!important;
-    background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;border:0!important;outline:0!important;
+    background-color:#050607!important;
+    background-image:url('./footer-button-carbon-inner-rim-round1586.svg?v=1590r'),linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.045) 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,.16) 100%),radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%),repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px),repeating-linear-gradient(45deg,rgba(145,145,145,.05) 0 3px,rgba(0,0,0,.07) 3px 6px),linear-gradient(#111315 0%,#08090a 48%,#030405 100%)!important;
+    background-size:100% 100%,100% 100%,100% 100%,auto,auto,auto!important;
+    background-position:center,center,center,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+    background-blend-mode:normal!important;border:0!important;outline:0!important;
     overflow:visible!important;isolation:isolate!important;transition:transform 110ms cubic-bezier(.2,.78,.24,1),box-shadow 180ms ease!important;
   }
-  /* Kill legacy pseudo surfaces so the final navy/pink-corner artwork is the visible face. */
+  /* Kill legacy pseudo surfaces; carbon and complete accents are carried by the final layered face. */
   html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]::before,
   html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]::after{
     content:none!important;display:none!important;background:none!important;background-image:none!important;box-shadow:none!important;
   }
   /* Dim the hardware with a neutral black veil instead of filtering the whole button/type. */
   html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .ah1559-dim-layer{
-    position:absolute!important;z-index:12!important;inset:0!important;display:block!important;pointer-events:none!important;background:rgba(0,0,0,.50)!important;
+    position:absolute!important;z-index:12!important;inset:0!important;display:block!important;pointer-events:none!important;background:rgba(0,0,0,.30)!important;
     opacity:1!important;transition:opacity 190ms ease!important;
   }
   html body > footer#site-footer nav#primary-nav > .primary-nav__group:is(:hover,:focus-within) > a.footer-structure-control.mechanical-send-control[data-nav] > .ah1559-dim-layer{
@@ -40,13 +44,13 @@
   html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy > .footer-nav-label,
   html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:is(:hover,:focus-visible,:active,.is-pressed,.is-nav-pressed,[aria-pressed='true']) > .send-control-copy.footer-control-copy > .footer-nav-label{
     display:block!important;width:auto!important;min-width:0!important;max-width:100%!important;margin:0!important;padding:0!important;
-    font-family:'Orbitron',system-ui,sans-serif!important;font-size:18.4px!important;font-weight:700!important;font-stretch:normal!important;font-style:normal!important;
-    line-height:18.4px!important;letter-spacing:0!important;white-space:nowrap!important;text-align:center!important;color:#8f1a61!important;-webkit-text-fill-color:#8f1a61!important;
+    font-family:'Orbitron',system-ui,sans-serif!important;font-size:18.4px!important;font-weight:400!important;font-stretch:normal!important;font-style:normal!important;
+    line-height:18.4px!important;letter-spacing:0!important;white-space:nowrap!important;text-align:center!important;color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;
     transform:none!important;translate:none!important;scale:1!important;zoom:1!important;filter:none!important;animation:none!important;transition:none!important;
-    text-shadow:0 0 1px rgba(255,114,199,.18)!important;
+    text-shadow:none!important;filter:drop-shadow(0 0 5px rgba(143,255,215,.28))!important;
   }
   html body > footer#site-footer nav#primary-nav > .primary-nav__group:is(:hover,:focus-within) > a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy > .footer-nav-label{
-    color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;text-shadow:0 0 1px rgba(255,114,199,.18)!important;
+    color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;text-shadow:none!important;filter:drop-shadow(0 0 5px rgba(143,255,215,.28))!important;
   }
   html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]){
     transform:translate3d(0,3px,0) scale(.97)!important;
@@ -55,7 +59,7 @@
     box-shadow:inset 0 3px 6px rgba(0,0,0,.24),0 8px 16px -10px rgba(143,255,215,.22),0 10px 20px -14px rgba(255,46,168,.18),0 0 7px rgba(255,46,168,.06)!important;
   }
   html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav].ah1559-pressed > .send-control-copy.footer-control-copy > .footer-nav-label{
-    text-shadow:0 0 1px rgba(255,235,248,.58),0 0 3px rgba(255,46,168,.42),0 0 6px rgba(255,46,168,.24),0 0 10px rgba(255,46,168,.12)!important;
+    text-shadow:none!important;filter:brightness(1.22) saturate(1.10) drop-shadow(0 0 1px rgba(226,255,246,.70)) drop-shadow(0 0 4px rgba(143,255,215,.70)) drop-shadow(0 0 8px rgba(143,255,215,.36))!important;
   }
   html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav] > :is(.ah1557-corner-layer,.ah1556-desktop-pink-accents,.ah-footer-pink-corners,.ah1451-message-match-accents,.ah1452-message-corner-overlay,.ah1453-message-corner-overlay,.ah1454-mobile-corner-overlay){display:none!important;visibility:hidden!important;opacity:0!important;}
 }

@@ -20,17 +20,27 @@
   overlay.innerHTML = `
     <div class="ah-mobile-contact__panel" role="dialog" aria-modal="true" aria-label="Contact form">
       <form method="post" data-google-sheet-form>
-        <label><span class="sr-only">Name</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="name" name="name" placeholder="Name (required)" required type="text"></label>
-        <label><span class="sr-only">Email</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="email" name="email" placeholder="Email (required)" required type="email"></label>
-<label class="nav-contact-field nav-contact-field--full ah-phone-field"><span class="sr-only">Phone number (required)</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="tel" inputmode="tel" name="phone" placeholder="Phone number (required)" required type="tel"></label>
-        <label><span class="sr-only">Business or organization</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="organization" name="business" placeholder="Business or organization" type="text"></label>
-        <label><span class="sr-only">Business type</span><select class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" aria-label="Business type" name="business_type"><option value="">Business type</option><option>Professional services</option><option>Construction or trades</option><option>Local business operations</option><option>Entrepreneur or small team</option><option>Nonprofit or community organization</option><option>Other</option></select></label>
-        <label><span class="sr-only">What feels harder than it should?</span><textarea class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" name="message" placeholder="What feels harder than it should?" required rows="4"></textarea></label>
+        <label><span class="sr-only">Name</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="name" name="name" placeholder="Name (required)" required type="text"></label>
+        <label><span class="sr-only">Email</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="email" name="email" placeholder="Email (required)" required type="email"></label>
+<label class="nav-contact-field nav-contact-field--full ah-phone-field"><span class="sr-only">Phone number (required)</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="tel" inputmode="tel" name="phone" placeholder="Phone number (required)" required type="tel"></label>
+        <label><span class="sr-only">Business or organization</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="organization" name="business" placeholder="Business or organization" type="text"></label>
+        <label><span class="sr-only">Business type</span><select class="ah-red-screen" data-ah-placeholder-select="1" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;font-family:"Orbitron",system-ui,sans-serif!important;" aria-label="Business type" name="business_type"><option value="">Business type</option><option>Professional services</option><option>Construction or trades</option><option>Local business operations</option><option>Entrepreneur or small team</option><option>Nonprofit or community organization</option><option>Other</option></select></label>
+        <label><span class="sr-only">What feels harder than it should?</span><textarea class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;font-family:"Orbitron",system-ui,sans-serif!important;" name="message" placeholder="What feels harder than it should?" required rows="4"></textarea></label>
         <button class="ah-mobile-contact__submit ah-unified-spacebar" type="submit"><span class="ah-route-label-final">Send Message</span></button>
         <p class="ah-mobile-contact__status" data-form-status aria-live="polite"></p>
       </form>
     </div>`;
   document.body.appendChild(overlay);
+
+  overlay.querySelectorAll("select[data-ah-placeholder-select]").forEach((select) => {
+    const syncSelectColor = () => {
+      const color = select.value ? "#8fffd7" : "#ffffff";
+      select.style.setProperty("color", color, "important");
+      select.style.setProperty("-webkit-text-fill-color", color, "important");
+    };
+    select.addEventListener("change", syncSelectColor);
+    syncSelectColor();
+  });
 
   const panel = overlay.querySelector('.ah-mobile-contact__panel');
   let lastTrigger = null;

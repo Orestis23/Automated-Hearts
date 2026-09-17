@@ -19,6 +19,9 @@
     imp(footer,'margin','0'); imp(footer,'padding-left','0'); imp(footer,'padding-right','0');
     imp(footer,'display','grid'); imp(footer,'grid-template-columns',`repeat(${Math.max(1,buttons.length)},minmax(0,1fr))`); imp(footer,'gap','0');
     buttons.forEach((a,i)=>{
+      const label=a.querySelector('.footer-nav-label');
+      imp(label,'font-size','clamp(10.8px,3.1vw,15px)');
+      imp(label,'line-height','1.08');
       imp(a,'display','flex'); imp(a,'width','auto'); imp(a,'min-width','0'); imp(a,'max-width','none');
       imp(a,'margin','0'); imp(a,'align-self','stretch'); imp(a,'justify-self','stretch'); imp(a,'box-sizing','border-box');
       const accent=(i%2===0)?'mobile-footer-accent-mint-round1520.svg':'mobile-footer-accent-pink-round1520.svg';
@@ -33,7 +36,7 @@
     if(!mq.matches)return;
     const msg=document.querySelector('body > a.message[data-contact-trigger]');
     if(!msg)return;
-    imp(msg,'top','calc(env(safe-area-inset-top,0px) + 2px)'); imp(msg,'right','6px'); imp(msg,'left','auto');
+    imp(msg,'top','calc(env(safe-area-inset-top,0px) + 6px)'); imp(msg,'right','6px'); imp(msg,'left','auto');
     imp(msg,'width','56px'); imp(msg,'min-width','56px'); imp(msg,'max-width','56px'); imp(msg,'height','56px'); imp(msg,'min-height','56px'); imp(msg,'max-height','56px');
     imp(msg,'margin','0'); imp(msg,'padding','0'); imp(msg,'border','0'); imp(msg,'border-image','none'); imp(msg,'border-radius','0'); imp(msg,'box-shadow','none');
     imp(msg,'background-image','url("./assets/mobile-message-accent-red-round1571.svg?v=1573r"), url("./assets/mobile-message-key-clean-round1568.svg?v=1573r")');
@@ -43,7 +46,7 @@
     });
     const svg=msg.querySelector(':scope > svg');
     if(svg){
-      imp(svg,'position','absolute'); imp(svg,'z-index','5'); imp(svg,'left','50%'); imp(svg,'top','48%'); imp(svg,'width','42%'); imp(svg,'height','auto'); imp(svg,'margin','0'); imp(svg,'padding','0');
+      imp(svg,'position','absolute'); imp(svg,'z-index','5'); imp(svg,'left','50%'); imp(svg,'top','44.444444%'); imp(svg,'width','42%'); imp(svg,'height','28.875%'); imp(svg,'bottom','auto'); imp(svg,'right','auto'); imp(svg,'translate','none'); imp(svg,'margin','0'); imp(svg,'padding','0');
       imp(svg,'transform','translate(-50%,-50%)'); imp(svg,'transform-origin','center center'); imp(svg,'color','#ff3030'); imp(svg,'stroke','#ff3030');
       svg.querySelectorAll('path,polyline,line').forEach(n=>imp(n,'stroke','#ff3030'));
     }

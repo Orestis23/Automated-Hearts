@@ -1,0 +1,212 @@
+/* Automated Hearts Round 1602
+   Baseline: Round 1600.
+   1) Negative-Software Solution title uses the exact black Home title-field surface language.
+   2) Ticker spacing around human separators is doubled again and compositor hints are tightened.
+*/
+
+/* -------------------------------------------------------------------------
+   Negative-Software Solution title — match the black "Automated Hearts" field
+   ------------------------------------------------------------------------- */
+html body.page-home[data-page="home"] #home-negative-software-title,
+html body[data-ah-mobile-surface="home"] .ah-negative-software-title,
+html body.page-home[data-page="home"] .ah-negative-software-title{
+  position:relative!important;
+  isolation:isolate!important;
+  box-sizing:border-box!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+  border:2px solid rgb(143,255,215)!important;
+  border-image:none!important;
+  border-radius:0!important;
+  outline:0!important;
+  background-color:rgb(13,18,23)!important;
+  background-image:
+    repeating-linear-gradient(135deg,rgba(168,184,194,.05) 0,rgba(168,184,194,.05) 3px,rgba(4,8,12,.035) 3px,rgba(4,8,12,.035) 6px),
+    repeating-linear-gradient(45deg,rgba(104,121,132,.04) 0,rgba(104,121,132,.04) 3px,rgba(0,3,6,.06) 3px,rgba(0,3,6,.06) 6px),
+    linear-gradient(rgb(21,27,32) 0%,rgb(13,18,23) 50%,rgb(7,10,14) 100%)!important;
+  background-size:auto,auto,auto!important;
+  background-position:center!important;
+  background-repeat:repeat!important;
+  background-blend-mode:normal!important;
+  box-shadow:rgba(143,255,215,.14) 0 0 6px 0!important;
+  filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+
+html body.page-home[data-page="home"] #home-negative-software-title::before,
+html body[data-ah-mobile-surface="home"] .ah-negative-software-title::before,
+html body.page-home[data-page="home"] .ah-negative-software-title::before{
+  content:none!important;
+  display:none!important;
+}
+
+html body.page-home[data-page="home"] #home-negative-software-title::after,
+html body[data-ah-mobile-surface="home"] .ah-negative-software-title::after,
+html body.page-home[data-page="home"] .ah-negative-software-title::after{
+  content:""!important;
+  position:absolute!important;
+  inset:2px!important;
+  z-index:8!important;
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  pointer-events:none!important;
+  border:0!important;
+  border-radius:0!important;
+  background-color:transparent!important;
+  background-image:
+    radial-gradient(circle at 1px 1px,rgba(246,253,255,.106) 0,rgba(246,253,255,.106) .55px,rgba(0,0,0,0) .82px),
+    repeating-linear-gradient(0deg,rgba(238,249,255,.05) 0,rgba(238,249,255,.05) 1px,rgba(0,0,0,.027) 1px,rgba(0,0,0,.027) 3px),
+    linear-gradient(110deg,rgba(0,0,0,0) 0,rgba(0,0,0,0) 10%,rgba(237,249,255,.16) 17%,rgba(225,240,248,.055) 32%,rgba(0,0,0,0) 43%,rgba(0,0,0,0) 100%),
+    radial-gradient(145% 58% at 50% -12%,rgba(240,250,255,.17),rgba(0,0,0,0) 66%),
+    linear-gradient(rgba(221,238,247,.106),rgba(190,211,224,.04) 44%,rgba(0,0,0,.075))!important;
+  background-size:5px 5px,auto,auto,auto,auto!important;
+  box-shadow:rgba(210,228,238,.15) 0 0 0 1px inset,rgba(255,255,255,.11) 0 1px 0 0 inset,rgba(0,0,0,.14) 0 -1px 0 0 inset!important;
+  -webkit-backdrop-filter:blur(1.15px) saturate(.82) contrast(.94)!important;
+  backdrop-filter:blur(1.15px) saturate(.82) contrast(.94)!important;
+  opacity:.92!important;
+  mix-blend-mode:normal!important;
+}
+
+/* Remove the older separate matte/glass sheet so the field has one clean surface. */
+html body.page-home[data-page="home"] #home-negative-software-title > .r488-extra-matte-film,
+html body[data-ah-mobile-surface="home"] .ah-negative-software-title > .r488-extra-matte-film,
+html body.page-home[data-page="home"] .ah-negative-software-title > .r488-extra-matte-film{
+  display:none!important;
+}
+
+/* Match the solid Orbitron lettering of the Automated Hearts field instead of the old dot-matrix screen lettering. */
+html body.page-home[data-page="home"] #home-negative-software-title .ah-negative-software-title-copy{
+  font-family:"Orbitron",system-ui,sans-serif!important;
+  font-weight:800!important;
+  font-style:normal!important;
+  font-variant:normal!important;
+  font-variant-ligatures:none!important;
+  letter-spacing:.035em!important;
+  line-height:1.05!important;
+  color:rgb(255,114,189)!important;
+  -webkit-text-fill-color:rgb(255,114,189)!important;
+  -webkit-text-stroke:0 transparent!important;
+  background:none!important;
+  -webkit-background-clip:border-box!important;
+  background-clip:border-box!important;
+  filter:none!important;
+  -webkit-filter:none!important;
+  text-shadow:0 0 .35px rgba(255,255,255,.88),0 0 1.2px currentColor,0 0 3px color-mix(in srgb,currentColor 42%,transparent)!important;
+}
+html body[data-ah-mobile-surface="home"] .ah-negative-software-title,
+html body.page-home[data-page="home"] .ah-negative-software-title{
+  font-family:"Orbitron",system-ui,sans-serif!important;
+  font-weight:800!important;
+  font-style:normal!important;
+  font-variant:normal!important;
+  font-variant-ligatures:none!important;
+  letter-spacing:.035em!important;
+  line-height:1.05!important;
+}
+html body.page-home[data-page="home"] #home-negative-software-title .ah-negative-software-title-copy{
+  position:relative!important;
+  z-index:10!important;
+  font-size:clamp(22px,2.45vw,42px)!important;
+  white-space:nowrap!important;
+}
+html body.page-home[data-page="home"] #home-negative-software-title .ah-negative-software-pink,
+html body.page-home[data-page="home"] #home-negative-software-title .ah-negative-software-solution,
+html body[data-ah-mobile-surface="home"] .ah-negative-software-title .ah-negative-software-pink,
+html body[data-ah-mobile-surface="home"] .ah-negative-software-title .ah-negative-software-solution,
+html body.page-home[data-page="home"] .ah-negative-software-title .ah-negative-software-pink,
+html body.page-home[data-page="home"] .ah-negative-software-title .ah-negative-software-solution{
+  position:relative!important;
+  z-index:10!important;
+  color:rgb(255,114,189)!important;
+  -webkit-text-fill-color:rgb(255,114,189)!important;
+  text-shadow:0 0 .35px rgba(255,255,255,.88),0 0 1.2px currentColor,0 0 3px color-mix(in srgb,currentColor 42%,transparent)!important;
+  filter:none!important;
+  -webkit-filter:none!important;
+}
+
+/* Mobile Home title geometry: keep the existing size, only replace the visual treatment. */
+@media (max-width:760px){
+  html body[data-ah-mobile-surface="home"] .ah-negative-software-title,
+  html body.page-home[data-page="home"] .ah-negative-software-title{
+    padding:10px 14px!important;
+    text-align:center!important;
+    font-size:clamp(18px,5.8vw,28px)!important;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Ticker — lower paint/compositing overhead + twice the current human spacing
+   ------------------------------------------------------------------------- */
+html body[data-page] #home-charity-ticker#home-charity-ticker,
+html body[data-page] #home-charity-ticker#home-charity-ticker > strong.charity-marquee{
+  transform:translateZ(0)!important;
+  -webkit-transform:translateZ(0)!important;
+  backface-visibility:hidden!important;
+  -webkit-backface-visibility:hidden!important;
+}
+html body[data-page] #home-charity-ticker#home-charity-ticker > strong.charity-marquee{
+  contain:paint!important;
+}
+html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__track{
+  display:flex!important;
+  flex-flow:row nowrap!important;
+  align-items:center!important;
+  width:max-content!important;
+  min-width:max-content!important;
+  max-width:none!important;
+  transform-origin:0 50%!important;
+  will-change:transform!important;
+  backface-visibility:hidden!important;
+  -webkit-backface-visibility:hidden!important;
+  perspective:1000px!important;
+  -webkit-font-smoothing:antialiased!important;
+  text-rendering:geometricPrecision!important;
+}
+html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__loop{
+  display:flex!important;
+  flex:0 0 auto!important;
+  flex-flow:row nowrap!important;
+  align-items:center!important;
+  width:max-content!important;
+  min-width:max-content!important;
+  max-width:none!important;
+  white-space:nowrap!important;
+}
+html body[data-page] #home-charity-ticker#home-charity-ticker :is(.charity-marquee__copy,.charity-marquee__segment,.charity-marquee__separator){
+  flex:0 0 auto!important;
+}
+
+/* Round 1569 used 2in per side on desktop / 1in per side on mobile. Double those values. */
+@media (min-width:761px){
+  html body[data-page] #home-ticker-wrap #home-charity-ticker#home-charity-ticker .charity-marquee__separator,
+  html body[data-page] > footer#site-footer #home-charity-ticker#home-charity-ticker .charity-marquee__separator{
+    box-sizing:content-box!important;
+    min-width:18px!important;
+    margin:0!important;
+    padding-inline:4in!important;
+  }
+}
+@media (max-width:760px){
+  html body[data-page] #home-ticker-wrap #home-charity-ticker#home-charity-ticker .charity-marquee__separator,
+  html body[data-page] > footer#site-footer #home-charity-ticker#home-charity-ticker .charity-marquee__separator{
+    box-sizing:content-box!important;
+    min-width:16px!important;
+    margin:0!important;
+    padding-inline:2in!important;
+  }
+}
+
+@keyframes ah1602-ticker-compositor{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-50%,0,0)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__track{
+    animation-play-state:paused!important;
+  }
+}

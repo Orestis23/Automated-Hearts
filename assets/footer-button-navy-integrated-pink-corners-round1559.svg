@@ -33,6 +33,28 @@
   <stop offset=".70" stop-color="#ff2ea8" stop-opacity=".96"/>
   <stop offset="1" stop-color="#7d0d50" stop-opacity=".35"/>
 </linearGradient>
+
+<!-- ah1580 desktop full accent-surface gradients -->
+<linearGradient id="ah1580-pink-top" x1="14" y1="14" x2="500" y2="14" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#8c1058" stop-opacity=".55"/>
+  <stop offset=".08" stop-color="#ff2ea8" stop-opacity=".96"/>
+  <stop offset=".22" stop-color="#ff9bd7" stop-opacity="1"/>
+  <stop offset=".52" stop-color="#ff2ea8" stop-opacity=".94"/>
+  <stop offset=".82" stop-color="#ff2ea8" stop-opacity=".54"/>
+  <stop offset="1" stop-color="#ff2ea8" stop-opacity=".10"/>
+</linearGradient>
+<linearGradient id="ah1580-pink-bottom" x1="140" y1="139" x2="626" y2="78" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#ff2ea8" stop-opacity=".10"/>
+  <stop offset=".18" stop-color="#ff2ea8" stop-opacity=".54"/>
+  <stop offset=".48" stop-color="#ff2ea8" stop-opacity=".94"/>
+  <stop offset=".78" stop-color="#ff9bd7" stop-opacity="1"/>
+  <stop offset=".92" stop-color="#ff2ea8" stop-opacity=".96"/>
+  <stop offset="1" stop-color="#8c1058" stop-opacity=".55"/>
+</linearGradient>
+<filter id="ah1580-pink-soft" x="-8%" y="-18%" width="116%" height="136%" color-interpolation-filters="sRGB">
+  <feGaussianBlur stdDeviation="1.15" result="blur"/>
+  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
 </defs>
 <use href="#face-shape" transform="translate(0 4)" fill="#000" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
 <g clip-path="url(#side-clip)" filter="url(#sand-wear)"><rect width="640" height="160" fill="url(#pink-depth)"/><rect width="640" height="160" fill="url(#coarse-sand)" opacity=".58"/></g>
@@ -42,11 +64,22 @@
 <use href="#inner-rim" fill="none" stroke="#c1ffec" stroke-opacity=".80" stroke-width="1" stroke-linejoin="round"/>
 <rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="#020810" stroke-width="5"/><rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="url(#rim1389)" stroke-width="2.8"/>
 
-<!-- Round 1558: pink accents are part of the existing shaded inner-rim corners, not floating marks. -->
-<g fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M14 45V20Q14 14 20 14H82" stroke="#ff2ea8" stroke-opacity=".10" stroke-width="8"/>
-  <path d="M14 45V20Q14 14 20 14H82" stroke="url(#ah1558-pink-tl)" stroke-width="3.2"/>
-  <path d="M558 139H620Q626 139 626 133V106" stroke="#ff2ea8" stroke-opacity=".10" stroke-width="8"/>
-  <path d="M558 139H620Q626 139 626 133V106" stroke="url(#ah1558-pink-br)" stroke-width="3.2"/>
+
+<!-- ah1580: desktop accents use the same complete surface logic as the mobile footer keys. -->
+<g id="ah1580-desktop-full-accent-surfaces" fill="none" stroke-linejoin="miter" pointer-events="none">
+  <!-- faint continuous trace across the entire available inner-rim surface -->
+  <path d="M20 14H620Q626 14 626 20V133Q626 139 620 139H20Q14 139 14 133V20Q14 14 20 14Z"
+        stroke="#ff2ea8" stroke-width="1.10" opacity=".42"/>
+  <!-- complete top/left bevel surface: shaded depth + brighter core -->
+  <path d="M14 78V20Q14 14 20 14H500" stroke="#ff2ea8" stroke-opacity=".10" stroke-width="8" filter="url(#ah1580-pink-soft)"/>
+  <path d="M14 78V20Q14 14 20 14H500" stroke="url(#ah1580-pink-top)" stroke-width="3.2"/>
+  <path d="M14 78V20Q14 14 20 14H500" stroke="#ffd4eb" stroke-opacity=".30" stroke-width=".75"/>
+  <!-- complete bottom/right bevel surface: shaded depth + brighter core -->
+  <path d="M140 139H620Q626 139 626 133V78" stroke="#ff2ea8" stroke-opacity=".10" stroke-width="8" filter="url(#ah1580-pink-soft)"/>
+  <path d="M140 139H620Q626 139 626 133V78" stroke="url(#ah1580-pink-bottom)" stroke-width="3.2"/>
+  <path d="M140 139H620Q626 139 626 133V78" stroke="#ffd4eb" stroke-opacity=".30" stroke-width=".75"/>
+  <!-- thin shaded continuation through the remaining perimeter -->
+  <path d="M500 14H620Q626 14 626 20V78M140 139H20Q14 139 14 133V78"
+        stroke="#ff2ea8" stroke-width=".68" opacity=".70"/>
 </g>
 </svg>

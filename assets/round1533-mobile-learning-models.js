@@ -145,7 +145,8 @@
     Object.assign(frame.style,{position:'absolute',inset:'0',width:'100%',height:'100%',border:'0',visibility:'hidden',opacity:'0',pointerEvents:'none',transform:'none'});
     frame.addEventListener('load',()=>{
       frame.dataset.ah1533Loaded='1';
-      const live=frame.dataset.ahActive==='1'&&document.body.dataset.ahModelHalf==='bottom';
+      if(frame.dataset.ahActive==='1')frame.style.opacity='1';
+      const live=frame.dataset.ahActive==='1'&&document.body.dataset.ahModelHalf==='bottom'&&document.body.dataset.ahStageTransition!=='1';
       [0,80,220,520].forEach(ms=>setTimeout(()=>sendActivity(frame,live),ms));
     });
     modelShell.appendChild(frame);frameCache.set(url,frame);frame.src=url;return frame;
@@ -156,9 +157,22 @@
     const active=ensureFrame(url);
     frameCache.forEach(frame=>{
       const on=frame===active;frame.dataset.ahActive=on?'1':'0';frame.setAttribute('aria-hidden',on?'false':'true');
-      frame.style.visibility=on?'visible':'hidden';frame.style.opacity=(on&&frame.dataset.ah1533Loaded==='1')?'1':'0';frame.style.pointerEvents=on?'auto':'none';sendActivity(frame,on&&document.body.dataset.ahModelHalf==='bottom');
+      frame.style.visibility=on?'visible':'hidden';frame.style.opacity=(on&&frame.dataset.ah1533Loaded==='1')?'1':'0';frame.style.pointerEvents=on?'auto':'none';sendActivity(frame,on&&document.body.dataset.ahModelHalf==='bottom'&&document.body.dataset.ahStageTransition!=='1');
     });
     modelShell.hidden=false;
+  }
+  // Prepare only the selected model before visible travel; no speculative WebGL work.
+  async function prepareTravelFrame(frame){
+    if(!frame)return;
+    if(frame.dataset.ah1533Loaded!=='1')await new Promise(resolve=>{
+      let timer;
+      const done=()=>{clearTimeout(timer);frame.removeEventListener('load',done);frame.removeEventListener('error',done);resolve();};
+      frame.addEventListener('load',done,{once:true});frame.addEventListener('error',done,{once:true});
+      timer=setTimeout(done,6000);
+    });
+    sendActivity(frame,true);
+    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    sendActivity(frame,false);
   }
   function pauseAll(){frameCache.forEach(frame=>{frame.dataset.ahActive='0';frame.style.pointerEvents='none';sendActivity(frame,false);});}
   function syncNavState(){
@@ -182,16 +196,19 @@
        frozen; no instantaneous scrollTop correction is allowed before motion. */
     await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
     try{
-      const finished=await animateScroll(stageTopTarget(),SCROLL_DOWN_MS);
+      // Load during travel; the shield and scroll start on the same animation frame.
+      const url=learningModels[selected][modelIndex]||learningModels[selected][0];
+      const frame=ensureFrame(url);
+      await prepareTravelFrame(frame);
+      showModel(url);
+      const [finished]=await Promise.all([
+        animateScroll(stageTopTarget(),SCROLL_DOWN_MS),
+        lowerShield()
+      ]);
       if(finished===false)return;
       document.body.dataset.ahModelHalf='bottom';
-      warmGroup(selected);showModel(learningModels[selected][modelIndex]||learningModels[selected][0]);
-      const active=[...frameCache.values()].find(frame=>frame.dataset.ahActive==='1');
-      if(active&&active.dataset.ah1533Loaded!=='1')await Promise.race([new Promise(resolve=>active.addEventListener('load',resolve,{once:true})),new Promise(resolve=>setTimeout(resolve,1250))]);
-      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
       showModel(learningModels[selected][modelIndex]||learningModels[selected][0]);
-      await lowerShield();
-    }finally{delete document.body.dataset.ahStageTransition;restoreRootAnchor();window.dispatchEvent(new Event('automated-hearts:stage-transition-end'));transitioning=false;}
+    }finally{delete document.body.dataset.ahStageTransition;if(document.body.dataset.ahModelHalf==='bottom'&&selected)showModel(learningModels[selected][modelIndex]||learningModels[selected][0]);restoreRootAnchor();window.dispatchEvent(new Event('automated-hearts:stage-transition-end'));transitioning=false;}
   }
   $$('.route-label[data-lite-learning]').forEach(el=>el.addEventListener('click',e=>{
     e.preventDefault();
@@ -209,9 +226,7 @@
     document.body.dataset.ahModelHalf='transition-out';
     try{
       pauseAll();
-      await raiseShield();
-      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
-      await animateScroll(0,SCROLL_UP_MS);
+      await Promise.all([raiseShield(),animateScroll(0,SCROLL_UP_MS)]);
       if(modelShell)modelShell.hidden=true;
       if(stage){stage.hidden=true;stage.setAttribute('aria-hidden','true');}
       document.body.dataset.ahModelHalf='top';
@@ -219,6 +234,6 @@
       document.querySelector('[data-lite-learning]')?.focus({preventScroll:true});
     }finally{delete document.body.dataset.ahStageTransition;restoreRootAnchor();window.dispatchEvent(new Event('automated-hearts:stage-transition-end'));transitioning=false;button.disabled=false;}
   });
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseAll();else if(selected&&document.body.dataset.ahModelHalf==='bottom'){const models=learningModels[selected]||[];showModel(models[modelIndex]||models[0]);}});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)pauseAll();else if(selected&&document.body.dataset.ahModelHalf==='bottom'&&document.body.dataset.ahStageTransition!=='1'){const models=learningModels[selected]||[];showModel(models[modelIndex]||models[0]);}});
   document.body.dataset.ahModelHalf='top';syncNavState();setShieldClosed();
 })();

@@ -9,7 +9,7 @@
     --r1005-message-transform:none!important;
   }
   html.ah-message-persist-open{
-    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1585r")!important;
     --r1005-message-transform:translate3d(0,4px,0)!important;
   }
 
@@ -113,7 +113,7 @@
     [data-ah-control-pressed="1"],[data-ah-control-pressed="true"]
   ),
   html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
-    background-image:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    background-image:url("./message-button-square-footer-match-pressed-round1095.svg?v=1585r")!important;
     transform:translate3d(0,4px,0)!important;
     box-shadow:inset 0 -1px 0 rgba(255,46,168,.10)!important;
   }

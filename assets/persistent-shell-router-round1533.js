@@ -61,7 +61,7 @@
       shieldQuote:'Prioritizing Job-Retention.'
     },
     pricing: {
-      title:'Rates & Services', desktop:'pricing.html', mobile:'mobile-pricing.html',
+      title:'Services', desktop:'pricing.html', mobile:'mobile-pricing.html',
       desktopFooter:'Services', mobileFooter:'Services', mobileMessage:'Premium Customization',
       shieldQuote:'Fully Customized to your layout.'
     }
@@ -609,7 +609,9 @@
       } catch (_) {}
       requestAnimationFrame(() => requestAnimationFrame(finish));
     });
-    frame.src = target.href;
+    covered.then(()=>{
+      if(token===routeToken&&!completed&&pendingFrame===frame)frame.src=target.href;
+    });
     navigationTimeout=setTimeout(async()=>{
       if(token!==routeToken||completed)return;
       completed=true;
@@ -620,7 +622,7 @@
       setPageRenderActive(true);
       navigationActive = false;
       window.dispatchEvent(new CustomEvent('ah:persistent-route-complete'));
-    },15000);
+    },17000);
     return true;
   };
 

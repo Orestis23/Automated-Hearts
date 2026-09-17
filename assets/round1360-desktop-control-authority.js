@@ -5,8 +5,18 @@
   var MQ='(min-width:801px)';
   var FOOT_REST='./assets/footer-button-message-border-match-round1095.svg?v=1451r';
   var FOOT_DOWN=FOOT_REST;
-  var MSG_REST='./assets/message-button-pointed-red-round1446.svg?v=1451r';
-  var MSG_DOWN=MSG_REST;
+  var MSG_REST='./assets/message-button-carbon-red-round1586.svg?v=1590r';
+  var MSG_DOWN='./assets/message-button-carbon-red-pressed-round1586.svg?v=1590r';
+  var MSG_BG_SIZE='100% 100%, 100% 100%, 100% 100%, auto, auto, auto';
+  var MSG_BG_POS='center, center, center, 0 0, 0 0, center';
+  var MSG_BG_REPEAT='no-repeat, no-repeat, no-repeat, repeat, repeat, no-repeat';
+  function carbonFace(overlay,down){return 'url(\"'+overlay+'\"), linear-gradient(160deg,rgba(255,255,255,'+(down?'.075':'.12')+') 0%,rgba(255,255,255,'+(down?'.028':'.045')+') 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,'+(down?'.24':'.16')+') 100%), radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%), repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px), repeating-linear-gradient(45deg,rgba(145,145,145,.05) 0 3px,rgba(0,0,0,.07) 3px 6px), linear-gradient(#111315 0%,#08090a 48%,#030405 100%)';}
+  function ensureMessagePulse(a){
+    if(!a)return;var n=a.querySelector(':scope > .ah1586-accent-pulse');if(n)return n;
+    n=document.createElement('span');n.className='ah1586-accent-pulse';n.setAttribute('aria-hidden','true');n.style.setProperty('--ah1586-pulse-rgb','255,48,48');
+    n.innerHTML='<svg viewBox="0 0 160 160" preserveAspectRatio="none" focusable="false" aria-hidden="true"><path pathLength="100" d="M14 78V20Q14 14 20 14H136"/><path pathLength="100" d="M146 76V133Q146 139 140 139H42"/></svg>';
+    a.appendChild(n);return n;
+  }
   var timers=new WeakMap();
   function imp(el,p,v){if(el)el.style.setProperty(p,v,'important');}
   function messageOpen(a){return !!(a&&(a.getAttribute('aria-expanded')==='true'||a.classList.contains('is-contact-latched')||document.documentElement.classList.contains('ah-message-persist-open')));}
@@ -20,8 +30,8 @@
   }
   function setMessage(a,down){
     if(!a)return;
-    imp(a,'position','fixed');imp(a,'z-index','2147483646');imp(a,'top','6px');imp(a,'right','6px');imp(a,'bottom','auto');imp(a,'left','auto');imp(a,'display','block');imp(a,'visibility','visible');imp(a,'opacity','1');imp(a,'width','84px');imp(a,'min-width','84px');imp(a,'max-width','84px');imp(a,'height','84px');imp(a,'min-height','84px');imp(a,'max-height','84px');imp(a,'margin','0');imp(a,'padding','0');imp(a,'overflow','visible');
-    imp(a,'background-color','transparent');imp(a,'background-image','url("'+(down?MSG_DOWN:MSG_REST)+'")');imp(a,'background-position','center');imp(a,'background-size','100% 100%');imp(a,'background-repeat','no-repeat');imp(a,'border','0');imp(a,'outline','0');imp(a,'clip-path','none');imp(a,'-webkit-clip-path','none');imp(a,'mask','none');imp(a,'-webkit-mask','none');imp(a,'filter',down?'brightness(.96)':'none');
+    imp(a,'position','fixed');imp(a,'z-index','2147483646');imp(a,'top','16px');imp(a,'right','6px');imp(a,'bottom','auto');imp(a,'left','auto');imp(a,'display','block');imp(a,'visibility','visible');imp(a,'opacity','1');imp(a,'width','84px');imp(a,'min-width','84px');imp(a,'max-width','84px');imp(a,'height','84px');imp(a,'min-height','84px');imp(a,'max-height','84px');imp(a,'margin','0');imp(a,'padding','0');imp(a,'overflow','visible');
+    ensureMessagePulse(a);imp(a,'background-color','#050607');imp(a,'background-image',carbonFace(down?MSG_DOWN:MSG_REST,down));imp(a,'background-position',MSG_BG_POS);imp(a,'background-size',MSG_BG_SIZE);imp(a,'background-repeat',MSG_BG_REPEAT);imp(a,'background-blend-mode','normal');imp(a,'border','0');imp(a,'outline','0');imp(a,'clip-path','none');imp(a,'-webkit-clip-path','none');imp(a,'mask','none');imp(a,'-webkit-mask','none');imp(a,'filter','none');
     imp(a,'transform',down?'translate3d(0,3px,0) scale(.97)':'translate3d(0,0,0) scale(1)');imp(a,'transform-origin','50% 50%');a.setAttribute('data-ah-key-down',down?'1':'0');
     imp(a,'box-shadow',down?'inset 0 4px 7px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.035), 0 8px 10px -9px rgba(255,59,79,.50), 0 10px 14px -11px rgba(255,46,168,.28)':'0 5px 7px rgba(0,0,0,.30), 0 8px 10px -9px rgba(255,59,79,.50), 0 10px 14px -11px rgba(255,46,168,.28)');
     imp(a,'pointer-events','auto');imp(a,'transition','transform 90ms ease,box-shadow 90ms ease,filter 90ms ease');

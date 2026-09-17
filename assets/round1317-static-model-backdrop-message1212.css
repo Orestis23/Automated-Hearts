@@ -52,7 +52,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(
     --r1005-envelope-width:42%!important;
   }
   html.ah-message-persist-open{
-    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1585r")!important;
     --r1005-message-transform:translate3d(0,3px,0)!important;
   }
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
@@ -102,7 +102,7 @@ html body:is(.page-learning,.page-who-we-help)[data-page] main#main-content :is(
   html body[data-page] > a#header-send-message#header-send-message > .r1005-message-envelope path{fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important;vector-effect:non-scaling-stroke!important;}
   html body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control:is(:active,[aria-expanded="true"],.is-contact-latched,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]),
   html.ah-message-persist-open body[data-page] > a#header-send-message#header-send-message.header-send-message.mechanical-send-control{
-    background-image:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    background-image:url("./message-button-square-footer-match-pressed-round1095.svg?v=1585r")!important;
     transform:translate3d(0,3px,0)!important;
   }
 }

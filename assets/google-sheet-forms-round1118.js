@@ -71,7 +71,7 @@
         body: data
       });
       form.reset();
-      if (status) status.textContent = 'Thank you. Your message has been sent.';
+      if (status) status.textContent = "Thank you for your message. We'll reach out to you within 48 hours!";
     } catch (error) {
       console.error('Automated Hearts form delivery failed', error);
       if (status) status.textContent = 'The message could not be sent. Please try again.';

@@ -46,7 +46,7 @@
 
   const returnButton=()=>{
     const s=stage();
-    return s?.querySelector('[data-learning-choose-another],[data-who-help-back-to-top],#learning-choose-another,.lite-return-control,.learning-stage-return')||null;
+    return s?.querySelector('[data-learning-choose-another],[data-who-help-back-to-top],#learning-choose-another,#industry-choose-another,.lite-return-control,.learning-stage-return')||null;
   };
 
   const exiting=()=>!!returnButton()?.disabled;
@@ -66,6 +66,7 @@
   let lastStage=null;
   let settleTimer=0;
 
+  const setSize=(el,key,value)=>{if(el&&el.style.getPropertyValue(key)!==value)el.style.setProperty(key,value);};
   const sizeStage=()=>{
     const s=stage();
     /* Freeze the exact stage height chosen at transition start. Mobile browser
@@ -82,10 +83,10 @@
       const viewportH=Math.round(window.visualViewport?.height||window.innerHeight);
       h=Math.max(248,viewportH-inset.top-inset.bottom-12);
     }
-    s.style.setProperty('--ah1527-model-stage-height',`${h}px`);
-    s.style.setProperty('--ah1528-model-stage-height',`${h}px`);
+    setSize(s,'--ah1527-model-stage-height',`${h}px`);
+    setSize(s,'--ah1528-model-stage-height',`${h}px`);
     const parent=s.closest('.lite-section');
-    if(parent){parent.style.setProperty('--ah1527-model-stage-height',`${h}px`);parent.style.setProperty('--ah1528-model-stage-height',`${h}px`);}
+    if(parent){setSize(parent,'--ah1527-model-stage-height',`${h}px`);setSize(parent,'--ah1528-model-stage-height',`${h}px`);}
   };
 
   const computeLock=()=>{
@@ -94,7 +95,8 @@
     const sc=getScroller();
     const raw=stageTopInScroller(s,sc);
     if(!isDocumentScroller(sc))return Math.max(0,raw);
-    return Math.max(0,raw-mobileInsets().top);
+    const viewportH=Math.round(window.visualViewport?.height||window.innerHeight);
+    return Math.max(0,Math.min(sc.scrollHeight-viewportH,raw-mobileInsets().top));
   };
 
   const scrollToLock=()=>{
@@ -123,7 +125,7 @@
       armed=false;
     }
     const y=sc.scrollTop;
-    if(!armed&&y>=lockTop-4)armed=true;
+    if(!armed&&(y>=lockTop-4||document.body.dataset.ahModelHalf==='bottom'))armed=true;
     if(armed&&!exiting()&&y<lockTop-1&&!correcting){
       correcting=true;
       sc.scrollTop=lockTop;
@@ -165,15 +167,14 @@
 
   addEventListener('keydown',e=>{
     if(stageTransition()&&['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(e.key)){e.preventDefault();return;}
-    if(atUpperBoundary()&&['ArrowUp','PageUp','Home'].includes(e.key))e.preventDefault();
+    if(atUpperBoundary()&&(['ArrowUp','PageUp','Home'].includes(e.key)||(e.key===' '&&e.shiftKey)))e.preventDefault();
   },true);
 
+  let syncFrame=0, syncTimer=0;
   const resyncSoon=()=>{
-    requestAnimationFrame(sync);
-    setTimeout(sync,80);
-    setTimeout(sync,320);
-    setTimeout(sync,900);
-    setTimeout(sync,1900);
+    if(programmaticScroll()||stageTransition())return;
+    if(!syncFrame)syncFrame=requestAnimationFrame(()=>{syncFrame=0;sync();});
+    clearTimeout(syncTimer);syncTimer=setTimeout(sync,160);
   };
 
   const observe=()=>{

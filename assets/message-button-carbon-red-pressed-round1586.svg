@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" preserveAspectRatio="none"><defs>
+<path id="face-shape" d="M4 4H156V149H4Z"/>
+<path id="inner-rim" d="M8 8H152V145H8Z"/>
+<clipPath id="face-clip"><use href="#face-shape"/></clipPath>
+<linearGradient id="face-dark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070707"/><stop offset=".55" stop-color="#040404"/><stop offset="1" stop-color="#101010"/></linearGradient>
+
+<!-- ah1580 desktop message full accent-surface gradients -->
+<linearGradient id="ah1580-red-top" x1="14" y1="14" x2="136" y2="14" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#6d0505" stop-opacity=".55"/>
+  <stop offset=".10" stop-color="#ff3030" stop-opacity=".96"/>
+  <stop offset=".28" stop-color="#ff8a8a" stop-opacity="1"/>
+  <stop offset=".58" stop-color="#ff3030" stop-opacity=".94"/>
+  <stop offset=".86" stop-color="#ff3030" stop-opacity=".50"/>
+  <stop offset="1" stop-color="#ff3030" stop-opacity=".10"/>
+</linearGradient>
+<linearGradient id="ah1580-red-bottom" x1="42" y1="139" x2="146" y2="76" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#ff3030" stop-opacity=".10"/>
+  <stop offset=".18" stop-color="#ff3030" stop-opacity=".50"/>
+  <stop offset=".46" stop-color="#ff3030" stop-opacity=".94"/>
+  <stop offset=".74" stop-color="#ff8a8a" stop-opacity="1"/>
+  <stop offset=".92" stop-color="#ff3030" stop-opacity=".96"/>
+  <stop offset="1" stop-color="#6d0505" stop-opacity=".55"/>
+</linearGradient>
+<filter id="ah1580-red-soft" x="-18%" y="-18%" width="136%" height="136%" color-interpolation-filters="sRGB">
+  <feGaussianBlur stdDeviation=".95" result="blur"/>
+  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+
+<filter id="ah1586-red-press-glow" x="-24%" y="-24%" width="148%" height="148%" color-interpolation-filters="sRGB">
+  <feGaussianBlur stdDeviation="1.35" result="b"/>
+  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+</defs>
+<use href="#face-shape" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+<use href="#face-shape" fill="none" stroke="#8fffd7" stroke-width="2.4" stroke-linejoin="round"/>
+<use href="#inner-rim" fill="none" stroke="#c1ffec" stroke-opacity=".72" stroke-width="1" stroke-linejoin="round"/>
+
+<!-- ah1580: message accents fill the same available bevel surfaces as footer accents, in envelope red. -->
+<g id="ah1580-message-full-accent-surfaces" fill="none" stroke-linejoin="miter" pointer-events="none" filter="url(#ah1586-red-press-glow)">
+  <path d="M20 14H140Q146 14 146 20V133Q146 139 140 139H20Q14 139 14 133V20Q14 14 20 14Z"
+        stroke="#ff3030" stroke-width="1.10" opacity=".42"/>
+  <path d="M14 78V20Q14 14 20 14H136" stroke="#ff3030" stroke-opacity=".10" stroke-width="7" filter="url(#ah1580-red-soft)"/>
+  <path d="M14 78V20Q14 14 20 14H136" stroke="url(#ah1580-red-top)" stroke-width="3.0"/>
+  <path d="M14 78V20Q14 14 20 14H136" stroke="#ffd0d0" stroke-opacity=".30" stroke-width=".72"/>
+  <path d="M42 139H140Q146 139 146 133V76" stroke="#ff3030" stroke-opacity=".10" stroke-width="7" filter="url(#ah1580-red-soft)"/>
+  <path d="M42 139H140Q146 139 146 133V76" stroke="url(#ah1580-red-bottom)" stroke-width="3.0"/>
+  <path d="M42 139H140Q146 139 146 133V76" stroke="#ffd0d0" stroke-opacity=".30" stroke-width=".72"/>
+  <path d="M136 14H140Q146 14 146 20V76M42 139H20Q14 139 14 133V78" stroke="#ff3030" stroke-width=".66" opacity=".70"/>
+</g>
+</svg>

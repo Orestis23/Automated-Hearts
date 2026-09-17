@@ -1,0 +1,7 @@
+/* Shields move as isolated compositor surfaces; their artwork is unchanged. */
+:is(#ah-route-shield-panel,.page-transition-shield__panel,[data-learning-stage-shield],.ah1528-model-shield){
+  will-change:transform!important;
+  backface-visibility:hidden!important;
+  -webkit-backface-visibility:hidden!important;
+  contain:paint!important;
+}

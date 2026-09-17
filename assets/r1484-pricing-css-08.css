@@ -324,8 +324,8 @@ html body .ah-home-process-box > h3::after{
   :root{
     --r1377-footer-rest:url('./footer-button-message-border-match-round1095.svg?v=1389r')!important;
     --r1377-footer-pressed:url('./footer-button-message-border-match-pressed-round1095.svg?v=1389r')!important;
-    --r1377-message-rest:url('./message-button-square-footer-match-round1095.svg?v=1389r')!important;
-    --r1377-message-pressed:url('./message-button-square-footer-match-pressed-round1095.svg?v=1389r')!important;
+    --r1377-message-rest:url('./message-button-square-footer-match-round1095.svg?v=1585r')!important;
+    --r1377-message-pressed:url('./message-button-square-footer-match-pressed-round1095.svg?v=1585r')!important;
     --r1005-message-size:84px!important;
     --r1005-message-top:6px!important;
     --r1005-message-right:6px!important;
@@ -2680,8 +2680,8 @@ html body[data-ah-mobile-surface] .nav-contact-submit:is(:active,.is-pressed){
   --ah1446-footer-pressed:url('./footer-button-pointed-pink-pressed-round1446.svg?v=1446r');
   --ah1446-mobile-footer-mint:url('./mobile-footer-key-pointed-mint-round1446.svg?v=1446r');
   --ah1446-mobile-footer-pink:url('./mobile-footer-key-pointed-pink-round1446.svg?v=1446r');
-  --ah1446-message-rest:url('./message-button-pointed-red-round1446.svg?v=1446r');
-  --ah1446-message-pressed:url('./message-button-pointed-red-pressed-round1446.svg?v=1446r');
+  --ah1446-message-rest:url('./message-button-pointed-red-round1446.svg?v=1585r');
+  --ah1446-message-pressed:url('./message-button-pointed-red-pressed-round1446.svg?v=1585r');
   --ah1446-mobile-message:url('./mobile-message-key-pointed-red-round1446.svg?v=1446r');
   --r1354-footer-rest:var(--ah1446-footer-rest)!important;
   --r1354-footer-pressed:var(--ah1446-footer-pressed)!important;

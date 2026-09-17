@@ -83,7 +83,7 @@
   html body > a.message.message.message.message[data-contact-trigger]:visited{
     position:fixed!important;
     z-index:12020!important;
-    top:calc(env(safe-area-inset-top,0px) + 2px)!important;
+    top:calc(env(safe-area-inset-top,0px) + 6px)!important;
     right:6px!important;
     left:auto!important;
     width:56px!important;
@@ -129,9 +129,9 @@
     position:absolute!important;
     z-index:5!important;
     left:50%!important;
-    top:48%!important;
+    top:44.444444%!important;
     width:42%!important;
-    height:auto!important;
+    height:28.875%!important;bottom:auto!important;right:auto!important;translate:none!important;
     margin:0!important;
     padding:0!important;
     transform:translate(-50%,-50%)!important;

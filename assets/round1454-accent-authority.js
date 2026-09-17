@@ -2,7 +2,7 @@
 (()=>{
   'use strict';
   const DESKTOP_FOOTER='./assets/footer-button-message-border-match-clean-round1454.svg?v=1454r';
-  const DESKTOP_MESSAGE='./assets/message-button-square-footer-match-round1095.svg?v=1454r';
+  const DESKTOP_MESSAGE='./assets/message-button-square-footer-match-round1095.svg?v=1585r';
   const MOBILE_BASE='./assets/mobile-footer-key-navy-clean-round1454.svg?v=1454r';
   const MOBILE_MINT='./assets/mobile-footer-accent-mint-round1454.svg?v=1454r';
   const MOBILE_PINK='./assets/mobile-footer-accent-pink-round1454.svg?v=1454r';
@@ -12,9 +12,10 @@
   });
   const desktop=()=>{
     if(!matchMedia('(min-width:801px)').matches)return;
-    /* Round 1559: do not rewrite the desktop footer; final footer authority owns it. */
+    /* Round 1586: do not rewrite desktop outer-rim hardware.
+       The carbon footer/message authorities own those faces and accents. */
     const msg=document.querySelector('body > a#header-send-message');
-    if(msg){hideOld(msg);imp(msg,'background-image',`url("${DESKTOP_MESSAGE}")`);imp(msg,'background-size','100% 100%');imp(msg,'background-position','center');imp(msg,'background-repeat','no-repeat');}
+    if(msg)hideOld(msg);
   };
   const mobile=()=>{
     if(!matchMedia('(max-width:900px)').matches)return;
