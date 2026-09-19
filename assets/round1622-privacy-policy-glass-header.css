@@ -1,0 +1,146 @@
+/* Round 1622 — Privacy Policy desktop page-name field.
+   Uses the same weathered alloy machine-window frame asset and a ticker-style
+   reflective glass aperture. Mobile remains untouched. */
+@media (min-width:901px){
+  html body.page-privacy-policy.page-about[data-page="about"][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.header-page-screen--top{
+    position:fixed!important;
+    isolation:isolate!important;
+    box-sizing:border-box!important;
+    width:716px!important;
+    min-width:716px!important;
+    max-width:716px!important;
+    height:68px!important;
+    min-height:68px!important;
+    max-height:68px!important;
+    padding:0!important;
+    overflow:hidden!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:22px!important;
+    background-color:#111820!important;
+    background-image:url('./machine-rim-variegated-bumpy-alloy-round845.svg?v=1622r')!important;
+    background-position:center!important;
+    background-size:100% 100%!important;
+    background-repeat:no-repeat!important;
+    box-shadow:
+      0 2px 0 rgba(243,248,247,.20),
+      0 7px 12px rgba(0,0,0,.48),
+      0 0 11px rgba(143,255,215,.10),
+      inset 0 0 0 1px rgba(255,255,255,.10)!important;
+    filter:none!important;
+  }
+
+  /* Dark blue reflective glass base beneath progress and lettering. */
+  html body.page-privacy-policy.page-about[data-page="about"][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.header-page-screen--top::before{
+    content:""!important;
+    position:absolute!important;
+    z-index:1!important;
+    display:block!important;
+    inset:10px!important;
+    width:auto!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    border:1px solid rgba(194,220,230,.54)!important;
+    border-radius:13px!important;
+    opacity:1!important;
+    background:
+      radial-gradient(165% 135% at 50% -29%,rgba(255,255,255,.34) 0%,rgba(226,248,253,.16) 11%,rgba(154,213,226,.055) 27%,rgba(255,255,255,0) 43%),
+      radial-gradient(130% 90% at 50% 122%,rgba(66,151,174,.13) 0%,rgba(10,31,46,0) 58%),
+      linear-gradient(180deg,rgba(20,52,69,.96) 0%,rgba(7,27,41,.985) 31%,rgba(3,15,26,.995) 64%,rgba(1,8,15,1) 100%)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.18),
+      inset 0 -2px 4px rgba(0,0,0,.66),
+      inset 4px 0 9px rgba(0,0,0,.28),
+      inset -4px 0 9px rgba(0,0,0,.26)!important;
+    filter:none!important;
+    pointer-events:none!important;
+  }
+
+  /* Clear rounded lens/reflection over both the base and the moving progress. */
+  html body.page-privacy-policy.page-about[data-page="about"][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.header-page-screen--top::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:3!important;
+    display:block!important;
+    inset:11px!important;
+    width:auto!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:12px!important;
+    opacity:1!important;
+    background:
+      linear-gradient(166deg,rgba(255,255,255,.24) 0%,rgba(255,255,255,.105) 12%,rgba(255,255,255,.018) 31%,transparent 47% 74%,rgba(255,255,255,.035) 87%,rgba(0,0,0,.09) 100%),
+      radial-gradient(140% 74% at 50% -7%,rgba(255,255,255,.18) 0%,rgba(255,255,255,.055) 28%,transparent 58%),
+      linear-gradient(90deg,rgba(255,255,255,.035),transparent 8% 92%,rgba(255,255,255,.025))!important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.18),
+      inset 0 -1px 0 rgba(0,0,0,.30)!important;
+    -webkit-backdrop-filter:blur(.30px) saturate(.94)!important;
+    backdrop-filter:blur(.30px) saturate(.94)!important;
+    filter:none!important;
+    pointer-events:none!important;
+  }
+
+  /* No matte film on this desktop field. */
+  html body.page-privacy-policy.page-about[data-page="about"]
+  > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+  > .r488-extra-matte-film{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    background:none!important;
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+  }
+
+  /* Keep the scroll-progress pigment inside the glass aperture. */
+  html body.page-privacy-policy.page-about[data-page="about"][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.header-page-screen--top
+  > .page-sign-progress-inverse{
+    position:absolute!important;
+    z-index:2!important;
+    inset:10px!important;
+    width:auto!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:13px!important;
+    background:
+      radial-gradient(ellipse at 10% 86%,rgba(39,195,188,.44),transparent 50%),
+      radial-gradient(ellipse at 64% 120%,rgba(126,93,193,.50),transparent 58%),
+      radial-gradient(ellipse at 94% 8%,rgba(220,67,151,.42),transparent 50%),
+      linear-gradient(112deg,#123a49 0%,#1a5964 30%,#30425b 56%,#603c65 80%,#432d48 100%)!important;
+    box-shadow:none!important;
+    filter:none!important;
+    opacity:.88!important;
+    pointer-events:none!important;
+    -webkit-clip-path:inset(0 calc(100% - var(--page-sign-scroll-percent,0%)) 0 0 round 13px)!important;
+    clip-path:inset(0 calc(100% - var(--page-sign-scroll-percent,0%)) 0 0 round 13px)!important;
+  }
+
+  html body.page-privacy-policy.page-about[data-page="about"][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.header-page-screen--top
+  > :is(.footer-page-led,.header-page-led){
+    position:relative!important;
+    z-index:4!important;
+    width:100%!important;
+    height:100%!important;
+    padding:0 24px!important;
+    color:#8fffd7!important;
+    -webkit-text-fill-color:#8fffd7!important;
+    font-size:21.6pt!important;
+    text-shadow:
+      0 0 1px rgba(239,255,250,.92),
+      0 0 4px rgba(143,255,215,.42),
+      0 0 9px rgba(143,255,215,.15)!important;
+  }
+}

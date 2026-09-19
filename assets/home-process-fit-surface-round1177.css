@@ -1,6 +1,6 @@
-/**/
+
 @media (min-width:901px){
-  /**/
+  
   html body.page-home[data-page="home"] #home-solution-framework .r1176-process-heading-label{
     font-size:22px!important;
     font-weight:900!important;
@@ -19,7 +19,7 @@
     text-overflow:clip!important;
   }
 
-  /**/
+  
   html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore{
     background-color:#08172b!important;
     background-image:url("./button-leather-grain-visible-round794.webp")!important;

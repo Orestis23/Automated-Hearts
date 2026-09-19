@@ -1,9 +1,0 @@
-/**/
-#solution-process-header .solution-process-cover::before,
-#solution-process-header .solution-process-cover.is-open::before{
-  width:clamp(26px,2.25vw,35px)!important;
-}
-#lite-model-stage .solution-mobile-window-cover::before,
-#lite-model-stage .solution-mobile-window-cover.is-open::before{
-  width:clamp(20px,5.75vw,27px)!important;
-}

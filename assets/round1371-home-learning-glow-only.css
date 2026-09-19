@@ -1,9 +1,5 @@
-/* Round 1371 — keep only the verified Home route-caption behavior from Round 1370.
-   Footer controls are intentionally left to the known-working pre-1370 desktop/mobile systems. */
-/* Round 1370 — Home route-spacebar glow matches Learning Center behavior;
-   footer controls become high-profile classic mechanical keys with visible
-   diagonal side walls.  This lives in ah-r929-final because older important
-   declarations in that layer otherwise outrank later generic overrides. */
+
+
 @layer ah-r929-final {
   :root{
     --ah-r1370-mint:#8fffd7;
@@ -11,11 +7,7 @@
     --ah-r1370-key-carbon:url('./home-carbon-fiber-procedural-round714.webp');
   }
 
-  /* ======================================================================
-     HOME ROUTE CAPTIONS — same physical light/travel model as Learning.
-     Home keeps its requested palette: pink legend + mint front/side light.
-     There is deliberately NO halo behind or above the key at rest.
-     ====================================================================== */
+  
   html body.page-home.page-home.page-home[data-page="home"]
   #home-route-buttons#home-route-buttons#home-route-buttons
   article.home-route-card.home-route-card
@@ -53,7 +45,7 @@
     transition:transform 95ms ease,box-shadow 95ms ease,filter 95ms ease!important;
   }
 
-  /* Matte film is attached to the face, exactly as on the Learning keys. */
+  
   html body.page-home.page-home.page-home[data-page="home"]
   #home-route-buttons#home-route-buttons#home-route-buttons
   article.home-route-card.home-route-card
@@ -84,8 +76,7 @@
     -webkit-filter:none!important;
   }
 
-  /* Physical illuminated front/side lip — same geometry as Learning Center.
-     No blurred light is allowed above or behind the key. */
+  
   html body.page-home.page-home.page-home[data-page="home"]
   #home-route-buttons#home-route-buttons#home-route-buttons
   article.home-route-card.home-route-card

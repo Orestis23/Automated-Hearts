@@ -1,0 +1,585 @@
+
+
+
+@media (min-width:801px){
+  
+  html body[data-page] > footer#site-footer.site-footer--minimal
+  nav#primary-nav a.footer-structure-control[data-nav] .footer-nav-label{
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:16px!important;
+    font-weight:700!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    white-space:normal!important;
+    text-align:center!important;
+    transform:none!important;
+    scale:none!important;
+    filter:none!important;
+    animation:none!important;
+    transition:none!important;
+  }
+
+  
+  html body[data-page] > footer#site-footer :is(
+    .ah-footer-pink-corners,
+    .ah-footer-corner,
+    .ah1451-message-match-accents,
+    .ah1452-message-corner-overlay,
+    .ah1453-message-corner-overlay,
+    .ah1454-mobile-corner-overlay
+  ),
+  html body[data-page] > a#header-send-message :is(
+    .ah-footer-pink-corners,
+    .ah-footer-corner,
+    .ah1451-message-match-accents,
+    .ah1452-message-corner-overlay,
+    .ah1453-message-corner-overlay,
+    .ah1454-mobile-corner-overlay
+  ){
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    background:none!important;
+    background-image:none!important;
+    box-shadow:none!important;
+  }
+
+  
+  html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]{
+    background-image:url('./footer-button-message-border-match-clean-round1454.svg?v=1465r')!important;
+    background-size:100% 100%!important;
+    background-position:center!important;
+    background-repeat:no-repeat!important;
+  }
+
+  
+  html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
+    isolation:isolate!important;
+    box-shadow:
+      0 0 0 2px rgba(25,14,2,.99),
+      0 0 0 4px rgba(238,205,119,.38),
+      0 0 11px rgba(220,178,68,.27),
+      inset 0 0 0 1px rgba(255,241,197,.45),
+      inset 0 0 0 4px rgba(1,3,6,.46),
+      inset 0 13px 12px -9px rgba(0,0,0,.96),
+      inset 13px 0 13px -9px rgba(0,0,0,.82),
+      inset -13px 0 13px -9px rgba(0,0,0,.82),
+      inset 0 -10px 12px -9px rgba(0,0,0,.64)!important;
+  }
+
+  html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim::before{
+    content:""!important;
+    position:absolute!important;
+    z-index:1!important;
+    inset:0!important;
+    display:block!important;
+    pointer-events:none!important;
+    border-radius:inherit!important;
+    background:
+      linear-gradient(to bottom,
+        rgba(0,0,0,.72) 0px,
+        rgba(0,0,0,.52) 10px,
+        rgba(0,0,0,.32) 24px,
+        rgba(0,0,0,.16) 42px,
+        rgba(0,0,0,0) 64px) top/100% 64px no-repeat,
+      linear-gradient(to right,
+        rgba(0,0,0,.58) 0px,
+        rgba(0,0,0,.30) 20px,
+        rgba(0,0,0,.12) 42px,
+        rgba(0,0,0,0) 64px) left/64px 100% no-repeat,
+      linear-gradient(to left,
+        rgba(0,0,0,.58) 0px,
+        rgba(0,0,0,.30) 20px,
+        rgba(0,0,0,.12) 42px,
+        rgba(0,0,0,0) 64px) right/64px 100% no-repeat,
+      linear-gradient(to top,
+        rgba(0,0,0,.40) 0px,
+        rgba(0,0,0,.18) 24px,
+        rgba(0,0,0,0) 52px) bottom/100% 52px no-repeat!important;
+    opacity:1!important;
+  }
+
+  html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:2!important;
+    inset:4px!important;
+    display:block!important;
+    pointer-events:none!important;
+    border-radius:calc(var(--current-frame-radius,32px) - 4px)!important;
+    box-shadow:
+      inset 0 3px 0 rgba(255,232,168,.15),
+      inset 0 9px 13px rgba(0,0,0,.44),
+      inset 8px 0 12px rgba(0,0,0,.28),
+      inset -8px 0 12px rgba(0,0,0,.28)!important;
+    background:transparent!important;
+  }
+}
+
+
+
+:root{
+  --ah1483-pink:#ff2ea8;
+  --ah1483-pink-hot:#ff79c4;
+  --ah1483-green:#8fffd7;
+  --ah1483-green-hot:#dcfff3;
+}
+
+.ah1483-section-break{
+  position:absolute!important;
+  left:32px!important;
+  right:32px!important;
+  height:1px!important;
+  min-height:1px!important;
+  max-height:1px!important;
+  z-index:300!important;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:none!important;
+  border:0!important;
+  border-radius:999px!important;
+  filter:none!important;
+}
+.ah1483-section-break--top{top:0!important;}
+.ah1483-section-break--bottom{bottom:0!important;}
+
+
+html body.page-home[data-page="home"] .ah1483-section-break,
+html body[data-ah-mobile-surface="home"] .ah1483-section-break{
+  background:linear-gradient(90deg,
+    rgba(255,46,168,.86) 0%,
+    rgba(255,121,196,.98) 50%,
+    rgba(255,46,168,.86) 100%)!important;
+  box-shadow:
+    0 0 3px rgba(255,46,168,.28),
+    0 0 7px rgba(255,46,168,.14),
+    0 0 12px rgba(255,46,168,.07)!important;
+}
+
+
+html body:not(.page-home):not([data-ah-mobile-surface="home"]) .ah1483-section-break{
+  background:linear-gradient(90deg,
+    rgba(143,255,215,.82) 0%,
+    rgba(220,255,243,.98) 50%,
+    rgba(143,255,215,.82) 100%)!important;
+  box-shadow:
+    0 0 3px rgba(143,255,215,.25),
+    0 0 7px rgba(143,255,215,.13),
+    0 0 12px rgba(143,255,215,.065)!important;
+}
+
+
+html body main#main-content > section,
+html body.page-pricing[data-page="pricing"] main#main-content > .r864-rates > :is(.r864-rates__drawers,.r864-rates__final,.r972-bottom-consultation){
+  position:relative!important;
+}
+
+
+html body main#main-content > section + section,
+html body main#main-content > section.section--divider,
+html body.page-pricing[data-page="pricing"] main#main-content > .r864-rates > :is(.r864-rates__drawers,.r864-rates__final,.r972-bottom-consultation){
+  border-top:0!important;
+}
+
+
+html body main#main-content > section:has(> .ah1483-section-break--top)::before,
+html body main#main-content > section:has(> .ah1483-section-break--top)::after{
+  box-shadow:none!important;
+}
+
+
+html body.page-pricing[data-page="pricing"] main#main-content > .r864-rates > :is(.r864-rates__drawers,.r864-rates__final,.r972-bottom-consultation){
+  isolation:isolate!important;
+}
+
+@media (max-width:900px){
+  .ah1483-section-break{
+    left:14px!important;
+    right:14px!important;
+  }
+}
+
+
+
+@media (min-width:801px){
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content > section#who-we-help-solutions#who-we-help-solutions{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    height:calc(100svh - var(--current-frame-top,96px) - var(--current-frame-bottom,96px) - 54px)!important;
+    min-height:370px!important;
+    max-height:calc(100svh - var(--current-frame-top,96px) - var(--current-frame-bottom,96px) - 54px)!important;
+    padding:0 clamp(16px,2.1vw,40px)!important;
+    overflow:hidden!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions > .shell{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    max-width:none!important;
+    height:100%!important;
+    min-height:0!important;
+    margin:0 auto!important;
+    padding:8px 0!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .who-help-button-grid.who-help-button-grid{
+    width:min(100%,1760px)!important;
+    max-width:1760px!important;
+    margin:auto!important;
+    align-self:center!important;
+    align-items:start!important;
+    align-content:center!important;
+    transform:none!important;
+    translate:none!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card{
+    gap:10px!important;
+    align-self:center!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link.ah-route-image-visual,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card .premium-route-card__media{
+    width:100%!important;
+    max-width:420px!important;
+    height:clamp(310px,48svh,360px)!important;
+    min-height:310px!important;
+    max-height:360px!important;
+    aspect-ratio:auto!important;
+    margin:0 auto!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card img{
+    width:100%!important;
+    height:100%!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar.ah-unified-spacebar{
+    height:60px!important;
+    min-height:60px!important;
+    max-height:60px!important;
+    padding:6px 10px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar > .ah-route-label-final{
+    font-size:clamp(10px,.78vw,14px)!important;
+    line-height:1.04!important;
+    letter-spacing:.01em!important;
+  }
+}
+
+
+@media (min-width:801px) and (max-height:720px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar.ah-unified-spacebar{
+    height:56px!important;
+    min-height:56px!important;
+    max-height:56px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card > .premium-route-card__link.ah-route-image-visual,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card .premium-route-card__media{
+    height:310px!important;
+    min-height:310px!important;
+    max-height:310px!important;
+  }
+}
+
+
+:root{
+  --ah1490-pink:#ff2ea8;
+  --ah1490-green:#8fffd7;
+}
+
+
+html body .ah1483-section-break.ah1483-section-break{
+  position:absolute!important;
+  left:32px!important;
+  right:32px!important;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  width:auto!important;
+  height:1px!important;
+  min-height:1px!important;
+  max-height:1px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  outline:0!important;
+  border-radius:999px!important;
+  pointer-events:none!important;
+  z-index:1000!important;
+  filter:none!important;
+  -webkit-filter:none!important;
+}
+html body .ah1483-section-break.ah1483-section-break--top{top:0!important;bottom:auto!important;}
+html body .ah1483-section-break.ah1483-section-break--bottom{bottom:0!important;top:auto!important;}
+
+
+html body.page-home.page-home[data-page="home"] .ah1483-section-break.ah1483-section-break,
+html body[data-ah-mobile-surface="home"][data-ah-mobile-surface="home"] .ah1483-section-break.ah1483-section-break{
+  background-color:var(--ah1490-pink)!important;
+  background-image:none!important;
+  box-shadow:
+    0 0 3px rgba(255,46,168,.34),
+    0 0 8px rgba(255,46,168,.18),
+    0 0 14px rgba(255,46,168,.08)!important;
+}
+
+
+html body:not(.page-home):not([data-ah-mobile-surface="home"]) .ah1483-section-break.ah1483-section-break{
+  background-color:var(--ah1490-green)!important;
+  background-image:none!important;
+  box-shadow:
+    0 0 3px rgba(143,255,215,.32),
+    0 0 8px rgba(143,255,215,.17),
+    0 0 14px rgba(143,255,215,.075)!important;
+}
+
+
+html body main#main-content#main-content#main-content#main-content :is(section,div):has(> .ah1483-section-break--top){
+  border-top-width:0!important;
+  border-top-style:none!important;
+  border-top-color:transparent!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+
+
+html body main#main-content#main-content#main-content#main-content :is(section,div):has(> .ah1483-section-break--bottom){
+  border-bottom-width:0!important;
+  border-bottom-style:none!important;
+  border-bottom-color:transparent!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+
+
+html body main#main-content#main-content#main-content#main-content :is(section,div):has(> .ah1483-section-break--top)::before,
+html body main#main-content#main-content#main-content#main-content :is(section,div):has(> .ah1483-section-break--top)::after,
+html body main#main-content#main-content#main-content#main-content :is(section,div):has(> .ah1483-section-break--bottom)::before,
+html body main#main-content#main-content#main-content#main-content :is(section,div):has(> .ah1483-section-break--bottom)::after{
+  content:none!important;
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  width:0!important;
+  height:0!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:0!important;
+  max-height:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  outline:0!important;
+  background:none!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  filter:none!important;
+  -webkit-filter:none!important;
+}
+
+
+html body main#main-content#main-content#main-content#main-content > section:has(+ section > .ah1483-section-break--top){
+  border-bottom-width:0!important;
+  border-bottom-style:none!important;
+  border-bottom-color:transparent!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+html body main#main-content#main-content#main-content#main-content > section:has(+ section > .ah1483-section-break--top)::after{
+  content:none!important;
+  display:none!important;
+  border:0!important;
+  background:none!important;
+  box-shadow:none!important;
+}
+
+
+html body.page-pricing.page-pricing[data-page="pricing"] main#main-content#main-content#main-content#main-content .r864-rates > :is(.r864-rates__drawers,.r864-rates__final,.r972-bottom-consultation):has(> .ah1483-section-break){
+  border-top:0!important;
+  border-bottom:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+html body.page-pricing.page-pricing[data-page="pricing"] main#main-content#main-content#main-content#main-content .r864-rates > :is(.r864-rates__drawers,.r864-rates__final,.r972-bottom-consultation):has(> .ah1483-section-break)::before,
+html body.page-pricing.page-pricing[data-page="pricing"] main#main-content#main-content#main-content#main-content .r864-rates > :is(.r864-rates__drawers,.r864-rates__final,.r972-bottom-consultation):has(> .ah1483-section-break)::after{
+  content:none!important;
+  display:none!important;
+  border:0!important;
+  background:none!important;
+  box-shadow:none!important;
+}
+
+@media (max-width:900px){
+  html body .ah1483-section-break.ah1483-section-break{
+    left:14px!important;
+    right:14px!important;
+  }
+}
+
+
+@media (min-width:801px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card
+  > .premium-route-card__image-button.ah-route-image-visual{
+    position:relative!important;
+    isolation:isolate!important;
+    padding:10px!important;
+    overflow:hidden!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    background-color:#02060c!important;
+    background-image:
+      linear-gradient(180deg,rgba(255,255,255,.020),rgba(0,0,0,.16)),
+      linear-gradient(180deg,#06101a 0%,#02070e 52%,#010306 100%)!important;
+    box-shadow:
+      inset 0 10px 18px rgba(0,0,0,.82),
+      inset 0 -4px 10px rgba(0,0,0,.66),
+      inset 9px 0 14px rgba(0,0,0,.48),
+      inset -9px 0 14px rgba(0,0,0,.48),
+      inset 0 0 0 2px rgba(6,14,22,.98),
+      inset 0 0 0 7px rgba(24,34,42,.52),
+      0 5px 10px rgba(0,0,0,.34)!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card
+  > .premium-route-card__image-button.ah-route-image-visual > .premium-route-card__media{
+    position:absolute!important;
+    inset:10px!important;
+    width:auto!important;
+    max-width:none!important;
+    height:auto!important;
+    overflow:hidden!important;
+    border:0!important;
+    outline:0!important;
+    box-shadow:0 0 0 1px rgba(4,10,16,.98),0 2px 5px rgba(0,0,0,.46)!important;
+    background:#010306!important;
+  }
+
+  
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card
+  .premium-route-card__media > img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    background:#010306!important;
+    transform:none!important;
+    scale:1!important;
+  }
+
+  
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah1496-industries-glass-base{
+    position:absolute!important;
+    z-index:8!important;
+    inset:10px!important;
+    display:block!important;
+    pointer-events:none!important;
+    border:0!important;
+    outline:0!important;
+    background:
+      linear-gradient(180deg,rgba(225,243,255,.075) 0%,rgba(211,237,255,.025) 18%,transparent 46%,rgba(0,0,0,.055) 100%),
+      radial-gradient(ellipse at 50% -18%,rgba(225,246,255,.13),transparent 62%)!important;
+    box-shadow:
+      inset 0 0 0 1px rgba(211,236,249,.17),
+      inset 0 1px 0 rgba(255,255,255,.22),
+      inset 0 -2px 4px rgba(0,0,0,.27)!important;
+    opacity:.92!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah1496-industries-glass-sheen{
+    position:absolute!important;
+    z-index:9!important;
+    inset:10px!important;
+    display:block!important;
+    pointer-events:none!important;
+    border:0!important;
+    outline:0!important;
+    background:
+      linear-gradient(122deg,
+        transparent 0 8%,
+        rgba(246,252,255,.12) 15%,
+        rgba(229,245,255,.045) 25%,
+        transparent 37% 68%,
+        rgba(172,215,239,.025) 82%,
+        transparent 100%),
+      radial-gradient(ellipse at 76% 108%,rgba(143,255,215,.035),transparent 48%)!important;
+    box-shadow:none!important;
+    opacity:.82!important;
+    mix-blend-mode:screen!important;
+  }
+}
+
+
+@media (min-width:801px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card
+  > .premium-route-card__link.ah-route-image-visual,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card
+  .premium-route-card__media{
+    height:clamp(390px,54svh,470px)!important;
+    min-height:390px!important;
+    max-height:470px!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card
+  .premium-route-card__media > img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    image-rendering:auto!important;
+    transform:none!important;
+    scale:1!important;
+    filter:none!important;
+  }
+
+  
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card
+  > a.ah-unified-spacebar > .ah-route-label-final{
+    font-size:16px!important;
+    line-height:1.02!important;
+    letter-spacing:.01em!important;
+  }
+}
+
+@media (min-width:801px) and (max-height:760px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card
+  > .premium-route-card__link.ah-route-image-visual,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions article.who-help-route-card
+  .premium-route-card__media{
+    height:390px!important;
+    min-height:390px!important;
+    max-height:390px!important;
+  }
+}
+
+/* Round 1511 — model-stage cleanup.
+   Learning Center + Industries 3D stages are intentionally frameless inside the page gold rim.
+   The model itself/background runs edge-to-edge; no stainless/machine rim is drawn around it. */
+html body.page-learning[data-page="learning"] #learning-model-stage > .learning-lesson-viewport.r984-static-model-viewport,
+html body.page-who-we-help[data-page="who-we-help"] #who-help-model-stage > .learning-lesson-viewport.r984-static-model-viewport,
+html body[data-ah-mobile-surface="learning"] #lite-model-shell.model-shell,
+html body[data-ah-mobile-surface="industries"] #lite-model-shell.model-shell{
+  border:0!important;
+  border-width:0!important;
+  border-style:none!important;
+  border-color:transparent!important;
+  border-image:none!important;
+  outline:0!important;
+  outline-offset:0!important;
+  box-shadow:none!important;
+}
+html body.page-learning[data-page="learning"] #learning-model-stage > .learning-lesson-viewport.r984-static-model-viewport::before,
+html body.page-learning[data-page="learning"] #learning-model-stage > .learning-lesson-viewport.r984-static-model-viewport::after,
+html body.page-who-we-help[data-page="who-we-help"] #who-help-model-stage > .learning-lesson-viewport.r984-static-model-viewport::before,
+html body.page-who-we-help[data-page="who-we-help"] #who-help-model-stage > .learning-lesson-viewport.r984-static-model-viewport::after,
+html body[data-ah-mobile-surface="learning"] #lite-model-shell.model-shell::before,
+html body[data-ah-mobile-surface="learning"] #lite-model-shell.model-shell::after,
+html body[data-ah-mobile-surface="industries"] #lite-model-shell.model-shell::before,
+html body[data-ah-mobile-surface="industries"] #lite-model-shell.model-shell::after{
+  border:0!important;
+  border-image:none!important;
+  outline:0!important;
+  box-shadow:none!important;
+}

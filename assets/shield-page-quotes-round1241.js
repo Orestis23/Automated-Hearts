@@ -12,15 +12,14 @@
       'index.html': 'Automation with a Human touch.',
       'desktop-home.html': 'Automation with a Human touch.',
       'mobile-home.html': 'Automation with a Human touch.',
-      'solutions.html': 'Negative-Software Solution. Logic, not Size.',
-      'mobile-solutions.html': 'Negative-Software Solution. Logic, not Size.',
+      'solutions.html': 'The Negative-Software Solution',
+      'mobile-solutions.html': 'The Negative-Software Solution',
       'who-we-help.html': 'Thinking outside of the box begins Now.',
       'mobile-who-we-help.html': 'Thinking outside of the box begins Now.',
-      'learning-center.html': 'With the right information, you can predict the future.',
-      'mobile-learning-center.html': 'With the right information, you can predict the future.',
-      'about.html': 'Prioritizing Job-Retention.',
-      'mobile-about.html': 'Prioritizing Job-Retention.',
-      'policies.html': 'Prioritizing Job-Retention.',
+      'learning-center.html': 'Choose a lesson.',
+      'mobile-learning-center.html': 'Choose a lesson.',
+      'policies.html': 'Your Information Stays Yours.',
+      'mobile-policies.html': 'Your Information Stays Yours.',
       'pricing.html': 'Fully Customized to your layout.',
       'mobile-pricing.html': 'Fully Customized to your layout.'
     };
@@ -29,9 +28,9 @@
 
     const quoteMarkup = {
       'Automation with a Human touch.':'<span class="ah-shield-pink">Automation</span> with a <span class="ah-shield-green">Human</span> touch.',
-      'Negative-Software Solution. Logic, not Size.':'<span class="ah-shield-pink">Negative-Software</span> Solution. <span class="ah-shield-green">Logic</span>, not <span class="ah-shield-pink">Size</span>.',
+      'The Negative-Software Solution':'The <span class="ah-shield-pink">Negative-Software</span> <span class="ah-shield-green">Solution</span>',
       'Thinking outside of the box begins Now.':'Thinking <span class="ah-shield-green">outside of the box</span> begins <span class="ah-shield-pink">Now</span>.',
-      'With the right information, you can predict the future.':'With the <span class="ah-shield-green">right information</span>, you can <span class="ah-shield-pink">predict the future</span>.',
+      'Choose a lesson.':'<span class="ah-shield-green">Choose</span> a <span class="ah-shield-pink">lesson</span>.',
       'Prioritizing Job-Retention.':'<span class="ah-shield-pink">Prioritizing</span> <span class="ah-shield-green">Job-Retention</span>.',
       'Fully Customized to your layout.':'<span class="ah-shield-pink">Fully Customized</span> to <span class="ah-shield-green">your layout</span>.'
     }[quoteText] || quoteText;

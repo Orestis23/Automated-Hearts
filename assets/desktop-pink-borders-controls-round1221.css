@@ -1,7 +1,7 @@
-/**/
+
 @layer ah-desktop-controls-1221 {
   .ah-bottom-siding { display:none!important; }
-  /* Four text spaces on each side of the human separator. */
+  
   .charity-marquee__separator, .learning-marquee__separator {
     width:auto!important;
     min-width:0!important;
@@ -29,8 +29,7 @@
       box-shadow:var(--ah-control-shadow)!important;
     }
 
-    /* A separate, zero-spread strip begins at the bottom of the face.
-       It cannot wrap around the sides or shine through the button surface. */
+    
     .ah-bottom-siding {
       position:absolute!important;
       display:block!important;

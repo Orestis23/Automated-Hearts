@@ -1,0 +1,61 @@
+/* Round 1619 — unified 3/4-inch inner-rim recess.
+   The shading reaches 72 CSS px inward on desktop and mobile. */
+:root{--ah1619-rim-recess-depth:72px;}
+
+html body > #ah1611-rim-recess{
+ position:fixed!important;
+ z-index:2147483251!important;
+ top:calc(var(--current-frame-top,96px) + 4px)!important;
+ right:calc(var(--current-frame-side,88px) + 4px)!important;
+ bottom:calc(var(--current-frame-bottom,96px) + 4px)!important;
+ left:calc(var(--current-frame-side,88px) + 4px)!important;
+ display:block!important;
+ border:0!important;
+ border-radius:calc(var(--current-frame-radius,32px) - 4px)!important;
+ opacity:1!important;
+ visibility:visible!important;
+ pointer-events:none!important;
+ mask:none!important;
+ -webkit-mask:none!important;
+ clip-path:none!important;
+ background:
+  linear-gradient(to bottom,rgba(0,0,0,.97) 0,rgba(0,0,0,.88) 8px,rgba(0,0,0,.66) 20px,rgba(0,0,0,.36) 38px,rgba(0,0,0,.12) 56px,transparent var(--ah1619-rim-recess-depth)) top/100% var(--ah1619-rim-recess-depth) no-repeat,
+  linear-gradient(to right,rgba(0,0,0,.93) 0,rgba(0,0,0,.78) 8px,rgba(0,0,0,.52) 20px,rgba(0,0,0,.22) 40px,rgba(0,0,0,.07) 57px,transparent var(--ah1619-rim-recess-depth)) left/var(--ah1619-rim-recess-depth) 100% no-repeat,
+  linear-gradient(to left,rgba(0,0,0,.93) 0,rgba(0,0,0,.78) 8px,rgba(0,0,0,.52) 20px,rgba(0,0,0,.22) 40px,rgba(0,0,0,.07) 57px,transparent var(--ah1619-rim-recess-depth)) right/var(--ah1619-rim-recess-depth) 100% no-repeat,
+  linear-gradient(to top,rgba(0,0,0,.86) 0,rgba(0,0,0,.70) 8px,rgba(0,0,0,.42) 19px,rgba(0,0,0,.17) 38px,rgba(0,0,0,.05) 56px,transparent var(--ah1619-rim-recess-depth)) bottom/100% var(--ah1619-rim-recess-depth) no-repeat!important;
+ box-shadow:
+  inset 0 0 0 2px rgba(0,0,0,.80),
+  inset 0 5px 8px rgba(0,0,0,.90),
+  inset 5px 0 8px -5px rgba(0,0,0,.72),
+  inset -5px 0 8px -5px rgba(0,0,0,.72),
+  inset 0 -4px 7px -5px rgba(0,0,0,.56)!important;
+}
+
+html.ah-shell-embedded body > #ah1611-rim-recess,
+html.ah-embedded-page body > #ah1611-rim-recess{display:none!important;}
+
+@media(max-width:900px){
+ html body > #ah1611-rim-recess{
+  top:calc(var(--current-frame-top,68px) + 4px)!important;
+  right:calc(var(--current-frame-side,14px) + 4px)!important;
+  bottom:calc(var(--current-frame-bottom,78px) + 4px)!important;
+  left:calc(var(--current-frame-side,14px) + 4px)!important;
+  border-radius:calc(var(--current-frame-radius,18px) - 4px)!important;
+  background:
+   radial-gradient(ellipse at 0 0,rgba(0,0,0,.96) 0,rgba(0,0,0,.72) 14px,rgba(0,0,0,.34) 36px,rgba(0,0,0,.10) 56px,transparent 72px) top left/72px 72px no-repeat,
+   radial-gradient(ellipse at 100% 0,rgba(0,0,0,.96) 0,rgba(0,0,0,.72) 14px,rgba(0,0,0,.34) 36px,rgba(0,0,0,.10) 56px,transparent 72px) top right/72px 72px no-repeat,
+   radial-gradient(ellipse at 0 100%,rgba(0,0,0,.80) 0,rgba(0,0,0,.52) 14px,rgba(0,0,0,.22) 36px,rgba(0,0,0,.07) 56px,transparent 72px) bottom left/72px 72px no-repeat,
+   radial-gradient(ellipse at 100% 100%,rgba(0,0,0,.80) 0,rgba(0,0,0,.52) 14px,rgba(0,0,0,.22) 36px,rgba(0,0,0,.07) 56px,transparent 72px) bottom right/72px 72px no-repeat,
+   linear-gradient(to bottom,rgba(0,0,0,.96) 0,rgba(0,0,0,.86) 7px,rgba(0,0,0,.62) 19px,rgba(0,0,0,.34) 37px,rgba(0,0,0,.11) 55px,transparent 72px) top/100% 72px no-repeat,
+   linear-gradient(to right,rgba(0,0,0,.91) 0,rgba(0,0,0,.76) 7px,rgba(0,0,0,.48) 19px,rgba(0,0,0,.20) 38px,rgba(0,0,0,.06) 55px,transparent 72px) left/72px 100% no-repeat,
+   linear-gradient(to left,rgba(0,0,0,.91) 0,rgba(0,0,0,.76) 7px,rgba(0,0,0,.48) 19px,rgba(0,0,0,.20) 38px,rgba(0,0,0,.06) 55px,transparent 72px) right/72px 100% no-repeat,
+   linear-gradient(to top,rgba(0,0,0,.82) 0,rgba(0,0,0,.65) 7px,rgba(0,0,0,.38) 18px,rgba(0,0,0,.15) 36px,rgba(0,0,0,.045) 54px,transparent 72px) bottom/100% 72px no-repeat!important;
+  box-shadow:
+   inset 0 0 0 1px rgba(0,0,0,.92),
+   inset 0 2px 0 rgba(255,236,176,.08),
+   inset 0 7px 12px -6px rgba(0,0,0,.96),
+   inset 7px 0 12px -7px rgba(0,0,0,.80),
+   inset -7px 0 12px -7px rgba(0,0,0,.80),
+   inset 0 -6px 10px -7px rgba(0,0,0,.64)!important;
+ }
+}

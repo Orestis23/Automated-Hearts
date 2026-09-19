@@ -115,15 +115,6 @@
     addEventListener('scroll', schedule, { passive: true });
     addEventListener('resize', schedule, { passive: true });
   }
-
-  /* Runtime cache. Service workers require HTTPS (localhost is also allowed).
-     Register during the first idle slot instead of waiting for every image and
-     model, so later model requests can reuse cache sooner. */
-  if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-    const register = () => navigator.serviceWorker.register('./ah-sw.js?v=1107', { scope: './', updateViaCache: 'none' }).catch(() => {});
-    if ('requestIdleCallback' in window) requestIdleCallback(register, { timeout: 1800 });
-    else window.setTimeout(register, 500);
-  }
 })();
 
 ;
@@ -292,11 +283,9 @@
       nav.dataset.r990BloomReady='1';
       const buttons=()=>nav.querySelectorAll('a.footer-structure-control.mechanical-send-control[data-nav]');
       const hot=()=>buttons().forEach(b=>{
-        b.style.setProperty('filter','brightness(1.10) saturate(1.06) contrast(1.02)','important');
         b.style.setProperty('box-shadow','none','important');
       });
       const cool=()=>buttons().forEach(b=>{
-        b.style.setProperty('filter','none','important');
         b.style.setProperty('box-shadow','none','important');
       });
       nav.addEventListener('pointerenter',hot,{passive:true});
@@ -381,7 +370,7 @@
       const full = el.dataset.r992FullText || '';
       el.textContent = mobile && navNames[key] ? navNames[key] : full;
       if(mobile) fit(el, 6.2, 9.5);
-      else el.style.removeProperty('font-size');
+      else el.style.setProperty('font-size','18.4px','important');
     });
 
     document.querySelectorAll('footer#site-footer').forEach((footer)=>{
@@ -465,7 +454,9 @@
       } else {
         el.classList.remove('r993-two-line','r993-one-line');
         el.textContent=el.dataset.r993OriginalText || '';
-        el.style.removeProperty('font-size');
+        el.style.setProperty('font-size','18.4px','important');
+        el.style.setProperty('font-weight','400','important');
+        el.style.setProperty('line-height','18.4px','important');
       }
     });
   }
@@ -540,8 +531,7 @@
     solutions:'The Solution',
     'who-we-help':'Industries',
     learning:'Learning Center',
-    about:'About Us',
-    pricing:'Rates & Services'
+    pricing:'Services'
   };
   let applying=false;
 
@@ -568,7 +558,21 @@
       }else{
         const full=el.dataset.r1019DesktopText;
         if(full && el.textContent.trim()!==full) el.textContent=full;
-        ['font-size','line-height','letter-spacing','white-space','word-break','overflow-wrap'].forEach(function(p){el.style.removeProperty(p);});
+        /* Round 1502: desktop footer typography is a fixed brand dimension.
+           Do not remove these inline values: doing so exposed older high-specificity
+           CSS and made the labels jump larger only after persistent navigation. */
+        el.style.setProperty('font-family','Orbitron,system-ui,sans-serif','important');
+        el.style.setProperty('font-size','18.4px','important');
+        el.style.setProperty('font-weight','400','important');
+        el.style.setProperty('line-height','18.4px','important');
+        el.style.setProperty('letter-spacing','0','important');
+        el.style.setProperty('white-space','normal','important');
+        el.style.setProperty('word-break','normal','important');
+        el.style.setProperty('overflow-wrap','normal','important');
+        el.style.setProperty('transform','none','important');
+        el.style.setProperty('filter','none','important');
+        el.style.setProperty('animation','none','important');
+        el.style.setProperty('transition','none','important');
       }
     });
     applying=false;
@@ -744,8 +748,7 @@
     ['solutions.html', {page:'solutions', label:'The Solution', navLabel:'The Solution', href:'./solutions.html'}],
     ['who-we-help.html', {page:'who-we-help', label:'Industries', navLabel:'Industries', href:'./who-we-help.html'}],
     ['learning-center.html', {page:'learning', label:'Learning Center', navLabel:'Learning Center', href:'./learning-center.html'}],
-    ['about.html', {page:'about', label:'About Us & Policies', navLabel:'About Us', href:'./about.html'}],
-    ['pricing.html', {page:'pricing', label:'Rates & Services', navLabel:'Rates & Services', href:'./pricing.html'}]
+    ['pricing.html', {page:'pricing', label:'Services', navLabel:'Services', href:'./pricing.html'}]
   ]);
 
   const cleanBaseName = (pathname) => {
@@ -1039,8 +1042,7 @@
     solutions:'The Solution',
     'who-we-help':'Industries',
     learning:'Learning Center',
-    about:'About Us',
-    pricing:'Rates & Services'
+    pricing:'Services'
   };
   var busy=false;
   function apply(){

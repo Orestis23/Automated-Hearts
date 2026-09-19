@@ -2,8 +2,8 @@
 (()=>{
   'use strict';
   const DESKTOP_FOOTER='./assets/footer-button-message-border-match-clean-round1454.svg?v=1454r';
-  const DESKTOP_MESSAGE='./assets/message-button-square-footer-match-round1095.svg?v=1454r';
-  const MOBILE_BASE='./assets/mobile-footer-key-navy-clean-round1454.svg?v=1454r';
+  const DESKTOP_MESSAGE='./assets/message-button-square-footer-match-round1095.svg?v=1585r';
+  const MOBILE_BASE='./assets/mobile-footer-key-navy-clean-round1454.svg?v=1639r';
   const MOBILE_MINT='./assets/mobile-footer-accent-mint-round1454.svg?v=1454r';
   const MOBILE_PINK='./assets/mobile-footer-accent-pink-round1454.svg?v=1454r';
   const imp=(el,p,v)=>{if(el)el.style.setProperty(p,v,'important');};
@@ -12,15 +12,15 @@
   });
   const desktop=()=>{
     if(!matchMedia('(min-width:801px)').matches)return;
-    document.querySelectorAll('footer#site-footer nav#primary-nav a.footer-structure-control[data-nav]').forEach(btn=>{
-      hideOld(btn); btn.querySelectorAll(':scope > .ah1454-mobile-corner-overlay').forEach(n=>n.remove());
-      imp(btn,'background-image',`url("${DESKTOP_FOOTER}")`);imp(btn,'background-size','100% 100%');imp(btn,'background-position','center');imp(btn,'background-repeat','no-repeat');
-    });
+    /* Round 1586: do not rewrite desktop outer-rim hardware.
+       The carbon footer/message authorities own those faces and accents. */
     const msg=document.querySelector('body > a#header-send-message');
-    if(msg){hideOld(msg);imp(msg,'background-image',`url("${DESKTOP_MESSAGE}")`);imp(msg,'background-size','100% 100%');imp(msg,'background-position','center');imp(msg,'background-repeat','no-repeat');}
+    if(msg)hideOld(msg);
   };
   const mobile=()=>{
     if(!matchMedia('(max-width:900px)').matches)return;
+    /* Round 1571: retired mobile accent writer; Round 1520 + 1571 own the live mobile shell. */
+    return;
     document.querySelectorAll('body > nav.footer > a[href]').forEach((btn,i)=>{
       hideOld(btn);imp(btn,'position','relative');imp(btn,'background-image',`url("${MOBILE_BASE}")`);imp(btn,'background-size','100% 100%');imp(btn,'background-position','center');imp(btn,'background-repeat','no-repeat');
       let ov=btn.querySelector(':scope > .ah1454-mobile-corner-overlay');

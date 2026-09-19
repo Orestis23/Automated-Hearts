@@ -1,0 +1,113 @@
+/* Automated Hearts Round 1589 — final Solution section-break authority.
+   Removes every legacy pink/flat section rule and applies the same neon construction
+   used on Home, translated to Automated Hearts mint-green. */
+:root{
+  --ah1589-green:#8fffd7;
+  --ah1589-green-hot:#72ffca;
+  --ah1589-green-core:#8fffd7;
+}
+
+/* Kill the legacy pink section borders themselves. */
+html body.page-solutions.page-solutions.page-solutions[data-page="solutions"]
+main#main-content#main-content#main-content > section + section,
+html body.page-solutions.page-solutions.page-solutions[data-page="solutions"]
+main#main-content#main-content#main-content > section.section--divider,
+html body.page-solutions.page-solutions.page-solutions[data-page="solutions"]
+main#main-content#main-content#main-content > section.solution-copper-tablets-section,
+html body.page-solutions.page-solutions.page-solutions[data-page="solutions"]
+main#main-content#main-content#main-content > section.r976-solution-bottom-section,
+html body[data-ah-mobile-surface="solutions"][data-ah-mobile-surface="solutions"]
+main#main-content#main-content > section + section{
+  border-top:0!important;
+  border-top-width:0!important;
+  border-top-style:none!important;
+  border-top-color:transparent!important;
+  outline:0!important;
+}
+
+/* The real divider nodes: full width, green tube, bright core and feathered bloom. */
+html body.page-solutions.page-solutions.page-solutions[data-page="solutions"]
+.ah1483-section-break.ah1483-section-break.ah1483-section-break,
+html body[data-ah-mobile-surface="solutions"][data-ah-mobile-surface="solutions"]
+.ah1483-section-break.ah1483-section-break.ah1483-section-break{
+  position:absolute!important;
+  left:50%!important;
+  right:auto!important;
+  width:100vw!important;
+  max-width:none!important;
+  height:3px!important;
+  min-height:3px!important;
+  max-height:3px!important;
+  margin:0!important;
+  padding:0!important;
+  transform:translateX(-50%)!important;
+  border:0!important;
+  border-radius:0!important;
+  overflow:visible!important;
+  visibility:visible!important;
+  opacity:1!important;
+  z-index:2140!important;
+  background:linear-gradient(90deg,
+    #56ffc0 0%,
+    var(--ah1589-green-hot) 12%,
+    var(--ah1589-green-core) 42%,
+    #9fffe0 50%,
+    var(--ah1589-green-core) 58%,
+    var(--ah1589-green-hot) 88%,
+    #56ffc0 100%)!important;
+  box-shadow:
+    0 0 2px rgba(143,255,215,.92),
+    0 0 6px rgba(143,255,215,.74),
+    0 0 12px rgba(114,255,202,.58),
+    0 0 22px rgba(86,255,192,.43),
+    0 0 38px rgba(86,255,192,.28),
+    0 0 58px rgba(86,255,192,.16)!important;
+  filter:none!important;
+  -webkit-filter:none!important;
+  pointer-events:none!important;
+}
+html body.page-solutions.page-solutions.page-solutions[data-page="solutions"]
+.ah1483-section-break.ah1483-section-break.ah1483-section-break::before,
+html body[data-ah-mobile-surface="solutions"][data-ah-mobile-surface="solutions"]
+.ah1483-section-break.ah1483-section-break.ah1483-section-break::before{
+  content:""!important;
+  position:absolute!important;
+  display:block!important;
+  left:0!important;
+  right:0!important;
+  top:50%!important;
+  height:22px!important;
+  transform:translateY(-50%)!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:rgba(143,255,215,.22)!important;
+  box-shadow:none!important;
+  filter:blur(11px)!important;
+  -webkit-filter:blur(11px)!important;
+  opacity:.88!important;
+  pointer-events:none!important;
+}
+html body.page-solutions.page-solutions.page-solutions[data-page="solutions"]
+.ah1483-section-break.ah1483-section-break.ah1483-section-break::after,
+html body[data-ah-mobile-surface="solutions"][data-ah-mobile-surface="solutions"]
+.ah1483-section-break.ah1483-section-break.ah1483-section-break::after{
+  content:""!important;
+  position:absolute!important;
+  display:block!important;
+  left:0!important;
+  right:0!important;
+  top:1px!important;
+  width:auto!important;
+  height:1px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:#8fffd7!important;
+  box-shadow:0 0 5px rgba(143,255,215,.72),0 0 11px rgba(86,255,192,.46)!important;
+  opacity:1!important;
+  pointer-events:none!important;
+}
+
+/* Absolute safeguard against the old pink border selectors on Solution only. */
+html body.page-solutions[data-page="solutions"] main#main-content > section + section{
+  border-top-color:transparent!important;
+}

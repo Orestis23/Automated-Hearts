@@ -1,0 +1,35 @@
+/* Round 1660 — Home divider softer glow + equal carousel image clearance */
+@media (min-width:901px){
+  html body.page-home[data-page="home"] main#main-content > section.home-overview-carousel-section{
+    --ah1660-home-carousel-gap:96px;
+    padding-top:var(--ah1660-home-carousel-gap)!important;
+    padding-bottom:calc(var(--ah1660-home-carousel-gap) + var(--r857-ticker-height,48px) + 5px)!important;
+  }
+  html body.page-home[data-page="home"] main#main-content > section.home-overview-carousel-section > .shell,
+  html body.page-home[data-page="home"] main#main-content > section.home-overview-carousel-section .home-transition-carousel,
+  html body.page-home[data-page="home"] main#main-content > section.home-overview-carousel-section .home-transition-track{
+    margin-top:0!important;
+    margin-bottom:0!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+  }
+}
+@media (max-width:900px){
+  html body.page-home[data-page="home"] main#main-content > section.home-overview-carousel-section,
+  html body.page-home[data-page="home"] section.home-overview-carousel-section{
+    --ah1660-home-carousel-gap:51px;
+    padding-top:var(--ah1660-home-carousel-gap)!important;
+    padding-bottom:calc(var(--ah1660-home-carousel-gap) + var(--r857-ticker-height,48px) + 5px)!important;
+  }
+  html body.page-home[data-page="home"] main#main-content > section.home-overview-carousel-section > .shell,
+  html body.page-home[data-page="home"] main#main-content > section.home-overview-carousel-section .home-transition-carousel,
+  html body.page-home[data-page="home"] main#main-content > section.home-overview-carousel-section .home-transition-track,
+  html body.page-home[data-page="home"] section.home-overview-carousel-section > .shell,
+  html body.page-home[data-page="home"] section.home-overview-carousel-section .home-transition-carousel,
+  html body.page-home[data-page="home"] section.home-overview-carousel-section .home-transition-track{
+    margin-top:0!important;
+    margin-bottom:0!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+  }
+}

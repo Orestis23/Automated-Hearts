@@ -1,9 +1,4 @@
-/* Automated Hearts Round 1314
-   - Standardize the named sign fields on the smooth black carbon treatment used by
-     the Learning Center opening field.
-   - Restore the desktop Messages button EXACTLY to the user-supplied reference build:
-     84px square, Round 1181 footer-matched/pink-lip face, pink envelope, reference
-     corner placement, and no later external glow/pseudo treatment. */
+
 
 :root{
   --ah-r1314-smooth-black-carbon:
@@ -16,8 +11,7 @@
     linear-gradient(180deg,#171c21 0%,#10151a 48%,#080c10 100%);
 }
 
-/* The four requested sign families. Keep their existing typography/rims/film; only
-   normalize the face material to the Learning Center's quiet black carbon. */
+
 html body.page-home main#main-content .ah-negative-software-title,
 html body[data-page="home"] main#main-content .ah-negative-software-title,
 html body.page-solutions main#main-content .solution-process-instruction-copy,
@@ -34,7 +28,7 @@ html body.page-pricing main#main-content h1[data-text="Total Transparency"]{
   background-blend-mode:normal!important;
 }
 
-/* Desktop Messages — exact visual/geometry authority from the supplied reference ZIP. */
+
 @media (min-width:901px){
   :root{
     --r1005-message-size:84px!important;
@@ -46,7 +40,7 @@ html body.page-pricing main#main-content h1[data-text="Total Transparency"]{
   }
 
   html.ah-message-persist-open{
-    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1585r")!important;
     --r1005-message-transform:translate3d(0,3px,0)!important;
   }
 
@@ -94,8 +88,7 @@ html body.page-pricing main#main-content h1[data-text="Total Transparency"]{
     pointer-events:auto!important;
   }
 
-  /* Reference button contains its lower siding in the face artwork; later glow layers
-     must not be allowed to alter the desktop reference appearance. */
+  
   html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control::before,
   html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control::after{
     content:none!important;
@@ -164,7 +157,7 @@ html body.page-pricing main#main-content h1[data-text="Total Transparency"]{
     :active,.is-pressed,.is-contact-latched,[aria-expanded="true"],
     [data-ah-control-pressed="1"],[data-ah-control-pressed="true"]
   ){
-    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1095r")!important;
+    --r1005-message-face:url("./message-button-square-footer-match-pressed-round1095.svg?v=1585r")!important;
     --r1005-message-transform:translate3d(0,3px,0)!important;
     box-shadow:inset 0 -1px 0 rgba(255,46,168,.10)!important;
   }

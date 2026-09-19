@@ -1,0 +1,37 @@
+/* Round 1642 — Mobile Home cards window uses the lightweight full-cycle MP4 only. */
+@media (max-width:900px){
+  html body[data-page="home"] .cards-frame .machine-well{
+    position:relative!important;
+    overflow:hidden!important;
+    background:#01050a!important;
+  }
+  html body[data-page="home"] .cards-frame .cards-video{
+    display:block!important;
+    visibility:visible!important;
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center!important;
+    border:0!important;
+    background:#01050a!important;
+    opacity:0!important;
+    z-index:2!important;
+    pointer-events:none!important;
+    transform:translateZ(0)!important;
+    backface-visibility:hidden!important;
+    transition:opacity 140ms linear!important;
+  }
+  html body[data-page="home"] .cards-frame.open .cards-video{
+    visibility:visible!important;
+    opacity:1!important;
+  }
+  html body[data-page="home"] .cards-frame:not(.open) .cards-video{
+    visibility:hidden!important;
+    opacity:0!important;
+  }
+  html body[data-page="home"] .cards-frame .cards-live-frame{
+    display:none!important;
+  }
+}

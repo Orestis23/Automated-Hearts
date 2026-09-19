@@ -1,0 +1,35 @@
+/* Automated Hearts Round 1637 — hard fallback before JS live-style cloning. */
+@media (min-width:901px){
+  html body.page-home[data-page="home"] #home-negative-software-title{
+    position:relative!important;isolation:isolate!important;display:flex!important;
+    align-items:center!important;justify-content:center!important;box-sizing:border-box!important;
+    width:clamp(360px,30vw,560px)!important;min-width:0!important;height:52px!important;min-height:52px!important;max-height:52px!important;
+    margin:0 auto!important;padding:0 14px!important;overflow:hidden!important;border:2px solid #8fffd7!important;border-radius:0!important;outline:0!important;
+    background-color:#0b1728!important;
+    background-image:linear-gradient(180deg,rgba(255,255,255,.040) 0%,rgba(255,255,255,.010) 27%,rgba(0,0,0,.13) 100%),url('./home-carbon-weave-round737-seamless.webp')!important;
+    background-position:center,center!important;background-size:100% 100%,230px auto!important;background-repeat:no-repeat,repeat!important;background-blend-mode:normal!important;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.90),inset 0 1px 0 rgba(228,255,248,.12),0 0 4px rgba(143,255,215,.12)!important;
+  }
+  html body.page-home[data-page="home"] #home-negative-software-title::before,
+  html body.page-home[data-page="home"] #home-negative-software-title::after{content:none!important;display:none!important;}
+  html body.page-home[data-page="home"] #home-negative-software-title > .r488-extra-matte-film{display:none!important;}
+  html body.page-home[data-page="home"] #home-negative-software-title .ah-negative-software-title-copy{
+    position:relative!important;z-index:10!important;display:block!important;margin:0!important;padding:0!important;
+    font-family:'Orbitron',system-ui,sans-serif!important;font-size:clamp(15px,1.15vw,21px)!important;font-weight:800!important;line-height:1!important;letter-spacing:.02em!important;
+    white-space:nowrap!important;text-align:center!important;color:#ff70bd!important;-webkit-text-fill-color:#ff70bd!important;
+    text-shadow:0 0 .45px #fff,0 0 1.3px #ffb4d8,0 0 4px rgba(255,46,168,.38)!important;
+  }
+  html body.page-home[data-page="home"] #home-negative-software-title .ah-negative-software-title-copy *{
+    color:#ff70bd!important;-webkit-text-fill-color:#ff70bd!important;text-shadow:inherit!important;
+  }
+  html body.page-home[data-page="home"] #home-negative-software-title > .ah1637-title-film{
+    position:absolute!important;z-index:8!important;inset:2px!important;display:block!important;pointer-events:none!important;
+    background:radial-gradient(circle at 1px 1px,rgba(246,253,255,.090) 0 .52px,transparent .82px) 0 0/5px 5px,repeating-linear-gradient(0deg,rgba(238,249,255,.046) 0 1px,rgba(0,0,0,.024) 1px 3px),linear-gradient(110deg,transparent 0 10%,rgba(237,249,255,.14) 17%,rgba(225,240,248,.050) 32%,transparent 43% 100%),radial-gradient(145% 58% at 50% -12%,rgba(240,250,255,.15),transparent 66%),linear-gradient(180deg,rgba(221,238,247,.09),rgba(190,211,224,.03) 44%,rgba(0,0,0,.065))!important;
+    opacity:.86!important;mix-blend-mode:screen!important;
+  }
+
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-grid-round344 > article.ah1600-explore-footer-cell,
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-grid-round344 > article.ah1600-explore-footer-cell > #negative-software-explore{
+    height:286px!important;min-height:286px!important;max-height:286px!important;margin-top:0!important;margin-bottom:0!important;align-self:stretch!important;box-sizing:border-box!important;
+  }
+}

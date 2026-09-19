@@ -1,0 +1,175 @@
+/* round1615-outer-page-core.css — consolidated in Round 1615. */
+
+/* SOURCE: round1591-verified-outer-controls-solution-green.css */
+/* Automated Hearts Round 1591 — verified outer-control texture + Solution neon-green authority. */
+@media (min-width:901px){
+  html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]{
+    background-color:#050607!important;
+    background-image:
+      url('./footer-button-carbon-inner-rim-round1586.svg?v=1639r'),
+      linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.045) 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,.16) 100%),
+      radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%),
+      repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(145,145,145,.05) 0 3px,rgba(0,0,0,.07) 3px 6px),
+      linear-gradient(#111315 0%,#08090a 48%,#030405 100%)!important;
+    background-size:100% 100%,100% 100%,100% 100%,auto,auto,auto!important;
+    background-position:center,center,center,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
+    background-color:#050607!important;
+    background-image:
+      url('./message-button-carbon-red-round1586.svg?v=1639r'),
+      linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.045) 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,.16) 100%),
+      radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%),
+      repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(145,145,145,.05) 0 3px,rgba(0,0,0,.07) 3px 6px),
+      linear-gradient(#111315 0%,#08090a 48%,#030405 100%)!important;
+    background-size:100% 100%,100% 100%,100% 100%,auto,auto,auto!important;
+    background-position:center,center,center,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+  }
+}
+html body.page-solutions[data-page="solutions"] .ah1483-section-break,
+html body[data-ah-mobile-surface="solutions"] .ah1483-section-break{
+  background:linear-gradient(90deg,#56ffc0 0%,#72ffca 12%,#8fffd7 42%,#9fffe0 50%,#8fffd7 58%,#72ffca 88%,#56ffc0 100%)!important;
+  box-shadow:0 0 2px rgba(143,255,215,.92),0 0 6px rgba(143,255,215,.74),0 0 12px rgba(114,255,202,.58),0 0 22px rgba(86,255,192,.43),0 0 38px rgba(86,255,192,.28),0 0 58px rgba(86,255,192,.16)!important;
+}
+html body.page-solutions[data-page="solutions"] .ah1483-section-break::after,
+html body[data-ah-mobile-surface="solutions"] .ah1483-section-break::after{
+  background:#8fffd7!important;
+  box-shadow:0 0 5px rgba(143,255,215,.72),0 0 11px rgba(86,255,192,.46)!important;
+}
+
+
+/* SOURCE: round1593-page-field-minimal-authority.css */
+/* Automated Hearts Round 1593 — true borderless page-name field.
+   The matte center reaches the full footprint; the only visible boundary is
+   a thin white horizontal line at the top and bottom. */
+@media (min-width:901px){
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top{
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+    width:716px!important;
+    min-width:716px!important;
+    max-width:716px!important;
+    height:58px!important;
+    min-height:58px!important;
+    max-height:58px!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-width:0!important;
+    border-style:none!important;
+    border-color:transparent!important;
+    outline:0!important;
+    outline-offset:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    filter:none!important;
+    background-color:#07111b!important;
+    background-image:
+      radial-gradient(circle at 1px 1px,rgba(255,255,255,.024) 0 .42px,transparent .7px),
+      repeating-linear-gradient(0deg,rgba(255,255,255,.011) 0 1px,rgba(0,0,0,.011) 1px 3px),
+      linear-gradient(180deg,#10283d 0%,#071827 48%,#030a12 100%)!important;
+    background-size:5px 5px,auto,auto!important;
+    background-position:0 0,0 0,center!important;
+    background-repeat:repeat,repeat,no-repeat!important;
+  }
+
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top::before,
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top::after{
+    content:none!important;
+    display:none!important;
+    inset:auto!important;
+    width:0!important;
+    height:0!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    background:none!important;
+    box-shadow:none!important;
+    filter:none!important;
+    opacity:0!important;
+  }
+
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top
+  > .r488-extra-matte-film{
+    position:absolute!important;
+    z-index:1!important;
+    inset:0!important;
+    width:auto!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    background:linear-gradient(160deg,rgba(255,255,255,.042) 0%,rgba(255,255,255,.014) 18%,transparent 42% 72%,rgba(0,0,0,.075) 100%)!important;
+    box-shadow:none!important;
+    filter:none!important;
+    opacity:.72!important;
+    pointer-events:none!important;
+  }
+
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top
+  > :is(.footer-page-led,.header-page-led,.page-sign-progress-inverse){
+    position:relative!important;
+    z-index:3!important;
+    top:0!important;
+    right:0!important;
+    bottom:0!important;
+    left:0!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0 10px!important;
+    border:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    font-size:21.6pt!important;
+    font-weight:700!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+  }
+
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top
+  > .page-sign-progress-inverse{
+    position:absolute!important;
+    z-index:2!important;
+    inset:0!important;
+    display:block!important;
+    width:auto!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    background:
+      linear-gradient(90deg,rgba(143,255,215,.24) 0%,rgba(50,127,171,.20) 44%,rgba(255,46,168,.22) 100%),
+      linear-gradient(180deg,#0b2434 0%,#071b29 48%,#04111b 100%)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.035),inset 0 -1px 0 rgba(0,0,0,.36)!important;
+    filter:none!important;
+    opacity:1!important;
+    overflow:hidden!important;
+    pointer-events:none!important;
+    -webkit-clip-path:inset(0 calc(100% - var(--page-sign-scroll-percent,0%)) 0 0)!important;
+    clip-path:inset(0 calc(100% - var(--page-sign-scroll-percent,0%)) 0 0)!important;
+    transition:-webkit-clip-path 70ms linear,clip-path 70ms linear!important;
+  }
+}
+

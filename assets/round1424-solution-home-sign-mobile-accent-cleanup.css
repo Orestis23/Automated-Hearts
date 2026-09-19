@@ -1,6 +1,4 @@
-/* Automated Hearts Round 1424
-   - Solution "Open the window." uses the compact Home "Automated Hearts" title-field material and scale.
-   - Pink corner accents are desktop-footer-only. Remove them from every mobile button and from Learning Center lesson keys. */
+
 :root{
   --ah1424-mint:#8fffd7;
   --ah1424-pink:#ff72bd;
@@ -10,7 +8,7 @@
     linear-gradient(#151b20 0%,#0d1217 50%,#070a0e 100%);
 }
 
-/* Exact Home-title-field look, but content-fit width. */
+
 html body.page-solutions[data-page="solutions"] #solution-process-header .ah-solution-open-sign,
 html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section .ah-solution-open-sign{
   position:relative!important;
@@ -94,7 +92,7 @@ html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section .a
   text-shadow:0 0 .35px rgba(255,255,255,.88),0 0 1.2px currentColor,0 0 3px rgba(255,114,189,.42)!important;
 }
 
-/* Keep the established 2/3-inch rhythm around the sign and machine. */
+
 @media (min-width:801px){
   html body.page-solutions[data-page="solutions"] #solution-process-header{
     min-height:0!important;
@@ -135,7 +133,7 @@ html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section .a
   }
 }
 
-/* Accents belong ONLY to the desktop persistent footer buttons. */
+
 html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar > .ah-route-label-final::before,
 html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar > .ah-route-label-final::after,
 html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-label.ah-unified-spacebar > .ah-route-label-final::before,

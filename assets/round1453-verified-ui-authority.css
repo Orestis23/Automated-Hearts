@@ -1,6 +1,4 @@
-/* Automated Hearts Round 1453 — final verified authority.
-   Fixes Learning Center chooser centering, persistent ticker glow, exact
-   Messages-button accent geometry on all footer keys, and desktop footer copy. */
+
 :root{--ah1453-pink:#ff2ea8;--ah1453-mint:#8fffd7;--ah1453-red:#ff3030;}
 
 @media (min-width:901px){
@@ -40,7 +38,7 @@
   }
 }
 
-/* Remove every older corner-accent painter before applying the final exact trace. */
+
 .ah-footer-pink-corners,.ah1451-message-match-accents,.ah1452-message-corner-overlay{
   display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;
 }

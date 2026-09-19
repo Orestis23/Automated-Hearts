@@ -1,0 +1,61 @@
+/* Round 1528 — serialized top/bottom model-stage transition authority.
+   Resting top state hides the model stage; resting model state hides the chooser.
+   During entry the local shield stays fully closed until the page has finished
+   scrolling to the bottom. It then lowers for 2 seconds to reveal the 3D model.
+   During exit the same shield rises for 2 seconds to cover the model before the
+   page is allowed to scroll all the way back to the top. */
+
+/* When the bottom/model half is selected, keep the upper chooser's geometry so
+   the stage remains anchored, but do not let any of its content show through. */
+body[data-ah-model-half="bottom"][data-ah-mobile-surface="learning"] main#main-content > .lite-section:first-of-type,
+body[data-ah-model-half="bottom"][data-ah-mobile-surface="industries"] main#main-content > .lite-section:first-of-type,
+body.page-learning[data-ah-model-half="bottom"] #learning-route-buttons,
+body.page-who-we-help[data-ah-model-half="bottom"] #who-we-help-solutions{
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+
+/* Mobile pages do not carry the legacy desktop learning-stage shield node, so
+   Round 1528 installs one local compositor layer that covers the complete 3D
+   viewport, instructions and model-navigation row as a single surface. */
+#lite-model-stage > .ah1528-model-shield{
+  position:absolute!important;
+  inset:0!important;
+  z-index:1000!important;
+  display:block!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:0!important;
+  border-top:2px solid rgba(205,170,77,.96)!important;
+  border-radius:0!important;
+  outline:0!important;
+  background-color:#08172b!important;
+  background-image:linear-gradient(180deg,rgba(255,255,255,.025),rgba(0,0,0,.14)),url("./page-shield-smoked-heart.webp")!important;
+  background-position:center center,center center!important;
+  background-size:cover,cover!important;
+  background-repeat:no-repeat,no-repeat!important;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.62)!important;
+  opacity:1!important;
+  visibility:visible!important;
+  transform:translate3d(0,0,0)!important;
+  transition:none!important;
+  will-change:transform!important;
+  backface-visibility:hidden!important;
+  pointer-events:auto!important;
+}
+
+/* Prevent old stage rules from revealing the model while the new transition
+   authority says the shield is closed. Inline transform animation still wins
+   because Round 1528 writes it with !important at runtime. */
+body[data-ah-model-half="top"] #lite-model-stage > .ah1528-model-shield,
+body[data-ah-model-half="transition-in"] #lite-model-stage > .ah1528-model-shield{
+  pointer-events:auto!important;
+}
+body[data-ah-model-half="bottom"] #lite-model-stage > .ah1528-model-shield{
+  pointer-events:none!important;
+}

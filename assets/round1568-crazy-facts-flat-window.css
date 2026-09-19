@@ -1,0 +1,8 @@
+/* Round 1568 — Crazy Facts render flat behind the machine window, no lens-scale effect. */
+.cards-frame .cards-live-frame,
+.cards-frame.open .cards-live-frame{
+  transform:none!important;
+  scale:1!important;
+  zoom:1!important;
+  transform-origin:50% 50%!important;
+}

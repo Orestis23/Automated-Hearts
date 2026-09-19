@@ -1,0 +1,107 @@
+/* Automated Hearts Round 1644 — poster-first Home machine windows without earlier heavy-engine loading. */
+
+/* Mobile public Home implementation (machine-stack). */
+@media (max-width:900px){
+  html body[data-page="home"] .machine-frame .machine-well{
+    position:relative!important;
+    overflow:hidden!important;
+    background:#01050a!important;
+  }
+  html body[data-page="home"] .machine-3d-frame .machine-live-poster{
+    position:absolute!important;
+    inset:0!important;
+    z-index:4!important;
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center!important;
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:none!important;
+    transition:opacity 140ms linear!important;
+    background:#01050a!important;
+  }
+  /* Closed window always shows a finished still, even after the live engine has loaded/frozen. */
+  html body[data-page="home"] .machine-3d-frame:not(.open) .machine-live-poster{
+    visibility:visible!important;
+    opacity:1!important;
+  }
+  /* If opened before the live canvas has painted, leave the still in place. */
+  html body[data-page="home"] .machine-3d-frame.open:not(.ah1644-live-painted) .machine-live-poster{
+    visibility:visible!important;
+    opacity:1!important;
+  }
+  html body[data-page="home"] .machine-3d-frame.open.ah1644-live-painted .machine-live-poster{
+    visibility:hidden!important;
+    opacity:0!important;
+  }
+
+  /* The cards MP4 already has an 11 KB poster. Keep the element visible while closed
+     so the poster/current paused frame is shown instead of the carbon-only fallback. */
+  html body[data-page="home"] .cards-frame .cards-video{
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    z-index:3!important;
+    background:#01050a!important;
+  }
+  html body[data-page="home"] .cards-frame:not(.open) .cards-video{
+    visibility:visible!important;
+    opacity:1!important;
+  }
+}
+
+/* Desktop public Home implementation (home-machine-grid). */
+@media (min-width:901px){
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame{
+    position:relative!important;
+    isolation:isolate!important;
+  }
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame > .ah1644-machine-window-poster,
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame > .home-mobile-machine-poster--primary{
+    position:absolute!important;
+    inset:0!important;
+    z-index:14!important;
+    display:block!important;
+    visibility:visible!important;
+    width:100%!important;
+    min-width:100%!important;
+    max-width:100%!important;
+    height:100%!important;
+    min-height:100%!important;
+    max-height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    object-fit:cover!important;
+    object-position:center!important;
+    background:#01040a!important;
+    opacity:1!important;
+    pointer-events:none!important;
+    transition:opacity 140ms linear,visibility 140ms linear!important;
+  }
+  /* The static image remains behind the closed glass even after the live scene is ready. */
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame:not(.is-haze-open) > .ah1644-machine-window-poster,
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame:not(.is-haze-open) > .home-mobile-machine-poster--primary{
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+  }
+  /* Opening before a first live paint never exposes a blank frame. */
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame.is-haze-open:not(.ah1644-live-ready) > .ah1644-machine-window-poster,
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame.is-haze-open:not(.ah1644-live-ready) > .home-mobile-machine-poster--primary{
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+  }
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame.is-haze-open.ah1644-live-ready > .ah1644-machine-window-poster,
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame.is-haze-open.ah1644-live-ready > .home-mobile-machine-poster--primary{
+    visibility:hidden!important;
+    opacity:0!important;
+  }
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame > .home-machine-haze-screen{
+    z-index:30!important;
+  }
+}

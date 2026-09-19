@@ -1,0 +1,331 @@
+/* Automated Hearts Round 1531 — mobile 3D model floating-control authority.
+   Removes the leather-like inner frame/padding around active 3D model stages,
+   hides the fixed gold page rim while the model half is active, lets the model
+   fill the full usable field, floats the instruction text over the model, and
+   lifts the single Choose Another control fully above the persistent footer. */
+@media (max-width:900px){
+  /* While the lower 3D half is active, remove the fixed gold page rim and the
+     leather-like gutter that read as an extra border around the model. */
+  html body[data-ah-mobile-surface="learning"]:is([data-ah-model-half="transition-in"],[data-ah-model-half="bottom"],[data-ah-model-half="transition-out"])::before,
+  html body[data-ah-mobile-surface="industries"]:is([data-ah-model-half="transition-in"],[data-ah-model-half="bottom"],[data-ah-model-half="transition-out"])::before{
+    content:none!important;
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden])),
+  html body[data-ah-mobile-surface="industries"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden])){
+    display:block!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:none!important;
+    height:var(--ah1528-model-stage-height,calc(100dvh - 158px))!important;
+    min-height:var(--ah1528-model-stage-height,calc(100dvh - 158px))!important;
+    max-height:var(--ah1528-model-stage-height,calc(100dvh - 158px))!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    overflow:hidden!important;
+    background-color:#08172b!important;
+    background-image:url("./model-backdrop-heartless-leather-mobile-round1323.webp")!important;
+    background-position:center center!important;
+    background-size:cover!important;
+    background-repeat:no-repeat!important;
+    content-visibility:visible!important;
+    contain:none!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden])) > .ah1483-section-break,
+  html body[data-ah-mobile-surface="industries"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden])) > .ah1483-section-break,
+  html body[data-ah-mobile-surface="learning"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden]))::before,
+  html body[data-ah-mobile-surface="learning"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden]))::after,
+  html body[data-ah-mobile-surface="industries"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden]))::before,
+  html body[data-ah-mobile-surface="industries"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden]))::after{
+    content:none!important;
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage#lite-model-stage.stage,
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage#lite-model-stage.stage{
+    position:relative!important;
+    isolation:isolate!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    grid-template-rows:minmax(0,1fr)!important;
+    row-gap:2px!important;
+    box-sizing:border-box!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:var(--ah1528-model-stage-height,calc(100dvh - 158px))!important;
+    min-height:var(--ah1528-model-stage-height,calc(100dvh - 158px))!important;
+    max-height:var(--ah1528-model-stage-height,calc(100dvh - 158px))!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+    background-color:#08172b!important;
+    background-image:url("./model-backdrop-heartless-leather-mobile-round1323.webp")!important;
+    background-position:center center!important;
+    background-size:cover!important;
+    background-repeat:no-repeat!important;
+    border:0!important;
+    border-image:none!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+  }
+  /* No decorative top seam: the stage itself carries the embossed leather. */
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage#lite-model-stage.stage::before,
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage#lite-model-stage.stage::after,
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage#lite-model-stage.stage::before,
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage#lite-model-stage.stage::after{
+    content:none!important;
+    display:none!important;
+  }
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage#lite-model-stage.stage[hidden],
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage#lite-model-stage.stage[hidden]{display:none!important;}
+
+  html body[data-ah-mobile-surface="learning"] #lite-model-shell#lite-model-shell.model-shell,
+  html body[data-ah-mobile-surface="industries"] #lite-model-shell#lite-model-shell.model-shell{
+    grid-row:1!important;
+    grid-column:1!important;
+    position:relative!important;
+    align-self:stretch!important;
+    justify-self:stretch!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:100%!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    overflow:hidden!important;
+    touch-action:none!important;
+  }
+  html body[data-ah-mobile-surface="learning"] #lite-model-shell#lite-model-shell.model-shell[hidden],
+  html body[data-ah-mobile-surface="industries"] #lite-model-shell#lite-model-shell.model-shell[hidden]{display:none!important;}
+  html body[data-ah-mobile-surface="learning"] #lite-model-shell > iframe,
+  html body[data-ah-mobile-surface="industries"] #lite-model-shell > iframe{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    margin:0!important;
+    border:0!important;
+    background:transparent!important;
+    clip-path:inset(8px 0 0 0)!important;
+    touch-action:none!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] .mobile-model-zoom-controls,
+  html body[data-ah-mobile-surface="industries"] .mobile-model-zoom-controls{
+    display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;
+  }
+
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1527-model-instructions{
+    position:absolute!important;
+    z-index:205!important;
+    left:74px!important;
+    right:74px!important;
+    top:17px!important;
+    bottom:auto!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:auto!important;
+    min-width:0!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    color:#8fffd7!important;
+    font-family:Orbitron,system-ui,sans-serif!important;
+    font-size:clamp(7.8px,2.25vw,9.7px)!important;
+    font-weight:600!important;
+    line-height:1!important;
+    letter-spacing:.018em!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+    text-shadow:0 1px 2px rgba(0,0,0,.92),0 0 5px rgba(143,255,215,.24)!important;
+    pointer-events:none!important;
+  }
+
+  /* Bottom bar now contains only the return control in normal flow. */
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar{
+    position:static!important;
+    z-index:auto!important;
+    display:block!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:0!important;
+    min-height:0!important;
+    max-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    background:transparent!important;
+    border:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    pointer-events:none!important;
+  }
+
+  /* Previous / Next: circular orbs floating in the model's upper corners. */
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-prev,#industry-model-prev),
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-next,#industry-model-next){
+    position:absolute!important;
+    z-index:220!important;
+    top:12px!important;
+    bottom:auto!important;
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:44px!important;
+    min-width:44px!important;
+    max-width:44px!important;
+    height:44px!important;
+    min-height:44px!important;
+    max-height:44px!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    border:1px solid rgba(143,255,215,.90)!important;
+    border-radius:50%!important;
+    outline:0!important;
+    background:
+      radial-gradient(circle at 36% 26%,rgba(255,255,255,.11),rgba(255,255,255,0) 36%),
+      linear-gradient(180deg,#112c46 0%,#071a2e 58%,#020b14 100%)!important;
+    box-shadow:
+      inset 0 0 0 1px rgba(0,0,0,.72),
+      inset 0 3px 8px rgba(132,193,224,.12),
+      0 0 7px rgba(143,255,215,.16)!important;
+    color:transparent!important;
+    -webkit-text-fill-color:transparent!important;
+    font-size:0!important;
+    line-height:0!important;
+    text-shadow:none!important;
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+    transform:none!important;
+    touch-action:manipulation!important;
+  }
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-prev,#industry-model-prev){left:12px!important;right:auto!important;}
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-next,#industry-model-next){right:12px!important;left:auto!important;border-color:rgba(255,46,168,.90)!important;box-shadow:inset 0 0 0 1px rgba(0,0,0,.72),inset 0 3px 8px rgba(132,193,224,.12),0 0 7px rgba(255,46,168,.16)!important;}
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-prev,#industry-model-prev)::before,
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-next,#industry-model-next)::before{
+    display:block!important;
+    position:static!important;
+    width:auto!important;
+    height:auto!important;
+    margin:0!important;
+    padding:0!important;
+    background:none!important;
+    border:0!important;
+    box-shadow:none!important;
+    color:#8fffd7!important;
+    -webkit-text-fill-color:#8fffd7!important;
+    font-family:Orbitron,system-ui,sans-serif!important;
+    font-size:25px!important;
+    font-weight:800!important;
+    line-height:1!important;
+    text-shadow:0 0 5px rgba(143,255,215,.28)!important;
+  }
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-prev,#industry-model-prev)::before{content:'‹'!important;transform:translateX(-1px)!important;}
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-next,#industry-model-next)::before{content:'›'!important;color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;text-shadow:0 0 5px rgba(255,46,168,.28)!important;transform:translateX(1px)!important;}
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-prev,#industry-model-prev)::after,
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-next,#industry-model-next)::after{content:none!important;display:none!important;}
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-prev,#industry-model-prev,#model-next,#industry-model-next):active{
+    transform:scale(.94)!important;
+  }
+  html body main#main-content #lite-model-stage#lite-model-stage > .ah1526-mobile-stage-bottom-bar > :is(#model-prev,#industry-model-prev,#model-next,#industry-model-next):disabled{
+    opacity:.38!important;
+    filter:saturate(.55) brightness(.74)!important;
+    pointer-events:none!important;
+  }
+
+  /* The only bottom control: fully visible, compact, no extra rim/pseudo borders. */
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage > .ah1526-mobile-stage-bottom-bar > #learning-choose-another,
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage > .ah1526-mobile-stage-bottom-bar > #industry-choose-another{
+    position:absolute!important;
+    z-index:210!important;
+    left:8px!important;
+    right:8px!important;
+    bottom:48px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    box-sizing:border-box!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:40px!important;
+    min-height:40px!important;
+    max-height:40px!important;
+    margin:0!important;
+    padding:4px 10px!important;
+    overflow:hidden!important;
+    border:1px solid #ff2ea8!important;
+    border-radius:2px!important;
+    outline:0!important;
+    background:linear-gradient(180deg,rgba(21,28,34,.96),rgba(8,13,18,.98))!important;
+    box-shadow:none!important;
+    color:#f4f6f8!important;
+    -webkit-text-fill-color:#f4f6f8!important;
+    font-family:Orbitron,system-ui,sans-serif!important;
+    font-size:clamp(8.2px,2.35vw,10.2px)!important;
+    font-weight:700!important;
+    line-height:1.05!important;
+    letter-spacing:0!important;
+    text-align:center!important;
+    white-space:normal!important;
+    visibility:visible!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+    transform:none!important;
+  }
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage > .ah1526-mobile-stage-bottom-bar > #learning-choose-another::before,
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage > .ah1526-mobile-stage-bottom-bar > #learning-choose-another::after,
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage > .ah1526-mobile-stage-bottom-bar > #industry-choose-another::before,
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage > .ah1526-mobile-stage-bottom-bar > #industry-choose-another::after{
+    content:none!important;display:none!important;border:0!important;box-shadow:none!important;background:none!important;
+  }
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage > .ah1526-mobile-stage-bottom-bar > #learning-choose-another:active,
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage > .ah1526-mobile-stage-bottom-bar > #industry-choose-another:active{transform:translateY(1px)!important;}
+}
+
+/* Round 1606: compact Industries interaction guide beside the model. */
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="industries"] main#main-content #lite-model-stage#lite-model-stage > .ah1527-model-instructions{
+    top:74px!important;left:12px!important;right:auto!important;bottom:auto!important;
+    width:72px!important;display:flex!important;flex-direction:column!important;
+    align-items:flex-start!important;justify-content:flex-start!important;gap:8px!important;
+    font-size:clamp(8px,2.3vw,10px)!important;line-height:1.25!important;
+    text-align:left!important;white-space:normal!important;
+  }
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage > .ah1527-model-instructions > span{display:block;}
+}

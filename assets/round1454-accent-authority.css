@@ -1,7 +1,7 @@
-/* Automated Hearts Round 1454 — desktop accent removal + mobile accent cleanup. */
+
 :root{--ah1454-mint:#8fffd7;--ah1454-pink:#ff2ea8;}
 
-/* Desktop: no decorative corner accents on footer keys or Messages hardware. */
+
 @media (min-width:801px){
   footer#site-footer .ah-footer-pink-corners,
   footer#site-footer .ah1451-message-match-accents,
@@ -18,16 +18,16 @@
     background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;
   }
   body[data-page] > a#header-send-message#header-send-message{
-    background-image:url('./message-button-square-footer-match-round1095.svg?v=1454r')!important;
+    background-image:url('./message-button-square-footer-match-round1095.svg?v=1585r')!important;
     background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;
   }
 }
 
-/* Mobile: one clean base, then one color-matched corner highlight. No old pink underneath. */
+
 @media (max-width:900px){
   body > nav.footer > a[href]{
     position:relative!important;
-    background-image:url('./mobile-footer-key-navy-clean-round1454.svg?v=1454r')!important;
+    background-image:url('./mobile-footer-key-navy-clean-round1454.svg?v=1639r')!important;
     background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;
   }
   body > nav.footer > a[href] > :is(.ah-footer-pink-corners,.ah1451-message-match-accents,.ah1452-message-corner-overlay,.ah1453-message-corner-overlay){

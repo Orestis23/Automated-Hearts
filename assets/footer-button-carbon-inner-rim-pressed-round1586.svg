@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160" preserveAspectRatio="none"><defs>
+<path id="face-shape" d="M4 4H636V149H4Z"/>
+<path id="inner-rim" d="M8 8H632V145H8Z"/>
+<clipPath id="face-clip"><use href="#face-shape"/></clipPath>
+<clipPath id="side-clip"><use href="#face-shape" transform="translate(0 4)"/></clipPath>
+<pattern id="coarse-sand" width="9" height="9" patternUnits="userSpaceOnUse">
+  <circle cx="1.2" cy="1.4" r=".72" fill="#ffd9ec" fill-opacity=".22"/>
+  <circle cx="5.8" cy="2.1" r=".55" fill="#4f062e" fill-opacity=".28"/>
+  <circle cx="3.3" cy="6.8" r=".82" fill="#ffb2dc" fill-opacity=".17"/>
+  <circle cx="8" cy="7.4" r=".48" fill="#fff0f7" fill-opacity=".13"/>
+  <path d="M0 4.7h2.5M6.8 5.2H9" stroke="#460624" stroke-opacity=".22" stroke-width=".45"/>
+</pattern>
+<filter id="sand-wear" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+  <feTurbulence type="fractalNoise" baseFrequency=".18" numOctaves="3" seed="915" result="sand"/>
+  <feColorMatrix in="sand" type="matrix" values=".30 0 0 0 .15  0 .24 0 0 .06  0 0 .30 0 .16  0 0 0 .28 0" result="grain"/>
+  <feBlend in="SourceGraphic" in2="grain" mode="soft-light"/>
+</filter>
+
+<linearGradient id="pink-depth" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ff70bd"/><stop offset=".32" stop-color="#e2359a"/><stop offset=".72" stop-color="#a61768"/><stop offset="1" stop-color="#4d062e"/></linearGradient>
+<linearGradient id="face-light" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff" stop-opacity=".035"/><stop offset=".28" stop-color="#b8b8b8" stop-opacity=".014"/><stop offset=".62" stop-color="#565656" stop-opacity=".010"/><stop offset="1" stop-color="#000" stop-opacity=".20"/></linearGradient>
+<linearGradient id="rim1389" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#a5c2ce"/><stop offset=".18" stop-color="#536f80"/><stop offset=".48" stop-color="#1c3445"/><stop offset=".78" stop-color="#08121d"/><stop offset="1" stop-color="#648594"/></linearGradient>
+<linearGradient id="ah1558-pink-tl" x1="14" y1="45" x2="82" y2="14" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#7d0d50" stop-opacity=".35"/>
+  <stop offset=".30" stop-color="#ff2ea8" stop-opacity=".96"/>
+  <stop offset=".58" stop-color="#ff8bd1" stop-opacity="1"/>
+  <stop offset="1" stop-color="#ff2ea8" stop-opacity=".55"/>
+</linearGradient>
+<linearGradient id="ah1558-pink-br" x1="558" y1="139" x2="626" y2="106" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#ff2ea8" stop-opacity=".55"/>
+  <stop offset=".42" stop-color="#ff8bd1" stop-opacity="1"/>
+  <stop offset=".70" stop-color="#ff2ea8" stop-opacity=".96"/>
+  <stop offset="1" stop-color="#7d0d50" stop-opacity=".35"/>
+</linearGradient>
+
+<!-- Round 1586: carbon-face overlay; complete footer accent surfaces, matching the desktop Messages key. -->
+<linearGradient id="ah1581-pink-top" x1="14" y1="14" x2="500" y2="14" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#8c1058" stop-opacity=".55"/>
+  <stop offset=".08" stop-color="#ff2ea8" stop-opacity=".96"/>
+  <stop offset=".22" stop-color="#ff9bd7" stop-opacity="1"/>
+  <stop offset=".52" stop-color="#ff2ea8" stop-opacity=".94"/>
+  <stop offset=".82" stop-color="#ff2ea8" stop-opacity=".54"/>
+  <stop offset="1" stop-color="#ff2ea8" stop-opacity=".10"/>
+</linearGradient>
+<linearGradient id="ah1581-pink-bottom" x1="140" y1="139" x2="626" y2="78" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#ff2ea8" stop-opacity=".10"/>
+  <stop offset=".18" stop-color="#ff2ea8" stop-opacity=".54"/>
+  <stop offset=".48" stop-color="#ff2ea8" stop-opacity=".94"/>
+  <stop offset=".78" stop-color="#ff9bd7" stop-opacity="1"/>
+  <stop offset=".92" stop-color="#ff2ea8" stop-opacity=".96"/>
+  <stop offset="1" stop-color="#8c1058" stop-opacity=".55"/>
+</linearGradient>
+<filter id="ah1581-pink-soft" x="-8%" y="-18%" width="116%" height="136%" color-interpolation-filters="sRGB">
+  <feGaussianBlur stdDeviation="1.15" result="blur"/>
+  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+
+<filter id="ah1581-press-accent-glow" x="-12%" y="-55%" width="124%" height="210%" color-interpolation-filters="sRGB">
+  <feGaussianBlur in="SourceGraphic" stdDeviation="4.2" result="wide"/>
+  <feComponentTransfer in="wide" result="wideSoft"><feFuncA type="linear" slope=".30"/></feComponentTransfer>
+  <feGaussianBlur in="SourceGraphic" stdDeviation="1.7" result="tight"/>
+  <feComponentTransfer in="tight" result="tightSoft"><feFuncA type="linear" slope=".72"/></feComponentTransfer>
+  <feMerge><feMergeNode in="wideSoft"/><feMergeNode in="tightSoft"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+
+
+
+<!-- Round 1646: subtler reflective glass face cover, confined inside the carbon surface. -->
+<linearGradient id="ah1639-glass-main" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".14"/>
+  <stop offset=".10" stop-color="#e9fbff" stop-opacity=".07"/>
+  <stop offset=".28" stop-color="#b8e8f2" stop-opacity=".018"/>
+  <stop offset=".50" stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset=".76" stop-color="#86b8c8" stop-opacity=".016"/>
+  <stop offset="1" stop-color="#001018" stop-opacity=".10"/>
+</linearGradient>
+<linearGradient id="ah1639-glass-sweep" x1="0" y1="0" x2="1" y2=".75">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".16"/>
+  <stop offset=".16" stop-color="#ffffff" stop-opacity=".045"/>
+  <stop offset=".34" stop-color="#d9f6ff" stop-opacity=".010"/>
+  <stop offset=".46" stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="ah1639-glass-glint" cx="26%" cy="0%" r="78%">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".16"/>
+  <stop offset=".20" stop-color="#ecfbff" stop-opacity=".055"/>
+  <stop offset=".52" stop-color="#c8f3ff" stop-opacity=".010"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
+</defs>
+
+<use href="#face-shape" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+<g clip-path="url(#face-clip)"><rect width="640" height="160" fill="url(#face-light)" opacity=".42"/></g>
+<use href="#face-shape" fill="none" stroke="#8fffd7" stroke-width="2.4" stroke-linejoin="round"/>
+<use href="#inner-rim" fill="none" stroke="#c1ffec" stroke-opacity=".80" stroke-width="1" stroke-linejoin="round"/>
+<!-- Round 1564: restrained black inner rim immediately inside the mint perimeter. -->
+<path d="M11 11H629V142H11Z" fill="none" stroke="#01050a" stroke-opacity=".64" stroke-width="1.7" stroke-linejoin="round"/>
+
+<!-- Round 1639 reflective glass: inside the 14/14–626/139 carbon aperture only. -->
+<g id="ah1639-reflective-glass" pointer-events="none">
+  <rect x="14" y="14" width="612" height="125" rx="2" fill="url(#ah1639-glass-main)" opacity=".40"/>
+  <rect x="14" y="14" width="612" height="125" rx="2" fill="url(#ah1639-glass-glint)" opacity=".28"/>
+  <path d="M20 18H610Q619 18 622 24" fill="none" stroke="#f4fdff" stroke-opacity=".14" stroke-width="1.0"/>
+  <path d="M28 22C160 10 294 18 414 35C486 45 548 45 615 27" fill="none" stroke="url(#ah1639-glass-sweep)" stroke-width="13" stroke-linecap="round" opacity=".50"/>
+  <path d="M24 31C170 11 336 15 614 53" fill="none" stroke="#f7fdff" stroke-opacity=".060" stroke-width="18" stroke-linecap="round"/>
+  <path d="M28 24C178 10 342 17 606 47" fill="none" stroke="#ffffff" stroke-opacity=".15" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M18 135H620" fill="none" stroke="#001019" stroke-opacity=".28" stroke-width="1.1"/>
+</g>
+<rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="#020810" stroke-width="5"/><rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="url(#rim1389)" stroke-width="2.8"/>
+
+<!-- Round 1581: full desktop footer accent surfaces, matching the Messages key treatment. -->
+<g id="ah1581-desktop-full-accent-surfaces" fill="none" stroke-linejoin="miter" pointer-events="none" filter="url(#ah1581-press-accent-glow)">
+  <path d="M20 14H620Q626 14 626 20V133Q626 139 620 139H20Q14 139 14 133V20Q14 14 20 14Z"
+        stroke="#ff2ea8" stroke-width="1.18" opacity=".72"/>
+  <path d="M14 78V20Q14 14 20 14H500" stroke="#ff2ea8" stroke-opacity=".18" stroke-width="8" filter="url(#ah1581-pink-soft)"/>
+  <path d="M14 78V20Q14 14 20 14H500" stroke="url(#ah1581-pink-top)" stroke-width="3.2"/>
+  <path d="M14 78V20Q14 14 20 14H500" stroke="#ffd4eb" stroke-opacity=".52" stroke-width=".82"/>
+  <path d="M140 139H620Q626 139 626 133V78" stroke="#ff2ea8" stroke-opacity=".18" stroke-width="8" filter="url(#ah1581-pink-soft)"/>
+  <path d="M140 139H620Q626 139 626 133V78" stroke="url(#ah1581-pink-bottom)" stroke-width="3.2"/>
+  <path d="M140 139H620Q626 139 626 133V78" stroke="#ffd4eb" stroke-opacity=".52" stroke-width=".82"/>
+  <path d="M500 14H620Q626 14 626 20V78M140 139H20Q14 139 14 133V78"
+        stroke="#ff2ea8" stroke-width=".76" opacity=".94"/>
+</g>
+</svg>

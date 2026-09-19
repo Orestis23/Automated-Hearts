@@ -281,8 +281,9 @@ object.traverse(node=>{if(node.isMesh&&node.geometry&&node.geometry.type==='Caps
 greenObject.traverse(node=>{if(node.isMesh&&node.geometry&&node.geometry.type==='CapsuleGeometry'){node.material=node.material.clone();node.material.color.setHex(0xC6CBC8);node.material.metalness=.82;node.material.roughness=.68;node.material.clearcoat=.06;node.material.clearcoatRoughness=.88;node.material.reflectivity=.48;node.material.bumpScale=.038;}});
 object.scale.setScalar(.78);greenObject.scale.setScalar(.78);object.position.x=-2.45;greenObject.position.x=2.45;scene.add(greenObject);
 // Flat screen text remains crisp on a recessed inner plane; reflective glass sits forward at the bezel plane with a visible air gap.
-camera.position.set(0,.15,10.5);
-let drag=false,lx=0,ly=0,rx=.13,ry=.28,dist=10.5;
+const ahMobileView=matchMedia('(max-width:760px)').matches,ahInitialDist=ahMobileView?11:10.5;
+camera.position.set(0,.15,ahInitialDist);
+let drag=false,lx=0,ly=0,rx=.13,ry=.28,dist=ahInitialDist;
 renderer.domElement.onpointerdown=e=>{drag=true;lx=e.clientX;ly=e.clientY;renderer.domElement.setPointerCapture(e.pointerId)};
 renderer.domElement.onpointermove=e=>{if(!drag)return;ry+=(e.clientX-lx)*.009;rx+=(e.clientY-ly)*.009;lx=e.clientX;ly=e.clientY};
 renderer.domElement.onpointerup=()=>drag=false;
@@ -342,4 +343,4 @@ canvas{background:transparent!important;background-color:transparent!important;b
 </style><script id="ah-r1321-transparent-renderer-guard">
 (()=>{try{const enforce=()=>{document.documentElement.style.setProperty('background','transparent','important');document.body&&document.body.style.setProperty('background','transparent','important');document.querySelectorAll('canvas').forEach(c=>{c.style.setProperty('background','transparent','important');c.style.setProperty('background-image','none','important')});};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enforce,{once:true});else enforce();new MutationObserver(enforce).observe(document.documentElement,{childList:true,subtree:true});}catch(_){}})();
 </script>
-</body></html>
+<script src="../assets/model-touch-pinch-round1527.js?v=1527r"></script></body></html>

@@ -1,0 +1,543 @@
+/* round1615-responsive-ui-authority.css — consolidated in Round 1615. */
+
+/* SOURCE: round1613-responsive-authority.css */
+/* Automated Hearts Round 1613 — responsive layout authority.
+   Keeps the established visual system while preventing clipping/overlap across
+   common phone, tablet, laptop, desktop and short-landscape viewports. */
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body main#main-content,
+body main#main-content>*,
+body main#main-content :is(section,article,figure,div){min-width:0}
+body main#main-content :is(img,video,canvas,svg,iframe){max-width:100%}
+body main#main-content :is(p,li,dd,blockquote){overflow-wrap:break-word;word-break:normal}
+body :is(input,textarea,select,button){max-width:100%}
+
+/* Desktop/tablet-laptop shell: preserve the rim but give content more usable
+   width on 1024–1366px displays. */
+@media (min-width:901px) and (max-width:1100px){
+  :root{
+    --current-frame-side:clamp(44px,5.25vw,58px)!important;
+    --current-frame-top:clamp(72px,7.7vw,84px)!important;
+    --current-frame-bottom:clamp(78px,8.25vw,88px)!important;
+    --current-frame-radius:26px!important;
+  }
+}
+@media (min-width:1101px) and (max-width:1366px){
+  :root{
+    --current-frame-side:clamp(58px,5.6vw,76px)!important;
+    --current-frame-top:clamp(80px,6.6vw,90px)!important;
+    --current-frame-bottom:clamp(82px,6.8vw,92px)!important;
+    --current-frame-radius:28px!important;
+  }
+}
+
+@media (min-width:901px){
+  /* Page-name field must fit between the heart and Messages controls. */
+  body>.rim-page-name-screen.footer-page-screen.header-page-screen--top{
+    width:min(716px,58vw)!important;
+    min-width:0!important;
+    max-width:716px!important;
+    height:clamp(50px,4.1vw,58px)!important;
+  }
+  body>.rim-page-name-screen.footer-page-screen.header-page-screen--top .footer-page-led,
+  body>.rim-page-name-screen.footer-page-screen.header-page-screen--top .page-name,
+  body>.rim-page-name-screen.footer-page-screen.header-page-screen--top [data-text]{
+    max-width:100%!important;
+    padding-inline:clamp(8px,1.2vw,16px)!important;
+    font-size:clamp(18px,2.1vw,28.8px)!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:clip!important;
+  }
+
+  /* The old footer accumulated fixed 220px key widths and very large gaps.
+     Use equal flexible tracks so all visible keys always fit. */
+  body>footer#site-footer nav#primary-nav{
+    left:50%!important;
+    right:auto!important;
+    width:min(calc(100vw - 28px),1500px)!important;
+    max-width:calc(100vw - 28px)!important;
+    min-width:0!important;
+    transform:translateX(-50%)!important;
+  }
+  body>footer#site-footer nav#primary-nav .primary-nav__group{
+    display:grid!important;
+    grid-auto-flow:column!important;
+    grid-auto-columns:minmax(0,1fr)!important;
+    align-items:center!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    gap:clamp(12px,2.2vw,54px)!important;
+  }
+  body>footer#site-footer nav#primary-nav .primary-nav__group>a,
+  body>footer#site-footer nav#primary-nav a[data-nav]{
+    flex:1 1 0!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:clamp(56px,5.25vw,70px)!important;
+    padding-inline:clamp(7px,1.15vw,18px)!important;
+  }
+  body>footer#site-footer nav#primary-nav .footer-nav-label{
+    display:block!important;
+    max-width:100%!important;
+    font-size:clamp(11px,1.34vw,18.4px)!important;
+    line-height:1.04!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:clip!important;
+  }
+
+  /* Content that previously inherited fixed widths now stays inside the rim. */
+  body[data-page] main#main-content>section,
+  body[data-page] main#main-content>article{
+    max-width:100%!important;
+  }
+  body[data-page] main#main-content :is(.shell,.section-inner,.content-inner,.content-wrap,.page-shell){
+    max-width:100%!important;
+  }
+
+  /* Solution machine and lower tablets. */
+  body.page-solutions #solution-process-header :is(.solution-process-exhibit,.solution-process-window-anchor,.solution-process-window),
+  body.page-solutions #solution-engine-model{
+    min-width:0!important;
+    max-width:100%!important;
+  }
+  body.page-solutions #solution-engine-model{width:100%!important}
+}
+
+/* Smaller laptops and landscape tablets using the full desktop experience. */
+@media (min-width:901px) and (max-width:1100px){
+  body.page-solutions #solution-copper-tablets .solution-copper-tablet__body{
+    grid-template-columns:minmax(138px,22%) minmax(0,1fr)!important;
+    column-gap:clamp(16px,2.3vw,26px)!important;
+    padding-inline:clamp(18px,2.8vw,30px)!important;
+  }
+  body.page-solutions #solution-copper-tablets .solution-copper-tablet__component{
+    width:min(100%,190px)!important;
+    max-width:190px!important;
+  }
+  body.page-solutions #solution-copper-tablets .solution-copper-tablet__copy{
+    min-width:0!important;
+    padding:clamp(15px,2vw,22px)!important;
+  }
+  body.page-solutions #solution-copper-tablets .solution-copper-tablet__copy h3{
+    max-width:100%!important;
+    font-size:clamp(18px,2.25vw,25px)!important;
+    line-height:1.12!important;
+    white-space:normal!important;
+    overflow-wrap:normal!important;
+  }
+
+  /* Pricing stays two-column where practical, but columns are allowed to shrink
+     instead of pushing beyond the rim. */
+  body.page-pricing .ah-pricing-towers{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:clamp(18px,2.8vw,34px)!important;
+  }
+  body.page-pricing :is(.ah-pricing-tower,.ah-pricing-tower-body,.ah-pricing-card){
+    min-width:0!important;
+    max-width:100%!important;
+  }
+  body.page-pricing .ah-pricing-tower-title{
+    font-size:clamp(19px,2.35vw,27px)!important;
+    white-space:normal!important;
+  }
+}
+
+/* Short laptop/desktop displays: reduce shell hardware height so the viewport
+   does not force content underneath the footer or header. */
+@media (min-width:901px) and (max-height:740px){
+  :root{
+    --current-frame-top:68px!important;
+    --current-frame-bottom:74px!important;
+  }
+  body>.rim-page-name-screen.footer-page-screen.header-page-screen--top{
+    height:48px!important;
+  }
+  body>footer#site-footer nav#primary-nav .primary-nav__group>a,
+  body>footer#site-footer nav#primary-nav a[data-nav]{height:54px!important}
+}
+
+/* Mobile + portrait/compact tablets share one breakpoint with routing. */
+@media (max-width:900px){
+  :root{
+    --current-frame-side:clamp(10px,2.8vw,14px)!important;
+    --current-frame-top:clamp(62px,8.4vh,70px)!important;
+    --current-frame-bottom:calc(74px + env(safe-area-inset-bottom,0px))!important;
+    --current-frame-radius:clamp(16px,4.4vw,20px)!important;
+  }
+
+  html body main#main-content,
+  html body main#main-content>section,
+  html body main#main-content>article{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+  }
+  html body main#main-content :is(.shell,.section-inner,.content-inner,.content-wrap,.page-shell,.card,.panel){
+    min-width:0!important;
+    max-width:100%!important;
+  }
+  html body main#main-content :is(h1,h2,h3,h4,p,li){max-width:100%!important}
+  html body main#main-content :is(img,video,canvas,svg,iframe){max-width:100%!important}
+
+  /* Keep the mobile footer as four equal keys at every phone/tablet width. */
+  html body>nav.footer{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    width:100%!important;
+    min-width:0!important;
+    padding-inline:clamp(5px,1.7vw,10px)!important;
+    gap:clamp(4px,1.4vw,9px)!important;
+  }
+  html body>nav.footer>a{
+    min-width:0!important;
+    max-width:100%!important;
+    padding-inline:clamp(3px,1vw,7px)!important;
+  }
+  html body>nav.footer .footer-nav-label{
+    display:block!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    font-size:clamp(8.8px,2.55vw,13px)!important;
+    line-height:1.04!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:clip!important;
+  }
+
+  /* Page-name chips must stay clear of the heart and Messages controls. */
+  html body>.rim-page-name-screen.footer-page-screen.header-page-screen--top{
+    width:min(58vw,300px)!important;
+    min-width:0!important;
+    max-width:calc(100vw - 132px)!important;
+  }
+  html body>.rim-page-name-screen.footer-page-screen.header-page-screen--top .footer-page-led,
+  html body>.rim-page-name-screen.footer-page-screen.header-page-screen--top .page-name,
+  html body>.rim-page-name-screen.footer-page-screen.header-page-screen--top [data-text]{
+    max-width:100%!important;
+    padding-inline:6px!important;
+    font-size:clamp(10px,3vw,15px)!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+  }
+
+  /* Forms never exceed the available mobile panel width. */
+  html body :is(form,input,textarea,select,.contact-panel,.contact-form,.form-shell){
+    min-width:0!important;
+    max-width:100%!important;
+  }
+
+  /* Mobile pricing and text-card groups collapse cleanly. */
+  html body[data-ah-mobile-surface="pricing"] :is(.ah-pricing-towers,.ah-pricing-retainer-grid),
+  html body.page-pricing :is(.ah-pricing-towers,.ah-pricing-retainer-grid){
+    grid-template-columns:1fr!important;
+  }
+}
+
+/* Very narrow phones. */
+@media (max-width:374px){
+  :root{--current-frame-side:9px!important}
+  html body>nav.footer{gap:3px!important;padding-inline:4px!important}
+  html body>nav.footer .footer-nav-label{font-size:8.6px!important}
+  html body>.rim-page-name-screen.footer-page-screen.header-page-screen--top{
+    max-width:calc(100vw - 122px)!important;
+  }
+}
+
+/* Landscape phones/tablets: retain safe clearances without wasting height. */
+@media (max-width:900px) and (orientation:landscape) and (max-height:560px){
+  :root{
+    --current-frame-top:56px!important;
+    --current-frame-bottom:64px!important;
+  }
+  html body>nav.footer{height:62px!important}
+  html body>nav.footer>a{min-height:50px!important}
+  html body main#main-content{min-height:calc(100dvh - 120px)!important}
+}
+
+/* Large/high-density desktops: stop content from stretching into awkwardly
+   long lines while preserving full responsive room for media. */
+@media (min-width:1600px){
+  body[data-page] main#main-content :is(p,li){max-width:82ch}
+}
+
+/* Specificity lock: legacy rounds intentionally used repeated classes/IDs.
+   Match and exceed that specificity so the responsive dimensions are final. */
+@media (min-width:901px){
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top{
+    width:min(716px,58vw)!important;
+    min-width:0!important;
+    max-width:716px!important;
+    height:clamp(50px,4.1vw,58px)!important;
+    min-height:50px!important;
+    max-height:58px!important;
+  }
+  html body[data-page][class][class][class][class][class][class][class][class]
+  > .rim-page-name-screen.rim-page-name-screen.footer-page-screen.footer-page-screen.header-page-screen.header-page-screen.header-page-screen--top.header-page-screen--top
+  > :is(.footer-page-led,.header-page-led,.page-sign-progress-inverse){
+    font-size:clamp(18px,2.1vw,28.8px)!important;
+    padding-inline:clamp(8px,1.2vw,16px)!important;
+  }
+
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav.footer-primary-nav{
+    left:50%!important;
+    right:auto!important;
+    width:min(calc(100vw - 28px),1500px)!important;
+    min-width:0!important;
+    max-width:calc(100vw - 28px)!important;
+    transform:translate3d(-50%,-50%,0)!important;
+  }
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav.footer-primary-nav
+  > .primary-nav__group.primary-nav__group--centered{
+    display:grid!important;
+    grid-auto-flow:column!important;
+    grid-auto-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    gap:clamp(12px,2.2vw,54px)!important;
+  }
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav.footer-primary-nav
+  > .primary-nav__group.primary-nav__group--centered
+  > a.footer-structure-control.mechanical-send-control[data-nav][data-nav]{
+    flex:1 1 0!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:clamp(56px,5.25vw,70px)!important;
+    min-height:56px!important;
+    max-height:70px!important;
+    padding-inline:clamp(7px,1.15vw,18px)!important;
+  }
+  html body[data-page][class][class][class][class][class][class]
+  > footer#site-footer#site-footer.site-footer.site-footer--minimal
+  nav#primary-nav#primary-nav#primary-nav.footer-primary-nav
+  a.footer-structure-control.mechanical-send-control[data-nav][data-nav]
+  > .send-control-copy.footer-control-copy > .footer-nav-label{
+    max-width:100%!important;
+    font-size:clamp(11px,1.34vw,18.4px)!important;
+    line-height:1.04!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+  }
+}
+
+
+/* SOURCE: round1614-page-services-about-fixes.css */
+/* Round 1614 — page progress matte restoration, services spacing, and About Us intro refresh. */
+html body[data-page][class] > .rim-page-name-screen.footer-page-screen.header-page-screen--top::after{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.07) 12%,rgba(255,255,255,.018) 28%,rgba(4,10,18,.08) 62%,rgba(2,5,10,.22) 100%)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.24),
+    inset 0 -10px 14px rgba(0,0,0,.16),
+    inset 0 0 0 1px rgba(255,255,255,.04)!important;
+}
+html body[data-page][class] > .rim-page-name-screen.footer-page-screen.header-page-screen--top > .r488-extra-matte-film{
+  position:absolute!important;
+  inset:5px!important;
+  z-index:2!important;
+  display:block!important;
+  border-radius:2px!important;
+  pointer-events:none!important;
+  opacity:.92!important;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.05) 16%,rgba(255,255,255,0) 34%,rgba(0,0,0,.07) 72%,rgba(0,0,0,.17) 100%),
+    linear-gradient(90deg,rgba(255,255,255,.04) 0%,transparent 12%,transparent 88%,rgba(255,255,255,.03) 100%),
+    repeating-linear-gradient(180deg,rgba(255,255,255,.022) 0 1px,transparent 1px 4px)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14), inset 0 -1px 0 rgba(0,0,0,.18)!important;
+}
+
+@media (min-width:901px){
+  html body.page-pricing.page-pricing[data-page="pricing"] main#main-content#main-content#main-content.rates-services-main > section.ah-pricing-page{
+    padding-top:calc(var(--ah1518-two-thirds-inch,64px) + 18px)!important;
+  }
+  html body.page-pricing[data-page="pricing"] .ah-pricing-towers{
+    margin-top:12px!important;
+  }
+}
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="pricing"] main#main-content#main-content#main-content{
+    padding-top:30px!important;
+  }
+}
+
+/* Round 1625 cleanup: removed orphaned .ah1614-about-intro rules after standalone About Us page deletion. */
+
+/* Round 1616 — matte film restoration, Services intro card, and Solution body copy refresh. */
+html body[data-page][class] > .rim-page-name-screen.footer-page-screen.header-page-screen--top,
+html body.page-pricing[data-page="pricing"] > .rim-page-name-screen.footer-page-screen.header-page-screen--top,
+html body.page-solutions[data-page="solutions"] > .rim-page-name-screen.footer-page-screen.header-page-screen--top,
+html body.page-about[data-page="about"] > .rim-page-name-screen.footer-page-screen.header-page-screen--top{
+  overflow:hidden!important;
+}
+html body[data-page][class] > .rim-page-name-screen.footer-page-screen.header-page-screen--top > .r488-extra-matte-film{
+  top:0!important; right:0!important; bottom:0!important; left:0!important;
+  width:auto!important; height:auto!important; border-radius:0!important;
+  opacity:.92!important; display:block!important; z-index:2!important;
+  background:
+    radial-gradient(circle at 1px 1px,rgba(255,255,255,.045) 0 .5px,transparent .82px) 0 0 / 5px 5px,
+    repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,rgba(0,0,0,.016) 1px 3px),
+    linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03) 26%,transparent 54%,rgba(0,0,0,.09) 100%)!important;
+  -webkit-backdrop-filter:blur(.78px) saturate(.92)!important;
+  backdrop-filter:blur(.78px) saturate(.92)!important;
+  box-shadow:inset 0 0 0 1px rgba(182,201,214,.11)!important;
+}
+
+html body.page-pricing[data-page="pricing"] main#main-content.rates-services-main{
+  padding-top:clamp(28px,2.2vw,42px)!important;
+}
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro{
+  position:relative!important;
+  width:min(calc(100% - 40px),1680px)!important;
+  margin:0 auto clamp(28px,2.4vw,40px)!important;
+  padding:clamp(22px,2.2vw,34px)!important;
+  border:2px solid rgba(143,255,215,.62)!important;
+  border-radius:18px!important;
+  background:
+    radial-gradient(110% 180% at 0% 0%,rgba(64,121,182,.28),transparent 50%),
+    radial-gradient(105% 180% at 100% 0%,rgba(255,46,168,.12),transparent 52%),
+    repeating-linear-gradient(180deg,rgba(214,246,255,.035) 0 1px,transparent 1px 4px),
+    linear-gradient(180deg,#0d2a43 0%,#081a2e 58%,#040d18 100%)!important;
+  box-shadow:inset 0 0 0 2px rgba(0,0,0,.72), inset 0 1px 0 rgba(255,255,255,.08), 0 0 0 1px rgba(255,46,168,.18), 0 18px 36px rgba(0,0,0,.34)!important;
+  overflow:hidden!important;
+}
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro::before,
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro::after,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro::before,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro::after{
+  content:""!important; position:absolute!important; left:-2px!important; right:-2px!important; height:3px!important;
+  background:linear-gradient(90deg,#56ffc0 0%,#72ffca 12%,#8fffd7 42%,#9fffe0 50%,#8fffd7 58%,#72ffca 88%,#56ffc0 100%)!important;
+  box-shadow:0 0 2px rgba(143,255,215,.92),0 0 6px rgba(143,255,215,.74),0 0 12px rgba(114,255,202,.58),0 0 22px rgba(86,255,192,.38)!important;
+  pointer-events:none!important;
+}
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro::before,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro::before{top:-2px!important;}
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro::after,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro::after{bottom:-2px!important;}
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__grid,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__grid{
+  display:grid!important; grid-template-columns:minmax(0,1.35fr) minmax(200px,.85fr)!important; gap:clamp(20px,4vw,44px)!important; align-items:center!important;
+}
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__copy h2,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__copy h2{
+  margin:0 0 16px!important; color:#ff2ea8!important; -webkit-text-fill-color:#ff2ea8!important; font-family:"Orbitron",system-ui,sans-serif!important; font-size:clamp(32px,3vw,50px)!important; font-weight:800!important; line-height:1.03!important; letter-spacing:.03em!important; text-shadow:0 0 10px rgba(255,46,168,.24)!important;
+}
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__copy p,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__copy p{
+  margin:0!important; color:#d7fff4!important; -webkit-text-fill-color:#d7fff4!important; font-family:"Orbitron",system-ui,sans-serif!important; font-size:clamp(16px,1.2vw,21px)!important; line-height:1.58!important; letter-spacing:.01em!important; text-shadow:0 0 5px rgba(143,255,215,.12)!important;
+}
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__heart,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__heart{display:flex!important; align-items:center!important; justify-content:center!important; margin:0!important;}
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__heart-frame,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__heart-frame{
+  position:relative!important; display:grid!important; place-items:center!important; width:min(100%,260px)!important; aspect-ratio:1 / 1.12!important; padding:24px!important; border:2px solid rgba(242,211,122,.92)!important; border-radius:22px!important;
+  background:linear-gradient(180deg,rgba(255,242,194,.18),rgba(255,214,111,.06) 16%,rgba(20,13,5,.16) 16%,rgba(9,13,20,.82) 100%), linear-gradient(135deg,#846725 0%,#f2d37a 18%,#8b6e28 34%,#3d2b0d 50%,#8f732b 66%,#f1d27a 84%,#8b6b24 100%)!important;
+  box-shadow:inset 0 0 0 2px rgba(49,32,6,.85), inset 0 0 0 7px rgba(0,0,0,.36), 0 10px 28px rgba(0,0,0,.42), 0 0 14px rgba(242,211,122,.18)!important;
+}
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__heart-frame::before,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__heart-frame::before{
+  content:""!important; position:absolute!important; inset:14px!important; border-radius:16px!important; background:radial-gradient(circle at 50% 14%,rgba(255,255,255,.18),transparent 36%), linear-gradient(180deg,rgba(11,19,31,.94),rgba(3,8,14,.98))!important; box-shadow:inset 0 1px 0 rgba(255,255,255,.08), inset 0 0 0 1px rgba(143,255,215,.10)!important;
+}
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__heart-frame img,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__heart-frame img{
+  position:relative!important; z-index:1!important; width:min(86%,210px)!important; height:auto!important; object-fit:contain!important; filter:brightness(1.18) contrast(1.08) drop-shadow(0 0 14px rgba(143,255,215,.10)) drop-shadow(0 0 8px rgba(255,46,168,.08))!important;
+}
+
+html body.page-solutions[data-page="solutions"] .ah1616-solution-body-copy,
+html body[data-ah-mobile-surface="solutions"] .ah1616-solution-body-copy{
+  margin:0!important; color:#d7fff4!important; -webkit-text-fill-color:#d7fff4!important; font-family:"Orbitron",system-ui,sans-serif!important; font-size:clamp(16px,1.18vw,20px)!important; line-height:1.6!important; letter-spacing:.01em!important; text-shadow:0 0 5px rgba(143,255,215,.10)!important;
+}
+
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="pricing"] main#main-content{padding-top:16px!important;}
+  html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro,
+  html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro{
+    width:calc(100% - 20px)!important; padding:20px!important; border-radius:16px!important; margin:0 auto 24px!important;
+  }
+  html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__grid,
+  html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__grid{
+    grid-template-columns:1fr!important; gap:18px!important;
+  }
+  html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__copy h2,
+  html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__copy h2{
+    font-size:clamp(28px,8vw,38px)!important; text-align:center!important;
+  }
+  html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__copy p,
+  html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__copy p{
+    font-size:clamp(15px,4.2vw,18px)!important; text-align:center!important;
+  }
+  html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__heart-frame,
+  html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__heart-frame{
+    width:min(100%,220px)!important; margin:0 auto!important; padding:18px!important;
+  }
+  html body[data-ah-mobile-surface="solutions"] .ah1616-solution-body-copy{
+    font-size:clamp(15px,4.2vw,18px)!important; text-align:left!important;
+  }
+}
+
+
+/* Round 1620 — Services privacy statement under etched heart. */
+html body.page-pricing[data-page="pricing"] .ah1616-services-about-intro__heart,
+html body[data-ah-mobile-surface="pricing"] .ah1616-services-about-intro__heart{
+  flex-direction:column!important;
+  gap:14px!important;
+}
+html body.page-pricing[data-page="pricing"] .ah1620-services-privacy,
+html body[data-ah-mobile-surface="pricing"] .ah1620-services-privacy{
+  width:min(100%,320px)!important;
+  margin:0!important;
+  padding:0 4px!important;
+  color:#d7fff4!important;
+  -webkit-text-fill-color:#d7fff4!important;
+  font-family:"Orbitron",system-ui,sans-serif!important;
+  font-size:clamp(12px,.9vw,15px)!important;
+  font-weight:500!important;
+  line-height:1.5!important;
+  letter-spacing:.01em!important;
+  text-align:center!important;
+  text-shadow:0 0 4px rgba(143,255,215,.12)!important;
+}
+html body.page-pricing[data-page="pricing"] .ah1620-services-privacy a,
+html body[data-ah-mobile-surface="pricing"] .ah1620-services-privacy a{
+  display:inline-block!important;
+  margin-top:7px!important;
+  color:#ff2ea8!important;
+  -webkit-text-fill-color:#ff2ea8!important;
+  font-weight:800!important;
+  text-decoration:underline!important;
+  text-underline-offset:3px!important;
+  text-decoration-thickness:1px!important;
+  text-shadow:0 0 5px rgba(255,46,168,.22)!important;
+}
+html body.page-pricing[data-page="pricing"] .ah1620-services-privacy a:is(:hover,:focus-visible),
+html body[data-ah-mobile-surface="pricing"] .ah1620-services-privacy a:is(:hover,:focus-visible){
+  color:#ff74c6!important;
+  -webkit-text-fill-color:#ff74c6!important;
+  outline:1px solid rgba(143,255,215,.7)!important;
+  outline-offset:4px!important;
+}
+@media(max-width:900px){
+  html body[data-ah-mobile-surface="pricing"] .ah1620-services-privacy,
+  html body.page-pricing[data-page="pricing"] .ah1620-services-privacy{
+    width:min(100%,280px)!important;
+    font-size:clamp(12px,3.4vw,14px)!important;
+  }
+}

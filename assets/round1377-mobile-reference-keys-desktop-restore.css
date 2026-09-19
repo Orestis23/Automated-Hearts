@@ -1,5 +1,4 @@
-/* Round 1377 — mobile-only vintage keycap system. Desktop footer/message restored.
-   Also adds the requested thick pink underline beneath Home process headings. */
+
 
 :root{
   --r1377-mint:#8fffd7;
@@ -7,7 +6,7 @@
   --r1377-mobile-key-carbon:url('./home-carbon-fiber-procedural-round714.webp');
 }
 
-/* HOME PROCESS: thick pink underline matching the green outer-border weight. */
+
 html body .ah-home-process-box > h3{
   position:relative!important;
 }
@@ -37,16 +36,13 @@ html body .ah-home-process-box > h3::after{
   }
 }
 
-/* ================================================================
-   DESKTOP: restore the known-working Round 1095/1212 blue hardware.
-   The new vintage reference-key styling does NOT apply on desktop.
-   ================================================================ */
+
 @media (min-width:901px){
   :root{
     --r1377-footer-rest:url('./footer-button-message-border-match-round1095.svg?v=1389r')!important;
     --r1377-footer-pressed:url('./footer-button-message-border-match-pressed-round1095.svg?v=1389r')!important;
-    --r1377-message-rest:url('./message-button-square-footer-match-round1095.svg?v=1389r')!important;
-    --r1377-message-pressed:url('./message-button-square-footer-match-pressed-round1095.svg?v=1389r')!important;
+    --r1377-message-rest:url('./message-button-square-footer-match-round1095.svg?v=1585r')!important;
+    --r1377-message-pressed:url('./message-button-square-footer-match-pressed-round1095.svg?v=1585r')!important;
     --r1005-message-size:84px!important;
     --r1005-message-top:6px!important;
     --r1005-message-right:6px!important;
@@ -194,11 +190,7 @@ html body .ah-home-process-box > h3::after{
   }
 }
 
-/* ================================================================
-   MOBILE ONLY: use the selected reference-key shape for footer + Messages.
-   Raised dark keycap, strong slanted side walls, recessed top face,
-   mint front under-light, no rear halo.
-   ================================================================ */
+
 @media (max-width:900px){
   html body > nav.footer{
     overflow:visible!important;
@@ -326,7 +318,7 @@ html body .ah-home-process-box > h3::after{
     box-shadow:0 0 3px rgba(143,255,215,.46)!important;
   }
 
-  /* Restore the Messages key to the original top-right mobile location. */
+  
   html body > a.message,
   html body > a.message:link,
   html body > a.message:visited{

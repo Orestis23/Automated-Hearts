@@ -1,0 +1,255 @@
+/* round1615-desktop-footer-core.css — consolidated in Round 1615. */
+
+/* SOURCE: round1559-desktop-footer-authority.css */
+/* Automated Hearts Round 1590 — Learning-Center spacebar-pattern desktop outer controls. */
+@media (min-width:901px){
+  html body > footer#site-footer.site-footer.site-footer--minimal{overflow:visible!important;}
+  html body > footer#site-footer.site-footer.site-footer--minimal > .minimal-footer-row.shell{
+    position:absolute!important;inset:0!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;overflow:visible!important;
+  }
+  html body > footer#site-footer.site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav{
+    position:absolute!important;left:50%!important;right:auto!important;top:50%!important;bottom:auto!important;
+    width:max-content!important;max-width:calc(100vw - 24px)!important;height:70px!important;min-height:70px!important;max-height:70px!important;
+    margin:0!important;padding:0!important;transform:translate3d(-50%,-50%,0)!important;overflow:visible!important;display:block!important;
+  }
+  html body > footer#site-footer.site-footer.site-footer--minimal nav#primary-nav.footer-primary-nav > .primary-nav__group.primary-nav__group--centered{
+    position:relative!important;inset:auto!important;width:max-content!important;max-width:none!important;height:70px!important;min-height:70px!important;max-height:70px!important;
+    margin:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;transform:none!important;overflow:visible!important;
+  }
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]{
+    position:relative!important;inset:auto!important;align-self:center!important;height:70px!important;min-height:70px!important;max-height:70px!important;
+    margin:0!important;padding:0!important;opacity:1!important;filter:none!important;transform:translate3d(0,0,0)!important;transform-origin:50% 50%!important;
+    background-color:#050607!important;
+    background-image:url('./footer-button-carbon-inner-rim-round1586.svg?v=1639r'),linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.045) 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,.16) 100%),radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%),repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px),repeating-linear-gradient(45deg,rgba(145,145,145,.05) 0 3px,rgba(0,0,0,.07) 3px 6px),linear-gradient(#111315 0%,#08090a 48%,#030405 100%)!important;
+    background-size:100% 100%,100% 100%,100% 100%,auto,auto,auto!important;
+    background-position:center,center,center,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+    background-blend-mode:normal!important;border:0!important;outline:0!important;
+    overflow:visible!important;isolation:isolate!important;transition:transform 110ms cubic-bezier(.2,.78,.24,1),box-shadow 180ms ease!important;
+  }
+  /* Kill legacy pseudo surfaces; carbon and complete accents are carried by the final layered face. */
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]::before,
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]::after{
+    content:none!important;display:none!important;background:none!important;background-image:none!important;box-shadow:none!important;
+  }
+  /* Dim the hardware with a neutral black veil instead of filtering the whole button/type. */
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .ah1559-dim-layer{
+    position:absolute!important;z-index:12!important;inset:0!important;display:block!important;pointer-events:none!important;background:rgba(0,0,0,.30)!important;
+    opacity:1!important;transition:opacity 190ms ease!important;
+  }
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group:is(:hover,:focus-within) > a.footer-structure-control.mechanical-send-control[data-nav] > .ah1559-dim-layer{
+    opacity:0!important;
+  }
+  html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy{
+    position:absolute!important;z-index:30!important;inset:0!important;display:grid!important;place-items:center!important;width:100%!important;height:100%!important;
+    margin:0!important;padding:0 12px!important;transform:none!important;scale:1!important;zoom:1!important;filter:none!important;animation:none!important;transition:none!important;pointer-events:none!important;
+  }
+  html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy > .footer-nav-label,
+  html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:is(:hover,:focus-visible,:active,.is-pressed,.is-nav-pressed,[aria-pressed='true']) > .send-control-copy.footer-control-copy > .footer-nav-label{
+    display:block!important;width:auto!important;min-width:0!important;max-width:100%!important;margin:0!important;padding:0!important;
+    font-family:'Orbitron',system-ui,sans-serif!important;font-size:18.4px!important;font-weight:400!important;font-stretch:normal!important;font-style:normal!important;
+    line-height:18.4px!important;letter-spacing:0!important;white-space:nowrap!important;text-align:center!important;color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;
+    transform:none!important;translate:none!important;scale:1!important;zoom:1!important;filter:none!important;animation:none!important;transition:none!important;
+    text-shadow:none!important;filter:drop-shadow(0 0 5px rgba(143,255,215,.28))!important;
+  }
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group:is(:hover,:focus-within) > a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy > .footer-nav-label{
+    color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;text-shadow:none!important;filter:drop-shadow(0 0 5px rgba(143,255,215,.28))!important;
+  }
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed='true'],[data-ah-control-pressed='1'],[data-ah-control-pressed='true'],[data-ah-footer-loading]){
+    transform:translate3d(0,3px,0) scale(.97)!important;
+  }
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav].ah1559-pressed{
+    box-shadow:inset 0 3px 6px rgba(0,0,0,.24),0 8px 16px -10px rgba(143,255,215,.22),0 10px 20px -14px rgba(255,46,168,.18),0 0 7px rgba(255,46,168,.06)!important;
+  }
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav].ah1559-pressed > .send-control-copy.footer-control-copy > .footer-nav-label{
+    text-shadow:none!important;filter:brightness(1.22) saturate(1.10) drop-shadow(0 0 1px rgba(226,255,246,.70)) drop-shadow(0 0 4px rgba(143,255,215,.70)) drop-shadow(0 0 8px rgba(143,255,215,.36))!important;
+  }
+  html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav] > :is(.ah1557-corner-layer,.ah1556-desktop-pink-accents,.ah-footer-pink-corners,.ah1451-message-match-accents,.ah1452-message-corner-overlay,.ah1453-message-corner-overlay,.ah1454-mobile-corner-overlay){display:none!important;visibility:hidden!important;opacity:0!important;}
+}
+@media (min-width:1200px){
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group.primary-nav__group--centered{gap:128px!important;}
+}
+@media (min-width:901px) and (max-width:1199px){
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group.primary-nav__group--centered{gap:96px!important;}
+}
+
+
+/* SOURCE: round1562-button-home-authority.css */
+/* Automated Hearts Round 1562 — restored mechanical press + verified home screen adjustments. */
+@media (min-width:901px){
+  /* Footer keys: down + slightly smaller during the physical press, with a restrained floor glow. */
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]{
+    transform-origin:50% 50%!important;
+    transition:transform 115ms cubic-bezier(.2,.78,.24,1),box-shadow 150ms ease!important;
+    box-shadow:0 8px 16px -10px rgba(143,255,215,.22),0 10px 20px -14px rgba(255,46,168,.18)!important;
+  }
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]){
+    transform:translate3d(0,3px,0) scale(.97)!important;
+    box-shadow:inset 0 3px 6px rgba(0,0,0,.24),0 8px 16px -10px rgba(143,255,215,.22),0 10px 20px -14px rgba(255,46,168,.18),0 0 7px rgba(255,46,168,.06)!important;
+  }
+
+  /* Messages and Explore use the same brief down-and-smaller mechanical action. */
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
+    box-shadow:none!important;
+    filter:none!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+    box-shadow:inset 0 3px 6px rgba(0,0,0,.24)!important;
+    filter:none!important;
+  }
+
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control,
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore,
+  html body.page-home[data-page="home"] .explore-key{
+    transform-origin:50% 50%!important;
+    transition:transform 115ms cubic-bezier(.2,.78,.24,1),box-shadow 150ms ease!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore,
+  html body.page-home[data-page="home"] .explore-key{
+    transform:translate3d(0,0,0) scale(1)!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework #negative-software-explore:is(:active,.is-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]),
+  html body.page-home[data-page="home"] .explore-key:is(:active,.is-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+    transform:translate3d(0,3px,0) scale(.97)!important;
+  }
+
+  /* Round 1637: process screens and Explore share one bottom baseline. */
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-grid-round344{
+    --r1005-process-height:286px!important;
+    --r1005-process-min-height:286px!important;
+    --r1005-process-max-height:286px!important;
+    align-items:start!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-grid-round344 > article.home-process-stage.negative-software-screen-round344.ah-home-process-box:not(.home-process-stage--key){
+    height:286px!important;min-height:286px!important;max-height:286px!important;
+  }
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-grid-round344 > article.home-process-stage--key,
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-grid-round344 > article.ah1600-explore-footer-cell{
+    height:286px!important;min-height:286px!important;max-height:286px!important;
+  }
+
+  /* Pink process headings are crisp type only — no pink halo. */
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-grid-round344 > article.ah-home-process-box:not(.home-process-stage--key) > h3,
+  html body.page-home[data-page="home"] #home-solution-framework .negative-software-grid-round344 > article.ah-home-process-box:not(.home-process-stage--key) > h3 *,
+  html body.page-home[data-page="home"] #home-solution-framework .r1176-process-heading-label{
+    text-shadow:none!important;filter:none!important;
+  }
+}
+
+
+/* SOURCE: round1564-footer-finish.css */
+/* Automated Hearts Round 1590 — Learning-Center spacebar-pattern desktop outer-control finish.
+   Footer labels use the Messages-envelope optical recipe translated to neon green.
+   Footer hover pulse removed; only the Messages control may retain its own pulse treatment. */
+@media (min-width:901px){
+  :root{
+    --ah1586-envelope-rest-glow:brightness(1) saturate(1) drop-shadow(0 0 1px rgba(255,59,79,.18));
+    --ah1586-footer-rest-glow:brightness(1) saturate(1) drop-shadow(0 0 1px rgba(143,255,215,.18));
+    --ah1586-footer-press-glow:brightness(1.28) saturate(1.18) drop-shadow(0 0 2px rgba(209,255,241,1)) drop-shadow(0 0 7px rgba(143,255,215,.96)) drop-shadow(0 0 14px rgba(143,255,215,.72));
+  }
+
+  /* Carbon fiber is the same soft procedural face used by the Home spacebar keys. */
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]{
+    overflow:visible!important;
+    isolation:isolate!important;
+    background-color:#050607!important;
+    background-image:url('./footer-button-carbon-inner-rim-round1586.svg?v=1639r'),linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.045) 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,.16) 100%),radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%),repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px),repeating-linear-gradient(45deg,rgba(145,145,145,.05) 0 3px,rgba(0,0,0,.07) 3px 6px),linear-gradient(#111315 0%,#08090a 48%,#030405 100%)!important;
+    background-size:100% 100%,100% 100%,100% 100%,auto,auto,auto!important;
+    background-position:center,center,center,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+    background-blend-mode:normal!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav].ah1559-pressed,
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]){
+    background-image:
+      url('./footer-button-carbon-inner-rim-pressed-round1586.svg?v=1639r'),
+      linear-gradient(160deg,rgba(255,255,255,.075) 0%,rgba(255,255,255,.028) 9%,rgba(210,220,225,.020) 18%,transparent 38% 69%,rgba(255,255,255,.012) 84%,rgba(0,0,0,.24) 100%),
+      radial-gradient(at 30% -20%,rgba(220,230,235,.055),transparent 65%),
+      repeating-linear-gradient(135deg,rgba(136,146,151,.060) 0 3px,rgba(2,4,5,.12) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(104,113,119,.038) 0 3px,rgba(1,2,3,.10) 3px 6px),
+      linear-gradient(#0d0f10 0%,#060708 48%,#020303 100%)!important;
+    background-size:100% 100%,100% 100%,100% 100%,auto,auto,auto!important;
+    background-position:center,center,center,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+    box-shadow:inset 0 3px 6px rgba(0,0,0,.24)!important;
+  }
+
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
+    background-color:#050607!important;
+    background-image:url('./message-button-carbon-red-round1586.svg?v=1639r'),linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.045) 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,.16) 100%),radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%),repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px),repeating-linear-gradient(45deg,rgba(145,145,145,.05) 0 3px,rgba(0,0,0,.07) 3px 6px),linear-gradient(#111315 0%,#08090a 48%,#030405 100%)!important;
+    background-size:100% 100%,100% 100%,100% 100%,auto,auto,auto!important;
+    background-position:center,center,center,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+    background-blend-mode:normal!important;
+    box-shadow:none!important;
+    filter:none!important;
+  }
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+    background-image:
+      url('./message-button-carbon-red-pressed-round1586.svg?v=1639r'),
+      linear-gradient(160deg,rgba(255,255,255,.075) 0%,rgba(255,255,255,.028) 9%,rgba(210,220,225,.020) 18%,transparent 38% 69%,rgba(255,255,255,.012) 84%,rgba(0,0,0,.24) 100%),
+      radial-gradient(at 30% -20%,rgba(220,230,235,.055),transparent 65%),
+      repeating-linear-gradient(135deg,rgba(136,146,151,.060) 0 3px,rgba(2,4,5,.12) 3px 6px),
+      repeating-linear-gradient(45deg,rgba(104,113,119,.038) 0 3px,rgba(1,2,3,.10) 3px 6px),
+      linear-gradient(#0d0f10 0%,#060708 48%,#020303 100%)!important;
+    background-size:100% 100%,100% 100%,100% 100%,auto,auto,auto!important;
+    background-position:center,center,center,0 0,0 0,center!important;
+    background-repeat:no-repeat,no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+    box-shadow:inset 0 3px 6px rgba(0,0,0,.24)!important;
+  }
+
+  /* Remove the old floor/shading layer; retain only the subtle internal black rim. */
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .ah1564-floor-shadow{
+    display:none!important;visibility:hidden!important;opacity:0!important;background:none!important;box-shadow:none!important;filter:none!important;
+  }
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .ah1564-inner-black-rim{
+    position:absolute!important;z-index:10!important;inset:4px!important;display:block!important;pointer-events:none!important;
+    border:1px solid rgba(0,0,0,.58)!important;box-shadow:inset 0 0 3px rgba(0,0,0,.26)!important;opacity:.82!important;
+  }
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav] > .ah1559-dim-layer{z-index:12!important;}
+  html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy{z-index:30!important;}
+
+  /* Exact default envelope-style optical treatment, translated to green type. */
+  html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav] > .send-control-copy.footer-control-copy > .footer-nav-label,
+  html body > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]:is(:hover,:focus-visible) > .send-control-copy.footer-control-copy > .footer-nav-label{
+    font-family:'Orbitron',system-ui,sans-serif!important;font-size:18.4px!important;font-weight:400!important;font-style:normal!important;
+    line-height:18.4px!important;letter-spacing:0!important;white-space:nowrap!important;text-align:center!important;
+    color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;-webkit-text-stroke:0!important;
+    background:none!important;background-image:none!important;text-shadow:none!important;opacity:1!important;
+    transform:none!important;translate:none!important;scale:1!important;zoom:1!important;
+    transition:filter 180ms ease,color 180ms ease!important;filter:var(--ah1586-footer-rest-glow)!important;
+  }
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav].ah1559-pressed > .send-control-copy.footer-control-copy > .footer-nav-label,
+  html body > footer#site-footer nav#primary-nav > .primary-nav__group > a.footer-structure-control.mechanical-send-control[data-nav]:is(:active,.is-pressed,.is-nav-pressed,[aria-pressed="true"],[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-footer-loading]) > .send-control-copy.footer-control-copy > .footer-nav-label{
+    color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;text-shadow:none!important;filter:var(--ah1586-footer-press-glow)!important;
+  }
+
+  /* Messages envelope keeps its red default state, now over the same carbon face. */
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope,
+  html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control > .r1005-message-envelope svg{
+    color:#ff3030!important;-webkit-text-fill-color:#ff3030!important;text-shadow:none!important;opacity:1!important;
+  }
+
+  /* Messages-only hover accent pulse. Footer pulse was removed in Round 1589. */
+  html body a#header-send-message > .ah1586-accent-pulse{
+    position:absolute!important;inset:0!important;display:block!important;pointer-events:none!important;overflow:visible!important;
+    opacity:0!important;z-index:18!important;transition:opacity 110ms ease!important;
+  }
+  html body a#header-send-message > .ah1586-accent-pulse > svg{display:block!important;width:100%!important;height:100%!important;overflow:visible!important;}
+  html body a#header-send-message > .ah1586-accent-pulse path{
+    fill:none!important;stroke:rgb(var(--ah1586-pulse-rgb))!important;stroke-width:4!important;stroke-linecap:round!important;stroke-linejoin:round!important;
+    stroke-dasharray:4 96!important;stroke-dashoffset:0;opacity:.98!important;
+    filter:drop-shadow(0 0 2px rgba(var(--ah1586-pulse-rgb),.96)) drop-shadow(0 0 6px rgba(var(--ah1586-pulse-rgb),.52))!important;
+    animation:none;
+  }
+  html body a#header-send-message:hover > .ah1586-accent-pulse{opacity:1!important;}
+  html body a#header-send-message:hover > .ah1586-accent-pulse path{animation:ah1586AccentPulse 1.5s linear 1 forwards!important;}
+  html body a#header-send-message > .ah1586-accent-pulse path:nth-child(2){animation-delay:.08s!important;}
+}
+@keyframes ah1586AccentPulse{0%{stroke-dashoffset:0;opacity:0}8%{opacity:.98}88%{opacity:.98}100%{stroke-dashoffset:-100;opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  html body a#header-send-message > .ah1586-accent-pulse path{animation:none!important;stroke-dasharray:5 95!important;stroke-dashoffset:-24!important;}
+}
+

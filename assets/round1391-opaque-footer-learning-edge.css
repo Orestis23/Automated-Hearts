@@ -1,4 +1,4 @@
-/* Round 1391 — opaque lower shell, including the outside of its rounded corners. */
+
 @layer ah-r1389-controls {
  @media(max-width:900px){
   html:not(.ah-shell-embedded) body > .shell-edge.b {
@@ -21,9 +21,7 @@
  html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption){
   background-clip:border-box!important;
  }
- /* The Home-only projecting strip reads as a second illuminated edge.
-    Keep the Learning carbon face and inset rim; use the existing bottom border
-    as the single visible lower edge. */
+ 
  html body :is(.route-label.ah-home-caption,.premium-route-card__title-sign.ah-home-caption)::after {
   content:none!important;display:none!important;box-shadow:none!important;
  }

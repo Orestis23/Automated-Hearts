@@ -1,0 +1,40 @@
+/* Round 1576 — Homepage Crazy Facts window: no static/magnified poster.
+   The live Rolodex is the single source both before and after the shutter moves,
+   so the statistic cannot jump to a differently scaled poster image. */
+.cards-frame .cards-live-frame,
+.cards-frame.open .cards-live-frame{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  border:0!important;
+  transform:none!important;
+  scale:1!important;
+  zoom:1!important;
+  transform-origin:50% 50%!important;
+  background:#01050a!important;
+}
+.cards-frame:not(.open) .cards-live-frame{pointer-events:none!important;}
+.cards-frame.open .cards-live-frame{pointer-events:auto!important;}
+.cards-frame .machine-poster,
+.cards-frame .cards-video{display:none!important;visibility:hidden!important;opacity:0!important;}
+
+@media (min-width:760.01px){
+  html body.page-home[data-page="home"] .home-hero-rolodex-frame > .home-mobile-machine-poster,
+  html body.page-home[data-page="home"] .home-hero-rolodex-frame > .home-mobile-machine-loop{
+    display:none!important;visibility:hidden!important;opacity:0!important;
+  }
+  html body.page-home[data-page="home"] .home-hero-rolodex-frame iframe.home-hero-rolodex-embed{
+    display:block!important;
+    visibility:visible!important;
+    opacity:1!important;
+    width:100%!important;
+    height:100%!important;
+    transform:none!important;
+    scale:1!important;
+    zoom:1!important;
+  }
+}

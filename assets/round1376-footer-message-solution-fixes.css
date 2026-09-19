@@ -1,7 +1,4 @@
-/* Automated Hearts Round 1376
-   - Restore footer buttons and Messages button as true vintage mechanical keys
-   - Re-pin the mobile Messages button to the top-right corner
-   - Give the "Open the window." field the matte-film + black carbon-fiber treatment */
+
 
 :root{
   --ah1376-mint:#8fffd7;
@@ -15,7 +12,7 @@
   --ah1376-key-edge:rgba(182,214,255,.26);
 }
 
-/* -------------------- OPEN THE WINDOW field -------------------- */
+
 html body main#main-content .solution-process-instruction-copy,
 html body.page-solutions main#main-content #solution-process-heading.solution-process-instruction-copy,
 html body .solution-mobile-header-section .solution-process-title.solution-process-instruction-copy{
@@ -83,7 +80,7 @@ html body .solution-mobile-header-section .solution-process-title.solution-proce
   text-shadow:0 0 2px #ecfff9, 0 0 8px rgba(143,255,215,.62), 0 0 18px rgba(143,255,215,.18)!important;
 }
 
-/* -------------------- Mobile Messages button position -------------------- */
+
 @media (max-width:900px){
   html body > a.message,
   html body > a.message:link,
@@ -105,7 +102,7 @@ html body .solution-mobile-header-section .solution-process-title.solution-proce
   }
 }
 
-/* -------------------- Footer / message key structure -------------------- */
+
 @media (min-width:901px){
   html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav],
   html body[data-page] > #header-send-message{
@@ -191,7 +188,7 @@ html body > a.message::after{
     0 1px 0 rgba(0,0,0,.88)!important;
 }
 
-/* right side wall to make the keys feel chunkier */
+
 html body[data-page] > footer#site-footer #primary-nav a.footer-structure-control[data-nav] > .ah-key-side,
 html body[data-page] > #header-send-message > .ah-key-side,
 html body > nav.footer a[href] > .ah-key-side,

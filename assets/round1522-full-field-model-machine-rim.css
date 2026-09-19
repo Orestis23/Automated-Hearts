@@ -1,0 +1,245 @@
+/* Round 1522 — Learning Center / Industries 3D model stages.
+   The active 3D field fills the usable viewport and the embossed leather is
+   physically enclosed by the exact Home machine-window alloy rim.
+   The metal is drawn on a dedicated perimeter layer so older gold stage borders
+   cannot bleed through or replace it in the cascade. */
+
+:root{
+  --ah1522-machine-rim:url('./machine-rim-triple-round1199.svg');
+  --ah1522-machine-metal:#a9b3b6;
+  --ah1522-stage-rim:28px;
+  --ah1522-stage-inner-gap:14px;
+}
+
+/* Desktop / persistent-shell pages: the model stage fills the fixed main scrollport. */
+html body.page-learning[data-page="learning"] main#main-content > #learning-model-stage,
+html body.page-who-we-help[data-page="who-we-help"] main#main-content > #who-help-model-stage{
+  position:relative!important;
+  isolation:isolate!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  min-width:100%!important;
+  max-width:100%!important;
+  height:var(--ah1522-model-stage-height,100%)!important;
+  min-height:var(--ah1522-model-stage-height,100%)!important;
+  max-height:var(--ah1522-model-stage-height,100%)!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:0!important;
+  border-image:none!important;
+  border-radius:0!important;
+  outline:0!important;
+  background-position:center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  box-shadow:none!important;
+  scroll-margin:0!important;
+}
+
+/* Dedicated metal perimeter.  This is intentionally a pseudo-element rather
+   than the stage border so no historical gold border declaration can win. */
+html body.page-learning[data-page="learning"] main#main-content > #learning-model-stage::before,
+html body.page-who-we-help[data-page="who-we-help"] main#main-content > #who-help-model-stage::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:90!important;
+  box-sizing:border-box!important;
+  display:block!important;
+  pointer-events:none!important;
+  border:var(--ah1522-stage-rim) solid var(--ah1522-machine-metal)!important;
+  border-image:var(--ah1522-machine-rim) 128 stretch!important;
+  border-radius:0!important;
+  outline:0!important;
+  background:transparent!important;
+  box-shadow:
+    inset 4px 4px 8px rgba(201,224,231,.20),
+    inset -6px -6px 12px rgba(0,0,0,.72),
+    inset 0 0 0 2px rgba(5,12,18,.96),
+    0 8px 15px rgba(0,0,0,.62)!important;
+}
+
+/* The old glowing section divider is redundant once the stage is a machine window. */
+html body.page-learning[data-page="learning"] #learning-model-stage > .ah1483-section-break,
+html body.page-who-we-help[data-page="who-we-help"] #who-help-model-stage > .ah1483-section-break{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+}
+
+/* Keep the return control entirely inside the metal rim. */
+html body.page-learning[data-page="learning"] #learning-model-stage > button.learning-stage-return,
+html body.page-who-we-help[data-page="who-we-help"] #who-help-model-stage > button.learning-stage-return{
+  top:calc(var(--ah1522-stage-rim) + 8px)!important;
+  z-index:100!important;
+}
+
+/* Give the model the rest of the field rather than retaining the old narrow stage gutters. */
+html body.page-learning[data-page="learning"] #learning-model-stage > .learning-lesson-viewport.r984-static-model-viewport,
+html body.page-who-we-help[data-page="who-we-help"] #who-help-model-stage > .learning-lesson-viewport.r984-static-model-viewport{
+  position:absolute!important;
+  z-index:5!important;
+  top:calc(var(--ah1522-stage-rim) + 72px)!important;
+  right:calc(var(--ah1522-stage-rim) + var(--ah1522-stage-inner-gap))!important;
+  bottom:calc(var(--ah1522-stage-rim) + var(--ah1522-stage-inner-gap))!important;
+  left:calc(var(--ah1522-stage-rim) + var(--ah1522-stage-inner-gap))!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:0!important;
+  border-image:none!important;
+  border-radius:0!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+
+/* Mobile persistent-shell version of those same desktop documents. */
+@media(max-width:800px){
+  :root{
+    --ah1522-stage-rim:clamp(14px,4.2vw,22px);
+    --ah1522-stage-inner-gap:7px;
+  }
+  html body.page-learning[data-page="learning"] #learning-model-stage > button.learning-stage-return,
+  html body.page-who-we-help[data-page="who-we-help"] #who-help-model-stage > button.learning-stage-return{
+    top:calc(var(--ah1522-stage-rim) + 6px)!important;
+  }
+  html body.page-learning[data-page="learning"] #learning-model-stage > .learning-lesson-viewport.r984-static-model-viewport,
+  html body.page-who-we-help[data-page="who-we-help"] #who-help-model-stage > .learning-lesson-viewport.r984-static-model-viewport{
+    top:calc(var(--ah1522-stage-rim) + 66px)!important;
+    right:calc(var(--ah1522-stage-rim) + var(--ah1522-stage-inner-gap))!important;
+    bottom:calc(var(--ah1522-stage-rim) + var(--ah1522-stage-inner-gap))!important;
+    left:calc(var(--ah1522-stage-rim) + var(--ah1522-stage-inner-gap))!important;
+  }
+}
+
+/* Dedicated mobile pages: remove the old section padding/dividers and let the stage
+   occupy the complete usable viewport between the top shell and footer. */
+@media(max-width:900px){
+  html body[data-ah-mobile-surface="learning"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden])),
+  html body[data-ah-mobile-surface="industries"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden])){
+    display:block!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:none!important;
+    height:var(--ah1522-model-stage-height,calc(100dvh - 146px))!important;
+    min-height:var(--ah1522-model-stage-height,calc(100dvh - 146px))!important;
+    max-height:var(--ah1522-model-stage-height,calc(100dvh - 146px))!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    overflow:hidden!important;
+    content-visibility:visible!important;
+    contain:none!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden])) > .ah1483-section-break,
+  html body[data-ah-mobile-surface="industries"] main#main-content > .lite-section:has(#lite-model-stage:not([hidden])) > .ah1483-section-break{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage,
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage{
+    --ah1522-stage-rim:clamp(14px,4.2vw,22px);
+    position:relative!important;
+    isolation:isolate!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    justify-content:flex-start!important;
+    gap:8px!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    min-width:100%!important;
+    max-width:100%!important;
+    height:var(--ah1522-model-stage-height,calc(100dvh - 146px))!important;
+    min-height:var(--ah1522-model-stage-height,calc(100dvh - 146px))!important;
+    max-height:var(--ah1522-model-stage-height,calc(100dvh - 146px))!important;
+    margin:0!important;
+    padding:calc(var(--ah1522-stage-rim) + 7px)!important;
+    overflow:hidden!important;
+    border:0!important;
+    border-image:none!important;
+    border-radius:0!important;
+    outline:0!important;
+    background-position:center!important;
+    background-size:cover!important;
+    background-repeat:no-repeat!important;
+    box-shadow:none!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage::before,
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage::before{
+    content:""!important;
+    position:absolute!important;
+    inset:0!important;
+    z-index:90!important;
+    box-sizing:border-box!important;
+    display:block!important;
+    pointer-events:none!important;
+    border:var(--ah1522-stage-rim) solid var(--ah1522-machine-metal)!important;
+    border-image:var(--ah1522-machine-rim) 128 stretch!important;
+    border-radius:0!important;
+    outline:0!important;
+    background:transparent!important;
+    box-shadow:
+      inset 4px 4px 8px rgba(201,224,231,.20),
+      inset -6px -6px 12px rgba(0,0,0,.72),
+      inset 0 0 0 2px rgba(5,12,18,.96),
+      0 8px 15px rgba(0,0,0,.62)!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage[hidden],
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage[hidden]{
+    display:none!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage .stage-choose-row,
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage > .lite-return-control{
+    flex:0 0 auto!important;
+    width:100%!important;
+    margin:0!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage .stage-choose-row > .learning-choose-another,
+  html body[data-ah-mobile-surface="industries"] #lite-model-stage > .lite-return-control{
+    margin:0 auto!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] #lite-model-shell.model-shell,
+  html body[data-ah-mobile-surface="industries"] #lite-model-shell.model-shell{
+    position:relative!important;
+    flex:1 1 auto!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:auto!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+    border:0!important;
+    border-image:none!important;
+    border-radius:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+  }
+
+  html body[data-ah-mobile-surface="learning"] #lite-model-stage #model-controls{
+    flex:0 0 auto!important;
+    margin:0!important;
+    padding:0!important;
+  }
+}

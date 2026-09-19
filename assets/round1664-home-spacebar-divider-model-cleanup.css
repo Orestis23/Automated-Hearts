@@ -1,0 +1,53 @@
+/* Round 1664 — current-model-only Home machine, reversed Home route colors, softer divider halo. */
+
+/* Never expose the obsolete Home 3D still poster again. */
+html body.page-home[data-page="home"] .machine-3d-frame .machine-live-poster,
+html body.page-home[data-page="home"] #home-machine-grid .home-mobile-machine-poster--primary{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+}
+
+/* Home route/spacebar color reversal: mint text, pink bottom accent/glow. */
+html body.page-home.page-home.page-home[data-page="home"]
+#home-route-buttons#home-route-buttons#home-route-buttons
+article.home-route-card.home-route-card
+> .premium-route-card__title-sign.brand-route-screen.ah-home-caption
+> .ah-route-label-final,
+html body[data-ah-mobile-surface="home"][data-ah-mobile-surface="home"]
+main#main-content#main-content .route-card.route-card
+> .route-label.ah-home-caption{
+  color:#8fffd7!important;
+  -webkit-text-fill-color:#8fffd7!important;
+  text-shadow:0 0 .4px rgba(235,255,249,.88),0 0 1.7px rgba(143,255,215,.76),0 0 4px rgba(143,255,215,.20)!important;
+}
+
+html body.page-home.page-home.page-home[data-page="home"]
+#home-route-buttons#home-route-buttons#home-route-buttons
+article.home-route-card.home-route-card
+> .premium-route-card__title-sign.brand-route-screen.ah-home-caption{
+  border-bottom-color:#ff2ea8!important;
+}
+
+html body.page-home.page-home.page-home[data-page="home"]
+#home-route-buttons#home-route-buttons#home-route-buttons
+article.home-route-card.home-route-card
+> .premium-route-card__title-sign.brand-route-screen.ah-home-caption::after,
+html body[data-ah-mobile-surface="home"][data-ah-mobile-surface="home"]
+main#main-content#main-content .route-card.route-card
+> .route-label.ah-home-caption::after{
+  border-left-color:rgba(255,46,168,.82)!important;
+  border-right-color:rgba(255,46,168,.82)!important;
+  border-bottom-color:#ff2ea8!important;
+  background:linear-gradient(180deg,#ff9bd4 0%,#e63a9d 58%,#58102f 100%)!important;
+  box-shadow:inset 0 1px 0 rgba(255,225,242,.22),0 2px 5px rgba(255,46,168,.13)!important;
+}
+
+/* The 1px Home divider remains visible; only the halo is halved again. */
+html body.page-home.page-home[data-page="home"] .ah1483-section-break.ah1483-section-break,
+html body[data-ah-mobile-surface="home"][data-ah-mobile-surface="home"] .ah1483-section-break.ah1483-section-break{
+  box-shadow:
+    0 0 2px rgba(255,46,168,.0145),
+    0 0 6px rgba(255,46,168,.007),
+    0 0 12px rgba(255,46,168,.00275)!important;
+}

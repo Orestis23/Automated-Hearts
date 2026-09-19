@@ -1,7 +1,6 @@
 (() => {
   'use strict';
-  if ('serviceWorker' in navigator) navigator.serviceWorker.getRegistrations().then((regs)=>regs.forEach((r)=>r.unregister())).catch(()=>{});
-  const $ = (s, r=document) => r.querySelector(s);
+const $ = (s, r=document) => r.querySelector(s);
   const $$ = (s, r=document) => [...r.querySelectorAll(s)];
   // Native route cards remain ordinary links/buttons. Only explicit 3D loading uses JS.
   const stage = $('#lite-model-stage');
@@ -12,11 +11,10 @@
   const learningModels = {
     ai101: [
       './models/ai-101-core-principles-round1316.html?v=1353r',
-      './models/ai-101-human-ai-partnership-mobile-round1316.html?v=1316r',
-      './models/ai-101-verification-lab-round1316.html?v=1316r'
+      './models/ai-101-human-ai-partnership-mobile-round1640.html?v=1640r',
     ],
     practical: ['./models/practical-ai-skills-helix-round1316.html?v=1353r'],
-    strategy: ['./models/strategy-lab-ball-round1093.html?v=1246r']
+    strategy: ['./models/strategy-lab-ball-round1093.html?v=1640r','./models/strategy-lab-verification-hourglass-round1640.html?v=1640r']
   };
   function unloadModel(){ if(frame){ frame.src='about:blank'; frame.remove(); frame=null; } if(modelShell) modelShell.hidden=true; }
   function loadUrl(url){
@@ -49,6 +47,6 @@
     e.preventDefault(); unloadModel(); selected=el.dataset.industry; if(stage){stage.hidden=false; $('#stage-title').textContent=el.dataset.title;} $('#industry-helix')?.setAttribute('data-industry-index',selected); stage?.scrollIntoView({block:'start'});
   }));
   $('#industry-helix')?.addEventListener('click',(e)=>{ const i=e.currentTarget.dataset.industryIndex||'0'; loadUrl(`./models/who-we-help-industry-helix-round1093.html?industry=${encodeURIComponent(i)}&v=1353r`); });
-  $('#industry-readiness')?.addEventListener('click',()=>loadUrl('./models/who-we-help-readiness-signals-round1093.html?v=1353r'));
+  $('#industry-readiness')?.addEventListener('click',()=>loadUrl('./models/who-we-help-readiness-signals-round1513.html?v=1513r'));
   document.addEventListener('visibilitychange',()=>{ if(document.hidden) unloadModel(); });
 })();

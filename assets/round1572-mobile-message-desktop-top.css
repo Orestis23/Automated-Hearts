@@ -1,0 +1,62 @@
+/* Automated Hearts Round 1572 — mobile Messages correction + desktop top control clearance. */
+@media (max-width:900px){
+  /* The mobile Messages key owns its accents in the artwork itself. This avoids
+     late runtime/overlay conflicts and keeps the red traces seated in the same
+     internal-rim corners as the mobile footer keys. */
+  html body > a.message,
+  html body > a.message:link,
+  html body > a.message:visited{
+    position:fixed!important;
+    isolation:isolate!important;
+    background-image:url('./mobile-message-key-red-accent-round1572.svg?v=1572r')!important;
+    background-size:100% 100%!important;
+    background-position:center!important;
+    background-repeat:no-repeat!important;
+  }
+  html body > a.message > :is(
+    .ah1452-message-corner-overlay,
+    .ah1453-message-corner-overlay,
+    .ah1454-mobile-corner-overlay,
+    .ah1568-mobile-message-rim-overlay,
+    .ah1571-mobile-message-rim-overlay
+  ){
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+  }
+  /* Return the red envelope to the lower position within the face. */
+  html body > a.message > svg{
+    position:absolute!important;
+    z-index:98!important;
+    left:50%!important;
+    top:62%!important;
+    width:46%!important;
+    height:auto!important;
+    margin:0!important;
+    transform:translate(-50%,-50%)!important;
+    transform-origin:center center!important;
+    color:#ff3030!important;
+    filter:drop-shadow(0 0 1px rgba(255,48,48,.34))!important;
+  }
+  html body > a.message > svg :is(path,polyline,line){stroke:#ff3030!important;}
+  /* Keep the brief mechanical press without latching the whole key down. */
+  html body > a.message:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+    transform:translate3d(0,3px,0) scale(.97)!important;
+    transform-origin:center center!important;
+  }
+  html body > a.message[aria-expanded="true"]:not(:active):not(.is-pressed):not([data-ah-control-pressed="1"]):not([data-ah-control-pressed="true"]),
+  html body > a.message.is-contact-latched:not(:active):not(.is-pressed):not([data-ah-control-pressed="1"]):not([data-ah-control-pressed="true"]){
+    transform:none!important;
+  }
+}
+
+@media (min-width:901px){
+  /* Give the desktop Messages control enough top clearance that its complete
+     housing/edge is visible instead of kissing or clipping the viewport edge. */
+  :root{--r1005-message-top:16px!important;}
+  html body[data-page] > a#header-send-message#header-send-message,
+  html body[data-page] > a#header-send-message.header-send-message{
+    --r1005-message-top:16px!important;
+    top:16px!important;
+  }
+}

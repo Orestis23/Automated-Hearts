@@ -834,7 +834,6 @@
           aria-hidden="true"
           inert
         >
-          <button class="nav-contact-close" type="button" aria-label="Close contact form">×</button>
           <form
             action="#"
             class="quick-contact-form nav-contact-form nav-contact-form--full"
@@ -843,20 +842,20 @@
           >
             <label class="nav-contact-field">
               <span class="sr-only">Name</span>
-              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="name" name="name" placeholder="Name (required)" required type="text">
+              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" autocomplete="name" name="name" placeholder="Name (required)" required type="text">
             </label>
             <label class="nav-contact-field">
               <span class="sr-only">Email</span>
-              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="email" name="email" placeholder="Email (required)" required type="email">
+              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" autocomplete="email" name="email" placeholder="Email (required)" required type="email">
             </label>
-<label class="nav-contact-field nav-contact-field--full ah-phone-field"><span class="sr-only">Phone number (required)</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="tel" inputmode="tel" name="phone" placeholder="Phone number (required)" required type="tel"></label>
+<label class="nav-contact-field nav-contact-field--full ah-phone-field"><span class="sr-only">Phone number (required)</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" autocomplete="tel" inputmode="tel" name="phone" placeholder="Phone number (required)" required type="tel"></label>
             <label class="nav-contact-field">
               <span class="sr-only">Business or organization</span>
-              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" autocomplete="organization" name="business" placeholder="Business or organization" type="text">
+              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" autocomplete="organization" name="business" placeholder="Business or organization" type="text">
             </label>
             <label class="nav-contact-field">
               <span class="sr-only">Business type</span>
-              <select class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" aria-label="Business type" name="business_type">
+              <select class="ah-red-screen" data-ah-placeholder-select="1" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" aria-label="Business type" name="business_type">
                 <option value="">Business type</option>
                 <option>Professional services</option>
                 <option>Construction or trades</option>
@@ -868,10 +867,10 @@
             </label>
             <label class="nav-contact-field nav-contact-field--full">
               <span class="sr-only">What feels harder than it should?</span>
-              <textarea class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#ffe1e5!important;-webkit-text-fill-color:#ffe1e5!important;font-family:"Orbitron",system-ui,sans-serif!important;" name="message" placeholder="What feels harder than it should?" required rows="4"></textarea>
+              <textarea class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" name="message" placeholder="What feels harder than it should?" required rows="4"></textarea>
             </label>
-            <button class="button button--small send-question-button nav-contact-submit" type="submit">
-              <span>Send Message</span>
+            <button class="button button--small send-question-button nav-contact-submit ah-unified-spacebar" type="submit">
+              <span class="ah-route-label-final">Send Message</span>
             </button>
             <p aria-live="polite" class="quick-contact-form__status nav-contact-form-status"></p>
           </form>
@@ -879,6 +878,49 @@
       </div>
     `;
     document.body.appendChild(drawer);
+
+
+    // Round 1635: source-level light-black spacebar carbon contact section. This runs in the generator itself,
+    // before any separate authority file is needed, so the live form cannot fall back
+    // to the retired black inner shells.
+    (() => {
+      const panel = drawer.querySelector('#nav-contact-panel');
+      const imp = (el, prop, value) => { if (el) el.style.setProperty(prop, value, 'important'); };
+      if (panel) {
+        imp(panel,'background-color','#17191b');
+        imp(panel,'background-image','linear-gradient(180deg,rgba(255,255,255,.055) 0%,rgba(255,255,255,.018) 16%,rgba(0,0,0,.035) 48%,rgba(0,0,0,.20) 100%),url("./assets/contact-spacebar-carbon-light-black-round1635.webp")');
+        imp(panel,'background-size','100% 100%,190px 190px');
+        imp(panel,'background-position','center,0 0');
+        imp(panel,'background-repeat','no-repeat,repeat');
+        imp(panel,'background-blend-mode','normal,normal');
+        const form = panel.querySelector('form');
+        if (form) {
+          imp(form,'background','transparent'); imp(form,'background-color','transparent'); imp(form,'background-image','none');
+          imp(form,'border','0'); imp(form,'outline','0'); imp(form,'box-shadow','none');
+        }
+        panel.querySelectorAll('label').forEach((label) => {
+          imp(label,'background','transparent'); imp(label,'background-color','transparent'); imp(label,'background-image','none');
+          imp(label,'border','0'); imp(label,'outline','0'); imp(label,'box-shadow','none');
+        });
+      }
+      let style = document.getElementById('ah1635-generator-placeholder-style');
+      if (!style) {
+        style = document.createElement('style');
+        style.id = 'ah1635-generator-placeholder-style';
+        style.textContent = '#nav-contact-panel#nav-contact-panel#nav-contact-panel input.ah-red-screen::placeholder,#nav-contact-panel#nav-contact-panel#nav-contact-panel textarea.ah-red-screen::placeholder{color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:0 0 2px rgba(255,255,255,.34)!important;}';
+        document.head.appendChild(style);
+      }
+    })();
+
+    drawer.querySelectorAll("select[data-ah-placeholder-select]").forEach((select) => {
+      const syncSelectColor = () => {
+        const color = select.value ? "#24c978" : "#ffffff";
+        select.style.setProperty("color", color, "important");
+        select.style.setProperty("-webkit-text-fill-color", color, "important");
+      };
+      select.addEventListener("change", syncSelectColor);
+      syncSelectColor();
+    });
 
     const drawerPanel = $(".nav-contact-panel", drawer);
     const closeDrawerButton = $(".nav-contact-close", drawer);
@@ -1546,10 +1588,10 @@ document.addEventListener("DOMContentLoaded", () => {
         element.hidden = false;
         element.dataset.round418Size = 'footer';
         element.style.setProperty('font-family', '"Orbitron", system-ui, sans-serif', 'important');
-        element.style.setProperty('font-size', window.matchMedia('(max-width:1100px)').matches ? '10.5pt' : '12.5pt', 'important');
-        element.style.setProperty('font-weight', '700', 'important');
+        element.style.setProperty('font-size', window.matchMedia('(max-width:760px)').matches ? '10px' : '18.4px', 'important');
+        element.style.setProperty('font-weight', window.matchMedia('(max-width:760px)').matches ? '700' : '400', 'important');
         element.style.setProperty('font-style', 'normal', 'important');
-        element.style.setProperty('line-height', '1', 'important');
+        element.style.setProperty('line-height', window.matchMedia('(max-width:760px)').matches ? '1' : '18.4px', 'important');
         element.style.setProperty('letter-spacing', '0', 'important');
         element.style.setProperty('word-spacing', '0', 'important');
         element.style.setProperty('opacity', '1', 'important');

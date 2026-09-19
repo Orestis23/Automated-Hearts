@@ -1,0 +1,25 @@
+/* Automated Hearts Round 1599 — process heading underlines only.
+   Split from Round 1594 so that sheet no longer contributes Explore-button styling. */
+html body.page-home[data-page="home"] .ah-home-process-box > h3{
+  position:relative!important;
+}
+html body.page-home[data-page="home"] .ah-home-process-box > h3 > .r1176-process-heading-label{
+  position:relative!important;
+  display:inline-block!important;
+  width:auto!important;
+  max-width:100%!important;
+  padding-bottom:7px!important;
+  border-bottom:3px solid #ff2ea8!important;
+  box-shadow:0 4px 5px -4px rgba(255,46,168,.92),0 7px 12px -9px rgba(255,46,168,.72)!important;
+}
+html body.page-home[data-page="home"] .ah-home-process-box > h3 > .ah1494-heading-underline{
+  display:none!important;
+}
+@media (min-width:801px){
+  html body.page-home[data-page="home"] #home-solution-framework
+  .negative-software-grid-round344 > article.home-process-stage.negative-software-screen-round344.ah-home-process-box:not(.home-process-stage--key) > h3{
+    display:flex!important;
+    align-items:flex-start!important;
+    justify-content:center!important;
+  }
+}

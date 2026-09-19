@@ -21,7 +21,7 @@
       iframe: 'home-machine-rolodex',
       video: 'home-machine-rolodex-video',
       mobileSrc: './assets/home-rolodex-scroll-mobile-round1101.mp4',
-      desktopSrc: './heart-to-heart-digital-rolodex-round1094.html?v=1115r'
+      desktopSrc: './heart-to-heart-digital-rolodex-round1094.html?v=1576r&home=1'
     }
   ];
 

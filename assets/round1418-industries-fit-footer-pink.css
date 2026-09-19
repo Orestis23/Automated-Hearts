@@ -1,9 +1,6 @@
-/* Automated Hearts Round 1418
-   Industries viewport-fit authority + desktop footer pink copy authority.
-   Loaded last so legacy card sizing and footer text colors cannot override it. */
 
-/* DESKTOP INDUSTRIES: keep the full 2x2 image/button composition inside the
-   visible viewport above the fixed ticker, including the button underglow. */
+
+
 @media (min-width:901px){
   html body.page-who-we-help[data-page="who-we-help"] main#main-content > section#who-we-help-solutions{
     box-sizing:border-box!important;
@@ -162,7 +159,7 @@
   }
 }
 
-/* Typical 13-inch laptop / MacBook desktop viewport heights. */
+
 @media (min-width:901px) and (max-height:820px){
   html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions > .shell{
     padding-top:8px!important;
@@ -200,7 +197,7 @@
   }
 }
 
-/* Desktop footer navigation: text-only authority. Button geometry and behavior stay untouched. */
+
 @media (min-width:761px){
   html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav a.footer-structure-control[data-nav] .send-control-copy.footer-control-copy .footer-nav-label,
   html body[data-page] > footer#site-footer.site-footer--minimal nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav] span.footer-nav-label{

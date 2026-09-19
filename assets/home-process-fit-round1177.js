@@ -17,7 +17,7 @@
   function fitHomeTerminals(){
     if(!document.body || !document.body.classList.contains('page-home')) return;
     var headers=Array.prototype.slice.call(document.querySelectorAll('#home-solution-framework .r1176-process-heading-label'));
-    fitShared(headers,22,15,0.25);
+    fitShared(headers,38,30,0.25);
 
     var lines=Array.prototype.slice.call(document.querySelectorAll('#home-solution-framework .negative-software-screen-round344:not(.home-process-stage--key) .home-process-stage__list > li'));
     fitShared(lines,20,15,0.25);

@@ -8,9 +8,7 @@
   const signature = document.getElementById('intro-signature-heart');
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const esc = (v) => v.replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
-  if ('serviceWorker' in navigator) navigator.serviceWorker.getRegistrations().then((regs)=>regs.forEach((r)=>r.unregister())).catch(()=>{});
-
-  function colorize(v){let x=esc(v);x=x.replace(/AI/g,'<span class="pink">AI</span>').replace(/Human/g,'<span class="green">Human</span>').replace(/maximum efficiency/g,'<span class="green">maximum efficiency</span>').replace(/Nothing you don&#39;t need\./g,'<span class="pink">Nothing</span> you <span class="green">don&#39;t need.</span>').replace(/Just what you do\./g,'<span class="pink">Just</span> <span class="green">what you do.</span>');return x}
+function colorize(v){let x=esc(v);x=x.replace(/AI/g,'<span class="pink">AI</span>').replace(/Human/g,'<span class="green">Human</span>').replace(/maximum efficiency/g,'<span class="green">maximum efficiency</span>').replace(/Nothing you don&#39;t need\./g,'<span class="pink">Nothing</span> you <span class="green">don&#39;t need.</span>').replace(/Just what you do\./g,'<span class="pink">Just</span> <span class="green">what you do.</span>');return x}
   const state=['','','','',''];
   function render(i){lineEls[i].innerHTML=colorize(state[i]);lineEls[i].appendChild(cursor)}
   async function type(i,text){for(const ch of text){state[i]+=ch;render(i);try{window.__AHIntroKeySound?.('type')}catch(_){};let d=34+Math.random()*48;if(/[.,%]/.test(ch))d+=65;await sleep(d)}}
@@ -47,9 +45,11 @@
       modelReady=true;
       modelFrame?.classList.add('model-ready');
       modelReadyResolve(true);
-      // Ask the live scene itself for the closed-state poster before freezing it.
-      try{model.contentWindow.postMessage({type:'ah:capture-machine-poster'},'*')}catch(_){}
-      // Warm-up is complete; freeze until the visitor actually raises the left shutter.
+      // Capture a finished still without keeping the animation engine running. The child
+      // capture handler performs an explicit renderer.render(), so this does not add an
+      // extra animation workload or change the model's load schedule.
+      const ask=()=>{try{model.contentWindow.postMessage({type:'ah:capture-machine-poster'},'*')}catch(_){}};
+      requestAnimationFrame(()=>setTimeout(ask,40));
       setModelActive(!!(modelFrame?.classList.contains('open')&&machineVisible&&!document.hidden));
       return;
     }
@@ -57,6 +57,7 @@
       modelPoster.src=e.data.image;
       modelPoster.classList.add('is-live-capture-ready');
       modelFrame?.classList.add('live-poster-ready');
+      setModelActive(!!(modelFrame?.classList.contains('open')&&machineVisible&&!document.hidden));
     }
   });
 
@@ -81,23 +82,40 @@
   const cardsUrl='./assets/home-rolodex-scroll-mobile-round1147-smooth.mp4';
   async function prepareCards(){return fetchVideo(cardsUrl)}
   async function prepareCriticalAssets(){
-    const images=['./assets/home-rolodex-scroll-mobile-round1101-poster.webp','./assets/mobile-lite-heart.webp'];
+    const images=['./assets/mobile-lite-heart.webp'];
     startModelLoad();
     const core=Promise.all([Promise.all(images.map(loadImage)),modelReadyPromise]);
-    // Only after the 3D request is underway do we quietly cache the small cards clip.
-    modelReadyPromise.then(()=>{if('requestIdleCallback' in window)requestIdleCallback(()=>prepareCards(),{timeout:2200});else setTimeout(prepareCards,350)}).catch(()=>{});
+    // Cards are intentionally NOT downloaded during the first-visit intro.
+    // The full mobile MP4 is only warmed after the intro has completely released the page.
     return core;
   }
 
   async function ensureCardsPlaying(){
     if(!cards)return;
-    if(!cards.src){await prepareCards();cards.src=mediaCache[cardsUrl]||cards.dataset.src;cards.load()}
+    if(!cards.src){
+      await prepareCards(); // fetchVideoBytes completes the entire 1.5 MB clip before playback.
+      cards.src=mediaCache[cardsUrl]||cards.dataset.src;
+      cards.muted=true; cards.loop=true; cards.playsInline=true; cards.preload='auto';
+      cards.load();
+    }
     if(cards.readyState<2)await Promise.race([new Promise(r=>cards.addEventListener('loadeddata',r,{once:true})),sleep(1800)]);
+    cards.defaultPlaybackRate=.8;
     cards.playbackRate=.8;
     cardsFrame?.classList.add('video-ready');
-    if(machineVisible&&!document.hidden)cards.play().catch(()=>{});
+    if(machineVisible&&!document.hidden&&cardsFrame?.classList.contains('open'))cards.play().catch(()=>{});
   }
   function stopCards(){if(cards)cards.pause()}
+  let cardsWarmAllowed=document.documentElement.getAttribute('data-ah-intro')!=='1';
+  let cardsWarmScheduled=false;
+  function scheduleCardsWarmup(){
+    if(!cardsWarmAllowed||cardsWarmScheduled||mediaCache[cardsUrl])return;
+    cardsWarmScheduled=true;
+    const warm=()=>prepareCards().finally(()=>{cardsWarmScheduled=false});
+    if('requestIdleCallback' in window)requestIdleCallback(warm,{timeout:2600});
+    else setTimeout(warm,450);
+  }
+  function releaseCardsWarmup(){cardsWarmAllowed=true;scheduleCardsWarmup()}
+  addEventListener('ah:first-intro-top',releaseCardsWarmup,{once:true});
   function closeFrame(frame){
     if(!frame)return;
     frame.classList.remove('open');
@@ -106,7 +124,11 @@
   function syncLiveSurface(){
     const leftOpen=!!modelFrame?.classList.contains('open');
     const rightOpen=!!cardsFrame?.classList.contains('open');
-    setModelActive(modelReady&&leftOpen&&machineVisible&&!document.hidden&&!rightOpen);
+    const shouldRun=modelReady&&leftOpen&&machineVisible&&!document.hidden&&!rightOpen;
+    setModelActive(shouldRun);
+    if(leftOpen&&modelReady){
+      requestAnimationFrame(()=>requestAnimationFrame(()=>setTimeout(()=>modelFrame?.classList.add('ah1644-live-painted'),90)));
+    }
     if(rightOpen&&machineVisible&&!document.hidden){stopCards();ensureCardsPlaying()}else stopCards();
   }
 
@@ -128,7 +150,11 @@
   });
 
   if(stack&&'IntersectionObserver' in window){
-    const io=new IntersectionObserver((entries)=>{machineVisible=!!entries[0]?.isIntersecting;syncLiveSurface()},{rootMargin:'80px 0px'});io.observe(stack);
+    const io=new IntersectionObserver((entries)=>{
+      machineVisible=!!entries[0]?.isIntersecting;
+      if(machineVisible)scheduleCardsWarmup();
+      syncLiveSurface();
+    },{rootMargin:'240px 0px'});io.observe(stack);
   }
   document.addEventListener('visibilitychange',syncLiveSurface);
 
@@ -141,6 +167,7 @@
     try{window.dispatchEvent(new CustomEvent('ah:first-intro-raising',{detail:{intro}}))}catch(_){}
     await Promise.race([new Promise(r=>intro.addEventListener('transitionend',r,{once:true})),sleep(3300)]);
     intro.hidden=true; document.documentElement.setAttribute('data-ah-intro','0');
+    releaseCardsWarmup();
     syncLiveSurface();
   }
   let seen=false;try{seen=localStorage.getItem(INTRO_KEY)==='1'}catch(_){}
@@ -152,8 +179,15 @@
   }else{
     intro.hidden=true;document.documentElement.setAttribute('data-ah-intro','0');
     startModelLoad();
-    modelReadyPromise.then(()=>{if('requestIdleCallback' in window)requestIdleCallback(()=>prepareCards(),{timeout:2500})}).catch(()=>{});
+    cardsWarmAllowed=true;
+    scheduleCardsWarmup();
   }
+
+  // Native looping on a fully-buffered blob is normally gapless. This is a fallback only.
+  cards?.addEventListener('ended',()=>{
+    try{cards.currentTime=0}catch(_){}
+    if(cardsFrame?.classList.contains('open')&&machineVisible&&!document.hidden)cards.play().catch(()=>{});
+  });
 
   // Deferred half-carousel; manual motion only.
   const carousel=document.querySelector('.carousel');

@@ -1,5 +1,4 @@
-/* Round 1375 — stagger Industries cards, keep button glow above ticker,
-   and restyle footer/message buttons as deeper vintage mechanical keys. */
+
 
 @layer ah-r929-final {
   :root{
@@ -12,7 +11,7 @@
     --ah1375-footer-mint:#8fffd7;
   }
 
-  /* ---------- Make route-button glow visible above ticker ---------- */
+  
   @media (min-width:761px){
     html body.page-home[data-page="home"] #home-route-buttons,
     html body.page-learning[data-page="learning"] #learning-route-buttons,
@@ -37,7 +36,7 @@
     }
   }
 
-  /* ---------- Desktop Industries: stagger cards and enlarge use of space ---------- */
+  
   @media (min-width:761px){
     html body.page-who-we-help[data-page="who-we-help"]
     section#who-we-help-solutions .audience-grid.who-help-button-grid{
@@ -120,7 +119,7 @@
     }
   }
 
-  /* ---------- Mobile Industries: keep cards centered and bars full width ---------- */
+  
   @media (max-width:760px){
     html body.page-who-we-help .route-grid{
       display:grid!important;
@@ -168,7 +167,7 @@
     }
   }
 
-  /* ---------- Vintage mechanical footer / message keys ---------- */
+  
   html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control[data-nav],
   html body[data-page] > a#header-send-message,
   html body nav.footer > a,

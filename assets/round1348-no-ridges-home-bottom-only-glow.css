@@ -1,10 +1,4 @@
-/* Automated Hearts Round 1348
-   1) Footer keys: remove every legacy ridged/ribbed edge and perimeter layer.
-      Use a normal smooth keyboard-key top with one solid side/depth wall.
-      Legend-color glow appears only underneath while the key is pressed.
-   2) Home three route caption controls: keep the carbon/matte face, but make
-      the Learning Center-style mint light originate ONLY below the control.
-      No outer glow is allowed above or behind the top edge. */
+
 
 :root{
   --ah-r1348-mint:#8fffd7;
@@ -14,9 +8,9 @@
   --ah-r1348-key-side-dark:#080c10;
 }
 
-/* ========================================================================== */
-/* HOME ROUTE CAPTIONS — bottom-only Learning Center-style emission            */
-/* ========================================================================== */
+
+
+
 
 html body.page-home[data-page="home"]:not(#r1348h1):not(#r1348h2):not(#r1348h3)
 #home-route-buttons .premium-route-card__title-sign.brand-route-screen.ah-home-caption,
@@ -39,7 +33,7 @@ main#main-content .route-card > .route-label.ah-home-caption{
     0 3px 0 #06131a!important;
 }
 
-/* Matte film only. Absolutely no exterior light from this layer. */
+
 html body.page-home[data-page="home"]:not(#r1348h7):not(#r1348h8):not(#r1348h9)
 #home-route-buttons .premium-route-card__title-sign.brand-route-screen.ah-home-caption::before,
 html body[data-ah-mobile-surface="home"]:not(#r1348h10):not(#r1348h11):not(#r1348h12)
@@ -63,7 +57,7 @@ main#main-content .route-card > .route-label.ah-home-caption::before{
   pointer-events:none!important;
 }
 
-/* Underlight starts below the key. The pseudo-element never overlaps the face. */
+
 html body.page-home[data-page="home"]:not(#r1348h13):not(#r1348h14):not(#r1348h15)
 #home-route-buttons .premium-route-card__title-sign.brand-route-screen.ah-home-caption::after,
 html body[data-ah-mobile-surface="home"]:not(#r1348h16):not(#r1348h17):not(#r1348h18)
@@ -94,7 +88,7 @@ main#main-content .route-card > .route-label.ah-home-caption::after{
   pointer-events:none!important;
 }
 
-/* Keep captions/legends above the matte pane. */
+
 html body.page-home[data-page="home"] #home-route-buttons
 .premium-route-card__title-sign.brand-route-screen.ah-home-caption > *,
 html body[data-ah-mobile-surface="home"] main#main-content
@@ -102,11 +96,11 @@ html body[data-ah-mobile-surface="home"] main#main-content
   z-index:3!important;
 }
 
-/* ========================================================================== */
-/* FOOTER — remove ribbed/ridged geometry and use a clean normal keycap       */
-/* ========================================================================== */
 
-/* Clean the footer bed too, so no old ribbing shows through between keycaps. */
+
+
+
+
 @media (max-width:900px){
   html body:not(#r1348bed1):not(#r1348bed2):not(#r1348bed3) > nav.footer.footer{
     background:linear-gradient(180deg,#0b1723 0%,#040b12 48%,#010408 100%)!important;
@@ -160,7 +154,7 @@ html body[data-ah-mobile-surface="home"] main#main-content
     text-shadow:0 0 3px rgba(var(--ah-r1348-key-rgb),.24)!important;
   }
 
-  /* Old ribbed siding / pink lip / nested edge spans are all disabled. */
+  
   html body > nav.footer.footer.footer a[href]
   > :is(.ah-footer-bottom-rim,.r969-pink-depth-bottom,.r969-pink-depth-right,.ah-bottom-siding){
     display:none!important;
@@ -173,7 +167,7 @@ html body[data-ah-mobile-surface="home"] main#main-content
     box-shadow:none!important;
   }
 
-  /* There is no pseudo-element side wall anymore; the solid 5px box-shadow is the smooth side. */
+  
   html body:not(#r1348m7):not(#r1348m8):not(#r1348m9)
   > nav.footer.footer.footer a[href]::after{
     content:none!important;
@@ -186,7 +180,7 @@ html body[data-ah-mobile-surface="home"] main#main-content
     filter:none!important;
   }
 
-  /* Press glow: OFF while resting, ON only after the key moves down. */
+  
   html body:not(#r1348m10):not(#r1348m11):not(#r1348m12)
   > nav.footer.footer.footer a[href]::before{
     content:""!important;
@@ -234,7 +228,7 @@ html body[data-ah-mobile-surface="home"] main#main-content
   )::before{opacity:.98!important;}
 }
 
-/* Desktop persistent footer: same smooth key construction, scaled up. */
+
 @media (min-width:901px){
   html body[data-page]:not(#r1348d1):not(#r1348d2):not(#r1348d3):not(#r1348d4):not(#r1348d5):not(#r1348d6)
   > footer#site-footer#site-footer.site-footer.site-footer--minimal

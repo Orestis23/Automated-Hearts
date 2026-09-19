@@ -1,0 +1,340 @@
+
+
+
+
+
+
+
+@media (min-width:801px){
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content > section#who-we-help-solutions#who-we-help-solutions{
+    box-sizing:border-box!important;
+    width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+    padding:20px clamp(16px,2.1vw,40px) 96px!important;
+    overflow:visible!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content > section#who-we-help-solutions#who-we-help-solutions > .shell{
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:0 auto!important;
+    padding:0!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions .who-help-button-grid.who-help-button-grid{
+    position:relative!important;
+    inset:auto!important;
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    grid-template-rows:auto!important;
+    grid-auto-flow:column!important;
+    grid-auto-columns:minmax(0,1fr)!important;
+    width:min(100%,1760px)!important;
+    max-width:1760px!important;
+    margin:0 auto!important;
+    padding:0!important;
+    column-gap:clamp(12px,1.3vw,24px)!important;
+    row-gap:0!important;
+    justify-content:center!important;
+    justify-items:stretch!important;
+    align-items:start!important;
+    align-content:start!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:visible!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions .who-help-button-grid > article.who-help-route-card.who-help-route-card{
+    position:relative!important;
+    inset:auto!important;
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:auto auto!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    gap:12px!important;
+    align-content:start!important;
+    justify-items:center!important;
+    background:transparent!important;
+    border:0!important;
+    outline:0!important;
+    box-shadow:none!important;
+    overflow:visible!important;
+    transform:none!important;
+    translate:none!important;
+  }
+
+  
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions article.who-help-route-card > .premium-route-card__link.ah-route-image-visual,
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions article.who-help-route-card .premium-route-card__media{
+    display:block!important;
+    width:86%!important;
+    min-width:0!important;
+    max-width:360px!important;
+    height:auto!important;
+    aspect-ratio:4 / 3!important;
+    margin:0 auto!important;
+    padding:0!important;
+    overflow:hidden!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    background:transparent!important;
+    transform:none!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions article.who-help-route-card img{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    aspect-ratio:4 / 3!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+
+  
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar.ah-unified-spacebar{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    height:clamp(72px,5.1vw,88px)!important;
+    min-height:72px!important;
+    max-height:88px!important;
+    margin:0!important;
+    padding:9px clamp(8px,1vw,16px)!important;
+    justify-self:stretch!important;
+    align-self:start!important;
+    overflow:hidden!important;
+    transform:none!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar > .ah-route-label-final{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:clamp(15px,1.55vw,28px)!important;
+    font-weight:800!important;
+    line-height:.98!important;
+    letter-spacing:0!important;
+    white-space:normal!important;
+    text-wrap:balance!important;
+    text-align:center!important;
+    overflow:visible!important;
+  }
+}
+
+
+@media (min-width:801px) and (max-width:1199px){
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions .who-help-button-grid.who-help-button-grid{
+    column-gap:10px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions article.who-help-route-card > .premium-route-card__link.ah-route-image-visual,
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions article.who-help-route-card .premium-route-card__media{
+    width:82%!important;
+    max-width:none!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar.ah-unified-spacebar{
+    height:72px!important;
+    min-height:72px!important;
+    max-height:72px!important;
+  }
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content #who-we-help-solutions#who-we-help-solutions article.who-help-route-card > a.ah-unified-spacebar > .ah-route-label-final{
+    font-size:clamp(13px,1.55vw,19px)!important;
+  }
+}
+
+
+
+
+html body.page-solutions[data-page="solutions"] main#main-content#main-content #solution-copper-tablets#solution-copper-tablets .solution-copper-tablet > h3,
+html body[data-ah-mobile-surface="solutions"] main#main-content#main-content .outcome-grid .lite-card[id^="solution-"] .lite-card-body > h3{
+  position:relative!important;
+  isolation:isolate!important;
+  box-sizing:border-box!important;
+  background-color:#030405!important;
+  background-image:
+    linear-gradient(112deg,transparent 0 15%,rgba(232,246,252,.10) 24%,rgba(222,238,246,.025) 39%,transparent 51% 100%),
+    radial-gradient(130% 65% at 50% -18%,rgba(230,246,252,.10),transparent 64%),
+    repeating-linear-gradient(135deg,rgba(100,116,126,.10) 0 3px,rgba(0,0,0,.18) 3px 6px),
+    repeating-linear-gradient(45deg,rgba(64,78,88,.08) 0 3px,rgba(0,0,0,.16) 3px 6px),
+    linear-gradient(180deg,#0a0d0f 0%,#050708 48%,#020304 100%)!important;
+  background-size:auto,auto,8px 8px,8px 8px,auto!important;
+  background-position:center!important;
+  background-repeat:no-repeat,no-repeat,repeat,repeat,no-repeat!important;
+  border:1px solid rgba(150,179,189,.36)!important;
+  outline:0!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,.88),
+    inset 0 1px 0 rgba(255,255,255,.08),
+    inset 0 -9px 18px rgba(0,0,0,.32),
+    0 2px 7px rgba(0,0,0,.48)!important;
+  color:#ff2ea8!important;
+  -webkit-text-fill-color:#ff2ea8!important;
+  text-shadow:0 0 .5px rgba(255,241,249,.72),0 0 3px rgba(255,46,168,.30)!important;
+  backdrop-filter:blur(.7px) saturate(.72) contrast(.98)!important;
+  -webkit-backdrop-filter:blur(.7px) saturate(.72) contrast(.98)!important;
+}
+
+
+html body.page-solutions[data-page="solutions"] main#main-content#main-content #solution-copper-tablets#solution-copper-tablets .solution-copper-tablet > h3{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  max-width:none!important;
+  min-height:92px!important;
+  margin:0 0 26px!important;
+  padding:14px 24px!important;
+  border-radius:2px!important;
+  font-family:"Orbitron",system-ui,sans-serif!important;
+  font-size:clamp(38px,4vw,68px)!important;
+  font-weight:800!important;
+  line-height:1!important;
+  letter-spacing:.02em!important;
+  text-align:center!important;
+}
+html body.page-solutions[data-page="solutions"] main#main-content#main-content #solution-copper-tablets#solution-copper-tablets .solution-copper-tablet > h3::before,
+html body.page-solutions[data-page="solutions"] main#main-content#main-content #solution-copper-tablets#solution-copper-tablets .solution-copper-tablet > h3::after{
+  content:none!important;
+  display:none!important;
+}
+
+
+html body[data-ah-mobile-surface="solutions"] main#main-content#main-content .outcome-grid .lite-card[id^="solution-"] .lite-card-body > h3{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  min-height:52px!important;
+  margin:0 0 12px!important;
+  padding:10px 12px!important;
+  border-radius:3px!important;
+  font-family:"Orbitron",system-ui,sans-serif!important;
+  font-size:clamp(21px,6.3vw,30px)!important;
+  font-weight:800!important;
+  line-height:1.02!important;
+  letter-spacing:.02em!important;
+  text-align:center!important;
+  white-space:normal!important;
+}
+
+
+
+
+
+@media (min-width:801px){
+  
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content
+  > section#who-we-help-solutions#who-we-help-solutions{
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    height:calc(100svh - var(--current-frame-bottom,96px))!important;
+    min-height:0!important;
+    max-height:calc(100svh - var(--current-frame-bottom,96px))!important;
+    margin:0!important;
+    padding:var(--current-frame-top,96px) clamp(16px,2.1vw,40px) 0!important;
+    overflow:hidden!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content
+  > section#who-we-help-solutions#who-we-help-solutions > .shell{
+    box-sizing:border-box!important;
+    position:relative!important;
+    inset:auto!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+    translate:none!important;
+    overflow:visible!important;
+  }
+
+  html body.page-who-we-help[data-page="who-we-help"] main#main-content#main-content
+  #who-we-help-solutions#who-we-help-solutions .who-help-button-grid.who-help-button-grid{
+    align-self:center!important;
+    margin:0 auto!important;
+    padding:0!important;
+    transform:none!important;
+    translate:none!important;
+  }
+
+  
+  html body[data-page] > footer#site-footer.site-footer--minimal
+  nav#primary-nav a.footer-structure-control[data-nav] .footer-nav-label,
+  html body[data-page] > footer#site-footer.site-footer--minimal
+  nav#primary-nav a.footer-structure-control[data-nav] .send-control-copy.footer-control-copy .footer-nav-label{
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:16px!important;
+    font-weight:700!important;
+    line-height:1!important;
+    letter-spacing:0!important;
+    text-align:center!important;
+    transition:none!important;
+    animation:none!important;
+    transform:none!important;
+    filter:none!important;
+    text-shadow:0 0 1px rgba(255,114,199,.22)!important;
+  }
+
+  
+  html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
+    isolation:isolate!important;
+    box-shadow:
+      0 0 0 2px rgba(31,19,3,.98),
+      0 0 0 4px rgba(232,202,126,.32),
+      0 0 10px rgba(216,176,76,.25),
+      inset 0 0 0 1px rgba(255,239,194,.34),
+      inset 0 0 0 4px rgba(2,5,8,.32),
+      inset 0 18px 22px -18px rgba(0,0,0,.88),
+      inset 16px 0 20px -17px rgba(0,0,0,.66),
+      inset -16px 0 20px -17px rgba(0,0,0,.66),
+      inset 0 -12px 18px -17px rgba(0,0,0,.50)!important;
+  }
+
+  html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim::before{
+    content:""!important;
+    position:absolute!important;
+    z-index:-1!important;
+    inset:0!important;
+    display:block!important;
+    border-radius:inherit!important;
+    pointer-events:none!important;
+    background:
+      linear-gradient(to bottom,rgba(0,0,0,.54) 0,rgba(0,0,0,.28) 18px,rgba(0,0,0,.10) 38px,transparent 64px) top/100% 64px no-repeat,
+      linear-gradient(to right,rgba(0,0,0,.34),transparent 46px) left/46px 100% no-repeat,
+      linear-gradient(to left,rgba(0,0,0,.34),transparent 46px) right/46px 100% no-repeat,
+      linear-gradient(to top,rgba(0,0,0,.22),transparent 32px) bottom/100% 32px no-repeat!important;
+    opacity:1!important;
+  }
+}
+
