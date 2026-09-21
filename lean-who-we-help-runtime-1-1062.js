@@ -2129,10 +2129,10 @@ document.addEventListener("DOMContentLoaded", () => {
         element.hidden = false;
         element.dataset.round418Size = 'footer';
         element.style.setProperty('font-family', '"Orbitron", system-ui, sans-serif', 'important');
-        element.style.setProperty('font-size', window.matchMedia('(max-width:760px)').matches ? '10px' : '18.4px', 'important');
-        element.style.setProperty('font-weight', window.matchMedia('(max-width:760px)').matches ? '700' : '400', 'important');
+        element.style.setProperty('font-size', window.matchMedia('(max-width:760px)').matches ? '10px' : '16px', 'important');
+        element.style.setProperty('font-weight', '700', 'important');
         element.style.setProperty('font-style', 'normal', 'important');
-        element.style.setProperty('line-height', window.matchMedia('(max-width:760px)').matches ? '1' : '18.4px', 'important');
+        element.style.setProperty('line-height', '1', 'important');
         element.style.setProperty('letter-spacing', '0', 'important');
         element.style.setProperty('word-spacing', '0', 'important');
         element.style.setProperty('opacity', '1', 'important');

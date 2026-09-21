@@ -8,8 +8,7 @@
     min-width:18px!important;
     max-width:none!important;
     margin:0!important;
-    padding-left:144px!important;
-    padding-right:144px!important;
+    padding-inline:2in!important;
     color:#d6b257!important;
     -webkit-text-fill-color:#d6b257!important;
   }
@@ -24,20 +23,5 @@
   html body[data-page] > footer#site-footer #home-charity-ticker#home-charity-ticker#home-charity-ticker .charity-marquee__separator > svg.charity-marquee__person circle{
     fill:transparent!important;
     stroke:#d6b257!important;
-  }
-}
-
-
-/* Round 1717 — equalized + tripled human breathing room fallback.
-   Desktop: 144px each side (3× the prior larger 48px side).
-   Mobile: 96px each side (3× the prior larger 32px side). */
-@media (max-width:760px){
-  html body[data-page] #home-ticker-wrap #home-charity-ticker#home-charity-ticker#home-charity-ticker .charity-marquee__separator,
-  html body[data-page] > footer#site-footer #home-charity-ticker#home-charity-ticker#home-charity-ticker .charity-marquee__separator{
-    box-sizing:content-box!important;
-    min-width:16px!important;
-    margin:0!important;
-    padding-left:96px!important;
-    padding-right:96px!important;
   }
 }

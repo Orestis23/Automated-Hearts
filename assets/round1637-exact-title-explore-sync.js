@@ -99,9 +99,8 @@
     const article=grid.querySelector('article.ah1600-explore-footer-cell');
     const key=document.getElementById('negative-software-explore');
     if(!screen||!article||!key) return;
-    const screenH=Math.round(screen.getBoundingClientRect().height*100)/100;
-    if(!Number.isFinite(screenH)||screenH<120) return;
-    const h=screenH+20;
+    const h=Math.round(screen.getBoundingClientRect().height*100)/100;
+    if(!Number.isFinite(h)||h<120) return;
     [article,key].forEach(el=>{
       important(el,'height',`${h}px`);
       important(el,'min-height',`${h}px`);

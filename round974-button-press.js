@@ -28,7 +28,7 @@
     }
     document.querySelectorAll('#site-footer .footer-nav-label').forEach((label)=>{
       if(window.matchMedia('(min-width:1101px)').matches){
-        label.style.setProperty('font-size','18.4px','important');
+        label.style.setProperty('font-size','16px','important');
       }
     });
   }

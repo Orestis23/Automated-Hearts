@@ -9,9 +9,8 @@
     const article=root.querySelector('.negative-software-grid-round344 > article.ah1600-explore-footer-cell');
     const key=root.querySelector('#negative-software-explore');
     if(!screen||!article||!key) return;
-    const screenH=Math.round(screen.getBoundingClientRect().height);
-    if(!Number.isFinite(screenH)||screenH<120) return;
-    const h=screenH+20;
+    const h=Math.round(screen.getBoundingClientRect().height);
+    if(!Number.isFinite(h)||h<120) return;
     [article,key].forEach(el=>{
       el.style.setProperty('height',h+'px','important');
       el.style.setProperty('min-height',h+'px','important');

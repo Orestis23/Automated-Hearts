@@ -45,9 +45,9 @@ setTimeout(() => {
  #ah1609-intro button{color:#ff2ea8;background:#0b1728;border:1px solid #8fffd7;padding:16px 24px;font:600 18px system-ui;cursor:pointer}
  #ah1609-intro .cursor{display:inline-block;width:.5em;height:1em;background:#8fffd7;vertical-align:-.1em;margin-left:.12em;animation:ah1609-blink .8s steps(1,end) infinite}
  #ah1609-intro small{display:block;font:14px/1.5 system-ui;color:#d8e7e4;text-align:center} @keyframes ah1609-blink{50%{opacity:0}}
- </style><div class="shield"><div class="copy"><div class="story" hidden><p></p><p></p><p></p><p></p></div></div></div>`;
+ </style><div class="shield"><div class="copy"><div class="ready"><small>Preparing your introduction…</small></div><div class="story" hidden><p></p><p></p><p></p><p></p></div></div></div>`;
  document.body.appendChild(overlay);
- const shield=overlay.querySelector('.shield'),story=overlay.querySelector('.story'),lines=[...story.querySelectorAll('p')];
+ const shield=overlay.querySelector('.shield'),ready=overlay.querySelector('.ready'),story=overlay.querySelector('.story'),lines=[...story.querySelectorAll('p')];
  const cursor=document.createElement('span');cursor.className='cursor';
  async function bytes(url){const res=await fetch(url,{cache:'force-cache'});if(!res.ok)throw Error('Asset unavailable');return res.arrayBuffer();}
  function sound(name,when=ctx?.currentTime||0){
@@ -57,31 +57,44 @@ setTimeout(() => {
   if(name==='open'){gain.gain.setValueAtTime(volume,when+Math.max(0,src.buffer.duration-.5));gain.gain.linearRampToValueAtTime(0,when+src.buffer.duration);}
   src.start(when);return src;
  }
- function resumeAudio(){
-  // Autoplay restrictions must never block the introduction or shield.
-  if(ctx&&ctx.state!=='running')ctx.resume().catch(()=>{});
+ async function requireRiseAudio(){
+  if(!ctx||!buffers.open)throw Error('Impact audio unavailable');
+  if(ctx.state!=='running')await ctx.resume().catch(()=>{});
+  if(ctx.state==='running')return;
+  // Some mobile browsers can suspend Web Audio after a long scripted sequence. If that
+  // happens, wait for a fresh user gesture rather than allowing a silent/late shield rise.
+  await new Promise((resolve,reject)=>{
+   const gate=document.createElement('div');gate.className='rise-audio-gate';
+   gate.innerHTML='<button type="button">Tap to raise shield</button><small>Synchronizing the shield sound…</small>';
+   overlay.querySelector('.copy').appendChild(gate);
+   const btn=gate.querySelector('button');
+   btn.addEventListener('click',async()=>{
+    btn.disabled=true;
+    try{await ctx.resume();if(ctx.state!=='running')throw Error('Audio is still suspended');gate.remove();resolve();}
+    catch(e){btn.disabled=false;}
+   });
+  });
  }
- document.addEventListener('pointerdown',resumeAudio,{capture:true,passive:true});
- document.addEventListener('keydown',resumeAudio,{capture:true});
  const escaped=t=>t.replace(/[&<>']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;'}[c]));
  function render(i,text){lines[i].innerHTML=escaped(text).replace(/AI/g,'<span class="pink">AI</span>').replace(/Human|maximum efficiency/g,'<span class="green">$&</span>');lines[i].appendChild(cursor);}
  let strings=['','','',''];
  async function type(i,text){for(const char of text){strings[i]+=char;render(i,strings[i]);sound('type');await sleep(/[.,]/.test(char)?105:45);}}
  async function back(i,n){for(let j=0;j<n;j++){strings[i]=strings[i].slice(0,-1);render(i,strings[i]);sound('delete');await sleep(85);}}
  async function start(){
-  story.hidden=false;
+  ready.remove();story.hidden=false;
   await type(0,'AI');await painted();
   // No site image, model, stylesheet, analytics or page runtime is discoverable before here.
   try{localStorage.setItem(key,'1');}catch(_){}
   window.__AH_EARLY_MOBILE_INTRO_STARTED__=true;window.__AH_EARLY_DESKTOP_INTRO_STARTED__=true;window.__AH_SITE_FIRST_VISIT_INTRO_1194=true;
-  release();released=true;document.addEventListener('pointerdown',resumeAudio,{capture:true,passive:true});document.addEventListener('keydown',resumeAudio,{capture:true});if(introFont)document.fonts.add(introFont);document.documentElement.appendChild(overlay);
+  release();released=true;if(introFont)document.fonts.add(introFont);document.documentElement.appendChild(overlay);
   shield.style.backgroundImage=`url("${artURL}")`;
   await type(0,' should elevtae');await sleep(330);await back(0,3);await type(0,'ate the Human.');await sleep(620);
   await type(1,'Fully customized minimalistic systems in both design & foundation for maximum efficency');await back(1,5);await type(1,'ciency.');await sleep(610);
   await type(2,'Nothing you dont');await back(2,4);await type(2,"don't need.");await sleep(520);
   await type(3,'Just what you do.');await sleep(650);cursor.remove();
-  resumeAudio();
-  let audioMaster=!!(ctx&&ctx.state==='running'&&buffers.open);
+  // Round 1623: the audible output clock is the master clock for the rise. The
+  // decoded impact buffer and a running AudioContext are hard prerequisites.
+  await requireRiseAudio();
   const lead=.12,duration=2;
   const outputClockNow=()=>{
    if(ctx.getOutputTimestamp){
@@ -98,23 +111,24 @@ setTimeout(() => {
    let u=t;for(let i=0;i<5;i++){const x=bez(u,x1,x2),dx=3*(1-u)*(1-u)*x1+6*(1-u)*u*(x2-x1)+3*u*u*(1-x2);if(Math.abs(dx)<1e-5)break;u=Math.min(1,Math.max(0,u-(x-t)/dx));}
    return bez(u,y1,y2);
   };
-  let fallbackOrigin=performance.now()/1000,lastClock=audioMaster?outputClockNow():0;
-  const riseStart=lastClock+lead,impactTime=riseStart+duration;
-  const impact=audioMaster?sound('open',impactTime):null;
-  window.__AH_FIRST_INTRO_RISE_CLOCK__={audioMaster,riseStart,impactTime,duration};
+  const riseStart=outputClockNow()+lead,impactTime=riseStart+duration;
+  const impact=sound('open',impactTime);
+  if(!impact)throw Error('Impact sound could not be armed');
+  window.__AH_FIRST_INTRO_RISE_CLOCK__={audioMaster:true,riseStart,impactTime,duration};
   window.dispatchEvent(new CustomEvent('ah:first-intro-raising',{detail:{intro:overlay}}));
   await new Promise(resolve=>{
-   let topSent=false;
+   let topSent=false,recovering=false;
    const markTop=()=>{if(topSent)return;topSent=true;shield.style.transform='translate3d(0,-101%,0)';window.dispatchEvent(new CustomEvent('ah:first-intro-top',{detail:{intro:overlay}}));resolve();};
    const frame=()=>{
     if(!overlay.isConnected){resolve();return;}
-    // Continue on the visual clock if the browser suspends sound mid-rise.
-    if(audioMaster&&ctx.state!=='running'){
-     audioMaster=false;fallbackOrigin=performance.now()/1000-lastClock;
-     if(impact)try{impact.stop();}catch(_){}
+    // If the OS/browser suspends Web Audio during the rise, freeze the shield too.
+    // The already-scheduled source pauses on the same context timeline, so resuming
+    // cannot make the impact arrive early or late relative to the shield.
+    if(ctx.state!=='running'){
+     if(!recovering){recovering=true;requireRiseAudio().then(()=>{recovering=false;requestAnimationFrame(frame);}).catch(()=>{recovering=false;requestAnimationFrame(frame);});}
+     return;
     }
-    const audioNow=audioMaster?outputClockNow():performance.now()/1000-fallbackOrigin;
-    lastClock=audioNow;
+    const audioNow=outputClockNow();
     if(audioNow<riseStart){shield.style.transform='translate3d(0,0,0)';requestAnimationFrame(frame);return;}
     const progress=Math.min(1,Math.max(0,(audioNow-riseStart)/duration));
     shield.style.transform=`translate3d(0,${(-101*ease(progress)).toFixed(4)}%,0)`;
@@ -127,18 +141,25 @@ setTimeout(() => {
  }
  async function prepare(){
   const AudioContext=window.AudioContext||window.webkitAudioContext;
-  if(AudioContext)try{ctx=new AudioContext({latencyHint:'interactive'});}catch(_){}
-  resumeAudio();
+  if(!AudioContext)throw Error('Web Audio unavailable');
+  ctx=new AudioContext({latencyHint:'interactive'});
   const assets=[['type','./assets/intro-key-click-round1398.wav'],['delete','./assets/intro-key-delete-round1398.wav'],['open','./assets/shield-first-rise-hit-round1618.wav']];
-  const work=assets.map(async([name,url])=>{try{const raw=await bytes(url);if(ctx)buffers[name]=await ctx.decodeAudioData(raw);}catch(_){}});
+  const work=assets.map(async([name,url])=>{const raw=await bytes(url);if(ctx)buffers[name]=await ctx.decodeAudioData(raw);});
   work.push((async()=>{const raw=await bytes('./assets/page-shield-smoked-heart.webp');artURL=URL.createObjectURL(new Blob([raw],{type:'image/webp'}));const img=new Image();img.src=artURL;await img.decode();shield.style.backgroundImage=`url("${artURL}")`})());
   // Resolve the font from the site's existing Google Fonts CSS rather than relying on a versioned URL.
   work.push(fetch('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap').then(r=>r.text()).then(async css=>{const urls=[...css.matchAll(/url\(([^)]+)\)/g)];if(urls.length){const face=new FontFace('AHIntroOrbitron',`url(${urls[urls.length-1][1]})`,{weight:'700'});await face.load();document.fonts.add(face);introFont=face;}}).catch(()=>{}));
   await Promise.all(work);
-  await start();
+  if(ctx?.state==='running'){await start();return;}
+  ready.innerHTML='<button type="button">Tap to begin</button><small>Enable the introduction sound.</small>';
+  ready.querySelector('button').addEventListener('click',async function unlock(){
+   const btn=this;btn.disabled=true;
+   try{await ctx.resume();if(ctx.state!=='running')throw Error('Audio did not unlock');btn.removeEventListener('click',unlock);await start();}
+   catch(_){btn.disabled=false;}
+  });
  }
  prepare().catch(()=>{
-  if(!released)release();
-  overlay.remove();
+  if(released){overlay.remove();return;}
+  ready.innerHTML='<button type="button">Continue to website</button><small>The introduction could not load. Please try again later.</small>';
+  ready.querySelector('button').addEventListener('click',release,{once:true});
  });
 },0);

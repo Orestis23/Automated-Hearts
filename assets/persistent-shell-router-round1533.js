@@ -407,9 +407,9 @@
       nested.textContent = label;
       if (!isMobile) {
         nested.style.setProperty('font-family','Orbitron, system-ui, sans-serif','important');
-        nested.style.setProperty('font-size','18.4px','important');
-        nested.style.setProperty('font-weight','400','important');
-        nested.style.setProperty('line-height','18.4px','important');
+        nested.style.setProperty('font-size','clamp(11px,1.34vw,18.4px)','important');
+        nested.style.setProperty('font-weight','700','important');
+        nested.style.setProperty('line-height','1.04','important');
         nested.style.setProperty('letter-spacing','0','important');
         nested.style.setProperty('transform','none','important');
         nested.style.setProperty('filter','none','important');

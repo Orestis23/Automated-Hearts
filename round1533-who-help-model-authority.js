@@ -153,16 +153,11 @@
     }
     paintStaticBackdrop(); return true;
   };
-  const markFirstFrame=(frame)=>{if(!frame)return;frame.dataset.ah1533FirstFrame='1';if(frame===state.activeFrame)imp(frame,'opacity','1');};
-  addEventListener('message',event=>{const data=event.data||{};if(data.type!=='automated-hearts:model-first-frame')return;state.slides.forEach(slide=>{const frame=slide.querySelector('iframe');if(frame&&frame.contentWindow===event.source)markFirstFrame(frame);});});
-  const hasRenderableCanvas=frame=>{try{const c=frame?.contentDocument?.querySelector('canvas');return !!(c&&c.width>2&&c.height>2)}catch(_){return false}};
-  const forceRevealRenderedFrame=frame=>{if(!frame)return false;if(frame.dataset.ah1533FirstFrame==='1'){if(frame===state.activeFrame)imp(frame,'opacity','1');return true}if(!hasRenderableCanvas(frame))return false;markFirstFrame(frame);if(frame===state.activeFrame){imp(frame,'visibility','visible');imp(frame,'opacity','1');imp(frame,'pointer-events','auto')}return true};
-  const waitForFirstFrame=(frame,timeout=1800)=>{if(!frame||frame.dataset.ah1533FirstFrame==='1')return Promise.resolve();return new Promise(resolve=>{let done=false,timer=0;const finish=()=>{if(done)return;done=true;clearTimeout(timer);removeEventListener('message',onMessage);if(frame.dataset.ah1533FirstFrame!=='1'&&hasRenderableCanvas(frame))markFirstFrame(frame);resolve();};const onMessage=event=>{const data=event.data||{};if(event.source===frame.contentWindow&&data.type==='automated-hearts:model-first-frame'){markFirstFrame(frame);finish();}};addEventListener('message',onMessage);timer=setTimeout(finish,timeout);});};
   const sourceFor=(frame)=>{
     if(!frame)return'';
-    if(state.page==='who-we-help'&&frame.closest('[data-shared-slide="helix"]'))return `./models/who-we-help-industry-helix-round1093.html?industry=${state.industry}&v=1654r`;
+    if(state.page==='who-we-help'&&frame.closest('[data-shared-slide="helix"]'))return `./models/who-we-help-industry-helix-round1093.html?industry=${state.industry}&v=1353r`;
     const raw=frame.dataset.src||frame.getAttribute('src')||'';if(!raw)return'';
-    try{const u=new URL(raw,location.href);u.searchParams.set('v','1654r');return u.href}catch(_){return raw}
+    try{const u=new URL(raw,location.href);u.searchParams.set('v','1327r');return u.href}catch(_){return raw}
   };
   const groupSlides=()=>state.page==='learning'?state.slides.filter(s=>s.dataset.learningSlide===state.group):state.slides;
   const activate=(n,{scroll=false,force=false}={})=>{
@@ -200,21 +195,12 @@
     }else hydrateHiddenFrames();
     if(frame){
       frame.loading='eager';frame.tabIndex=0;
-      for(const [p,v] of [['display','block'],['visibility','visible'],['opacity',frame.dataset.ah1533FirstFrame==='1'?'1':'0'],['pointer-events','auto'],['background','transparent'],['background-color','transparent'],['background-image','none'],['transform','none']])imp(frame,p,v);
+      for(const [p,v] of [['display','block'],['visibility','visible'],['opacity',frame.dataset.ah1533Loaded==='1'?'1':'0'],['pointer-events','auto'],['background','transparent'],['background-color','transparent'],['background-image','none'],['transform','none']])imp(frame,p,v);
       const src=sourceFor(frame),old=frame.getAttribute('src')||'';
       const sendIndustry=()=>{if(state.page==='who-we-help'&&selected.dataset.sharedSlide==='helix'&&frame?.contentWindow){try{frame.contentWindow.postMessage({type:'automated-hearts:who-help-industry',industryIndex:state.industry},'*')}catch(_){}}};
       const ping=()=>{const live=document.body.dataset.ahModelHalf==='bottom'&&document.body.dataset.ahStageTransition!=='1';wake(frame,live);if(live)sendIndustry();};
-      frame.addEventListener('load',()=>{frame.dataset.ah1533Loaded='1';paintStaticBackdrop();[0,80,220,500,1000,1800].forEach(ms=>setTimeout(ping,ms));},{once:true});
+      frame.addEventListener('load',()=>{frame.dataset.ah1533Loaded='1';if(frame===state.activeFrame){requestAnimationFrame(()=>requestAnimationFrame(()=>imp(frame,'opacity','1')));}paintStaticBackdrop();[0,80,220,500,1000,1800].forEach(ms=>setTimeout(ping,ms));},{once:true});
       if(src&&(force||old!==src)){if(scroll)frame.dataset.ahPendingSrc=src;else frame.setAttribute('src',src);}else [0,80,220,500,1000].forEach(ms=>setTimeout(ping,ms));
-      if(!scroll){
-        void (async()=>{
-          wake(frame,true);
-          await waitForFirstFrame(frame,1900);
-          await afterTwoFrames();
-          if(state.activeFrame!==frame)return;
-          forceRevealRenderedFrame(frame);
-        })();
-      }
     }
     const status=state.stage.querySelector('[data-learning-carousel-status],[data-shared-carousel-status]');if(status)status.textContent=`${selected.dataset.modelName||'Model'} selected.`;
     /* Legacy runtimes contain delayed layout work. Reassert the chosen stage/frame a
@@ -225,7 +211,7 @@
       showStage();
       selected.hidden=false;selected.classList.add('is-active');selected.setAttribute('aria-hidden','false');
       for(const [p,v] of [['display','block'],['visibility','visible'],['opacity','1'],['pointer-events','auto'],['background','transparent'],['background-color','transparent'],['background-image','none'],['transform','none']])imp(selected,p,v);
-      if(frame)for(const [p,v] of [['display','block'],['visibility','visible'],['opacity',frame.dataset.ah1533FirstFrame==='1'?'1':'0'],['pointer-events','auto'],['background','transparent'],['background-color','transparent'],['background-image','none'],['transform','none']])imp(frame,p,v);
+      if(frame)for(const [p,v] of [['display','block'],['visibility','visible'],['opacity',frame.dataset.ah1533Loaded==='1'?'1':'0'],['pointer-events','auto'],['background','transparent'],['background-color','transparent'],['background-image','none'],['transform','none']])imp(frame,p,v);
       paintStaticBackdrop();wake(frame,document.body.dataset.ahModelHalf==='bottom');
     },ms));
     if(scroll)void openStageTransition();
@@ -283,45 +269,15 @@
     const host=scrollerFor(state.stage);
     return animateScroll(host,0,duration);
   };
-  const waitUntilStageVisible=(timeout=1200)=>new Promise(resolve=>{
-    if(!state.stage){resolve();return;}
-    const started=performance.now();
-    const check=()=>{
-      const r=state.stage.getBoundingClientRect();
-      const rs=getComputedStyle(document.documentElement);
-      const topInset=Math.max(0,parseFloat(rs.getPropertyValue('--current-frame-top'))||0);
-      const bottomInset=Math.max(0,parseFloat(rs.getPropertyValue('--current-frame-bottom'))||0);
-      const vh=Math.round(window.visualViewport?.height||window.innerHeight);
-      const visibleTop=Math.max(r.top,topInset);
-      const visibleBottom=Math.min(r.bottom,vh-bottomInset);
-      const visible=Math.max(0,visibleBottom-visibleTop);
-      const required=Math.min(120,Math.max(48,r.height*.10));
-      if(visible>=required || performance.now()-started>=timeout){requestAnimationFrame(resolve);return;}
-      requestAnimationFrame(check);
-    };
-    requestAnimationFrame(check);
-  });
   const waitForActiveFrame=async(timeout=1250)=>{
     const frame=state.activeFrame;if(!frame)return;
     const pending=frame.dataset.ahPendingSrc;
     if(pending){delete frame.dataset.ahPendingSrc;frame.setAttribute('src',pending);}
-    if(!frame.getAttribute('src')){await afterTwoFrames();return;}
-    if(frame.dataset.ah1533Loaded==='1'){
-      wake(frame,true);
-      await Promise.race([waitForFirstFrame(frame),new Promise(resolve=>setTimeout(resolve,1850))]);
-      forceRevealRenderedFrame(frame);
-      wake(frame,false);
-      await afterTwoFrames();
-      return;
-    }
+    if(frame.dataset.ah1533Loaded==='1'||!frame.getAttribute('src')){await afterTwoFrames();return;}
     await Promise.race([
       new Promise(resolve=>frame.addEventListener('load',()=>{frame.dataset.ah1533Loaded='1';resolve();},{once:true})),
       new Promise(resolve=>setTimeout(resolve,timeout))
     ]);
-    wake(frame,true);
-    await Promise.race([waitForFirstFrame(frame),new Promise(resolve=>setTimeout(resolve,1850))]);
-    forceRevealRenderedFrame(frame);
-    wake(frame,false);
     await afterTwoFrames();
   };
   const openStageTransition=async()=>{
@@ -344,9 +300,6 @@
       wake(state.activeFrame,true);
       await afterTwoFrames();
       wake(state.activeFrame,false);
-      /* Round 1651: never let the Industries local shield begin descending
-         before the user has actually arrived at the model stage. */
-      if(state.page==='who-we-help') await waitUntilStageVisible();
       await lowerOpenShield();
       wake(state.activeFrame,true);
     }finally{
