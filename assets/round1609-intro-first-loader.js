@@ -34,7 +34,7 @@ setTimeout(() => {
  overlay.id='ah1609-intro';
  overlay.innerHTML=`<style>
  #ah1609-intro{position:fixed;inset:0;z-index:2147483647;display:block;color:#f2fbff;overflow:hidden;contain:paint;isolation:isolate;box-sizing:border-box;pointer-events:auto;background:transparent}
- #ah1609-intro .shield{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;box-sizing:border-box;background:#08172b center/cover no-repeat;border:2px solid #cdaa4d;will-change:transform;contain:paint;backface-visibility:hidden;transform:translate3d(0,0,0)}
+ #ah1609-intro .shield{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;box-sizing:border-box;background:#08172b url("./assets/page-shield-smoked-heart.webp") center/cover no-repeat;border:2px solid #cdaa4d;will-change:transform;contain:paint;backface-visibility:hidden;transform:translate3d(0,0,0)}
  #ah1609-intro .copy{width:min(84vw,760px);font:700 clamp(22px,2.05vw,36px)/1.48 AHIntroOrbitron,Orbitron,system-ui,sans-serif;letter-spacing:.012em;text-shadow:0 2px 3px #000}
  @media(max-width:900px){
    #ah1609-intro{top:var(--current-frame-top,62px);right:var(--current-frame-side,10px);bottom:var(--current-frame-bottom,74px);left:var(--current-frame-side,10px);border-radius:var(--current-frame-radius,18px);overflow:hidden;background:transparent}
@@ -45,7 +45,7 @@ setTimeout(() => {
  #ah1609-intro button{color:#ff2ea8;background:#0b1728;border:1px solid #8fffd7;padding:16px 24px;font:600 18px system-ui;cursor:pointer}
  #ah1609-intro .cursor{display:inline-block;width:.5em;height:1em;background:#8fffd7;vertical-align:-.1em;margin-left:.12em;animation:ah1609-blink .8s steps(1,end) infinite}
  #ah1609-intro small{display:block;font:14px/1.5 system-ui;color:#d8e7e4;text-align:center} @keyframes ah1609-blink{50%{opacity:0}}
- </style><div class="shield"><div class="copy"><div class="ready"><small>Preparing your introduction…</small></div><div class="story" hidden><p></p><p></p><p></p><p></p></div></div></div>`;
+ </style><div class="shield"><div class="copy"><div class="ready" aria-hidden="true"></div><div class="story" hidden><p></p><p></p><p></p><p></p></div></div></div>`;
  document.body.appendChild(overlay);
  const shield=overlay.querySelector('.shield'),ready=overlay.querySelector('.ready'),story=overlay.querySelector('.story'),lines=[...story.querySelectorAll('p')];
  const cursor=document.createElement('span');cursor.className='cursor';
@@ -70,7 +70,7 @@ setTimeout(() => {
  async function type(i,text){for(const char of text){strings[i]+=char;render(i,strings[i]);sound('type');await sleep(/[.,]/.test(char)?105:45);}}
  async function back(i,n){for(let j=0;j<n;j++){strings[i]=strings[i].slice(0,-1);render(i,strings[i]);sound('delete');await sleep(85);}}
  async function start(){
-  ready.remove();story.hidden=false;
+  ready?.remove();story.hidden=false;
   await type(0,'AI');await painted();
   // No site image, model, stylesheet, analytics or page runtime is discoverable before here.
   try{localStorage.setItem(key,'1');}catch(_){}
