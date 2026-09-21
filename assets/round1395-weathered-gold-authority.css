@@ -579,3 +579,125 @@ html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim::before{
     border-radius:var(--current-frame-radius,18px)!important;
   }
 }
+
+/* Round 1694 — uniform solid weathered-gold viewport pipe.
+   Keep the same full, solid treatment around every side and corner. */
+:root{
+  --ah-r1694-vp-band:5px;
+  --ah-r1694-solid-gold-face:repeating-linear-gradient(
+    108deg,
+    #9b7029 0 8%,
+    #bc9140 8% 17%,
+    #d4b45f 17% 26%,
+    #b18432 26% 37%,
+    #c9a34b 37% 49%,
+    #a5792c 49% 60%,
+    #d0ad57 60% 72%,
+    #b88c38 72% 84%,
+    #c49b43 84% 93%,
+    #a97b2d 93% 100%
+  );
+}
+html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
+  display:none!important;
+}
+html body[data-page] > .ah-persistent-outer-rim > .ah-shell-edge::before,
+html body[data-page] > .ah-persistent-outer-rim > .ah-r932-corner-mask::before,
+html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim::after{
+  display:none!important;
+  content:none!important;
+}
+html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim::before{
+  content:""!important;
+  display:block!important;
+  position:fixed!important;
+  top:var(--current-frame-top,96px)!important;
+  right:var(--current-frame-side,88px)!important;
+  bottom:var(--current-frame-bottom,96px)!important;
+  left:var(--current-frame-side,88px)!important;
+  z-index:2147483646!important;
+  box-sizing:border-box!important;
+  pointer-events:none!important;
+  border:0!important;
+  border-radius:var(--current-frame-radius,32px)!important;
+  padding:var(--ah-r1694-vp-band)!important;
+  background:var(--ah-r1694-solid-gold-face)!important;
+  background-blend-mode:normal!important;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0)!important;
+  -webkit-mask-composite:xor!important;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0)!important;
+  mask-composite:exclude!important;
+  filter:none!important;
+  opacity:1!important;
+  box-shadow:
+    0 0 0 1px rgba(48,31,8,.98),
+    0 0 0 2px rgba(121,86,28,.68),
+    0 0 5px rgba(192,150,58,.12)!important;
+}
+@media (max-width:900px){
+  :root{ --ah-r1694-vp-band:4px; }
+  html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim::before{
+    border-radius:var(--current-frame-radius,18px)!important;
+  }
+}
+
+/* Round 1695 — final viewport authority: use a true continuous solid gold border,
+   above every shell edge/corner, instead of a masked ring. */
+:root{
+  --ah-r1695-vp-gold:#bb903d;
+  --ah-r1695-vp-gold-hi:#e2c36f;
+  --ah-r1695-vp-gold-low:#704b17;
+  --ah-r1695-vp-band:6px;
+}
+html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
+  display:none!important;
+}
+html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim{
+  position:fixed!important;
+  inset:0!important;
+  z-index:2147483645!important;
+  isolation:isolate!important;
+  overflow:visible!important;
+}
+html body[data-page] > .ah-persistent-outer-rim > .ah-shell-edge,
+html body[data-page] > .ah-persistent-outer-rim > .ah-r932-corner-mask{
+  z-index:1!important;
+}
+html body[data-page] > .ah-persistent-outer-rim > .ah-shell-edge::before,
+html body[data-page] > .ah-persistent-outer-rim > .ah-r932-corner-mask::before,
+html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim::after{
+  display:none!important;
+  content:none!important;
+}
+html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim::before{
+  content:""!important;
+  display:block!important;
+  position:fixed!important;
+  top:var(--current-frame-top,96px)!important;
+  right:var(--current-frame-side,88px)!important;
+  bottom:var(--current-frame-bottom,96px)!important;
+  left:var(--current-frame-side,88px)!important;
+  z-index:100!important;
+  box-sizing:border-box!important;
+  pointer-events:none!important;
+  border:var(--ah-r1695-vp-band) solid var(--ah-r1695-vp-gold)!important;
+  border-radius:var(--current-frame-radius,32px)!important;
+  padding:0!important;
+  background:transparent!important;
+  -webkit-mask:none!important;
+  mask:none!important;
+  filter:none!important;
+  opacity:1!important;
+  box-shadow:
+    0 0 0 1px rgba(42,26,6,.98),
+    0 0 0 2px rgba(111,77,24,.58),
+    0 0 5px rgba(190,147,53,.12),
+    inset 0 1px 0 rgba(255,241,184,.24),
+    inset 0 -1px 0 rgba(62,40,10,.34)!important;
+}
+@media (max-width:900px){
+  :root{--ah-r1695-vp-band:5px;}
+  html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim::before{
+    border-radius:var(--current-frame-radius,18px)!important;
+  }
+}

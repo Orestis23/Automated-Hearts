@@ -10499,3 +10499,10 @@ body nav.footer{
       inset 0 -1px 0 rgba(43,27,7,.72)!important;
   }
 }
+
+/* Round 1702 — source-level removal of top Solution stainless/alloy rim. */
+@media (min-width:801px){
+html body.page-solutions.page-solutions.page-solutions.page-solutions[data-page="solutions"] #solution-process-header#solution-process-header .solution-process-window-anchor::before,
+html body.page-solutions.page-solutions.page-solutions.page-solutions[data-page="solutions"] #solution-process-header#solution-process-header .solution-process-window-anchor::after{display:none!important;content:none!important;border:0!important;border-image:none!important;background:none!important;box-shadow:none!important;}
+html body.page-solutions.page-solutions.page-solutions.page-solutions[data-page="solutions"] #solution-process-header#solution-process-header .solution-process-window{border:0!important;border-width:0!important;border-image:none!important;outline:0!important;box-shadow:none!important;}
+}

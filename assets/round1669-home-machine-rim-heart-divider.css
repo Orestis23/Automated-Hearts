@@ -458,3 +458,151 @@ html body.page-home[data-page="home"] #home-title-fields > .r1362-home-title-fie
       inset 0 -1px 0 rgba(41,26,6,.68)!important;
   }
 }
+
+/* Round 1701 — single Home hero machine-window tube authority.
+   Actual stationary .ah1701-machine-tube elements are used; no frame/shutter pseudo tubing. */
+@media (min-width:801px){
+  :root{
+    --ah1701-machine-tube-h:8px;
+    --ah1701-machine-gold-face:repeating-linear-gradient(
+      107deg,
+      #8b601e 0 6%,
+      #b38331 6% 14%,
+      #d0ad57 14% 23%,
+      #a57427 23% 33%,
+      #c79b43 33% 44%,
+      #91631f 44% 54%,
+      #d6b65f 54% 64%,
+      #aa7b29 64% 74%,
+      #c99d45 74% 84%,
+      #966721 84% 93%,
+      #bd8e3a 93% 100%
+    );
+  }
+
+  html body.page-home.page-home.page-home[data-page="home"]
+  main#main-content #home-opening-hero,
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-opening-hero #home-hero-shell,
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-opening-hero #home-hero-housing,
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-opening-hero #home-machine-grid,
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame{
+    overflow:visible!important;
+    clip-path:none!important;
+    -webkit-clip-path:none!important;
+  }
+
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame{
+    position:relative!important;
+    isolation:isolate!important;
+    border:0!important;
+    border-width:0!important;
+    border-style:none!important;
+    border-color:transparent!important;
+    border-image:none!important;
+    border-image-source:none!important;
+    outline:0!important;
+    background:transparent!important;
+    box-shadow:0 10px 18px rgba(0,0,0,.34)!important;
+  }
+
+  /* Permanently retire every legacy stainless/ridged perimeter and pseudo lip. */
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame::before,
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame::after,
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame
+  > .home-machine-haze-screen.home-machine-haze-screen::after{
+    display:none!important;
+    content:none!important;
+    background:none!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame
+  > .machine-three-ridge-overlay.machine-three-ridge-overlay{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    background:none!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame
+  > .home-machine-haze-screen.home-machine-haze-screen,
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame
+  > .home-hero-engine-embed,
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame
+  > .home-mobile-machine-loop,
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame
+  > .home-mobile-machine-poster{
+    border:0!important;
+    border-image:none!important;
+    outline:0!important;
+  }
+
+  /* Explicit stationary layer order. */
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame > .model-dedicated-backdrop{z-index:1!important;}
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame > :is(.home-mobile-machine-loop,.home-mobile-machine-poster){z-index:10!important;}
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame > iframe.home-hero-engine-embed{z-index:10!important;}
+  html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame > .home-machine-haze-screen{z-index:30!important;}
+
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame
+  > .ah1701-machine-tube{
+    display:block!important;
+    position:absolute!important;
+    left:0!important;
+    right:0!important;
+    width:auto!important;
+    height:var(--ah1701-machine-tube-h)!important;
+    margin:0!important;
+    padding:0!important;
+    pointer-events:none!important;
+    opacity:1!important;
+    border:0!important;
+    border-radius:1px!important;
+    outline:0!important;
+    background:var(--ah1701-machine-gold-face)!important;
+    background-color:#b78935!important;
+    filter:none!important;
+  }
+
+  /* Rear/top tube: half outside the frame and behind all live screen/shutter content. */
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame
+  > .ah1701-machine-tube--top{
+    top:calc(-.5 * var(--ah1701-machine-tube-h))!important;
+    bottom:auto!important;
+    z-index:2!important;
+    box-shadow:
+      0 -1px 0 #3a2507,
+      inset 0 1px 0 #f2d990,
+      inset 0 -2px 0 #5a3a0c!important;
+  }
+
+  /* Front/bottom tube: completely outside, fixed to frame, above moving shutter/cards. */
+  html body.page-home.page-home.page-home[data-page="home"]
+  #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame
+  > .ah1701-machine-tube--bottom{
+    top:auto!important;
+    bottom:calc(-1 * var(--ah1701-machine-tube-h))!important;
+    z-index:60!important;
+    box-shadow:
+      0 -1px 0 #efd489,
+      0 1px 0 #3a2507,
+      0 4px 7px rgba(0,0,0,.42),
+      inset 0 1px 0 #f2d990,
+      inset 0 -2px 0 #5a3a0c!important;
+  }
+}

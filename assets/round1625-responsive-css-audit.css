@@ -725,3 +725,193 @@ html body:not([data-ah-mobile-surface="home"]):not([data-ah-mobile-surface="solu
   border-image:none!important;
   box-shadow:none!important;
 }
+
+/* Round 1696 QA — viewport rim authority.
+   Use the real persistent gold-rim element as one continuous solid metal tube. */
+:root{
+  --ah1696-vp-gold:#b88b38;
+  --ah1696-vp-gold-hi:#ead17b;
+  --ah1696-vp-gold-mid:#c7a04a;
+  --ah1696-vp-gold-low:#76521b;
+  --ah1696-vp-gold-deep:#3b2608;
+  --ah1696-vp-band:6px;
+}
+html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim::before,
+html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim::after,
+html body[data-page] > .ah-persistent-outer-rim > .ah-shell-edge::before,
+html body[data-page] > .ah-persistent-outer-rim > .ah-r932-corner-mask::before{
+  display:none!important;
+  content:none!important;
+}
+html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  position:fixed!important;
+  top:var(--current-frame-top,96px)!important;
+  right:var(--current-frame-side,88px)!important;
+  bottom:var(--current-frame-bottom,96px)!important;
+  left:var(--current-frame-side,88px)!important;
+  z-index:2147483250!important;
+  box-sizing:border-box!important;
+  pointer-events:none!important;
+  border:var(--ah1696-vp-band) solid var(--ah1696-vp-gold)!important;
+  border-radius:var(--current-frame-radius,32px)!important;
+  background:transparent!important;
+  filter:none!important;
+  transform:translateZ(0)!important;
+  box-shadow:
+    0 0 0 1px rgba(43,27,6,.98),
+    0 0 0 2px rgba(123,87,28,.72),
+    0 0 5px rgba(196,151,53,.12),
+    inset 0 0 0 1px rgba(245,217,137,.46),
+    inset 0 0 0 2px rgba(105,71,18,.28)!important;
+}
+html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim::before{
+  content:""!important;
+  position:absolute!important;
+  inset:calc(-1 * var(--ah1696-vp-band))!important;
+  border-radius:inherit!important;
+  pointer-events:none!important;
+  border:var(--ah1696-vp-band) solid transparent!important;
+  background:
+    repeating-linear-gradient(108deg,
+      rgba(114,75,19,.18) 0 5%,
+      rgba(255,235,169,.15) 5% 11%,
+      rgba(135,94,27,.12) 11% 18%,
+      rgba(255,225,139,.12) 18% 25%,
+      rgba(101,65,16,.14) 25% 31%,
+      rgba(240,206,115,.12) 31% 39%,
+      rgba(126,86,23,.11) 39% 47%,
+      rgba(255,232,154,.13) 47% 56%,
+      rgba(111,73,18,.14) 56% 64%,
+      rgba(235,196,99,.13) 64% 73%,
+      rgba(130,90,25,.12) 73% 82%,
+      rgba(255,228,147,.12) 82% 91%,
+      rgba(104,68,17,.14) 91% 100%) border-box!important;
+  -webkit-mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0)!important;
+  -webkit-mask-composite:xor!important;
+  mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0)!important;
+  mask-composite:exclude!important;
+  opacity:.82!important;
+}
+html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim::after{
+  content:""!important;
+  position:absolute!important;
+  inset:calc(-1 * var(--ah1696-vp-band))!important;
+  border-radius:inherit!important;
+  pointer-events:none!important;
+  border:1px solid rgba(239,207,122,.44)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,239,181,.12),
+    0 0 0 1px rgba(68,43,9,.42)!important;
+}
+@media (max-width:900px){
+  :root{--ah1696-vp-band:5px;}
+  html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
+    border-radius:var(--current-frame-radius,18px)!important;
+  }
+}
+
+/* Round 1701 — single desktop Solution machine-window tube authority.
+   Actual stationary .ah1701-machine-tube elements are used; no moving-cover lip. */
+@media (min-width:801px){
+  html body.page-solutions.page-solutions[data-page="solutions"] #solution-process-header#solution-process-header{
+    overflow:visible!important;
+  }
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-exhibit,
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor{
+    overflow:visible!important;
+  }
+
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor{
+    position:relative!important;
+    isolation:isolate!important;
+    border:0!important;
+    border-width:0!important;
+    border-image:none!important;
+    outline:0!important;
+    box-shadow:none!important;
+  }
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window{
+    z-index:10!important;
+    inset:0!important;
+    overflow:hidden!important;
+    border:0!important;
+    border-width:0!important;
+    border-image:none!important;
+    outline:0!important;
+    box-shadow:none!important;
+    background:#01040a!important;
+  }
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-cover{
+    z-index:30!important;
+    border:0!important;
+    border-width:0!important;
+    border-image:none!important;
+    outline:0!important;
+  }
+
+  /* Retire every legacy anchor/cover rim or lip. */
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor::before,
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor::after,
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window::after,
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-cover::after{
+    display:none!important;
+    content:none!important;
+    background:none!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor > .ah1701-machine-tube{
+    display:block!important;
+    position:absolute!important;
+    left:0!important;
+    right:0!important;
+    width:auto!important;
+    height:8px!important;
+    margin:0!important;
+    padding:0!important;
+    pointer-events:none!important;
+    opacity:1!important;
+    border:0!important;
+    border-radius:1px!important;
+    outline:0!important;
+    background:var(--ah1701-machine-gold-face,repeating-linear-gradient(
+      107deg,#8b601e 0 6%,#b38331 6% 14%,#d0ad57 14% 23%,#a57427 23% 33%,
+      #c79b43 33% 44%,#91631f 44% 54%,#d6b65f 54% 64%,#aa7b29 64% 74%,
+      #c99d45 74% 84%,#966721 84% 93%,#bd8e3a 93% 100%
+    ))!important;
+    background-color:#b78935!important;
+    filter:none!important;
+  }
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor > .ah1701-machine-tube--top{
+    top:-4px!important;
+    bottom:auto!important;
+    z-index:2!important;
+    box-shadow:0 -1px 0 #3a2507,inset 0 1px 0 #f2d990,inset 0 -2px 0 #5a3a0c!important;
+  }
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor > .ah1701-machine-tube--bottom{
+    top:auto!important;
+    bottom:-8px!important;
+    z-index:60!important;
+    box-shadow:0 -1px 0 #efd489,0 1px 0 #3a2507,0 4px 7px rgba(0,0,0,.42),inset 0 1px 0 #f2d990,inset 0 -2px 0 #5a3a0c!important;
+  }
+}

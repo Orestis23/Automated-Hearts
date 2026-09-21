@@ -36,21 +36,13 @@
   }
 
   function ensureDesktopRolodexPoster(){
+    /* Round 1693: desktop Rolodex always shows the live cycling cards behind the shutter.
+       Remove any legacy static poster so opening/closing cannot swap to an older card image. */
     const frame=document.querySelector('#home-machine-grid > .home-hero-rolodex-frame');
     if(!frame) return null;
-    let img=frame.querySelector(':scope > .ah1644-machine-window-poster');
-    if(!img){
-      img=document.createElement('img');
-      img.alt='';
-      img.setAttribute('aria-hidden','true');
-      img.className='ah1644-machine-window-poster';
-      img.decoding='async';
-      img.loading='lazy';
-      const insertBefore=frame.querySelector(':scope > .machine-three-ridge-overlay, :scope > .home-machine-haze-screen');
-      frame.insertBefore(img,insertBefore||null);
-    }
-    loadImageInto(img,'./assets/home-rolodex-mobile-poster-round1642.webp?v=1644r');
-    return img;
+    frame.querySelectorAll(':scope > .ah1644-machine-window-poster, :scope > .home-mobile-machine-poster--primary')
+      .forEach((img)=>img.remove());
+    return null;
   }
 
   function markDesktopReady(frame,iframe){
