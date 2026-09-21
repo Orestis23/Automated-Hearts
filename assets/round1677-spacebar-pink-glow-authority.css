@@ -602,3 +602,267 @@
     opacity:.24!important;
   }
 }
+
+
+/* Round 1709 — continuous lower gold corners + full-key mechanical press.
+   Keep the rear/top edge fixed visually: gold and pink treatment remains on sides/front-bottom only.
+   The runtime press authority moves the whole key because several route controls carry inline
+   transform:none!important in the embedded page payloads. */
+@layer ah-r1392-route-keys {
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar,
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar,
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar,
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar {
+    border-top:0!important;
+    border-left:1px solid rgba(220,181,91,.88)!important;
+    border-right:1px solid rgba(220,181,91,.88)!important;
+    border-bottom:2px solid rgba(238,207,126,.96)!important;
+    border-radius:0!important;
+    clip-path:none!important;
+    transition:transform 105ms cubic-bezier(.20,.78,.24,1), box-shadow 105ms ease!important;
+    box-shadow:
+      inset 1px 0 0 rgba(99,65,17,.42),
+      inset -1px 0 0 rgba(99,65,17,.42),
+      inset 0 -1px 0 rgba(92,58,13,.56),
+      0 2px 0 rgba(4,10,16,.86)!important;
+  }
+
+  /* The front gold lip now reaches the exact left/right edges. Its vertical edges meet
+     the control's side rims with no 2px gap or trapezoid cutout at the lower corners. */
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar::before,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar::before,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar::before,
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar::before,
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar::before,
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar::before {
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:4!important;
+    left:-1px!important;
+    right:-1px!important;
+    top:calc(100% - 1px)!important;
+    bottom:auto!important;
+    width:auto!important;
+    height:6px!important;
+    pointer-events:none!important;
+    border-top:1px solid rgba(240,210,128,.86)!important;
+    border-left:1px solid rgba(220,181,91,.88)!important;
+    border-right:1px solid rgba(220,181,91,.88)!important;
+    border-bottom:1px solid rgba(242,212,130,.94)!important;
+    border-radius:0!important;
+    clip-path:none!important;
+    background:
+      linear-gradient(180deg,rgba(246,220,145,.30) 0 12%,transparent 12% 30%,rgba(63,39,7,.30) 30% 44%,transparent 44% 68%,rgba(244,211,126,.13) 68% 76%,transparent 76%),
+      repeating-linear-gradient(102deg,rgba(47,29,5,.38) 0 1px,rgba(165,122,42,.18) 1px 3px,rgba(219,181,91,.16) 3px 5px),
+      linear-gradient(180deg,#352108 0%,#765019 27%,#b78d3d 54%,#e4c777 72%,#74501b 100%)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(251,226,151,.38),
+      inset 0 -1px 0 rgba(47,28,5,.72),
+      inset 1px 0 0 rgba(244,210,127,.25),
+      inset -1px 0 0 rgba(244,210,127,.25)!important;
+    transform:none!important;
+    transition:none!important;
+  }
+
+  /* 50% stronger than the Round 1696 side/front pink glow. */
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar::after,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar::after,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar::after,
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar::after,
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar::after,
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar::after {
+    left:-4px!important;
+    right:-4px!important;
+    top:12px!important;
+    bottom:-10px!important;
+    border-top:0!important;
+    border-left:1px solid rgba(255,123,198,.21)!important;
+    border-right:1px solid rgba(255,123,198,.21)!important;
+    border-bottom:1px solid rgba(255,123,198,.30)!important;
+    opacity:.76!important;
+    filter:blur(.55px)!important;
+    -webkit-filter:blur(.55px)!important;
+    box-shadow:
+      -3px 1px 6px rgba(255,105,190,.18),
+      3px 1px 6px rgba(255,105,190,.18),
+      0 5px 9px rgba(255,105,190,.255),
+      0 10px 14px rgba(255,105,190,.105)!important;
+    transition:opacity 90ms ease!important;
+  }
+
+  /* The whole control now moves. Do not independently drop the front lip a second time. */
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::before,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::before,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::before,
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::before,
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::before,
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::before {
+    transform:none!important;
+  }
+
+  /* Pink light-up while the full key is depressed. The runtime also sets these inline so
+     this wins against legacy inline !important label colors in production payloads. */
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"]),
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"]),
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"]),
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"]),
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"]),
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"]) {
+    box-shadow:
+      inset 1px 0 0 rgba(99,65,17,.38),
+      inset -1px 0 0 rgba(99,65,17,.38),
+      inset 0 -1px 0 rgba(82,51,11,.52),
+      inset 0 4px 8px rgba(0,0,0,.30),
+      0 1px 0 rgba(4,10,16,.72)!important;
+  }
+
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::after,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::after,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::after,
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::after,
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::after,
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"])::after {
+    opacity:.76!important;
+  }
+
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"]) > .ah-route-label-final,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"]) > .ah-route-label-final,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"]) > .ah-route-label-final {
+    color:#ff2ea8!important;
+    -webkit-text-fill-color:#ff2ea8!important;
+    text-shadow:
+      0 0 .5px rgba(255,245,252,.96),
+      0 0 3px rgba(255,46,168,.88),
+      0 0 8px rgba(255,46,168,.58),
+      0 0 14px rgba(255,46,168,.30)!important;
+  }
+}
+
+/* Round 1710 — stronger side rails, slimmer front lip, rounded pale rear crown.
+   Preserve Round 1709 full-key travel and pink press lighting. */
+@layer ah-r1392-route-keys {
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar,
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar,
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar,
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar {
+    border-top:1px solid rgba(211,223,222,.48)!important;
+    border-left:2px solid rgba(220,181,91,.90)!important;
+    border-right:2px solid rgba(220,181,91,.90)!important;
+    border-bottom:1px solid rgba(232,199,115,.92)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(244,249,247,.24),
+      inset 0 3px 5px -4px rgba(237,245,242,.72),
+      inset 2px 0 0 rgba(99,65,17,.42),
+      inset -2px 0 0 rgba(99,65,17,.42),
+      inset 0 -1px 0 rgba(92,58,13,.50),
+      0 2px 0 rgba(4,10,16,.86)!important;
+  }
+
+  /* Slimmer front rail, widened to meet the doubled side rails at both corners. */
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar::before,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar::before,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar::before,
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar::before,
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar::before,
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar::before {
+    left:-2px!important;
+    right:-2px!important;
+    top:calc(100% - 1px)!important;
+    height:4px!important;
+    border-top:1px solid rgba(238,206,124,.82)!important;
+    border-left:2px solid rgba(220,181,91,.90)!important;
+    border-right:2px solid rgba(220,181,91,.90)!important;
+    border-bottom:1px solid rgba(226,190,102,.88)!important;
+    background:
+      linear-gradient(180deg,rgba(246,220,145,.26) 0 18%,rgba(64,40,8,.20) 42%,rgba(228,190,101,.13) 68%,rgba(58,35,6,.34) 100%),
+      repeating-linear-gradient(102deg,rgba(47,29,5,.42) 0 1px,rgba(165,122,42,.16) 1px 3px,rgba(219,181,91,.13) 3px 5px),
+      linear-gradient(180deg,#352108 0%,#765019 30%,#b78d3d 57%,#d8b65e 73%,#684514 100%)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(251,226,151,.30),
+      inset 0 -1px 0 rgba(47,28,5,.78),
+      inset 2px 0 0 rgba(244,210,127,.20),
+      inset -2px 0 0 rgba(244,210,127,.20)!important;
+  }
+}
+
+/* Round 1714 — raised carbon-fiber face + front-lip-only press.
+   The blue/carbon keycap stays stationary. Only the mechanical front lip drops,
+   while the label briefly lights like the footer controls. */
+@layer ah-r1392-route-keys {
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar,
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar,
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar,
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar {
+    transform:none!important;
+    border-top:1px solid rgba(218,235,236,.44)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(246,255,255,.23),
+      inset 0 4px 7px -5px rgba(213,237,238,.52),
+      inset 0 10px 18px -18px rgba(206,235,237,.48),
+      inset 0 -9px 13px -12px rgba(0,0,0,.92),
+      inset 3px 0 7px -7px rgba(225,244,243,.34),
+      inset -3px 0 7px -7px rgba(225,244,243,.34),
+      inset 2px 0 0 rgba(99,65,17,.42),
+      inset -2px 0 0 rgba(99,65,17,.42),
+      inset 0 -1px 0 rgba(92,58,13,.50),
+      0 2px 0 rgba(4,10,16,.86)!important;
+    transition:box-shadow 110ms ease!important;
+  }
+
+  /* Keep the face planted during every pressed state, including legacy classes. */
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"]),
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"]),
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"]),
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"]),
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"]),
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"]) {
+    transform:none!important;
+    box-shadow:
+      inset 0 1px 0 rgba(246,255,255,.20),
+      inset 0 4px 7px -5px rgba(213,237,238,.46),
+      inset 0 10px 18px -18px rgba(206,235,237,.42),
+      inset 0 -9px 13px -12px rgba(0,0,0,.92),
+      inset 3px 0 7px -7px rgba(225,244,243,.30),
+      inset -3px 0 7px -7px rgba(225,244,243,.30),
+      inset 2px 0 0 rgba(99,65,17,.42),
+      inset -2px 0 0 rgba(99,65,17,.42),
+      inset 0 -1px 0 rgba(92,58,13,.50),
+      0 2px 0 rgba(4,10,16,.86)!important;
+  }
+
+  /* Only the front mechanical lip moves down. */
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"])::before,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"])::before,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"])::before,
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"])::before,
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"])::before,
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"],[data-ah-1709-pressed="1"],[data-ah-1714-pressed="1"])::before {
+    transform:translate3d(0,3px,0)!important;
+    transition:transform 90ms cubic-bezier(.2,.78,.24,1)!important;
+  }
+
+  /* Footer-style light flash: same pink family, stronger only while pressed. */
+  html body.page-home[data-page="home"] #home-route-buttons .ah-unified-spacebar:is(:active,[data-ah-1714-pressed="1"]) > .ah-route-label-final,
+  html body.page-learning[data-page="learning"] #learning-route-buttons .ah-unified-spacebar:is(:active,[data-ah-1714-pressed="1"]) > .ah-route-label-final,
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions .ah-unified-spacebar:is(:active,[data-ah-1714-pressed="1"]) > .ah-route-label-final,
+  html body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar:is(:active,[data-ah-1714-pressed="1"]),
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar:is(:active,[data-ah-1714-pressed="1"]),
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar:is(:active,[data-ah-1714-pressed="1"]) {
+    color:#ff4fb2!important;
+    -webkit-text-fill-color:#ff4fb2!important;
+    text-shadow:
+      0 0 1px rgba(255,244,251,.92),
+      0 0 3px rgba(255,79,178,.72),
+      0 0 12px rgba(255,79,178,.36)!important;
+    filter:brightness(1.12)!important;
+    transition:color 70ms linear,text-shadow 70ms linear,filter 70ms linear!important;
+  }
+}
+

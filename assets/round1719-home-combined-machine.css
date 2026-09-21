@@ -1,0 +1,217 @@
+/* Round 1719 — combine the two desktop Home machine panes into one large shared window
+   and add Learning-Center-style mechanical spacebar controls beneath it. */
+@media (min-width:901px){
+  html body.page-home[data-page="home"] #home-hero-housing > #home-title-fields{order:1!important;}
+  html body.page-home[data-page="home"] #home-hero-housing > .ah1718-definition-ticker{order:2!important;}
+  html body.page-home[data-page="home"] #home-hero-housing > .ah1719-combined-machine{
+    order:3!important;
+    position:relative!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    box-sizing:border-box!important;
+    width:min(92%,1740px)!important;
+    max-width:1740px!important;
+    min-width:0!important;
+    margin:0 auto!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+
+  html body.page-home[data-page="home"] .ah1719-combined-machine > #home-machine-grid{
+    position:relative!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    align-items:stretch!important;
+    gap:0!important;
+    width:100%!important;
+    max-width:none!important;
+    min-width:0!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    background:#02060c!important;
+    outline:1px solid rgba(5,11,17,.96)!important;
+    box-shadow:
+      0 0 0 1px rgba(140,108,37,.34),
+      0 8px 18px rgba(0,0,0,.34),
+      inset 0 1px 0 rgba(221,235,236,.06),
+      inset 0 -1px 0 rgba(0,0,0,.82)!important;
+  }
+
+  html body.page-home[data-page="home"] .ah1719-combined-machine #home-machine-grid > .home-hero-engine-frame{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:360px!important;
+    min-height:360px!important;
+    max-height:360px!important;
+    margin:0!important;
+    border:0!important;
+    outline:0!important;
+  }
+
+  /* One restrained internal seam; the outer enclosure remains continuous. */
+  html body.page-home[data-page="home"] .ah1719-combined-machine #home-machine-grid > .home-hero-engine-frame:first-child{
+    box-shadow:inset -1px 0 0 rgba(143,255,215,.10)!important;
+  }
+  html body.page-home[data-page="home"] .ah1719-combined-machine #home-machine-grid > .home-hero-engine-frame:last-child{
+    box-shadow:inset 1px 0 0 rgba(255,46,168,.08)!important;
+  }
+
+  html body.page-home[data-page="home"] #home-combined-machine-controls{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    align-items:stretch!important;
+    gap:clamp(28px,2vw,40px)!important;
+    width:100%!important;
+    margin:26px 0 0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+
+  html body.page-home[data-page="home"] #home-combined-machine-controls .ah1719-machine-selector{
+    position:relative!important;
+    isolation:isolate!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    min-width:0!important;
+    height:76px!important;
+    min-height:76px!important;
+    max-height:76px!important;
+    margin:0!important;
+    padding:10px 24px!important;
+    overflow:visible!important;
+    cursor:pointer!important;
+    appearance:none!important;
+    -webkit-appearance:none!important;
+    border-radius:0!important;
+    border-top:1px solid rgba(218,235,236,.44)!important;
+    border-left:2px solid rgba(220,181,91,.90)!important;
+    border-right:2px solid rgba(220,181,91,.90)!important;
+    border-bottom:1px solid rgba(232,199,115,.92)!important;
+    outline:0!important;
+    background-color:#0b1728!important;
+    background-image:
+      linear-gradient(180deg,rgba(237,250,250,.11) 0%,rgba(210,232,234,.035) 15%,transparent 31%,rgba(0,0,0,.11) 70%,rgba(0,0,0,.28) 100%),
+      repeating-linear-gradient(135deg,rgba(102,126,145,.13) 0 4px,rgba(8,15,24,.22) 4px 8px),
+      repeating-linear-gradient(45deg,rgba(50,70,88,.11) 0 4px,rgba(2,7,13,.20) 4px 8px),
+      linear-gradient(180deg,#14283e 0%,#0b1728 54%,#06101c 100%)!important;
+    background-size:auto,8px 8px,8px 8px,auto!important;
+    color:#8fffd7!important;
+    -webkit-text-fill-color:#8fffd7!important;
+    font-family:Orbitron,system-ui,sans-serif!important;
+    font-size:clamp(17px,1.34vw,24px)!important;
+    font-weight:500!important;
+    line-height:1.12!important;
+    letter-spacing:.01em!important;
+    text-align:center!important;
+    text-shadow:0 0 .4px rgba(237,255,249,.84),0 0 1.3px rgba(143,255,215,.48),0 0 3px rgba(143,255,215,.12)!important;
+    transform:none!important;
+    transition:box-shadow 110ms ease!important;
+    box-shadow:
+      inset 0 1px 0 rgba(246,255,255,.23),
+      inset 0 4px 7px -5px rgba(213,237,238,.52),
+      inset 0 10px 18px -18px rgba(206,235,237,.48),
+      inset 0 -9px 13px -12px rgba(0,0,0,.92),
+      inset 3px 0 7px -7px rgba(225,244,243,.34),
+      inset -3px 0 7px -7px rgba(225,244,243,.34),
+      inset 2px 0 0 rgba(99,65,17,.42),
+      inset -2px 0 0 rgba(99,65,17,.42),
+      inset 0 -1px 0 rgba(92,58,13,.50),
+      0 2px 0 rgba(4,10,16,.86)!important;
+  }
+
+  /* Connected weathered-gold front lip: same Learning Center mechanical language. */
+  html body.page-home[data-page="home"] #home-combined-machine-controls .ah1719-machine-selector::before{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:4!important;
+    left:-2px!important;
+    right:-2px!important;
+    top:calc(100% - 1px)!important;
+    width:auto!important;
+    height:4px!important;
+    pointer-events:none!important;
+    border-top:1px solid rgba(238,206,124,.82)!important;
+    border-left:2px solid rgba(220,181,91,.90)!important;
+    border-right:2px solid rgba(220,181,91,.90)!important;
+    border-bottom:1px solid rgba(226,190,102,.88)!important;
+    background:
+      linear-gradient(180deg,rgba(246,220,145,.26) 0 18%,rgba(64,40,8,.20) 42%,rgba(228,190,101,.13) 68%,rgba(58,35,6,.34) 100%),
+      repeating-linear-gradient(102deg,rgba(47,29,5,.42) 0 1px,rgba(165,122,42,.16) 1px 3px,rgba(219,181,91,.13) 3px 5px),
+      linear-gradient(180deg,#352108 0%,#765019 30%,#b78d3d 57%,#d8b65e 73%,#684514 100%)!important;
+    box-shadow:inset 0 1px 0 rgba(251,226,151,.30),inset 0 -1px 0 rgba(47,28,5,.78),inset 2px 0 0 rgba(244,210,127,.20),inset -2px 0 0 rgba(244,210,127,.20)!important;
+    transform:none!important;
+    transition:transform 90ms cubic-bezier(.2,.78,.24,1)!important;
+  }
+
+  html body.page-home[data-page="home"] #home-combined-machine-controls .ah1719-machine-selector::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:-1!important;
+    left:-4px!important;
+    right:-4px!important;
+    top:12px!important;
+    bottom:-10px!important;
+    pointer-events:none!important;
+    border-top:0!important;
+    border-left:1px solid rgba(255,123,198,.21)!important;
+    border-right:1px solid rgba(255,123,198,.21)!important;
+    border-bottom:1px solid rgba(255,123,198,.30)!important;
+    opacity:.76!important;
+    filter:blur(.55px)!important;
+    box-shadow:-3px 1px 6px rgba(255,105,190,.18),3px 1px 6px rgba(255,105,190,.18),0 5px 9px rgba(255,105,190,.255),0 10px 14px rgba(255,105,190,.105)!important;
+  }
+
+  html body.page-home[data-page="home"] #home-combined-machine-controls .ah1719-machine-selector > .ah-route-label-final{
+    position:relative!important;
+    z-index:10!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    height:100%!important;
+    color:#8fffd7!important;
+    -webkit-text-fill-color:#8fffd7!important;
+    font:inherit!important;
+    line-height:1.12!important;
+    text-align:center!important;
+    white-space:normal!important;
+    text-shadow:inherit!important;
+    pointer-events:none!important;
+  }
+
+  /* Same front-lip-only press behavior as the Learning Center keys. */
+  html body.page-home[data-page="home"] #home-combined-machine-controls .ah1719-machine-selector:is(:active,[data-ah-1719-pressed="1"])::before{
+    transform:translate3d(0,3px,0)!important;
+  }
+  html body.page-home[data-page="home"] #home-combined-machine-controls .ah1719-machine-selector:is(:active,[data-ah-1719-pressed="1"]) > .ah-route-label-final{
+    color:#ff4fb2!important;
+    -webkit-text-fill-color:#ff4fb2!important;
+    text-shadow:0 0 1px rgba(255,244,251,.92),0 0 3px rgba(255,79,178,.72),0 0 12px rgba(255,79,178,.36)!important;
+    filter:brightness(1.12)!important;
+  }
+
+  html body.page-home[data-page="home"] #home-combined-machine-controls .ah1719-machine-selector:focus-visible{
+    outline:1px solid rgba(143,255,215,.70)!important;
+    outline-offset:5px!important;
+  }
+}
+
+@media (min-width:901px) and (max-height:720px){
+  html body.page-home[data-page="home"] .ah1719-combined-machine #home-machine-grid > .home-hero-engine-frame{
+    height:330px!important;
+    min-height:330px!important;
+    max-height:330px!important;
+  }
+  html body.page-home[data-page="home"] #home-combined-machine-controls .ah1719-machine-selector{
+    height:68px!important;
+    min-height:68px!important;
+    max-height:68px!important;
+  }
+}

@@ -34,7 +34,7 @@ setTimeout(() => {
  overlay.id='ah1609-intro';
  overlay.innerHTML=`<style>
  #ah1609-intro{position:fixed;inset:0;z-index:2147483647;display:block;color:#f2fbff;overflow:hidden;contain:paint;isolation:isolate;box-sizing:border-box;pointer-events:auto;background:transparent}
- #ah1609-intro .shield{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;box-sizing:border-box;background:#08172b url("./assets/page-shield-smoked-heart.webp") center/cover no-repeat;border:2px solid #cdaa4d;will-change:transform;contain:paint;backface-visibility:hidden;transform:translate3d(0,0,0)}
+ #ah1609-intro .shield{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;box-sizing:border-box;background:#08172b center/cover no-repeat;border:2px solid #cdaa4d;will-change:transform;contain:paint;backface-visibility:hidden;transform:translate3d(0,0,0)}
  #ah1609-intro .copy{width:min(84vw,760px);font:700 clamp(22px,2.05vw,36px)/1.48 AHIntroOrbitron,Orbitron,system-ui,sans-serif;letter-spacing:.012em;text-shadow:0 2px 3px #000}
  @media(max-width:900px){
    #ah1609-intro{top:var(--current-frame-top,62px);right:var(--current-frame-side,10px);bottom:var(--current-frame-bottom,74px);left:var(--current-frame-side,10px);border-radius:var(--current-frame-radius,18px);overflow:hidden;background:transparent}
@@ -45,9 +45,9 @@ setTimeout(() => {
  #ah1609-intro button{color:#ff2ea8;background:#0b1728;border:1px solid #8fffd7;padding:16px 24px;font:600 18px system-ui;cursor:pointer}
  #ah1609-intro .cursor{display:inline-block;width:.5em;height:1em;background:#8fffd7;vertical-align:-.1em;margin-left:.12em;animation:ah1609-blink .8s steps(1,end) infinite}
  #ah1609-intro small{display:block;font:14px/1.5 system-ui;color:#d8e7e4;text-align:center} @keyframes ah1609-blink{50%{opacity:0}}
- </style><div class="shield"><div class="copy"><div class="ready" aria-hidden="true"></div><div class="story" hidden><p></p><p></p><p></p><p></p></div></div></div>`;
+ </style><div class="shield"><div class="copy"><div class="story" hidden><p></p><p></p><p></p><p></p></div></div></div>`;
  document.body.appendChild(overlay);
- const shield=overlay.querySelector('.shield'),ready=overlay.querySelector('.ready'),story=overlay.querySelector('.story'),lines=[...story.querySelectorAll('p')];
+ const shield=overlay.querySelector('.shield'),story=overlay.querySelector('.story'),lines=[...story.querySelectorAll('p')];
  const cursor=document.createElement('span');cursor.className='cursor';
  async function bytes(url){const res=await fetch(url,{cache:'force-cache'});if(!res.ok)throw Error('Asset unavailable');return res.arrayBuffer();}
  function sound(name,when=ctx?.currentTime||0){
@@ -57,41 +57,39 @@ setTimeout(() => {
   if(name==='open'){gain.gain.setValueAtTime(volume,when+Math.max(0,src.buffer.duration-.5));gain.gain.linearRampToValueAtTime(0,when+src.buffer.duration);}
   src.start(when);return src;
  }
- async function requireRiseAudio(){
-  // Round 1705 no-tap patch: never block the shield on a user gesture. Browsers that
-  // allow Web Audio autoplay still get the synchronized hit; others continue silently.
-  if(!ctx||!buffers.open)return false;
-  if(ctx.state!=='running')await ctx.resume().catch(()=>{});
-  return ctx.state==='running';
+ function resumeAudio(){
+  // Autoplay restrictions must never block the introduction or shield.
+  if(ctx&&ctx.state!=='running')ctx.resume().catch(()=>{});
  }
+ document.addEventListener('pointerdown',resumeAudio,{capture:true,passive:true});
+ document.addEventListener('keydown',resumeAudio,{capture:true});
  const escaped=t=>t.replace(/[&<>']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;'}[c]));
  function render(i,text){lines[i].innerHTML=escaped(text).replace(/AI/g,'<span class="pink">AI</span>').replace(/Human|maximum efficiency/g,'<span class="green">$&</span>');lines[i].appendChild(cursor);}
  let strings=['','','',''];
  async function type(i,text){for(const char of text){strings[i]+=char;render(i,strings[i]);sound('type');await sleep(/[.,]/.test(char)?105:45);}}
  async function back(i,n){for(let j=0;j<n;j++){strings[i]=strings[i].slice(0,-1);render(i,strings[i]);sound('delete');await sleep(85);}}
  async function start(){
-  ready?.remove();story.hidden=false;
+  story.hidden=false;
   await type(0,'AI');await painted();
   // No site image, model, stylesheet, analytics or page runtime is discoverable before here.
   try{localStorage.setItem(key,'1');}catch(_){}
   window.__AH_EARLY_MOBILE_INTRO_STARTED__=true;window.__AH_EARLY_DESKTOP_INTRO_STARTED__=true;window.__AH_SITE_FIRST_VISIT_INTRO_1194=true;
-  release();released=true;if(introFont)document.fonts.add(introFont);document.documentElement.appendChild(overlay);
+  release();released=true;document.addEventListener('pointerdown',resumeAudio,{capture:true,passive:true});document.addEventListener('keydown',resumeAudio,{capture:true});if(introFont)document.fonts.add(introFont);document.documentElement.appendChild(overlay);
   shield.style.backgroundImage=`url("${artURL}")`;
   await type(0,' should elevtae');await sleep(330);await back(0,3);await type(0,'ate the Human.');await sleep(620);
   await type(1,'Fully customized minimalistic systems in both design & foundation for maximum efficency');await back(1,5);await type(1,'ciency.');await sleep(610);
   await type(2,'Nothing you dont');await back(2,4);await type(2,"don't need.");await sleep(520);
   await type(3,'Just what you do.');await sleep(650);cursor.remove();
-  // No-tap patch: the visual rise always proceeds. When Web Audio is available and
-  // already running, arm the impact sound against the same visual start/finish window.
-  const audioReady=await requireRiseAudio();
+  resumeAudio();
+  let audioMaster=!!(ctx&&ctx.state==='running'&&buffers.open);
   const lead=.12,duration=2;
   const outputClockNow=()=>{
-   if(ctx&&ctx.getOutputTimestamp){
+   if(ctx.getOutputTimestamp){
     const stamp=ctx.getOutputTimestamp();
     if(stamp.performanceTime>0&&stamp.contextTime>=0)return stamp.contextTime+(performance.now()-stamp.performanceTime)/1000;
    }
-   const latency=ctx?(Number.isFinite(ctx.outputLatency)?ctx.outputLatency:(Number.isFinite(ctx.baseLatency)?ctx.baseLatency:0)):0;
-   return ctx?Math.max(0,ctx.currentTime-latency):0;
+   const latency=Number.isFinite(ctx.outputLatency)?ctx.outputLatency:(Number.isFinite(ctx.baseLatency)?ctx.baseLatency:0);
+   return Math.max(0,ctx.currentTime-latency);
   };
   // Preserve the original cubic-bezier(.22,.66,.24,1) motion while driving it from
   // the speaker/output clock instead of a timer or animation-end callback.
@@ -100,20 +98,25 @@ setTimeout(() => {
    let u=t;for(let i=0;i<5;i++){const x=bez(u,x1,x2),dx=3*(1-u)*(1-u)*x1+6*(1-u)*u*(x2-x1)+3*u*u*(1-x2);if(Math.abs(dx)<1e-5)break;u=Math.min(1,Math.max(0,u-(x-t)/dx));}
    return bez(u,y1,y2);
   };
-  const riseStartPerf=performance.now()+lead*1000;
-  let riseStart=0,impactTime=0;
-  if(audioReady){
-   riseStart=outputClockNow()+lead;impactTime=riseStart+duration;
-   sound('open',impactTime);
-  }
-  window.__AH_FIRST_INTRO_RISE_CLOCK__={audioMaster:audioReady,riseStart,impactTime,duration};
+  let fallbackOrigin=performance.now()/1000,lastClock=audioMaster?outputClockNow():0;
+  const riseStart=lastClock+lead,impactTime=riseStart+duration;
+  const impact=audioMaster?sound('open',impactTime):null;
+  window.__AH_FIRST_INTRO_RISE_CLOCK__={audioMaster,riseStart,impactTime,duration};
   window.dispatchEvent(new CustomEvent('ah:first-intro-raising',{detail:{intro:overlay}}));
   await new Promise(resolve=>{
    let topSent=false;
    const markTop=()=>{if(topSent)return;topSent=true;shield.style.transform='translate3d(0,-101%,0)';window.dispatchEvent(new CustomEvent('ah:first-intro-top',{detail:{intro:overlay}}));resolve();};
    const frame=()=>{
     if(!overlay.isConnected){resolve();return;}
-    const progress=Math.min(1,Math.max(0,(performance.now()-riseStartPerf)/(duration*1000)));
+    // Continue on the visual clock if the browser suspends sound mid-rise.
+    if(audioMaster&&ctx.state!=='running'){
+     audioMaster=false;fallbackOrigin=performance.now()/1000-lastClock;
+     if(impact)try{impact.stop();}catch(_){}
+    }
+    const audioNow=audioMaster?outputClockNow():performance.now()/1000-fallbackOrigin;
+    lastClock=audioNow;
+    if(audioNow<riseStart){shield.style.transform='translate3d(0,0,0)';requestAnimationFrame(frame);return;}
+    const progress=Math.min(1,Math.max(0,(audioNow-riseStart)/duration));
     shield.style.transform=`translate3d(0,${(-101*ease(progress)).toFixed(4)}%,0)`;
     if(progress>=1){markTop();return;}
     requestAnimationFrame(frame);
@@ -124,21 +127,18 @@ setTimeout(() => {
  }
  async function prepare(){
   const AudioContext=window.AudioContext||window.webkitAudioContext;
-  if(!AudioContext)throw Error('Web Audio unavailable');
-  ctx=new AudioContext({latencyHint:'interactive'});
+  if(AudioContext)try{ctx=new AudioContext({latencyHint:'interactive'});}catch(_){}
+  resumeAudio();
   const assets=[['type','./assets/intro-key-click-round1398.wav'],['delete','./assets/intro-key-delete-round1398.wav'],['open','./assets/shield-first-rise-hit-round1618.wav']];
-  const work=assets.map(async([name,url])=>{const raw=await bytes(url);if(ctx)buffers[name]=await ctx.decodeAudioData(raw);});
+  const work=assets.map(async([name,url])=>{try{const raw=await bytes(url);if(ctx)buffers[name]=await ctx.decodeAudioData(raw);}catch(_){}});
   work.push((async()=>{const raw=await bytes('./assets/page-shield-smoked-heart.webp');artURL=URL.createObjectURL(new Blob([raw],{type:'image/webp'}));const img=new Image();img.src=artURL;await img.decode();shield.style.backgroundImage=`url("${artURL}")`})());
   // Resolve the font from the site's existing Google Fonts CSS rather than relying on a versioned URL.
   work.push(fetch('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap').then(r=>r.text()).then(async css=>{const urls=[...css.matchAll(/url\(([^)]+)\)/g)];if(urls.length){const face=new FontFace('AHIntroOrbitron',`url(${urls[urls.length-1][1]})`,{weight:'700'});await face.load();document.fonts.add(face);introFont=face;}}).catch(()=>{}));
   await Promise.all(work);
-  // Start immediately; do not require a click/tap just to enter the site.
-  if(ctx?.state!=='running')await ctx.resume().catch(()=>{});
   await start();
  }
  prepare().catch(()=>{
-  // Never replace a failed intro with another interaction gate.
-  if(released){overlay.remove();return;}
-  overlay.remove();release();
+  if(!released)release();
+  overlay.remove();
  });
 },0);

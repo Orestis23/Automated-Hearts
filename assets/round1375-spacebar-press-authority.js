@@ -31,3 +31,89 @@
     inertify();
   }
 })();
+
+/* Round 1714 — front-lip-only route-key press + footer-style label flash.
+   Do not move the whole key. CSS moves only ::before (the front mechanical lip).
+   Keep the flash visible for a short minimum interval on quick taps. */
+(() => {
+  'use strict';
+  const selector = [
+    '#home-route-buttons .ah-unified-spacebar',
+    '#learning-route-buttons .ah-unified-spacebar',
+    '#who-we-help-solutions .ah-unified-spacebar',
+    'body[data-ah-mobile-surface="home"] main#main-content .route-label.ah-unified-spacebar',
+    'body[data-ah-mobile-surface="learning"] main#main-content .route-label.ah-unified-spacebar',
+    'body[data-ah-mobile-surface="industries"] main#main-content .route-label.ah-unified-spacebar'
+  ].join(',');
+
+  const MIN_FLASH_MS = 120;
+  let active = null;
+  let pressedAt = 0;
+  let releaseTimer = 0;
+
+  const clearReleaseTimer = () => {
+    if (!releaseTimer) return;
+    window.clearTimeout(releaseTimer);
+    releaseTimer = 0;
+  };
+
+  const finishRelease = (control) => {
+    if (!control) return;
+    control.removeAttribute('data-ah-1714-pressed');
+    control.removeAttribute('data-ah-1709-pressed');
+    if (active === control) active = null;
+  };
+
+  const release = (control, immediate = false) => {
+    if (!control) return;
+    clearReleaseTimer();
+    const elapsed = performance.now() - pressedAt;
+    const wait = immediate ? 0 : Math.max(0, MIN_FLASH_MS - elapsed);
+    if (wait > 0) {
+      releaseTimer = window.setTimeout(() => {
+        releaseTimer = 0;
+        finishRelease(control);
+      }, wait);
+    } else {
+      finishRelease(control);
+    }
+  };
+
+  const press = (control) => {
+    if (!control || active === control) return;
+    if (active) release(active, true);
+    clearReleaseTimer();
+    active = control;
+    pressedAt = performance.now();
+    control.removeAttribute('data-ah-1709-pressed');
+    control.setAttribute('data-ah-1714-pressed','1');
+  };
+
+  const closestControl = (event) => {
+    const target = event.target;
+    return target instanceof Element ? target.closest(selector) : null;
+  };
+
+  window.addEventListener('pointerdown', (event) => {
+    if (event.button !== undefined && event.button !== 0) return;
+    const control = closestControl(event);
+    if (control) press(control);
+  }, true);
+  window.addEventListener('pointerup', () => { if (active) release(active); }, true);
+  window.addEventListener('pointercancel', () => { if (active) release(active, true); }, true);
+  window.addEventListener('blur', () => { if (active) release(active, true); }, true);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && active) release(active, true);
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.repeat || (event.key !== 'Enter' && event.key !== ' ')) return;
+    const control = closestControl(event);
+    if (control) press(control);
+  }, true);
+  window.addEventListener('keyup', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    const control = closestControl(event) || active;
+    if (control) release(control);
+  }, true);
+})();

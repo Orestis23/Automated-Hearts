@@ -915,3 +915,66 @@ html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim::after{
     box-shadow:0 -1px 0 #efd489,0 1px 0 #3a2507,0 4px 7px rgba(0,0,0,.42),inset 0 1px 0 #f2d990,inset 0 -2px 0 #5a3a0c!important;
   }
 }
+
+/* Round 1713 — site-wide horizontal section-border glow normalization.
+   Match the CURRENT Home pink divider's glow strength everywhere while preserving page color. */
+:root{
+  --ah1713-divider-pink:#ff2ea8;
+  --ah1713-divider-pink-hot:#ff7ec6;
+  --ah1713-divider-mint:#8fffd7;
+  --ah1713-divider-mint-hot:#dcfff3;
+}
+
+/* Explicit divider elements: same core opacity + exact Home halo strength. */
+html body.page-solutions[data-page="solutions"] .ah1483-section-break.ah1483-section-break,
+html body[data-ah-mobile-surface="solutions"] .ah1483-section-break.ah1483-section-break{
+  background-color:rgba(143,255,215,.48)!important;
+  background-image:linear-gradient(90deg,rgba(143,255,215,.38),rgba(220,255,243,.62) 50%,rgba(143,255,215,.38))!important;
+  box-shadow:0 0 2px rgba(143,255,215,.003625),0 0 6px rgba(143,255,215,.00175),0 0 12px rgba(143,255,215,.0006875)!important;
+  filter:none!important;
+  -webkit-filter:none!important;
+}
+html body:not(.page-home):not(.page-solutions)[data-page] .ah1483-section-break.ah1483-section-break,
+html body[data-ah-mobile-surface]:not([data-ah-mobile-surface="home"]):not([data-ah-mobile-surface="solutions"]) .ah1483-section-break.ah1483-section-break{
+  background-color:rgba(255,46,168,.48)!important;
+  background-image:linear-gradient(90deg,rgba(255,46,168,.38),rgba(255,126,198,.62) 50%,rgba(255,46,168,.38))!important;
+  box-shadow:0 0 2px rgba(255,46,168,.003625),0 0 6px rgba(255,46,168,.00175),0 0 12px rgba(255,46,168,.0006875)!important;
+  filter:none!important;
+  -webkit-filter:none!important;
+}
+
+/* Legacy section-border system: preserve the thin inset edge but reduce the outer halo to Home strength. */
+html body.page-solutions[data-page="solutions"] main#main-content#main-content > section[class] + section[class]:not(:has(> .ah1483-section-break--top)),
+html body.page-solutions[data-page="solutions"] main#main-content#main-content > section.section--divider:not(:has(> .ah1483-section-break--top)),
+html body[data-ah-mobile-surface="solutions"] main#main-content#main-content > section + section:not(:has(> .ah1483-section-break--top)),
+html body[data-ah-mobile-surface="solutions"] main#main-content#main-content > section.section--divider:not(:has(> .ah1483-section-break--top)){
+  border-top-width:1px!important;
+  border-top-style:solid!important;
+  border-top-color:rgba(143,255,215,.48)!important;
+  border-bottom-color:transparent!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 -1px 2px rgba(143,255,215,.003625),0 -1px 6px rgba(143,255,215,.00175),0 -1px 12px rgba(143,255,215,.0006875)!important;
+  filter:none!important;
+  -webkit-filter:none!important;
+}
+html body:not(.page-home):not(.page-solutions)[data-page] main#main-content#main-content > section[class] + section[class]:not(:has(> .ah1483-section-break--top)),
+html body:not(.page-home):not(.page-solutions)[data-page] main#main-content#main-content > section.section--divider:not(:has(> .ah1483-section-break--top)),
+html body[data-ah-mobile-surface]:not([data-ah-mobile-surface="home"]):not([data-ah-mobile-surface="solutions"]) main#main-content#main-content > section + section:not(:has(> .ah1483-section-break--top)),
+html body[data-ah-mobile-surface]:not([data-ah-mobile-surface="home"]):not([data-ah-mobile-surface="solutions"]) main#main-content#main-content > section.section--divider:not(:has(> .ah1483-section-break--top)){
+  border-top-width:1px!important;
+  border-top-style:solid!important;
+  border-top-color:rgba(255,46,168,.48)!important;
+  border-bottom-color:transparent!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 -1px 2px rgba(255,46,168,.003625),0 -1px 6px rgba(255,46,168,.00175),0 -1px 12px rgba(255,46,168,.0006875)!important;
+  filter:none!important;
+  -webkit-filter:none!important;
+}
+
+/* Never double-draw a legacy border where an explicit section-break owns the boundary. */
+html body[data-page] main#main-content > section:has(> .ah1483-section-break--top),
+html body[data-ah-mobile-surface] main#main-content > section:has(> .ah1483-section-break--top),
+html body[data-page] main#main-content > section:has(> .ah1483-section-break--bottom) + section,
+html body[data-ah-mobile-surface] main#main-content > section:has(> .ah1483-section-break--bottom) + section{
+  border-top-width:0!important;
+  border-top-style:none!important;
+  border-top-color:transparent!important;
+}

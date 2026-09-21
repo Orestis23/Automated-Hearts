@@ -1,0 +1,196 @@
+/* Automated Hearts Round 1716 — model-stage full progress + broken pink covered page-name lamps.
+   The normal aged mint name remains visible ahead of the fill. The region crossed by
+   the progress color is replaced with a worn/broken pink LED copy. */
+
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top{
+  isolation:isolate!important;
+}
+
+/* Retire the older dark-blue inverse copy. Round 1716 supplies the covered-letter state. */
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+> .ah1655-page-name-inverse{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+}
+
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+> .ah1716-progress-page-name{
+  position:absolute!important;
+  z-index:2147483220!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  box-sizing:border-box!important;
+  margin:0!important;
+  overflow:visible!important;
+  border:0!important;
+  outline:0!important;
+  background:none!important;
+  color:transparent!important;
+  -webkit-text-fill-color:transparent!important;
+  text-shadow:none!important;
+  filter:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:none!important;
+  -webkit-clip-path:inset(0 calc(100% - var(--page-sign-scroll-percent,0%)) 0 0)!important;
+  clip-path:inset(0 calc(100% - var(--page-sign-scroll-percent,0%)) 0 0)!important;
+  transition:-webkit-clip-path 34ms linear,clip-path 34ms linear!important;
+}
+
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+.ah1716-pink-char{
+  --ah1716-level:1.06;
+  --ah1716-weight:680;
+  --ah1716-dead:.18;
+  --ah1716-dim:.16;
+  --ah1716-scar:.12;
+  --ah1716-x:0px;
+  --ah1716-y:0px;
+  position:relative!important;
+  isolation:isolate!important;
+  display:inline-block!important;
+  flex:0 0 auto!important;
+  color:transparent!important;
+  -webkit-text-fill-color:transparent!important;
+  font:inherit!important;
+  font-weight:var(--ah1716-weight)!important;
+  font-variation-settings:"wght" var(--ah1716-weight)!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+  background-image:
+    radial-gradient(circle at 1.74px 1.70px,
+      rgba(255,248,252,.99) 0 .28px,
+      #ffd4eb .34px .58px,
+      #ff74bd .64px .96px,
+      #ff2ea8 1.02px 1.36px,
+      #8e174f 1.42px 1.62px,
+      transparent 1.72px),
+    radial-gradient(circle at 2px 2px,
+      rgba(255,236,248,.96) 0 .20px,
+      #ff5fb5 .26px .64px,
+      transparent .78px),
+    radial-gradient(circle at 2px 2px,
+      #ff2ea8 0 .28px,
+      #a51d5d .36px .76px,
+      transparent .94px)!important;
+  background-size:4.45px 4.45px,17px 19px,23px 27px!important;
+  background-position:var(--ah1716-x) var(--ah1716-y),calc(var(--ah1716-x) + 3px) calc(var(--ah1716-y) + 5px),calc(var(--ah1716-x) + 9px) calc(var(--ah1716-y) + 11px)!important;
+  background-repeat:repeat!important;
+  background-blend-mode:normal,screen,screen!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  filter:brightness(var(--ah1716-level)) contrast(1.24) drop-shadow(0 0 .7px rgba(255,98,184,.92)) drop-shadow(0 0 2.5px rgba(255,46,168,.62))!important;
+  text-shadow:none!important;
+  transform:none!important;
+  pointer-events:none!important;
+}
+
+/* Dark lamp housing underneath the pink bulbs prevents the original mint lamps from
+   showing through the deliberately burnt-out holes. */
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+.ah1716-pink-char::before{
+  content:attr(data-glyph)!important;
+  position:absolute!important;
+  z-index:-1!important;
+  inset:0!important;
+  display:block!important;
+  color:#07101a!important;
+  -webkit-text-fill-color:#07101a!important;
+  font:inherit!important;
+  font-weight:inherit!important;
+  font-variation-settings:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+  text-shadow:0 0 .45px rgba(255,46,168,.42)!important;
+  opacity:.94!important;
+  pointer-events:none!important;
+}
+
+/* Dead bulbs, weak pockets and worn electrical gaps. */
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+.ah1716-pink-char::after{
+  content:attr(data-glyph)!important;
+  position:absolute!important;
+  z-index:2!important;
+  inset:0!important;
+  display:block!important;
+  color:transparent!important;
+  -webkit-text-fill-color:transparent!important;
+  font:inherit!important;
+  font-weight:inherit!important;
+  font-variation-settings:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+  background-image:
+    radial-gradient(circle at 2px 2px,rgba(1,3,8,var(--ah1716-dead)) 0 1.22px,transparent 1.38px),
+    radial-gradient(circle at 2px 2px,rgba(7,4,12,var(--ah1716-dim)) 0 .82px,transparent 1.04px),
+    repeating-linear-gradient(104deg,transparent 0 8px,rgba(4,3,8,var(--ah1716-scar)) 8.4px 9.3px,transparent 9.8px 21px)!important;
+  background-size:9px 11px,13px 15px,auto 100%!important;
+  background-position:calc(var(--ah1716-x) + 2px) calc(var(--ah1716-y) + 4px),calc(var(--ah1716-x) + 7px) calc(var(--ah1716-y) + 1px),var(--ah1716-x) 0!important;
+  background-repeat:repeat!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  pointer-events:none!important;
+}
+
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+.ah1716-pink-char.ah1716-hot{
+  --ah1716-level:1.52;
+  --ah1716-weight:760;
+  --ah1716-dead:.05;
+  --ah1716-dim:.05;
+  --ah1716-scar:.05;
+}
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+.ah1716-pink-char.ah1716-normal{
+  --ah1716-level:1.10;
+  --ah1716-weight:680;
+  --ah1716-dead:.16;
+  --ah1716-dim:.14;
+  --ah1716-scar:.10;
+}
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+.ah1716-pink-char.ah1716-dim{
+  --ah1716-level:.82;
+  --ah1716-weight:575;
+  --ah1716-dead:.34;
+  --ah1716-dim:.38;
+  --ah1716-scar:.20;
+}
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+.ah1716-pink-char.ah1716-burnt{
+  --ah1716-level:.60;
+  --ah1716-weight:500;
+  --ah1716-dead:.66;
+  --ah1716-dim:.56;
+  --ah1716-scar:.34;
+}
+
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+.ah1716-pink-char.ah1716-restrike{
+  animation:ah1716-pink-restrike 5.8s steps(1,end) infinite!important;
+  animation-delay:var(--ah1716-delay,0s)!important;
+}
+
+html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+.ah1716-pink-space{
+  display:inline-block!important;
+  flex:0 0 auto!important;
+  width:.36em!important;
+  min-width:.36em!important;
+}
+
+@keyframes ah1716-pink-restrike{
+  0%,64%,100%{filter:brightness(var(--ah1716-level)) contrast(1.24) drop-shadow(0 0 .7px rgba(255,98,184,.92)) drop-shadow(0 0 2.5px rgba(255,46,168,.62));}
+  66%{filter:brightness(calc(var(--ah1716-level) * .62)) contrast(1.12) drop-shadow(0 0 .3px rgba(255,46,168,.42));}
+  67%{filter:brightness(calc(var(--ah1716-level) * 1.48)) contrast(1.30) drop-shadow(0 0 1.2px rgba(255,188,224,.98)) drop-shadow(0 0 4px rgba(255,46,168,.84));}
+  68%{filter:brightness(calc(var(--ah1716-level) * .72)) contrast(1.16) drop-shadow(0 0 .4px rgba(255,46,168,.52));}
+  70%{filter:brightness(calc(var(--ah1716-level) * 1.18)) contrast(1.25) drop-shadow(0 0 .8px rgba(255,98,184,.94)) drop-shadow(0 0 2.8px rgba(255,46,168,.68));}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+  .ah1716-pink-char.ah1716-restrike{animation:none!important;}
+}

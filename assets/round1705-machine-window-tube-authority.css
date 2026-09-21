@@ -34,3 +34,288 @@ html body.page-solutions[data-page="solutions"] #solution-process-header .soluti
 html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover::after{display:none!important;content:none!important;visibility:hidden!important;opacity:0!important;background:none!important;box-shadow:none!important;}
 html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover>.ah1701-machine-tube--bottom{display:block!important;visibility:visible!important;opacity:1!important;position:absolute!important;left:0!important;right:0!important;top:auto!important;bottom:0!important;width:auto!important;height:var(--ah1705-solution-tube-h)!important;z-index:120!important;pointer-events:none!important;transform:none!important;border:0!important;border-radius:3px!important;background-color:#a97527!important;background-image:var(--ah1705-tube-face),var(--ah1705-weathered-gold)!important;background-blend-mode:multiply,normal!important;box-shadow:0 -1px 0 #f5df9c,0 1px 0 #382205,0 4px 8px rgba(0,0,0,.46),inset 0 1px 0 #fff0ba,inset 0 -3px 0 #4f3109,inset 0 0 0 1px rgba(82,50,8,.78)!important;}
 }}
+
+/* Round 1707 — restore the preferred tube proportions, unify every machine tube to one
+   viewport-family worn-gold material, place stationary top tubes behind the moving screens,
+   and strengthen the clickable-heart pulse/glow. */
+:root{
+  --ah1707-home-tube-h:8px;
+  --ah1707-solution-tube-h:12px;
+  --ah1707-worn-gold-base:var(--ah-r1695-vp-gold,#bb903d);
+  --ah1707-worn-gold-texture:var(--ah-r1395-weathered-gold-edge,repeating-linear-gradient(
+    103deg,
+    #5b3b10 0 5%,#a8792e 5% 12%,#d3b15d 12% 18%,#80601f 18% 25%,
+    #c39b43 25% 34%,#6a4917 34% 41%,#e0c36e 41% 48%,#8c6725 48% 58%,
+    #b58b37 58% 67%,#5f4318 67% 75%,#c9a650 75% 85%,#7b5a22 85% 93%,#d9bd69 93% 100%
+  ));
+  --ah1707-tube-rounding:3px;
+}
+
+@layer ah-machine-window-match{
+@media (min-width:801px){
+  /* One material treatment for every gold tube. The first translucent layer rounds the light
+     across the face; the second layer is the site's canonical worn-gold texture. */
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>.ah1701-machine-tube--top,
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>button.home-machine-haze-screen>.ah1701-machine-tube--bottom,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window-anchor>.ah1701-machine-tube--top,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover>.ah1701-machine-tube--bottom{
+    min-height:0!important;
+    max-height:none!important;
+    border:0!important;
+    border-radius:var(--ah1707-tube-rounding)!important;
+    background-color:var(--ah1707-worn-gold-base)!important;
+    background-image:
+      linear-gradient(180deg,
+        rgba(255,246,202,.32) 0%,
+        rgba(255,237,174,.13) 17%,
+        rgba(255,255,255,0) 35%,
+        rgba(73,43,6,.16) 58%,
+        rgba(31,18,3,.34) 78%,
+        rgba(205,157,55,.08) 100%),
+      var(--ah1707-worn-gold-texture)!important;
+    background-blend-mode:normal!important;
+    background-size:100% 100%,auto!important;
+    background-position:center,center!important;
+    background-repeat:no-repeat,repeat!important;
+    opacity:1!important;
+    filter:none!important;
+    box-shadow:
+      0 0 0 1px rgba(42,26,6,.98),
+      0 0 0 2px rgba(111,77,24,.58),
+      0 0 5px rgba(190,147,53,.12),
+      inset 0 1px 0 rgba(255,241,184,.24),
+      inset 0 -1px 0 rgba(62,40,10,.52)!important;
+  }
+
+  /* Return to the pre-1706 proportions. */
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>.ah1701-machine-tube--top,
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>button.home-machine-haze-screen>.ah1701-machine-tube--bottom{
+    height:var(--ah1707-home-tube-h)!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window-anchor>.ah1701-machine-tube--top,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover>.ah1701-machine-tube--bottom{
+    height:var(--ah1707-solution-tube-h)!important;
+  }
+
+  /* Rear/top tubes: only their outer half projects above the opening. The moving screen is
+     explicitly above them, so the screen reads as rolling upward in front of/over the tube. */
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>.ah1701-machine-tube--top{
+    top:calc(var(--ah1707-home-tube-h)/-2)!important;
+    z-index:20!important;
+  }
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>button.home-machine-haze-screen{
+    z-index:30!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window-anchor>.ah1701-machine-tube--top{
+    top:calc(var(--ah1707-solution-tube-h)/-2)!important;
+    z-index:5!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window{
+    z-index:10!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover{
+    z-index:30!important;
+  }
+
+  /* Moving/front bottom tubes stay on the actual shutters/covers. */
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>button.home-machine-haze-screen>.ah1701-machine-tube--bottom,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover>.ah1701-machine-tube--bottom{
+    bottom:0!important;
+    z-index:120!important;
+  }
+
+  /* Stronger click affordance on the three machine-window hearts. */
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>button.home-machine-haze-screen::before,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover::before{
+    opacity:1!important;
+    filter:
+      brightness(2.06) contrast(1.20) saturate(1.24)
+      drop-shadow(0 0 5px rgba(236,255,250,.98))
+      drop-shadow(0 0 10px rgba(143,255,215,.96))
+      drop-shadow(0 0 21px rgba(143,255,215,.72))
+      drop-shadow(0 0 12px rgba(255,46,168,.88))
+      drop-shadow(0 0 27px rgba(255,46,168,.52))!important;
+    animation:ah1707-click-heart-pulse 1.55s cubic-bezier(.42,0,.32,1) infinite!important;
+    will-change:transform,filter,opacity!important;
+  }
+
+  /* The small hearts left on the raised shutters pulse more strongly so they read as controls. */
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame.is-haze-open>button.home-machine-haze-screen::before,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover.is-open::before{
+    opacity:1!important;
+    filter:
+      brightness(2.22) contrast(1.22) saturate(1.30)
+      drop-shadow(0 0 4px rgba(242,255,252,1))
+      drop-shadow(0 0 8px rgba(143,255,215,1))
+      drop-shadow(0 0 15px rgba(143,255,215,.82))
+      drop-shadow(0 0 9px rgba(255,46,168,.96))
+      drop-shadow(0 0 19px rgba(255,46,168,.62))!important;
+    animation:ah1707-small-click-heart-pulse 1.18s cubic-bezier(.38,0,.30,1) infinite!important;
+  }
+}
+}
+
+@keyframes ah1707-click-heart-pulse{
+  0%,100%{opacity:.82;transform:translate(-50%,-50%) scale(.88);}
+  45%{opacity:1;transform:translate(-50%,-50%) scale(1.12);}
+  62%{opacity:.94;transform:translate(-50%,-50%) scale(1.04);}
+}
+@keyframes ah1707-small-click-heart-pulse{
+  0%,100%{opacity:.78;transform:translateX(-50%) scale(.88);}
+  46%{opacity:1;transform:translateX(-50%) scale(1.28);}
+  64%{opacity:.95;transform:translateX(-50%) scale(1.10);}
+}
+@media (prefers-reduced-motion:reduce){
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>button.home-machine-haze-screen::before,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover::before{
+    animation:none!important;
+  }
+}
+
+/* Round 1708 — visibly weathered machine-window gold at the real 8px/12px sizes.
+   Use one small-scale worn-metal surface for every Home/Solution tube, and force
+   the Solution top tube into the rear stacking plane behind the screen/cover. */
+:root{
+  --ah1708-home-tube-h:8px;
+  --ah1708-solution-tube-h:12px;
+}
+
+@layer ah-machine-window-match{
+@media (min-width:801px){
+  /* ALL SIX MACHINE TUBES: identical, visibly worn gold material. */
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>.ah1701-machine-tube--top,
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>button.home-machine-haze-screen>.ah1701-machine-tube--bottom,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window-anchor>.ah1701-machine-tube--top,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover>.ah1701-machine-tube--bottom{
+    border:0!important;
+    outline:0!important;
+    opacity:1!important;
+    filter:none!important;
+    border-radius:3px!important;
+    background-color:#9e7429!important;
+    background:
+      linear-gradient(180deg,
+        rgba(255,244,190,.52) 0%,
+        rgba(231,197,105,.22) 18%,
+        rgba(255,255,255,0) 36%,
+        rgba(66,40,7,.16) 58%,
+        rgba(35,21,4,.48) 82%,
+        rgba(153,104,27,.20) 100%) center/100% 100% no-repeat,
+      radial-gradient(ellipse at 38% 48%,
+        rgba(48,29,5,.78) 0 1px,
+        rgba(110,76,21,.44) 1px 1.6px,
+        transparent 1.8px) 0 0/19px 8px repeat,
+      repeating-linear-gradient(96deg,
+        rgba(45,27,5,.46) 0 1px,
+        transparent 1px 5px,
+        rgba(239,208,121,.22) 5px 6px,
+        transparent 6px 12px,
+        rgba(74,47,9,.28) 12px 13px,
+        transparent 13px 19px) 0 0/43px 100% repeat-x,
+      var(--ah-r1684-rim-face,repeating-linear-gradient(
+        103deg,
+        #5b3b10 0 5%,
+        #a8792e 5% 12%,
+        #d3b15d 12% 18%,
+        #80601f 18% 25%,
+        #c39b43 25% 34%,
+        #6a4917 34% 41%,
+        #e0c36e 41% 48%,
+        #8c6725 48% 58%,
+        #b58b37 58% 67%,
+        #5f4318 67% 75%,
+        #c9a650 75% 85%,
+        #7b5a22 85% 93%,
+        #d9bd69 93% 100%)) center/146px 100% repeat-x!important;
+    background-blend-mode:screen,multiply,overlay,normal!important;
+    box-shadow:
+      0 0 0 1px rgba(38,23,4,.98),
+      0 0 0 2px rgba(105,73,22,.66),
+      0 2px 5px rgba(0,0,0,.34),
+      inset 0 1px 0 rgba(255,239,174,.42),
+      inset 0 -1px 0 rgba(53,32,6,.82),
+      inset 0 -2px 3px rgba(49,29,5,.26)!important;
+  }
+
+  /* Preserve the proportions that looked right before 1706. */
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>.ah1701-machine-tube--top,
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>button.home-machine-haze-screen>.ah1701-machine-tube--bottom{
+    height:var(--ah1708-home-tube-h)!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window-anchor>.ah1701-machine-tube--top,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover>.ah1701-machine-tube--bottom{
+    height:var(--ah1708-solution-tube-h)!important;
+  }
+
+  /* HOME: retain the approved top-tube geometry, behind its moving shutter. */
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame{
+    position:relative!important;
+    isolation:isolate!important;
+  }
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>.ah1701-machine-tube--top{
+    top:calc(var(--ah1708-home-tube-h)/-2)!important;
+    z-index:10!important;
+  }
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>button.home-machine-haze-screen{
+    position:absolute!important;
+    z-index:30!important;
+  }
+
+  /* SOLUTION: create an explicit rear/front stack. The upper tube is below both the
+     window and the moving cover, so the screen physically paints over it. */
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window-anchor{
+    position:relative!important;
+    isolation:isolate!important;
+    overflow:visible!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window-anchor>.ah1701-machine-tube--top{
+    top:calc(var(--ah1708-solution-tube-h)/-2)!important;
+    z-index:1!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window{
+    position:absolute!important;
+    z-index:40!important;
+    isolation:isolate!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover{
+    position:absolute!important;
+    z-index:60!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window>button#solution-process-cover.solution-process-cover>.ah1701-machine-tube--bottom{
+    z-index:120!important;
+  }
+}
+}
+
+/* Round 1710 — Home machine tubes: heavily worn gold with subtle buried brand-color traces.
+   Geometry/motion stays exactly as Round 1708: only the material changes. */
+@layer ah-machine-window-match {
+@media (min-width:801px){
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>.ah1701-machine-tube--top,
+  html body.page-home[data-page="home"] #home-machine-grid>.home-hero-engine-frame>button.home-machine-haze-screen>.ah1701-machine-tube--bottom{
+    background-color:#8d6421!important;
+    background:
+      /* rubbed/pitted dark wear */
+      radial-gradient(ellipse at 14% 44%,rgba(30,18,4,.78) 0 1px,rgba(68,43,9,.42) 1px 2px,transparent 2.4px) 0 0/23px 9px repeat,
+      radial-gradient(ellipse at 71% 67%,rgba(45,28,5,.66) 0 1px,transparent 1.7px) 0 0/31px 11px repeat,
+      /* faint, abraded neon-green residue */
+      repeating-linear-gradient(101deg,transparent 0 18px,rgba(143,255,215,.10) 18px 19px,transparent 19px 43px) 7px 1px/67px 100% repeat-x,
+      /* faint, abraded neon-pink residue */
+      repeating-linear-gradient(78deg,transparent 0 27px,rgba(255,46,168,.09) 27px 28px,transparent 28px 61px) 0 0/83px 100% repeat-x,
+      /* old scratches / rubbed highlights */
+      repeating-linear-gradient(96deg,rgba(43,25,4,.50) 0 1px,transparent 1px 5px,rgba(236,203,112,.20) 5px 6px,transparent 6px 13px,rgba(78,49,10,.30) 13px 14px,transparent 14px 22px) 0 0/47px 100% repeat-x,
+      linear-gradient(180deg,rgba(250,224,145,.34) 0%,rgba(197,153,61,.08) 25%,rgba(67,41,7,.18) 56%,rgba(38,23,4,.48) 84%,rgba(126,84,22,.22) 100%),
+      var(--ah-r1684-rim-face)!important;
+    background-blend-mode:multiply,multiply,screen,screen,overlay,normal,normal!important;
+    box-shadow:
+      0 0 0 1px rgba(34,20,3,.98),
+      0 0 0 2px rgba(101,70,20,.62),
+      0 2px 4px rgba(0,0,0,.38),
+      inset 0 1px 0 rgba(255,236,161,.35),
+      inset 0 -1px 0 rgba(45,27,5,.88),
+      inset 0 -2px 3px rgba(42,25,4,.36),
+      inset 1px 0 0 rgba(143,255,215,.055),
+      inset -1px 0 0 rgba(255,46,168,.05)!important;
+  }
+}
+}
