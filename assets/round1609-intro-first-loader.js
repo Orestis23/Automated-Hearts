@@ -34,7 +34,7 @@ setTimeout(() => {
  overlay.id='ah1609-intro';
  overlay.innerHTML=`<style>
  #ah1609-intro{position:fixed;inset:0;z-index:2147483647;display:block;color:#f2fbff;overflow:hidden;contain:paint;isolation:isolate;box-sizing:border-box;pointer-events:auto;background:transparent}
- #ah1609-intro .shield{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;box-sizing:border-box;background:#08172b center/cover no-repeat;border:2px solid #cdaa4d;will-change:transform;contain:paint;backface-visibility:hidden;transform:translate3d(0,0,0)}
+ #ah1609-intro .shield{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;box-sizing:border-box;background:#08172b url("./assets/page-shield-smoked-heart.webp") center/cover no-repeat;border:2px solid #cdaa4d;will-change:transform;contain:paint;backface-visibility:hidden;transform:translate3d(0,0,0)}
  #ah1609-intro .copy{width:min(84vw,760px);font:700 clamp(22px,2.05vw,36px)/1.48 AHIntroOrbitron,Orbitron,system-ui,sans-serif;letter-spacing:.012em;text-shadow:0 2px 3px #000}
  @media(max-width:900px){
    #ah1609-intro{top:var(--current-frame-top,62px);right:var(--current-frame-side,10px);bottom:var(--current-frame-bottom,74px);left:var(--current-frame-side,10px);border-radius:var(--current-frame-radius,18px);overflow:hidden;background:transparent}
@@ -45,7 +45,7 @@ setTimeout(() => {
  #ah1609-intro button{color:#ff2ea8;background:#0b1728;border:1px solid #8fffd7;padding:16px 24px;font:600 18px system-ui;cursor:pointer}
  #ah1609-intro .cursor{display:inline-block;width:.5em;height:1em;background:#8fffd7;vertical-align:-.1em;margin-left:.12em;animation:ah1609-blink .8s steps(1,end) infinite}
  #ah1609-intro small{display:block;font:14px/1.5 system-ui;color:#d8e7e4;text-align:center} @keyframes ah1609-blink{50%{opacity:0}}
- </style><div class="shield"><div class="copy"><div class="ready"><small>Preparing your introduction…</small></div><div class="story" hidden><p></p><p></p><p></p><p></p></div></div></div>`;
+ </style><div class="shield"><div class="copy"><div class="ready" aria-hidden="true"></div><div class="story" hidden><p></p><p></p><p></p><p></p></div></div></div>`;
  document.body.appendChild(overlay);
  const shield=overlay.querySelector('.shield'),ready=overlay.querySelector('.ready'),story=overlay.querySelector('.story'),lines=[...story.querySelectorAll('p')];
  const cursor=document.createElement('span');cursor.className='cursor';
@@ -58,22 +58,11 @@ setTimeout(() => {
   src.start(when);return src;
  }
  async function requireRiseAudio(){
-  if(!ctx||!buffers.open)throw Error('Impact audio unavailable');
+  // Round 1705 no-tap patch: never block the shield on a user gesture. Browsers that
+  // allow Web Audio autoplay still get the synchronized hit; others continue silently.
+  if(!ctx||!buffers.open)return false;
   if(ctx.state!=='running')await ctx.resume().catch(()=>{});
-  if(ctx.state==='running')return;
-  // Some mobile browsers can suspend Web Audio after a long scripted sequence. If that
-  // happens, wait for a fresh user gesture rather than allowing a silent/late shield rise.
-  await new Promise((resolve,reject)=>{
-   const gate=document.createElement('div');gate.className='rise-audio-gate';
-   gate.innerHTML='<button type="button">Tap to raise shield</button><small>Synchronizing the shield sound…</small>';
-   overlay.querySelector('.copy').appendChild(gate);
-   const btn=gate.querySelector('button');
-   btn.addEventListener('click',async()=>{
-    btn.disabled=true;
-    try{await ctx.resume();if(ctx.state!=='running')throw Error('Audio is still suspended');gate.remove();resolve();}
-    catch(e){btn.disabled=false;}
-   });
-  });
+  return ctx.state==='running';
  }
  const escaped=t=>t.replace(/[&<>']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;'}[c]));
  function render(i,text){lines[i].innerHTML=escaped(text).replace(/AI/g,'<span class="pink">AI</span>').replace(/Human|maximum efficiency/g,'<span class="green">$&</span>');lines[i].appendChild(cursor);}
@@ -81,7 +70,7 @@ setTimeout(() => {
  async function type(i,text){for(const char of text){strings[i]+=char;render(i,strings[i]);sound('type');await sleep(/[.,]/.test(char)?105:45);}}
  async function back(i,n){for(let j=0;j<n;j++){strings[i]=strings[i].slice(0,-1);render(i,strings[i]);sound('delete');await sleep(85);}}
  async function start(){
-  ready.remove();story.hidden=false;
+  ready?.remove();story.hidden=false;
   await type(0,'AI');await painted();
   // No site image, model, stylesheet, analytics or page runtime is discoverable before here.
   try{localStorage.setItem(key,'1');}catch(_){}
@@ -92,17 +81,17 @@ setTimeout(() => {
   await type(1,'Fully customized minimalistic systems in both design & foundation for maximum efficency');await back(1,5);await type(1,'ciency.');await sleep(610);
   await type(2,'Nothing you dont');await back(2,4);await type(2,"don't need.");await sleep(520);
   await type(3,'Just what you do.');await sleep(650);cursor.remove();
-  // Round 1623: the audible output clock is the master clock for the rise. The
-  // decoded impact buffer and a running AudioContext are hard prerequisites.
-  await requireRiseAudio();
+  // No-tap patch: the visual rise always proceeds. When Web Audio is available and
+  // already running, arm the impact sound against the same visual start/finish window.
+  const audioReady=await requireRiseAudio();
   const lead=.12,duration=2;
   const outputClockNow=()=>{
-   if(ctx.getOutputTimestamp){
+   if(ctx&&ctx.getOutputTimestamp){
     const stamp=ctx.getOutputTimestamp();
     if(stamp.performanceTime>0&&stamp.contextTime>=0)return stamp.contextTime+(performance.now()-stamp.performanceTime)/1000;
    }
-   const latency=Number.isFinite(ctx.outputLatency)?ctx.outputLatency:(Number.isFinite(ctx.baseLatency)?ctx.baseLatency:0);
-   return Math.max(0,ctx.currentTime-latency);
+   const latency=ctx?(Number.isFinite(ctx.outputLatency)?ctx.outputLatency:(Number.isFinite(ctx.baseLatency)?ctx.baseLatency:0)):0;
+   return ctx?Math.max(0,ctx.currentTime-latency):0;
   };
   // Preserve the original cubic-bezier(.22,.66,.24,1) motion while driving it from
   // the speaker/output clock instead of a timer or animation-end callback.
@@ -111,26 +100,20 @@ setTimeout(() => {
    let u=t;for(let i=0;i<5;i++){const x=bez(u,x1,x2),dx=3*(1-u)*(1-u)*x1+6*(1-u)*u*(x2-x1)+3*u*u*(1-x2);if(Math.abs(dx)<1e-5)break;u=Math.min(1,Math.max(0,u-(x-t)/dx));}
    return bez(u,y1,y2);
   };
-  const riseStart=outputClockNow()+lead,impactTime=riseStart+duration;
-  const impact=sound('open',impactTime);
-  if(!impact)throw Error('Impact sound could not be armed');
-  window.__AH_FIRST_INTRO_RISE_CLOCK__={audioMaster:true,riseStart,impactTime,duration};
+  const riseStartPerf=performance.now()+lead*1000;
+  let riseStart=0,impactTime=0;
+  if(audioReady){
+   riseStart=outputClockNow()+lead;impactTime=riseStart+duration;
+   sound('open',impactTime);
+  }
+  window.__AH_FIRST_INTRO_RISE_CLOCK__={audioMaster:audioReady,riseStart,impactTime,duration};
   window.dispatchEvent(new CustomEvent('ah:first-intro-raising',{detail:{intro:overlay}}));
   await new Promise(resolve=>{
-   let topSent=false,recovering=false;
+   let topSent=false;
    const markTop=()=>{if(topSent)return;topSent=true;shield.style.transform='translate3d(0,-101%,0)';window.dispatchEvent(new CustomEvent('ah:first-intro-top',{detail:{intro:overlay}}));resolve();};
    const frame=()=>{
     if(!overlay.isConnected){resolve();return;}
-    // If the OS/browser suspends Web Audio during the rise, freeze the shield too.
-    // The already-scheduled source pauses on the same context timeline, so resuming
-    // cannot make the impact arrive early or late relative to the shield.
-    if(ctx.state!=='running'){
-     if(!recovering){recovering=true;requireRiseAudio().then(()=>{recovering=false;requestAnimationFrame(frame);}).catch(()=>{recovering=false;requestAnimationFrame(frame);});}
-     return;
-    }
-    const audioNow=outputClockNow();
-    if(audioNow<riseStart){shield.style.transform='translate3d(0,0,0)';requestAnimationFrame(frame);return;}
-    const progress=Math.min(1,Math.max(0,(audioNow-riseStart)/duration));
+    const progress=Math.min(1,Math.max(0,(performance.now()-riseStartPerf)/(duration*1000)));
     shield.style.transform=`translate3d(0,${(-101*ease(progress)).toFixed(4)}%,0)`;
     if(progress>=1){markTop();return;}
     requestAnimationFrame(frame);
@@ -149,17 +132,13 @@ setTimeout(() => {
   // Resolve the font from the site's existing Google Fonts CSS rather than relying on a versioned URL.
   work.push(fetch('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap').then(r=>r.text()).then(async css=>{const urls=[...css.matchAll(/url\(([^)]+)\)/g)];if(urls.length){const face=new FontFace('AHIntroOrbitron',`url(${urls[urls.length-1][1]})`,{weight:'700'});await face.load();document.fonts.add(face);introFont=face;}}).catch(()=>{}));
   await Promise.all(work);
-  if(ctx?.state==='running'){await start();return;}
-  ready.innerHTML='<button type="button">Tap to begin</button><small>Enable the introduction sound.</small>';
-  ready.querySelector('button').addEventListener('click',async function unlock(){
-   const btn=this;btn.disabled=true;
-   try{await ctx.resume();if(ctx.state!=='running')throw Error('Audio did not unlock');btn.removeEventListener('click',unlock);await start();}
-   catch(_){btn.disabled=false;}
-  });
+  // Start immediately; do not require a click/tap just to enter the site.
+  if(ctx?.state!=='running')await ctx.resume().catch(()=>{});
+  await start();
  }
  prepare().catch(()=>{
+  // Never replace a failed intro with another interaction gate.
   if(released){overlay.remove();return;}
-  ready.innerHTML='<button type="button">Continue to website</button><small>The introduction could not load. Please try again later.</small>';
-  ready.querySelector('button').addEventListener('click',release,{once:true});
+  overlay.remove();release();
  });
 },0);

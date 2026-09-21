@@ -1,0 +1,100 @@
+/* Automated Hearts Round 1655 — deterministic page-name bulb inversion + fixed desktop footer metrics. */
+@media (min-width:901px){
+  html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top{
+    isolation:isolate!important;
+  }
+
+  /* Retire older inverse text clones; Round 1655 owns the bulb-color handoff. */
+  html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+  > :is(.ah1641-page-name-dark-clone,.ah1655-page-name-inverse-old){
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+  }
+  html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+  > .page-sign-progress-inverse > :is(.ah1643-page-progress-text,.ah1636-page-progress-text,.page-sign-brand-word){
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+  }
+
+  /* One dark-blue LED copy, clipped by the same live scroll percentage as the fill.
+     Retreating the fill automatically reveals the original light bulbs again. */
+  html body[data-page] > .rim-page-name-screen.footer-page-screen.header-page-screen--top
+  > .ah1655-page-name-inverse{
+    position:absolute!important;
+    z-index:2147483207!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    box-sizing:border-box!important;
+    margin:0!important;
+    overflow:hidden!important;
+    border:0!important;
+    outline:0!important;
+    background-color:transparent!important;
+    background-image:radial-gradient(circle at 1.55px 1.48px,
+      #779cc3 0 .18px,
+      #28527f .24px .56px,
+      #153b67 .62px .94px,
+      #0c294a 1.00px 1.28px,
+      #06192f 1.34px 1.54px,
+      transparent 1.62px)!important;
+    background-size:4.6px 4.6px!important;
+    background-repeat:repeat!important;
+    -webkit-background-clip:text!important;
+    background-clip:text!important;
+    color:transparent!important;
+    -webkit-text-fill-color:transparent!important;
+    text-shadow:none!important;
+    filter:drop-shadow(0 0 .35px rgba(67,117,164,.34)) drop-shadow(0 0 1.1px rgba(3,20,40,.82))!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:none!important;
+    -webkit-clip-path:inset(0 calc(100% - var(--page-sign-scroll-percent,0%)) 0 0)!important;
+    clip-path:inset(0 calc(100% - var(--page-sign-scroll-percent,0%)) 0 0)!important;
+    transition:-webkit-clip-path 34ms linear,clip-path 34ms linear!important;
+  }
+
+  /* Footer geometry and typography are fixed from first paint through runtime. */
+  :root{
+    --ah1653-footer-gap:clamp(20px,4vw,96px);
+    --ah1653-footer-btn-w:clamp(181.25px,calc((100vw - 416px)/4),275px);
+  }
+  html body[data-page] > footer#site-footer nav#primary-nav > .primary-nav__group{
+    gap:var(--ah1653-footer-gap)!important;
+  }
+  html body[data-page] > footer#site-footer nav#primary-nav > .primary-nav__group
+  > a.footer-structure-control.mechanical-send-control[data-nav]{
+    flex:0 0 var(--ah1653-footer-btn-w)!important;
+    width:var(--ah1653-footer-btn-w)!important;
+    min-width:var(--ah1653-footer-btn-w)!important;
+    max-width:var(--ah1653-footer-btn-w)!important;
+    height:70px!important;
+    min-height:70px!important;
+    max-height:70px!important;
+  }
+  html body[data-page] > footer#site-footer .footer-nav-label,
+  html body[data-page] > footer#site-footer .footer-control-copy,
+  html body[data-page] > footer#site-footer .send-control-copy{
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:18.4px!important;
+    font-weight:400!important;
+    font-style:normal!important;
+    font-stretch:normal!important;
+    line-height:18.4px!important;
+    letter-spacing:0!important;
+    white-space:nowrap!important;
+    text-align:center!important;
+    transform:none!important;
+    transition:none!important;
+    animation:none!important;
+  }
+}
+
+@media (min-width:1200px){
+  :root{
+    --ah1653-footer-gap:clamp(48px,6vw,116px);
+    --ah1653-footer-btn-w:clamp(225px,calc((100vw - 544px)/4),350px);
+  }
+}

@@ -359,3 +359,559 @@ html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__
 html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__separator > svg.charity-marquee__person{
   filter:brightness(1.18) drop-shadow(0 0 2px currentColor) drop-shadow(0 0 6px currentColor)!important;
 }
+
+/* Round 1675 — Solution machine window depth + exact outer-viewport weathered-gold bottom lip. */
+:root{
+  --ah-r1675-weathered-gold-edge:var(--ah-r1395-weathered-gold-edge,repeating-linear-gradient(
+    103deg,
+    #5b3b10 0 5%,
+    #a8792e 5% 12%,
+    #d3b15d 12% 18%,
+    #80601f 18% 25%,
+    #c39b43 25% 34%,
+    #6a4917 34% 41%,
+    #e0c36e 41% 48%,
+    #8c6725 48% 58%,
+    #b58b37 58% 67%,
+    #5f4318 67% 75%,
+    #c9a650 75% 85%,
+    #7b5a22 85% 93%,
+    #d9bd69 93% 100%
+  ));
+}
+
+@media (min-width:801px){
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window{
+    position:relative!important;
+    isolation:isolate!important;
+    box-shadow:
+      inset 4px 4px 8px rgba(201,224,231,.20),
+      inset -6px -6px 12px rgba(0,0,0,.72),
+      0 4px 4px -2px rgba(0,0,0,.88),
+      0 20px 22px -10px rgba(0,0,0,.76),
+      0 31px 34px -22px rgba(0,0,0,.48)!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:70!important;
+    left:-1px!important;
+    right:-1px!important;
+    bottom:-1px!important;
+    height:7px!important;
+    pointer-events:none!important;
+    background:
+      linear-gradient(180deg,rgba(255,244,199,.16) 0%,rgba(255,255,255,0) 34%,rgba(27,15,3,.30) 100%),
+      var(--ah-r1675-weathered-gold-edge)!important;
+    background-blend-mode:screen,normal!important;
+    border-top:1px solid rgba(205,166,78,.93)!important;
+    border-bottom:1px solid rgba(91,61,17,.98)!important;
+    box-shadow:inset 0 1px 0 rgba(239,210,132,.22),inset 0 -1px 0 rgba(30,18,4,.72)!important;
+  }
+}
+
+@media (max-width:800px){
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell{
+    position:relative!important;
+    isolation:isolate!important;
+    box-shadow:
+      inset 4px 4px 8px rgba(201,224,231,.20),
+      inset -6px -6px 12px rgba(0,0,0,.72),
+      0 3px 3px -2px rgba(0,0,0,.88),
+      0 13px 15px -7px rgba(0,0,0,.72),
+      0 21px 24px -17px rgba(0,0,0,.42)!important;
+  }
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:70!important;
+    left:-1px!important;
+    right:-1px!important;
+    bottom:-1px!important;
+    height:5px!important;
+    pointer-events:none!important;
+    background:
+      linear-gradient(180deg,rgba(255,244,199,.14) 0%,rgba(255,255,255,0) 34%,rgba(27,15,3,.30) 100%),
+      var(--ah-r1675-weathered-gold-edge)!important;
+    background-blend-mode:screen,normal!important;
+    border-top:1px solid rgba(198,157,68,.92)!important;
+    border-bottom:1px solid rgba(82,54,14,.98)!important;
+    box-shadow:inset 0 1px 0 rgba(231,198,111,.16),inset 0 -1px 0 rgba(37,21,4,.68)!important;
+  }
+}
+
+/* Round 1678 — remove Solution sign mint rim; keep only the gold bottom lip on Solution windows. */
+@media (min-width:801px){
+  html body.page-solutions[data-page="solutions"] #solution-process-header .ah-solution-open-sign{
+    border:0!important;
+    box-shadow:0 4px 4px -2px rgba(0,0,0,.72),0 14px 18px -12px rgba(0,0,0,.54)!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window{
+    position:relative!important;
+    isolation:isolate!important;
+    border:0!important;
+    border-image:none!important;
+    background:transparent!important;
+    box-shadow:0 4px 4px -2px rgba(0,0,0,.88),0 20px 22px -10px rgba(0,0,0,.76),0 31px 34px -22px rgba(0,0,0,.48)!important;
+  }
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:70!important;
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    height:7px!important;
+    pointer-events:none!important;
+    background:
+      linear-gradient(180deg,rgba(255,244,199,.16) 0%,rgba(255,255,255,0) 34%,rgba(27,15,3,.30) 100%),
+      var(--ah-r1675-weathered-gold-edge)!important;
+    background-blend-mode:screen,normal!important;
+    border-top:1px solid rgba(205,166,78,.93)!important;
+    border-bottom:1px solid rgba(91,61,17,.98)!important;
+    box-shadow:inset 0 1px 0 rgba(239,210,132,.22),inset 0 -1px 0 rgba(30,18,4,.72)!important;
+  }
+}
+
+@media (max-width:800px){
+  html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section .ah-solution-open-sign{
+    border:0!important;
+    box-shadow:0 3px 3px -2px rgba(0,0,0,.70),0 10px 13px -8px rgba(0,0,0,.50)!important;
+  }
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell{
+    position:relative!important;
+    isolation:isolate!important;
+    border:0!important;
+    border-image:none!important;
+    background:transparent!important;
+    box-shadow:0 3px 3px -2px rgba(0,0,0,.88),0 13px 15px -7px rgba(0,0,0,.72),0 21px 24px -17px rgba(0,0,0,.42)!important;
+  }
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    z-index:70!important;
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    height:5px!important;
+    pointer-events:none!important;
+    background:
+      linear-gradient(180deg,rgba(255,244,199,.14) 0%,rgba(255,255,255,0) 34%,rgba(27,15,3,.30) 100%),
+      var(--ah-r1675-weathered-gold-edge)!important;
+    background-blend-mode:screen,normal!important;
+    border-top:1px solid rgba(198,157,68,.92)!important;
+    border-bottom:1px solid rgba(82,54,14,.98)!important;
+    box-shadow:inset 0 1px 0 rgba(231,198,111,.16),inset 0 -1px 0 rgba(37,21,4,.68)!important;
+  }
+}
+
+/* Round 1682 — make the Solution machine-window lower metal strip the same weathered gold. */
+@media (min-width:801px){
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-cover::after,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:8!important;
+    left:0!important; right:0!important; bottom:0!important;
+    height:9px!important;
+    border-radius:0!important;
+    border-top:1px solid rgba(245,223,154,.66)!important;
+    border-bottom:1px solid rgba(51,32,7,.94)!important;
+    background:
+      linear-gradient(180deg,rgba(255,248,214,.18) 0%,rgba(255,255,255,0) 34%,rgba(29,17,4,.28) 100%),
+      var(--ah-r1675-weathered-gold-edge)!important;
+    background-blend-mode:screen,normal!important;
+    box-shadow:inset 0 1px 0 rgba(255,245,196,.24),0 2px 6px rgba(0,0,0,.26)!important;
+    pointer-events:none!important;
+  }
+}
+@media (max-width:800px){
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell > #solution-mobile-cover.solution-mobile-window-cover::after,
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell::after{
+    content:""!important;
+    position:absolute!important;
+    z-index:8!important;
+    left:0!important; right:0!important; bottom:0!important;
+    height:7px!important;
+    border-radius:0!important;
+    border-top:1px solid rgba(244,220,149,.64)!important;
+    border-bottom:1px solid rgba(48,30,6,.92)!important;
+    background:
+      linear-gradient(180deg,rgba(255,248,214,.16) 0%,rgba(255,255,255,0) 34%,rgba(29,17,4,.28) 100%),
+      var(--ah-r1675-weathered-gold-edge)!important;
+    background-blend-mode:screen,normal!important;
+    box-shadow:inset 0 1px 0 rgba(255,245,196,.20),0 2px 5px rgba(0,0,0,.22)!important;
+    pointer-events:none!important;
+  }
+}
+
+/* Round 1683 — shorten Solution machine gold lips to about 2x the viewport gold rim. */
+@media (min-width:801px){
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-cover::after,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window::after{
+    height:4px!important;
+    border-top:1px solid rgba(245,223,154,.62)!important;
+    border-bottom:1px solid rgba(51,32,7,.92)!important;
+    background:
+      linear-gradient(180deg,rgba(255,248,214,.14) 0%,rgba(255,255,255,0) 32%,rgba(29,17,4,.24) 100%),
+      var(--ah-r1675-weathered-gold-edge)!important;
+    background-blend-mode:screen,normal!important;
+  }
+}
+@media (max-width:800px){
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell > #solution-mobile-cover.solution-mobile-window-cover::after,
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell::after{
+    height:3px!important;
+    border-top:1px solid rgba(244,220,149,.58)!important;
+    border-bottom:1px solid rgba(48,30,6,.90)!important;
+    background:
+      linear-gradient(180deg,rgba(255,248,214,.12) 0%,rgba(255,255,255,0) 32%,rgba(29,17,4,.24) 100%),
+      var(--ah-r1675-weathered-gold-edge)!important;
+    background-blend-mode:screen,normal!important;
+  }
+}
+
+/* Round 1684 — Solution machine-window bottom lips match the viewport upper gold rim look. */
+@media (min-width:801px){
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-cover::after,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window::after{
+    height:4px!important;
+    border:0!important;
+    background:var(--ah-r1684-rim-face)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(246,220,144,.24),
+      inset 0 -1px 0 rgba(40,24,6,.72),
+      0 0 0 1px rgba(28,17,4,.96)!important;
+  }
+}
+@media (max-width:800px){
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell > #solution-mobile-cover.solution-mobile-window-cover::after,
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell::after{
+    height:3px!important;
+    border:0!important;
+    background:var(--ah-r1684-rim-face)!important;
+    box-shadow:
+      inset 0 1px 0 rgba(241,213,132,.20),
+      inset 0 -1px 0 rgba(37,23,6,.68),
+      0 0 0 1px rgba(28,17,4,.94)!important;
+  }
+}
+
+/* Round 1686 — Solution machine-window bottom lips match the viewport rim more exactly. */
+@media (min-width:801px){
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-cover::after,
+  html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window::after{
+    height:4px!important;
+    border:0!important;
+    background:var(--ah-r1684-rim-face)!important;
+    box-shadow:
+      0 0 0 1px rgba(28,17,4,.98),
+      inset 0 1px 0 rgba(246,220,144,.26),
+      inset 0 -1px 0 rgba(40,24,6,.72),
+      inset 1px 0 0 rgba(228,194,103,.18),
+      inset -1px 0 0 rgba(54,35,9,.52)!important;
+  }
+}
+@media (max-width:800px){
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell > #solution-mobile-cover.solution-mobile-window-cover::after,
+  html body #lite-model-stage #lite-model-shell.solution-mobile-model-shell::after{
+    height:3px!important;
+    border:0!important;
+    background:var(--ah-r1684-rim-face)!important;
+    box-shadow:
+      0 0 0 1px rgba(28,17,4,.96),
+      inset 0 1px 0 rgba(241,213,132,.22),
+      inset 0 -1px 0 rgba(37,23,6,.68),
+      inset 1px 0 0 rgba(217,182,92,.14),
+      inset -1px 0 0 rgba(51,33,8,.46)!important;
+  }
+}
+
+/* Round 1687 — maximize ticker text/human visibility inside the tube ticker. */
+html body[data-page] > #home-ticker-wrap#home-ticker-wrap > #home-charity-ticker#home-charity-ticker,
+html body[data-page] > footer#site-footer #home-ticker-wrap#home-ticker-wrap > #home-charity-ticker#home-charity-ticker{
+  border-color:rgba(240,250,252,.98)!important;
+  background:
+    linear-gradient(180deg,#173b52 0%,#0c2536 32%,#071827 64%,#030b12 100%)!important;
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,.94),
+    inset 0 -7px 12px rgba(0,0,0,.36),
+    inset 0 0 12px rgba(94,214,238,.16),
+    0 2px 5px rgba(0,0,0,.42)!important;
+}
+html body[data-page] > #home-ticker-wrap#home-ticker-wrap .r966-ticker-bubble-lens,
+html body[data-page] > footer#site-footer #home-ticker-wrap#home-ticker-wrap .r966-ticker-bubble-lens{
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.035) 19%,rgba(255,255,255,0) 42%,rgba(0,0,0,.018) 78%,rgba(0,0,0,.06) 100%)!important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.16),
+    inset 0 -2px 5px rgba(0,0,0,.10)!important;
+}
+html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__segment{
+  filter:brightness(1.34) contrast(1.18) drop-shadow(0 0 1px currentColor) drop-shadow(0 0 4px currentColor)!important;
+  -webkit-filter:brightness(1.34) contrast(1.18) drop-shadow(0 0 1px currentColor) drop-shadow(0 0 4px currentColor)!important;
+  text-shadow:0 0 2px currentColor,0 0 7px currentColor!important;
+  opacity:1!important;
+}
+html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__separator > svg.charity-marquee__person{
+  filter:brightness(1.42) contrast(1.16) drop-shadow(0 0 2px currentColor) drop-shadow(0 0 7px currentColor)!important;
+  opacity:1!important;
+  stroke-width:2.05!important;
+}
+html body[data-page] #home-charity-ticker#home-charity-ticker > strong.charity-marquee,
+html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__track{
+  font-size:clamp(16px,1.02vw,20px)!important;
+  line-height:1!important;
+}
+@media (max-width:760px){
+  html body[data-page] #home-charity-ticker#home-charity-ticker > strong.charity-marquee,
+  html body[data-page] #home-charity-ticker#home-charity-ticker .charity-marquee__track{
+    font-size:clamp(13px,3.4vw,17px)!important;
+  }
+}
+
+/* Round 1689 — non-Home section-break glow strength and spacing match Home. */
+html body.page-solutions[data-page="solutions"] .ah1483-section-break.ah1483-section-break,
+html body[data-ah-mobile-surface="solutions"] .ah1483-section-break.ah1483-section-break{
+  box-shadow:0 0 2px rgba(143,255,215,.003625),0 0 6px rgba(143,255,215,.00175),0 0 12px rgba(143,255,215,.0006875)!important;
+}
+html body:not(.page-home):not(.page-solutions)[data-page] .ah1483-section-break.ah1483-section-break,
+html body:not([data-ah-mobile-surface="home"]):not([data-ah-mobile-surface="solutions"])[data-ah-mobile-surface] .ah1483-section-break.ah1483-section-break{
+  box-shadow:0 0 2px rgba(255,46,168,.003625),0 0 6px rgba(255,46,168,.00175),0 0 12px rgba(255,46,168,.0006875)!important;
+}
+@media (min-width:901px){
+  html body:not(.page-home)[data-page] main#main-content#main-content#main-content#main-content > :is(section,div):has(> .ah1483-section-break--top){
+    padding-top:96px!important;
+  }
+  html body:not(.page-home)[data-page] main#main-content#main-content#main-content#main-content > :is(section,div):has(> .ah1483-section-break--bottom){
+    padding-bottom:96px!important;
+  }
+}
+@media (max-width:900px){
+  html body:not([data-ah-mobile-surface="home"])[data-ah-mobile-surface] main#main-content#main-content#main-content#main-content > :is(section,div):has(> .ah1483-section-break--top){
+    padding-top:51px!important;
+  }
+  html body:not([data-ah-mobile-surface="home"])[data-ah-mobile-surface] main#main-content#main-content#main-content#main-content > :is(section,div):has(> .ah1483-section-break--bottom){
+    padding-bottom:51px!important;
+  }
+}
+
+/* Round 1690 — remove the alloy rim around the Solution machine window; keep only the bottom lip treatment. */
+#solution-process-header .solution-process-window-anchor::before,
+#solution-process-header .solution-process-window-anchor::after{
+  display:none!important;
+  content:none!important;
+}
+#solution-process-header .solution-process-window{
+  border:0!important;
+  border-image:none!important;
+  box-shadow:none!important;
+  background:#01040a!important;
+}
+#solution-process-header .solution-process-cover{
+  box-shadow:
+    inset 0 1px 0 rgba(232,249,252,.20),
+    inset 0 10px 24px rgba(225,250,255,.040),
+    inset 0 -24px 38px rgba(0,0,0,.17),
+    inset 0 0 0 1px rgba(194,226,233,.10)!important;
+}
+#lite-model-stage .solution-mobile-model-shell,
+#lite-model-stage .solution-mobile-window-cover{
+  border:0!important;
+  border-image:none!important;
+  box-shadow:none!important;
+}
+
+/* Round 1696 QA — viewport rim authority.
+   Use the real persistent gold-rim element as one continuous solid metal tube. */
+:root{
+  --ah1696-vp-gold:#b88b38;
+  --ah1696-vp-gold-hi:#ead17b;
+  --ah1696-vp-gold-mid:#c7a04a;
+  --ah1696-vp-gold-low:#76521b;
+  --ah1696-vp-gold-deep:#3b2608;
+  --ah1696-vp-band:6px;
+}
+html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim::before,
+html body[data-page] > .ah-persistent-outer-rim.ah-persistent-outer-rim::after,
+html body[data-page] > .ah-persistent-outer-rim > .ah-shell-edge::before,
+html body[data-page] > .ah-persistent-outer-rim > .ah-r932-corner-mask::before{
+  display:none!important;
+  content:none!important;
+}
+html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  position:fixed!important;
+  top:var(--current-frame-top,96px)!important;
+  right:var(--current-frame-side,88px)!important;
+  bottom:var(--current-frame-bottom,96px)!important;
+  left:var(--current-frame-side,88px)!important;
+  z-index:2147483250!important;
+  box-sizing:border-box!important;
+  pointer-events:none!important;
+  border:var(--ah1696-vp-band) solid var(--ah1696-vp-gold)!important;
+  border-radius:var(--current-frame-radius,32px)!important;
+  background:transparent!important;
+  filter:none!important;
+  transform:translateZ(0)!important;
+  box-shadow:
+    0 0 0 1px rgba(43,27,6,.98),
+    0 0 0 2px rgba(123,87,28,.72),
+    0 0 5px rgba(196,151,53,.12),
+    inset 0 0 0 1px rgba(245,217,137,.46),
+    inset 0 0 0 2px rgba(105,71,18,.28)!important;
+}
+html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim::before{
+  content:""!important;
+  position:absolute!important;
+  inset:calc(-1 * var(--ah1696-vp-band))!important;
+  border-radius:inherit!important;
+  pointer-events:none!important;
+  border:var(--ah1696-vp-band) solid transparent!important;
+  background:
+    repeating-linear-gradient(108deg,
+      rgba(114,75,19,.18) 0 5%,
+      rgba(255,235,169,.15) 5% 11%,
+      rgba(135,94,27,.12) 11% 18%,
+      rgba(255,225,139,.12) 18% 25%,
+      rgba(101,65,16,.14) 25% 31%,
+      rgba(240,206,115,.12) 31% 39%,
+      rgba(126,86,23,.11) 39% 47%,
+      rgba(255,232,154,.13) 47% 56%,
+      rgba(111,73,18,.14) 56% 64%,
+      rgba(235,196,99,.13) 64% 73%,
+      rgba(130,90,25,.12) 73% 82%,
+      rgba(255,228,147,.12) 82% 91%,
+      rgba(104,68,17,.14) 91% 100%) border-box!important;
+  -webkit-mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0)!important;
+  -webkit-mask-composite:xor!important;
+  mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0)!important;
+  mask-composite:exclude!important;
+  opacity:.82!important;
+}
+html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim::after{
+  content:""!important;
+  position:absolute!important;
+  inset:calc(-1 * var(--ah1696-vp-band))!important;
+  border-radius:inherit!important;
+  pointer-events:none!important;
+  border:1px solid rgba(239,207,122,.44)!important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,239,181,.12),
+    0 0 0 1px rgba(68,43,9,.42)!important;
+}
+@media (max-width:900px){
+  :root{--ah1696-vp-band:5px;}
+  html body[data-page] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
+    border-radius:var(--current-frame-radius,18px)!important;
+  }
+}
+
+/* Round 1701 — single desktop Solution machine-window tube authority.
+   Actual stationary .ah1701-machine-tube elements are used; no moving-cover lip. */
+@media (min-width:801px){
+  html body.page-solutions.page-solutions[data-page="solutions"] #solution-process-header#solution-process-header{
+    overflow:visible!important;
+  }
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-exhibit,
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor{
+    overflow:visible!important;
+  }
+
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor{
+    position:relative!important;
+    isolation:isolate!important;
+    border:0!important;
+    border-width:0!important;
+    border-image:none!important;
+    outline:0!important;
+    box-shadow:none!important;
+  }
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window{
+    z-index:10!important;
+    inset:0!important;
+    overflow:hidden!important;
+    border:0!important;
+    border-width:0!important;
+    border-image:none!important;
+    outline:0!important;
+    box-shadow:none!important;
+    background:#01040a!important;
+  }
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-cover{
+    z-index:30!important;
+    border:0!important;
+    border-width:0!important;
+    border-image:none!important;
+    outline:0!important;
+  }
+
+  /* Retire every legacy anchor/cover rim or lip. */
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor::before,
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor::after,
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window::after,
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-cover::after{
+    display:none!important;
+    content:none!important;
+    background:none!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor > .ah1701-machine-tube{
+    display:block!important;
+    position:absolute!important;
+    left:0!important;
+    right:0!important;
+    width:auto!important;
+    height:8px!important;
+    margin:0!important;
+    padding:0!important;
+    pointer-events:none!important;
+    opacity:1!important;
+    border:0!important;
+    border-radius:1px!important;
+    outline:0!important;
+    background:var(--ah1701-machine-gold-face,repeating-linear-gradient(
+      107deg,#8b601e 0 6%,#b38331 6% 14%,#d0ad57 14% 23%,#a57427 23% 33%,
+      #c79b43 33% 44%,#91631f 44% 54%,#d6b65f 54% 64%,#aa7b29 64% 74%,
+      #c99d45 74% 84%,#966721 84% 93%,#bd8e3a 93% 100%
+    ))!important;
+    background-color:#b78935!important;
+    filter:none!important;
+  }
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor > .ah1701-machine-tube--top{
+    top:-4px!important;
+    bottom:auto!important;
+    z-index:2!important;
+    box-shadow:0 -1px 0 #3a2507,inset 0 1px 0 #f2d990,inset 0 -2px 0 #5a3a0c!important;
+  }
+  html body.page-solutions.page-solutions[data-page="solutions"]
+  #solution-process-header#solution-process-header .solution-process-window-anchor > .ah1701-machine-tube--bottom{
+    top:auto!important;
+    bottom:-8px!important;
+    z-index:60!important;
+    box-shadow:0 -1px 0 #efd489,0 1px 0 #3a2507,0 4px 7px rgba(0,0,0,.42),inset 0 1px 0 #f2d990,inset 0 -2px 0 #5a3a0c!important;
+  }
+}

@@ -72,13 +72,11 @@
     const nav=document.querySelector('footer#site-footer nav#primary-nav');
     const group=nav?.querySelector(':scope > .primary-nav__group');
     if(!nav||!group)return;
-    const gap=innerWidth>=1200?128:96;
-    const count=Math.max(1,list.length);
-    const room=Math.max(480,innerWidth-32-gap*(count-1));
-    const preferred=innerWidth>=1200?Math.min(280,Math.max(180,Math.floor(room/count))):Math.min(220,Math.max(145,Math.floor(room/count)));
+    /* Round 1653: geometry is defined from first paint by CSS variables and the
+       footer markup. Runtime uses the exact same values, so there is no load-time resize. */
     imp(nav,'position','absolute');imp(nav,'left','50%');imp(nav,'right','auto');imp(nav,'top','50%');imp(nav,'bottom','auto');imp(nav,'width','max-content');imp(nav,'max-width','calc(100vw - 16px)');imp(nav,'height','70px');imp(nav,'margin','0');imp(nav,'padding','0');imp(nav,'transform','translate3d(-50%,-50%,0)');imp(nav,'overflow','visible');
-    imp(group,'position','relative');imp(group,'inset','auto');imp(group,'display','flex');imp(group,'align-items','center');imp(group,'justify-content','center');imp(group,'width','max-content');imp(group,'max-width','none');imp(group,'height','70px');imp(group,'margin','0');imp(group,'padding','0');imp(group,'gap',gap+'px');imp(group,'transform','none');imp(group,'overflow','visible');
-    list.forEach(btn=>{imp(btn,'flex','0 0 '+preferred+'px');imp(btn,'width',preferred+'px');imp(btn,'min-width',preferred+'px');imp(btn,'max-width',preferred+'px');imp(btn,'height','70px');imp(btn,'min-height','70px');imp(btn,'max-height','70px');});
+    imp(group,'position','relative');imp(group,'inset','auto');imp(group,'display','flex');imp(group,'align-items','center');imp(group,'justify-content','center');imp(group,'width','max-content');imp(group,'max-width','none');imp(group,'height','70px');imp(group,'margin','0');imp(group,'padding','0');imp(group,'gap','var(--ah1653-footer-gap)');imp(group,'transform','none');imp(group,'overflow','visible');
+    list.forEach(btn=>{imp(btn,'flex','0 0 var(--ah1653-footer-btn-w)');imp(btn,'width','var(--ah1653-footer-btn-w)');imp(btn,'min-width','var(--ah1653-footer-btn-w)');imp(btn,'max-width','var(--ah1653-footer-btn-w)');imp(btn,'height','70px');imp(btn,'min-height','70px');imp(btn,'max-height','70px');});
   }
   function paint(){
     raf=0;if(!desktop()||painting)return;painting=true;

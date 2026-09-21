@@ -31,30 +31,18 @@
   }
 
   function mobilePosters(){
-    const modelPoster=document.querySelector('.machine-3d-frame .machine-live-poster');
-    if(modelPoster && !modelPoster.getAttribute('src')){
-      loadImageInto(modelPoster,'./assets/home-machine-orbit-mobile-round1101-poster.webp?v=1644r');
-    }
-    // The cards video already carries its own tiny poster attribute; merely keeping
-    // the element visible is enough, so no additional network request is introduced here.
+    // Round 1664: no static 3D-model poster. The closed machine keeps its neutral
+    // surface until the current live model is ready. The cards video retains its tiny poster.
   }
 
   function ensureDesktopRolodexPoster(){
+    /* Round 1693: desktop Rolodex always shows the live cycling cards behind the shutter.
+       Remove any legacy static poster so opening/closing cannot swap to an older card image. */
     const frame=document.querySelector('#home-machine-grid > .home-hero-rolodex-frame');
     if(!frame) return null;
-    let img=frame.querySelector(':scope > .ah1644-machine-window-poster');
-    if(!img){
-      img=document.createElement('img');
-      img.alt='';
-      img.setAttribute('aria-hidden','true');
-      img.className='ah1644-machine-window-poster';
-      img.decoding='async';
-      img.loading='lazy';
-      const insertBefore=frame.querySelector(':scope > .machine-three-ridge-overlay, :scope > .home-machine-haze-screen');
-      frame.insertBefore(img,insertBefore||null);
-    }
-    loadImageInto(img,'./assets/home-rolodex-mobile-poster-round1642.webp?v=1644r');
-    return img;
+    frame.querySelectorAll(':scope > .ah1644-machine-window-poster, :scope > .home-mobile-machine-poster--primary')
+      .forEach((img)=>img.remove());
+    return null;
   }
 
   function markDesktopReady(frame,iframe){
@@ -84,8 +72,6 @@
     const grid=document.getElementById('home-machine-grid');
     if(!grid) return;
     ensureDesktopRolodexPoster();
-    const primaryPoster=grid.querySelector('.home-mobile-machine-poster--primary');
-    if(primaryPoster) primaryPoster.classList.add('ah1644-machine-window-poster');
     grid.querySelectorAll(':scope > .home-hero-engine-frame').forEach(frame=>{
       const iframe=frame.querySelector(':scope > iframe.home-hero-engine-embed');
       if(iframe) markDesktopReady(frame,iframe);
