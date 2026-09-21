@@ -45,9 +45,9 @@ setTimeout(() => {
  #ah1609-intro button{color:#ff2ea8;background:#0b1728;border:1px solid #8fffd7;padding:16px 24px;font:600 18px system-ui;cursor:pointer}
  #ah1609-intro .cursor{display:inline-block;width:.5em;height:1em;background:#8fffd7;vertical-align:-.1em;margin-left:.12em;animation:ah1609-blink .8s steps(1,end) infinite}
  #ah1609-intro small{display:block;font:14px/1.5 system-ui;color:#d8e7e4;text-align:center} @keyframes ah1609-blink{50%{opacity:0}}
- </style><div class="shield"><div class="copy"><div class="ready" aria-hidden="true"></div><div class="story" hidden><p></p><p></p><p></p><p></p></div></div></div>`;
+ </style><div class="shield"><div class="copy"><div class="story" hidden><p></p><p></p><p></p><p></p></div></div></div>`;
  document.body.appendChild(overlay);
- const shield=overlay.querySelector('.shield'),ready=overlay.querySelector('.ready'),story=overlay.querySelector('.story'),lines=[...story.querySelectorAll('p')];
+ const shield=overlay.querySelector('.shield'),story=overlay.querySelector('.story'),lines=[...story.querySelectorAll('p')];
  const cursor=document.createElement('span');cursor.className='cursor';
  async function bytes(url){const res=await fetch(url,{cache:'force-cache'});if(!res.ok)throw Error('Asset unavailable');return res.arrayBuffer();}
  function sound(name,when=ctx?.currentTime||0){
@@ -57,11 +57,18 @@ setTimeout(() => {
   if(name==='open'){gain.gain.setValueAtTime(volume,when+Math.max(0,src.buffer.duration-.5));gain.gain.linearRampToValueAtTime(0,when+src.buffer.duration);}
   src.start(when);return src;
  }
+ function resumeAudio(){
+  if(ctx&&ctx.state!=='running')try{ctx.resume().catch(()=>{});}catch(_){}
+ }
+ function listenForAudio(){
+  document.addEventListener('pointerdown',resumeAudio,{capture:true,passive:true});
+  document.addEventListener('keydown',resumeAudio,{capture:true});
+ }
  async function requireRiseAudio(){
   // Round 1705 no-tap patch: never block the shield on a user gesture. Browsers that
   // allow Web Audio autoplay still get the synchronized hit; others continue silently.
   if(!ctx||!buffers.open)return false;
-  if(ctx.state!=='running')await ctx.resume().catch(()=>{});
+  resumeAudio();
   return ctx.state==='running';
  }
  const escaped=t=>t.replace(/[&<>']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;'}[c]));
@@ -70,13 +77,13 @@ setTimeout(() => {
  async function type(i,text){for(const char of text){strings[i]+=char;render(i,strings[i]);sound('type');await sleep(/[.,]/.test(char)?105:45);}}
  async function back(i,n){for(let j=0;j<n;j++){strings[i]=strings[i].slice(0,-1);render(i,strings[i]);sound('delete');await sleep(85);}}
  async function start(){
-  ready?.remove();story.hidden=false;
+  story.hidden=false;
   await type(0,'AI');await painted();
   // No site image, model, stylesheet, analytics or page runtime is discoverable before here.
   try{localStorage.setItem(key,'1');}catch(_){}
   window.__AH_EARLY_MOBILE_INTRO_STARTED__=true;window.__AH_EARLY_DESKTOP_INTRO_STARTED__=true;window.__AH_SITE_FIRST_VISIT_INTRO_1194=true;
-  release();released=true;if(introFont)document.fonts.add(introFont);document.documentElement.appendChild(overlay);
-  shield.style.backgroundImage=`url("${artURL}")`;
+  release();released=true;listenForAudio();if(introFont)document.fonts.add(introFont);document.documentElement.appendChild(overlay);
+  if(artURL)shield.style.backgroundImage=`url("${artURL}")`;
   await type(0,' should elevtae');await sleep(330);await back(0,3);await type(0,'ate the Human.');await sleep(620);
   await type(1,'Fully customized minimalistic systems in both design & foundation for maximum efficency');await back(1,5);await type(1,'ciency.');await sleep(610);
   await type(2,'Nothing you dont');await back(2,4);await type(2,"don't need.");await sleep(520);
@@ -124,16 +131,17 @@ setTimeout(() => {
  }
  async function prepare(){
   const AudioContext=window.AudioContext||window.webkitAudioContext;
-  if(!AudioContext)throw Error('Web Audio unavailable');
-  ctx=new AudioContext({latencyHint:'interactive'});
+  if(AudioContext)try{ctx=new AudioContext({latencyHint:'interactive'});}catch(_){}
+  listenForAudio();resumeAudio();
   const assets=[['type','./assets/intro-key-click-round1398.wav'],['delete','./assets/intro-key-delete-round1398.wav'],['open','./assets/shield-first-rise-hit-round1618.wav']];
   const work=assets.map(async([name,url])=>{const raw=await bytes(url);if(ctx)buffers[name]=await ctx.decodeAudioData(raw);});
   work.push((async()=>{const raw=await bytes('./assets/page-shield-smoked-heart.webp');artURL=URL.createObjectURL(new Blob([raw],{type:'image/webp'}));const img=new Image();img.src=artURL;await img.decode();shield.style.backgroundImage=`url("${artURL}")`})());
   // Resolve the font from the site's existing Google Fonts CSS rather than relying on a versioned URL.
   work.push(fetch('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap').then(r=>r.text()).then(async css=>{const urls=[...css.matchAll(/url\(([^)]+)\)/g)];if(urls.length){const face=new FontFace('AHIntroOrbitron',`url(${urls[urls.length-1][1]})`,{weight:'700'});await face.load();document.fonts.add(face);introFont=face;}}).catch(()=>{}));
-  await Promise.all(work);
+  // Preload the introduction first, but never let a stalled asset prevent typing.
+  await Promise.race([Promise.allSettled(work),sleep(2500)]);
   // Start immediately; do not require a click/tap just to enter the site.
-  if(ctx?.state!=='running')await ctx.resume().catch(()=>{});
+  resumeAudio();
   await start();
  }
  prepare().catch(()=>{
