@@ -18,9 +18,8 @@
       'mobile-who-we-help.html': 'Thinking outside of the box begins Now.',
       'learning-center.html': 'Choose a lesson.',
       'mobile-learning-center.html': 'Choose a lesson.',
-      'about.html': 'Prioritizing Job-Retention.',
-      'mobile-about.html': 'Prioritizing Job-Retention.',
-      'policies.html': 'Prioritizing Job-Retention.',
+      'policies.html': 'Your Information Stays Yours.',
+      'mobile-policies.html': 'Your Information Stays Yours.',
       'pricing.html': 'Fully Customized to your layout.',
       'mobile-pricing.html': 'Fully Customized to your layout.'
     };

@@ -4,7 +4,7 @@
 :root{
   --ah1577-neon-pink:#ff2ea8;
   --ah1577-neon-pink-hot:#ff79c4;
-  --ah1577-recess-depth:144px; /* 1.5 CSS inches at 96px/in */
+  --ah1577-recess-depth:72px; /* 3/4 CSS inch at 96px/in */
 }
 
 /* Every horizontal Home section break reaches the viewport edges and reads as neon,
@@ -40,7 +40,7 @@ html body[data-ah-mobile-surface="home"] .ah1483-section-break.ah1483-section-br
 }
 
 /* The desktop Home gold frame now throws a long, graduated inner shadow into the
-   content well. The fade runs roughly 1.5in inward, creating visible physical depth
+   content well. The fade runs roughly 3/4in inward, creating visible physical depth
    without moving or shrinking the content surface. */
 @media (min-width:901px){
   html body.page-home[data-page="home"] > .ah-persistent-gold-rim.ah-persistent-gold-rim{
@@ -71,31 +71,31 @@ html body[data-ah-mobile-surface="home"] .ah1483-section-break.ah1483-section-br
     background:
       linear-gradient(to bottom,
         rgba(0,0,0,.62) 0,
-        rgba(0,0,0,.45) 18px,
-        rgba(0,0,0,.29) 44px,
-        rgba(0,0,0,.17) 78px,
-        rgba(0,0,0,.075) 112px,
+        rgba(0,0,0,.45) 9px,
+        rgba(0,0,0,.29) 22px,
+        rgba(0,0,0,.17) 39px,
+        rgba(0,0,0,.075) 56px,
         rgba(0,0,0,0) var(--ah1577-recess-depth)) top/100% var(--ah1577-recess-depth) no-repeat,
       linear-gradient(to right,
         rgba(0,0,0,.56) 0,
-        rgba(0,0,0,.40) 20px,
-        rgba(0,0,0,.25) 48px,
-        rgba(0,0,0,.14) 82px,
-        rgba(0,0,0,.06) 116px,
+        rgba(0,0,0,.40) 10px,
+        rgba(0,0,0,.25) 24px,
+        rgba(0,0,0,.14) 41px,
+        rgba(0,0,0,.06) 58px,
         rgba(0,0,0,0) var(--ah1577-recess-depth)) left/var(--ah1577-recess-depth) 100% no-repeat,
       linear-gradient(to left,
         rgba(0,0,0,.56) 0,
-        rgba(0,0,0,.40) 20px,
-        rgba(0,0,0,.25) 48px,
-        rgba(0,0,0,.14) 82px,
-        rgba(0,0,0,.06) 116px,
+        rgba(0,0,0,.40) 10px,
+        rgba(0,0,0,.25) 24px,
+        rgba(0,0,0,.14) 41px,
+        rgba(0,0,0,.06) 58px,
         rgba(0,0,0,0) var(--ah1577-recess-depth)) right/var(--ah1577-recess-depth) 100% no-repeat,
       linear-gradient(to top,
         rgba(0,0,0,.48) 0,
-        rgba(0,0,0,.33) 18px,
-        rgba(0,0,0,.20) 44px,
-        rgba(0,0,0,.11) 76px,
-        rgba(0,0,0,.045) 108px,
+        rgba(0,0,0,.33) 9px,
+        rgba(0,0,0,.20) 22px,
+        rgba(0,0,0,.11) 38px,
+        rgba(0,0,0,.045) 54px,
         rgba(0,0,0,0) var(--ah1577-recess-depth)) bottom/100% var(--ah1577-recess-depth) no-repeat!important;
     box-shadow:none!important;
   }

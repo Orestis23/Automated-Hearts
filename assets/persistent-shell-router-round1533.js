@@ -30,7 +30,6 @@
     ['solutions.html','solutions'], ['mobile-solutions.html','solutions'],
     ['who-we-help.html','who-we-help'], ['mobile-who-we-help.html','who-we-help'],
     ['learning-center.html','learning'], ['mobile-learning-center.html','learning'],
-    ['about.html','about'], ['mobile-about.html','about'], ['policies.html','about'],
     ['pricing.html','pricing'], ['mobile-pricing.html','pricing']
   ]);
 
@@ -54,11 +53,6 @@
       title:'Learning Center', desktop:'learning-center.html', mobile:'mobile-learning-center.html',
       desktopFooter:'Learning Center', mobileFooter:'Learning', mobileMessage:'Help others learn too.',
       shieldQuote:'Choose a lesson.'
-    },
-    about: {
-      title:'About Us', desktop:'about.html', mobile:'mobile-about.html',
-      desktopFooter:'About Us', mobileFooter:'About Us', mobileMessage:'Prioritizing Job-Retention',
-      shieldQuote:'Prioritizing Job-Retention.'
     },
     pricing: {
       title:'Services', desktop:'pricing.html', mobile:'mobile-pricing.html',
@@ -118,7 +112,7 @@
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const node = event.target;
       const link = node && typeof node.closest === 'function' ? node.closest('a[href]') : null;
-      if (!link || link.hasAttribute('download')) return;
+      if (!link || link.hasAttribute('download') || link.target === '_blank') return;
 
       if (link.hasAttribute('data-contact-trigger') || link.hasAttribute('data-ah-contact')) {
         event.preventDefault();
@@ -367,8 +361,18 @@
     const u = new URL(file, location.href);
     /* Round 1250: version mobile content documents as well as their CSS so the
        persistent iframe cannot reuse an older page shell after a visual round. */
-    u.searchParams.set('v','1533r');
+    u.searchParams.set('v','1613r');
     if (isMobile && key === 'home') u.searchParams.set('mobile','1');
+    return u.href;
+  };
+
+  /* Round 1613: technical desktop/mobile home files remain internal content
+     targets. Every user-facing Home/Hub link and history entry is the root /. */
+  const publicPageHref = (key, hash = '') => {
+    if (key !== 'home') return pageHref(key);
+    const u = new URL('./', location.href);
+    u.search = '';
+    u.hash = hash || '';
     return u.href;
   };
 
@@ -393,7 +397,7 @@
   const setButton = (button, key) => {
     if (!button || !pages[key]) return;
     button.dataset.nav = key;
-    button.href = pageHref(key);
+    button.href = publicPageHref(key);
     button.removeAttribute('aria-current');
     button.classList.remove('is-current-page');
     button.style.removeProperty('display');
@@ -403,9 +407,9 @@
       nested.textContent = label;
       if (!isMobile) {
         nested.style.setProperty('font-family','Orbitron, system-ui, sans-serif','important');
-        nested.style.setProperty('font-size','18.4px','important');
+        nested.style.setProperty('font-size','clamp(11px,1.34vw,18.4px)','important');
         nested.style.setProperty('font-weight','700','important');
-        nested.style.setProperty('line-height','1','important');
+        nested.style.setProperty('line-height','1.04','important');
         nested.style.setProperty('letter-spacing','0','important');
         nested.style.setProperty('transform','none','important');
         nested.style.setProperty('filter','none','important');
@@ -476,21 +480,14 @@
     const buttons = identifyFooterButtons();
     if (previousKey && previousKey !== nextKey) {
       const destinationButton = buttons.find((b) => b.dataset.nav === nextKey);
-      /* Round 1568: About is intentionally absent from mobile footer navigation.
-         When leaving About, retire the destination key instead of turning it into
-         an About key. The remaining mobile keys flex to fill the footer. */
-      if (isMobile && previousKey === 'about') {
-        if (destinationButton) destinationButton.remove();
-      } else if (destinationButton) {
-        setButton(destinationButton, previousKey);
-      }
+      if (destinationButton) setButton(destinationButton, previousKey);
     }
     /* Defensive guarantee: there is never a visible button for the live page.
        If an unusual direct-load footer has one, repurpose it to any missing key. */
     const liveButton = buttons.find((b) => b.dataset.nav === nextKey);
     if (liveButton) {
       const represented = new Set(buttons.map((b) => b.dataset.nav));
-      const missing = Object.keys(pages).find((key) => key !== 'about' && key !== nextKey && !represented.has(key));
+      const missing = Object.keys(pages).find((key) => key !== nextKey && !represented.has(key));
       if (missing) setButton(liveButton, missing);
     }
   };
@@ -520,7 +517,8 @@
     target.searchParams.set('ah_embed','1');
     target.searchParams.set('ah_shell','1156');
     if (isMobile && key === 'home') target.searchParams.set('mobile','1');
-    return {key, target, historyUrl:supplied};
+    const historyUrl = key === 'home' ? new URL(publicPageHref('home', supplied.hash || '')) : supplied;
+    return {key, target, historyUrl};
   };
 
   const revealLoadedFrame = (frame) => {
@@ -589,7 +587,7 @@
           const clean = new URL(historyUrl.href);
           clean.searchParams.delete('ah_embed');
           clean.searchParams.delete('ah_shell');
-          if (isMobile && nextKey === 'home') clean.searchParams.set('mobile','1');
+          if (nextKey === 'home') clean.search = '';
           history.pushState({ahShell:true,key:nextKey}, '', clean.href);
         } catch (_) {}
       }
@@ -704,7 +702,7 @@
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const node = event.target;
     const link = node && typeof node.closest === 'function' ? node.closest('a[href]') : null;
-    if (!link || link.hasAttribute('download') || link.hasAttribute('data-contact-trigger') || link.hasAttribute('data-ah-contact')) return;
+    if (!link || link.hasAttribute('download') || link.target === '_blank' || link.hasAttribute('data-contact-trigger') || link.hasAttribute('data-ah-contact')) return;
     if (isMobile && performance.now() < suppressClickUntil && link.href === suppressClickHref) {
       event.preventDefault();
       event.stopImmediatePropagation();

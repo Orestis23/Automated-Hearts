@@ -30,15 +30,6 @@
     overflow:hidden!important;
   }
 
-  /* About Us is deliberately not a mobile footer destination. */
-  html body > nav.footer.footer.footer > a[data-nav="about"],
-  html body > nav.footer.footer.footer > a[href*="mobile-about.html"],
-  html body > nav.footer.footer.footer > a[href$="/about.html"],
-  html body > nav.footer.footer.footer > a[href*="/about.html?"],
-  html body > nav.footer.footer.footer > a[aria-label="About Us"]{
-    display:none!important;
-  }
-
   html body > nav.footer.footer.footer > a[href]{
     position:relative!important;
     display:flex!important;

@@ -1,3 +1,6 @@
+/* round1615-ticker-shield-core.css — consolidated in Round 1615. */
+
+/* SOURCE: round1602-negative-title-ticker-smooth.css */
 /* Automated Hearts Round 1602
    Baseline: Round 1600.
    1) Negative-Software Solution title uses the exact black Home title-field surface language.
@@ -210,3 +213,14 @@ html body[data-page] #home-charity-ticker#home-charity-ticker :is(.charity-marqu
     animation-play-state:paused!important;
   }
 }
+
+
+/* SOURCE: round1607-shield-compositor.css */
+/* Shields move as isolated compositor surfaces; their artwork is unchanged. */
+:is(#ah-route-shield-panel,.page-transition-shield__panel,[data-learning-stage-shield],.ah1528-model-shield){
+  will-change:transform!important;
+  backface-visibility:hidden!important;
+  -webkit-backface-visibility:hidden!important;
+  contain:paint!important;
+}
+
