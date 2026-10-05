@@ -1,0 +1,29 @@
+:root{--ah1985-mint:#8fffd7;--ah1985-dot-mask:radial-gradient(circle at 1px 1px,#000 0 .80px,rgba(0,0,0,.98) .84px,transparent .94px);--ah1985-dot-size:2px 2px;--ah1985-carbon:url("../button-carbon-weave.webp")
+}@media (max-width:900px){:root{--ah1985-dot-mask:radial-gradient(circle at .95px .95px,#000 0 .74px,transparent .88px);--ah1985-dot-size:1.9px 1.9px}}html body :is(
+  .ah1985-progress-text-glyphs,
+  .ah1905-digital-glyphs,
+  .ah1887-button-glyphs,
+  .ah1886-digital-glyphs,
+  .ah1942-button-glyphs,
+  .ah1943-ticker-button-glyphs,
+  .ah1944-page-chip-glyphs,
+  .ah1950-button-glyphs,
+  .ah1928-progress-digital-glyphs,
+  .footer-page-led,
+  .header-page-led,
+  .r1362-home-title-text,
+  .title-stack .lcd-text,
+  .ah1825-machine-window-title__text,
+  .ah1807-home-window-control__text,
+  .ah1940-solution-window-title__text,
+  .ah1940-solution-window-control__text,
+  .charity-marquee__segment,
+  .screen-text-canonical
+){font-family:"Orbitron",system-ui,sans-serif!important;font-weight:900!important;font-style:normal!important;-webkit-text-stroke:0 transparent!important;-webkit-text-fill-color:currentColor!important;text-shadow:none!important;filter:none!important;-webkit-filter:none!important;text-rendering:geometricPrecision!important;-webkit-mask-image:var(--ah1985-dot-mask)!important;mask-image:var(--ah1985-dot-mask)!important;-webkit-mask-size:var(--ah1985-dot-size)!important;mask-size:var(--ah1985-dot-size)!important;-webkit-mask-position:0 0!important;mask-position:0 0!important;-webkit-mask-repeat:repeat!important;mask-repeat:repeat!important;opacity:1!important;visibility:visible!important
+}html body #home-title-fields .r1362-home-title-text,
+html body #home-title-fields .r1362-home-title-text .ah1985-progress-text-glyphs{font-family:"Orbitron",system-ui,sans-serif!important;font-weight:900!important;-webkit-text-fill-color:currentColor!important;text-shadow:none!important;filter:none!important;-webkit-filter:none!important;-webkit-mask-image:var(--ah1985-dot-mask)!important;mask-image:var(--ah1985-dot-mask)!important;-webkit-mask-size:var(--ah1985-dot-size)!important;mask-size:var(--ah1985-dot-size)!important
+}html body :is(input,textarea,select,option)::placeholder,
+html body :is(input,textarea,select,option){font-family:"Orbitron",system-ui,sans-serif!important;font-weight:900!important
+}@media (max-width:900px){html body[data-ah-mobile-surface] > a.message{background-color:#050607!important;background-image:url("./message-button-red-accent-overlay-round1983.svg?v=1985r"),var(--ah1985-carbon)!important;background-size:100% 100%,116px 116px!important;background-position:center,center!important;background-repeat:no-repeat,repeat!important;border:0!important;box-shadow:none!important
+  }
+}

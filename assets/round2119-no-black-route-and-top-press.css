@@ -1,0 +1,194 @@
+/* Automated Hearts Round 2119
+   1) Prevent blank model/transition surfaces from covering routed content.
+   2) Make physical controls press straight inward from the viewer: scale only,
+      never translate vertically. Loaded last as a sitewide authority. */
+
+/* ---------- Route / machine-window black-panel prevention ---------- */
+/* The Solution must always have a deterministic still behind its glass while
+   the live model is not both rendered and intentionally opened. */
+html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window-anchor,
+html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window,
+html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section #lite-model-shell.solution-mobile-model-shell{
+  background-color:#020508!important;
+  background-image:url("./solution-window-poster-round1909.webp")!important;
+  background-position:center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+}
+html body.page-solutions[data-page="solutions"] #solution-process-header .ah1956-solution-window-poster,
+html body[data-ah-mobile-surface="solutions"] .solution-mobile-header-section .ah1956-solution-window-poster{
+  position:absolute!important;
+  inset:0!important;
+  z-index:12!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:none!important;
+  background:transparent!important;
+  transition:opacity 120ms linear!important;
+}
+html body.page-solutions[data-page="solutions"] #solution-engine-model,
+html body[data-ah-mobile-surface="solutions"] #lite-model-shell.solution-mobile-model-shell > iframe{
+  z-index:14!important;
+  background:transparent!important;
+  opacity:0!important;
+  visibility:visible!important;
+  pointer-events:none!important;
+}
+html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window.ah1909-live-ready.ah1909-window-open #solution-engine-model,
+html body[data-ah-mobile-surface="solutions"] #lite-model-shell.solution-mobile-model-shell.ah1909-live-ready.ah1909-window-open > iframe{
+  opacity:1!important;
+  pointer-events:auto!important;
+}
+html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window.ah1909-live-ready.ah1909-window-open .ah1956-solution-window-poster,
+html body[data-ah-mobile-surface="solutions"] #lite-model-shell.solution-mobile-model-shell.ah1909-live-ready.ah1909-window-open .ah1956-solution-window-poster{
+  opacity:0!important;
+}
+html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window:not(.ah1909-window-open) #solution-engine-model,
+html body[data-ah-mobile-surface="solutions"] #lite-model-shell.solution-mobile-model-shell:not(.ah1909-window-open) > iframe{
+  opacity:0!important;
+  pointer-events:none!important;
+}
+
+/* Home uses the same rule: the still remains visible until the live frame has
+   explicitly signaled a rendered frame. This prevents an about:blank/black
+   iframe from becoming the visible surface during or immediately after routing. */
+html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame:first-of-type{
+  background:#020508 url("./home-machine-window-poster-round1912.webp") center/cover no-repeat!important;
+}
+html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame.home-hero-rolodex-frame{
+  background:#020508 url("./home-critical-window-poster-round2010.webp") center/cover no-repeat!important;
+}
+html body.page-home[data-page="home"] #home-machine-grid .ah1895-home-window-poster{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  z-index:16!important;
+}
+html body.page-home[data-page="home"] #home-machine-grid iframe.home-hero-engine-embed{
+  background:transparent!important;
+  opacity:0!important;
+  z-index:14!important;
+}
+html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame[data-ah1909-live-ready="1"].is-haze-open iframe.home-hero-engine-embed{
+  opacity:1!important;
+}
+html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame[data-ah1909-live-ready="1"].is-haze-open .ah1895-home-window-poster{
+  opacity:0!important;
+}
+
+/* Blank/unhydrated model frames are never allowed to paint an opaque rectangle. */
+html.ah-embedded-page body main#main-content iframe:not([src]),
+html.ah-embedded-page body main#main-content iframe[src=""],
+html.ah-embedded-page body main#main-content iframe[src="about:blank"]{
+  background:transparent!important;
+  opacity:0!important;
+}
+
+/* ---------- Physical press perspective ---------- */
+:root{--ah2119-press-scale:.935;--ah2119-press-ms:105ms}
+
+/* Use the independent scale property so controls that depend on transform for
+   centering/positioning keep their geometry. */
+html body :where(
+  button,
+  [role="button"],
+  a.message,
+  a.footer-structure-control,
+  footer#site-footer a[href],
+  nav.footer a[href],
+  a.route-label,
+  .route-label,
+  .premium-route-card__title-sign,
+  .ah-home-route-footer-clone,
+  .home-process-key-button,
+  .ah1807-home-window-control,
+  .ah-solution-open-sign,
+  .ah-rates__button,
+  .r864-rates__drawer-toggle,
+  .r865-rates__consultation-action,
+  .action,
+  .consult,
+  .back-top,
+  .explore-key,
+  .learning-stage-return,
+  .ah-mobile-contact__submit,
+  .nav-contact-submit
+){
+  transform-origin:50% 50%!important;
+  scale:1!important;
+  transition-property:scale,box-shadow,filter!important;
+  transition-duration:var(--ah2119-press-ms),130ms,130ms!important;
+  transition-timing-function:cubic-bezier(.2,.78,.24,1),ease,ease!important;
+}
+
+html body :where(
+  button,
+  [role="button"],
+  a.message,
+  a.footer-structure-control,
+  footer#site-footer a[href],
+  nav.footer a[href],
+  a.route-label,
+  .route-label,
+  .premium-route-card__title-sign,
+  .ah-home-route-footer-clone,
+  .home-process-key-button,
+  .ah1807-home-window-control,
+  .ah-solution-open-sign,
+  .ah-rates__button,
+  .r864-rates__drawer-toggle,
+  .r865-rates__consultation-action,
+  .action,
+  .consult,
+  .back-top,
+  .explore-key,
+  .learning-stage-return,
+  .ah-mobile-contact__submit,
+  .nav-contact-submit
+):is(:active,.is-pressed,.is-nav-pressed,.is-route-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+  scale:var(--ah2119-press-scale)!important;
+  translate:0 0!important;
+}
+
+/* Older rules physically push these controls downward with transform. Remove
+   that translation only while pressed; scale supplies the depth cue instead. */
+html body :is(
+  a.message,
+  a.footer-structure-control,
+  footer#site-footer a[href],
+  nav.footer a[href],
+  .route-label,
+  .premium-route-card__title-sign,
+  .ah-home-route-footer-clone,
+  .home-process-key-button,
+  .ah1807-home-window-control,
+  .ah-solution-open-sign,
+  .ah-rates__button,
+  .r864-rates__drawer-toggle,
+  .r865-rates__consultation-action,
+  .action,
+  .consult,
+  .back-top,
+  .explore-key,
+  .learning-stage-return
+):is(:active,.is-pressed,.is-nav-pressed,.is-route-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]){
+  transform:none!important;
+}
+html body .ah1807-home-window-control:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]) > .ah1807-home-window-control__face,
+html body .ah-solution-open-sign:is(:active,.is-pressed,[data-ah-control-pressed="1"],[data-ah-control-pressed="true"]) > .ah1806-solution-control-face{
+  transform:none!important;
+}
+
+/* Expanded/latched controls return to full height after the actual pointer/key
+   press finishes; state is indicated by content, not a permanently sunken key. */
+html body a.message[aria-expanded="true"]:not(:active):not(.is-pressed):not([data-ah-control-pressed="1"]):not([data-ah-control-pressed="true"]),
+html body :where(button,[role="button"])[aria-expanded="true"]:not(:active):not(.is-pressed):not([data-ah-control-pressed="1"]):not([data-ah-control-pressed="true"]){
+  transform:none!important;
+  translate:0 0!important;
+  scale:1!important;
+}

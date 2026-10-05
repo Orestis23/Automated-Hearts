@@ -1,0 +1,93 @@
+/* Round 2114 — frosted outer rim, edge gold, mobile footer fill, page-screen centering, home route spacing. */
+:root{
+  --ah2114-gold:#b5862e;
+  --ah2114-gold-hi:rgba(238,211,125,.50);
+  --ah2114-gold-deep:rgba(43,27,6,.98);
+  --ah2114-frost:rgba(220,236,243,.12);
+  --ah2114-shell-top:var(--current-frame-top,96px);
+  --ah2114-shell-side:var(--current-frame-side,88px);
+  --ah2114-shell-bottom:var(--current-frame-bottom,96px);
+}
+
+/* Smooth light frosted-glass wash over only the patterned outer rim. */
+@supports ((-webkit-mask-composite:xor) or (mask-composite:exclude)) {
+  html:not(.ah-embedded-page)::before{
+    content:""!important;
+    position:fixed!important;
+    z-index:2147483200!important;
+    inset:0!important;
+    box-sizing:border-box!important;
+    padding:var(--ah2114-shell-top) var(--ah2114-shell-side) var(--ah2114-shell-bottom) var(--ah2114-shell-side)!important;
+    pointer-events:none!important;
+    background:var(--ah2114-frost)!important;
+    -webkit-backdrop-filter:blur(3.5px) saturate(.82) brightness(1.06)!important;
+    backdrop-filter:blur(3.5px) saturate(.82) brightness(1.06)!important;
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0)!important;
+    -webkit-mask-composite:xor!important;
+    mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0)!important;
+    mask-composite:exclude!important;
+    opacity:1!important;
+  }
+}
+
+/* Gold edge where the patterned shell meets the visible browser window. */
+html:not(.ah-embedded-page)::after{
+  content:""!important;
+  position:fixed!important;
+  z-index:2147483600!important;
+  inset:0!important;
+  box-sizing:border-box!important;
+  pointer-events:none!important;
+  border:2px solid var(--ah2114-gold)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:inset 0 0 0 1px var(--ah2114-gold-hi),inset 0 0 0 2px rgba(43,27,6,.30)!important;
+}
+
+/* Keep the desktop page screen exactly centered in the band above the inner gold rim. */
+@media (min-width:901px){
+  html:not(.ah-embedded-page) body[data-page] > #ah-page-progress{
+    top:calc(var(--current-frame-top,96px) / 2)!important;
+    transform:translate(-50%,-50%)!important;
+  }
+
+  /* Three times the previous inter-card spacing on the home-page image/button group. */
+  html body.page-home[data-page="home"] #home-route-buttons .home-explore-grid.premium-route-grid{
+    column-gap:clamp(36px,5.4vw,66px)!important;
+  }
+}
+
+@media (max-width:900px){
+  :root{
+    --ah2114-shell-top:98px;
+    --ah2114-shell-side:10px;
+    --ah2114-shell-bottom:calc(88px + env(safe-area-inset-bottom,0px));
+  }
+
+  /* Center the progress screen between the top of the visible screen and the top gold viewport rim. */
+  html:not(.ah-embedded-page) body[data-ah-mobile-surface] > #ah-page-progress{
+    top:calc((var(--ah2073-viewport-top,98px) - 44px) / 2)!important;
+    transform:translateX(-50%)!important;
+  }
+
+  /* Fill the complete shell band below the gold rim with equal 7px breathing room above/below each key. */
+  html:not(.ah-embedded-page) body[data-ah-mobile-surface] > #ah-mobile-footer{
+    height:calc(var(--ah2073-viewport-bottom,88px) + env(safe-area-inset-bottom,0px))!important;
+    min-height:calc(var(--ah2073-viewport-bottom,88px) + env(safe-area-inset-bottom,0px))!important;
+    max-height:calc(var(--ah2073-viewport-bottom,88px) + env(safe-area-inset-bottom,0px))!important;
+    padding:7px 4px calc(7px + env(safe-area-inset-bottom,0px))!important;
+    align-items:stretch!important;
+  }
+  html:not(.ah-embedded-page) body[data-ah-mobile-surface] > #ah-mobile-footer > a[href]{
+    height:calc(var(--ah2073-viewport-bottom,88px) - 14px)!important;
+    min-height:calc(var(--ah2073-viewport-bottom,88px) - 14px)!important;
+    max-height:calc(var(--ah2073-viewport-bottom,88px) - 14px)!important;
+    align-self:stretch!important;
+  }
+
+  /* Three times the prior 32px vertical gap between the home-page image/button sections. */
+  html body[data-ah-mobile-surface="home"] section[aria-label="Explore Automated Hearts"] .route-grid,
+  html body[data-ah-mobile-surface="home"] section[aria-label="Explore Automated Hearts"] .home-explore-grid.premium-route-grid{
+    row-gap:96px!important;
+  }
+}
