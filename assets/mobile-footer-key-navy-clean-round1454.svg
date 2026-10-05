@@ -41,7 +41,11 @@
       <rect width="2" height="10" fill="#2b3035" opacity=".42"/>
       <rect x="5" width="1.5" height="10" fill="#0b0e11" opacity=".78"/>
     </pattern>
-  <linearGradient id="rim1389" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#a5c2ce"/><stop offset=".18" stop-color="#536f80"/><stop offset=".48" stop-color="#1c3445"/><stop offset=".78" stop-color="#08121d"/><stop offset="1" stop-color="#648594"/></linearGradient></defs>
+  <linearGradient id="rim1389" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#a5c2ce"/><stop offset=".18" stop-color="#536f80"/><stop offset=".48" stop-color="#1c3445"/><stop offset=".78" stop-color="#08121d"/><stop offset="1" stop-color="#648594"/></linearGradient>
+<!-- Round 1639: mobile reflective glass face cover. -->
+<linearGradient id="ah1639-glass-main" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".28"/><stop offset=".13" stop-color="#e9fbff" stop-opacity=".13"/><stop offset=".38" stop-color="#c5edf7" stop-opacity=".035"/><stop offset=".62" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#001018" stop-opacity=".10"/></linearGradient>
+<radialGradient id="ah1639-glass-glint" cx="25%" cy="0%" r="82%"><stop offset="0" stop-color="#ffffff" stop-opacity=".16"/><stop offset=".24" stop-color="#eafaff" stop-opacity=".11"/><stop offset=".62" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+</defs>
   <!-- dark navy pyramidal housing -->
   <path d="M10 1H114L123 12V72L112 89H12L1 72V12Z" fill="url(#base)" stroke="#01060b" stroke-width="2"/>
   <path d="M10 1L16 10V65L10 82L1 72V12Z" fill="url(#left)"/>
@@ -52,7 +56,16 @@
   <path d="M16 10H108L114 16V61L106 70H18L10 61V16Z" fill="url(#face)" stroke="#36516a" stroke-width="1.1"/>
   <path d="M16 10H108L114 16V61L106 70H18L10 61V16Z" fill="url(#carbon)" opacity=".74"/>
   <path d="M16 10H108L114 16V61L106 70H18L10 61V16Z" fill="url(#sheen)"/>
-  <path d="M18 12H106" stroke="#8db0cc" stroke-opacity=".19"/>
+    <!-- Round 1639: glass follows the exact mobile carbon-face polygon. -->
+  <g id="ah1639-reflective-glass" pointer-events="none">
+    <path d="M16 10H108L114 16V61L106 70H18L10 61V16Z" fill="url(#ah1639-glass-main)" opacity=".90"/>
+    <path d="M16 10H108L114 16V61L106 70H18L10 61V16Z" fill="url(#ah1639-glass-glint)" opacity=".84"/>
+    <path d="M17 13H104Q109 13 111 18" fill="none" stroke="#f5fdff" stroke-opacity=".34" stroke-width=".85"/>
+    <path d="M14 29C39 12 75 13 110 31" fill="none" stroke="#f8feff" stroke-opacity=".10" stroke-width="9" stroke-linecap="round"/>
+    <path d="M16 20C43 11 76 14 108 28" fill="none" stroke="#ffffff" stroke-opacity=".20" stroke-width=".9" stroke-linecap="round"/>
+    <path d="M15 66H105" fill="none" stroke="#001019" stroke-opacity=".52" stroke-width=".8"/>
+  </g>
+<path d="M18 12H106" stroke="#8db0cc" stroke-opacity=".19"/>
   <path d="M12 18V59" stroke="#6c93b4" stroke-opacity=".11"/>
   <path d="M112 18V59" stroke="#000" stroke-opacity=".48"/>
 <path d="M16 10H108L114 16V61L106 70H18L10 61V16Z" fill="none" stroke="#020810" stroke-width="5.5" stroke-linejoin="round"/><path d="M16 10H108L114 16V61L106 70H18L10 61V16Z" fill="none" stroke="url(#rim1389)" stroke-width="3.2" stroke-linejoin="round"/>

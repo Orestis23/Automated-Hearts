@@ -1,0 +1,31 @@
+/* Automated Hearts Round 1649 — desktop Industries label balance + unified mobile route-label size. */
+@media (min-width:901px){
+  html body.page-who-we-help[data-page="who-we-help"] #who-we-help-solutions
+  .premium-route-card__title-sign.brand-route-screen > .ah-route-label-final{
+    font-size:26px!important;
+    line-height:.98!important;
+    letter-spacing:.005em!important;
+    padding-inline:14px!important;
+    text-wrap:balance!important;
+  }
+}
+
+@media (max-width:900px){
+  :root{--ah1649-mobile-route-label-size:18px;}
+
+  html body[data-ah-mobile-surface="home"] main#main-content .route-card > .route-label.ah-unified-spacebar,
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-label.ah-unified-spacebar,
+  html body[data-ah-mobile-surface="industries"] main#main-content .route-card > .route-label.ah-unified-spacebar,
+  html body[data-ah-mobile-surface="learning"] main#main-content .route-card > .route-label.ah-unified-spacebar > .ah-route-label-final{
+    font-family:"Orbitron",system-ui,sans-serif!important;
+    font-size:var(--ah1649-mobile-route-label-size)!important;
+    font-weight:800!important;
+    line-height:.98!important;
+    letter-spacing:.005em!important;
+    text-align:center!important;
+    white-space:normal!important;
+    text-wrap:balance!important;
+    overflow-wrap:normal!important;
+    word-break:normal!important;
+  }
+}

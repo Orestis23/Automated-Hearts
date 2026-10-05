@@ -5,8 +5,8 @@
   var MQ='(min-width:801px)';
   var FOOT_REST='./assets/footer-button-message-border-match-round1095.svg?v=1451r';
   var FOOT_DOWN=FOOT_REST;
-  var MSG_REST='./assets/message-button-carbon-red-round1586.svg?v=1590r';
-  var MSG_DOWN='./assets/message-button-carbon-red-pressed-round1586.svg?v=1590r';
+  var MSG_REST='./assets/message-button-carbon-red-round1586.svg?v=1639r';
+  var MSG_DOWN='./assets/message-button-carbon-red-pressed-round1586.svg?v=1639r';
   var MSG_BG_SIZE='100% 100%, 100% 100%, 100% 100%, auto, auto, auto';
   var MSG_BG_POS='center, center, center, 0 0, 0 0, center';
   var MSG_BG_REPEAT='no-repeat, no-repeat, no-repeat, repeat, repeat, no-repeat';

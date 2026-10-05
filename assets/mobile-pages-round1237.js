@@ -11,11 +11,10 @@ const $ = (s, r=document) => r.querySelector(s);
   const learningModels = {
     ai101: [
       './models/ai-101-core-principles-round1316.html?v=1353r',
-      './models/ai-101-human-ai-partnership-mobile-round1316.html?v=1316r',
-      './models/ai-101-verification-lab-round1316.html?v=1316r'
+      './models/ai-101-human-ai-partnership-mobile-round1640.html?v=1640r',
     ],
     practical: ['./models/practical-ai-skills-helix-round1316.html?v=1353r'],
-    strategy: ['./models/strategy-lab-ball-round1093.html?v=1246r']
+    strategy: ['./models/strategy-lab-ball-round1093.html?v=1640r','./models/strategy-lab-verification-hourglass-round1640.html?v=1640r']
   };
   function unloadModel(){ if(frame){ frame.src='about:blank'; frame.remove(); frame=null; } if(modelShell && !document.getElementById('solution-mobile-cover')) modelShell.hidden=true; }
   function loadUrl(url){

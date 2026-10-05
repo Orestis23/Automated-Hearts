@@ -3,7 +3,7 @@
   'use strict';
   const DESKTOP_FOOTER='./assets/footer-button-message-border-match-clean-round1454.svg?v=1454r';
   const DESKTOP_MESSAGE='./assets/message-button-square-footer-match-round1095.svg?v=1585r';
-  const MOBILE_BASE='./assets/mobile-footer-key-navy-clean-round1454.svg?v=1454r';
+  const MOBILE_BASE='./assets/mobile-footer-key-navy-clean-round1454.svg?v=1639r';
   const MOBILE_MINT='./assets/mobile-footer-accent-mint-round1454.svg?v=1454r';
   const MOBILE_PINK='./assets/mobile-footer-accent-pink-round1454.svg?v=1454r';
   const imp=(el,p,v)=>{if(el)el.style.setProperty(p,v,'important');};

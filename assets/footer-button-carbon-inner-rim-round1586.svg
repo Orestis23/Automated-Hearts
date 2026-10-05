@@ -55,6 +55,29 @@
 </filter>
 
 
+
+<!-- Round 1646: subtler reflective glass face cover, confined inside the carbon surface. -->
+<linearGradient id="ah1639-glass-main" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".14"/>
+  <stop offset=".10" stop-color="#e9fbff" stop-opacity=".07"/>
+  <stop offset=".28" stop-color="#b8e8f2" stop-opacity=".018"/>
+  <stop offset=".50" stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset=".76" stop-color="#86b8c8" stop-opacity=".016"/>
+  <stop offset="1" stop-color="#001018" stop-opacity=".10"/>
+</linearGradient>
+<linearGradient id="ah1639-glass-sweep" x1="0" y1="0" x2="1" y2=".75">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".16"/>
+  <stop offset=".16" stop-color="#ffffff" stop-opacity=".045"/>
+  <stop offset=".34" stop-color="#d9f6ff" stop-opacity=".010"/>
+  <stop offset=".46" stop-color="#ffffff" stop-opacity="0"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="ah1639-glass-glint" cx="26%" cy="0%" r="78%">
+  <stop offset="0" stop-color="#ffffff" stop-opacity=".16"/>
+  <stop offset=".20" stop-color="#ecfbff" stop-opacity=".055"/>
+  <stop offset=".52" stop-color="#c8f3ff" stop-opacity=".010"/>
+  <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+</radialGradient>
 </defs>
 
 <use href="#face-shape" fill="none" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
@@ -63,6 +86,17 @@
 <use href="#inner-rim" fill="none" stroke="#c1ffec" stroke-opacity=".80" stroke-width="1" stroke-linejoin="round"/>
 <!-- Round 1564: restrained black inner rim immediately inside the mint perimeter. -->
 <path d="M11 11H629V142H11Z" fill="none" stroke="#01050a" stroke-opacity=".64" stroke-width="1.7" stroke-linejoin="round"/>
+
+<!-- Round 1639 reflective glass: inside the 14/14–626/139 carbon aperture only. -->
+<g id="ah1639-reflective-glass" pointer-events="none">
+  <rect x="14" y="14" width="612" height="125" rx="2" fill="url(#ah1639-glass-main)" opacity=".40"/>
+  <rect x="14" y="14" width="612" height="125" rx="2" fill="url(#ah1639-glass-glint)" opacity=".28"/>
+  <path d="M20 18H610Q619 18 622 24" fill="none" stroke="#f4fdff" stroke-opacity=".14" stroke-width="1.0"/>
+  <path d="M28 22C160 10 294 18 414 35C486 45 548 45 615 27" fill="none" stroke="url(#ah1639-glass-sweep)" stroke-width="11" stroke-linecap="round" opacity=".22"/>
+  <path d="M24 31C170 11 336 15 614 53" fill="none" stroke="#f7fdff" stroke-opacity=".03" stroke-width="15" stroke-linecap="round"/>
+  <path d="M28 24C178 10 342 17 606 47" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M18 135H620" fill="none" stroke="#001019" stroke-opacity=".28" stroke-width="1.1"/>
+</g>
 <rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="#020810" stroke-width="5"/><rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="url(#rim1389)" stroke-width="2.8"/>
 
 <!-- Round 1581: full desktop footer accent surfaces, matching the Messages key treatment. -->

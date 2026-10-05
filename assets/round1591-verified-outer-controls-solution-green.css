@@ -3,7 +3,7 @@
   html body[data-page] > footer#site-footer nav#primary-nav a.footer-structure-control.mechanical-send-control[data-nav]{
     background-color:#050607!important;
     background-image:
-      url('./footer-button-carbon-inner-rim-round1586.svg?v=1591r'),
+      url('./footer-button-carbon-inner-rim-round1586.svg?v=1639r'),
       linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.045) 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,.16) 100%),
       radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%),
       repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px),
@@ -16,7 +16,7 @@
   html body[data-page] > a#header-send-message.header-send-message.mechanical-send-control{
     background-color:#050607!important;
     background-image:
-      url('./message-button-carbon-red-round1586.svg?v=1591r'),
+      url('./message-button-carbon-red-round1586.svg?v=1639r'),
       linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.045) 9%,rgba(210,220,225,.025) 18%,transparent 38% 69%,rgba(255,255,255,.018) 84%,rgba(0,0,0,.16) 100%),
       radial-gradient(at 30% -20%,rgba(220,230,235,.08),transparent 65%),
       repeating-linear-gradient(135deg,rgba(185,185,185,.075) 0 3px,rgba(0,0,0,.08) 3px 6px),

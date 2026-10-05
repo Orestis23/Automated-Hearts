@@ -52,10 +52,10 @@
   }
   /* Put the accent artwork in the button itself so no late overlay can disappear. */
   html body > nav.footer.footer.footer > a[href]:nth-child(odd){
-    background-image:url('./mobile-footer-accent-mint-round1520.svg?v=1573r'),url('./mobile-footer-key-navy-clean-round1454.svg?v=1573r')!important;
+    background-image:url('./mobile-footer-accent-mint-round1520.svg?v=1573r'),url('./mobile-footer-key-navy-clean-round1454.svg?v=1639r')!important;
   }
   html body > nav.footer.footer.footer > a[href]:nth-child(even){
-    background-image:url('./mobile-footer-accent-pink-round1520.svg?v=1573r'),url('./mobile-footer-key-navy-clean-round1454.svg?v=1573r')!important;
+    background-image:url('./mobile-footer-accent-pink-round1520.svg?v=1573r'),url('./mobile-footer-key-navy-clean-round1454.svg?v=1639r')!important;
   }
   html body > nav.footer.footer.footer > a[href] > :is(
     .ah-footer-pink-corners,.ah1451-message-match-accents,.ah1452-message-corner-overlay,
@@ -94,7 +94,7 @@
     overflow:visible!important;
     isolation:isolate!important;
     background-color:transparent!important;
-    background-image:url('./mobile-message-accent-red-round1571.svg?v=1573r'),url('./mobile-message-key-clean-round1568.svg?v=1573r')!important;
+    background-image:url('./mobile-message-accent-red-round1571.svg?v=1573r'),url('./mobile-message-key-clean-round1568.svg?v=1639r')!important;
     background-position:center,center!important;
     background-size:100% 100%,100% 100%!important;
     background-repeat:no-repeat,no-repeat!important;

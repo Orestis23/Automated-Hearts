@@ -27,7 +27,7 @@
 @media (max-width:900px){
   body > nav.footer > a[href]{
     position:relative!important;
-    background-image:url('./mobile-footer-key-navy-clean-round1454.svg?v=1454r')!important;
+    background-image:url('./mobile-footer-key-navy-clean-round1454.svg?v=1639r')!important;
     background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;
   }
   body > nav.footer > a[href] > :is(.ah-footer-pink-corners,.ah1451-message-match-accents,.ah1452-message-corner-overlay,.ah1453-message-corner-overlay){

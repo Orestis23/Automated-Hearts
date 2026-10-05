@@ -1,0 +1,72 @@
+/* Round 1635 — one continuous light-black spacebar carbon surface across the contact-form section. */
+:root{
+  --ah1635-contact-green:#24c978;
+  --ah1635-contact-carbon:url('contact-spacebar-carbon-light-black-round1635.webp');
+}
+
+@media (min-width:901px){
+  html body[data-page] #nav-contact-panel#nav-contact-panel#nav-contact-panel.nav-contact-panel.casio-contact-panel{
+    background-color:#17191b!important;
+    background-image:
+      linear-gradient(180deg,rgba(255,255,255,.055) 0%,rgba(255,255,255,.018) 16%,rgba(0,0,0,.035) 48%,rgba(0,0,0,.20) 100%),
+      var(--ah1635-contact-carbon)!important;
+    background-size:100% 100%,190px 190px!important;
+    background-position:center,0 0!important;
+    background-repeat:no-repeat,repeat!important;
+    background-blend-mode:normal,normal!important;
+  }
+}
+
+@media (max-width:900px){
+  html body > .ah-mobile-contact .ah-mobile-contact__panel.ah-mobile-contact__panel.ah-mobile-contact__panel{
+    background-color:#17191b!important;
+    background-image:
+      linear-gradient(180deg,rgba(255,255,255,.055) 0%,rgba(255,255,255,.018) 16%,rgba(0,0,0,.035) 48%,rgba(0,0,0,.20) 100%),
+      var(--ah1635-contact-carbon)!important;
+    background-size:100% 100%,190px 190px!important;
+    background-position:center,0 0!important;
+    background-repeat:no-repeat,repeat!important;
+    background-blend-mode:normal,normal!important;
+  }
+}
+
+/* The carbon surface belongs to the panel itself. Everything between it and the red screens stays transparent. */
+html body[data-page] .nav-contact-drawer__inner,
+html body[data-page] #nav-contact-panel#nav-contact-panel#nav-contact-panel form.nav-contact-form.nav-contact-form--full,
+html body[data-page] #nav-contact-panel#nav-contact-panel#nav-contact-panel form.nav-contact-form label.nav-contact-field,
+html body > .ah-mobile-contact .ah-mobile-contact__panel form,
+html body > .ah-mobile-contact .ah-mobile-contact__panel form label{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  border-color:transparent!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+
+html body[data-page] #nav-contact-panel#nav-contact-panel#nav-contact-panel form.nav-contact-form label.nav-contact-field::before,
+html body[data-page] #nav-contact-panel#nav-contact-panel#nav-contact-panel form.nav-contact-form label.nav-contact-field::after,
+html body > .ah-mobile-contact form label::before,
+html body > .ah-mobile-contact form label::after{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+/* Keep the established Christmas field behavior. */
+html body[data-page] #nav-contact-panel#nav-contact-panel#nav-contact-panel :is(input.ah-red-screen,textarea.ah-red-screen,select.ah-red-screen),
+html body > .ah-mobile-contact :is(input.ah-red-screen,textarea.ah-red-screen,select.ah-red-screen){
+  color:var(--ah1635-contact-green)!important;
+  -webkit-text-fill-color:var(--ah1635-contact-green)!important;
+  caret-color:var(--ah1635-contact-green)!important;
+  text-shadow:0 0 2px rgba(36,201,120,.50),0 0 5px rgba(36,201,120,.18)!important;
+}
+html body[data-page] #nav-contact-panel#nav-contact-panel#nav-contact-panel form.nav-contact-form :is(input.ah-red-screen,textarea.ah-red-screen)::placeholder,
+html body > .ah-mobile-contact :is(input.ah-red-screen,textarea.ah-red-screen)::placeholder{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  opacity:1!important;
+  text-shadow:0 0 2px rgba(255,255,255,.34)!important;
+}

@@ -1,0 +1,48 @@
+/* Round 1668 — source-backed Home sign/window/ticker authority. */
+
+/* Negative-Software title: no colored outer border. */
+html body.page-home[data-page="home"] #home-negative-software-title,
+html body.page-home[data-page="home"] #home-negative-software-title.ah1641-negative-title-field,
+html body[data-ah-mobile-surface="home"] .ah-negative-software-title{
+  border:0!important;
+  border-color:transparent!important;
+  border-image:none!important;
+  outline:0!important;
+  box-shadow:none!important;
+}
+html body.page-home[data-page="home"] #home-negative-software-title::before,
+html body.page-home[data-page="home"] #home-negative-software-title::after{
+  content:none!important;
+  display:none!important;
+}
+
+/* Home machine-window rim thickness: approximately one-third of the former desktop/mobile rims. */
+@media (min-width:801px){
+  html body.page-home.page-home.page-home[data-page="home"] #home-machine-grid#home-machine-grid > .home-hero-engine-frame.home-hero-engine-frame{
+    border-width:9px!important;
+  }
+}
+@media (max-width:900px){
+  html body[data-ah-mobile-surface="home"] #machine-stack .machine-frame.machine-3d-frame,
+  html body[data-ah-mobile-surface="home"] #machine-stack .machine-frame.cards-frame{
+    border-width:6px!important;
+  }
+}
+
+/* Ticker: no matte film. Keep only a very clear, low-opacity glass reflection. */
+html body[data-page] > #home-ticker-wrap#home-ticker-wrap .ticker-matte-film,
+html body[data-page] > #home-ticker-wrap#home-ticker-wrap .r966-ticker-matte-film{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  background:none!important;
+  box-shadow:none!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+html body[data-page] > #home-ticker-wrap#home-ticker-wrap .r966-ticker-bubble-lens{
+  background:linear-gradient(180deg,rgba(255,255,255,.055) 0%,rgba(255,255,255,.014) 26%,transparent 52%,rgba(0,0,0,.035) 100%)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12)!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}

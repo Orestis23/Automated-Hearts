@@ -25,7 +25,7 @@
       imp(a,'display','flex'); imp(a,'width','auto'); imp(a,'min-width','0'); imp(a,'max-width','none');
       imp(a,'margin','0'); imp(a,'align-self','stretch'); imp(a,'justify-self','stretch'); imp(a,'box-sizing','border-box');
       const accent=(i%2===0)?'mobile-footer-accent-mint-round1520.svg':'mobile-footer-accent-pink-round1520.svg';
-      imp(a,'background-image',`url("./assets/${accent}?v=1573r"), url("./assets/mobile-footer-key-navy-clean-round1454.svg?v=1573r")`);
+      imp(a,'background-image',`url("./assets/${accent}?v=1573r"), url("./assets/mobile-footer-key-navy-clean-round1454.svg?v=1639r")`);
       imp(a,'background-size','100% 100%, 100% 100%'); imp(a,'background-position','center, center'); imp(a,'background-repeat','no-repeat, no-repeat');
       a.querySelectorAll(':scope > .ah-footer-pink-corners,:scope > .ah1451-message-match-accents,:scope > .ah1452-message-corner-overlay,:scope > .ah1453-message-corner-overlay,:scope > .ah1454-mobile-corner-overlay,:scope > .ah1520-mobile-rim-overlay').forEach(n=>{
         imp(n,'display','none'); imp(n,'visibility','hidden'); imp(n,'opacity','0');
@@ -39,7 +39,7 @@
     imp(msg,'top','calc(env(safe-area-inset-top,0px) + 6px)'); imp(msg,'right','6px'); imp(msg,'left','auto');
     imp(msg,'width','56px'); imp(msg,'min-width','56px'); imp(msg,'max-width','56px'); imp(msg,'height','56px'); imp(msg,'min-height','56px'); imp(msg,'max-height','56px');
     imp(msg,'margin','0'); imp(msg,'padding','0'); imp(msg,'border','0'); imp(msg,'border-image','none'); imp(msg,'border-radius','0'); imp(msg,'box-shadow','none');
-    imp(msg,'background-image','url("./assets/mobile-message-accent-red-round1571.svg?v=1573r"), url("./assets/mobile-message-key-clean-round1568.svg?v=1573r")');
+    imp(msg,'background-image','url("./assets/mobile-message-accent-red-round1571.svg?v=1573r"), url("./assets/mobile-message-key-clean-round1568.svg?v=1639r")');
     imp(msg,'background-size','100% 100%, 100% 100%'); imp(msg,'background-position','center, center'); imp(msg,'background-repeat','no-repeat, no-repeat');
     msg.querySelectorAll(':scope > .ah1452-message-corner-overlay,:scope > .ah1453-message-corner-overlay,:scope > .ah1454-mobile-corner-overlay,:scope > .ah1568-mobile-message-rim-overlay,:scope > .ah1571-mobile-message-rim-overlay').forEach(n=>{
       imp(n,'display','none'); imp(n,'visibility','hidden'); imp(n,'opacity','0');

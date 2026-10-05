@@ -294,7 +294,7 @@
       const full = el.dataset.r992FullText || '';
       el.textContent = mobile && navNames[key] ? navNames[key] : full;
       if(mobile) fit(el, 6.2, 9.5);
-      else el.style.removeProperty('font-size');
+      else el.style.setProperty('font-size','18.4px','important');
     });
 
     document.querySelectorAll('footer#site-footer').forEach((footer)=>{
@@ -378,7 +378,9 @@
       } else {
         el.classList.remove('r993-two-line','r993-one-line');
         el.textContent=el.dataset.r993OriginalText || '';
-        el.style.removeProperty('font-size');
+        el.style.setProperty('font-size','18.4px','important');
+        el.style.setProperty('font-weight','400','important');
+        el.style.setProperty('line-height','18.4px','important');
       }
     });
   }
@@ -484,9 +486,9 @@
            Do not remove these inline values: doing so exposed older high-specificity
            CSS and made the labels jump larger only after persistent navigation. */
         el.style.setProperty('font-family','Orbitron,system-ui,sans-serif','important');
-        el.style.setProperty('font-size','16px','important');
-        el.style.setProperty('font-weight','700','important');
-        el.style.setProperty('line-height','1','important');
+        el.style.setProperty('font-size','18.4px','important');
+        el.style.setProperty('font-weight','400','important');
+        el.style.setProperty('line-height','18.4px','important');
         el.style.setProperty('letter-spacing','0','important');
         el.style.setProperty('white-space','normal','important');
         el.style.setProperty('word-break','normal','important');
