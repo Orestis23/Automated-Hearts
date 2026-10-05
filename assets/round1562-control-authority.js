@@ -14,7 +14,7 @@
   let active=null, releaseTimer=0;
   const desktop=()=>matchMedia(MQ).matches;
   function setRest(el){
-    if(!el)return;
+    if(!el||el.hasAttribute('data-ah-explore-stable'))return;
     imp(el,'transition','transform 115ms cubic-bezier(.2,.78,.24,1), box-shadow 150ms ease');
     imp(el,'transform-origin','50% 50%');
     imp(el,'transform','translate3d(0,0,0) scale(1)');
@@ -22,7 +22,7 @@
     imp(el,'box-shadow',el.matches(MSG)?MSG_REST:EXP_REST);
   }
   function setDown(el){
-    if(!el)return;
+    if(!el||el.hasAttribute('data-ah-explore-stable'))return;
     imp(el,'transition','transform 115ms cubic-bezier(.2,.78,.24,1), box-shadow 150ms ease');
     imp(el,'transform-origin','50% 50%');
     imp(el,'transform','translate3d(0,3px,0) scale(.97)');
@@ -44,12 +44,12 @@
   }
   function applyMessage(){if(!desktop())return;const m=document.querySelector(MSG);if(m&&m!==active)setRest(m);}
   function apply(){if(!desktop())return;applyMessage();applyHome();}
-  document.addEventListener('pointerdown',e=>{if(!desktop())return;const el=target(e.target);if(!el)return;clearTimeout(releaseTimer);active=el;setDown(el);},true);
-  function release(){const el=active;if(!el)return;clearTimeout(releaseTimer);releaseTimer=setTimeout(()=>{if(active===el)active=null;setRest(el);},125);}
+  document.addEventListener('pointerdown',e=>{if(!desktop())return;const el=target(e.target);if(!el||el.hasAttribute('data-ah-explore-stable'))return;clearTimeout(releaseTimer);active=el;setDown(el);},true);
+  function release(){const el=active;if(!el||el.hasAttribute('data-ah-explore-stable'))return;clearTimeout(releaseTimer);releaseTimer=setTimeout(()=>{if(active===el)active=null;setRest(el);},125);}
   document.addEventListener('pointerup',release,true);document.addEventListener('pointercancel',release,true);
-  document.addEventListener('keydown',e=>{if(!desktop()||!['Enter',' '].includes(e.key))return;const el=target(e.target);if(!el)return;active=el;setDown(el);},true);
+  document.addEventListener('keydown',e=>{if(!desktop()||!['Enter',' '].includes(e.key))return;const el=target(e.target);if(!el||el.hasAttribute('data-ah-explore-stable'))return;active=el;setDown(el);},true);
   document.addEventListener('keyup',e=>{if(['Enter',' '].includes(e.key))release();},true);
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply,{once:true});else apply();
-  addEventListener('pageshow',apply);addEventListener('resize',apply,{passive:true});addEventListener('ah:persistent-route-complete',apply);
+  addEventListener('pageshow',apply);addEventListener('ah:persistent-route-complete',apply);
   addEventListener('load',()=>{apply();setTimeout(apply,100);setTimeout(apply,400);},{once:true});
 })();

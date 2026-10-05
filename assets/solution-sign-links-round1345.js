@@ -218,6 +218,7 @@
   // it must never intercept clicks intended for the red signs underneath.
   const cover=document.getElementById('solution-process-cover');
   const close=document.getElementById('solution-cover-close');
+  const desktopControl=document.getElementById('solution-process-heading')||document.querySelector('.ah-solution-open-sign');
   if(close) close.hidden=true;
   const setDesktopCover=open=>{
     if(!cover) return;
@@ -228,10 +229,36 @@
     else cover.style.removeProperty('pointer-events');
     currentModelFrame()?.contentWindow?.postMessage({type:'engine-visibility',visible:!!open},'*');
   };
+  const toggleDesktopCover=()=>{
+    const opening=!cover?.classList.contains('is-open');
+    const model=currentModelFrame();
+    const deferred=model?.dataset?.src;
+    if(opening && model && deferred && !model.getAttribute('src')){
+      desktopControl?.setAttribute('aria-busy','true');
+      /* Round 1909: move the shutter immediately. The deterministic still remains
+         visible until the live iframe reports its first rendered frame. */
+      setDesktopCover(true);
+      model.setAttribute('loading','eager');
+      model.setAttribute('src',deferred);
+      return;
+    }
+    setDesktopCover(opening);
+  };
+  desktopControl?.addEventListener('click',event=>{
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    toggleDesktopCover();
+  },true);
+  desktopControl?.addEventListener('keydown',event=>{
+    if(event.key!=='Enter'&&event.key!==' ') return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    toggleDesktopCover();
+  },true);
   cover?.addEventListener('click',event=>{
     event.preventDefault();
-    setDesktopCover(!cover.classList.contains('is-open'));
-  });
+    event.stopImmediatePropagation();
+  },true);
   if(cover){ setDesktopCover(false); addEventListener('pageshow',()=>setDesktopCover(false),{passive:true}); }
 
   // Initial hashes should use the same controlled positioning, never a native jump.

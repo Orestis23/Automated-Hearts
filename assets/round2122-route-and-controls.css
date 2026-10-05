@@ -1,0 +1,124 @@
+/* Automated Hearts Round 2122 — route settling / no-black-frame / released-key authority. */
+
+/* A routed page iframe is a compositor surface only. It must never contribute a
+   black backing plate while the destination document is settling. */
+iframe.ah-shell-content-frame,
+.ah-shell-content-frame {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Embedded page documents inherit the persistent shell behind them. */
+html.ah-embedded-page,
+html.ah-shell-embedded,
+html.ah-embedded-page body,
+html.ah-shell-embedded body {
+  background-color: transparent !important;
+}
+
+/* No historical page wipe may paint in either the top document or a routed
+   document. The parent #ah-route-shield is the only page-transition surface. */
+html.page-shield-arrival::before,
+html.page-shield-covering::before,
+html.page-shield-revealing::before,
+#page-transition-shield,
+.page-transition-shield,
+.page-transition-shield__panel,
+#ah2022-route-shield,
+#ah1996-mobile-document-shield-panel {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  animation: none !important;
+  transition: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* The canonical route shield is completely non-painting after its fly-by. */
+#ah-route-shield:not([data-ah-flying="1"]),
+#ah-route-shield:not([data-ah-flying="1"]) #ah-route-shield-panel {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+#ah-route-shield[hidden] { display: none !important; }
+
+/* Closed machine windows must never reveal a blank/black iframe while a route
+   is settling. Their deterministic still stays present until the user opens the
+   glass AND the interactive frame has actually reported a rendered frame. */
+html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window-anchor,
+html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window,
+html body[data-ah-mobile-surface="solutions"] #lite-model-shell.solution-mobile-model-shell {
+  background-color: #020508 !important;
+  background-image: url("./solution-window-poster-round1909.webp") !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+html body.page-solutions[data-page="solutions"] #solution-process-header .ah1956-solution-window-poster,
+html body[data-ah-mobile-surface="solutions"] .ah1956-solution-window-poster {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 18 !important;
+}
+html body.page-solutions[data-page="solutions"] #solution-process-header #solution-process-cover,
+html body[data-ah-mobile-surface="solutions"] #solution-mobile-cover {
+  z-index: 30 !important;
+  background-color: rgba(7,17,27,.12) !important;
+  background-image:
+    linear-gradient(180deg,rgba(235,247,252,.10),rgba(7,17,27,.025) 55%,rgba(2,8,14,.10)),
+    linear-gradient(110deg,transparent 0 18%,rgba(244,252,255,.045) 29%,transparent 44%) !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+}
+html body.page-solutions[data-page="solutions"] #solution-engine-model,
+html body[data-ah-mobile-surface="solutions"] #lite-model-shell.solution-mobile-model-shell > iframe {
+  background: transparent !important;
+  background-color: transparent !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window.ah1909-live-ready.ah1909-window-open #solution-engine-model,
+html body[data-ah-mobile-surface="solutions"] #lite-model-shell.solution-mobile-model-shell.ah1909-live-ready.ah1909-window-open > iframe {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+html body.page-solutions[data-page="solutions"] #solution-process-header .solution-process-window.ah1909-live-ready.ah1909-window-open .ah1956-solution-window-poster,
+html body[data-ah-mobile-surface="solutions"] #lite-model-shell.solution-mobile-model-shell.ah1909-live-ready.ah1909-window-open .ah1956-solution-window-poster {
+  opacity: 0 !important;
+}
+
+/* Same protection for Home's live card window. */
+html body.page-home[data-page="home"] #home-machine-grid iframe.home-hero-engine-embed,
+html body[data-ah-mobile-surface="home"] #machine-stack iframe {
+  background-color: transparent !important;
+}
+html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame:not(.is-haze-open) iframe.home-hero-engine-embed {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+html body.page-home[data-page="home"] #home-machine-grid > .home-hero-engine-frame:not(.is-haze-open) .ah1895-home-window-poster {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Round 2122: one scale per physical press; geometry stays in transform. */
+html body :is(button,[role="button"],#site-footer a,nav.footer a,a.message,.message-tab,.message-button,[data-ah-message-button],.ah1807-home-window-control,.ah1940-solution-window-control,.ah-unified-spacebar,.home-process-key-button,.premium-route-card__title-sign,.explore-key,.ah-rates__button,.r864-rates__drawer-toggle,.r865-rates__consultation-action,.ah-mobile-contact__submit,.nav-contact-submit,a.route-label,.action,.consult,.back-top,.learning-stage-return){
+  transform-origin:50% 50%!important;
+}
+html body .ah2119-pressing{
+  transform:scale(1)!important;
+  translate:none!important;
+  scale:.94!important;
+}
+html body :is(footer#site-footer a[data-nav],nav.footer a[href]):not(.ah2119-pressing){
+  transform:none!important;
+  translate:none!important;
+}

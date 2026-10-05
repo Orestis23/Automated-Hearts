@@ -199,8 +199,9 @@
     armed=true;
     correcting=false;
   },{passive:true});
-  addEventListener('resize',()=>{if(!programmaticScroll()&&!stageTransition())sizeStage();sync();},{passive:true});
-  if(window.visualViewport)window.visualViewport.addEventListener('resize',()=>{if(!programmaticScroll()&&!stageTransition())sizeStage();sync();},{passive:true});
+  const syncResponsiveStage=()=>{if(!programmaticScroll()&&!stageTransition())sizeStage();sync();};
+  if(window.AHResponsive)window.AHResponsive.watch(syncResponsiveStage);
+  else { addEventListener('resize',syncResponsiveStage,{passive:true}); if(window.visualViewport)window.visualViewport.addEventListener('resize',syncResponsiveStage,{passive:true}); }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',observe,{once:true});
   else observe();
 

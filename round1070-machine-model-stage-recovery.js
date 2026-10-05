@@ -2,7 +2,7 @@
 (()=>{
   'use strict';
   const page=document.body?.dataset?.page||'';
-  const MACHINE_MS=1000;
+  const MACHINE_MS=1500;
 
   const frameActivity=(frame,active)=>{
     try{
@@ -29,14 +29,10 @@
     const left=home&&!!frame.querySelector('#home-machine-primary');
     const model=frame.querySelector('iframe');
     if(home){
-      const screen=frame.querySelector('[data-machine-haze]');
-      if(screen){
-        const heart=getComputedStyle(screen,'::before');
-        const height=parseFloat(heart.height)||parseFloat(heart.width)*488/330;
-        const lip=(parseFloat(heart.bottom)||7)+height/2;
-        frame.style.setProperty('--r1171-window-open-lip',`${lip}px`,'important');
-        frame.style.setProperty('--r688-haze-handle-visible',`${lip}px`,'important');
-      }
+      /* The former heart handle no longer exists. Keep a deterministic 12px
+         bottom edge visible so the raised shield retains its gold lower rim. */
+      frame.style.setProperty('--r1171-window-open-lip','12px','important');
+      frame.style.setProperty('--r688-haze-handle-visible','12px','important');
     }
     if(left){
       clearTimeout(frame.__ahShutterTimer);
@@ -59,7 +55,7 @@
       shutter.style.setProperty('visibility','visible','important');
       shutter.style.setProperty('opacity','1','important');
       shutter.style.setProperty('pointer-events','auto','important');
-      shutter.style.setProperty('transition',`transform ${MACHINE_MS}ms cubic-bezier(.42,0,.20,1)`,'important');
+      shutter.style.setProperty('transition',`transform ${MACHINE_MS}ms cubic-bezier(.22,.66,.24,1)`,'important');
       shutter.style.setProperty('will-change','transform','important');
       shutter.style.setProperty('transform',open?raised:'translate3d(0,0,0)','important');
       shutter.style.setProperty('-webkit-transform',open?raised:'translate3d(0,0,0)','important');
@@ -85,26 +81,17 @@
     if(homeShutter&&homeGrid?.contains(homeShutter)){
       event.preventDefault();
       event.stopImmediatePropagation();
-      const target=homeShutter.closest('.home-hero-engine-frame');
-      if(!target) return;
-      const opening=!target.classList.contains('is-haze-open');
-      if(opening){
-        homeGrid.querySelectorAll(':scope > .home-hero-engine-frame.is-haze-open').forEach(frame=>{
-          if(frame!==target) machineOpen(frame,false);
-        });
-      }
-      machineOpen(target,opening);
       return;
     }
     const sol=event.target.closest('[data-solution-machine-haze]');
     if(sol&&solutionFrame?.contains(sol)){
       event.preventDefault();
       event.stopImmediatePropagation();
-      machineOpen(solutionFrame,!solutionFrame.classList.contains('is-haze-open'));
+      return;
     }
   },true);
 
-  /* Learning Center / Industries model-stage recovery ---------------- */
+  /* Good Information / Industries model-stage recovery ---------------- */
   const modelConfig=(window.__AH_R1071_MODEL_CONTROLLER||(page==='learning'&&window.__AH1533LearningModelAuthority))?null:page==='learning'
     ? {stage:'#learning-model-stage',control:'#learning-route-buttons [data-learning-model]'}
     : page==='who-we-help'
@@ -139,7 +126,7 @@
           backdrop.style.setProperty('position','absolute','important');
           backdrop.style.setProperty('inset','0','important');
           backdrop.style.setProperty('background-color','#08172b','important');
-          backdrop.style.setProperty('background-image','url("./assets/page-shield-smoked-heart.webp?v=1070r")','important');
+          backdrop.style.setProperty('background-image','url("./assets/honeycomb-continuous-20261005.webp?v=1070r")','important');
           backdrop.style.setProperty('background-position','center center','important');
           backdrop.style.setProperty('background-size','cover','important');
           backdrop.style.setProperty('background-repeat','no-repeat','important');

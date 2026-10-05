@@ -96,25 +96,17 @@
 <path d="M11 11H629V142H11Z" fill="none" stroke="#01050a" stroke-opacity=".64" stroke-width="1.7" stroke-linejoin="round"/>
 
 <!-- Round 1639 reflective glass: inside the 14/14–626/139 carbon aperture only. -->
-<g id="ah1639-reflective-glass" pointer-events="none">
-  <rect x="14" y="14" width="612" height="125" rx="2" fill="url(#ah1639-glass-main)" opacity=".40"/>
-  <rect x="14" y="14" width="612" height="125" rx="2" fill="url(#ah1639-glass-glint)" opacity=".28"/>
-  <path d="M20 18H610Q619 18 622 24" fill="none" stroke="#f4fdff" stroke-opacity=".14" stroke-width="1.0"/>
-  <path d="M28 22C160 10 294 18 414 35C486 45 548 45 615 27" fill="none" stroke="url(#ah1639-glass-sweep)" stroke-width="13" stroke-linecap="round" opacity=".50"/>
-  <path d="M24 31C170 11 336 15 614 53" fill="none" stroke="#f7fdff" stroke-opacity=".060" stroke-width="18" stroke-linecap="round"/>
-  <path d="M28 24C178 10 342 17 606 47" fill="none" stroke="#ffffff" stroke-opacity=".15" stroke-width="1.6" stroke-linecap="round"/>
-  <path d="M18 135H620" fill="none" stroke="#001019" stroke-opacity=".28" stroke-width="1.1"/>
-</g>
+
 <rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="#020810" stroke-width="5"/><rect x="14" y="14" width="612" height="125" rx="2" fill="none" stroke="url(#rim1389)" stroke-width="2.8"/>
 
 <!-- Round 1581: full desktop footer accent surfaces, matching the Messages key treatment. -->
-<g id="ah1581-desktop-full-accent-surfaces" fill="none" stroke-linejoin="miter" pointer-events="none" filter="url(#ah1581-press-accent-glow)">
+<g id="ah1581-desktop-full-accent-surfaces" fill="none" stroke-linejoin="miter" pointer-events="none">
   <path d="M20 14H620Q626 14 626 20V133Q626 139 620 139H20Q14 139 14 133V20Q14 14 20 14Z"
         stroke="#ff2ea8" stroke-width="1.18" opacity=".72"/>
-  <path d="M14 78V20Q14 14 20 14H500" stroke="#ff2ea8" stroke-opacity=".18" stroke-width="8" filter="url(#ah1581-pink-soft)"/>
+  <path d="M14 78V20Q14 14 20 14H500" stroke="#ff2ea8" stroke-opacity=".18" stroke-width="8"/>
   <path d="M14 78V20Q14 14 20 14H500" stroke="url(#ah1581-pink-top)" stroke-width="3.2"/>
   <path d="M14 78V20Q14 14 20 14H500" stroke="#ffd4eb" stroke-opacity=".52" stroke-width=".82"/>
-  <path d="M140 139H620Q626 139 626 133V78" stroke="#ff2ea8" stroke-opacity=".18" stroke-width="8" filter="url(#ah1581-pink-soft)"/>
+  <path d="M140 139H620Q626 139 626 133V78" stroke="#ff2ea8" stroke-opacity=".18" stroke-width="8"/>
   <path d="M140 139H620Q626 139 626 133V78" stroke="url(#ah1581-pink-bottom)" stroke-width="3.2"/>
   <path d="M140 139H620Q626 139 626 133V78" stroke="#ffd4eb" stroke-opacity=".52" stroke-width=".82"/>
   <path d="M500 14H620Q626 14 626 20V78M140 139H20Q14 139 14 133V78"

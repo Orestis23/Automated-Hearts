@@ -1,5 +1,5 @@
-/* Round 515: the Learning Center's three route buttons select model groups.
-   Each Learning Center route owns the supplied interactive models for that
+/* Round 515: the Good Information's three route buttons select model groups.
+   Each Good Information route owns the supplied interactive models for that
    lesson; the side orbs navigate only within the selected group. */
 (() => {
   'use strict';
@@ -194,7 +194,7 @@
 })();
 
 ;
-/* Round 516: the Learning Center lesson stage opens only after the controlled
+/* Round 516: the Good Information lesson stage opens only after the controlled
    scroll reaches it. The return control closes the local leather shield first,
    then performs one deterministic smooth scroll back to the lesson choices. */
 (() => {
@@ -312,10 +312,6 @@
     if (event.detail?.page !== 'learning' || event.detail?.stage !== '#learning-model-stage') return;
     openShield();
   });
-
-  /* Round 602: round510-model-scroll.js now owns the return sequence for both
-     Learning Center and Industries. Keep this legacy fallback only if that
-     shared controller did not initialize. */
   if (!window.__ahSharedModelReturnRound602) {
     returnButton.addEventListener('click',async () => {
       if (returning) return;
@@ -341,7 +337,7 @@
 })();
 
 ;
-/* Round 804 — authoritative Learning Center return controller.
+/* Round 804 — authoritative Good Information return controller.
    Mirrors the proven Industries Round 719 return sequence:
    1) raise the local shield completely at the same 2000ms/easing used on reveal,
    2) only then smoothly return the real main viewport to the top,
@@ -568,7 +564,7 @@
 })();
 
 ;
-/* Round 813 — deterministic Learning Center ticker. */
+/* Round 813 — deterministic Good Information ticker. */
 (() => {
   'use strict';
   if (document.body?.dataset?.page !== 'learning') return;

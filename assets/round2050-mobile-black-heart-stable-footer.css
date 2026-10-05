@@ -1,0 +1,17 @@
+@media (max-width:900px){html,body,body[data-page],body[data-ah-mobile-surface]{background-color:#000!important}body[data-page]>.ah-persistent-outer-rim>.ah-shell-edge,
+  body[data-page]>#ah-official-rim>.ah-shell-edge,
+  body[data-page]>#ah-official-rim>.ah-r932-corner-mask,
+  body[data-ah-mobile-surface]>.shell-edge,
+  body[data-ah-mobile-surface]>.ah-opaque-corner{background-color:#14212b!important;background-image:url("./honeycomb-mobile-continuous-2245.webp")!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;opacity:1!important;filter:none!important
+  }body[data-ah-mobile-surface="home"] main#main-content,
+  body[data-ah-mobile-surface="home"] #machine-stack,
+  body[data-ah-mobile-surface="home"] #machine-stack>.machine-frame,
+  body[data-ah-mobile-surface="home"] #machine-stack>.machine-frame>.window-shutter,
+  body[data-ah-mobile-surface="home"] #machine-stack>.machine-frame>.window-shutter::before,
+  body[data-ah-mobile-surface="home"] #machine-stack>.machine-frame>.window-shutter::after,
+  html[data-ah-intro="1"] #first-visit-intro,
+  #ah1609-intro .ah1912-intro-panel{background-color:#000!important;background-image:none!important;box-shadow:none!important;filter:none!important
+  }body[data-ah-mobile-surface="home"] img[src*="ah-empty-transparent.svg"],
+  html[data-ah-intro="1"] #first-visit-intro img[src*="ah-empty-transparent.svg"]{background:transparent!important;box-shadow:none!important;filter:none!important;mix-blend-mode:normal!important
+  }
+}

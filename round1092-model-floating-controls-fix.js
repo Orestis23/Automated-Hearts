@@ -50,7 +50,7 @@
       const mint=i%2===0;
       important(span,'color',mint?'#8fffd7':'#ff2daa');
       important(span,'-webkit-text-fill-color',mint?'#8fffd7':'#ff2daa');
-      important(span,'text-shadow',mint?'0 0 7px rgba(143,255,215,.34)':'0 0 7px rgba(255,45,170,.34)');
+      important(span,'text-shadow','none');
     });
   }
 

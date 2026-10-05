@@ -1,6 +1,6 @@
-/* Automated Hearts Round 1094 — Rolodex continuous-behind-shutter authority.
-   The right Home machine keeps its cards moving whether its local shutter is
-   raised or lowered. Only a genuinely hidden browser tab pauses the loop. */
+/* Round 1924 — Rolodex hidden-tab RAF gate.
+   Home-window start/stop timing is handled by the Rolodex page itself so its
+   first live frame can match the deterministic poster before motion begins. */
 (() => {
   "use strict";
   const nativeRequest = window.requestAnimationFrame.bind(window);
@@ -48,9 +48,8 @@
     });
   };
 
-  /* Deliberately ignore engine-visibility/viewport-activity messages from the
-     parent. They represent the shutter or page shield, not permission to stop
-     this lightweight card carousel. */
+  /* Parent window activity is handled by the page-level motion gate. This helper
+     only suspends RAF work when the browser document itself is hidden. */
   document.addEventListener('visibilitychange', sync);
 
   document.addEventListener('DOMContentLoaded', () => {

@@ -22,24 +22,14 @@
      Never create, replace, resize, or reorder footer controls at runtime.
      The destination documents supply the five labels/hrefs; only their text
      changes visually from page to page. */
-  const balanceHeaderNavigation = () => {
-    const nav = document.querySelector("#primary-nav");
-    if (!nav) return;
-    const pageScreen = document.querySelector("body > .rim-page-name-screen");
-    const pageLed = pageScreen?.querySelector(".header-page-led, .footer-page-led");
-    if (pageScreen && pageLed) {
-      const label = pageLed.dataset.text || pageLed.textContent.trim();
-      renderPageSignBulbs(pageLed, label);
-      pageScreen.setAttribute("aria-label", `Current page: ${label}`);
-    }
-  };
+  const balanceHeaderNavigation = () => {};
 
   balanceHeaderNavigation();
 
   /* Round 375: retain native text in every screen that names a clickable route. */
   const repairRouteScreenLabels = () => {
     document.querySelectorAll(
-      ".premium-route-card__title-sign > [data-text], #primary-nav .footer-nav-label"
+      ".premium-route-card__title-sign > [data-text]"
     ).forEach((label) => {
       const expected = label.dataset.text || label.textContent.trim();
       if (expected && !label.textContent.trim()) label.textContent = expected;
@@ -51,14 +41,13 @@
 
   /* Round 453: feature-card handoff. The card physically sinks first, then its
      local leather cover travels at one-third the former speed. Home/outbound
-     routes continue into the viewport shield. Learning Center and Industries
+     routes continue into the viewport shield. Good Information and Industries
      stay on-page and smoothly scroll to their model stage without re-covering
      the viewport. */
   const pageTransitionShield = $(".page-transition-shield");
   if (pageTransitionShield) {
     const pageTransitionShieldPanel = pageTransitionShield.querySelector(".page-transition-shield__panel") || pageTransitionShield;
     const root = document.documentElement;
-    const storageKey = "ah-page-shield";
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const localButtonSink = reducedMotion ? 1 : 210;
     const localShieldHold = reducedMotion ? 1 : 360;
@@ -66,11 +55,11 @@
     /* Round 495: deterministic smooth handoff to the lower 3D-model stage.
        Some browsers were still treating scrollTo({behavior:"smooth"}) on the
        fixed main viewport as an immediate jump. Drive the interpolation here
-       so Learning Center and Industries visibly glide to the target. */
+       so Good Information and Industries visibly glide to the target. */
     let activeModelScrollFrame = 0;
     let activeModelScrollFinish = null;
 
-    /* Round 496: one deterministic scroll owner for Learning Center and
+    /* Round 496: one deterministic scroll owner for Good Information and
        Industries. It explicitly disables native smooth-scroll, anchoring and
        snap behavior while the animation is active so the browser cannot add
        an instantaneous hash jump or a second competing scroll animation. */
@@ -225,24 +214,6 @@
       'body.page-who-we-help #who-we-help-solutions .premium-route-card__image-button'
     ].join(',');
 
-    /* Round 480: decode the shield artwork up front so a route click never
-       has to begin the large transform while the browser is also decoding the
-       texture. The preload in each page handles network priority; decode()
-       prewarms the raster/compositor path. */
-    const shieldArtworkReady = (() => {
-      const shieldImage = new Image();
-      shieldImage.decoding = 'async';
-      shieldImage.src = './assets/page-shield-embossed-strong-round1067.webp';
-      if (typeof shieldImage.decode === 'function') {
-        return shieldImage.decode().catch(() => undefined);
-      }
-      return new Promise((resolve) => {
-        if (shieldImage.complete) { resolve(); return; }
-        shieldImage.addEventListener('load', resolve, { once: true });
-        shieldImage.addEventListener('error', resolve, { once: true });
-      });
-    })();
-
     let navigationStarted = false;
     let revealStarted = false;
     let shieldState = root.classList.contains("page-shield-arrival") ? "covered" : "open";
@@ -251,69 +222,10 @@
        JavaScript changes the shield state once, then waits for transitionend. No
        frame-by-frame transform writes, opacity/filter/clip animation, or duplicate
        motion trigger is allowed while the shield is travelling. */
-    const pageShieldTravelMs = 2000;
-    const pageShieldEase = 'cubic-bezier(.22,.66,.24,1)';
-    const pageShieldOpenTransform = 'translate3d(0,-100.5%,0)';
-    const pageShieldClosedTransform = 'translate3d(0,0,0)';
+    /* Round 2123: the canonical router exclusively paints viewport transitions.
+       Keep local card/scroll handlers, but retire the old viewport animator. */
     let pageShieldMotionPromise = null;
-
-    /* Round 1094: deterministic compositor-only shield travel.
-       Every visible upward and downward motion gets a fresh 2000ms transform
-       transition from a known endpoint. We intentionally do not use
-       transitionend/cancel as the clock because page-specific style churn,
-       BFCache restores, or a dropped transition event could make one page
-       finish early while another waited longer. */
-    const pageShieldPaintBarrier = () => new Promise((resolve) => {
-      requestAnimationFrame(() => requestAnimationFrame(resolve));
-    });
-
-    const animatePageShield = (nextState) => {
-      if (pageShieldMotionPromise) return pageShieldMotionPromise;
-      const movingClosed = nextState === 'covering' || nextState === 'covered';
-      const fromTransform = movingClosed ? pageShieldOpenTransform : pageShieldClosedTransform;
-      const toTransform = movingClosed ? pageShieldClosedTransform : pageShieldOpenTransform;
-
-      root.dataset.pageShieldMotion = '1';
-      pageShieldMotionPromise = (async () => {
-        try {
-          pageTransitionShieldPanel.getAnimations?.().forEach((animation) => animation.cancel());
-        } catch (_) {}
-
-        /* Snap to the exact starting endpoint without animation, promote the
-           already-sized panel, then start one transform-only transition. */
-        pageTransitionShieldPanel.style.setProperty('transition','none','important');
-        pageTransitionShieldPanel.style.setProperty('transform',fromTransform,'important');
-        pageTransitionShieldPanel.style.setProperty('-webkit-transform',fromTransform,'important');
-        pageTransitionShieldPanel.style.setProperty('will-change','transform','important');
-        pageTransitionShieldPanel.style.setProperty('backface-visibility','hidden','important');
-        pageTransitionShieldPanel.style.setProperty('contain','paint','important');
-        setShieldClasses(nextState);
-
-        await pageShieldPaintBarrier();
-
-        pageTransitionShieldPanel.style.setProperty(
-          'transition',
-          `transform ${pageShieldTravelMs}ms ${pageShieldEase}`,
-          'important'
-        );
-        pageTransitionShieldPanel.style.setProperty('transform',toTransform,'important');
-        pageTransitionShieldPanel.style.setProperty('-webkit-transform',toTransform,'important');
-
-        /* The visible travel itself is always exactly two seconds. */
-        await new Promise((resolve) => window.setTimeout(resolve,pageShieldTravelMs));
-
-        /* Keep the exact final transform and remove the transition until the
-           next requested movement so no unrelated class/style change can
-           retrigger or shorten the motion. */
-        pageTransitionShieldPanel.style.setProperty('transition','none','important');
-        pageTransitionShieldPanel.style.setProperty('transform',toTransform,'important');
-        pageTransitionShieldPanel.style.setProperty('-webkit-transform',toTransform,'important');
-      })().finally(() => {
-        delete root.dataset.pageShieldMotion;
-        pageShieldMotionPromise = null;
-      });
-      return pageShieldMotionPromise;
-    };
+    const animatePageShield = () => Promise.resolve();
 
     const delay = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
     const nextPaint = () => new Promise((resolve) => {
@@ -349,13 +261,10 @@
       const fallbackTimer = window.setTimeout(finish, duration + 180);
     });
 
-    const setShieldClasses = (nextState) => {
+    const setShieldClasses = () => {
       root.classList.remove("page-shield-arrival", "page-shield-covering", "page-shield-revealing");
-      if (nextState === "covered") root.classList.add("page-shield-arrival");
-      if (nextState === "covering") root.classList.add("page-shield-covering");
-      if (nextState === "revealing") root.classList.add("page-shield-revealing");
-      root.dataset.pageShieldState = nextState;
-      shieldState = nextState;
+      root.dataset.pageShieldState = "open";
+      shieldState = "open";
     };
 
     const syncEmbeddedAnimationActivity = (active) => {
@@ -576,22 +485,10 @@
            to navigate instead of navigating its own iframe. */
         if (typeof window.__ahPersistentNavigate === 'function') {
           try {
-            if (window.__ahPersistentNavigate(destination.href) !== false) return true;
+            if (window.__ahPersistentNavigate(destination.href, (footerButton && footerButton.dataset && footerButton.dataset.ahShieldDirection) || (link && link.dataset && link.dataset.ahShieldDirection) || '') !== false) return true;
           } catch (error) {}
         }
-        try {
-          window.sessionStorage.setItem(storageKey, "1");
-        } catch (error) {
-          /* Round 919 also carries the handoff in the URL, so local file://
-             navigation remains covered when sessionStorage is unavailable. */
-        }
-        let routedHref = destination.href;
-        try {
-          const routedUrl = new URL(destination.href);
-          routedUrl.searchParams.set("ah-route", "1");
-          routedHref = routedUrl.href;
-        } catch (error) {}
-        window.location.assign(routedHref);
+        window.location.assign(destination.href);
         return true;
       };
 
@@ -671,81 +568,8 @@
     });
   }
 
-  /* Round 425: the page-name sign itself is the scroll indicator. Its color
-     fills from left to right while a clipped duplicate label reverses to the
-     opposite brand color wherever the fill has reached. */
+  /* Round 1818: page-name progress is owned exclusively by the canonical router. */
   const scrollViewport = document.querySelector("main#main-content");
-  const pageProgressSign = document.querySelector(
-    "body > .rim-page-name-screen.footer-page-screen.header-page-screen--top"
-  );
-  const pageProgressLabel = pageProgressSign?.querySelector(
-    ":scope > .footer-page-led, :scope > .header-page-led"
-  ) || null;
-  let pageProgressInverseLabel = pageProgressSign?.querySelector(
-    ":scope > .page-sign-progress-inverse"
-  ) || null;
-  if (pageProgressSign && pageProgressLabel && !pageProgressInverseLabel) {
-    pageProgressSign.dataset.progressTone = pageProgressLabel.classList.contains(
-      "screen-text-canonical--green"
-    ) ? "green" : "pink";
-    pageProgressInverseLabel = document.createElement("span");
-    pageProgressInverseLabel.className = "page-sign-progress-inverse";
-    pageProgressInverseLabel.setAttribute("aria-hidden", "true");
-
-    /* Round 916: keep the progress-fill layer, but do not add the former
-       “Automated Hearts” words to the top progress field. */
-    pageProgressSign.append(pageProgressInverseLabel);
-  }
-  const documentScrollViewport =
-    document.scrollingElement || document.documentElement;
-
-  const getScrollProgress = (surface, isDocumentSurface = false) => {
-    if (!surface) return 0;
-    const maximumScroll = Math.max(
-      0,
-      Number(surface.scrollHeight || 0) - Number(surface.clientHeight || 0)
-    );
-    if (maximumScroll <= 0) return 0;
-    const scrollTop = isDocumentSurface
-      ? Math.max(
-          Number(window.scrollY || 0),
-          Number(surface.scrollTop || 0),
-          Number(document.body?.scrollTop || 0)
-        )
-      : Number(surface.scrollTop || 0);
-    return Math.min(1, Math.max(0, scrollTop / maximumScroll));
-  };
-
-  let pageProgressFrame = 0;
-  const updatePageProgress = () => {
-    window.cancelAnimationFrame(pageProgressFrame);
-    pageProgressFrame = window.requestAnimationFrame(() => {
-      if (!pageProgressSign) return;
-      const progress = Math.max(
-        getScrollProgress(scrollViewport),
-        getScrollProgress(documentScrollViewport, true)
-      );
-      const normalized = progress.toFixed(4);
-      pageProgressSign.style.setProperty("--page-sign-scroll-progress", normalized);
-      pageProgressSign.style.setProperty(
-        "--page-sign-scroll-percent",
-        `${(progress * 100).toFixed(2)}%`
-      );
-      pageProgressSign.dataset.scrollProgress = normalized;
-      pageProgressSign.setAttribute("data-scroll-percent", String(Math.round(progress * 100)));
-    });
-  };
-
-  updatePageProgress();
-  scrollViewport?.addEventListener("scroll", updatePageProgress, { passive: true });
-  window.addEventListener("scroll", updatePageProgress, { passive: true });
-  document.addEventListener("scroll", updatePageProgress, {
-    passive: true,
-    capture: true,
-  });
-  window.addEventListener("resize", updatePageProgress, { passive: true });
-  window.addEventListener("load", updatePageProgress, { once: true });
-  window.addEventListener("pageshow", updatePageProgress, { passive: true });
 
   /* Round 443: fast, frame-rate-independent wheel smoothing for the site's
      internal viewport. Native touch and keyboard scrolling remain untouched. */
@@ -842,20 +666,20 @@
           >
             <label class="nav-contact-field">
               <span class="sr-only">Name</span>
-              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" autocomplete="name" name="name" placeholder="Name (required)" required type="text">
+              <input class="ah-contact-screen" autocomplete="name" name="name" placeholder="Name (required)" required type="text">
             </label>
             <label class="nav-contact-field">
               <span class="sr-only">Email</span>
-              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" autocomplete="email" name="email" placeholder="Email (required)" required type="email">
+              <input class="ah-contact-screen" autocomplete="email" name="email" placeholder="Email (required)" required type="email">
             </label>
-<label class="nav-contact-field nav-contact-field--full ah-phone-field"><span class="sr-only">Phone number (required)</span><input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" autocomplete="tel" inputmode="tel" name="phone" placeholder="Phone number (required)" required type="tel"></label>
+<label class="nav-contact-field nav-contact-field--full ah-phone-field"><span class="sr-only">Phone number (required)</span><input class="ah-contact-screen" autocomplete="tel" inputmode="tel" name="phone" placeholder="Phone number (required)" required type="tel"></label>
             <label class="nav-contact-field">
               <span class="sr-only">Business or organization</span>
-              <input class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" autocomplete="organization" name="business" placeholder="Business or organization" type="text">
+              <input class="ah-contact-screen" autocomplete="organization" name="business" placeholder="Business or organization" type="text">
             </label>
             <label class="nav-contact-field">
               <span class="sr-only">Business type</span>
-              <select class="ah-red-screen" data-ah-placeholder-select="1" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" aria-label="Business type" name="business_type">
+              <select class="ah-contact-screen" data-ah-placeholder-select="1" aria-label="Business type" name="business_type">
                 <option value="">Business type</option>
                 <option>Professional services</option>
                 <option>Construction or trades</option>
@@ -867,7 +691,7 @@
             </label>
             <label class="nav-contact-field nav-contact-field--full">
               <span class="sr-only">What feels harder than it should?</span>
-              <textarea class="ah-red-screen" style="background:linear-gradient(180deg,#ad1027 0%,#7f081b 46%,#4c030f 100%)!important;color:#24c978!important;-webkit-text-fill-color:#24c978!important;font-family:Orbitron,system-ui,sans-serif!important;" name="message" placeholder="What feels harder than it should?" required rows="4"></textarea>
+              <textarea class="ah-contact-screen" name="message" placeholder="What feels harder than it should?" required rows="4"></textarea>
             </label>
             <button class="button button--small send-question-button nav-contact-submit ah-unified-spacebar" type="submit">
               <span class="ah-route-label-final">Send Message</span>
@@ -880,41 +704,9 @@
     document.body.appendChild(drawer);
 
 
-    // Round 1635: source-level light-black spacebar carbon contact section. This runs in the generator itself,
-    // before any separate authority file is needed, so the live form cannot fall back
-    // to the retired black inner shells.
-    (() => {
-      const panel = drawer.querySelector('#nav-contact-panel');
-      const imp = (el, prop, value) => { if (el) el.style.setProperty(prop, value, 'important'); };
-      if (panel) {
-        imp(panel,'background-color','#17191b');
-        imp(panel,'background-image','linear-gradient(180deg,rgba(255,255,255,.055) 0%,rgba(255,255,255,.018) 16%,rgba(0,0,0,.035) 48%,rgba(0,0,0,.20) 100%),url("./assets/contact-spacebar-carbon-light-black-round1635.webp")');
-        imp(panel,'background-size','100% 100%,190px 190px');
-        imp(panel,'background-position','center,0 0');
-        imp(panel,'background-repeat','no-repeat,repeat');
-        imp(panel,'background-blend-mode','normal,normal');
-        const form = panel.querySelector('form');
-        if (form) {
-          imp(form,'background','transparent'); imp(form,'background-color','transparent'); imp(form,'background-image','none');
-          imp(form,'border','0'); imp(form,'outline','0'); imp(form,'box-shadow','none');
-        }
-        panel.querySelectorAll('label').forEach((label) => {
-          imp(label,'background','transparent'); imp(label,'background-color','transparent'); imp(label,'background-image','none');
-          imp(label,'border','0'); imp(label,'outline','0'); imp(label,'box-shadow','none');
-        });
-      }
-      let style = document.getElementById('ah1635-generator-placeholder-style');
-      if (!style) {
-        style = document.createElement('style');
-        style.id = 'ah1635-generator-placeholder-style';
-        style.textContent = '#nav-contact-panel#nav-contact-panel#nav-contact-panel input.ah-red-screen::placeholder,#nav-contact-panel#nav-contact-panel#nav-contact-panel textarea.ah-red-screen::placeholder{color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;text-shadow:0 0 2px rgba(255,255,255,.34)!important;}';
-        document.head.appendChild(style);
-      }
-    })();
-
     drawer.querySelectorAll("select[data-ah-placeholder-select]").forEach((select) => {
       const syncSelectColor = () => {
-        const color = select.value ? "#24c978" : "#ffffff";
+        const color = select.value ? "#69ff7d" : "#fff5f7";
         select.style.setProperty("color", color, "important");
         select.style.setProperty("-webkit-text-fill-color", color, "important");
       };
@@ -1050,8 +842,8 @@
       ? Array.from(carousel.querySelectorAll("[data-carousel-direction]"))
       : [];
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const automaticSpeed = reducedMotion ? -72 : -162;
-    const directionalSpeed = reducedMotion ? 130 : 370;
+    const automaticSpeed = reducedMotion ? -36 : -81;
+    const directionalSpeed = reducedMotion ? 65 : 185;
     let position = 0;
     let currentSpeed = automaticSpeed;
     let targetSpeed = automaticSpeed;
@@ -1099,6 +891,16 @@
     };
 
     controls.forEach((button) => {
+      // The carousel's vertical centering must survive generic button press effects.
+      const lockOrbPosition = () => {
+        for (const [property, value] of [["transform", "translateY(-50%)"], ["translate", "none"], ["scale", "none"], ["transition-property", "filter,box-shadow"]]) {
+          if (button.style.getPropertyValue(property) !== value || button.style.getPropertyPriority(property) !== "important") {
+            button.style.setProperty(property, value, "important");
+          }
+        }
+      };
+      lockOrbPosition();
+      new MutationObserver(lockOrbPosition).observe(button, {attributes: true, attributeFilter: ["style", "class"]});
       const direction = button.dataset.carouselDirection === "left" ? 1 : -1;
 
       button.addEventListener("pointerdown", (event) => {
@@ -1169,7 +971,7 @@
     if ("ResizeObserver" in window && carousel) {
       new ResizeObserver(measureCarousel).observe(carousel);
     } else {
-      window.addEventListener("resize", measureCarousel, { passive: true });
+      (window.AHResponsive?window.AHResponsive.watch(measureCarousel):window.addEventListener('resize',measureCarousel,{passive:true}));
     }
     document.addEventListener("visibilitychange", () => {
       previousTime = performance.now();
@@ -1451,11 +1253,10 @@ document.addEventListener("DOMContentLoaded", () => {
    a cleaner 24pt bulb face; other fields retain the established fit tiers. */
 (() => {
   const DIGITAL_SELECTOR = [
-    '.screen-text-canonical:not(.home-title-text-standard):not(.charity-marquee)',
+    '.screen-text-canonical:not(.home-title-text-standard):not(.ah1749-title-progress-text):not(.charity-marquee):not(.footer-page-led):not(.header-page-led)',
     '.charity-marquee__segment',
     '.negative-software-screen-round344 h3',
     '.negative-software-screen-round344 li',
-    '#site-footer .footer-nav-label'
   ].join(',');
 
   const normalizeText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
@@ -1565,12 +1366,29 @@ document.addEventListener("DOMContentLoaded", () => {
     element.style.setProperty('background-blend-mode', `${Array(layerCount).fill('multiply').join(',')}, normal`, 'important');
   };
 
+  const applyPageProgressText = (element) => {
+    element.style.setProperty('background-image','linear-gradient(90deg,#07111b 0%,#07111b var(--page-sign-scroll-percent,0%),#8fffd7 var(--page-sign-scroll-percent,0%),#8fffd7 100%)','important');
+    element.style.setProperty('background-size','100% 100%','important');
+    element.style.setProperty('background-position','center','important');
+    element.style.setProperty('background-repeat','no-repeat','important');
+    element.style.setProperty('-webkit-mask-image','radial-gradient(circle at 1.12px 1.12px,#000 0 .92px,transparent 1.18px)','important');
+    element.style.setProperty('mask-image','radial-gradient(circle at 1.12px 1.12px,#000 0 .92px,transparent 1.18px)','important');
+    element.style.setProperty('-webkit-mask-size','3.25px 3.25px','important');
+    element.style.setProperty('mask-size','3.25px 3.25px','important');
+    element.style.setProperty('-webkit-mask-repeat','repeat','important');
+    element.style.setProperty('mask-repeat','repeat','important');
+    element.style.setProperty('filter','none','important');
+    element.style.setProperty('-webkit-filter','none','important');
+  };
+
   const restoreCompleteDigitalText = () => {
     document.querySelectorAll(DIGITAL_SELECTOR).forEach((element, fieldIndex) => {
       if (element.classList.contains('r530-who-bulb-field') ||
           (element.classList.contains('brand-route-screen__label') &&
            (element.closest('#who-we-help-solutions') || element.closest('#learning-route-buttons')))) return;
       if (element.closest('#home-solution-framework')) return;
+      /* Round 2108: footer labels and page-name hardware are CSS-owned from first paint. */
+      if (element.classList.contains('footer-nav-label') || element.matches('.rim-page-name-screen > .footer-page-led, .rim-page-name-screen > .header-page-led')) return;
       const source = normalizeText(
         element.dataset.text ||
         element.getAttribute('aria-label') ||
@@ -1627,6 +1445,20 @@ document.addEventListener("DOMContentLoaded", () => {
         ].forEach((prop) => element.style.removeProperty(prop));
         return;
       }
+      if (isPageName) {
+        element.hidden = false;
+        element.dataset.round418Size = 'compact';
+        [
+          '-webkit-text-stroke','font-family','font-size','font-weight','font-style','line-height',
+          'letter-spacing','word-spacing','opacity','visibility','text-shadow','animation','transition',
+          'transform','color','-webkit-text-fill-color','background','background-color','background-image',
+          'background-size','background-position','background-repeat','background-blend-mode',
+          '-webkit-background-clip','background-clip','filter','-webkit-filter',
+          '-webkit-mask-image','mask-image','-webkit-mask-size','mask-size',
+          '-webkit-mask-repeat','mask-repeat'
+        ].forEach((prop) => element.style.removeProperty(prop));
+        return;
+      }
       element.hidden = false;
       element.style.setProperty('-webkit-text-stroke', '0 transparent', 'important');
       element.style.setProperty('font-family', '"Orbitron",system-ui,sans-serif', 'important');
@@ -1672,17 +1504,18 @@ document.addEventListener("DOMContentLoaded", () => {
       element.style.setProperty('color', 'transparent', 'important');
       element.style.setProperty('-webkit-text-fill-color', 'transparent', 'important');
       element.style.setProperty('background-color', 'transparent', 'important');
-      applyAgingPattern(element, source, fieldIndex);
+      if (isPageName) applyPageProgressText(element);
+      else applyAgingPattern(element, source, fieldIndex);
       element.style.setProperty('-webkit-background-clip', 'text', 'important');
       element.style.setProperty('background-clip', 'text', 'important');
       element.style.setProperty(
         'filter',
-        `${isHomeHeaderTitle ? 'brightness(1.32) contrast(1.22)' : 'brightness(1.22) contrast(1.18)'} drop-shadow(0 0 .85px var(--round418-bulb-face)) drop-shadow(0 0 3.4px var(--round418-bulb-halo))`,
+        isPageName ? 'none' : `${isHomeHeaderTitle ? 'brightness(1.32) contrast(1.22)' : 'brightness(1.22) contrast(1.18)'}  `,
         'important'
       );
       element.style.setProperty(
         '-webkit-filter',
-        `${isHomeHeaderTitle ? 'brightness(1.32) contrast(1.22)' : 'brightness(1.22) contrast(1.18)'} drop-shadow(0 0 .85px var(--round418-bulb-face)) drop-shadow(0 0 3.4px var(--round418-bulb-halo))`,
+        isPageName ? 'none' : `${isHomeHeaderTitle ? 'brightness(1.32) contrast(1.22)' : 'brightness(1.22) contrast(1.18)'}  `,
         'important'
       );
     });
@@ -1729,7 +1562,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         const isHomeHeaderTitle = element.classList.contains('home-title-text-standard') &&
           Boolean(element.closest('.home-header-screen'));
-        if (isFooterLabel || isHomeHeaderTitle) return;
+        if (isFooterLabel || isPageName || isHomeHeaderTitle) return;
 
         const bounds = element.getBoundingClientRect();
         if (!bounds.width || !bounds.height) return;
@@ -1764,7 +1597,8 @@ document.addEventListener("DOMContentLoaded", () => {
           element.dataset.text || element.getAttribute('aria-label') || element.textContent
         );
         const fieldIndex = Number.parseInt(element.dataset.round418FieldIndex || '0', 10) || 0;
-        applyAgingPattern(element, source, fieldIndex, {
+        if (isPageName) applyPageProgressText(element);
+        else applyAgingPattern(element, source, fieldIndex, {
           left: (relativeLeft / bounds.width) * 100,
           top: (relativeTop / bounds.height) * 100,
           width: (relativeWidth / bounds.width) * 100,
@@ -1782,7 +1616,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeRound418DigitalText();
   document.addEventListener('DOMContentLoaded', initializeRound418DigitalText, { once: true });
   window.addEventListener('pageshow', initializeRound418DigitalText);
-  window.addEventListener('resize', fitDigitalTextTiers, { passive: true });
+  (window.AHResponsive?window.AHResponsive.watch(fitDigitalTextTiers):window.addEventListener('resize',fitDigitalTextTiers,{passive:true}));
   if (document.fonts?.ready) document.fonts.ready.then(fitDigitalTextTiers).catch(() => {});
 })();
 
@@ -1793,7 +1627,6 @@ document.addEventListener("DOMContentLoaded", () => {
 (() => {
   if (document.body?.dataset?.page !== 'home') return;
   const screenSelectors = [
-    'body > .rim-page-name-screen.footer-page-screen.header-page-screen--top',
     'main#main-content .home-header-screen-row > .home-header-screen',
     'main#main-content .home-message-display',
     'main#main-content #home-route-buttons .premium-route-card__title-sign',
@@ -1827,7 +1660,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/* Round 465: Learning Center 3D models use a static leather shield backdrop.
+/* Round 465: Good Information 3D models use a static leather shield backdrop.
    The first model is populated by default. Orb navigation is direction-aware:
    previous enters from the left, next enters from the right, including wraps. */
 (() => {
@@ -2074,7 +1907,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 })();
 
-/* Round 1037: route labels are plain text on both Industries and Learning Center.
+/* Round 1037: route labels are plain text on both Industries and Good Information.
    The retired per-character aged-bulb renderers (Rounds 528/530/531) were removed
    because they rebuilt words after load and collapsed/blurred visible spaces. */
 (() => {
@@ -2182,7 +2015,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener('DOMContentLoaded', scheduleFit, { once: true });
   window.addEventListener('load', scheduleFit, { once: true });
   window.addEventListener('pageshow', scheduleFit);
-  window.addEventListener('resize', scheduleFit, { passive: true });
+  (window.AHResponsive?window.AHResponsive.watch(scheduleFit):window.addEventListener('resize',scheduleFit,{passive:true}));
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleFit).catch(() => {});
 
   /* Round 939: footer cluster-light listeners removed; controls are independent. */

@@ -9,8 +9,7 @@
   5. Deploy > New deployment > Web app.
      Execute as: Me
      Who has access: Anyone
-  6. Copy the Web App /exec URL into:
-     assets/google-sheet-config-round1118.js
+  6. Configure the Web App /exec URL in the site's consolidated form runtime before deployment.
 */
 
 const AH_TAB_NAME = 'Website Form Entries';
