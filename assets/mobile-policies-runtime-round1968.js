@@ -11,9 +11,9 @@ const $ = (s, r=document) => r.querySelector(s);
   let selected = null;
   let modelIndex = 0;
   const learningModels={
-    ai101:['./models/ai-101-core-principles-round1316.html?v=1533r','./models/ai-101-human-ai-partnership-mobile-round1640.html?v=1640r','./models/ai-101-verification-lab-round1828.html?v=1828r'],
-    practical:['./models/practical-ai-helix-round1828.html?v=1828r'],
-    strategy:['./models/strategy-lab-ball-round1093.html?v=1640r','./models/strategy-lab-readiness-diagnostic-round1828.html?v=1828r','./models/strategy-lab-hourglass-round1828.html?v=1828r']
+    ai101:['./models/ai-101-core-principles-round1316.html?v=2320','./models/ai-101-human-ai-partnership-mobile-round1640.html?v=2320','./models/ai-101-verification-lab-round1828.html?v=2320'],
+    practical:['./models/practical-ai-helix-round1828.html?v=2320'],
+    strategy:['./models/strategy-lab-ball-round1093.html?v=2320','./models/strategy-lab-readiness-diagnostic-round1828.html?v=2320','./models/strategy-lab-hourglass-round1828.html?v=2320']
   };
   function unloadModel(){ if(frame){ frame.src='about:blank'; frame.remove(); frame=null; } if(modelShell) modelShell.hidden=true; }
   function loadUrl(url){
@@ -45,8 +45,8 @@ const $ = (s, r=document) => r.querySelector(s);
   $$('[data-industry]').forEach((el)=>el.addEventListener('click',(e)=>{
     e.preventDefault(); unloadModel(); selected=el.dataset.industry; if(stage){stage.hidden=false; $('#stage-title').textContent=el.dataset.title;} $('#industry-helix')?.setAttribute('data-industry-index',selected); stage?.scrollIntoView({block:'start'});
   }));
-  $('#industry-helix')?.addEventListener('click',(e)=>{ const i=e.currentTarget.dataset.industryIndex||'0'; loadUrl(`./models/who-we-help-industry-helix-round1093.html?industry=${encodeURIComponent(i)}&v=1353r`); });
-  $('#industry-readiness')?.addEventListener('click',()=>loadUrl('./models/who-we-help-readiness-signals-round1513.html?v=1513r'));
+  $('#industry-helix')?.addEventListener('click',(e)=>{ const i=e.currentTarget.dataset.industryIndex||'0'; loadUrl(`./models/who-we-help-industry-helix-round1093.html?v=2320?industry=${encodeURIComponent(i)}&v=1353r`); });
+  $('#industry-readiness')?.addEventListener('click',()=>loadUrl('./models/who-we-help-readiness-signals-round1513.html?v=2320'));
   document.addEventListener('visibilitychange',()=>{ if(document.hidden) unloadModel(); });
 })();
 

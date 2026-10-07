@@ -1,16 +1,31 @@
 img[src*="heart-metal-transparent"],
+
 img[src*="mobile-intro-integrated-heart"],
+
 .ah1858-heart-image,
+
 .rim-heart-emblem img,
+
 .rim-heart-home-link img{filter:none!important;-webkit-filter:none!important;box-shadow:none!important;text-shadow:none!important
+
 }@media (max-width:800px){html body[data-ah-mobile-surface="home"] #machine-stack > .machine-frame:first-of-type,html body[data-ah-mobile-surface="home"] #machine-stack > .machine-frame:first-of-type .machine-window{background:#020508!important;background-image:none!important;filter:none!important;-webkit-filter:none!important
+
   }html body[data-ah-mobile-surface="home"] #machine-stack > .machine-frame:first-of-type::before,
+
   html body[data-ah-mobile-surface="home"] #machine-stack > .machine-frame:first-of-type::after,
+
   html body[data-ah-mobile-surface="home"] #machine-stack > .machine-frame:first-of-type .machine-window::before,
+
   html body[data-ah-mobile-surface="home"] #machine-stack > .machine-frame:first-of-type .machine-window::after,
+
   html body[data-ah-mobile-surface="home"] #machine-stack > .machine-frame:first-of-type [class*="haze"],
+
   html body[data-ah-mobile-surface="home"] #machine-stack > .machine-frame:first-of-type [class*="tint"],
+
   html body[data-ah-mobile-surface="home"] #machine-stack > .machine-frame:first-of-type [class*="wash"]{background-image:none!important;filter:none!important;-webkit-filter:none!important
+
   }html body[data-ah-mobile-surface="home"] #machine-stack > .machine-frame:first-of-type .machine-poster{filter:none!important;-webkit-filter:none!important;mix-blend-mode:normal!important
+
   }
+
 }

@@ -1,1 +1,0 @@
-window.addEventListener('click',e=>{const b=e.target.closest?.('.ah2254-consultation');if(!b)return;e.preventDefault();e.stopImmediatePropagation();b.onclick?.call(b,e)},true);

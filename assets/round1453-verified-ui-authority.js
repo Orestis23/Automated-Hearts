@@ -26,30 +26,32 @@
     const {sec,shell,paths,grid}=learningNodes();
     if(!sec||!document.body.classList.contains('ah-model-stage-locked')){clearLearning();return;}
 
-    props(sec,{'position':'absolute','z-index':'18','top':'0','right':'0','bottom':'var(--r857-ticker-height,48px)','left':'0','width':'auto','min-width':'0','max-width':'none','height':'auto','min-height':'0','max-height':'none','margin':'0','padding':'0','display':'flex','align-items':'center','justify-content':'center','overflow':'visible','transform':'none','translate':'none'});
-    props(shell,{'position':'relative','inset':'auto','width':'100%','min-width':'0','max-width':'100%','height':'100%','min-height':'0','max-height':'100%','margin':'0','padding':'0','display':'flex','align-items':'center','justify-content':'center','overflow':'visible','transform':'none','translate':'none'});
-    props(paths,{'position':'relative','inset':'auto','width':'min(calc(100% - 36px),1600px)','min-width':'0','max-width':'1600px','height':'auto','min-height':'0','max-height':'100%','margin':'0 auto','padding':'0','transform':'none','translate':'none'});
+    props(sec,{'position':'absolute','z-index':'18','top':'0','right':'0','bottom':'0','left':'0','width':'auto','min-width':'0','max-width':'none','height':'auto','min-height':'0','max-height':'none','margin':'0','padding':'0','display':'flex','align-items':'center','justify-content':'center','overflow':'visible','transform':'none','translate':'none'});
+    props(shell,{'position':'relative','inset':'auto','box-sizing':'border-box','padding-top':'144px','width':'100%','min-width':'0','max-width':'100%','height':'100%','min-height':'0','max-height':'100%','margin':'0','padding':'144px 0 0','display':'flex','align-items':'center','justify-content':'center','overflow':'visible','transform':'none','translate':'none'});
+    props(paths,{'position':'relative','inset':'auto','top':'0px','width':'min(calc(100% - 36px),1600px)','min-width':'0','max-width':'1600px','height':'auto','min-height':'0','max-height':'100%','margin':'0 auto','padding':'0','transform':'none','translate':'none'});
     props(grid,{'position':'relative','inset':'auto','width':'100%','min-width':'0','max-width':'1600px','height':'auto','min-height':'0','max-height':'100%','margin':'0 auto','padding':'0','display':'grid','grid-template-columns':'repeat(3,minmax(0,1fr))','grid-template-rows':'auto','align-items':'center','justify-items':'center','align-content':'center','justify-content':'center','gap':'clamp(22px,3.2vw,58px)','transform':'none','translate':'none'});
 
     /* Size from BOTH vertical room and actual column width so the row stays
        centered without media spilling into adjacent columns at narrower desktop widths. */
-    const available=Math.max(0,sec.getBoundingClientRect().height);
+    const available=Math.max(0,sec.getBoundingClientRect().height-144);
     const sampleSign=sec.querySelector('.premium-route-card__title-sign');
     const signH=Math.max(56,Math.min(72,sampleSign?.getBoundingClientRect().height||72));
     const itemGap=12, breathing=24;
-    const verticalMax=Math.max(220,Math.floor(available-signH-itemGap-breathing));
+    const verticalMax=Math.max(80,Math.floor(available-signH-itemGap-breathing));
     const gridW=Math.max(0,grid.getBoundingClientRect().width);
     const gapPx=parseFloat(getComputedStyle(grid).columnGap)||22;
     const columnMax=Math.max(220,Math.floor((gridW-(gapPx*2))/3));
-    const med=Math.max(220,Math.min(460,verticalMax,columnMax));
+    const med=Math.max(80,Math.min(460,verticalMax,columnMax));
     sec.style.setProperty('--ah1453-medallion',med+'px');
 
     sec.querySelectorAll('article.r987-learning-flat-card').forEach(card=>props(card,{'position':'relative','inset':'auto','display':'flex','flex-direction':'column','align-items':'center','justify-content':'center','gap':itemGap+'px','width':'100%','min-width':'0','max-width':'500px','height':'auto','min-height':'0','max-height':'none','margin':'0','padding':'0','overflow':'visible','transform':'none','translate':'none'}));
     sec.querySelectorAll('.learning-medallion-button,.learning-medallion-media').forEach(el=>props(el,{'width':med+'px','min-width':'0','max-width':med+'px','height':med+'px','min-height':'0','max-height':med+'px','aspect-ratio':'1/1','margin':'0 auto','flex':'0 0 auto'}));
     sec.querySelectorAll('img.r987-learning-flat-button-image').forEach(el=>props(el,{'display':'block','width':'100%','min-width':'0','max-width':med+'px','height':'100%','min-height':'0','max-height':med+'px','object-fit':'contain','margin':'0 auto'}));
 
+    const band=sec.querySelector('.ah-brand-digital-cta-band');props(band,{position:'absolute',top:'48px',left:'50%',right:'auto',bottom:'auto',transform:'translateX(-50%)',margin:'0',width:'max-content','max-width':'calc(100% - 48px)','text-align':'center'});
+    sec.querySelectorAll('.premium-route-card__title-sign,.footer-nav-label').forEach(e=>props(e,{'text-align':'center','justify-content':'center'}));
     const line=sec.querySelector('.ah-learning-ticker-line-r1451');
-    props(line,{'position':'absolute','z-index':'100','top':'auto','right':'0','bottom':'-2px','left':'0','display':'block','width':'auto','height':'2px','margin':'0','padding':'0','border':'0','background':PINK,'box-shadow':'0 0 3px rgba(255,46,168,.78),0 0 7px rgba(255,46,168,.25)','opacity':'1','pointer-events':'none'});
+    line?.remove();
   };
 
   const overlayFor=(button,url)=>{

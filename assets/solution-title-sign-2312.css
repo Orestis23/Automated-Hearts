@@ -1,0 +1,35 @@
+@layer ah2312-solution-title-sign {
+ @media (min-width:901px) {
+  html body #home-negative-software-title {
+   position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;
+   box-sizing:border-box!important;height:60px!important;min-height:60px!important;max-height:60px!important;
+   padding:0 12px!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden!important;container-type:inline-size;
+   background-color:#191713!important;
+   background-image:linear-gradient(180deg,rgba(235,237,233,.05),rgba(235,237,233,.02) 24%,rgba(235,237,233,.008) 56%,rgba(0,0,0,.04)),linear-gradient(110deg,rgba(255,255,250,.024),transparent 48%),repeating-linear-gradient(0deg,rgba(245,245,240,.004) 0 1px,transparent 1px 3px)!important;
+   background-size:100% 100%!important;background-position:0 0!important;
+  }
+  html body #home-negative-software-title::before,html body #home-negative-software-title .round426-glass-lens {display:none!important;content:none!important}
+  html body #home-negative-software-title::after {
+   content:""!important;position:absolute!important;inset:2px!important;display:block!important;box-sizing:border-box!important;
+   border:1px solid rgba(192,202,200,.52)!important;border-radius:0!important;
+   box-shadow:0 0 0 1px rgba(0,0,0,.8),inset 0 1px rgba(255,255,245,.2),inset 0 -1px rgba(0,0,0,.6)!important;
+   background:linear-gradient(rgba(228,231,224,.21),rgba(220,224,219,.1) 38%,rgba(205,213,208,.05)),repeating-linear-gradient(0deg,rgba(245,247,238,.03) 0 1px,transparent 1px 3px)!important;
+   pointer-events:none!important;z-index:0!important;opacity:.5!important;
+  }
+  html body #home-negative-software-title .ah-negative-software-title-copy {
+   position:relative!important;inset:auto!important;z-index:1!important;display:block!important;width:max-content!important;max-width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important;
+   font-family:AHControlOrbitron,Orbitron,system-ui,sans-serif!important;font-weight:900!important;font-size:min(28.8px,5.3cqw)!important;line-height:1.12!important;letter-spacing:.01em!important;white-space:nowrap!important;
+  }
+  html body #home-negative-software-title .ah-negative-software-title-copy,
+  html body #home-negative-software-title .ah-negative-software-title-copy * {
+   color:#ff2ea8!important;-webkit-text-fill-color:#ff2ea8!important;opacity:1!important;
+   mask:none!important;-webkit-mask:none!important;filter:brightness(1.2)!important;text-shadow:0 0 1px #ff2ea8!important;
+   transform:none!important;animation:none!important;
+  }
+  html body #home-negative-software-title .ah-negative-software-title-copy::before,
+  html body #home-negative-software-title .ah-negative-software-title-copy::after {display:none!important;content:none!important}
+  html body #home-negative-software-title .ah-negative-software-title-copy * {display:inline!important;position:static!important;font:inherit!important;letter-spacing:inherit!important;filter:none!important;white-space:nowrap!important}
+  html body #home-negative-software-title .ah-negative-software-title-copy .ah-negative-software-solution,
+  html body #home-negative-software-title .ah-negative-software-title-copy .ah-negative-software-solution * {color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important;text-shadow:0 0 1px #8fffd7!important}
+ }
+}

@@ -1,3 +1,5 @@
 @media (max-width:900px){html.page-shield-arrival::before,html.page-shield-covering::before,html.page-shield-revealing::before{content:none!important;display:none!important;visibility:hidden!important;opacity:0!important}#page-transition-shield,
+
   body > #page-transition-shield.page-transition-shield{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important;animation:none!important;transition:none!important}#ah-route-shield{isolation:isolate!important}#ah-route-shield-panel{background-color:#08172b!important;background-image:url("./honeycomb-mobile-continuous-2245.webp")!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important}#ah-route-shield-quote{display:none!important}
+
 }

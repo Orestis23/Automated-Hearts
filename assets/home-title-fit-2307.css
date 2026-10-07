@@ -1,0 +1,9 @@
+@layer ah2307-title-fit{
+
+html body :is(#home-title-fields>.r1362-home-title-field,.title-stack>.lcd){min-width:0!important;container-type:inline-size;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;}
+
+html body :is(#home-title-fields .r1362-home-title-text,.title-stack .lcd-text){display:inline-block!important;width:max-content!important;max-width:100%!important;min-width:0!important;font-size:var(--ah-title-fit,min(28.8px,6cqw))!important;line-height:1.12!important;white-space:nowrap!important;overflow-wrap:normal!important;word-break:normal!important;text-align:center!important;margin:0!important;padding:0!important;flex:0 1 auto!important;}
+
+html body :is(#home-title-fields .r1362-home-title-text,.title-stack .lcd-text) *{font-size:inherit!important;line-height:inherit!important;white-space:nowrap!important;overflow-wrap:normal!important;word-break:normal!important;}
+
+}

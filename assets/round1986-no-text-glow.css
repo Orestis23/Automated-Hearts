@@ -1,13 +1,25 @@
 @layer ah1986-text-no-glow{*, *::before, *::after, *::marker, input::placeholder, textarea::placeholder{text-shadow:none!important
+
   }:is([class*="glyph"], .screen-text-canonical, .footer-nav-label,
+
       .footer-page-led, .header-page-led, .r1362-home-title-text, .lcd-text,
+
       .charity-marquee__segment, .ah1743-digitized-copy,
+
       .ah-solution-open-sign__text, .ah1807-home-window-control__text,
+
       .ah1825-machine-window-title__text, .ah1940-solution-window-title__text,
+
       .ah1940-solution-window-control__text),
+
   :is([class*="glyph"], .screen-text-canonical, .footer-nav-label,
+
       .footer-page-led, .header-page-led, .r1362-home-title-text, .lcd-text)::before,
+
   :is([class*="glyph"], .screen-text-canonical, .footer-nav-label,
+
       .footer-page-led, .header-page-led, .r1362-home-title-text, .lcd-text)::after{filter:none!important;-webkit-filter:none!important
+
   }
+
 }

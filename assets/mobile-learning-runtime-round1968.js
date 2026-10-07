@@ -9,9 +9,9 @@
   const reducedMotion=false; // Round 1536: explicit smooth-transition authority.
   const frameCache=new Map();
   const learningModels={
-    ai101:['./models/ai-101-core-principles-round1316.html?v=1874r','./models/ai-101-human-ai-partnership-mobile-round1640.html?v=1874r','./models/ai-101-verification-lab-round1828.html?v=1874r'],
-    practical:['./models/practical-ai-helix-round1828.html?v=1874r'],
-    strategy:['./models/strategy-lab-ball-round1093.html?v=1640r','./models/strategy-lab-readiness-diagnostic-round1828.html?v=1874r','./models/strategy-lab-hourglass-round1828.html?v=1828r']
+    ai101:['./models/ai-101-core-principles-round1316.html?v=2320','./models/ai-101-human-ai-partnership-mobile-round1640.html?v=2320','./models/ai-101-verification-lab-round1828.html?v=2320'],
+    practical:['./models/practical-ai-helix-round1828.html?v=2320'],
+    strategy:['./models/strategy-lab-ball-round1093.html?v=2320','./models/strategy-lab-readiness-diagnostic-round1828.html?v=2320','./models/strategy-lab-hourglass-round1828.html?v=2320']
   };
   let selected=null, modelIndex=0, scrollToken=0, transitioning=false;
   let rootAnchorSnapshot=null;

@@ -24,6 +24,7 @@ function ensureDeck(card){
   const end=e=>{state.drag=false;pause(700);try{deck.releasePointerCapture(e.pointerId)}catch(_){}};
   deck.addEventListener('pointerup',end);deck.addEventListener('pointercancel',end);
   deck.addEventListener('wheel',e=>{e.preventDefault();state.offset+=e.deltaY;normalize(state);render(state);pause(800)},{passive:false});
+  deck.addEventListener('keydown',e=>{const step={ArrowDown:48,ArrowUp:-48,PageDown:deck.clientHeight*.8,PageUp:-deck.clientHeight*.8}[e.key];if(step===undefined)return;e.preventDefault();state.offset+=step;normalize(state);render(state);pause(1800)});
   return state;
 }
 function normalize(s){if(!s.cycle)return;while(s.offset>=s.cycle)s.offset-=s.cycle;while(s.offset<0)s.offset+=s.cycle}

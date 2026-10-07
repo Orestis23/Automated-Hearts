@@ -1,9 +1,17 @@
 :root{--ah-model-surface-blue:#07111b;--ah-model-surface-frost-blur:1.25px}html,body{background-color:var(--ah-model-surface-blue)!important;background-image:none!important;background-attachment:scroll!important}#ah-static-model-backdrop-r1326{position:fixed!important;inset:0!important;z-index:0!important;display:block!important;width:100%!important;height:100%!important;pointer-events:none!important;background-color:var(--ah-model-surface-blue)!important;background-image:none!important;background-position:center!important;background-size:auto!important;background-repeat:no-repeat!important;transform:none!important;animation:none!important;transition:none!important;filter:none!important}#ah-static-model-backdrop-r1326::after{content:""!important;position:absolute!important;inset:0!important;display:block!important;pointer-events:none!important;background:radial-gradient(circle at 1px 1px,rgba(255,255,255,.045) 0 .45px,transparent .8px) 0 0/5px 5px,
+
     repeating-linear-gradient(0deg,rgba(255,255,255,.020) 0 1px,rgba(0,0,0,.012) 1px 3px),
+
     linear-gradient(180deg,rgba(255,255,255,.065) 0%,rgba(255,255,255,.022) 24%,transparent 52%,rgba(0,0,0,.055) 100%)!important;opacity:.88!important;-webkit-backdrop-filter:blur(var(--ah-model-surface-frost-blur)) saturate(.94)!important;backdrop-filter:blur(var(--ah-model-surface-frost-blur)) saturate(.94)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.055),inset 0 -1px 0 rgba(0,0,0,.16)!important}canvas{background:transparent!important;background-color:transparent!important;background-image:none!important;position:relative!important;z-index:1!important}html body.page-learning[data-page="learning"] #learning-model-stage>.learning-lesson-viewport.r984-static-model-viewport,
+
 html body.page-who-we-help[data-page="who-we-help"] #who-help-model-stage>.learning-lesson-viewport.r984-static-model-viewport,
+
 html body[data-ah-mobile-surface="learning"] #lite-model-shell.model-shell,
+
 html body[data-ah-mobile-surface="industries"] #lite-model-shell.model-shell{background-color:var(--ah-model-surface-blue)!important;background-image:none!important;background-attachment:scroll!important}html body.page-learning[data-page="learning"] #learning-model-stage iframe,
+
 html body.page-who-we-help[data-page="who-we-help"] #who-help-model-stage iframe,
+
 html body[data-ah-mobile-surface="learning"] #lite-model-shell iframe,
+
 html body[data-ah-mobile-surface="industries"] #lite-model-shell iframe{background-color:var(--ah-model-surface-blue)!important;background-image:none!important}

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://automatedhearts.com/</loc><lastmod>2026-09-30</lastmod></url>
-  <url><loc>https://automatedhearts.com/the-solution.html</loc><lastmod>2026-09-30</lastmod></url>
-  <url><loc>https://automatedhearts.com/industries.html</loc><lastmod>2026-09-30</lastmod></url>
-  <url><loc>https://automatedhearts.com/good-information.html</loc><lastmod>2026-09-30</lastmod></url>
-  <url><loc>https://automatedhearts.com/services.html</loc><lastmod>2026-09-30</lastmod></url>
-  <url><loc>https://automatedhearts.com/privacy-policy.html</loc><lastmod>2026-09-30</lastmod></url>
+<url><loc>https://automatedhearts.com/</loc></url>
+<url><loc>https://automatedhearts.com/industries.html</loc></url>
+<url><loc>https://automatedhearts.com/the-solution.html</loc></url>
+<url><loc>https://automatedhearts.com/good-information.html</loc></url>
+<url><loc>https://automatedhearts.com/services.html</loc></url>
+<url><loc>https://automatedhearts.com/privacy-policy.html</loc></url>
+<url><loc>https://automatedhearts.com/statistics-sources.html</loc></url>
 </urlset>

@@ -1,0 +1,2 @@
+/* Resolve contact forms through nested site frames without opening another window. */
+window.AHOpenModelContact=function(service){const detail={service:service||'3D model',source:'3D model'};let host=window.parent;for(let i=0;i<8&&host&&host!==window;i++){try{if(typeof host.AutomatedHeartsOpenContact==='function'){host.AutomatedHeartsOpenContact(detail);return}if(host===host.parent)break;host=host.parent}catch(_){break}}window.parent.postMessage({type:'automated-hearts:open-contact',...detail},location.origin)};

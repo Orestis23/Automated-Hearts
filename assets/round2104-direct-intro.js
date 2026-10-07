@@ -14,6 +14,7 @@
  if(query.get('intro')!=='1'){
   try{localStorage.setItem(key,'1');document.cookie='ah_site_intro_seen=1; Max-Age=31536000; Path=/; SameSite=Lax';}catch(_){}
  }
+ const TYPING_RATE=0.7;
  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
  const painted=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
  let ctx=null,buffers={},artURL='./assets/page-shield-official-honeycomb-r1877.webp',openReady=Promise.resolve(),impactAudio=null,impactPrimed=false,cacheWarmReady=Promise.resolve();
@@ -32,6 +33,7 @@
    document.fonts.load('700 16px Orbitron','Automated Hearts'),
    ...[artURL,'./assets/honeycomb-mobile-continuous-2245.webp','./assets/footer-button-carbon-inner-rim-round1586.svg'].map(src=>{const img=new Image();img.src=src;return img.decode();})
   ]);
+  if(document.getElementById('ah2304-persistent-presentation')&&document.documentElement.dataset.ahHomeSurfaceReady!=='1')await new Promise(resolve=>document.addEventListener('ah:home-surface-ready',resolve,{once:true}));
   await painted();
  }
 
@@ -83,7 +85,8 @@
  function sound(name,when=ctx?.currentTime||0){
   if(!ctx||ctx.state!=='running'||!buffers[name])return;
   const src=ctx.createBufferSource(),gain=ctx.createGain();src.buffer=buffers[name];src.connect(gain);gain.connect(ctx.destination);
-  const volume=name==='open'?.72:.25;gain.gain.setValueAtTime(volume,when);
+  const volume=name==='open'?.72:name==='type'?.32:.25;
+  if(name==='type')src.playbackRate.value=.96+Math.random()*.08;gain.gain.setValueAtTime(volume,when);
   if(name==='open'){gain.gain.setValueAtTime(volume,when+Math.max(0,src.buffer.duration-.5));gain.gain.linearRampToValueAtTime(0,when+src.buffer.duration);}
   src.start(when);return src;
  }
@@ -106,8 +109,8 @@
  const escaped=t=>t.replace(/[&<>']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;'}[c]));
  function render(i,text){lines[i].innerHTML=escaped(text).replace(/AI/g,'<span class="pink">AI</span>').replace(/Human|maximum efficiency/g,'<span class="green">$&</span>');lines[i].appendChild(cursor);}
  let strings=['','','',''];
- async function type(i,text){for(const char of text){if(routeDismissed)throw Error('Intro dismissed for navigation');strings[i]+=char;render(i,strings[i]);sound('type');await sleep(/[.,!?]/.test(char)?330:char===' '?95:38+Math.random()*62);}}
- async function back(i,n){for(let j=0;j<n;j++){if(routeDismissed)throw Error('Intro dismissed for navigation');strings[i]=strings[i].slice(0,-1);render(i,strings[i]);sound('delete');await sleep(50);}}
+ async function type(i,text){for(const char of text){if(routeDismissed)throw Error('Intro dismissed for navigation');strings[i]+=char;render(i,strings[i]);sound('type');await sleep((/[.,!?]/.test(char)?330:char===' '?95:38+Math.random()*62)/TYPING_RATE);}}
+ async function back(i,n){for(let j=0;j<n;j++){if(routeDismissed)throw Error('Intro dismissed for navigation');strings[i]=strings[i].slice(0,-1);render(i,strings[i]);sound('delete');await sleep(50/TYPING_RATE);}}
  async function start(){
   /* The real shell is already the live document. Wait until its CSS/font authority is
      committed, reveal the shell + intro together, then type without any document swap. */
@@ -118,9 +121,15 @@
   document.getElementById('ah1920-first-paint-hold')?.remove();
   document.documentElement.classList.add('ah1918-shell-visible','ah1920-shell-visible');
   story.hidden=false;
-  await type(0,'Prioritizing Job-Retention');await sleep(250);
-  await type(1,'Human-Centric Automation');await sleep(250);
-  await type(2,"AI should elevate the human & the mind.");await sleep(350);cursor.remove();
+  // Reserve each completed line's wrapping height before the first character paints.
+  const finalLines=['Prioritizing Job-Retention','Human-Centric Automation','AI should elevate the human & the mind.'];
+  lines[3].style.display='none';
+  finalLines.forEach((text,i)=>{lines[i].textContent=text;});
+  const lineHeights=finalLines.map((_,i)=>lines[i].getBoundingClientRect().height);
+  finalLines.forEach((_,i)=>{lines[i].style.setProperty('height',lineHeights[i]+'px','important');lines[i].style.setProperty('min-height',lineHeights[i]+'px','important');lines[i].textContent='';});
+  await type(0,'Prioritizing Job-Retention');await sleep(250/TYPING_RATE);
+  await type(1,'Human-Centric Automation');await sleep(250/TYPING_RATE);
+  await type(2,"AI should elevate the human & the mind.");await sleep(350/TYPING_RATE);cursor.remove();
 
   /* Round 1918: there is deliberately NO second document.write() here.  The outer rim,
      footer keys, message control, heart and page-name screen are the same DOM nodes that
@@ -243,7 +252,9 @@
   try{const img=new Image();img.decoding='async';img.fetchPriority='high';img.src=artURL;img.decode().catch(()=>{});}catch(_){}
   // Audio decode is opportunistic. Autoplay restrictions already mean sound cannot be guaranteed
   // before a user gesture, so audio readiness must never delay the visible introduction.
-  void typeReady;void deleteReady;
+  await shellReady;
+  await Promise.race([typeReady,sleep(500)]);
+  void deleteReady;
   await start();
  }
  prepare().catch(()=>{

@@ -44,6 +44,7 @@
       const first=[...points.values()][0];
       if(!first)return;
       resettingNativeDrag=true;
+      if(canvas.dataset.ahCenteredZoom==='1'){canvas.dispatchEvent(syntheticPointer('pointercancel',first,first.x,first.y));resettingNativeDrag=false;return;}
       try{
         canvas.dispatchEvent(syntheticPointer('pointermove',first,first.x+6,first.y));
         canvas.dispatchEvent(syntheticPointer('pointerup',first,first.x+6,first.y));

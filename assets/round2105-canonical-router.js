@@ -723,7 +723,7 @@
       const holder = title.closest('.rim-page-name-screen');
       if (holder) holder.setAttribute('aria-label', `Current page: ${displayTitle}`);
     }
-    document.title = `Automated Hearts — ${displayTitle}`;
+    const seo={"home": {"title": "Small Business AI Automation &amp; Web Development | Automated Hearts", "description": "Simplify business workflows with human-centered AI automation, connected tools, and custom web development. Explore practical solutions from Automated Hearts.", "url": "https://automatedhearts.com/"}, "solution": {"title": "Negative-Software Solution: Simplify Business Workflows", "description": "Consolidate information, streamline processes, automate routine work, and optimize decisions. Discover the Automated Hearts Negative-Software Solution.", "url": "https://automatedhearts.com/the-solution.html"}, "industries": {"title": "AI Automation for Business Industries | Automated Hearts", "description": "Explore practical AI automation for business teams, from supply chain and retail to everyday operations. Connect information and reduce repetitive work.", "url": "https://automatedhearts.com/industries.html"}, "good-information": {"title": "Practical AI Learning for Small Businesses | Automated Hearts", "description": "Learn AI principles, explore practical applications, and understand AI concerns and resources through interactive lessons from Automated Hearts.", "url": "https://automatedhearts.com/good-information.html"}, "services": {"title": "AI Automation &amp; Custom Web Development Services", "description": "Explore Automated Hearts services for practical AI automation, connected business workflows, and custom web development built around your existing tools.", "url": "https://automatedhearts.com/services.html"}, "privacy-policy": {"title": "Privacy Policy | Automated Hearts", "description": "Read the Automated Hearts privacy policy to understand how website information and contact inquiries are handled.", "url": "https://automatedhearts.com/privacy-policy.html"}};const metadata=seo[nextKey];if(metadata){document.title=metadata.title;for(const [selector,value]of [['meta[name="description"]',metadata.description],['meta[property="og:title"]',metadata.title],['meta[property="og:description"]',metadata.description],['meta[property="og:url"]',metadata.url]]){const node=document.querySelector(selector);if(node)node.setAttribute("content",value)}const canonical=document.querySelector('link[rel="canonical"]');if(canonical)canonical.href=metadata.url}
     setProgress(0);
 
     // Keep physical keys mounted; the selected destination becomes the page just left.
@@ -779,6 +779,15 @@
     const doc=frame.contentDocument;
     if(!doc?.body)throw Error('Destination document is unavailable.');
     doc.documentElement.classList.add('ah-embedded-page');
+    // Do not swap a still-cloaked destination into the visible viewport.
+    if(doc.querySelector('script[src*="stable-material-2259"]')&&doc.documentElement.dataset.ahHomeSurfaceReady!=='1'){
+      await new Promise((resolve,reject)=>{
+        let timer;const finish=()=>{clearTimeout(timer);doc.removeEventListener('ah:home-surface-ready',finish);resolve();};
+        doc.addEventListener('ah:home-surface-ready',finish,{once:true});
+        timer=setTimeout(()=>{doc.removeEventListener('ah:home-surface-ready',finish);reject(Error('Destination surface did not become ready.'));},15000);
+        if(doc.documentElement.dataset.ahHomeSurfaceReady==='1')finish();
+      });
+    }
     doc.querySelectorAll('#page-transition-shield,.page-transition-shield,#ah2022-route-shield,#ah1996-mobile-document-shield-panel').forEach(el=>{el.hidden=true;el.style.setProperty('display','none','important')});
     const visible=el=>{const r=el.getBoundingClientRect();return r.width>0&&r.height>0&&r.bottom>0&&r.top<frame.clientHeight};
     const critical=[...doc.images].filter(visible);
@@ -1138,7 +1147,7 @@
 
 
 
-(()=>{function rimMask(){if(document.documentElement.classList.contains('ah-embedded-page')||!document.body.hasAttribute('data-ah-mobile-surface'))return;const s=getComputedStyle(document.body,'::after'),w=innerWidth,h=innerHeight,x=parseFloat(s.left)||10,y=parseFloat(s.top)||98,right=w-(parseFloat(s.right)||10),bottom=h-(parseFloat(s.bottom)||91),r=Math.min(parseFloat(s.borderTopLeftRadius)||20,(right-x)/2,(bottom-y)/2),rb=Math.min(parseFloat(s.borderBottomLeftRadius)||r,(right-x)/2,(bottom-y)/2);const d='M0 0H'+w+'V'+h+'H0Z M'+(x+r)+' '+y+'H'+(right-r)+'Q'+right+' '+y+' '+right+' '+(y+r)+'V'+(bottom-rb)+'Q'+right+' '+bottom+' '+(right-rb)+' '+bottom+'H'+(x+rb)+'Q'+x+' '+bottom+' '+x+' '+(bottom-rb)+'V'+(y+r)+'Q'+x+' '+y+' '+(x+r)+' '+y+'Z';const svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'"><path fill="white" fill-rule="evenodd" d="'+d+'"/></svg>';document.documentElement.style.setProperty('--ah-mobile-rounded-rim-mask','url("data:image/svg+xml,'+encodeURIComponent(svg)+'")');document.documentElement.style.setProperty('--ah2116-mobile-frost-z','2147483647')}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>requestAnimationFrame(rimMask));else requestAnimationFrame(rimMask);addEventListener('resize',rimMask);addEventListener('ah:persistent-route-complete',rimMask)})();
+(()=>{function rimMask(){if(document.documentElement.classList.contains('ah-embedded-page')||!document.body.hasAttribute('data-ah-mobile-surface'))return;const s=getComputedStyle(document.body,'::after'),w=innerWidth,h=innerHeight,x=14,y=98,right=w-14,bottom=h-88,r=Math.min(parseFloat(s.borderTopLeftRadius)||20,(right-x)/2,(bottom-y)/2),rb=Math.min(parseFloat(s.borderBottomLeftRadius)||r,(right-x)/2,(bottom-y)/2);const d='M0 0H'+w+'V'+h+'H0Z M'+(x+r)+' '+y+'H'+(right-r)+'Q'+right+' '+y+' '+right+' '+(y+r)+'V'+(bottom-rb)+'Q'+right+' '+bottom+' '+(right-rb)+' '+bottom+'H'+(x+rb)+'Q'+x+' '+bottom+' '+x+' '+(bottom-rb)+'V'+(y+r)+'Q'+x+' '+y+' '+(x+r)+' '+y+'Z';const svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'"><path fill="white" fill-rule="evenodd" d="'+d+'"/></svg>';document.documentElement.style.setProperty('--ah-mobile-rounded-rim-mask','url("data:image/svg+xml,'+encodeURIComponent(svg)+'")');document.documentElement.style.setProperty('--ah2116-mobile-frost-z','2147483647')}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>requestAnimationFrame(rimMask));else requestAnimationFrame(rimMask);addEventListener('resize',rimMask);addEventListener('ah:persistent-route-complete',rimMask)})();
 
 // One material definition for all honeycomb content sections, including routed pages.
 (()=>{
@@ -1182,7 +1191,7 @@ for(const e of document.querySelectorAll('html,body,body *')){
  const bg=getComputedStyle(e).backgroundImage;
  if(!/honeycomb/i.test(bg)&&!e.hasAttribute('data-ah-uniform-honeycomb'))continue;
  const surface=!e.matches('html,body,.ah-shell-edge')&&!/corner/.test(e.className);
- for(const [p,v]of Object.entries({'background-color':'#14212b','background-image':e.id==='ah-route-shield-panel'?bg:'url("'+asset+'")','background-size':innerWidth>900?(surface?'auto 732px':'auto 832px'):'cover','background-position':'center center','background-repeat':'no-repeat','background-attachment':'fixed','background-blend-mode':'normal','backdrop-filter':'none','-webkit-backdrop-filter':'none'}))set(e,p,v);
+ for(const [p,v]of Object.entries({'background-color':'#14212b','background-image':e.id==='ah-route-shield-panel'?bg:'url("'+asset+'")','background-size':innerWidth>900?(surface?'auto 732px':'auto 832px'):'cover','background-position':'center center','background-repeat':innerWidth>900&&!surface?'repeat':'no-repeat','background-attachment':innerWidth>900&&!surface?'scroll':'fixed','background-blend-mode':'normal','backdrop-filter':'none','-webkit-backdrop-filter':'none'}))set(e,p,v);
  if(!surface)continue;
  e.dataset.ahUniformHoneycomb='1';
  if(getComputedStyle(e).position==='static')set(e,'position','relative');

@@ -634,7 +634,7 @@
   window.addEventListener('pageshow',run);
   (window.AHResponsive?window.AHResponsive.watch(queue):window.addEventListener('resize',queue,{passive:true}));
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(run).catch(function(){});
-  setTimeout(run,300); setTimeout(run,1000); setTimeout(run,1600);
+  // DOM, font, load and resize events above already update this geometry.
 })();
 
 ;
