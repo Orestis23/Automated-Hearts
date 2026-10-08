@@ -8,9 +8,9 @@
   const EXISTING='.ah1985-progress-text-glyphs,.ah2084-button-label-lock,.footer-nav-label,.ah1886-digital-glyphs,.ah1887-button-glyphs,.ah1905-digital-glyphs,.ah1942-button-glyphs,.ah1943-ticker-button-glyphs,.ah1944-page-chip-glyphs,.ah1950-button-glyphs,.ah1928-progress-digital-glyphs,.ah2000-legible-digital-glyph';
   const IGNORE='script,style,noscript,template,svg,canvas,iframe,textarea,input,select,option,code,pre,[hidden],.sr-only,.seo-visually-hidden,.visually-hidden,.ah1905-no-digital,.ah1985-no-digital,.footer-page-led,.header-page-led';
   const BUTTON_SKIP='script,style,noscript,template,svg,canvas,iframe,textarea,select,option,[aria-hidden="true"],.sr-only';
-
+  const seen=new WeakSet();
   function wrapButton(control){
-    if(!control||control.nodeType!==1||control.closest('[data-ah-brand-carbon]'))return;
+    if(!control||control.nodeType!==1)return;
     if(control.matches('.ah1807-home-window-control,footer#site-footer a[data-nav],body>nav.footer>a[href],#header-send-message,.message[data-contact-trigger]'))return;
     const walker=document.createTreeWalker(control,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.nodeValue?.trim()&&!n.parentElement?.closest(BUTTON_SKIP)&&!n.parentElement?.closest(EXISTING)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT});
     const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
@@ -25,7 +25,6 @@
     if(!root)return;
     if(root.nodeType===Node.TEXT_NODE){wrapTextNode(root);return;}
     if(root.nodeType!==Node.ELEMENT_NODE&&root!==document)return;
-    if(root.nodeType===Node.ELEMENT_NODE&&(root.closest(IGNORE)||root.closest(EXISTING)||root.closest('[data-ah-brand-carbon]')))return;
     if(root.nodeType===Node.ELEMENT_NODE&&root.matches?.(CONTROL))wrapButton(root);
     root.querySelectorAll?.(CONTROL).forEach(wrapButton);
     const base=root===document?document.body:root;if(!base||base.closest?.(IGNORE))return;
@@ -38,15 +37,14 @@
     document.documentElement.dataset.ah2109StateDigital='1';
   }
   let raf=0,pending=[];
-  const drain=()=>{const roots=[...new Set(pending.splice(0))].filter(r=>r?.isConnected!==false);return roots.filter(r=>!roots.some(parent=>parent!==r&&parent.contains?.(r)));};
-  const queue=(root)=>{if(root)pending.push(root);if(raf)return;raf=requestAnimationFrame(()=>{raf=0;const roots=drain();if(!roots.length)roots.push(document.body);for(const r of roots)if(r?.isConnected!==false)scan(r);});};
+  const queue=(root)=>{if(root)pending.push(root);if(raf)return;raf=requestAnimationFrame(()=>{raf=0;const roots=pending.splice(0);if(!roots.length)roots.push(document.body);for(const r of roots)if(r?.isConnected!==false)scan(r);});};
   window.__AH2084_LOCK_BUTTONS__=()=>queue(document.body);
   const start=()=>{
     scan(document.body);
     const mo=new MutationObserver(records=>{
       let any=false;
-      for(const record of records){for(const node of record.addedNodes){if((node.nodeType===1||node.nodeType===3)&&node.isConnected&&!node.parentElement?.closest(IGNORE)&&!node.parentElement?.closest('[data-ah-brand-carbon]')&&!(node.nodeType===1&&(node.matches(EXISTING)||node.closest(EXISTING)))){pending.push(node);any=true;}}}
-      if(any&&!raf){raf=requestAnimationFrame(()=>{raf=0;const roots=drain();for(const r of roots)if(r?.isConnected!==false)scan(r);});}
+      for(const record of records){for(const node of record.addedNodes){if(node.nodeType===1||node.nodeType===3){pending.push(node);any=true;}}}
+      if(any&&!raf){raf=requestAnimationFrame(()=>{raf=0;const roots=pending.splice(0);for(const r of roots)if(r?.isConnected!==false)scan(r);});}
     });
     mo.observe(document.body||document.documentElement,{childList:true,subtree:true});
   };

@@ -416,7 +416,7 @@
   let resizeRaf=0;
   function queue(){ if(resizeRaf)return; resizeRaf=requestAnimationFrame(()=>{resizeRaf=0;run();}); }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run,{once:true}); else run();
-  addEventListener('ah:first-intro-preparing-reveal',run);
+  addEventListener('load',run,{once:true});
   addEventListener('pageshow',run);
   (window.AHResponsive?window.AHResponsive.watch(queue):window.addEventListener('resize',queue,{passive:true}));
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(run).catch(function(){});
@@ -509,11 +509,12 @@
   let timer=0;
   function queue(){ clearTimeout(timer); timer=setTimeout(run,40); }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run,{once:true}); else run();
-  window.addEventListener('ah:first-intro-preparing-reveal',run);
+  window.addEventListener('load',run,{once:true});
   window.addEventListener('pageshow',run);
   (window.AHResponsive?window.AHResponsive.watch(queue):window.addEventListener('resize',queue,{passive:true}));
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(run).catch(function(){});
-  // DOM, font readiness and responsive changes already schedule this pass.
+  setTimeout(run,250);
+  setTimeout(run,900);
 })();
 
 ;
@@ -629,7 +630,7 @@
   let timer=0;
   function queue(){ clearTimeout(timer); timer=setTimeout(run,50); }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run,{once:true}); else run();
-  window.addEventListener('ah:first-intro-preparing-reveal',run);
+  window.addEventListener('load',run,{once:true});
   window.addEventListener('pageshow',run);
   (window.AHResponsive?window.AHResponsive.watch(queue):window.addEventListener('resize',queue,{passive:true}));
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(run).catch(function(){});

@@ -1527,7 +1527,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fitFrame = window.requestAnimationFrame(() => {
       fitFrame = 0;
       document.querySelectorAll(DIGITAL_SELECTOR).forEach((element) => {
-        if(element.closest('#home-title-fields,.title-stack,[data-ah-digital-sign],[data-ah-brand-carbon]'))return;
         if (element.classList.contains('r530-who-bulb-field') ||
             (element.classList.contains('brand-route-screen__label') &&
              (element.closest('#who-we-help-solutions') || element.closest('#learning-route-buttons')))) return;
@@ -1553,7 +1552,6 @@ document.addEventListener("DOMContentLoaded", () => {
       /* Measure only after every candidate has been given the large tier.
          A four-pixel safety inset protects the bulb halo and glass edge. */
       document.querySelectorAll(DIGITAL_SELECTOR).forEach((element) => {
-        if(element.closest('#home-title-fields,.title-stack,[data-ah-digital-sign],[data-ah-brand-carbon]'))return;
         if (element.classList.contains('r530-who-bulb-field') ||
             (element.classList.contains('brand-route-screen__label') &&
              (element.closest('#who-we-help-solutions') || element.closest('#learning-route-buttons')))) return;

@@ -30,7 +30,6 @@
   await nextFrame();await nextFrame();
   if(root.dataset.ahHomeWindowFallback==='1')document.addEventListener('click',event=>{if(event.target.closest?.('[data-ah-home-window-control],#ah2123-mobile-critical-button'))delete root.dataset.ahHomeWindowFallback;},true);
   window.AHFitHomeTitles?.();
-  document.querySelectorAll('#ah2445-early-heart').forEach(el=>el.remove());
   root.classList.remove('ah2259-preparing');root.dataset.ahSurfacePreparationMs=String(Math.round(performance.now()-startedAt));root.dataset.ahHomeSurfaceReady='1';document.dispatchEvent(new Event('ah:home-surface-ready'));if(!document.getElementById('ah1609-intro'))window.AHLoadingReady?.();
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',prepare,{once:true});else prepare();

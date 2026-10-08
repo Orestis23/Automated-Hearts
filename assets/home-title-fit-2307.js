@@ -34,8 +34,7 @@ function fit(){
 }
 function queue(){if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;fit();});}
 window.AHFitHomeTitles=fit;
-const observedFields=new WeakSet(),observedGroups=new WeakSet();const observer=new ResizeObserver(queue),mutations=new MutationObserver(queue);
-function init(){fit();document.querySelectorAll('#home-title-fields>.r1362-home-title-field,.title-stack>.lcd').forEach(field=>{if(!observedFields.has(field)){observedFields.add(field);observer.observe(field);}});document.querySelectorAll('#home-title-fields,.title-stack').forEach(group=>{if(!observedGroups.has(group)){observedGroups.add(group);mutations.observe(group,{childList:true,subtree:true});}});}
+function init(){fit();const observer=new ResizeObserver(fit);document.querySelectorAll('#home-title-fields>.r1362-home-title-field,.title-stack>.lcd').forEach(field=>observer.observe(field));document.querySelectorAll('#home-title-fields,.title-stack').forEach(group=>new MutationObserver(queue).observe(group,{childList:true,subtree:true}));}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 addEventListener('resize',fit,{passive:true});addEventListener('orientationchange',queue,{passive:true});
 document.fonts?.ready.then(fit);document.fonts?.addEventListener('loadingdone',fit);

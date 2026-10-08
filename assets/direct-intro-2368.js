@@ -31,9 +31,9 @@
   if(document.readyState==='loading')await new Promise(resolve=>document.addEventListener('DOMContentLoaded',resolve,{once:true}));
   await Promise.allSettled([
    document.fonts.load('700 16px Orbitron','Automated Hearts'),
-   ...[artURL].map(src=>{const img=new Image();img.src=src;return img.decode();})
+   ...[artURL,'./assets/honeycomb-fine-tile-2367.svg','./assets/footer-button-carbon-inner-rim-round1586.svg'].map(src=>{const img=new Image();img.src=src;return img.decode();})
   ]);
-  // Typing needs only its own font and artwork; the page prepares behind it.
+  if(document.getElementById('ah2304-persistent-presentation')&&document.documentElement.dataset.ahHomeSurfaceReady!=='1')await new Promise(resolve=>document.addEventListener('ah:home-surface-ready',resolve,{once:true}));
   await painted();
  }
 
@@ -78,8 +78,8 @@
  addEventListener('ah:persistent-route-start',dismissForRoute,{once:true});
  const shield=overlay.querySelector('.ah1912-intro-panel'),story=overlay.querySelector('.story'),lines=[...story.querySelectorAll('p')];
  if(!desktop){for(const[k,v]of Object.entries({width:'auto',height:'auto',inset:'4px',display:'grid',visibility:'visible',opacity:'1'}))shield.style.setProperty(k,v,'important')}
- shield.style.setProperty('background','#07111b','important');
- const material=document.createElement('style');material.textContent='#ah1609-intro .ah1912-intro-panel::before,#ah1609-intro .ah1912-intro-panel::after{display:none!important}#ah1609-intro .ah1912-intro-copy{background:transparent!important;padding:0!important;border-radius:0!important;font-size:clamp(39.6px,3.69vw,64.8px)!important;line-height:1.3!important;width:88%!important;text-shadow:0 2px 3px #000,0 0 8px rgba(0,0,0,.9)!important;}@media(max-width:900px){#ah1609-intro .ah1912-intro-copy{font-size:clamp(27px,7.38vw,36px)!important;}}';overlay.append(material);const heartDepth=document.createElement('style');heartDepth.textContent=`#ah1609-intro .ah1912-intro-panel::before{content:""!important;display:block!important;position:absolute!important;inset:0!important;left:0!important;top:0!important;width:100%!important;height:100%!important;transform:none!important;background:url("./assets/page-shield-official-honeycomb-r1877.webp") center/cover no-repeat!important;opacity:1!important;filter:contrast(1.2)!important;-webkit-filter:contrast(1.2)!important;z-index:0!important;pointer-events:none!important}#ah1609-intro .ah1912-intro-panel::after{content:""!important;display:block!important;position:absolute!important;inset:0!important;border-radius:inherit!important;padding:4.5px!important;box-sizing:border-box!important;background:url("./assets/hammered-gold-brand.svg") center/48px 48px repeat!important;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0)!important;-webkit-mask-composite:xor!important;mask-composite:exclude!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;z-index:5!important;pointer-events:none!important}#ah1609-intro::after{display:none!important}@media(max-width:900px){#ah1609-intro .ah1912-intro-panel::after{padding:1.5px!important}}`;overlay.append(heartDepth);const heartBackground=document.createElement('div');heartBackground.className='ah-intro-heart-background';heartBackground.setAttribute('aria-hidden','true');heartBackground.style.cssText='position:absolute!important;inset:0!important;z-index:0!important;background:#07111b url("./assets/page-shield-official-honeycomb-r1877.webp") center/cover no-repeat!important;filter:contrast(1.2)!important;pointer-events:none!important;border-radius:inherit!important;';shield.prepend(heartBackground);overlay.querySelector('.ah1912-intro-copy').style.setProperty('text-shadow','0 2px 3px #000,0 0 8px rgba(0,0,0,.9)','important');
+ shield.style.setProperty('background','#07111b url("./assets/page-shield-official-honeycomb-r1877.webp") center / cover no-repeat','important');
+ const material=document.createElement('style');material.textContent='#ah1609-intro .ah1912-intro-panel::before,#ah1609-intro .ah1912-intro-panel::after{display:none!important}#ah1609-intro .ah1912-intro-copy{background:transparent!important;padding:0!important;border-radius:0!important;font-size:clamp(39.6px,3.69vw,64.8px)!important;line-height:1.3!important;width:88%!important;text-shadow:0 2px 3px #000,0 0 8px rgba(0,0,0,.9)!important;}@media(max-width:900px){#ah1609-intro .ah1912-intro-copy{font-size:clamp(27px,7.38vw,36px)!important;}}';overlay.append(material);overlay.querySelector('.ah1912-intro-copy').style.setProperty('text-shadow','0 2px 3px #000,0 0 8px rgba(0,0,0,.9)','important');
  const cursor=document.createElement('span');cursor.className='cursor';
  async function bytes(url){const res=await fetch(url,{cache:'force-cache'});if(!res.ok)throw Error('Asset unavailable');return res.arrayBuffer();}
  function sound(name,when=ctx?.currentTime||0){
@@ -120,7 +120,7 @@
   document.documentElement.removeAttribute('data-ah1920-prepaint');
   document.getElementById('ah1920-first-paint-hold')?.remove();
   document.documentElement.classList.add('ah1918-shell-visible','ah1920-shell-visible');
-  story.hidden=false;document.querySelectorAll('#ah2445-early-heart').forEach(el=>el.remove());window.AHLoadingReady?.();
+  story.hidden=false;window.AHLoadingReady?.();
   // Reserve each completed line's wrapping height before the first character paints.
   const finalLines=['Prioritizing Job-Retention','Human-Centric Automation','AI should elevate the human & the mind.'];
   lines[3].style.display='none';
@@ -134,17 +134,12 @@
   /* Round 1918: there is deliberately NO second document.write() here.  The outer rim,
      footer keys, message control, heart and page-name screen are the same DOM nodes that
      were visible at the first typed character and will remain mounted through routing. */
-  if(document.documentElement.dataset.ahHomeSurfaceReady!=='1')await new Promise(resolve=>document.addEventListener('ah:home-surface-ready',resolve,{once:true}));
-  // Settle underlying controls while the shield still fully covers the page.
-  window.dispatchEvent(new CustomEvent('ah:first-intro-preparing-reveal'));
-  window.AHApplyDigitalSigns?.();
-  window.AHFitHomeTitles?.();
   // Preserve the selected artwork through the entire opening motion.
   await painted();
 
   /* The top-impact sound gets the entire typing sequence to fetch/decode. Give it one
      short final grace window before motion begins, but never allow sound to stall the UI. */
-  void openReady;
+  await Promise.race([openReady.catch(()=>{}),sleep(450)]);
   resumeAudio();
 
   /* Round 1917: one compositor transform over exactly 2 seconds.
@@ -204,10 +199,10 @@
   /* Round 1954: the typed front-screen introduction is a true first-visit cache primer.
      Do not mark the browser as complete until the intro has finished and the priority
      site assets requested during typing have settled into the browser HTTP cache. */
-  // Background warming never holds up the visible reveal.
-  cacheWarmReady.then(()=>{try{localStorage.setItem('ah-site-first-load-assets-warmed-v1954','1');}catch(_){}}).catch(()=>{});
+  try{await cacheWarmReady;}catch(_){}
   try{
    localStorage.setItem(key,'1');
+   localStorage.setItem('ah-site-first-load-assets-warmed-v1954','1');
    document.cookie='ah_site_intro_seen=1; Max-Age=31536000; Path=/; SameSite=Lax';
   }catch(_){}
   overlay.remove();window.dispatchEvent(new CustomEvent('ah:first-intro-finished'));
@@ -237,6 +232,7 @@
   const warm=()=>{
    const priority=[
     './assets/honeycomb-fine-tile-2367.svg',
+    './assets/footer-button-carbon-inner-rim-round1586.svg',
     './assets/fonts/orbitron-latin-wght-round1912.woff2'
    ];
    const page=document.body?.dataset?.page||document.body?.dataset?.ahMobileSurface||'';
