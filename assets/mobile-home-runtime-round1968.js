@@ -783,7 +783,7 @@ window.AH_GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycb
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>bind(true),{once:true});else bind(true);
   document.addEventListener('ah:persistent-route-complete',()=>setTimeout(()=>bind(true),0));
   addEventListener('pageshow',()=>bind(false),{passive:true});
-  addEventListener('ah:first-intro-finished',()=>{prepareAll();syncAll();},{passive:true});
+  addEventListener('ah:first-intro-preparing-reveal',()=>{prepareAll();syncAll();},{passive:true});
   (window.AHResponsive?window.AHResponsive.watch(()=>{placeDefinition();syncAll();}):addEventListener('resize',()=>{placeDefinition();syncAll();},{passive:true}));
 })();
 

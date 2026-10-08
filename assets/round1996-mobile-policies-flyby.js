@@ -42,7 +42,7 @@
     panel.style.cssText = [
       'position:absolute','inset:0','width:100%','height:100%','box-sizing:border-box',
       'overflow:hidden','border:1.5px solid rgba(214,178,87,.90)','border-radius:18px',
-      "background:#02070c url('./assets/honeycomb-mobile-continuous-2245.webp') center/cover no-repeat",
+      "background:#02070c url('./assets/honeycomb-fine-tile-2367.svg') center/cover no-repeat",
       'box-shadow:inset 0 0 0 2px rgba(24,12,2,.94),inset 0 0 0 3px rgba(255,238,186,.18),inset 0 0 8px rgba(214,178,87,.18)',
       'will-change:transform','backface-visibility:hidden','transform-style:preserve-3d','contain:paint'
     ].join(';');

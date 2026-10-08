@@ -272,6 +272,15 @@
           "value": "noindex, follow"
         }
       ]
+    },
+    {
+      "source": "/assets/startup-([a-f0-9]{16}).js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ],
   "redirects": [

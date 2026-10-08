@@ -1,4 +1,4 @@
-@media (max-width:900px){:root{--ah2001-shell-side:clamp(13px,4.2vw,18px);--ah2001-shell-top:68px;--ah2001-shell-bottom:calc(78px + env(safe-area-inset-bottom,0px));--ah2001-rim-band:clamp(12px,3.8vw,17px);--ah2001-gold:#b5862e;--ah2001-gold-hi:rgba(242,215,139,.54);--ah2001-gold-deep:rgba(38,23,4,.98);--ah2001-rim-image:url("./honeycomb-mobile-continuous-2245.webp")
+@media (max-width:900px){:root{--ah2001-shell-side:clamp(13px,4.2vw,18px);--ah2001-shell-top:68px;--ah2001-shell-bottom:calc(78px + env(safe-area-inset-bottom,0px));--ah2001-rim-band:clamp(12px,3.8vw,17px);--ah2001-gold:#b5862e;--ah2001-gold-hi:rgba(242,215,139,.54);--ah2001-gold-deep:rgba(38,23,4,.98);--ah2001-rim-image:url("./honeycomb-fine-tile-2367.svg")
 
   }html body[data-ah-mobile-surface]{background:#07111b!important
 

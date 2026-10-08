@@ -246,7 +246,7 @@ html body :is(#ah-page-progress,.title-stack .lcd,#home-title-fields .r1362-home
 
 html body > #ah-page-progress > .ah-progress-matte{background:linear-gradient(112deg,rgba(231,239,242,.075),rgba(214,228,236,.018) 38%,transparent 70%),repeating-linear-gradient(0deg,rgba(225,239,243,.012) 0 1px,transparent 1px 3px)!important}
 
-html:not(.ah-embedded-page) body :is(#ah-official-rim,.ah-persistent-outer-rim) > .ah-r932-corner-mask{background-color:#071827!important;background-image:url('./honeycomb-mobile-continuous-2245.webp')!important;opacity:1!important;filter:none!important;backdrop-filter:none!important;z-index:2147483400!important}
+html:not(.ah-embedded-page) body :is(#ah-official-rim,.ah-persistent-outer-rim) > .ah-r932-corner-mask{background-color:#071827!important;background-image:url('./honeycomb-fine-tile-2367.svg')!important;opacity:1!important;filter:none!important;backdrop-filter:none!important;z-index:2147483400!important}
 
 @media(min-width:901px){html body footer#site-footer .primary-nav__group{display:flex!important;justify-content:center!important;gap:24px!important;width:100%!important}html body footer#site-footer a[data-nav]{width:254.4px!important;min-width:0!important;max-width:254.4px!important;flex:0 1 254.4px!important}html body footer#site-footer .footer-nav-label{font-size:25px!important}}
 
@@ -302,7 +302,7 @@ html body main :is(.ah1600-explore-footer-key,.ah1600-mobile-footer-key) .ah1597
 
 
 
-@layer ah2000-main-button-mint {html:not(.ah-embedded-page) body > :is(#ah-official-rim,.ah-persistent-outer-rim){z-index:2147483400!important;pointer-events:none!important}html:not(.ah-embedded-page) body :is(.ah-r932-corner-mask,.ah-opaque-corner){display:block!important;visibility:visible!important;opacity:1!important;background-color:#14212b!important;background-image:url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;filter:none!important;backdrop-filter:none!important;mix-blend-mode:normal!important;z-index:2147483401!important;pointer-events:none!important}html body > .ah-shell-content-frame{border-radius:var(--current-frame-radius,32px)!important;overflow:hidden!important}@media(max-width:900px){html body > .ah-shell-content-frame{border-radius:18px!important}}}
+@layer ah2000-main-button-mint {html:not(.ah-embedded-page) body > :is(#ah-official-rim,.ah-persistent-outer-rim){z-index:2147483400!important;pointer-events:none!important}html:not(.ah-embedded-page) body :is(.ah-r932-corner-mask,.ah-opaque-corner){display:block!important;visibility:visible!important;opacity:1!important;background-color:#14212b!important;background-image:url('./honeycomb-fine-tile-2367.svg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;filter:none!important;backdrop-filter:none!important;mix-blend-mode:normal!important;z-index:2147483401!important;pointer-events:none!important}html body > .ah-shell-content-frame{border-radius:var(--current-frame-radius,32px)!important;overflow:hidden!important}@media(max-width:900px){html body > .ah-shell-content-frame{border-radius:18px!important}}}
 
 
 
@@ -310,11 +310,11 @@ html body main :is(.ah1600-explore-footer-key,.ah1600-mobile-footer-key) .ah1597
 
 
 
-@layer ah2000-main-button-mint {html body > .ah2123-solid-corner{position:fixed!important;width:32px!important;height:32px!important;z-index:2147483645!important;pointer-events:none!important;opacity:1!important;background:#14212b url('./honeycomb-mobile-continuous-2245.webp') center/cover fixed!important}#ah2123-corner-tl{top:var(--current-frame-top,96px);left:var(--current-frame-side,88px);mask-image:radial-gradient(circle at bottom right,transparent 30px,#000 31px)}#ah2123-corner-tr{top:var(--current-frame-top,96px);right:var(--current-frame-side,88px);mask-image:radial-gradient(circle at bottom left,transparent 30px,#000 31px)}#ah2123-corner-bl{bottom:var(--current-frame-bottom,108px);left:var(--current-frame-side,88px);mask-image:radial-gradient(circle at top right,transparent 30px,#000 31px)}#ah2123-corner-br{bottom:var(--current-frame-bottom,108px);right:var(--current-frame-side,88px);mask-image:radial-gradient(circle at top left,transparent 30px,#000 31px)}@media(max-width:900px){html body > .ah2123-solid-corner{width:18px!important;height:18px!important}#ah2123-corner-tl,#ah2123-corner-tr{top:98px}#ah2123-corner-bl,#ah2123-corner-br{bottom:calc(88px + env(safe-area-inset-bottom,0px))}#ah2123-corner-tl,#ah2123-corner-bl{left:10px}#ah2123-corner-tr,#ah2123-corner-br{right:10px}#ah2123-corner-tl{mask-image:radial-gradient(circle at bottom right,transparent 16px,#000 17px)}#ah2123-corner-tr{mask-image:radial-gradient(circle at bottom left,transparent 16px,#000 17px)}#ah2123-corner-bl{mask-image:radial-gradient(circle at top right,transparent 16px,#000 17px)}#ah2123-corner-br{mask-image:radial-gradient(circle at top left,transparent 16px,#000 17px)}}}
+@layer ah2000-main-button-mint {html body > .ah2123-solid-corner{position:fixed!important;width:32px!important;height:32px!important;z-index:2147483645!important;pointer-events:none!important;opacity:1!important;background:#14212b url('./honeycomb-fine-tile-2367.svg') center/cover fixed!important}#ah2123-corner-tl{top:var(--current-frame-top,96px);left:var(--current-frame-side,88px);mask-image:radial-gradient(circle at bottom right,transparent 30px,#000 31px)}#ah2123-corner-tr{top:var(--current-frame-top,96px);right:var(--current-frame-side,88px);mask-image:radial-gradient(circle at bottom left,transparent 30px,#000 31px)}#ah2123-corner-bl{bottom:var(--current-frame-bottom,108px);left:var(--current-frame-side,88px);mask-image:radial-gradient(circle at top right,transparent 30px,#000 31px)}#ah2123-corner-br{bottom:var(--current-frame-bottom,108px);right:var(--current-frame-side,88px);mask-image:radial-gradient(circle at top left,transparent 30px,#000 31px)}@media(max-width:900px){html body > .ah2123-solid-corner{width:18px!important;height:18px!important}#ah2123-corner-tl,#ah2123-corner-tr{top:98px}#ah2123-corner-bl,#ah2123-corner-br{bottom:calc(88px + env(safe-area-inset-bottom,0px))}#ah2123-corner-tl,#ah2123-corner-bl{left:10px}#ah2123-corner-tr,#ah2123-corner-br{right:10px}#ah2123-corner-tl{mask-image:radial-gradient(circle at bottom right,transparent 16px,#000 17px)}#ah2123-corner-tr{mask-image:radial-gradient(circle at bottom left,transparent 16px,#000 17px)}#ah2123-corner-bl{mask-image:radial-gradient(circle at top right,transparent 16px,#000 17px)}#ah2123-corner-br{mask-image:radial-gradient(circle at top left,transparent 16px,#000 17px)}}}
 
 
 
-@layer ah2000-main-button-mint {html:not(.ah-embedded-page) body :is(#ah-official-rim,.ah-persistent-outer-rim) > .ah-r932-corner-mask{display:none!important;background:none!important;opacity:0!important}html:not(.ah-embedded-page) body > :is(.ah-opaque-corner,.ah2116-mobile-corner){display:none!important;opacity:0!important}html body > .ah2123-solid-corner{background-image:linear-gradient(rgba(220,236,243,.03375),rgba(220,236,243,.03375)),url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:cover,cover!important;background-position:center,center!important;background-attachment:fixed,fixed!important}}
+@layer ah2000-main-button-mint {html:not(.ah-embedded-page) body :is(#ah-official-rim,.ah-persistent-outer-rim) > .ah-r932-corner-mask{display:none!important;background:none!important;opacity:0!important}html:not(.ah-embedded-page) body > :is(.ah-opaque-corner,.ah2116-mobile-corner){display:none!important;opacity:0!important}html body > .ah2123-solid-corner{background-image:linear-gradient(rgba(220,236,243,.03375),rgba(220,236,243,.03375)),url('./honeycomb-fine-tile-2367.svg')!important;background-size:cover,cover!important;background-position:center,center!important;background-attachment:fixed,fixed!important}}
 
 
 
@@ -350,11 +350,11 @@ html body main :is(.ah1600-explore-footer-key,.ah1600-mobile-footer-key) .ah1597
 
 
 
-@layer ah2000-main-button-mint {html body main#main-content :is(#home-opening-hero,#home-solution-framework,#ah2123-home-mobile-header,section[aria-label="Negative Software Solution"]){position:relative!important;isolation:isolate!important}html body main#main-content .ah2123-section-glass-film{display:block!important;position:absolute!important;inset:0!important;z-index:0!important;background:rgba(220,236,243,.03375)!important;backdrop-filter:blur(3.5px) saturate(.82) brightness(1.06)!important;opacity:.625!important;pointer-events:none!important}html body main#main-content :is(#home-opening-hero,#home-solution-framework,#ah2123-home-mobile-header,section[aria-label="Negative Software Solution"]) > :not(.ah2123-section-glass-film){position:relative;z-index:1}html body #ah2123-home-mobile-header{padding:0!important;margin:0!important;background:#14212b url('./honeycomb-mobile-continuous-2245.webp') center/cover!important}}
+@layer ah2000-main-button-mint {html body main#main-content :is(#home-opening-hero,#home-solution-framework,#ah2123-home-mobile-header,section[aria-label="Negative Software Solution"]){position:relative!important;isolation:isolate!important}html body main#main-content .ah2123-section-glass-film{display:block!important;position:absolute!important;inset:0!important;z-index:0!important;background:rgba(220,236,243,.03375)!important;backdrop-filter:blur(3.5px) saturate(.82) brightness(1.06)!important;opacity:.625!important;pointer-events:none!important}html body main#main-content :is(#home-opening-hero,#home-solution-framework,#ah2123-home-mobile-header,section[aria-label="Negative Software Solution"]) > :not(.ah2123-section-glass-film){position:relative;z-index:1}html body #ah2123-home-mobile-header{padding:0!important;margin:0!important;background:#14212b url('./honeycomb-fine-tile-2367.svg') center/cover!important}}
 
 
 
-@layer ah2000-main-button-mint {html body main#main-content :is(#solution-process-header,.solution-mobile-header-section){background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-mobile-continuous-2245.webp')!important;background-position:center,center!important;background-size:cover,cover!important;background-repeat:no-repeat!important;padding-bottom:24px!important;margin-bottom:0!important;height:auto!important;min-height:0!important;max-height:none!important}html body main#main-content :is(.solution-process-exhibit,.solution-process-window-anchor,#lite-model-stage){background:transparent!important;background-image:none!important}html body main#main-content #solution-process-header .solution-process-exhibit{margin-bottom:0!important;padding-bottom:0!important}html body main#main-content #solution-process-heading{margin-bottom:0!important}html body main#main-content #solution-process-header + section{margin-top:0!important;padding-top:24px!important}}
+@layer ah2000-main-button-mint {html body main#main-content :is(#solution-process-header,.solution-mobile-header-section){background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-fine-tile-2367.svg')!important;background-position:center,center!important;background-size:cover,cover!important;background-repeat:no-repeat!important;padding-bottom:24px!important;margin-bottom:0!important;height:auto!important;min-height:0!important;max-height:none!important}html body main#main-content :is(.solution-process-exhibit,.solution-process-window-anchor,#lite-model-stage){background:transparent!important;background-image:none!important}html body main#main-content #solution-process-header .solution-process-exhibit{margin-bottom:0!important;padding-bottom:0!important}html body main#main-content #solution-process-heading{margin-bottom:0!important}html body main#main-content #solution-process-header + section{margin-top:0!important;padding-top:24px!important}}
 
 
 
@@ -502,11 +502,11 @@ html body main#main-content .ah-home-process-box li::before,html body main#main-
 
 
 
-@layer ah2000-main-button-mint {@media(max-width:900px){html body[data-ah-mobile-surface="home"] main#main-content #ah2123-home-mobile-header{padding-top:40px!important;background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-mobile-continuous-2245.webp')!important;background-position:center!important;background-size:cover!important}html body[data-ah-mobile-surface="home"] main#main-content #ah2123-mobile-windows{margin-top:40px!important}html body[data-ah-mobile-surface="home"] main#main-content #ah2123-home-mobile-header > .title-stack{margin-bottom:0!important}}}
+@layer ah2000-main-button-mint {@media(max-width:900px){html body[data-ah-mobile-surface="home"] main#main-content #ah2123-home-mobile-header{padding-top:40px!important;background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-fine-tile-2367.svg')!important;background-position:center!important;background-size:cover!important}html body[data-ah-mobile-surface="home"] main#main-content #ah2123-mobile-windows{margin-top:40px!important}html body[data-ah-mobile-surface="home"] main#main-content #ah2123-home-mobile-header > .title-stack{margin-bottom:0!important}}}
 
 
 
-@layer ah2000-main-button-mint {@media(max-width:900px){html:not(.ah-embedded-page) body[data-ah-mobile-surface="home"] > main#main-content{background-color:#14212b!important;background-image:url('./honeycomb-mobile-continuous-2245.webp')!important;background-position:center!important;background-size:cover!important;padding-top:0!important;margin-top:0!important}html body[data-ah-mobile-surface="home"] main#main-content #ah2123-home-mobile-header{margin-top:0!important}}html body > .ah2123-solid-corner{opacity:1!important;background-color:#14212b!important;background-repeat:no-repeat!important;filter:none!important;mix-blend-mode:normal!important;z-index:2147483645!important}html body > #ah2123-corner-tl{mask-image:radial-gradient(circle at bottom right,transparent 28px,#000 29px)!important}html body > #ah2123-corner-tr{mask-image:radial-gradient(circle at bottom left,transparent 28px,#000 29px)!important}html body > #ah2123-corner-bl{mask-image:radial-gradient(circle at top right,transparent 28px,#000 29px)!important}html body > #ah2123-corner-br{mask-image:radial-gradient(circle at top left,transparent 28px,#000 29px)!important}@media(max-width:900px){html body > #ah2123-corner-tl{mask-image:radial-gradient(circle at bottom right,transparent 14px,#000 15px)!important}html body > #ah2123-corner-tr{mask-image:radial-gradient(circle at bottom left,transparent 14px,#000 15px)!important}html body > #ah2123-corner-bl{mask-image:radial-gradient(circle at top right,transparent 14px,#000 15px)!important}html body > #ah2123-corner-br{mask-image:radial-gradient(circle at top left,transparent 14px,#000 15px)!important}}}
+@layer ah2000-main-button-mint {@media(max-width:900px){html:not(.ah-embedded-page) body[data-ah-mobile-surface="home"] > main#main-content{background-color:#14212b!important;background-image:url('./honeycomb-fine-tile-2367.svg')!important;background-position:center!important;background-size:cover!important;padding-top:0!important;margin-top:0!important}html body[data-ah-mobile-surface="home"] main#main-content #ah2123-home-mobile-header{margin-top:0!important}}html body > .ah2123-solid-corner{opacity:1!important;background-color:#14212b!important;background-repeat:no-repeat!important;filter:none!important;mix-blend-mode:normal!important;z-index:2147483645!important}html body > #ah2123-corner-tl{mask-image:radial-gradient(circle at bottom right,transparent 28px,#000 29px)!important}html body > #ah2123-corner-tr{mask-image:radial-gradient(circle at bottom left,transparent 28px,#000 29px)!important}html body > #ah2123-corner-bl{mask-image:radial-gradient(circle at top right,transparent 28px,#000 29px)!important}html body > #ah2123-corner-br{mask-image:radial-gradient(circle at top left,transparent 28px,#000 29px)!important}@media(max-width:900px){html body > #ah2123-corner-tl{mask-image:radial-gradient(circle at bottom right,transparent 14px,#000 15px)!important}html body > #ah2123-corner-tr{mask-image:radial-gradient(circle at bottom left,transparent 14px,#000 15px)!important}html body > #ah2123-corner-bl{mask-image:radial-gradient(circle at top right,transparent 14px,#000 15px)!important}html body > #ah2123-corner-br{mask-image:radial-gradient(circle at top left,transparent 14px,#000 15px)!important}}}
 
 
 
@@ -736,7 +736,7 @@ html body main#main-content button[data-ah1846-industry] .send-control-copy{widt
 
 @layer ah2000-main-button-mint {
 
-html:not(.ah-embedded-page) body > #ah2123-opaque-rim-base{position:fixed!important;inset:0!important;z-index:2147483642!important;pointer-events:none!important;box-sizing:border-box!important;padding:var(--current-frame-top,96px) var(--current-frame-side,88px) var(--current-frame-bottom,108px)!important;background:#14212b url('./honeycomb-mobile-continuous-2245.webp') center/cover!important;mask:var(--ah-mobile-rounded-rim-mask,linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0))!important;mask-composite:exclude!important;-webkit-mask:var(--ah-mobile-rounded-rim-mask,linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0))!important;-webkit-mask-composite:xor!important;opacity:1!important;transform:none!important}
+html:not(.ah-embedded-page) body > #ah2123-opaque-rim-base{position:fixed!important;inset:0!important;z-index:2147483642!important;pointer-events:none!important;box-sizing:border-box!important;padding:var(--current-frame-top,96px) var(--current-frame-side,88px) var(--current-frame-bottom,108px)!important;background:#14212b url('./honeycomb-fine-tile-2367.svg') center/cover!important;mask:var(--ah-mobile-rounded-rim-mask,linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0))!important;mask-composite:exclude!important;-webkit-mask:var(--ah-mobile-rounded-rim-mask,linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0))!important;-webkit-mask-composite:xor!important;opacity:1!important;transform:none!important}
 
 @media(max-width:900px){
 
@@ -754,9 +754,9 @@ html:not(.ah-embedded-page) body[data-ah-mobile-surface] > nav#ah-mobile-footer.
 
 @layer ah2000-main-button-mint {@media(max-width:900px){
 
-html:not(.ah-embedded-page) body[data-ah-mobile-surface] > #ah2123-opaque-rim-base{background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-mobile-continuous-2245.webp')!important;background-color:#14212b!important;background-size:cover,cover!important;background-position:center,center!important;background-repeat:no-repeat!important}
+html:not(.ah-embedded-page) body[data-ah-mobile-surface] > #ah2123-opaque-rim-base{background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-fine-tile-2367.svg')!important;background-color:#14212b!important;background-size:cover,cover!important;background-position:center,center!important;background-repeat:no-repeat!important}
 
-html:not(.ah-embedded-page) body[data-ah-mobile-surface] > :is(#ah-official-rim,.ah-persistent-outer-rim){background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:cover,cover!important;background-position:center,center!important;background-repeat:no-repeat!important;opacity:1!important}
+html:not(.ah-embedded-page) body[data-ah-mobile-surface] > :is(#ah-official-rim,.ah-persistent-outer-rim){background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-fine-tile-2367.svg')!important;background-size:cover,cover!important;background-position:center,center!important;background-repeat:no-repeat!important;opacity:1!important}
 
 }}
 
@@ -768,7 +768,7 @@ html:not(.ah-embedded-page) body[data-ah-mobile-surface]::before,
 
 html:not(.ah-embedded-page) body[data-ah-mobile-surface] > .shell-edge,
 
-html:not(.ah-embedded-page) body[data-ah-mobile-surface] > .ah2123-solid-corner{background-color:#14212b!important;background-image:url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:cover!important;background-position:center!important;background-attachment:fixed!important;background-repeat:no-repeat!important;opacity:1!important}
+html:not(.ah-embedded-page) body[data-ah-mobile-surface] > .ah2123-solid-corner{background-color:#14212b!important;background-image:url('./honeycomb-fine-tile-2367.svg')!important;background-size:cover!important;background-position:center!important;background-attachment:fixed!important;background-repeat:no-repeat!important;opacity:1!important}
 
 }}
 
@@ -780,9 +780,9 @@ html:not(.ah-embedded-page) body[data-ah-mobile-surface] > #ah2123-opaque-rim-ba
 
 html:not(.ah-embedded-page) body[data-ah-mobile-surface]::before,
 
-html:not(.ah-embedded-page) body[data-ah-mobile-surface] > :is(#ah-official-rim,.ah-persistent-outer-rim,.ah2123-solid-corner,.shell-edge){background-image:url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:cover!important;background-position:center!important;background-color:#14212b!important;background-attachment:fixed!important}
+html:not(.ah-embedded-page) body[data-ah-mobile-surface] > :is(#ah-official-rim,.ah-persistent-outer-rim,.ah2123-solid-corner,.shell-edge){background-image:url('./honeycomb-fine-tile-2367.svg')!important;background-size:cover!important;background-position:center!important;background-color:#14212b!important;background-attachment:fixed!important}
 
-html body #ah-route-shield-panel{background-color:#14212b!important;background-image:url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:cover!important;backdrop-filter:none!important}
+html body #ah-route-shield-panel{background-color:#14212b!important;background-image:url('./honeycomb-fine-tile-2367.svg')!important;background-size:cover!important;backdrop-filter:none!important}
 
 }}
 
@@ -794,7 +794,7 @@ html body > #ah2123-opaque-rim-base{display:none!important}
 
 @media(max-width:900px){
 
-html:not(.ah-embedded-page) body[data-ah-mobile-surface]::before{content:""!important;display:block!important;position:fixed!important;inset:0!important;box-sizing:border-box!important;padding:98px 10px calc(88px + env(safe-area-inset-bottom,0px))!important;background:#14212b url('./honeycomb-mobile-continuous-2245.webp') center/cover no-repeat fixed!important;mask:var(--ah-mobile-rounded-rim-mask,linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0))!important;mask-composite:exclude!important;-webkit-mask:var(--ah-mobile-rounded-rim-mask,linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0))!important;-webkit-mask-composite:xor!important;z-index:2147483642!important;pointer-events:none!important;opacity:1!important;visibility:visible!important;transform:none!important;filter:none!important;animation:none!important;transition:none!important}
+html:not(.ah-embedded-page) body[data-ah-mobile-surface]::before{content:""!important;display:block!important;position:fixed!important;inset:0!important;box-sizing:border-box!important;padding:98px 10px calc(88px + env(safe-area-inset-bottom,0px))!important;background:#14212b url('./honeycomb-fine-tile-2367.svg') center/cover no-repeat fixed!important;mask:var(--ah-mobile-rounded-rim-mask,linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0))!important;mask-composite:exclude!important;-webkit-mask:var(--ah-mobile-rounded-rim-mask,linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0))!important;-webkit-mask-composite:xor!important;z-index:2147483642!important;pointer-events:none!important;opacity:1!important;visibility:visible!important;transform:none!important;filter:none!important;animation:none!important;transition:none!important}
 
 }}
 
@@ -802,7 +802,7 @@ html:not(.ah-embedded-page) body[data-ah-mobile-surface]::before{content:""!impo
 
 @layer ah2000-main-button-mint {@media(max-width:900px){
 
-html body[data-ah-mobile-surface="solutions"] main#main-content .solution-mobile-header-section{background-color:#14212b!important;background-image:url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;background-attachment:fixed!important;opacity:1!important;filter:none!important;animation:none!important;transition:none!important}
+html body[data-ah-mobile-surface="solutions"] main#main-content .solution-mobile-header-section{background-color:#14212b!important;background-image:url('./honeycomb-fine-tile-2367.svg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;background-attachment:fixed!important;opacity:1!important;filter:none!important;animation:none!important;transition:none!important}
 
 html body[data-ah-mobile-surface="solutions"] main#main-content .solution-mobile-header-section > .ah2123-section-glass-film{display:none!important}
 
@@ -814,7 +814,7 @@ html body[data-ah-mobile-surface="solutions"] main#main-content .solution-mobile
 
 @layer ah2000-main-button-mint {@media(max-width:900px){
 
-html body[data-ah-mobile-surface="solutions"] main#main-content .solution-mobile-header-section{background-image:url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:auto 100vh!important;background-position:center center!important;background-attachment:fixed!important;backdrop-filter:none!important}
+html body[data-ah-mobile-surface="solutions"] main#main-content .solution-mobile-header-section{background-image:url('./honeycomb-fine-tile-2367.svg')!important;background-size:auto 100vh!important;background-position:center center!important;background-attachment:fixed!important;backdrop-filter:none!important}
 
 html body[data-ah-mobile-surface="solutions"] main#main-content .solution-mobile-header-section > :is(.ah1883-header-glass,.ah1863-frost-pane,.ah1759-section-frost,.ah1786-home-band-frost,.ah2123-section-glass-film){display:none!important;backdrop-filter:none!important}
 
@@ -824,7 +824,7 @@ html body[data-ah-mobile-surface="solutions"] main#main-content .solution-mobile
 
 
 
-@layer ah2000-main-button-mint {@media(max-width:900px){html body[data-ah-mobile-surface="solutions"] main#main-content#main-content .solution-mobile-header-section{background-image:url("./honeycomb-mobile-continuous-2245.webp")!important;background-size:auto 100vh!important;background-position:center!important;background-attachment:fixed!important}}}
+@layer ah2000-main-button-mint {@media(max-width:900px){html body[data-ah-mobile-surface="solutions"] main#main-content#main-content .solution-mobile-header-section{background-image:url("./honeycomb-fine-tile-2367.svg")!important;background-size:auto 100vh!important;background-position:center!important;background-attachment:fixed!important}}}
 
 
 
@@ -846,7 +846,7 @@ html body nav#ah-mobile-footer#ah-mobile-footer a :is(.send-control-copy,.footer
 
 @layer ah2000-main-button-mint {@media(max-width:900px){
 
-html:not(.ah-embedded-page) body[data-ah-mobile-surface] > nav#ah-mobile-footer#ah-mobile-footer{background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:auto 100vh,auto 100vh!important;background-position:center center!important;background-repeat:no-repeat!important;background-attachment:fixed!important}
+html:not(.ah-embedded-page) body[data-ah-mobile-surface] > nav#ah-mobile-footer#ah-mobile-footer{background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-fine-tile-2367.svg')!important;background-size:auto 100vh,auto 100vh!important;background-position:center center!important;background-repeat:no-repeat!important;background-attachment:fixed!important}
 
 }}
 
@@ -1052,7 +1052,7 @@ html:not(.ah-embedded-page) body > #ah-official-rim#ah-official-rim{border:0!imp
 
 @layer ah2000-main-button-mint {@media(max-width:900px){
 
-html body[data-ah-mobile-surface="home"] main#main-content#main-content{margin-top:31px!important;padding-top:0!important;background:#14212b url('./honeycomb-mobile-continuous-2245.webp') center/cover fixed!important}
+html body[data-ah-mobile-surface="home"] main#main-content#main-content{margin-top:31px!important;padding-top:0!important;background:#14212b url('./honeycomb-fine-tile-2367.svg') center/cover fixed!important}
 
 html body[data-ah-mobile-surface="home"] main#main-content#main-content #ah2123-home-mobile-header{padding-top:0!important;margin-top:0!important}
 
@@ -1074,7 +1074,7 @@ html body[data-ah-mobile-surface="home"] main#main-content#main-content,
 
 html body[data-ah-mobile-surface="home"] main#main-content#main-content #ah2123-home-mobile-header,
 
-html body[data-ah-mobile-surface="home"] main#main-content#main-content section[aria-label="Negative Software Solution"]{background-color:#14212b!important;background-image:url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:cover!important;background-position:center center!important;background-attachment:fixed!important;background-repeat:no-repeat!important}
+html body[data-ah-mobile-surface="home"] main#main-content#main-content section[aria-label="Negative Software Solution"]{background-color:#14212b!important;background-image:url('./honeycomb-fine-tile-2367.svg')!important;background-size:cover!important;background-position:center center!important;background-attachment:fixed!important;background-repeat:no-repeat!important}
 
 }}
 
@@ -1132,7 +1132,7 @@ html body main#main-content#main-content .who-help-route-card .ah1846-industry-s
 
 @layer ah2000-main-button-mint {
 
-html body main#main-content#main-content :is(#who-we-help-solutions,.who-help-hero,section:has(.who-help-button-grid),section:has(.route-card [data-ah1846-industry])){background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
+html body main#main-content#main-content :is(#who-we-help-solutions,.who-help-hero,section:has(.who-help-button-grid),section:has(.route-card [data-ah1846-industry])){background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-fine-tile-2367.svg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
 
 html body main#main-content#main-content .who-help-route-card .premium-route-card__image-button{padding:0!important;border:2px solid #b5862e!important;box-shadow:inset 0 0 0 1px rgba(238,211,125,.4)!important;background:#14212b!important;overflow:hidden!important}
 
@@ -1148,7 +1148,7 @@ html body main#main-content#main-content .who-help-route-card .ah1846-image-shut
 
 @layer ah2000-main-button-mint {@media(max-width:900px){
 
-html body[data-ah-mobile-surface="industries"] main#main-content#main-content section:has([data-ah1846-industry]){background-image:url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:auto 100vh!important;background-position:center center!important;background-attachment:fixed!important;background-repeat:no-repeat!important}
+html body[data-ah-mobile-surface="industries"] main#main-content#main-content section:has([data-ah1846-industry]){background-image:url('./honeycomb-fine-tile-2367.svg')!important;background-size:auto 100vh!important;background-position:center center!important;background-attachment:fixed!important;background-repeat:no-repeat!important}
 
 }}
 
@@ -1214,7 +1214,7 @@ html body main#main-content#main-content .ah1846-closing .ah1846-industry-stage{
 
 /* Shared Solution honeycomb and flat glass finish for both header sections. */
 
-@layer ah2000-main-button-mint { html body main#main-content#main-content#main-content :is(#who-we-help-solutions,#learning-route-buttons,section.ah1883-nonhub-header-glass-host){background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-mobile-continuous-2245.webp')!important;background-size:cover!important;background-position:center!important;background-attachment:fixed!important;background-repeat:no-repeat!important} html body main#main-content#main-content#main-content :is(#who-we-help-solutions,#learning-route-buttons,section.ah1883-nonhub-header-glass-host) > :is(.ah1883-header-glass,.ah1863-frost-pane,.ah1759-section-frost){display:none!important} html body main#main-content#main-content#main-content :is(#who-we-help-solutions,#learning-route-buttons,section.ah1883-nonhub-header-glass-host) > .ah2123-section-glass-film{display:block!important;background:rgba(220,236,243,.03375)!important;backdrop-filter:blur(3.5px) saturate(.82) brightness(1.06)!important;opacity:.625!important} }
+@layer ah2000-main-button-mint { html body main#main-content#main-content#main-content :is(#who-we-help-solutions,#learning-route-buttons,section.ah1883-nonhub-header-glass-host){background-color:#14212b!important;background-image:linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url('./honeycomb-fine-tile-2367.svg')!important;background-size:cover!important;background-position:center!important;background-attachment:fixed!important;background-repeat:no-repeat!important} html body main#main-content#main-content#main-content :is(#who-we-help-solutions,#learning-route-buttons,section.ah1883-nonhub-header-glass-host) > :is(.ah1883-header-glass,.ah1863-frost-pane,.ah1759-section-frost){display:none!important} html body main#main-content#main-content#main-content :is(#who-we-help-solutions,#learning-route-buttons,section.ah1883-nonhub-header-glass-host) > .ah2123-section-glass-film{display:block!important;background:rgba(220,236,243,.03375)!important;backdrop-filter:blur(3.5px) saturate(.82) brightness(1.06)!important;opacity:.625!important} }
 
 
 

@@ -126,7 +126,7 @@
           backdrop.style.setProperty('position','absolute','important');
           backdrop.style.setProperty('inset','0','important');
           backdrop.style.setProperty('background-color','#08172b','important');
-          backdrop.style.setProperty('background-image','url("./assets/honeycomb-continuous-20261005.webp?v=1070r")','important');
+          backdrop.style.setProperty('background-image','url("./assets/honeycomb-fine-tile-2367.svg?v=1070r")','important');
           backdrop.style.setProperty('background-position','center center','important');
           backdrop.style.setProperty('background-size','cover','important');
           backdrop.style.setProperty('background-repeat','no-repeat','important');

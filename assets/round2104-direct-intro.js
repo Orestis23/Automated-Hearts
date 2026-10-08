@@ -31,7 +31,7 @@
   if(document.readyState==='loading')await new Promise(resolve=>document.addEventListener('DOMContentLoaded',resolve,{once:true}));
   await Promise.allSettled([
    document.fonts.load('700 16px Orbitron','Automated Hearts'),
-   ...[artURL,'./assets/honeycomb-mobile-continuous-2245.webp','./assets/footer-button-carbon-inner-rim-round1586.svg'].map(src=>{const img=new Image();img.src=src;return img.decode();})
+   ...[artURL,'./assets/honeycomb-fine-tile-2367.svg','./assets/footer-button-carbon-inner-rim-round1586.svg'].map(src=>{const img=new Image();img.src=src;return img.decode();})
   ]);
   if(document.getElementById('ah2304-persistent-presentation')&&document.documentElement.dataset.ahHomeSurfaceReady!=='1')await new Promise(resolve=>document.addEventListener('ah:home-surface-ready',resolve,{once:true}));
   await painted();
@@ -45,7 +45,7 @@
  #ah1609-intro{position:fixed;z-index:2147483647;display:block;color:#f2fbff;overflow:hidden;contain:paint;isolation:isolate;box-sizing:border-box;pointer-events:auto;background:transparent;top:var(--current-frame-top,96px);right:var(--current-frame-side,88px);bottom:var(--current-frame-bottom,96px);left:var(--current-frame-side,88px);border-radius:var(--current-frame-radius,32px)}
  #ah1609-intro::before{content:none!important;display:none!important}
  #ah1609-intro::after{content:"";position:absolute;z-index:4;inset:0;pointer-events:none;border:4px solid #b5862e;border-radius:inherit;box-sizing:border-box;box-shadow:inset 0 0 0 1px rgba(238,211,125,.48),0 0 0 1px rgba(43,27,6,.98)}
- #ah1609-intro .ah1912-intro-panel{position:absolute;z-index:1;inset:4px;display:grid;place-items:center;overflow:hidden;box-sizing:border-box;background:#050b11 url("./assets/honeycomb-mobile-continuous-2245.webp") center/cover no-repeat;border:0;border-radius:calc(var(--current-frame-radius,32px) - 4px);will-change:transform;transform-origin:center;contain:paint;backface-visibility:hidden;transform:translate3d(0,0,0);transition:transform 1500ms cubic-bezier(.22,.66,.24,1);filter:none!important;-webkit-filter:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+ #ah1609-intro .ah1912-intro-panel{position:absolute;z-index:1;inset:4px;display:grid;place-items:center;overflow:hidden;box-sizing:border-box;background:#050b11 url("./assets/honeycomb-fine-tile-2367.svg") center/cover no-repeat;border:0;border-radius:calc(var(--current-frame-radius,32px) - 4px);will-change:transform;transform-origin:center;contain:paint;backface-visibility:hidden;transform:translate3d(0,0,0);transition:transform 1500ms cubic-bezier(.22,.66,.24,1);filter:none!important;-webkit-filter:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
  #ah1609-intro .ah1912-intro-panel::before{content:"";position:absolute;z-index:1;left:50%;top:58%;width:clamp(92px,18vw,180px);height:clamp(144px,28vw,282px);transform:translate3d(-50%,-50%,0);background:url("./assets/ah-empty-transparent.svg") center/contain no-repeat;opacity:.98;filter:none!important;-webkit-filter:none!important;pointer-events:none}
  #ah1609-intro .ah1912-intro-copy{position:relative;z-index:2;width:min(84vw,760px);font:700 clamp(22px,2.05vw,36px)/1.48 Orbitron,system-ui,sans-serif;letter-spacing:.012em;text-shadow:none}
  @media(max-width:900px){
@@ -231,15 +231,15 @@
      Below-fold imagery, carousel media, models and videos remain demand-loaded. */
   const warm=()=>{
    const priority=[
-    './assets/honeycomb-mobile-continuous-2245.webp',
+    './assets/honeycomb-fine-tile-2367.svg',
     './assets/footer-button-carbon-inner-rim-round1586.svg',
     './assets/fonts/orbitron-latin-wght-round1912.woff2'
    ];
    const page=document.body?.dataset?.page||document.body?.dataset?.ahMobileSurface||'';
    if(page==='home'){
-    priority.push('./assets/home-machine-window-poster-round1912.webp','./assets/home-critical-window-poster-round2010.webp');
+    priority.push('./assets/machine-artwork-unframed-2366.webp','./assets/home-critical-window-poster-round2010.webp');
    }else if(page==='solutions'||page==='solution'){
-    priority.push('./assets/solution-window-poster-round1909.webp');
+    priority.push('./assets/machine-artwork-unframed-2366.webp');
    }
    return Promise.allSettled([...new Set(priority)].map(url=>fetch(url,{cache:'force-cache'})));
   };

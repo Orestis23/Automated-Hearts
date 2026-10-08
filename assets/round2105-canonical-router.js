@@ -306,7 +306,7 @@
     #ah-route-shield{position:fixed;z-index:2147483647;inset:var(--current-frame-top,96px) var(--current-frame-side,88px) var(--current-frame-bottom,96px);overflow:hidden;border-radius:var(--current-frame-radius,32px);pointer-events:none;visibility:hidden;opacity:0;background:transparent!important}
     #ah-route-shield[data-ah-flying="1"]{visibility:visible;opacity:1}
     #ah-route-shield[hidden]{display:none}
-    #ah-route-shield-panel{position:absolute;inset:0;height:100%;width:100%;box-sizing:border-box;overflow:hidden;border:2px solid rgba(214,178,87,.94);border-radius:inherit;background:transparent url('./assets/honeycomb-mobile-continuous-2245.webp') center/cover no-repeat;background-clip:padding-box;box-shadow:inset 0 0 0 2px rgba(31,19,3,.96),inset 0 0 0 4px rgba(232,202,126,.30),inset 0 0 10px rgba(216,176,76,.24),inset 0 0 0 5px rgba(255,239,194,.16);transform:translate3d(-105%,0,0);will-change:transform;backface-visibility:hidden;transform-style:preserve-3d;contain:paint;isolation:isolate}
+    #ah-route-shield-panel{position:absolute;inset:0;height:100%;width:100%;box-sizing:border-box;overflow:hidden;border:2px solid rgba(214,178,87,.94);border-radius:inherit;background:transparent url('./assets/honeycomb-fine-tile-2367.svg') center/cover no-repeat;background-clip:padding-box;box-shadow:inset 0 0 0 2px rgba(31,19,3,.96),inset 0 0 0 4px rgba(232,202,126,.30),inset 0 0 10px rgba(216,176,76,.24),inset 0 0 0 5px rgba(255,239,194,.16);transform:translate3d(-105%,0,0);will-change:transform;backface-visibility:hidden;transform-style:preserve-3d;contain:paint;isolation:isolate}
     #ah-route-shield-panel::before{content:"";position:absolute;z-index:1;left:50%;top:55%;width:clamp(110px,18vw,220px);height:clamp(150px,25vw,310px);transform:translate3d(-50%,-50%,0);background:url('./assets/ah-empty-transparent.svg') center/contain no-repeat;opacity:.98;filter:none;pointer-events:none}
     #ah-route-shield-quote{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(74%,980px);margin:0;text-align:center;color:#f1f7f4;font-family:Orbitron,"Orbitron",system-ui,sans-serif;font-size:clamp(22px,2.15vw,42px);font-weight:600;line-height:1.35;letter-spacing:.035em;text-wrap:balance;text-shadow:none;pointer-events:none}#ah-route-shield-quote[hidden]{display:none}#ah-route-shield-quote .ah-shield-pink{color:#ff2ea8;-webkit-text-fill-color:#ff2ea8;text-shadow:none}#ah-route-shield-quote .ah-shield-green{color:#8fffd7;-webkit-text-fill-color:#8fffd7;text-shadow:none}
     @media(max-width:900px){#ah-route-shield{inset:98px 10px calc(88px + env(safe-area-inset-bottom,0px));border-radius:18px}#ah-route-shield-panel{border:1.5px solid rgba(214,178,87,.90);border-radius:18px;background-image:url('./assets/page-shield-official-honeycomb-r1877.webp');box-shadow:inset 0 0 0 2px rgba(24,12,2,.94),inset 0 0 0 3px rgba(255,238,186,.18),inset 0 0 8px rgba(214,178,87,.18)}#ah-route-shield-panel::before{top:58%;width:clamp(84px,26vw,126px);height:clamp(118px,38vw,188px)}#ah-route-shield-quote{width:min(82%,560px);font-size:clamp(17px,5.4vw,28px);line-height:1.42;letter-spacing:.02em}}
@@ -1153,7 +1153,7 @@
 (()=>{
 function apply(){
 const mobile=document.body.hasAttribute('data-ah-mobile-surface');
-const asset=new URL(mobile?'./honeycomb-mobile-continuous-2245.webp':'./honeycomb-mobile-continuous-2245.webp',document.querySelector('script[src*="round2105-canonical-router"]')?.src||location.href).href;
+const asset=new URL(mobile?'./honeycomb-fine-tile-2367.svg':'./honeycomb-fine-tile-2367.svg',document.querySelector('script[src*="round2105-canonical-router"]')?.src||location.href).href;
 const material={
  'background-color':'#14212b','background-image':'linear-gradient(rgba(220,236,243,.02109375),rgba(220,236,243,.02109375)),url("'+asset+'")',
  'background-position':'center center,center center','background-size':mobile?'1440px 900px,1440px 900px':'cover,cover',
@@ -1179,7 +1179,7 @@ addEventListener('load',queue,{once:true});addEventListener('ah:persistent-route
 
 // Brand honeycomb: viewport-sized artwork and exactly one thin matte film.
 (()=>{
-const asset=new URL(innerWidth>900?'./honeycomb-mobile-continuous-2245.webp':'./honeycomb-mobile-continuous-2245.webp',document.querySelector('script[src*="round2105-canonical-router"]')?.src||location.href).href;
+const asset=new URL(innerWidth>900?'./honeycomb-fine-tile-2367.svg':'./honeycomb-fine-tile-2367.svg',document.querySelector('script[src*="round2105-canonical-router"]')?.src||location.href).href;
 const set=(e,p,v)=>{if(e.style.getPropertyValue(p)!==v||e.style.getPropertyPriority(p)!=='important')e.style.setProperty(p,v,'important')};
 function apply(){
 const root=document.documentElement;
