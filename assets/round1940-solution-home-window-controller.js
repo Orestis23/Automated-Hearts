@@ -49,7 +49,7 @@
  }
 
  function set(open){
-   const c=cover(),f=(open||!MOBILE_PERF)?hydrate():frame();if(!c)return;
+   const c=cover(),f=open?hydrate():frame();if(!c)return;
    c.classList.toggle('is-open',!!open);
    c.setAttribute('aria-expanded',open?'true':'false');
    c.setAttribute('aria-label',open?'Machine window open':'Reveal the machine');
@@ -64,7 +64,6 @@
  }
 
  function bind(){
-   hydrate();
    const c=cover(),b=control();if(!c||!b)return;
    if(b.dataset.ah1940Bound!=='1'){
      b.dataset.ah1940Bound='1';
@@ -78,5 +77,5 @@
 
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind,{once:true});else bind();
  document.addEventListener('ah:persistent-route-complete',()=>setTimeout(bind,0));
- addEventListener('pageshow',()=>{hydrate();sync();},{passive:true});
+ addEventListener('pageshow',()=>{if(isOpen())hydrate();sync();},{passive:true});
 })();

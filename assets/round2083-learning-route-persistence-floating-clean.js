@@ -21,7 +21,7 @@
       imp(el,'text-shadow','none');imp(el,'filter','none');imp(el,'-webkit-filter','none');imp(el,'opacity','1');imp(el,'visibility','visible');imp(el,'transform','none');
     });
     document.querySelectorAll('body[data-ah-mobile-surface="learning"] main#main-content .route-card[data-lite-learning] > .route-media').forEach(media=>{
-      imp(media,'padding','8px');imp(media,'aspect-ratio','1 / 1');imp(media,'height','auto');imp(media,'overflow','hidden');imp(media,'border-radius','50%');
+      imp(media,'padding','0');imp(media,'aspect-ratio','1 / 1');imp(media,'height','auto');imp(media,'overflow','hidden');imp(media,'border-radius','50%');
       const img=media.querySelector('img');
       if(img){imp(img,'width','100%');imp(img,'height','100%');imp(img,'object-fit','contain');imp(img,'object-position','center center');imp(img,'transform','none');imp(img,'clip-path','none');}
     });
@@ -34,3 +34,4 @@
   document.addEventListener('click',e=>{if(e.target.closest('.route-label[data-lite-learning]')){queue();setTimeout(lock,60);setTimeout(lock,240);}},true);
   new MutationObserver(queue).observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:window.__AH2084_BUTTON_LABEL_AUTHORITY__?['class']:['class','style']});
 })();
+

@@ -1,7 +1,7 @@
 /* Round 1884: ticker phrases flanked by human figures; phrase-to-phrase spacing preserved. */
 document.addEventListener("DOMContentLoaded", () => {
   const marquee = document.querySelector(".charity-marquee");
-  if (!marquee) return;
+  if (!marquee || marquee.dataset.ahStaticTicker === "1") return;
   const messages = [{"text": "“With the right information, you can predict the future.”", "tone": "pink"}, {"text": "“Open 24/7.”", "tone": "green"}, {"text": "“Get rid of software costs.”", "tone": "pink"}];
 
   const tickerText = messages.map(item => item.text).join(" ");
@@ -56,9 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
     marquee.replaceChildren(track);
   }
   track.setAttribute("aria-hidden", "true");
-  track.replaceChildren(...Array.from({length:8}, makeLoop));
+  track.replaceChildren(...Array.from({length:2}, makeLoop));
   track.style.removeProperty("transform");
-  track.style.setProperty("animation", "r966-ticker-compositor 320s linear infinite", "important");
+  track.style.setProperty("animation", "none", "important");
   track.style.setProperty("animation-timing-function", "linear", "important");
   track.style.setProperty("will-change", "transform", "important");
   track.style.setProperty("backface-visibility", "hidden", "important");

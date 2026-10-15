@@ -1,4 +1,3 @@
-.git
-node_modules
-*.zip
-*.md
+desktop-live-preview.html
+mobile-live-preview.html
+responsive-audit.html

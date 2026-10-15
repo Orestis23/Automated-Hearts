@@ -40,13 +40,14 @@
   }
   function syncOne(control){
     const shutter=shutterFor(control); if(!shutter)return;
-    const open=openState(shutter),text=open?'Close window.':'Open the window.',expanded=open?'true':'false';
+    const open=openState(shutter),text=open?'Close the window.':'Open the window.',expanded=open?'true':'false';
     const label=control.querySelector('.ah1807-home-window-control__text');
     if(label&&label.textContent!==text)label.textContent=text;
     control.setAttribute('aria-label',text); control.setAttribute('aria-expanded',expanded); control.dataset.windowState=open?'open':'closed';
   }
   function syncAll(){document.querySelectorAll(CONTROL).forEach(syncOne);}
   function placeDefinition(){
+    if(document.getElementById('ah-desktop-home-persistent')&&innerWidth>900)return;
     const def=document.querySelector('.ah1759-definition-band[data-ah-definition-band]'); if(!def)return;
     const section=document.getElementById('home-route-buttons')||document.querySelector('.ah1759-insight-grid')?.closest('section');
     if(section&&def.parentElement!==section)section.prepend(def);

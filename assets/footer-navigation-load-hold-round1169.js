@@ -23,6 +23,7 @@
   };
 
   const press = (link) => {
+    if(window.__ahSmoothButtonPress)return;
     clear();
     if (!link) return;
     const href = (link.getAttribute('href') || '').trim();

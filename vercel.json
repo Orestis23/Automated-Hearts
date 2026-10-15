@@ -12,7 +12,7 @@
         },
         {
           "key": "Vercel-CDN-Cache-Control",
-          "value": "public, max-age=60, stale-while-revalidate=300"
+          "value": "max-age=0, must-revalidate"
         }
       ]
     },
@@ -25,7 +25,7 @@
         },
         {
           "key": "Vercel-CDN-Cache-Control",
-          "value": "public, max-age=60, stale-while-revalidate=300"
+          "value": "max-age=0, must-revalidate"
         }
       ]
     },
@@ -38,7 +38,7 @@
         },
         {
           "key": "Vercel-CDN-Cache-Control",
-          "value": "public, max-age=60, stale-while-revalidate=300"
+          "value": "max-age=0, must-revalidate"
         }
       ]
     },
@@ -51,7 +51,7 @@
         },
         {
           "key": "Vercel-CDN-Cache-Control",
-          "value": "public, max-age=60, stale-while-revalidate=300"
+          "value": "max-age=0, must-revalidate"
         }
       ]
     },
@@ -207,7 +207,7 @@
         },
         {
           "key": "Vercel-CDN-Cache-Control",
-          "value": "max-age=0"
+          "value": "max-age=0, must-revalidate"
         },
         {
           "key": "Service-Worker-Allowed",
@@ -224,52 +224,23 @@
         },
         {
           "key": "Vercel-CDN-Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=604800"
+          "value": "max-age=0, must-revalidate"
         }
       ]
     },
     {
-      "source": "/models/(.*)",
-      "headers": [
+      "source": "/assets/(.*)",
+      "has": [
         {
-          "key": "X-Robots-Tag",
-          "value": "noindex, follow"
+          "type": "query",
+          "key": "ahv",
+          "value": "[a-f0-9]{12}"
         }
-      ]
-    },
-    {
-      "source": "/solution-desktop.html",
+      ],
       "headers": [
         {
-          "key": "X-Robots-Tag",
-          "value": "noindex, follow"
-        }
-      ]
-    },
-    {
-      "source": "/solution-mobile.html",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, follow"
-        }
-      ]
-    },
-    {
-      "source": "/solution-machine-pipeline-round1865.html",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, follow"
-        }
-      ]
-    },
-    {
-      "source": "/heart-to-heart-digital-rolodex-round1094.html",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, follow"
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     }
@@ -379,14 +350,20 @@
       "source": "/mobile-about.html",
       "destination": "/privacy-policy.html",
       "permanent": true
-    },
-    {
-      "source": "/index.html",
-      "destination": "/",
-      "permanent": true
     }
   ],
   "framework": null,
   "buildCommand": "",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "installCommand": "",
+  "rewrites": [
+    {
+      "source": "/approved-honeycomb-content-rendered.webp",
+      "destination": "/assets/approved-honeycomb-content-rendered.webp"
+    },
+    {
+      "source": "/approved-honeycomb-clear-rendered.webp",
+      "destination": "/assets/approved-honeycomb-clear-rendered.webp"
+    }
+  ]
 }

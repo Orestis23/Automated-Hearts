@@ -3,9 +3,9 @@
 (()=>{
   'use strict';
   const PINK='#ff2ea8', MINT='#8fffd7', RED='#ff3030';
-  const DESKTOP_ACC='./assets/ah-empty-transparent.svg?v=1453r';
-  const MOBILE_MINT='./assets/ah-empty-transparent.svg?v=1453r';
-  const MOBILE_PINK='./assets/ah-empty-transparent.svg?v=1453r';
+  const DESKTOP_ACC='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%221%22%20height=%221%22/%3E';
+  const MOBILE_MINT='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%221%22%20height=%221%22/%3E';
+  const MOBILE_PINK='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%221%22%20height=%221%22/%3E';
   const MOBILE_BASE='./assets/footer-button-carbon-inner-rim-round1586.svg?v=1453r';
   const MOBILE_MSG='./assets/footer-button-carbon-flat-no-glow-round1738.svg?v=1453r';
   const imp=(el,p,v)=>{if(el)el.style.setProperty(p,v,'important');};
@@ -23,35 +23,21 @@
   };
   const applyLearning=()=>{
     if(!matchMedia('(min-width:901px)').matches)return;
-    const {sec,shell,paths,grid}=learningNodes();
-    if(!sec||!document.body.classList.contains('ah-model-stage-locked')){clearLearning();return;}
-
-    props(sec,{'position':'absolute','z-index':'18','top':'0','right':'0','bottom':'0','left':'0','width':'auto','min-width':'0','max-width':'none','height':'auto','min-height':'0','max-height':'none','margin':'0','padding':'0','display':'flex','align-items':'center','justify-content':'center','overflow':'visible','transform':'none','translate':'none'});
-    props(shell,{'position':'relative','inset':'auto','box-sizing':'border-box','padding-top':'144px','width':'100%','min-width':'0','max-width':'100%','height':'100%','min-height':'0','max-height':'100%','margin':'0','padding':'144px 0 0','display':'flex','align-items':'center','justify-content':'center','overflow':'visible','transform':'none','translate':'none'});
-    props(paths,{'position':'relative','inset':'auto','top':'0px','width':'min(calc(100% - 36px),1600px)','min-width':'0','max-width':'1600px','height':'auto','min-height':'0','max-height':'100%','margin':'0 auto','padding':'0','transform':'none','translate':'none'});
-    props(grid,{'position':'relative','inset':'auto','width':'100%','min-width':'0','max-width':'1600px','height':'auto','min-height':'0','max-height':'100%','margin':'0 auto','padding':'0','display':'grid','grid-template-columns':'repeat(3,minmax(0,1fr))','grid-template-rows':'auto','align-items':'center','justify-items':'center','align-content':'center','justify-content':'center','gap':'clamp(22px,3.2vw,58px)','transform':'none','translate':'none'});
-
-    /* Size from BOTH vertical room and actual column width so the row stays
-       centered without media spilling into adjacent columns at narrower desktop widths. */
-    const available=Math.max(0,sec.getBoundingClientRect().height-144);
-    const sampleSign=sec.querySelector('.premium-route-card__title-sign');
-    const signH=Math.max(56,Math.min(72,sampleSign?.getBoundingClientRect().height||72));
-    const itemGap=12, breathing=24;
-    const verticalMax=Math.max(80,Math.floor(available-signH-itemGap-breathing));
-    const gridW=Math.max(0,grid.getBoundingClientRect().width);
-    const gapPx=parseFloat(getComputedStyle(grid).columnGap)||22;
-    const columnMax=Math.max(220,Math.floor((gridW-(gapPx*2))/3));
-    const med=Math.max(80,Math.min(460,verticalMax,columnMax));
-    sec.style.setProperty('--ah1453-medallion',med+'px');
-
-    sec.querySelectorAll('article.r987-learning-flat-card').forEach(card=>props(card,{'position':'relative','inset':'auto','display':'flex','flex-direction':'column','align-items':'center','justify-content':'center','gap':itemGap+'px','width':'100%','min-width':'0','max-width':'500px','height':'auto','min-height':'0','max-height':'none','margin':'0','padding':'0','overflow':'visible','transform':'none','translate':'none'}));
-    sec.querySelectorAll('.learning-medallion-button,.learning-medallion-media').forEach(el=>props(el,{'width':med+'px','min-width':'0','max-width':med+'px','height':med+'px','min-height':'0','max-height':med+'px','aspect-ratio':'1/1','margin':'0 auto','flex':'0 0 auto'}));
-    sec.querySelectorAll('img.r987-learning-flat-button-image').forEach(el=>props(el,{'display':'block','width':'100%','min-width':'0','max-width':med+'px','height':'100%','min-height':'0','max-height':med+'px','object-fit':'contain','margin':'0 auto'}));
-
-    const band=sec.querySelector('.ah-brand-digital-cta-band');props(band,{position:'absolute',top:'48px',left:'50%',right:'auto',bottom:'auto',transform:'translateX(-50%)',margin:'0',width:'max-content','max-width':'calc(100% - 48px)','text-align':'center'});
-    sec.querySelectorAll('.premium-route-card__title-sign,.footer-nav-label').forEach(e=>props(e,{'text-align':'center','justify-content':'center'}));
-    const line=sec.querySelector('.ah-learning-ticker-line-r1451');
-    line?.remove();
+    const {sec,shell,paths,grid}=learningNodes();if(!sec)return;
+    const vars=getComputedStyle(document.documentElement);
+    const usable=Math.max(280,innerHeight-(parseFloat(vars.getPropertyValue('--current-frame-top'))||96)-(parseFloat(vars.getPropertyValue('--current-frame-bottom'))||108));
+    props(document.querySelector('main#main-content'),{'padding-top':'0','padding-bottom':'0'});
+    props(sec,{position:'relative',inset:'auto',height:usable+'px','min-height':usable+'px','max-height':'none',padding:'24px clamp(16px,2vw,40px)',display:'flex','align-items':'center','justify-content':'center','box-sizing':'border-box',overflow:'visible'});
+    props(shell,{position:'relative',inset:'auto',height:'521.6px','min-height':'521.6px','max-height':'none',width:'100%','max-width':'1600px',padding:'0',margin:'0 auto',display:'flex','flex-direction':'column','align-items':'center','justify-content':'center',gap:'24px',transform:'none'});
+    props(paths,{position:'relative',inset:'auto',width:'100%',height:'auto',margin:'0',padding:'0',transform:'none'});
+    props(grid,{display:'grid','grid-template-columns':'repeat(3,minmax(0,1fr))',gap:'24px',width:'100%',margin:'0',padding:'0',height:'auto'});
+    const band=sec.querySelector('.ah-brand-digital-cta-band');props(band,{position:'relative',inset:'auto',transform:'none',width:'100%','max-width':'none',margin:'0'});
+    const bandHeight=band?.getBoundingClientRect().height||60;
+    const width=(grid.getBoundingClientRect().width-48)/3;
+    const med=Math.max(100,Math.min(320,width,usable-bandHeight-24-56-12-48));
+    for(const el of sec.querySelectorAll('.learning-medallion-button,.learning-medallion-media'))props(el,{width:med+'px',height:med+'px','min-width':'0','max-width':med+'px','min-height':'0','max-height':med+'px',margin:'0 auto','aspect-ratio':'1'});
+    for(const el of sec.querySelectorAll('img.r987-learning-flat-button-image'))props(el,{width:'100%',height:'100%','min-width':'0','max-width':'100%','min-height':'0','max-height':'100%','object-fit':'contain'});
+    sec.querySelector('.ah-learning-ticker-line-r1451')?.remove();
   };
 
   const overlayFor=(button,url)=>{

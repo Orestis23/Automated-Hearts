@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preload" href="./assets/fonts/rajdhani-600-round1877.woff2" as="font" type="font/woff2" crossorigin><style>
+@font-face{font-family:Rajdhani;src:url('./assets/fonts/rajdhani-600-round1877.woff2');font-weight:600}
+html,body{margin:0;height:100%;background-color:#07111b!important}
+body{display:flex;align-items:center;justify-content:center;position:relative;isolation:isolate;overflow:hidden;background:#07111b url("./assets/approved-honeycomb-content-rendered.webp") center/cover no-repeat!important}body::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(115deg,rgba(130,170,193,.18),rgba(5,19,30,.44));backdrop-filter:blur(16px) saturate(.65);-webkit-backdrop-filter:blur(16px) saturate(.65);box-shadow:inset 0 1px 2px #dff3ff33,inset 0 -16px 32px #0005}
+#copy{position:relative;z-index:1;width:86%;max-width:1240px;font:600 clamp(18px,3vw,38px)/1.4 Rajdhani,Arial,sans-serif;text-align:left;visibility:hidden}
+p{margin:0}span{font:inherit} @media(min-width:700px){p{white-space:nowrap}}
+@media(max-width:699px){body::before{background:linear-gradient(115deg,rgba(218,232,237,.88),rgba(165,188,200,.9));backdrop-filter:blur(16px) saturate(.45)}#copy{font-weight:600;text-shadow:0 0 .35px currentColor;width:82%;font-size:26px;line-height:1.45}p+p{margin-top:20px}#copy span{color:var(--mobile-ink)!important}}
+</style></head><body><div id="copy"></div><script>
+const lines=[[['Ethical Automation ','#092d4c'],['empowers ','#d32681'],['the human & the mind.','#126b50']],[['Prioritizing ','#092d4c'],['Job-Retention ','#d32681'],['and Seamlessness.','#126b50']]];
+const copy=document.getElementById('copy'),spans=[];
+for(const segments of lines){const line=document.createElement('p');copy.append(line);for(const[text,color]of segments){const span=document.createElement('span');span.style.color=color;span.style.setProperty('--mobile-ink',color==='#092d4c'?'#082b46':color==='#d32681'?'#881349':'#101d26');span.textContent=text;line.append(span);spans.push({span,text});}}
+async function start(){await new Promise(resolve=>{function visible(){let ready=true;try{const c=parent.getComputedStyle(parent.document.body);ready=c.visibility!=='hidden'&&Number(c.opacity)>.9}catch{}if(ready)resolve();else setTimeout(visible,40)}visible()});await document.fonts.load('600 38px Rajdhani');let size=parseFloat(getComputedStyle(copy).fontSize);if(innerWidth>=700){const widest=Math.max(...[...copy.children].map(p=>p.scrollWidth));if(widest>copy.clientWidth)size*=copy.clientWidth/widest;copy.style.fontSize=size+'px';}
+for(const line of copy.children)line.style.minHeight=line.getBoundingClientRect().height+'px';for(const item of spans)item.span.textContent='';copy.style.visibility='visible';parent.postMessage({type:'ah:intro-typing-ready'},location.origin);let segment=0,letter=0;
+const pace=90,total=spans.reduce((n,item)=>n+item.text.length,0);let shown=0,elapsed=0,last=performance.now(),paused=false,done=false;
+addEventListener('message',event=>{if(event.source!==parent||event.origin!==location.origin||event.data?.type!=='ah:intro-pause')return;paused=!!event.data.paused;last=performance.now();});
+function type(now){if(done)return;const delta=now-last;last=now;if(!paused)elapsed+=delta;const target=Math.min(total,1+Math.floor(elapsed/pace));while(shown<target){const item=spans[segment];item.span.textContent=item.text.slice(0,++letter);shown++;if(letter===item.text.length){segment++;letter=0;}}if(elapsed>=(total-1)*pace+1100){done=true;parent.postMessage({type:'ah:intro-typing-complete'},location.origin);}else requestAnimationFrame(type);}requestAnimationFrame(type);}
+
+
+start();
+</script></body></html>

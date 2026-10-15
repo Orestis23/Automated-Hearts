@@ -100,10 +100,10 @@ function colorize(v){let x=esc(v);x=x.replace(/AI/g,'<span class="pink">AI</span
     pendingVideos.set(url, pending);
     return pending;
   }
-  const cardsUrl='./assets/home-rolodex-scroll-mobile-round1147-smooth.mp4';
-  async function prepareCards(){return fetchVideo(cardsUrl)}
+  const cardsUrl='';
+  async function prepareCards(){return false}
   async function prepareCriticalAssets(){
-    const images=['./assets/ah-empty-transparent.svg'];
+    const images=['data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%221%22%20height=%221%22/%3E'];
     startModelLoad();
     const core=Promise.all([Promise.all(images.map(loadImage)),modelReadyPromise]);
     // Cards are intentionally NOT downloaded during the first-visit intro.
@@ -129,7 +129,7 @@ function colorize(v){let x=esc(v);x=x.replace(/AI/g,'<span class="pink">AI</span
   let cardsWarmAllowed=document.documentElement.getAttribute('data-ah-intro')!=='1';
   let cardsWarmScheduled=false;
   function scheduleCardsWarmup(){
-    if(!cardsWarmAllowed||cardsWarmScheduled||mediaCache[cardsUrl])return;
+    if(!cardsUrl||!cardsWarmAllowed||cardsWarmScheduled||mediaCache[cardsUrl])return;
     cardsWarmScheduled=true;
     const warm=()=>prepareCards().finally(()=>{cardsWarmScheduled=false});
     if('requestIdleCallback' in window)requestIdleCallback(warm,{timeout:2600});
@@ -230,8 +230,8 @@ function colorize(v){let x=esc(v);x=x.replace(/AI/g,'<span class="pink">AI</span
 function goTo(index){const figs=figures();if(!figs.length)return;const target=Math.max(0,Math.min(figs.length-1,index));requestedIndex=target;loadDeferred();cancelAnimationFrame(glideFrame);gliding=true;const start=carousel.scrollLeft,left=Math.min(figs[target].offsetLeft-figs[0].offsetLeft,carousel.scrollWidth-carousel.clientWidth),began=performance.now();const snap=carousel.style.getPropertyValue('scroll-snap-type'),snapPriority=carousel.style.getPropertyPriority('scroll-snap-type');carousel.style.setProperty('scroll-snap-type','none','important');carousel.style.setProperty('scroll-behavior','auto','important');const duration=matchMedia('(prefers-reduced-motion:reduce)').matches?0:650;function step(now){const t=duration?Math.min(1,(now-began)/duration):1;const eased=t*t*(3-2*t);carousel.scrollLeft=start+(left-start)*eased;if(t<1){glideFrame=requestAnimationFrame(step)}else{gliding=false;requestedIndex=null;if(snap)carousel.style.setProperty('scroll-snap-type',snap,snapPriority);else carousel.style.removeProperty('scroll-snap-type')}}glideFrame=requestAnimationFrame(step)}
   function bindArrow(button,direction){if(!button)return;
   // Keep generic button press effects from moving carousel controls.
-  const lockOrb=()=>{for(const [prop,value] of [['transform','translateY(-50%)'],['translate','none'],['scale','none'],['transition-property','filter,box-shadow']]){if(button.style.getPropertyValue(prop)!==value||button.style.getPropertyPriority(prop)!=='important')button.style.setProperty(prop,value,'important')}};
-  lockOrb();new MutationObserver(lockOrb).observe(button,{attributes:true,attributeFilter:['style','class']});
+  const lockOrb=()=>{for(const [prop,value] of [['transform','translateY(-50%)'],['translate','none'],['scale','none'],['transition-property','filter, box-shadow']]){if(button.style.getPropertyValue(prop)!==value||button.style.getPropertyPriority(prop)!=='important')button.style.setProperty(prop,value,'important')}};
+  lockOrb();new MutationObserver(lockOrb).observe(button,{attributes:true,attributeFilter:['class']});button.addEventListener('pointerup',lockOrb);button.addEventListener('pointercancel',lockOrb);
 button.style.setProperty('touch-action','manipulation','important');window.addEventListener('pointerdown',event=>{if(event.button!==0||!button.contains(event.target)||button.disabled)return;event.preventDefault();lastPointerActivation=performance.now();goTo((requestedIndex??currentIndex())+direction)},true);button.addEventListener('click',()=>{if(performance.now()-lastPointerActivation<500)return;goTo((requestedIndex??currentIndex())+direction)})}
   bindArrow(prevOrb,-1);bindArrow(nextOrb,1);
   carousel?.addEventListener('scrollend',()=>{if(!gliding)requestedIndex=null});
@@ -542,7 +542,7 @@ window.AH_GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycb
 
 /* Automated Hearts Round 1873 — order-preserving runtime consolidation. */
 
-(()=>{'use strict';const SRC='./assets/ah-empty-transparent.svg';function apply(root=document){root.querySelectorAll?.('a.rim-heart-emblem.rim-heart-home-link,a.heart').forEach(a=>{if(a.querySelector(':scope > img.ah1858-heart-image'))return;const img=document.createElement('img');img.className='ah1858-heart-image';img.src=SRC;img.alt='';img.setAttribute('aria-hidden','true');img.decoding='async';a.prepend(img);});}apply();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>apply(),{once:true});const mo=new MutationObserver(ms=>{for(const m of ms)for(const n of m.addedNodes)if(n.nodeType===1){if(n.matches?.('a.rim-heart-emblem.rim-heart-home-link,a.heart'))apply(n.parentNode||document);else apply(n);}});mo.observe(document.documentElement,{subtree:true,childList:true});})();
+(()=>{'use strict';const SRC='data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%221%22%20height=%221%22/%3E';function apply(root=document){root.querySelectorAll?.('a.rim-heart-emblem.rim-heart-home-link,a.heart').forEach(a=>{if(a.querySelector(':scope > img.ah1858-heart-image'))return;const img=document.createElement('img');img.className='ah1858-heart-image';img.src=SRC;img.alt='';img.setAttribute('aria-hidden','true');img.decoding='async';a.prepend(img);});}apply();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>apply(),{once:true});const mo=new MutationObserver(ms=>{for(const m of ms)for(const n of m.addedNodes)if(n.nodeType===1){if(n.matches?.('a.rim-heart-emblem.rim-heart-home-link,a.heart'))apply(n.parentNode||document);else apply(n);}});mo.observe(document.documentElement,{subtree:true,childList:true});})();
 
 
 (()=>{
@@ -638,7 +638,7 @@ window.AH_GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycb
   }
   function syncOne(control){
     const shutter=shutterFor(control); if(!shutter)return;
-    const open=openState(shutter),text=open?'Close window.':'Open the window.',expanded=open?'true':'false';
+    const open=openState(shutter),text=open?'Close the window.':'Open the window.',expanded=open?'true':'false';
     const label=control.querySelector('.ah1807-home-window-control__text');
     if(label&&label.textContent!==text)label.textContent=text;
     control.setAttribute('aria-label',text); control.setAttribute('aria-expanded',expanded); control.dataset.windowState=open?'open':'closed';

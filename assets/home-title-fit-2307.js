@@ -2,8 +2,7 @@
 const selector='#home-title-fields .r1362-home-title-text,.title-stack .lcd-text';
 let scheduled=false;
 function fit(){
- const quote=document.querySelector('.ah1759-definition-band');
- if(quote&&quote.style.getPropertyValue('padding-top')!=='0px')quote.style.setProperty('padding-top','0px','important');
+ if(innerWidth>900)return;
  const main=document.querySelector('main#main-content'),ticker=document.querySelector('#home-charity-ticker');
  const carousel=document.querySelector('#home-overview-section,section[aria-label="Humans and AI working together"]');
  if(main&&carousel){
@@ -18,7 +17,7 @@ function fit(){
   const padding=clearance+'px';
   if(main.style.getPropertyValue('padding-bottom')!==padding)main.style.setProperty('padding-bottom',padding,'important');
  }
- const texts=[...document.querySelectorAll(selector)];if(!texts.length)return;
+ const texts=[...document.querySelectorAll(selector+':not([data-ah-static-title])')];if(!texts.length)return;
  let size=innerWidth>900?28.8:Math.min(28.8,innerWidth*.0594);
  for(const text of texts){
   const field=text.parentElement,c=getComputedStyle(field),style=getComputedStyle(text),r=field.getBoundingClientRect();
@@ -34,9 +33,9 @@ function fit(){
 }
 function queue(){if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;fit();});}
 window.AHFitHomeTitles=fit;
-function init(){fit();const observer=new ResizeObserver(fit);document.querySelectorAll('#home-title-fields>.r1362-home-title-field,.title-stack>.lcd').forEach(field=>observer.observe(field));document.querySelectorAll('#home-title-fields,.title-stack').forEach(group=>new MutationObserver(queue).observe(group,{childList:true,subtree:true}));}
+async function init(){fit();document.documentElement.dataset.ahTitlesReady='1';if(document.fonts)await Promise.allSettled([document.fonts.load('800 38px Orbitron'),document.fonts.load('600 20px Rajdhani')]);fit();document.documentElement.dataset.ahTitlesReady='1';const observer=new ResizeObserver(fit);document.querySelectorAll('#home-title-fields>.r1362-home-title-field,.title-stack>.lcd').forEach(field=>observer.observe(field));document.querySelectorAll('#home-title-fields,.title-stack').forEach(group=>new MutationObserver(queue).observe(group,{childList:true,subtree:true}));}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 addEventListener('resize',fit,{passive:true});addEventListener('orientationchange',queue,{passive:true});
-document.fonts?.ready.then(fit);document.fonts?.addEventListener('loadingdone',fit);
+
 document.addEventListener('ah:persistent-route-complete',init);
 })();

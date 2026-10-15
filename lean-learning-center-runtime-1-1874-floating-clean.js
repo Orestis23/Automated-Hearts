@@ -230,8 +230,8 @@
   const small = window.matchMedia('(max-width:374px)');
   const props = ['position','top','left','right','bottom','width','min-width','max-width','height','min-height','max-height','margin','padding','transform','translate'];
   let applying = false;
-  function setI(el,p,v){ el.style.setProperty(p,v,'important'); }
-  function clear(el){ props.forEach(p=>el.style.removeProperty(p)); }
+  function setI(el,p,v){ if(el.style.getPropertyValue(p)!==v||el.style.getPropertyPriority(p)!=='important')el.style.setProperty(p,v,'important'); }
+  function clear(el){ props.forEach(p=>{if(el.style.getPropertyValue(p))el.style.removeProperty(p)}); }
   function apply(){
     const heart = document.getElementById('rim-heart-home');
     if(!heart || applying) return;

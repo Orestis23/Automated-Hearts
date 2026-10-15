@@ -2648,8 +2648,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ;
 /* Round 933: Industries shared model carousel.
-   Uses the supplied Industry Helix first and Readiness Diagnostic second.
-   Any industry route resets to the Helix and asks it to focus that industry. */
+   Uses the available readiness models.
+   Any industry route resets the available model and selects that industry. */
 (() => {
   'use strict';
 

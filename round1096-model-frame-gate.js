@@ -1,60 +1,23 @@
-/* Automated Hearts Round 1096 — shared frame gate for legacy model pages. */
-(() => {
-  'use strict';
-  if (window.__AH1096ModelFrameGate) return;
-  window.__AH1096ModelFrameGate = 1;
-
-  const nativeRequest = window.requestAnimationFrame.bind(window);
-  const nativeCancel = window.cancelAnimationFrame.bind(window);
-  let sequence = 1;
-  let hostActive = true;
-  let viewportActive = true;
-  const queued = new Map();
-  const running = new Map();
-  const isActive = () => hostActive && viewportActive && !document.hidden;
-
-  const schedule = (id, callback) => {
-    const nativeId = nativeRequest((time) => {
-      running.delete(id);
-      if (!isActive()) {
-        queued.set(id, callback);
-        return;
-      }
-      callback(time);
-    });
-    running.set(id, nativeId);
-  };
-
-  const resume = () => {
-    if (!isActive() || !queued.size) return;
-    const pending = [...queued];
-    queued.clear();
-    pending.forEach(([id, callback]) => schedule(id, callback));
-  };
-
-  window.requestAnimationFrame = (callback) => {
-    const id = sequence++;
-    if (isActive()) schedule(id, callback);
-    else queued.set(id, callback);
-    return id;
-  };
-
-  window.cancelAnimationFrame = (id) => {
-    queued.delete(id);
-    const nativeId = running.get(id);
-    if (nativeId !== undefined) {
-      nativeCancel(nativeId);
-      running.delete(id);
-    }
-  };
-
-  window.addEventListener('message', (event) => {
-    const data = event.data || {};
-    if (data.type === 'engine-visibility') hostActive = !!data.visible;
-    else if (data.type === 'automated-hearts:learning-activity') hostActive = !!data.active;
-    else if (data.type === 'automated-hearts:viewport-activity') viewportActive = !!data.active;
-    else return;
-    resume();
-  });
-  document.addEventListener('visibilitychange', resume, { passive:true });
+/* Model activity has independent owners: window, viewport, exposure and page shell. */
+(()=>{'use strict';if(window.__AH1096ModelFrameGate)return;window.__AH1096ModelFrameGate=1;
+const nativeRequest=window.requestAnimationFrame.bind(window),nativeCancel=window.cancelAnimationFrame.bind(window);
+window.__ahNativeRAF=nativeRequest;window.__ahNativeCAF=nativeCancel;
+let seq=1,hostActive=new URLSearchParams(location.search).get('preview')!=='1',viewportActive=true,exposureActive=true,shellActive=true,shutterMoving=false;
+const queued=new Map(),running=new Map();
+const active=()=>hostActive&&viewportActive&&exposureActive&&shellActive&&!shutterMoving&&!document.hidden;
+let lastReported;const report=()=>{const on=active();document.documentElement.dataset.ahModelActive=on?'1':'0';if(on!==lastReported){lastReported=on;if(parent!==window)parent.postMessage({type:'ah:model-render-state',active:on},'*')}};
+const schedule=(id,cb)=>{const h=nativeRequest(t=>{running.delete(id);if(!active()){queued.set(id,cb);return}cb(t)});running.set(id,h)};
+const flush=()=>{report();if(!active()||!queued.size)return;const pending=[...queued];queued.clear();for(const[id,cb]of pending)schedule(id,cb)};
+window.requestAnimationFrame=cb=>{const id=seq++;if(active())schedule(id,cb);else queued.set(id,cb);return id};
+window.cancelAnimationFrame=id=>{queued.delete(id);const h=running.get(id);if(h!==undefined){nativeCancel(h);running.delete(id)}};
+addEventListener('message',e=>{if(e.source!==parent)return;const d=e.data||{};
+if(d.type==='engine-visibility')hostActive=!!d.visible;
+else if(d.type==='automated-hearts:learning-activity')hostActive=!!d.active;
+else if(d.type==='automated-hearts:viewport-activity')viewportActive=!!d.active;
+else if(d.type==='automated-hearts:viewport-exposure')exposureActive=!!d.active;
+else if(d.type==='ah:shell-render-active')shellActive=!!d.active;
+else if(d.type==='ah:home-shutter-motion')shutterMoving=!!d.moving;
+else return;flush()});
+document.addEventListener('visibilitychange',flush,{passive:true});
+window.__ahRuntimeFrameGate={isActive:active,resume:flush};report();
 })();

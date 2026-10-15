@@ -831,6 +831,15 @@
     homeTransitionTrack.dataset.initialized = "true";
 
     const carousel = homeTransitionTrack.closest(".home-transition-carousel");
+    // Native scrolling avoids one oversized animated compositing surface.
+    const carouselViewport = document.createElement('div');
+    carouselViewport.className = 'ah-carousel-viewport';
+    carouselViewport.style.cssText = 'position:relative;width:100%;overflow:hidden;scroll-behavior:auto;';
+    homeTransitionTrack.before(carouselViewport);
+    carouselViewport.append(homeTransitionTrack);
+    homeTransitionTrack.style.setProperty('transform','none','important');
+    homeTransitionTrack.style.setProperty('will-change','auto','important');
+    let carouselImagesReady = false;
     const originalSlides = Array.from(homeTransitionTrack.children);
     originalSlides.forEach((slide) => {
       const clone = slide.cloneNode(true);
@@ -853,7 +862,7 @@
     let selectedControl = null;
     let selectedDirection = null;
     const mobileCarousel = window.matchMedia("(max-width:760px)").matches;
-    let carouselVisible = !mobileCarousel;
+    let carouselVisible = false;
     let carouselFrame = 0;
 
     const readGap = () => {
@@ -946,13 +955,13 @@
     });
 
     const queueCarouselFrame = () => {
-      if (carouselFrame || (mobileCarousel && !carouselVisible) || document.hidden) return;
+      if (carouselFrame || !carouselVisible || !carouselImagesReady || document.hidden) return;
       carouselFrame = requestAnimationFrame(animateCarousel);
     };
 
     const animateCarousel = (time) => {
       carouselFrame = 0;
-      if (mobileCarousel && !carouselVisible) { previousTime = time; return; }
+      if (!carouselVisible) { previousTime = time; return; }
       if (window.__AH_VIEWPORT_RESIZING === true) {
         previousTime = time;
         queueCarouselFrame();
@@ -963,7 +972,7 @@
       const acceleration = 1 - Math.exp(-elapsedSeconds * 8.2);
       currentSpeed += (targetSpeed - currentSpeed) * acceleration;
       position = normalizePosition(position + currentSpeed * elapsedSeconds);
-      homeTransitionTrack.style.transform = `translate3d(${position}px, 0, 0)`;
+      carouselViewport.scrollLeft = -position;
       queueCarouselFrame();
     };
 
@@ -987,7 +996,7 @@
       }
     });
 
-    if (mobileCarousel && carousel && "IntersectionObserver" in window) {
+    if (carousel && "IntersectionObserver" in window) {
       const carouselObserver = new IntersectionObserver(([entry]) => {
         carouselVisible = !!entry?.isIntersecting;
         previousTime = performance.now();
@@ -998,6 +1007,7 @@
     } else {
       carouselVisible = true;
     }
+    Promise.all(originalSlides.map(slide=>{const image=slide.querySelector('img');if(!image)return Promise.resolve();image.loading='eager';return image.decode?image.decode().catch(()=>{}):Promise.resolve();})).then(()=>{carouselImagesReady=true;previousTime=performance.now();queueCarouselFrame();});
     queueCarouselFrame();
   }
 
@@ -1126,6 +1136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* Round 372: authoritative digital-screen text normalization */
 document.addEventListener("DOMContentLoaded", () => {
+  if(matchMedia('(min-width:901px)').matches)return; // Desktop text is owned by desktop-approved.js.
   const canonicalSelector = ".screen-text-canonical:not(.home-title-text-standard)";
   const normalize = (element) => {
     /* Round 530: the Industries route labels deliberately contain one span
@@ -1156,7 +1167,7 @@ document.addEventListener("DOMContentLoaded", () => {
    from the same tone map so a repeated phrase can never swap colors between cycles. */
 document.addEventListener("DOMContentLoaded", () => {
   const marquee = document.querySelector(".charity-marquee");
-  if (!marquee) return;
+  if (!marquee || marquee.dataset.ahStaticTicker === "1") return;
   const messages = [
     [{ text: "Open 24/7", tone: "green" }],
     [{ text: "Get rid of software costs.", tone: "pink" }],
@@ -1252,9 +1263,10 @@ document.addEventListener("DOMContentLoaded", () => {
 /* Round 447: keep one complete text node per field. Homepage title fields use
    a cleaner 24pt bulb face; other fields retain the established fit tiers. */
 (() => {
+  if(matchMedia('(min-width:901px)').matches)return; // Retire desktop font fitting and alternate bulb masks.
   const DIGITAL_SELECTOR = [
     '.screen-text-canonical:not(.home-title-text-standard):not(.ah1749-title-progress-text):not(.charity-marquee):not(.footer-page-led):not(.header-page-led)',
-    '.charity-marquee__segment',
+    '.charity-marquee__segment:not([data-ah-static-ticker])',
     '.negative-software-screen-round344 h3',
     '.negative-software-screen-round344 li',
   ].join(',');

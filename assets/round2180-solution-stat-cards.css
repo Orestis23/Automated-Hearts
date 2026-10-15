@@ -4,7 +4,7 @@ html body .ah1888-strategy-facts{display:grid!important;grid-template-columns:re
 
 html body :is(.ah1888-strategy-fact,.ah1867-strategy-stat){display:flex!important;flex-direction:column!important;gap:9px!important;min-width:0!important;padding:18px!important;border:1px solid #ed65ac!important;border-radius:0!important;background:#351225!important;background-image:none!important;box-shadow:inset 0 0 0 2px rgba(237,101,172,.1)!important;height:auto!important;text-align:left!important}
 
-html body :is(.ah1888-strategy-fact__number,.ah1867-strategy-stat__number){display:block!important;font-size:30px!important;line-height:1.1!important;color:#ff79bd!important;-webkit-text-fill-color:#ff79bd!important}
+html body :is(.ah1888-strategy-fact__number,.ah1867-strategy-stat__number){display:block!important;font-size:30px!important;line-height:1.1!important;color:#ff77bd!important;-webkit-text-fill-color:#ff77bd!important}
 
 html body :is(.ah1888-strategy-fact__body,.ah1867-strategy-stat__body){font-family:Rajdhani,sans-serif!important;font-size:19px!important;line-height:1.4!important;color:#fff!important;-webkit-text-fill-color:#fff!important;margin:0!important}
 
@@ -40,7 +40,7 @@ html body :is(#lite-model-stage,.solution-process-window){margin-top:0!important
 
 html body .ah2184-window-title{position:absolute!important;inset:0!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:.4em!important;padding:16px!important;font-family:Rajdhani,sans-serif!important;font-weight:700!important;font-size:clamp(22px,3vw,38px)!important;line-height:1.2!important;text-align:center!important;pointer-events:none!important;background:none!important;z-index:2!important}
 
-html body .ah2184-title-pink{color:#ed65ac!important;-webkit-text-fill-color:#ed65ac!important}
+html body .ah2184-title-pink{color:#ff77bd!important;-webkit-text-fill-color:#ff77bd!important}
 
 html body .ah2184-title-green{color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important}
 
@@ -48,13 +48,13 @@ html body .ah2184-title-green{color:#8fffd7!important;-webkit-text-fill-color:#8
 
 }
 
-@layer ah-solution-stat-cards {html body .ah2184-window-title span{font-size:inherit!important;line-height:inherit!important;opacity:1!important;filter:none!important}html body .ah2184-title-pink span{color:#ed65ac!important;-webkit-text-fill-color:#ed65ac!important}html body .ah2184-title-green span{color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important}}
+@layer ah-solution-stat-cards {html body .ah2184-window-title span{font-size:inherit!important;line-height:inherit!important;opacity:1!important;filter:none!important}html body .ah2184-title-pink span{color:#ff77bd!important;-webkit-text-fill-color:#ff77bd!important}html body .ah2184-title-green span{color:#8fffd7!important;-webkit-text-fill-color:#8fffd7!important}}
 
 
 
 @layer ah-solution-stat-cards {html body .solution-machine-window-footer{position:absolute!important;left:50%!important;right:auto!important;bottom:18px!important;transform:translateX(-50%)!important;width:max-content!important;max-width:calc(100% - 24px)!important;display:flex!important;flex-wrap:wrap!important;justify-content:center!important;text-align:center!important;gap:.35em!important;background:transparent!important;padding:0!important;pointer-events:none!important;z-index:24!important;font-size:16px!important}html body .solution-machine-window-footer span{font-size:inherit!important}}
 
-@layer ah-solution-stat-cards {html body .solution-machine-window-footer{top:14px!important;bottom:auto!important;font-size:8px!important}html body .solution-machine-window-footer .ah2189-red-sign-copy,html body .solution-machine-window-footer .ah2189-red-sign-copy span{color:#ff1836!important;-webkit-text-fill-color:#ff1836!important}}
+@layer ah-solution-stat-cards {html body .solution-machine-window-footer{top:14px!important;bottom:auto!important;font-size:8px!important}html body .solution-machine-window-footer .ah2189-red-sign-copy,html body .solution-machine-window-footer .ah2189-red-sign-copy span{color:#ff77bd!important;-webkit-text-fill-color:#ff77bd!important}}
 
 @layer ah-solution-stat-cards {html body .solution-machine-window-footer{border:0!important;box-shadow:none!important;background:none!important}html body .solution-machine-window-footer::before,html body .solution-machine-window-footer::after{display:none!important}html body :is(#solution-process-cover,#solution-mobile-cover){will-change:transform!important;backface-visibility:hidden!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;transform:translate3d(0,0,0)!important}html body :is(#solution-process-cover,#solution-mobile-cover).is-open{transform:translate3d(0,-105%,0)!important}}
 

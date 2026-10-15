@@ -16,7 +16,7 @@
       template: 'home-machine-rolodex-template',
       iframe: 'home-machine-rolodex',
       video: 'home-machine-rolodex-video',
-      mobileSrc: './assets/home-rolodex-scroll-mobile-round1147-smooth.mp4',
+      mobileSrc: '',
       desktopSrc: './heart-to-heart-digital-rolodex-round1094.html?v=2010r&home=1'
     }
   ];
@@ -386,6 +386,7 @@
   }
 
   function fitProcessHeaders(){
+ if(innerWidth>900)return;
     document.querySelectorAll('#home-solution-framework .negative-software-grid-round344 > article.home-process-stage:not(.home-process-stage--key) > h3')
       .forEach(el=>fitTextToWidth(el,11,22,.98));
   }
@@ -431,7 +432,7 @@
     if(el) el.style.setProperty(prop, value, 'important');
   }
 
-  function lockDesktopProcessHeaders(){
+  function lockDesktopProcessHeaders(){return;
     if(mobile.matches) return;
     const headers = Array.from(document.querySelectorAll(
       '#home-solution-framework .negative-software-grid-round344 > article.home-process-stage:not(.home-process-stage--key) > h3'
@@ -695,8 +696,8 @@
   const small = window.matchMedia('(max-width:374px)');
   const props = ['position','top','left','right','bottom','width','min-width','max-width','height','min-height','max-height','margin','padding','transform','translate'];
   let applying = false;
-  function setI(el,p,v){ el.style.setProperty(p,v,'important'); }
-  function clear(el){ props.forEach(p=>el.style.removeProperty(p)); }
+  function setI(el,p,v){ if(el.style.getPropertyValue(p)!==v||el.style.getPropertyPriority(p)!=='important')el.style.setProperty(p,v,'important'); }
+  function clear(el){ props.forEach(p=>{if(el.style.getPropertyValue(p))el.style.removeProperty(p)}); }
   function apply(){
     const heart = document.getElementById('rim-heart-home');
     if(!heart || applying) return;

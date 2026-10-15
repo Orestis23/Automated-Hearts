@@ -29,40 +29,7 @@
   document.addEventListener('ah:persistent-route-complete',ensure);
 })();
 
-/* Home ticker content + constant-speed motion. One shared ResizeObserver is used through AHResponsive. */
-(()=>{'use strict';
-  const quotes=[
-    {text:'“With the right information, you can predict the future.”',tone:'pink'},
-    {text:'“Open 24/7.”',tone:'green'},
-    {text:'“Get rid of software costs.”',tone:'pink'}
-  ];
-  let unwatch=null;
-  function build(){
-    const marquee=document.querySelector('#home-charity-ticker .charity-marquee,.charity-marquee#home-charity-ticker,#home-charity-ticker');
-    if(!marquee)return;
-    let track=marquee.querySelector('.charity-marquee__track');
-    if(!track){track=document.createElement('span');track.className='charity-marquee__track';marquee.replaceChildren(track)}
-    const makeLoop=()=>{const loop=document.createElement('span');loop.className='charity-marquee__loop';for(const [i,q] of [...quotes,...quotes].entries()){const copy=document.createElement('span');copy.className='charity-marquee__copy';const text=document.createElement('span');text.className='charity-marquee__segment charity-marquee__segment--'+(i%2?'green':'pink');text.textContent=q.text;copy.append(text);loop.append(copy);const sep=document.createElement('span');sep.className='charity-marquee__separator';sep.setAttribute('aria-hidden','true');loop.append(sep)}return loop};
-    track.replaceChildren(makeLoop(),makeLoop());
-    marquee.querySelectorAll('.charity-marquee__person,svg.charity-marquee__person').forEach(n=>n.remove());
-    const label=quotes.map(q=>q.text).join(' ');marquee.setAttribute('aria-label',label);marquee.dataset.text=label;
-    const apply=()=>{
-      const first=track.querySelector('.charity-marquee__loop');if(!first)return;
-      const gap=Math.max(1,Math.ceil(marquee.clientWidth));marquee.style.setProperty('--ah2038-ticker-gap',gap+'px');
-      const width=first.getBoundingClientRect().width;if(!(width>0))return;
-      track.style.setProperty('animation-name','ah1602-ticker-compositor','important');
-      track.style.setProperty('animation-duration',Math.max(48,width/27).toFixed(3)+'s','important');
-      track.style.setProperty('animation-timing-function','linear','important');
-      track.style.setProperty('animation-iteration-count','infinite','important');
-      track.style.setProperty('will-change','transform','important');
-    };
-    requestAnimationFrame(()=>requestAnimationFrame(apply));
-    if(unwatch){unwatch();unwatch=null}
-    if(window.AHResponsive?.watchElement)unwatch=window.AHResponsive.watchElement(marquee,apply);
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build,{once:true});else build();
-  document.addEventListener('ah:persistent-route-complete',build);
-})();
+/* Ticker motion is owned by smooth-ticker-2388.js. */
 
 /* Round 2109: button/text decoration is owned by round2109-state-digital-stabilizer.js. */
 

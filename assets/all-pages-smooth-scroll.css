@@ -1,0 +1,2 @@
+/* Consistent native scrolling across pages, embedded models, and panels. */
+html,body,body *{scroll-behavior:smooth!important}

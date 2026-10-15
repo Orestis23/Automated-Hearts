@@ -10,7 +10,7 @@
   const BUTTON_SKIP='script,style,noscript,template,svg,canvas,iframe,textarea,select,option,[aria-hidden="true"],.sr-only';
   const seen=new WeakSet();
   function wrapButton(control){
-    if(!control||control.nodeType!==1)return;
+    if(!control||control.nodeType!==1||control.dataset.ahUniformText)return;
     if(control.matches('.ah1807-home-window-control,footer#site-footer a[data-nav],body>nav.footer>a[href],#header-send-message,.message[data-contact-trigger]'))return;
     const walker=document.createTreeWalker(control,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.nodeValue?.trim()&&!n.parentElement?.closest(BUTTON_SKIP)&&!n.parentElement?.closest(EXISTING)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT});
     const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
@@ -34,7 +34,7 @@
       return NodeFilter.FILTER_ACCEPT;
     }});
     const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);nodes.forEach(wrapTextNode);
-    document.documentElement.dataset.ah2109StateDigital='1';
+    document.documentElement.dataset.ah2109StateDigital='1';window.AHApplyApprovedDesktop?.();
   }
   let raf=0,pending=[];
   const queue=(root)=>{if(root)pending.push(root);if(raf)return;raf=requestAnimationFrame(()=>{raf=0;const roots=pending.splice(0);if(!roots.length)roots.push(document.body);for(const r of roots)if(r?.isConnected!==false)scan(r);});};
@@ -44,7 +44,7 @@
     const mo=new MutationObserver(records=>{
       let any=false;
       for(const record of records){for(const node of record.addedNodes){if(node.nodeType===1||node.nodeType===3){pending.push(node);any=true;}}}
-      if(any&&!raf){raf=requestAnimationFrame(()=>{raf=0;const roots=pending.splice(0);for(const r of roots)if(r?.isConnected!==false)scan(r);});}
+      if(any&&matchMedia('(min-width:901px)').matches){const roots=pending.splice(0);for(const r of roots)if(r?.isConnected!==false)scan(r);return;}if(any&&!raf){raf=requestAnimationFrame(()=>{raf=0;const roots=pending.splice(0);for(const r of roots)if(r?.isConnected!==false)scan(r);});}
     });
     mo.observe(document.body||document.documentElement,{childList:true,subtree:true});
   };

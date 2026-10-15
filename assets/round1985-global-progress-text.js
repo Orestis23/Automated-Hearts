@@ -9,13 +9,15 @@
   const digitalPitch='3.18px 3.18px';
   const imp=(el,p,v)=>{try{el.style.setProperty(p,v,'important')}catch(_){}};
   function styleGlyph(el){
-    if(!el||el.nodeType!==1)return;
+    if(!el||el.nodeType!==1)return;if(el.closest('[data-ah-static-title],.ah2123-critical-window-label,.ah2123-machine-embedded-label'))return;
+    // Approved desktop typography owns these fields through button and route events.
+    if(matchMedia('(min-width:901px)').matches&&!el.closest('button,a,[role=button],nav,footer'))return;
     /* Round 2108: the persistent page-name/progress screen is first-paint CSS hardware. */
     if(el.matches?.('.footer-page-led,.header-page-led')||el.closest?.('.rim-page-name-screen'))return;
     if(window.__AH2084_BUTTON_LABEL_AUTHORITY__&&el.closest?.(':is(button,[role="button"],a.footer-structure-control,nav.footer>a,a.route-label,a.button,.button,.action,.consult,.back-top,.ah-rates__button,.r864-rates__drawer-toggle,.r865-rates__consultation-action,.home-process-key-button,.ah-unified-spacebar,.ah-mobile-contact__submit,.nav-contact-submit,.ah1807-home-window-control,.ah1940-solution-window-control,a[data-nav],a[data-action],a[data-route])'))return;
     const referenceKey=!!el.closest(":is(a.footer-structure-control,button.footer-structure-control,nav.footer>a,.ah-home-route-footer-clone,.premium-route-card__title-sign,.route-label,.ah1807-home-window-control,.ah1940-solution-window-control,.home-process-key-button,.explore-key,a.button,button.button,button.action,a.consult,.back-top,.ah-rates__button,.r864-rates__drawer-toggle,.r865-rates__consultation-action,.ah-mobile-contact__submit,.nav-contact-submit):not(#header-send-message):not(.message)");
     const mobileFooter=!!el.closest('body[data-ah-mobile-surface] > nav.footer > a[href]');
-    if(referenceKey)imp(el,'color','#fff');
+    if(referenceKey)imp(el,'color','#8fffd7');
     imp(el,'font-family','"Orbitron", system-ui, sans-serif');
     imp(el,'font-weight',mobileFooter?'900':'800');
     imp(el,'font-style','normal');

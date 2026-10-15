@@ -8,7 +8,7 @@
   const IGNORE='script,style,noscript,template,svg,canvas,iframe,textarea,input,select,option,[hidden],.sr-only,.seo-visually-hidden,.visually-hidden,.ah1905-no-digital';
   const DIRECT_AUTHORITY='.rim-page-name-screen,.r1362-home-title-text,.title-stack .lcd-text,.ah1825-machine-window-title__text';
 
-  function ignored(el){
+  function ignored(el){if(el?.closest?.('[data-ah-static-title]'))return;
     if(window.__AH2084_BUTTON_LABEL_AUTHORITY__ && el?.closest?.('button,[role="button"],a.footer-structure-control,nav.footer a,.route-label,.button,.action,.consult,.back-top,.ah-rates__button,.r864-rates__drawer-toggle,.r865-rates__consultation-action,.home-process-key-button,.ah-unified-spacebar,.ah-mobile-contact__submit,.nav-contact-submit,.premium-route-card__title-sign,.explore-key,.ah1807-home-window-control,.ah1940-solution-window-control,a[data-nav],a[data-action],a[data-route]'))return true;
     return !el || el.nodeType!==1 || !!el.closest(IGNORE) || !!el.closest(DIRECT_AUTHORITY);
   }
