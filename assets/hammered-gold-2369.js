@@ -61,7 +61,7 @@ document.head.append(rules);
 const enforce=()=>{
 for(const e of [document.documentElement,document.body]){imp(e,'overflow','hidden');imp(e,'overscroll-behavior','none');imp(e,'height','100%');imp(e,'min-height','0');}
 for(const [p,v] of Object.entries({position:'fixed',inset:'0',width:'100%',transform:'none',filter:'none',perspective:'none'}))imp(document.body,p,v);
-for(const [p,v] of Object.entries({position:'absolute',inset:'0',width:'100%',height:'auto','min-height':'0','max-height':'none',margin:'0 auto','overflow-x':'hidden','overflow-y':'auto','overscroll-behavior-y':'contain','padding-top':document.body.dataset.ahMobileSurface==='industries'?'122px':document.querySelector('.solution-mobile-header-section')||document.body.dataset.ahMobileSurface==='pricing'?'146px':'149.25px','padding-bottom':document.body.dataset.ahMobileSurface==='industries'?'80px':document.getElementById('ah2123-home-mobile-header')?'88px':bottom+'px'}))imp(main,p,v);
+for(const [p,v] of Object.entries({position:main.hasAttribute('data-ah-responsive-deck-main')?'fixed':'absolute',inset:'0',width:'100%',height:main.hasAttribute('data-ah-responsive-deck-main')?'100dvh':'auto','min-height':'0','max-height':'none',margin:'0 auto','overflow-x':'hidden','overflow-y':'auto','overscroll-behavior-y':'contain','padding-top':main.hasAttribute('data-ah-responsive-deck-main')?'114px':document.body.dataset.ahMobileSurface==='industries'?'122px':document.querySelector('.solution-mobile-header-section')||document.body.dataset.ahMobileSurface==='pricing'?'146px':'149.25px','padding-bottom':main.hasAttribute('data-ah-responsive-deck-main')?'104px':document.body.dataset.ahMobileSurface==='industries'?'80px':document.getElementById('ah2123-home-mobile-header')?'88px':bottom+'px'}))imp(main,p,v);
 for(const child of main.children)imp(child,'flex-shrink','0');
 const footer=document.getElementById('ah-mobile-footer');if(footer){for(const [p,v] of Object.entries({position:'fixed',bottom:'0',top:'auto',left:'0',right:'0',width:'auto',transform:'none',overflow:'hidden'}))imp(footer,p,v);}
 };enforce();
@@ -130,24 +130,7 @@ document.head.prepend(style);
 }
 // Content must never inherit the independently scaled outer-rim artwork.
 function clearMobileContentHoneycomb(){
-if(!mobile())return;
-const main=document.querySelector('main');if(!main)return;
-const style=document.createElement('style');
-style.textContent='@layer ah-mobile-content-clean{html body main [data-ah-hide-honeycomb-before]::before,html body main[data-ah-hide-honeycomb-before]::before,html body main [data-ah-hide-honeycomb-after]::after,html body main[data-ah-hide-honeycomb-after]::after{background-image:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}';
-document.head.prepend(style);
-const clean=(scope=main)=>{
-if(main.querySelector(".solution-mobile-header-section")){for(const section of main.children){if(section.matches("section:not(.solution-mobile-header-section)")){for(const [key,value] of Object.entries({"background-color":"#07111b","background-image":"none"}))if(section.style.getPropertyValue(key)!==value)section.style.setProperty(key,value,"important")}}}
-for(const el of [scope,...scope.querySelectorAll('*')]){
-if(el.matches('script,style,svg')||el.closest('svg'))continue;
-for(const pseudo of ['before','after'])if(/honeycomb/i.test(getComputedStyle(el,'::'+pseudo).backgroundImage)&&!el.hasAttribute('data-ah-hide-honeycomb-'+pseudo))el.setAttribute('data-ah-hide-honeycomb-'+pseudo,'');
-}
-};
-const dirty=new Set();let queued=false;
-const enqueue=node=>{dirty.add(node);if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;const roots=[...dirty];dirty.clear();for(const node of roots)if(node.isConnected&&!roots.some(other=>other!==node&&other.contains(node)))clean(node)})};
-// Transform/opacity animation writes cannot introduce a honeycomb pseudo-element.
-const backgrounds=new WeakMap();
-new MutationObserver(records=>{for(const m of records){if(m.type==='childList'){for(const n of m.addedNodes)if(n.nodeType===1&&!n.matches('script,style,svg'))enqueue(n)}else if(m.attributeName==='class')enqueue(m.target);else{const key=m.target.style.background+'|'+m.target.style.backgroundImage;if(backgrounds.get(m.target)!==key){backgrounds.set(m.target,key);if(/honeycomb/i.test(key))enqueue(m.target)}}}}).observe(main,{childList:true,subtree:true,attributes:true,attributeFilter:['style','class']});
-const queue=()=>enqueue(main);clean();addEventListener('load',queue,{once:true});addEventListener('ah:persistent-route-complete',queue);
+// Background ownership is static CSS; do not compute pseudo styles for every glyph change.
 }
 function roundedViewportRim(){
 for(const media of document.querySelectorAll('body[data-ah-mobile-surface="learning"] .route-card > .route-media')){media.style.setProperty('margin-left','auto','important');media.style.setProperty('margin-right','auto','important');media.style.setProperty('align-self','center','important');media.style.setProperty('transform','none','important');}
@@ -175,7 +158,7 @@ style.textContent='html body [data-ah-gold-before][data-ah-gold-before]::before,
 document.head.append(style);document.querySelectorAll("[data-ah-gold-drawing]").forEach(e=>e.remove());find();addEventListener("load",find,{once:true});
 // Recheck only changed components; an animated class must not rescan the page.
 let pending=false;const changed=new Set();
-new MutationObserver(ms=>{for(const m of ms){if(m.type==='attributes')changed.add(m.target);else for(const n of m.addedNodes)if(n.nodeType===1)changed.add(n)}if(changed.size&&!pending){pending=true;requestAnimationFrame(()=>{pending=false;const roots=[...changed];changed.clear();for(const node of roots)if(node.isConnected&&!roots.some(other=>other!==node&&other.contains(node)))find(node)})}}).observe(document.body||document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:['class']});
+if(!mobile())new MutationObserver(ms=>{for(const m of ms){if(m.type==='attributes')changed.add(m.target);else for(const n of m.addedNodes)if(n.nodeType===1)changed.add(n)}if(changed.size&&!pending){pending=true;requestAnimationFrame(()=>{pending=false;const roots=[...changed];changed.clear();for(const node of roots)if(node.isConnected&&!roots.some(other=>other!==node&&other.contains(node)))find(node)})}}).observe(document.body||document.documentElement,{childList:true,subtree:true,attributes:!mobile(),attributeFilter:['class']});
 addEventListener('resize',find);addEventListener('ah:persistent-route-complete',find);return;
 }}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();

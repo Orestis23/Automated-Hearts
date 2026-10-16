@@ -23,7 +23,7 @@
   };
   const applyLearning=()=>{
     if(!matchMedia('(min-width:901px)').matches)return;
-    const {sec,shell,paths,grid}=learningNodes();if(!sec)return;
+    const {sec,shell,paths,grid}=learningNodes();if(!sec||sec.hasAttribute('data-ah-responsive-deck'))return;
     const vars=getComputedStyle(document.documentElement);
     const usable=Math.max(280,innerHeight-(parseFloat(vars.getPropertyValue('--current-frame-top'))||96)-(parseFloat(vars.getPropertyValue('--current-frame-bottom'))||108));
     props(document.querySelector('main#main-content'),{'padding-top':'0','padding-bottom':'0'});

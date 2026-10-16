@@ -24,7 +24,7 @@
   function scan(root=document.body){
     if(!root)return;
     if(root.nodeType===Node.TEXT_NODE){wrapTextNode(root);return;}
-    if(root.nodeType!==Node.ELEMENT_NODE&&root!==document)return;
+    if(root.nodeType!==Node.ELEMENT_NODE&&root!==document)return;if(root.nodeType===Node.ELEMENT_NODE&&(root.closest('script,style,noscript,template,svg,canvas,iframe')||root.closest(EXISTING)))return;
     if(root.nodeType===Node.ELEMENT_NODE&&root.matches?.(CONTROL))wrapButton(root);
     root.querySelectorAll?.(CONTROL).forEach(wrapButton);
     const base=root===document?document.body:root;if(!base||base.closest?.(IGNORE))return;
@@ -34,19 +34,15 @@
       return NodeFilter.FILTER_ACCEPT;
     }});
     const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);nodes.forEach(wrapTextNode);
-    document.documentElement.dataset.ah2109StateDigital='1';window.AHApplyApprovedDesktop?.();
+    document.documentElement.dataset.ah2109StateDigital='1';
   }
-  let raf=0,pending=[];
-  const queue=(root)=>{if(root)pending.push(root);if(raf)return;raf=requestAnimationFrame(()=>{raf=0;const roots=pending.splice(0);if(!roots.length)roots.push(document.body);for(const r of roots)if(r?.isConnected!==false)scan(r);});};
+  let raf=0;const pending=new Set();
+  const flush=()=>{raf=0;const roots=[...pending].filter(n=>n.isConnected);pending.clear();for(const root of roots)if(!roots.some(other=>other!==root&&other.contains?.(root)))scan(root);window.AHApplyApprovedDesktop?.();};
+  const queue=root=>{if(root)pending.add(root);if(!raf)raf=requestAnimationFrame(flush);};
   window.__AH2084_LOCK_BUTTONS__=()=>queue(document.body);
   const start=()=>{
-    scan(document.body);
-    const mo=new MutationObserver(records=>{
-      let any=false;
-      for(const record of records){for(const node of record.addedNodes){if(node.nodeType===1||node.nodeType===3){pending.push(node);any=true;}}}
-      if(any&&matchMedia('(min-width:901px)').matches){const roots=pending.splice(0);for(const r of roots)if(r?.isConnected!==false)scan(r);return;}if(any&&!raf){raf=requestAnimationFrame(()=>{raf=0;const roots=pending.splice(0);for(const r of roots)if(r?.isConnected!==false)scan(r);});}
-    });
-    mo.observe(document.body||document.documentElement,{childList:true,subtree:true});
+    scan(document.body);window.AHApplyApprovedDesktop?.();
+    new MutationObserver(records=>{for(const record of records){if(record.target.closest?.('script,style,noscript,template,svg,canvas,iframe,'+EXISTING))continue;for(const node of record.addedNodes)if(node.nodeType===1||node.nodeType===3)queue(node);}}).observe(document.body||document.documentElement,{childList:true,subtree:true});
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();

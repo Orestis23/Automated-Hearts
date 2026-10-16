@@ -1,0 +1,56 @@
+/* Home uses its final material from first paint, including during preparation. */
+@layer ah-home-final-first {
+  html, body {
+    background-color: #020508 !important;
+    background-image: url("approved-honeycomb-clear-rendered.webp") !important;
+    background-position: center !important;
+    background-size: auto max(832px, 100dvh) !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+  }
+  html body main#main-content {
+    background-color: transparent !important;
+    background-image: url("approved-honeycomb-content-rendered.webp") !important;
+    background-position: center !important;
+    background-size: auto max(832px, 100dvh) !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+  }
+  html body main#main-content > section {
+    background-color: transparent !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  html[data-ah-home-first-paint="pending"] body {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transition: none !important;
+  }
+  /* Keep all loading artwork off the screen. Reveal the decoded final
+     background with the page, rather than swapping between honeycomb planes. */
+  html[data-ah-home-first-paint="pending"] {
+    background-image: none !important;
+    background-color: #020508 !important;
+  }
+  html[data-ah-home-first-paint="pending"]::before,
+  html[data-ah-home-first-paint="pending"]::after {
+    display: none !important;
+    content: none !important;
+  }
+  html.ah2259-preparing::before,
+  html.ah2259-preparing::after {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+/* Desktop final spacing is present before scripts initialize. */
+
+html body #ah-official-rim{border-image:none!important}html body [data-ah-gold-before]::before,html body [data-ah-gold-after]::after{border-image:none!important}
+
+
+
+@layer ah-boot{}
+
+

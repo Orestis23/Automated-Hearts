@@ -1,7 +1,7 @@
 /* Automated Hearts Round 2113 — one-shot persistent control guard.
    No observers. Reasserts only essential visibility/surface state after page/route lifecycle events. */
 (()=>{'use strict';
-  const imp=(el,p,v)=>{if(el)el.style.setProperty(p,v,'important')};
+  const imp=(el,p,v)=>{if(el&&(el.style.getPropertyValue(p)!==v||el.style.getPropertyPriority(p)!=='important'))el.style.setProperty(p,v,'important')};
   const key='./assets/footer-button-carbon-inner-rim-round1586.svg';
   const apply=()=>{
     const b=document.body;if(!b)return;

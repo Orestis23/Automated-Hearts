@@ -6,7 +6,12 @@
  let deck=host.querySelector('.ah2123-disclaimer-deck');
  if(!deck){deck=document.createElement('div');deck.className='ah2123-disclaimer-deck';deck.id='ah2123-technical-disclaimer';deck.setAttribute('role','region');deck.setAttribute('aria-label','Technical Disclaimer');deck.innerHTML=parts.map((p,i)=>'<article class="ah2123-disclaimer-card"><div class="ah2123-disclaimer-screen"><h3>'+['I','II','III'][i]+'</h3><p>'+p+'</p></div></article>').join('');deck.inert=true;deck.tabIndex=0;host.append(deck)}
  const travel=host.clientHeight;host.style.setProperty('--ah2123-machine-travel',travel+'px');
- const layers=[host.querySelector(':scope > img'),host.querySelector(':scope > .ah2123-machine-embedded-label'),deck].filter(Boolean);
+ // The decorative window surface is a fixed frame, never a sliding screen.
+ const rim=host.querySelector(':scope > .ah-single-window-surface');
+ if(rim)for(const [key,value]of Object.entries({transform:'none',transition:'none','will-change':'auto'}))rim.style.setProperty(key,value,'important');
+ const shutter=host.querySelector(':scope > .ah2386-machine-shutter')||host.querySelector(':scope > img:not(.ah-single-window-surface)');
+ const label=shutter?.classList.contains('ah2386-machine-shutter')?null:host.querySelector(':scope > .ah2123-machine-embedded-label');
+ const layers=[shutter,label,deck].filter(Boolean);
  for(const layer of layers){layer.style.setProperty('transition','transform 950ms cubic-bezier(.25,.1,.25,1)','important');layer.style.setProperty('will-change','transform','important');layer.style.setProperty('backface-visibility','hidden','important');layer.style.setProperty('opacity','1','important');}
  const ready={host,deck,travel,layers};render(ready,host.classList.contains('ah2123-disclaimer-open'));return ready;
  }

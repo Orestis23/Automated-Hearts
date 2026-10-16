@@ -24,10 +24,10 @@
    if(image.complete)done();
   });
   const fonts=document.fonts?[document.fonts.load('900 20px Orbitron'),document.fonts.load('600 20px Rajdhani')]:[];
-  const essentials=['./assets/approved-honeycomb-content-rendered.webp','./assets/approved-honeycomb-clear-rendered.webp'];
+  // Only the materials actually painted below gate readiness.
   // Image.decode() can wait on the compositor of a hidden destination frame.
   // Wait for image data instead; its final layout is committed by the router.
-  const assetsReady=Promise.allSettled([Promise.allSettled(fonts).then(()=>mark('fonts')),Promise.allSettled(images.map(imageReady)).then(()=>mark('images')),Promise.allSettled(essentials.map(src=>decode(new URL(src,location.href).href))).then(()=>mark('materials'))]);
+  const assetsReady=Promise.allSettled([Promise.allSettled(fonts).then(()=>mark('fonts')),Promise.allSettled(images.map(imageReady)).then(()=>mark('images'))]);
   window.AHFitHomeTitles?.();
   // The embedded window prepares independently; its dimensions and gold rim are already fixed.
   // It must not hold the entire page behind two sequential 12-second waits.
@@ -35,7 +35,7 @@
   // Closed interactive panels load independently and do not hold initial page readiness.
   // Decode the actual final background/material images before the first visible composite.
   const urls=new Set();
-  for(const el of [root,document.body,...document.body.querySelectorAll('main,main>section,#ah-page-progress,#header-send-message,#ah-mobile-message,#primary-nav,#primary-nav a,#ah-mobile-footer,#ah-mobile-footer a,.home-hero-engine-frame,.ah2123-mobile-window,.solution-process-window')]){
+  for(const el of [root,document.body,...document.body.querySelectorAll('main,main>section,#ah-mobile-content-backdrop,#ah2376-mobile-outer-surface,#ah-official-rim,.ah-persistent-outer-rim,.ah-persistent-gold-rim,#ah-page-progress,#header-send-message,#ah-mobile-message,#primary-nav,#primary-nav a,#ah-mobile-footer,#ah-mobile-footer a,.home-hero-engine-frame,.ah2123-mobile-window,.solution-process-window')]){
    const bounds=el.getBoundingClientRect();if(!bounds.width||!bounds.height||bounds.top>innerHeight||bounds.bottom<0)continue;
    for(const pseudo of ['', '::before','::after']){
     const c=getComputedStyle(el,pseudo);if(c.display==='none')continue;
@@ -43,10 +43,12 @@
    }
   }
   // Start final background decoding alongside visible images, rather than after them.
-  await Promise.allSettled([assetsReady,...[...urls].map(decode)]);
+  const finalMaterialsReady=Promise.allSettled([assetsReady,Promise.allSettled([...urls].map(decode)).then(()=>mark('materials'))]);
   // Wait for the shared button artwork/font commits before revealing shell controls.
   const buttons=[...document.querySelectorAll('[data-ah-brand-carbon],#header-send-message,#ah-mobile-message,a.message')].filter(button=>{const b=button.getBoundingClientRect();return b.width>0&&b.height>0&&(b.top<innerHeight&&b.bottom>0&&(innerWidth<=900||button.hasAttribute('data-ah-initial-art-gate')));});
-  await Promise.allSettled(buttons.map(button=>button.dataset.ahArtworkReady==='1'?Promise.resolve():new Promise(resolve=>{let timer;const observer=new MutationObserver(()=>{if(button.dataset.ahArtworkReady==='1')done()});const done=()=>{observer.disconnect();clearTimeout(timer);resolve()};observer.observe(button,{attributes:true,attributeFilter:['data-ah-artwork-ready']});timer=setTimeout(done,innerWidth>900?1000:10000)})));
+  const buttonArtworkReady=Promise.allSettled(buttons.map(button=>button.dataset.ahArtworkReady==='1'?Promise.resolve():new Promise(resolve=>{let timer;const observer=new MutationObserver(()=>{if(button.dataset.ahArtworkReady==='1')done()});const done=()=>{observer.disconnect();clearTimeout(timer);resolve()};observer.observe(button,{attributes:true,attributeFilter:['data-ah-artwork-ready']});timer=setTimeout(done,innerWidth>900?1000:600)})));
+  // Run artwork readiness alongside materials, avoiding a second serial hold.
+  await Promise.allSettled([finalMaterialsReady,buttonArtworkReady]);
   // The two required font faces were already awaited in assetsReady.
   mark('finalMaterials');
   // Hidden routed frames can have their animation frames heavily throttled.

@@ -1,3 +1,20 @@
+/* Desktop layout subscribers share one child-list observer and one frame queue. */
+(()=>{
+ if(!matchMedia('(min-width:901px)').matches)return;
+ const subscribers=new Map(),pending=new Set();let frame=0,observer;
+ const flush=()=>{frame=0;const jobs=[...pending];pending.clear();for(const callback of jobs){try{callback()}catch(error){console.error(error)}}};
+ window.ahObserveDesktopLayout=(callback,selector)=>{
+  subscribers.set(callback,selector);
+  if(!observer){observer=new MutationObserver(records=>{
+   if(!records.some(record=>!record.target.closest?.('svg,.ah-steady-bulb,.ah-bulb-word')&&[...record.addedNodes,...record.removedNodes].some(node=>node.nodeType===3||node.nodeType===1&&!node.matches('script,style'))))return;
+   for(const [subscriber,selector] of subscribers){
+    if(!selector||records.some(record=>record.target.closest?.(selector)||[...record.addedNodes,...record.removedNodes].some(node=>node.nodeType===1&&(node.matches(selector)||node.querySelector(selector)))))pending.add(subscriber);
+   }
+   if(pending.size&&!frame)frame=requestAnimationFrame(flush);
+  });observer.observe(document.documentElement,{childList:true,subtree:true});}
+  return ()=>{subscribers.delete(callback);pending.delete(callback)};
+ };
+})();
 const approvedStyleValues=new Map(),approvedStyleProbe=document.createElement("span").style;
 function approvedStyleValue(k,v){const key=k+"|"+v;if(!approvedStyleValues.has(key)){approvedStyleProbe.setProperty(k,v);approvedStyleValues.set(key,approvedStyleProbe.getPropertyValue(k));}return approvedStyleValues.get(key);}
 const NativeDesktopObserver=window.MutationObserver; const approvedDesktopPasses={};

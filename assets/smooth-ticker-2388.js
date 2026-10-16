@@ -7,6 +7,9 @@
   document.head.append(style);
   remove();
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',remove,{once:true});
-  new MutationObserver(remove).observe(document.documentElement,{childList:true,subtree:true});
+  new MutationObserver(records=>{for(const record of records)for(const node of record.addedNodes){
+    if(node.nodeType!==1||node.matches('svg,style,script,.ah-bulb-word,.ah-steady-bulb')||node.closest('svg,.ah-bulb-word,.ah-steady-bulb'))continue;
+    if(node.matches(selector))node.remove();else node.querySelectorAll(selector).forEach(ticker=>ticker.remove());
+  }}).observe(document.documentElement,{childList:true,subtree:true});
   addEventListener('ah:persistent-route-complete',remove);
 })();

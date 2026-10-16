@@ -11,6 +11,7 @@
     : null;
 
   const clear = () => {
+    if(innerWidth>900&&!held&&!document.documentElement.classList.contains('ah-footer-navigation-loading'))return;
     clearTimeout(timer);
     document.documentElement.classList.remove('ah-footer-navigation-loading');
     document.querySelectorAll('footer#site-footer a[data-nav], body > nav.footer a[href]').forEach((link) => {
@@ -43,7 +44,7 @@
     if (link) press(link);
   }, true);
 
-  document.addEventListener('pointerup', () => setTimeout(clear, 90), true);
+  document.addEventListener('pointerup', () => {if(innerWidth<=900||held)setTimeout(clear,90)}, true);
   document.addEventListener('pointercancel', clear, true);
   document.addEventListener('scroll', clear, {passive:true, capture:true});
   window.addEventListener('blur', clear, {passive:true});

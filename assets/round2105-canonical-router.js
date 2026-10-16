@@ -1,4 +1,8 @@
-(()=>{if(new URLSearchParams(location.search).get('ah_embed')!=='1')return;function clean(){for(const el of document.querySelectorAll('#ah-mobile-message,#header-send-message,#ah-page-progress,#ah-mobile-footer,#primary-nav,#site-footer,.rim-page-name-screen,.site-header,.page-chip'))el.remove()}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',clean);else clean();new MutationObserver(clean).observe(document.documentElement,{childList:true,subtree:true});})();
+(()=>{if(new URLSearchParams(location.search).get('ah_embed')!=='1')return;
+const selector='#ah-mobile-message,#header-send-message,#ah-page-progress,#ah-mobile-footer,#primary-nav,#site-footer,.rim-page-name-screen,.site-header,.page-chip';
+const clean=root=>{if(root.matches?.(selector)){root.remove();return;}root.querySelectorAll?.(selector).forEach(el=>el.remove());};
+const start=()=>{clean(document);new MutationObserver(records=>{for(const m of records)for(const n of m.addedNodes)if(n.nodeType===1&&!n.closest('svg,.ah-steady-bulb,.ah-bulb-word'))clean(n);}).observe(document.body,{childList:true,subtree:true});};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();})();
 (()=>{const s=document.createElement('style');s.textContent='@layer ah2271-sharp-heart{html body :is(#ah-route-shield,#ah1609-intro) .ah-uniform-honeycomb-film{display:none!important;visibility:hidden!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}html body :is(#ah-route-shield-panel,#ah1609-intro .ah1912-intro-panel){filter:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;}}';document.head.prepend(s)})();
 /* Automated Hearts Round 2110 — deployment-stabilized canonical public-route shield router.
    Round 1897 assigned four directions in the parent shell, but clicks originating inside
@@ -757,7 +761,8 @@
     const main = document.querySelector('body > main#main-content');
     if (!main) return;
     main.querySelectorAll('video').forEach((video) => { try { video.pause(); } catch (_) {} });
-    // Keep concealed machine frames intact; navigating them here stalls the first shield pass.
+    // The shield is finished: release retired embedded renderers without navigating them.
+    main.querySelectorAll("iframe").forEach(frame=>frame.remove());
     main.style.setProperty('display','none','important');
     main.style.setProperty('visibility','hidden','important');
     main.style.setProperty('pointer-events','none','important');
@@ -841,14 +846,6 @@
 
   // Warm only the page the user is approaching, without mounting another runtime.
   const prefetchedRoutes=new Set();
-  let warmedServicesFrame=null;
-  const warmServices=()=>{
-    if(navigator.connection?.saveData||navigationActive||currentKey==='services'||warmedServicesFrame?.isConnected)return;
-    const route=normalizeTarget(publicPageHref('services'));if(!route)return;
-    const frame=contentFrameStyle(document.createElement('iframe'));warmedServicesFrame=frame;
-    frame.__ahFinishLoading=()=>{if(frame!==warmedServicesFrame)return;frame.dataset.ahPrewarmReady='1';setPageRenderActive(false,frame);};
-    document.body.append(frame);frame.src=route.target.href;
-  };
   const prefetchRoute=event=>{
     if(navigator.connection?.saveData)return;
     const link=event.target.closest?.('a[href]');
@@ -863,7 +860,7 @@
   };
   document.addEventListener('pointerover',prefetchRoute,{passive:true});
   document.addEventListener('focusin',prefetchRoute);
-  // Services warms on pointer/focus intent; do not start a second page runtime on every load.
+  // Pointer/focus intent fetches HTML only, without starting a hidden page runtime.
 
   const navigate = (href, options = {}) => {
     const normalized = normalizeTarget(href);
@@ -893,8 +890,7 @@
 
     /* Load and lay out the destination invisibly first. This lets the visible
        shield make one uninterrupted pass instead of stopping to wait for a page. */
-    const frame = nextKey==='services'&&warmedServicesFrame?.isConnected?warmedServicesFrame:contentFrameStyle(document.createElement('iframe'));
-    if(frame===warmedServicesFrame)warmedServicesFrame=null;
+    const frame = contentFrameStyle(document.createElement('iframe'));
     pendingFrame = frame;
     frame.dataset.ahRouteKey = nextKey;
     if(!frame.isConnected)document.body.appendChild(frame);
@@ -923,7 +919,7 @@
       if (error && console && console.error) console.error('[AH route recovery]', error);
     };
     const finish = async () => {
-      if (completed || token !== routeToken || pendingFrame !== frame) return;
+      if (completed || token !== routeToken || pendingFrame !== frame || !frame.contentDocument?.querySelector("main#main-content")) return;
       completed = true;document.documentElement.dataset.ahRouteDomReadyMs=String(Math.round(performance.now()-routeStartedAt));
       clearTimeout(navigationTimeout);
       if(readyListener){removeEventListener('message',readyListener);readyListener=null;}
@@ -1003,7 +999,7 @@
       /* Responsive wrappers rewrite themselves with document.write(). The outer
          load event can precede the inner page's final DOM-ready signal, so allow
          that explicit signal to win before using load as a fallback. */
-      setTimeout(()=>{if(token===routeToken&&!completed)finish();},80);
+      if(!completed)finish();
     });
     document.documentElement.dataset.ahRouteRequestMs=String(Math.round(performance.now()-routeStartedAt));
     const startDestination=()=>{
@@ -1016,7 +1012,7 @@
       }
     };
     // Let the compositor finish the visible mobile entrance before booting a page.
-    if(isMobile)entranceReady.then(startDestination);else startDestination();
+    startDestination();
     navigationTimeout=setTimeout(()=>{
       if(token!==routeToken||completed)return;
       completed=true;

@@ -147,7 +147,7 @@ let scheduled=false;function schedule(){if(scheduled)return;scheduled=true;reque
   }
  }
  let queued=false;const queue=()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;apply()})};
- const start=()=>{apply();new MutationObserver(queue).observe(document.body,{subtree:true,childList:true});};
+ const start=()=>{apply();(window.ahObserveDesktopLayout?window.ahObserveDesktopLayout(apply):new MutationObserver(queue).observe(document.body,{subtree:true,childList:true}));};
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
  addEventListener('resize',queue);addEventListener('ah:persistent-route-complete',queue);
 })();
@@ -170,7 +170,7 @@ let scheduled=false;function schedule(){if(scheduled)return;scheduled=true;reque
   for(const[selector,color,size,font]of [['.ah2172-explore-title','#ff77bd',mobile?'30px':'35px','Orbitron,system-ui,sans-serif'],['.ah2172-explore-quote','#fff',mobile?'24px':'18px','Rajdhani,system-ui,sans-serif'],['.ah2172-explore-source','#8fffd7','14px','Orbitron,system-ui,sans-serif']]){const n=button.querySelector(selector);for(const[p,v]of Object.entries({position:'static',display:'block',margin:'0',padding:'0',width:'100%','max-width':'100%','min-width':'0','box-sizing':'border-box','white-space':'normal','overflow-wrap':'anywhere',height:'auto',transform:'none',background:'none',color,'-webkit-text-fill-color':color,'font-family':font,'font-size':size,'font-weight':'400','line-height':'1.3',mask:'none','text-align':'center'}))put(n,p,v);if(selector.includes('quote')){put(n,'width','100%');put(n,'padding','0 16px');put(n,'box-sizing','border-box');put(n,'font-size',mobile?'20px':'16px');put(n,'white-space','normal');put(n,'overflow-wrap','anywhere');}if(selector.includes('source')){put(n,'margin-top','-8px');put(n,'text-align','right');}if(mobile&&selector.includes('title')){const titleBox=n.getBoundingClientRect(),quoteBox=button.querySelector('.ah2172-explore-quote').getBoundingClientRect(),buttonBox=button.getBoundingClientRect();const lift=(titleBox.top+titleBox.bottom)/2-(buttonBox.top+14+quoteBox.top)/2;put(n,'transform','translateY(-'+Math.max(0,lift)+'px)');}}
  }}
  let pending=false;const queue=()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;apply()})};
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);else apply();addEventListener('load',()=>{apply();setTimeout(apply,300)});new MutationObserver(queue).observe(document.documentElement,{childList:true,subtree:true});
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);else apply();addEventListener('load',()=>{apply();setTimeout(apply,300)});(window.ahObserveDesktopLayout?window.ahObserveDesktopLayout(apply):new MutationObserver(queue).observe(document.documentElement,{childList:true,subtree:true}));
 })();
 
 
