@@ -410,6 +410,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
   const flyShield=async(direction,onMidpoint,ready=Promise.resolve(),onCovered=()=>{})=>{
 
     ensureShield();
+    await warmShieldArtwork();
     const shieldRoot=shieldPanel?.parentElement;
     if(shieldRoot){
       const vars=getComputedStyle(document.documentElement);
@@ -441,10 +442,10 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     const sweep=shieldSweep(activeShieldDirection);
     const horizontal=activeShieldDirection==='left'||activeShieldDirection==='right';
     // Mobile uses the exact viewport outline; desktop retains its overscan.
-    shieldPanel.style.setProperty('width',!isMobile&&horizontal?'116%':'100%','important');
-    shieldPanel.style.setProperty('height',!isMobile&&!horizontal?'116%':'100%','important');
-    shieldPanel.style.setProperty('left',!isMobile&&horizontal?'-8%':'0','important');
-    shieldPanel.style.setProperty('top',!isMobile&&!horizontal?'-8%':'0','important');
+    shieldPanel.style.setProperty('width','100%','important');
+    shieldPanel.style.setProperty('height','100%','important');
+    shieldPanel.style.setProperty('left','0','important');
+    shieldPanel.style.setProperty('top','0','important');
     shieldPanel.style.right='auto';
     shieldPanel.style.bottom='auto';
     try { shieldMotion?.cancel(); } catch (_) {}

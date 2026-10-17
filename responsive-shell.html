@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><link rel="icon" href="./favicon.ico?v=heart-shield-20261017"><link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png?v=heart-shield-20261017"><link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=heart-shield-20261017"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07111b"><title>Automated Hearts — Responsive Landscape Version</title>
+<link rel="preload" as="image" href="./assets/heart-shield-gallery-v2-lossless.webp">
+<style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#07111b}#site{position:absolute;border:0;transform-origin:0 0;background:#07111b}#loading{position:fixed;inset:0;background:#07111b url('./assets/heart-shield-gallery-v2-lossless.webp') center/cover no-repeat;z-index:10;pointer-events:none}#loading[hidden]{display:none}</style></head>
+<body><div id="loading" role="status" aria-label="Loading Automated Hearts"></div><iframe id="site" title="Automated Hearts website" allow="fullscreen; webgl"></iframe>
+<script>
+(()=>{'use strict';const frame=document.getElementById('site'),cover=document.getElementById('loading');let mode='',timer,generation=0;const original=new URLSearchParams(location.search);
+function currentPage(){try{const url=new URL(frame.contentWindow.location.href);if(url.origin===location.origin&&/\.html$/.test(url.pathname))return url.pathname;}catch(_){}return new URL('./index.html',location.href).pathname;}
+function fit(){const width=document.documentElement.clientWidth,height=innerHeight;const landscape=width>height&&(width<=1100||matchMedia('(pointer:coarse)').matches);const next=landscape?'desktop':width<=900?'mobile':'desktop';let logicalWidth=width,logicalHeight=height,scale=1;
+if(landscape){logicalWidth=Math.max(1440,width);logicalHeight=Math.max(900,height);scale=Math.min(width/logicalWidth,height/logicalHeight);}
+const nextMode=next!==mode;if(nextMode)cover.hidden=false;const left=Math.max(0,(width-logicalWidth*scale)/2),top=Math.max(0,(height-logicalHeight*scale)/2);Object.assign(cover.style,{inset:'auto',width:(logicalWidth*scale)+'px',height:(logicalHeight*scale)+'px',left:left+'px',top:top+'px'});
+Object.assign(frame.style,{width:logicalWidth+'px',height:logicalHeight+'px',left:Math.max(0,(width-logicalWidth*scale)/2)+'px',top:Math.max(0,(height-logicalHeight*scale)/2)+'px',transform:'scale('+scale+')'});
+document.documentElement.dataset.layout=next;document.documentElement.dataset.landscapeDesktop=landscape?'1':'0';
+if(next===mode)return;const page=currentPage();mode=next;delete window.AHPageSources;delete window.AHDecodedMaterials;const id=++generation;cover.hidden=false;clearTimeout(timer);const url=new URL(page,location.href);url.searchParams.set(next,'1');url.searchParams.set('orientation_frame','1');if(id===1)for(const key of ['intro','fresh'])if(original.has(key))url.searchParams.set(key,original.get(key));frame.src=url.href;
+function check(){if(id!==generation)return;try{const doc=frame.contentDocument;const ready=doc?.readyState==='complete'&&doc?.documentElement?.dataset.ahHomeSurfaceReady==='1';const shield=doc?.getElementById('ah-startup-heart-shield');if(ready&&!shield){frame.contentWindow.requestAnimationFrame(()=>frame.contentWindow.requestAnimationFrame(()=>{if(id===generation)cover.hidden=true}));return;}const error=doc?.documentElement.dataset.ahBootError;if(error){cover.hidden=true;return;}}catch(_){}timer=setTimeout(check,40);}timer=setTimeout(check,40);
+}
+addEventListener('resize',()=>{clearTimeout(window.__orientationFit);window.__orientationFit=setTimeout(fit,120)});addEventListener('orientationchange',()=>setTimeout(fit,180));fit();
+})();
+</script></body></html>
