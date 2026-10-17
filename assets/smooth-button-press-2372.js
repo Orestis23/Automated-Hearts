@@ -24,7 +24,7 @@
  }
  function cleanGlows(state){for(const glow of state.glows||[]){cancelAnimationFrame(glow.frame);glow.filter.remove();}}
 
- function press(el){
+ function press(el){if(innerWidth<=900&&el?.matches('[data-floating-action],[data-lite-learning],[data-learning-model]'))return;
   if(!el||el.matches(':disabled,[aria-disabled="true"]'))return;
   if(active===el)return;if(active)release(active);
   glowDefinitions();let previous=states.get(el);const continuation=previous?(()=>{const c=getComputedStyle(el);return{scale:c.scale,translate:c.translate}})():null;if(previous){clearTimeout(previous.timer);cleanGlows(previous);restore(el,previous.styles);for(const item of previous.labels)restore(item.el,item.styles);for(const overlay of previous.overlays||[])overlay.remove();}

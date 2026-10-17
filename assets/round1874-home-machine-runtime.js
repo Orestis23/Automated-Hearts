@@ -17,7 +17,7 @@
       iframe: 'home-machine-rolodex',
       video: 'home-machine-rolodex-video',
       mobileSrc: '',
-      desktopSrc: './heart-to-heart-digital-rolodex-round1094.html?v=2010r&home=1'
+      desktopSrc: './heart-to-heart-digital-rolodex-round1094.html?v=lighter-models-20261017&home=1'
     }
   ];
 

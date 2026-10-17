@@ -236,7 +236,7 @@ button.style.setProperty('touch-action','manipulation','important');window.addEv
   bindArrow(prevOrb,-1);bindArrow(nextOrb,1);
   carousel?.addEventListener('scrollend',()=>{if(!gliding)requestedIndex=null});
 
-  if(carousel){carousel.addEventListener('scroll',()=>{const i=currentIndex();if(i>=1)loadDeferred();prevOrb?.toggleAttribute('disabled',i<=0);nextOrb?.toggleAttribute('disabled',i>=figures().length-1)},{passive:true});prevOrb?.setAttribute('disabled','')}
+  if(carousel){let scrollQueued=false;carousel.addEventListener('scroll',()=>{if(scrollQueued)return;scrollQueued=true;requestAnimationFrame(()=>{scrollQueued=false;const i=currentIndex();if(i>=1)loadDeferred();prevOrb?.toggleAttribute('disabled',i<=0);nextOrb?.toggleAttribute('disabled',i>=figures().length-1)})},{passive:true});prevOrb?.setAttribute('disabled','')}
 })();
 
 ;

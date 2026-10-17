@@ -11,9 +11,9 @@ const $ = (s, r=document) => r.querySelector(s);
   let selected = null;
   let modelIndex = 0;
   const learningModels={
-    ai101:['./models/ai-101-core-principles-round1316.html?v=2320','./models/ai-101-human-ai-partnership-mobile-round1640.html?v=2320','./models/ai-101-verification-lab-round1828.html?v=2320'],
-    practical:['./models/practical-ai-helix-round1828.html?v=2320'],
-    strategy:['./models/strategy-lab-ball-round1093.html?v=2320','./models/strategy-lab-readiness-diagnostic-round1828.html?v=2320','./models/strategy-lab-hourglass-round1828.html?v=2320']
+    ai101:['./models/ai-101-core-principles-round1316.html?v=lighter-models-20261017','./models/ai-101-human-ai-partnership-mobile-round1640.html?v=lighter-models-20261017','./models/ai-101-verification-lab-round1828.html?v=lighter-models-20261017'],
+    practical:['./models/practical-ai-helix-round1828.html?v=lighter-models-20261017'],
+    strategy:['./models/strategy-lab-ball-round1093.html?v=lighter-models-20261017','./models/strategy-lab-readiness-diagnostic-round1828.html?v=lighter-models-20261017','./models/strategy-lab-hourglass-round1828.html?v=lighter-models-20261017']
   };
   function unloadModel(){ if(frame){ frame.src='about:blank'; frame.remove(); frame=null; } if(modelShell) modelShell.hidden=true; }
   function loadUrl(url){

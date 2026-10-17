@@ -291,7 +291,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
   let shieldPanel = null;
   let shieldMotion = null;
   let shieldCovered = false;
-  const ROUTE_SHIELD_FLY_MS = isMobile ? 720 : 440; // Entrance overlaps preparation; exit reveals the final page.
+  const ROUTE_SHIELD_FLY_MS = isMobile ? 400 : 360; // Entrance overlaps preparation; exit reveals the final page.
   const ROUTE_SHIELD_SWEEPS = Object.freeze({
     right:{start:'translate3d(-105%,0,0)', end:'translate3d(105%,0,0)'},
     left:{start:'translate3d(105%,0,0)', end:'translate3d(-105%,0,0)'},
@@ -845,6 +845,17 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
   };
 
   // Warm only the page the user is approaching, without mounting another runtime.
+
+  // Warm the selected responsive source, not just the tiny public entry document.
+  function warmPageSource(target){
+    if(navigator.connection?.saveData)return;
+    const name=new URL(target,location.href).pathname.split('/').pop().replace(/\.html$/,'');
+    if(!['index','the-solution','industries','good-information','services','privacy-policy'].includes(name))return;
+    const source=new URL('./assets/page-sources/'+name+'-'+(isMobile?'mobile':'desktop')+'.html?v=performance-20261017',location.href).href;
+    let owner=window;try{if(top.location.origin===location.origin)owner=top;}catch(_){}
+    const cache=owner.AHPageSources||(owner.AHPageSources=new Map());if(cache.has(source))return;
+    const pending=fetch(source,{priority:'low'}).then(r=>{if(!r.ok)throw Error('Page source '+r.status);return r.text();});cache.set(source,pending);pending.catch(()=>cache.delete(source));
+  }
   const prefetchedRoutes=new Set();
   const prefetchRoute=event=>{
     if(navigator.connection?.saveData)return;
@@ -856,13 +867,15 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     prefetchedRoutes.add(route.target.href);
     const hint=document.createElement('link');
     hint.rel='prefetch';hint.as='document';hint.href=route.target.href;
-    document.head.append(hint);
+    document.head.append(hint);warmPageSource(route.target.href);
   };
   document.addEventListener('pointerover',prefetchRoute,{passive:true});
   document.addEventListener('focusin',prefetchRoute);
+  document.addEventListener('pointerdown',prefetchRoute,{passive:true});
   // Pointer/focus intent fetches HTML only, without starting a hidden page runtime.
 
   const navigate = (href, options = {}) => {
+    warmPageSource(href);
     const normalized = normalizeTarget(href);
     if (!normalized) return false;
     if (navigationActive) return true;
@@ -1029,7 +1042,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     if(prefetched.has(id))return;
     prefetched.add(id);
     const add=(url,as)=>{const l=document.createElement('link');l.rel='prefetch';l.href=url;if(as)l.as=as;document.head.appendChild(l);};
-    add(href,'document');
+    add(href,'document');warmPageSource(href);
     if(full){
       /* The embedded HTML exposes all CSS/JS URLs to the browser cache; fetching the document early
          is enough to eliminate the HTML revalidation delay without front-loading every asset. */
